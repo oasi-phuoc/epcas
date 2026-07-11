@@ -1,11 +1,13 @@
-# EPCAS — Plateforme apprentis logistique
+# EPCAS Logistique
 
-Site pédagogique pour les apprentis en logistique : théorie (mode complet / résumé), exercices interactifs, évaluations à blanc, suivi des élèves. Usage principal bureau, adapté mobile.
+Plateforme pédagogique pour apprentis **CFC Logisticien·ne — EPCA Sion** : théorie (complet / résumé), exercices, évaluations à blanc, suivi, interface formateur.
+
+Thème pastel moderne + design system de composants partagés. Français uniquement.
 
 ## Documentation
 
-- **[Plan produit & technique](docs/PLAN.md)** — à valider avant le développement.
+- **[Plan validé](docs/PLAN.md)** — décisions produit, design, stack, phases.
 
 ## Statut
 
-Planification en cours. Aucun code applicatif tant que le plan n’est pas validé.
+Plan verrouillé. Prochaine étape : Phase 1 (socle + design system).

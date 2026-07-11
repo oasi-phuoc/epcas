@@ -1,214 +1,286 @@
-# Plan — Plateforme pédagogique Logistique (EPCAS)
+# Plan — EPCAS Logistique
 
-Document de planification produit et technique. **Aucun développement fonctionnel avant validation de ce plan.**
+Plateforme pédagogique pour apprentis **CFC Logisticien·ne — EPCA Sion**.  
+Document de planification **validé** (décisions section 9 verrouillées). Prêt pour Phase 1 après feu vert.
 
 ---
 
 ## 1. Vision
 
-Plateforme d’apprentissage pour apprentis en logistique : théorie (lecture complète + mode résumé), exercices interactifs (théorie + maths), évaluations à blanc, et suivi pédagogique formateur / élève.
+**EPCAS Logistique** — site d’apprentissage pour apprentis logistique :
 
-**Priorité d’usage :** ordinateur en salle / entreprise, avec une expérience mobile solide (révision, quiz, consultation des notes).
+- Théorie (lecture **Complète** + mode **Résumé**)
+- Exercices interactifs (théorie + maths)
+- Évaluations à blanc (auto + questions ouvertes par mots-clés)
+- Suivi des élèves
+- Interface formateur (contenu + comptes + suivi)
 
-**Identité :** EPCAS — formation professionnelle Valais. Le branding et le contenu doivent coller au métier (entrepôt, flux, stocks, transport), pas à un LMS générique.
+**Usage principal :** ordinateur. **Aussi adapté mobile** (révision, quiz, consultation).
+
+**Référentiel :** CFC Logisticien·ne, EPCA Sion.  
+**Langue :** français uniquement.  
+**Marque :** EPCAS Logistique.
 
 ---
 
 ## 2. Utilisateurs et rôles
 
-| Rôle | Besoins principaux |
-|------|-------------------|
-| **Apprenti** | Lire la théorie, basculer en résumé, s’entraîner, passer des blancs, voir sa progression |
-| **Formateur** | Publier / organiser le contenu, créer exercices & blancs, suivre la classe, repérer les lacunes |
-| **Admin** (optionnel V1) | Comptes, classes, paramètres |
+| Rôle | Besoins |
+|------|---------|
+| **Apprenti** | Théorie, résumé, exercices, blancs, sa progression |
+| **Formateur** | Créer / éditer tout le contenu, gérer les comptes élèves, suivre la classe, créer exercices & blancs |
 
-Authentification obligatoire (comptes liés à une classe). Pas d’accès anonyme pour le suivi.
+**Gestion des comptes :** le formateur crée, modifie, désactive les comptes apprentis **dans l’interface** (pas de SSO, pas d’auto-inscription).  
+Mot de passe initial défini / réinitialisé par le formateur ; l’apprenti peut le changer ensuite.
+
+Pas d’accès anonyme.
 
 ---
 
 ## 3. Modules fonctionnels
 
-### 3.1 Théorie
+### 3.1 Théorie (contenu créé par le formateur)
 
-- Chapitres / modules métier (ex. réception, stockage, préparation, expédition, inventaire, sécurité, docs transport…).
-- **Deux modes de lecture sur le même contenu :**
-  - **Complet** : texte détaillé, schémas, exemples, définitions.
-  - **Résumé** : points clés uniquement (listes, formules, « à retenir »), pour révision rapide avant un blanc.
-- Navigation claire : table des matières, progression de lecture (marqué « lu »).
-- Contenu structuré (pas du Word collé) pour permettre le bascule résumé / complet.
+- Modules / leçons alignés CFC Logisticien·ne.
+- **Deux modes** sur le même contenu :
+  - **Complet** — texte détaillé, exemples, définitions
+  - **Résumé** — points clés « à retenir »
+- Le formateur saisit les deux versions (ou génère un brouillon résumé à partir du complet, éditable).
+- Progression de lecture (non lu / en cours / lu).
 
 ### 3.2 Exercices interactifs
 
-Deux familles :
+1. **Théorie** — QCM, vrai/faux, association, mise en ordre, cas courts  
+2. **Maths logistique** — volumes, masses, remplissage, stocks, pourcentages, conversions, etc.
 
-1. **Liés à la théorie** — QCM, vrai/faux, association, mise en ordre (étapes d’un processus), cas pratiques courts.
-2. **Maths logistique** — calculs de volumes, masses, taux de remplissage, rotations de stock, coûts, pourcentages, conversions d’unités, etc.
-
-Comportement attendu :
-
-- Feedback immédiat (bonne / mauvaise réponse + explication courte).
-- Tentatives illimitées en mode entraînement.
-- Score et historique sauvegardés pour le suivi.
-- Lien optionnel « Revoir la théorie » vers le chapitre concerné.
+- Feedback immédiat + explication  
+- Entraînement : tentatives illimitées  
+- Historique pour le suivi  
+- Lien « Revoir la théorie »
 
 ### 3.3 Évaluations à blanc
 
-- Conditions proches de l’examen : timer, une tentative (ou N tentatives configurables), pas d’aide / pas de théorie pendant le blanc.
-- Mix théorie + maths selon le barème du formateur.
-- Correction automatique quand possible + correction manuelle pour questions ouvertes (V2 si besoin).
-- Résultat : score, détail par question, thèmes faibles.
+- Timer, tentatives configurables, pas d’aide pendant le blanc  
+- Mix QCM / maths / **questions ouvertes**  
+- **Correction automatique** pour tout ce qui est fermé  
+- **Questions ouvertes :** correction auto par **mots-clés** (voir §3.5)  
+- Score + détail + thèmes faibles
 
-### 3.4 Suivi des élèves
+### 3.4 Suivi
 
-**Côté apprenti :**
+**Apprenti :** progression modules, historique blancs, points faibles.  
+**Formateur :** vue classe, fiche élève, alertes, export CSV.
 
-- Progression par module (% théorie lue, exercices faits, scores).
-- Historique des blancs.
-- Points faibles suggérés (thèmes où le score est bas).
+### 3.5 Correction des questions ouvertes (mots-clés)
 
-**Côté formateur :**
+Le formateur définit pour chaque question ouverte :
 
-- Vue classe : progression, derniers scores, alertes (élève en retard / scores bas).
-- Fiche élève détaillée.
-- Export simple (CSV) pour réunions / bilans.
+| Champ | Exemple |
+|-------|---------|
+| Réponse attendue (affichage) | « Unité de stock / SKU » |
+| **Mots-clés obligatoires** | `stock`, `unité` *ou* `SKU` |
+| Mots-clés bonus (optionnel) | `référence`, `article` |
+| Tolérance | ignorer accents, majuscules, pluriels simples |
+| Seuil | ex. 100 % des obligatoires → juste ; partielle → demi-points |
+
+**Algorithme V1 (simple et transparent) :**
+
+1. Normaliser la réponse élève (minuscules, sans accents, trim).  
+2. Vérifier la présence de chaque groupe de mots-clés (ET / OU selon config).  
+3. Score : tout trouvé → points pleins ; partiel → points partiels si activé ; sinon 0.  
+4. Afficher à l’élève : correct / partiel / incorrect + la réponse modèle (après soumission).
+
+**Limite assumée :** ce n’est pas de l’IA sémantique. Une formulation correcte sans les mots-clés peut être refusée ; une phrase avec les bons mots peut passer. Le formateur rédige les mots-clés avec soin.  
+**Filet de sécurité (option) :** flag « à revoir manuellement » si score partiel, pour le formateur.
 
 ---
 
-## 4. Expérience bureau / mobile
+## 4. Design system — thème pastel + composants uniques
 
-Un seul site responsive (pas deux apps). Adaptation par layout, pas par produit séparé.
+### 4.1 Direction visuelle
+
+- **Thème unique pastel moderne** (variables CSS globales) — une seule palette pour tout le site.
+- Proposition de direction (ajustable) :
+  - Base : lavande / bleu glacier très doux
+  - Accent : menthe ou pêche pastel (un seul accent fort)
+  - Texte : ardoise douce, pas noir pur
+  - Fonds : dégradés pastel légers + texture discrète (pas flat blanc)
+- Typographie expressive (pas Inter / Roboto / Arial) : une display titres + une lisible corps.
+- Marque **EPCAS Logistique** bien visible sur l’accueil.
+- Motion discret : transition Complet ↔ Résumé, feedback exercices, apparition des scores.
+- Éviter : violet-indigo générique « AI », cream + terracotta, dark mode par défaut, pills partout, ombres empilées.
+
+### 4.2 Bibliothèque de composants (obligatoire)
+
+**Un seul design system** — aucun champ / bouton / select recréé page par page.
+
+Composants partagés (ex. `components/ui/`) :
+
+| Composant | Usage |
+|-----------|--------|
+| `Button` | primary / secondary / ghost / danger |
+| `TextField` | input texte, email, password |
+| `TextArea` | questions ouvertes, éditeur contenu |
+| `Select` | listes déroulantes |
+| `Checkbox` / `Radio` / `Switch` | choix, toggle Résumé |
+| `NumberField` | maths, notes, durée |
+| `Card` / `Panel` | uniquement quand interaction ou regroupement utile |
+| `Badge` / `Tag` | statut, difficulté |
+| `Alert` / `Toast` | feedback |
+| `Modal` / `Drawer` | confirmations, TOC mobile |
+| `Table` + `EmptyState` | suivi formateur |
+| `Progress` / `ScoreBar` | progression |
+| `Timer` | blancs |
+| `PageHeader` / `Section` | titres de page harmonisés |
+| `Skeleton` | chargement |
+
+Règles :
+
+- Toute nouvelle page **importe** ces composants ; pas de styles ad hoc pour les contrôles.
+- Tokens (couleurs, rayons, espacements, ombres) en **CSS variables** uniquement.
+- Même look bureau et mobile ; seuls layout et densité changent.
+
+---
+
+## 5. Expérience bureau / mobile
+
+Un site responsive (pas deux apps).
 
 | Zone | Bureau | Mobile |
 |------|--------|--------|
-| Navigation | Sidebar + fil d’Ariane | Bottom nav (Accueil, Théorie, Exercices, Blancs, Profil) |
-| Théorie | Texte large + TOC latérale + toggle Résumé | TOC en tiroir ; toggle Résumé bien visible |
-| Exercices | Zone confortable clavier / souris | Grands boutons, clavier numérique pour maths |
-| Blancs | Timer visible, questions en colonnes si besoin | Une question par écran, timer sticky |
-| Suivi formateur | Tableaux / filtres | Cartes + filtres simplifiés |
-
-Règles UX :
-
-- Touch targets ≥ 44px sur mobile.
-- Pas de hover obligatoire pour une action critique.
-- Modes Complet / Résumé persistés par utilisateur.
-- Offline léger (V2) : pas requis en V1.
+| Nav | Sidebar + fil d’Ariane | Bottom nav |
+| Théorie | TOC + toggle Résumé | TOC tiroir |
+| Exercices | Confort clavier | Gros boutons, clavier numérique maths |
+| Blancs | Timer visible | 1 question / écran, timer sticky |
+| Formateur | Tableaux | Cartes + filtres simples |
 
 ---
 
-## 5. Architecture technique proposée
+## 6. Architecture technique
 
-### Stack recommandée (V1)
+### Stack V1
 
-| Couche | Choix | Pourquoi |
-|--------|-------|----------|
-| Frontend | **Next.js (App Router) + TypeScript** | SSR/SEO léger, routes claires, un seul déploiement |
-| UI | **Tailwind CSS** + composants maison | Responsive rapide, design contrôlé |
-| Auth + DB | **Supabase** (Auth, Postgres, RLS) | Comptes, classes, suivi sans backend lourd |
-| Contenu théorie | Markdown / MDX versionné dans le repo **ou** éditeur formateur en DB | MDX = qualité + revue git ; DB = autonomie formateur |
-| Hébergement | Vercel (front) + Supabase (data) | Simple pour une école |
+| Couche | Choix |
+|--------|-------|
+| Front | **Next.js (App Router) + TypeScript** |
+| UI | **Tailwind** + **design system maison** (§4.2) |
+| Backend data | **Supabase** (Auth, Postgres, RLS, Storage si besoin) |
+| Contenu | **Éditeur formateur → base Supabase** (pas MDX figé dans le repo) |
+| Front hosting | **Vercel** (free Hobby) + **Supabase Free** pour data |
+
+### Hébergement gratuit Supabase — oui, possible pour démarrer
+
+Le plan **Free** Supabase convient pour une classe / petit centre en phase de démarrage :
+
+| Ressource | Limite Free (indicatif) |
+|-----------|-------------------------|
+| Base Postgres | ~500 MB |
+| Stockage fichiers | ~1 GB |
+| Utilisateurs actifs / mois | ~50 000 MAU (largement OK pour une école) |
+| Projets actifs | 2 |
+| **Attention** | Projet **mis en pause après ~1 semaine d’inactivité** |
+
+**Implications EPCAS :**
+
+- OK pour prototype et première année si le site est utilisé régulièrement.
+- Pendant les vacances longues : risque de pause → prévoir un ping / visite périodique, ou passer Pro plus tard (~usage réel).
+- Le **front** (Next.js) se déploie gratuitement sur Vercel Hobby ; Supabase ne remplace pas l’hébergement du site, seulement auth + base.
+- Données sur infra Supabase (régions EU possibles — à choisir **EU** à la création du projet).
 
 ### Modèle de données (esquisse)
 
 ```
-users (id, role: apprentice|trainer|admin, class_id, display_name)
+profiles (id → auth.users, role: apprentice|trainer, class_id, display_name, active)
 classes (id, name, year)
-modules (id, slug, title, order)
-lessons (id, module_id, title, content_full, content_summary, order)
-exercises (id, lesson_id?, type, payload JSON, difficulty)
+modules (id, title, order, published)
+lessons (id, module_id, title, content_full, content_summary, order, published)
+exercises (id, lesson_id?, type, payload JSON, difficulty, published)
 attempts (id, user_id, exercise_id, score, answers, created_at)
-assessments (id, title, duration_min, questions JSON / relation)
+assessments (id, title, duration_min, config JSON, published)
+assessment_questions (id, assessment_id, type, payload, keywords JSON?, points)
 assessment_attempts (id, user_id, assessment_id, score, answers, started_at, finished_at)
-lesson_progress (user_id, lesson_id, status: unread|reading|done, mode_pref)
+lesson_progress (user_id, lesson_id, status, mode_pref)
 ```
+
+`payload` / `keywords` portent la config QCM, maths, ou mots-clés des ouvertes.
 
 ### Sécurité
 
-- Row Level Security : un apprenti ne voit que ses données ; un formateur voit sa classe.
-- Pas de secrets côté client.
-- Sessions sécurisées (Supabase Auth).
+- RLS : apprenti = ses données ; formateur = sa classe + contenu.
+- Seul le formateur peut créer des users (via Edge Function / service role côté serveur, jamais la clé service dans le navigateur).
 
 ---
 
-## 6. Structure de contenu pédagogique (exemple)
+## 7. Structure de contenu (CFC Logisticien·ne — trame)
 
-À valider / adapter au référentiel CFC Logisticien·ne (ou programme EPCAS exact) :
+Trame de départ (le formateur remplit / ajuste via l’interface) :
 
-1. Fondamentaux de la logistique & flux
-2. Réception des marchandises
-3. Stockage & implantations
-4. Préparation de commandes
-5. Expédition & transport
-6. Inventaires & stocks
-7. Documents & traçabilité
-8. Sécurité, ergonomie, qualité
-9. Maths appliquées (fil rouge transversal)
-
-Chaque module = leçons + exercices liés + questions réutilisables dans les blancs.
+1. Fondamentaux de la logistique & flux  
+2. Réception des marchandises  
+3. Stockage & implantations  
+4. Préparation de commandes  
+5. Expédition & transport  
+6. Inventaires & stocks  
+7. Documents & traçabilité  
+8. Sécurité, ergonomie, qualité  
+9. Maths appliquées (transversal)
 
 ---
 
-## 7. Design & identité visuelle
+## 8. Décisions verrouillées
 
-Direction proposée (à confirmer) :
-
-- Atmosphère **entrepôt / flux / précision** : bleus industriels, orange signalisation, fond texturé léger (pas flat blanc).
-- Typographie expressive (pas Inter/Roboto) : une display pour titres, une lisible pour le corps de texte long.
-- Hero / accueil : marque **EPCAS** dominante + une phrase métier + CTA « Continuer ma formation ».
-- Éviter l’esthétique « dashboard violet » ou « carte cream + terracotta ».
-- Motion discret : transition Complet ↔ Résumé, feedback exercice, entrée des scores.
+| # | Décision | Choix |
+|---|----------|--------|
+| 1 | Référentiel | **CFC Logisticien·ne — EPCA Sion** |
+| 2 | Contenu | **Formateur via interface** |
+| 3 | Comptes | **Gérés par le formateur dans l’interface** |
+| 4 | Hébergement data | **Supabase Free** (front Vercel Free) — avec limite pause inactivité |
+| 5 | Correction | **Auto** + ouvertes par **mots-clés** (+ option relecture manuelle partielle) |
+| 6 | Langue | **Français uniquement** |
+| 7 | Nom | **EPCAS Logistique** |
+| + | Design | **Thème pastel unique** + **design system de composants partagés** |
 
 ---
 
-## 8. Livraison par phases
+## 9. Livraison par phases
 
-### Phase 0 — Validation (cette étape)
-- Valider ce plan, le référentiel, les rôles, la stack.
+### Phase 0 — Plan *(fait)*
+Décisions + design system + stack.
 
-### Phase 1 — Socle
-- Auth, rôles, classes, shell app (nav bureau + mobile).
-- 1 module théorie démo (Complet / Résumé).
-- 1 type d’exercice QCM + 1 exercice maths.
-- Progression basique apprenti.
+### Phase 1 — Socle + design system
+- Tokens pastel + composants UI de base  
+- Auth + rôles + shell (nav bureau / mobile)  
+- Interface formateur : créer classe, créer comptes apprentis  
+- 1 module théorie démo (Complet / Résumé) éditable  
+- 1 QCM + 1 exercice maths + progression basique  
 
-### Phase 2 — Pédagogie
-- Tous les types d’exercices prévus.
-- Évaluations à blanc (timer, score, historique).
-- Suivi formateur (vue classe + fiche élève).
+### Phase 2 — Pédagogie complète
+- Tous types d’exercices  
+- Blancs (timer, score)  
+- Questions ouvertes + moteur mots-clés  
+- Suivi formateur (classe + fiche)  
 
 ### Phase 3 — Contenu & polish
-- Remplir les modules réels.
-- Export CSV, alertes lacunes.
-- Affinage mobile, accessibilité, performances.
+- Remplissage CFC via interface  
+- Export CSV, alertes  
+- Affinage mobile / accessibilité  
 
 ### Phase 4 (optionnel)
-- Questions ouvertes + correction manuelle.
-- Mode hors-ligne lecture.
-- Badges / gamification légère (si demandé).
-
----
-
-## 9. Décisions à trancher avant le code
-
-1. **Référentiel exact** : CFC Logisticien·ne ORFO, programme interne EPCAS, autre ?
-2. **Qui crée le contenu** : formateurs via interface, ou contenu fourni / rédigé dans le repo (MDX) ?
-3. **Comptes** : email/mot de passe école, SSO Microsoft/Google, codes classe ?
-4. **Hébergement & domaine** : contraintes IT Valais / EPCAS ?
-5. **Évaluations** : correction 100 % auto en V1, ou déjà des questions ouvertes ?
-6. **Langue** : français uniquement, ou FR + DE plus tard ?
-7. **Données sensibles** : hébergement CH/EU requis ?
-8. **Nom produit** : « EPCAS Logistique », autre marque ?
+- Relecture manuelle des ouvertes partielles  
+- Hors-ligne lecture  
+- Gamification légère  
 
 ---
 
 ## 10. Critères de succès V1
 
-- Un apprenti peut lire un chapitre en mode résumé, faire 5 exercices, passer un blanc, et voir son score.
-- Un formateur voit en un coup d’œil qui a travaillé et qui bloque.
-- L’usage mobile permet révision + quiz sans frustration.
-- Temps de chargement raisonnable sur réseau école.
+- Formateur crée un compte apprenti, une leçon (complet + résumé), un exercice, un blanc avec question ouverte à mots-clés.  
+- Apprenti lit en résumé, s’entraîne, passe un blanc, voit son score.  
+- Même look des champs / boutons sur toutes les pages.  
+- Mobile utilisable pour quiz et révision.  
 
 ---
 
 ## 11. Prochaine étape
 
-Après validation des points de la section 9 (même réponses partielles), démarrer **Phase 1 — Socle** sur une branche dédiée.
+**Démarrer Phase 1 — Socle + design system** dès confirmation.
