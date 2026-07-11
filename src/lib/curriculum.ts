@@ -5871,6 +5871,173 @@ const DEMO_402_OBJECTIFS_SUMMARY = `## Objectifs
 - Central / décentral
 - Transbordement · consignation · maturation`;
 
+/** Contenu Module 403 — Les formes de stockage */
+const DEMO_403_THEORIE_FULL = `## 3. Les formes de stockage
+
+### 3.1 Stockage au sol
+
+Marchandises placées **au sol**. Variante de base pour le détail : peu d'organisation, coûts réduits.
+
+#### 3.1.1 Bloc à plat
+Unités **non empilées**, accès via couloirs entre rangées. Grande surface. Idéal : volumineux, spéciaux, voitures, vrac (gravier).
+
+#### 3.1.2 Bloc en piles
+Base au sol + empilement. Matériel **insensible à la pression** + moyens de gerbage. Grandes quantités du même article (promos, harasses/palettes vides). Attention : **charge au sol** (kg/m²).
+
+#### 3.1.3 Empilage de marchandises
+Autorisé si chargement solide et conditions OK (T°, humidité…). Respecter hauteur de pile, contrôle régulier. Sacs : pas d'endommagement, pile stable.
+
+#### 3.1.4 Lignes ou rangées
+- **Lignes** (l'une derrière l'autre) : accès à l'unité suivante de la ligne
+- **Rangées** (côte à côte) : accès à chaque unité · allée entre chaque rangée
+
+Disposition longi/transversale. Piles inclinées → démonter et reconditionner aussitôt.
+
+**Remarque :** stockage au sol économique pour blocs/rangées quand l'accès à **chaque** unité n'est pas obligatoire.
+
+#### 3.1.5 Bouteilles sous pression
+Gaz en bouteilles acier : ne doivent **pas** pouvoir se renverser → souvent **chaîne**. Même exigence pour le transport interne.
+
+#### 3.1.6 Produits longs et panneaux
+Tubes/barres souvent horizontaux ; pièces individuelles verticales en **râteliers** (séparation, recherche facile). Attention forces latérales au prélèvement vertical. Surveiller la **déformation**.
+
+### 3.2 Rayonnage compartimenté
+
+Aussi : rayonnage à tablettes / plateaux. Marchandises de détail **sans** palette · étagères. Pièces individuelles, petits volumes/poids. Tiroirs et bacs → nombreuses références · préparation manuelle.
+
+#### 3.2.1 À étages
+Plusieurs niveaux pour optimiser l'espace. **ABC** : rotation rapide = trajets courts ; lente = fond / haut.
+
+### 3.3 Rayonnage à palettes
+
+Montants + **traverses (lisses)** · palettes dessus. Souvent pas de sécurité arrière contre basculement (palette = support). Simple (contre mur) ou double (deux côtés).
+
+**Versions :** charge/traverse typique 1600–1800 kg · lourds jusqu'à ~4500 kg · intérieur / extérieur (galvanisé).
+
+**Traverses :** profilés tôle · goupilles anti-soulèvement fourches · charge indiquée. Montants endommagés (chariots) → capacité ↓ → **remplacer**.
+
+**Accessoires :**
+- **Protection antichoc** (montants)
+- **Butée arrière** (palettes ne passent pas derrière)
+- **Grille** anti-chute (zones piétonnes derrière / sous rayonnage)
+- Supports pour marchandises non palettisées
+
+### 3.4 Rayonnage drive-in
+
+Alternative au stockage en bloc : canaux de rayonnages continus. Palettes sur **profilés latéraux** (pas empilées) → marchandises sensibles à la pression possibles. Remplissage d'un côté → seule l'avant accessible. Grandes quantités non empilables · **FIFO impossible**.
+
+### 3.5 Drive-in à double entrée
+
+Accessible des **deux** côtés : entrée d'un côté, sortie de l'autre → **FIFO** possible.
+
+### 3.6 Rayonnage dynamique
+
+Marchandises sur plan incliné à **rouleaux** · gravité du chargement vers le prélèvement (dynamique). Remplissage d'un côté, prélèvement de l'autre.
+
+#### 3.6.1 Accumulation
+Inclinaison vers la sortie · nouvelles poussent les anciennes → **LIFO**. Peu sensibles aux chocs, sans DLC.
+
+### 3.7 Rayonnage cantilever (porte-à-faux)
+
+Pour produits **longs** (planches, barres, tubes). Montant central + bras latéraux · accès sans traverse bloquante.
+
+#### 3.7.1 Stockage horizontal auto (empileur)
+Cassettes mobiles · déstockage automatique · plus coûteux.
+
+### 3.8 Étagère / casier en nid d'abeille
+
+Petites/moyennes quantités de marchandises longues (tunnels). Profondeur ≈ longueur (acier souvent 6 m). Plateforme mobile devant. Prélèvement main/pinces · découpe possible sur place. Profilés coupés moins visibles qu'en cantilever.
+
+### 3.9 Rayonnage mobile
+
+Rangées coulissantes **sans** allées fixes → gain d'espace. Allée ouverte seulement où besoin. Sur rails · direction unique · manuel ou moteur.
+
+**Remarque :** beaucoup de place gagnée, **temps d'accès élevé** · quantités moyennes, **faible** rotation.
+
+- **Compartiments mobiles** — surtout archives
+- **Palettes mobiles** — faible rotation · chambres froides (m³ économisés = énergie ↓)
+
+### 3.10 Rayonnages rotatifs
+
+#### 3.10.1 Verticaux (« Paternoster »)
+Compartiments sur chaînes verticales · souvent fermés/verrouillables (anti-vol · valeur). Prélèvement à hauteur ergonomique · clavier. Un utilisateur à la fois.
+
+#### 3.10.2 Horizontaux
+Casiers sur roulements / chaîne · « la marchandise va à l'homme ».
+
+### 3.11 Stockage suspendu
+
+#### 3.11.1 Statique
+Cintres/crochets · housses · multi-niveaux avec plateformes.
+
+#### 3.11.2 Dynamique
+Convoyeur horizontal (rails + chaîne) · textiles, conteneurs… Piloté par ordinateur · « marchandise vers l'homme ». Textile, boucheries industrielles, distributeurs, vestiaires événements.
+
+### 3.12 Installations modernes
+
+#### 3.12.1 Navette (satellite)
+Véhicule autonome pour entreposer / transférer / retirer. Petites pièces et conteneurs · volume optimisé · frigorifique jusqu'à < −30 °C.
+
+#### 3.12.2 Robots de prélèvement
+Automatiques : tâche partielle ou complète. **Cobots** (collaboratifs) · **AMR** (autonomes dans les allées).
+
+#### 3.12.3 Hauts rayonnages (grande hauteur)
+Hauteur ~**15–45 m** · milliers à centaines de milliers d'emplacements. Fort investissement · WMS · transstockeurs. Préparation statique (homme → marchandise) ou dynamique (marchandise → homme).
+
+#### 3.12.4 Autostore
+Norvège · petites pièces · bacs empilés (sans rayonnage classique) · robots. Rotation rapide en haut, lente en bas.
+
+**Avantages :** espace · protection (vol/poussière) · rotation ↑ · pré-ordonnancement WMS · 24/7 · extensible  
+**Inconvénients :** limité volume/poids (petites pièces)`;
+
+const DEMO_403_THEORIE_SUMMARY = `## À retenir — Module 403
+
+### Sol
+Bloc plat / piles · lignes/rangées · bouteilles (chaîne) · longs/panneaux
+
+### Rayonnages
+**Compartimenté** (petites pièces, étages + ABC)  
+**Palettes** : traverses, antichoc, butées, grilles · 1,6–4,5 t/traverse  
+**Drive-in** (1 côté, pas FIFO) · **double entrée** (FIFO)  
+**Dynamique** (gravité) · **accumulation** (LIFO)  
+**Cantilever** / nid d'abeille · **mobile** (place ↑, accès ↓)  
+**Rotatif** V/H · **suspendu** statique/dynamique
+
+### Moderne
+Navettes · cobots/AMR · hauts rayonnages 15–45 m · **Autostore**`;
+
+const DEMO_403_APERCU_FULL = `## Aperçu du module 403
+
+Ce module présente les **formes de stockage** : sol, rayonnages classiques et solutions modernes (navettes, robots, Autostore).
+
+### Vous allez découvrir
+1. Stockage au sol (bloc, piles, longs, gaz)
+2. Compartimenté, palettes, drive-in, dynamique, cantilever
+3. Mobile, rotatif, suspendu
+4. Navettes, robots, hauts rayonnages, Autostore
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite des modules 401–402`;
+
+const DEMO_403_APERCU_SUMMARY = `## Aperçu — Module 403
+- Sol & rayonnages classiques
+- Drive-in / dynamique / cantilever
+- Mobile · rotatif · moderne (Autostore)`;
+
+const DEMO_403_OBJECTIFS_FULL = `## Objectifs du module 403
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Décrire le stockage **au sol** et ses variantes
+- Comparer rayonnages **compartimenté**, **palettes**, **drive-in**, **dynamique**, **cantilever**
+- Expliquer rayonnages **mobiles**, **rotatifs** et stockage **suspendu**
+- Situer les solutions modernes (navettes, robots, hauts rayonnages, **Autostore**) et leurs limites`;
+
+const DEMO_403_OBJECTIFS_SUMMARY = `## Objectifs
+- Sol & rayonnages
+- FIFO/LIFO selon forme
+- Solutions modernes`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -6345,6 +6512,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_402_THEORIE_FULL,
       summary: DEMO_402_THEORIE_SUMMARY,
+    },
+  },
+  "403": {
+    objectifs: {
+      full: DEMO_403_OBJECTIFS_FULL,
+      summary: DEMO_403_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_403_APERCU_FULL,
+      summary: DEMO_403_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_403_THEORIE_FULL,
+      summary: DEMO_403_THEORIE_SUMMARY,
     },
   },
 };
