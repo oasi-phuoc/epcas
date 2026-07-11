@@ -8770,6 +8770,115 @@ const DEMO_608_OBJECTIFS_SUMMARY = `## Objectifs
 - ULD · belly freight
 - AWB · DGR`;
 
+/** Contenu Module 609 — Navigation */
+const DEMO_609_THEORIE_FULL = `## 9. Navigation
+
+Pratique depuis > **8000 ans** · pierre angulaire de la **mondialisation**. Villes au bord de l'eau = commerce. Aujourd'hui : encore décisif · relativement **lent** (Hong Kong–Hambourg ≈ 25–30 jours) · mais beaucoup de poids · **faible coût** · peu d'énergie.
+
+👉 Grandes quantités · moindres coûts · mondial.
+
+**Ex.** Citerne Rhin **2800 t** · Rotterdam–Bâle–Rotterdam ≈ **6×24 h** (avec chargement) ≈ 35 wagons-citernes ou **147** camions · ~**1,1 ct**/litre pétrole Rotterdam→Bâle.
+
+### 9.1 Principales voies
+
+#### 9.1.1 Suisse
+Voies intérieures peu importantes (sauf sable/gravier sur lacs). Seul le **Rhin** pour bateaux de marchandises.
+
+**Rhin — porte sur le monde**  
+~1239 km · voie intérieure n°1 Europe · **10–12 %** imports CH · **1/4–1/3** imports huiles minérales. Convention de **Mannheim** (1868) : accès libre · eaux internationales jusqu'au Mittlere Brücke (Bâle). Capacité bateaux ~**300–3000 t**. Dépend du **niveau d'eau** (crues / étiage = limitations).
+
+#### 9.1.2 Océans
+Milliers de miles nautiques · semaines/mois. Cap Horn → Rotterdam > **12 000 km** ≈ **6500 NM**.  
+**1 mile nautique (NM) = 1,852 km**.
+
+#### 9.1.3 Voies artificielles
+Nerf de la guerre · interruptions = embouteillages / pertes (ex. **Ever Given**, Suez, mars 2021 · 6 jours).
+
+| Canal | Ordre de grandeur |
+| --- | --- |
+| **Suez** | ~19 000 bateaux/an · ~1200 Mt fret |
+| **Panama** | ~13 000 · ~255 Mt |
+| **Kiel** | ~28 000 · ~84 Mt |
+
+Climat : **passage du Nord-Est** raccourcit Shanghai–Rotterdam ≈ **3800 km** (2100 NM) · étés sans brise-glace parfois possibles.
+
+👉 Économie mondiale tributaire d'itinéraires qui fonctionnent.
+
+### 9.2 Principaux ports
+
+#### 9.2.1 Ports du Rhin (Bâle)
+Transbordement · stockage temporaire · dédouanement · livraison · transformation · réservoirs / silos · prestataires logistiques.
+
+#### 9.2.2 Grands ports mondiaux
+Dominés par la **Chine** (usine du monde). **Shanghai** > **40 M** conteneurs · **Rotterdam** (1er Europe) ≈ **14 M**.
+
+**TEU** (*Twenty-foot Equivalent Unit*) : 20' = **1 TEU** · 40' = **2 TEU**.
+
+### 9.3 Transbordement
+
+#### 9.3.1 Moyens
+Grues / **portiques** · chariots télescopiques / contrepoids lourds (jusqu'à ~**50 t**) · **Container-Carrier** (cavalier).
+
+#### 9.3.2 Spreader
+Dispositif télescopique accroché aux **4 coins** du conteneur.
+
+#### 9.3.3 Arrimage à bord
+Chargement **LIFO**. Cale : glissières. Pont : *bridge fittings*, **twistlocks**, barres d'arrimage…
+
+### 9.4 Forces dynamiques
+
+Vagues · Beaufort 10–11 · vagues ~15 m → tangage / roulis. Forces **simultanées**, intenses, multidirectionnelles (tangage, roulis, immersion, glissement, oscillations…). Ne jamais supposer mer calme · arrimage terrestre ≠ toujours suffisant en mer.
+
+### 9.5 Charger correctement
+
+Palettes **peu** utilisées (espace > travail) · EUR type 1 **inadaptée** au conteneur. Retenues murales · **blocage sans espace** · coussins d'air pour vides.
+
+👉 Bon arrimage dans le conteneur = éviter les dommages.`;
+
+const DEMO_609_THEORIE_SUMMARY = `## À retenir — Module 609
+
+### Navigation
+Lent · cheap · grandes quantités · Rhin vital pour CH
+
+### Voies
+Mannheim · Suez / Panama / Kiel · Nord-Est arctique
+
+### Ports & technique
+Bâle · Shanghai / TEU · portiques · spreader · LIFO  
+Forces vagues · blocage dans conteneur`;
+
+const DEMO_609_APERCU_FULL = `## Aperçu du module 609
+
+Ce module traite de la **navigation** : voies (Rhin, océans, canaux), ports, transbordement et arrimage.
+
+### Vous allez découvrir
+1. Atouts du transport fluvial / maritime
+2. Rhin, canaux artificiels et TEU
+3. Moyens de manutention et arrimage à bord
+4. Forces dynamiques et chargement conteneur
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 608`;
+
+const DEMO_609_APERCU_SUMMARY = `## Aperçu — Module 609
+- Rhin · canaux · ports
+- TEU · spreader · LIFO
+- Forces & arrimage`;
+
+const DEMO_609_OBJECTIFS_FULL = `## Objectifs du module 609
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer le rôle de la **navigation** (coût, capacité, lenteur) et du **Rhin** pour la Suisse
+- Situer les grandes **voies** (océans, Suez/Panama/Kiel) et la notion de **TEU**
+- Décrire le **transbordement** (portiques, spreader, LIFO, arrimage)
+- Relier les **forces** maritimes au chargement correct des conteneurs`;
+
+const DEMO_609_OBJECTIFS_SUMMARY = `## Objectifs
+- Rhin & voies mondiales
+- Ports · TEU · manutention
+- Forces & arrimage`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -9552,6 +9661,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_608_THEORIE_FULL,
       summary: DEMO_608_THEORIE_SUMMARY,
+    },
+  },
+  "609": {
+    objectifs: {
+      full: DEMO_609_OBJECTIFS_FULL,
+      summary: DEMO_609_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_609_APERCU_FULL,
+      summary: DEMO_609_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_609_THEORIE_FULL,
+      summary: DEMO_609_THEORIE_SUMMARY,
     },
   },
 };
