@@ -7315,6 +7315,135 @@ const DEMO_502_OBJECTIFS_SUMMARY = `## Objectifs
 - Types de stocks
 - Élimination`;
 
+/** Contenu Module 503 — L'organisation de la production */
+const DEMO_503_THEORIE_FULL = `## 3. Organisation de la production
+
+Les caractéristiques du produit déterminent l'infrastructure — au stockage **et** en production. Structures variées → plusieurs façons d'organiser.
+
+### 3.1 Critères (types de fabrication)
+
+La **fabrication** dépend de :
+- **Quantité** de produits fabriqués
+- **Organisation** de la production
+- **Dépendance** du lieu de fabrication
+
+Le type choisi peut être modifié plus tard, mais avec beaucoup d'**efforts** et de **coûts** → bien planifier dès le départ.
+
+### 3.2 Types de fabrication
+
+#### 3.2.1 Fabrication unitaire
+Pièces **uniques** · infra + personnel **polyvalents** · changements d'équipement fréquents. Aucun produit n'est identique. Ex. : tableaux, appartements, costumes sur mesure.  
+**+** personnalisation client · **−** temps de fabrication ↑
+
+#### 3.2.2 Production multiple
+Même produit fabriqué **plusieurs fois** · infra et personnel orientés process spécifique · activités **répétitives** → optimisation possible.
+
+#### 3.2.3 Production de masse
+Max. de quantité en min. de temps · qualité maintenue · quantité non limitée au démarrage · process adapté puis automatisable · **rationalisation** · coût unitaire ↓. Ex. : ciment, oursons en gomme, pièces de monnaie.  
+**+** grandes quantités = coût ↓ · **−** aucune flexibilité
+
+#### 3.2.4 Production en série
+Entre unitaire et masse · **nombre limité** de produits similaires · séries avec différences minimales. Ex. : voitures, vêtements, meubles.  
+**+** productivité ↑ · **−** peu de flexibilité · coûts de conversion ↑
+
+#### 3.2.5 Production de variété (par sortes)
+Proche de la série · quantités avec **différences minimes** (ex. tailles mode). Ex. : cigarettes, bière, mode.  
+**+** MP identiques / similaires · **−** taille optimale des lots = défi
+
+#### 3.2.6 Production par lots
+Différences **non volontaires** dans le process (limite d'infra : four, récipient, parcelle…). Ex. : chimie, pain, pommes de terre.  
+**+** série ratée éliminable · **numérotation / traçabilité** (→ module 506) · **−** laborieux · arrêtés par l'infra
+
+### 3.3 Organisation de la production
+
+Après le type de fabrication : définir **infrastructure** et **ordre**. Modifier ensuite = efforts + coûts ↑.
+
+#### 3.3.1 Fabrication à l'établi
+Une personne / un groupe mène le produit **du début à la fin** au même poste · pas de transition obligatoire. Uniques ou petites séries. Ex. : bijoux, tableaux (aussi EnterSite AG).  
+**+** qualité ↑ · **−** process souvent redéfini · temps / coût ↑
+
+#### 3.3.2 Fabrication en atelier
+Postes / moyens **similaires regroupés** · le produit « circule » selon le plan (fraise → rabote → perce…). Grande **flexibilité** d'ordre. Ex. : bois, métal.  
+**+** flexibilité · **−** temps de passage ↑
+
+#### 3.3.3 Fabrication à la chaîne (flux)
+Ordre **fixe** · postes **coordonnés dans le temps** · transport continu (manuel ou chaîne). Vitesse adaptée pour que chaque poste finisse à temps. Ex. : voitures.  
+**+** temps de traitement ↓ · **−** installation coûteuse · tâches monotones
+
+#### 3.3.4 Fabrication de chantier (principe de l'emplacement)
+Main-d'œuvre + moyens amenés **sur site** · produit trop grand / lié au lieu (maison, tunnel). Pièces parfois préfabriquées hors site.  
+**+** surface fournie par le client · **−** coûts de transport (personnel + **intrants**)
+
+*Intrant* = élément entrant dans le process · *extrant* = élément sortant.
+
+### 3.4 Aperçu synthétique
+
+| Type / orga | Brève description | + | − |
+| --- | --- | --- | --- |
+| Unitaire | Produits uniques | Qualité / perso. | Coûts / temps |
+| Masse | Séries continues | Coûts ↓ | Flexibilité ↓ |
+| Série | Grandes quantités limitées | Productivité | Conversion |
+| Variété | Différences minimes | MP uniformes | Lots / conversion |
+| Lots | Limite d'infra | Traçabilité | Temps |
+| Établi | Un poste | Qualité | Temps |
+| Atelier | Plusieurs postes flexibles | Flexibilité | Passage / planification |
+| Chaîne | Ordre fixe synchronisé | Temps ↓ | Coûts machines |
+| Chantier | Sur place | Pas de surface propre | Transport |
+
+### 3.5 Lean Production
+
+« Production **allégée** » : usage économique et efficace du temps, des moyens, de la production et du personnel.
+
+Choisir la meilleure variante fabrication + organisation · supprimer le **superflu** · n'utiliser que le nécessaire.
+
+Objectifs lean : stocks ↓ · petits lots · flexibilité client ↑ · temps de passage ↓ · bon travail d'équipe.`;
+
+const DEMO_503_THEORIE_SUMMARY = `## À retenir — Module 503
+
+### Critères
+Quantité · organisation · lieu
+
+### Fabrication
+Unitaire · multiple · masse · série · variété · lots (+ traçabilité)
+
+### Organisation
+Établi · atelier · chaîne · chantier
+
+### Lean
+Alléger : stocks ↓ · petits lots · flexibilité · passage court`;
+
+const DEMO_503_APERCU_FULL = `## Aperçu du module 503
+
+Ce module présente les **types de fabrication** et les **formes d'organisation** de la production, jusqu'à la Lean Production.
+
+### Vous allez découvrir
+1. Critères de choix du type de fabrication
+2. Unitaire → masse / série / variété / lots
+3. Établi, atelier, chaîne, chantier
+4. Lean Production (production allégée)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite des modules 501–502`;
+
+const DEMO_503_APERCU_SUMMARY = `## Aperçu — Module 503
+- Types de fabrication
+- Organisations (établi → chantier)
+- Lean`;
+
+const DEMO_503_OBJECTIFS_FULL = `## Objectifs du module 503
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Citer les **critères** qui influencent le type de fabrication
+- Distinguer fabrication **unitaire**, **masse**, **série**, **variété** et **lots**
+- Comparer les organisations **établi**, **atelier**, **chaîne** et **chantier**
+- Expliquer le principe de la **Lean Production**`;
+
+const DEMO_503_OBJECTIFS_SUMMARY = `## Objectifs
+- Types de fabrication
+- Organisations
+- Lean`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -7929,6 +8058,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_502_THEORIE_FULL,
       summary: DEMO_502_THEORIE_SUMMARY,
+    },
+  },
+  "503": {
+    objectifs: {
+      full: DEMO_503_OBJECTIFS_FULL,
+      summary: DEMO_503_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_503_APERCU_FULL,
+      summary: DEMO_503_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_503_THEORIE_FULL,
+      summary: DEMO_503_THEORIE_SUMMARY,
     },
   },
 };
