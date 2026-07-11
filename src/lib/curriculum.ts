@@ -6501,6 +6501,182 @@ const DEMO_407_OBJECTIFS_SUMMARY = `## Objectifs
 - Élévateur / transstockeur
 - Levier · diagrammes`;
 
+/** Contenu Module 408 — Organisation de l'entrepôt */
+const DEMO_408_THEORIE_FULL = `## 8. Organisation de l'entrepôt
+
+Objectif : flux de marchandises le **plus court et simple** possible. Les exemples sont indicatifs selon la tâche de l'entreprise.
+
+### 8.1 Structure d'une entreprise de stockage
+
+Recevoir de grandes quantités, stocker, livrer selon besoin. Besoins typiques :
+- réception performante
+- capacité de stockage suffisante
+- secteur **préparation de commandes**
+- service **expédition**
+
+### 8.2 Planification d'un entrepôt
+
+Planification complexe, individuelle — avantage concurrentiel (JIT). Circulation fluide au premier plan.
+
+**Questions clés :** flux optimal · quelles marchandises/quantités · exigences (périssable, vol, MD) · fonctions (tampon…) · charge au sol / occupation · rayonnages, ERP, engins · chaotique vs case · automatisation · extensions.
+
+S'appuyer sur plans, chiffres clés (rotation, stock moyen), **ABC**. Réserver de la capacité en pointe. Occupation optimale des emplacements : **80–90 %** max (au-delà → problèmes quotidiens).
+
+**Agencement** : plan d'implantation (flux, zones, rayonnages). Après mise en service : vérifier/optimiser. Simulations numériques pour détecter les erreurs avant aménagement.
+
+### 8.3 Types d'entrepôts par fonction
+
+| Type | Rôle |
+| --- | --- |
+| **Intermédiaire** | Tampon entre étapes de process |
+| **Produits finis** | Attente expédition · délai ↓ · près de l'expédition |
+| **Transbordement** | Court séjour · réception diverse → points de vente (distribution) |
+| **Approvisionnement / MP** | Garantir le flux de production |
+| **Préparation de commandes** | Accès efficace · espace/temps/coûts |
+| **Réserve** | Fluctuations · faible rotation · stocks élevés |
+
+### 8.4 Formes simples (sol)
+
+Sans rayonnage · extérieur ou fermé · volumineux/lourds/vrac.
+
+**+** pas d'installations · organisation simple · surfaces flexibles  
+**−** peu mécanisable · hauteur limitée · mauvaises vue d'ensemble si gros stocks
+
+#### 8.4.1 Blocs
+Bonne occupation · pas d'accès direct à chaque unité · **FIFO difficile** · grandes quantités homogènes · attention pression d'empilement.
+
+#### 8.4.2 Rangées / lignes
+Allées entre rangées · occupation ↓ · accès ↑ · FIFO possible · meilleure vue.
+
+#### 8.4.3 Épis
+Moins de temps de manœuvre · occupation encore ↓ · rare (accès prioritaire sur occupation).
+
+**Remarque :** forme compacte = meilleure occupation, temps d'accès ↑.
+
+### 8.5 Charge au sol
+
+Forces **statiques** (stock) et **dynamiques** (engins). Rayonnages/préparateurs → charges **ponctuelles** élevées. Afficher le max (norme : blanc sur bleu). Sans panneau ≠ illimité → vérifier ingénieur.
+
+**Conversion :** 1 kg ≈ **10 N** (pratique ; physique 9,81). Palette 1000 kg → ~10 000 N.
+
+Rayonnage : jusqu'à **7 t+** sous un montant (~100 cm²). Même somme de forces qu'en bloc, mais concentrée.
+
+Engins : charges dynamiques (transstockeur jusqu'à ~20 t) · fortes à l'arrêt (ex. fourches latérales en hauteur).
+
+**Autres facteurs :** qualité du sol · hauteur locaux · accès (portes, ascenseur) · climat.
+
+#### Exemples
+1. 80 palettes × 850 kg sur 10×13 m → ~**5230 N/m²** (523 kg/m²)  
+2. 45×25 m, 20 000 N/m², palettes 500 kg → max **4500** palettes
+
+### 8.6 Largeur d'allée (Ast)
+
+Largeur nécessaire au chariot pour stocker/déstocker. Plus large = moins de surface de stockage.
+
+**Formule :** L1 (chariot jusqu'à base fourche) + L2 (longueur charge) + **20 cm**.
+
+Ordres de grandeur : contrepoids 3 roues ~**4 m** · mât rétractable ~**3 m**.
+
+### 8.7 Utilisation des surfaces
+
+| Notion | Calcul |
+| --- | --- |
+| Surface **globale** | L × l × nb étages |
+| Surface **brute** | Globale − inutilisable (piliers, sanitaires, quais…) |
+| Surface **nette** | Brute − allées |
+| **Taux d'exploitation surfaces** | Nette / brute × 100 |
+
+Ex. Rupperswil : 65×45 = 2925 m² → brute 2650 → nette 1350 → taux ≈ **51 %**.
+
+Volume : Euro I ≈ 1 m² de base en pratique · hauteur 1 m → ~1 m³.
+
+### 8.8 Utilisation de l'espace
+
+Intègre la **hauteur**. Taux = volume utilisé / volume total × 100.  
+Ex. : nette 1350 · hauteur pièce 5 m · hauteur palettes 1,60 m → 2160/6750 ≈ **32 %**.
+
+Aussi critique en transport (route, rail, mer, air).
+
+### 8.9 Stockage sur rayonnages
+
+Meilleure utilisation du volume vs sol. Alvéole = 2 montants + traverses · souvent 3 palettes. Places au sol · puis niveaux 1, 2… Picking manuel surtout au sol.
+
+**Charges :** traverse (alvéole) · au sol (entre 2 montants) · totale (rayonnage entier).
+
+Hauteurs homogènes dans une alvéole = meilleure occupation. Types : hauteur (faible ≤7 m · >5,5 m = spécialistes · jusqu'à 45 m) · profondeur 1100/750 mm · traverses souvent 2700 mm · lourds vissés.
+
+### 8.10 Numérotation des articles
+
+Objectifs : **identifier** · **classifier** · **informer** · **contrôler** (chiffre de contrôle, ex. GTIN-13 → module 801).
+
+### 8.11 Numérotation des emplacements
+
+« Adresse » dans l'entrepôt (rue/maison/étage/appart.). Pas de norme unique. Ex. : étagère–niveau–emplacement ou étagère–emplacement–niveau · pairs/impairs sur rayonnages doubles.
+
+### 8.12 Flux de marchandises
+
+**Externe :** fournisseurs ↔ entreprise ↔ clients (modes de transport).  
+**Interne type :** réception → contrôle → préparation stockage → mise en stock → sortie → picking → emballage → chargement.
+
+Variantes : contrôle sauté si accord · réserve palettes vs zone picking · automatique (marchandise vers l'homme).
+
+### 8.13 Images de stock
+
+Vue d'occupation (libres / zones). **Analogique** (cartes/sachets) ou **numérique** (WMS/Excel) · actualisation continue.`;
+
+const DEMO_408_THEORIE_SUMMARY = `## À retenir — Module 408
+
+### Planification
+Flux court · 80–90 % occupation max · agencement + simulation
+
+### Fonctions
+Intermédiaire · finis · transbordement · MP · picking · réserve
+
+### Sol
+Blocs (occupation ↑, FIFO ↓) · rangées · épis  
+Charge au sol : 1 kg ≈ 10 N · ponctuel vs réparti · Ast
+
+### Indicateurs
+Globale → brute → nette · taux surfaces · taux espace (hauteur)
+
+### Rayonnages
+Traverse / sol / totale · hauteurs homogènes
+
+### Orga
+N° articles & emplacements · flux E→S · images de stock`;
+
+const DEMO_408_APERCU_FULL = `## Aperçu du module 408
+
+Ce module traite de l'**organisation de l'entrepôt** : planification, fonctions, formes au sol, charge au sol, allées, taux d'occupation, rayonnages, numérotation et flux.
+
+### Vous allez découvrir
+1. Planification et agencement (80–90 %)
+2. Types par fonction et formes au sol
+3. Charge au sol, Ast, taux surface/espace
+4. Rayonnages, n° articles/emplacements, flux, images de stock
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 407`;
+
+const DEMO_408_APERCU_SUMMARY = `## Aperçu — Module 408
+- Planification & fonctions
+- Charge au sol · Ast · taux
+- Flux · numérotation · images`;
+
+const DEMO_408_OBJECTIFS_FULL = `## Objectifs du module 408
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer la **planification** et l'agencement d'un entrepôt
+- Distinguer les entrepôts par **fonction** et les formes au sol
+- Calculer / interpréter **charge au sol**, **Ast**, taux d'**occupation** surface et espace
+- Décrire charges de rayonnage, **numérotation**, **flux** interne et **images de stock**`;
+
+const DEMO_408_OBJECTIFS_SUMMARY = `## Objectifs
+- Planification & formes
+- Charge · Ast · taux
+- Flux & numérotation`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -7045,6 +7221,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_407_THEORIE_FULL,
       summary: DEMO_407_THEORIE_SUMMARY,
+    },
+  },
+  "408": {
+    objectifs: {
+      full: DEMO_408_OBJECTIFS_FULL,
+      summary: DEMO_408_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_408_APERCU_FULL,
+      summary: DEMO_408_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_408_THEORIE_FULL,
+      summary: DEMO_408_THEORIE_SUMMARY,
     },
   },
 };
