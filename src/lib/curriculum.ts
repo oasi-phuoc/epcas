@@ -10447,6 +10447,134 @@ const DEMO_801_OBJECTIFS_SUMMARY = `## Objectifs
 - QR · Data Matrix
 - Placement · RFID`;
 
+/** Contenu Module 802 — Le transport (ICT) */
+const DEMO_802_THEORIE_FULL = `## 2. Le transport
+
+### 2.1 Surveillance du transport
+
+#### 2.1.1 Pourquoi surveiller ?
+Contrôle sans faille des **conditions de transport** (indicateurs + enregistreurs) jusqu'au client → détecter négligences et protéger la qualité.
+
+Pendant le trajet / stockage : chocs, chutes, dépose brutale, basculement, rupture de **chaîne du froid**, vols…  
+Conséquences : argent · confiance · **réputation**. L'**assurance transport** couvre le financier **si le dommage est prouvé** — pas l'image. Les indicateurs prouvent le respect (ou non) des exigences de manutention.
+
+**Avantages :** prescriptions contrôlables (fab. → client) · heure / lieu / responsables en cas de dommage · ↓ dommages · détection de dommages **cachés** · ↓ réclamations / coûts.
+
+**Domaines :** distribution · route / rail / air / mer · transitaires · manutentions internes.
+
+#### 2.1.2 Indicateurs
+Types et usages → détail module **307**.
+
+**Enregistreur de données de transport :** mesure continue et incorruptible (prod. → client) · chocs, vibrations, température, humidité, pression, inclinaison · horodatage · export PC · analyses stats / graphiques.
+
+### 2.2 Track and Trace
+
+Suivi et **traçabilité** d'un envoi de l'expéditeur au destinataire · avant et après livraison · utile pour améliorer l'expédition et traiter les **ordres de recherche**.
+
+| Variante | Principe |
+| --- | --- |
+| **Track & Trace** classique | Code-barres unique scanné aux étapes clés · statut consultable (ex. « Trié pour la livraison ») |
+| **Advanced** | Saisie auto via **RFID** (moins de manuel) |
+
+#### 2.2.1 Suivi d'un colis postal (ex. Poste Suisse)
+
+| Étape | Contenu |
+| --- | --- |
+| **Avis** | E-commerce (ex. Zalando) informe la date de livraison prévue |
+| **Suivi** | N° d'envoi sur post.ch · historique ~**180 jours** · services de planification tant que non livré |
+| **Réception** | Livraison chez le client · historique via n° d'identification |
+| **Retour** | Enregistrement en ligne · vendeur informé des articles attendus |
+| **Dépôt** | Guichet / agence · si pas d'étiquette retour → code-barres collé au dépôt |
+| **Quittance** | Récépissé avec n° = preuve de dépôt · base de **responsabilité** (perte / dommage) |
+
+🔎 Track & Trace Poste : [post.ch — expédier des colis](https://www.post.ch/fr/expedier-des-colis)
+
+#### 2.2.2 Statut d'un envoi
+Lecture en **2 étapes** au scanner : d'abord le **statut**, puis le **code d'identification**.
+
+**Envois suivables (ex. Poste) :**
+
+| Type | Exemples |
+| --- | --- |
+| Express | SameDay (après-midi / soir), Lune Swiss Express |
+| Colis | PostPac Priority / Economy, Encombrant, Promo, Vinolog, BLN… |
+| Lettres | Recommandée (R), actes judiciaires, A Plus, Dispomail T&T… |
+| International | URGENT, PRIORITY Plus, PostPac International, recommandées |
+
+### 2.3 Planification du transport
+
+Préparer les **tournées** pour des véhicules à pleine capacité sur un itinéraire optimal. Objectif : **optimiser les coûts** (énergie ↑, espace de chargement rare) + écologie — sans sacrifier **délais** et **qualité**.
+
+👉 Mission : coordonner tous les aspects vers des objectifs précis.
+
+#### 2.3.1 Principe des tournées
+Itinéraire basé sur les **lieux de déchargement** · métier des organisateurs de transport.
+
+**LIFO (Last-In, First-Out) :** ce qui se décharge en premier se charge en **dernier** → déchargement rationnel.
+
+**Facteurs d'influence :** trafic / chantiers · volume / poids / MD · n° de points · capacité véhicules · priorités clients (urgence, créneau) · moyens de déchargement · temps de travail / repos chauffeurs.
+
+**Mise à disposition :** si le chauffeur charge lui-même → préparer les unités par lieu de déchargement en zone dédiée.
+
+#### 2.3.2 Planification des tournées
+Regrouper et ordonner les ordres de transport · 1 tournée ≈ 1 personne + véhicule. Ex. : filiales, courrier, déchets, personnes, DEC (réseaux réguliers). Missions : détail (palettes) · vrac · personnes.
+
+| Approche | Caractéristique |
+| --- | --- |
+| **Manuelle** | Petites entreprises · carte · peu d'optimisation des coûts |
+| **Assistée (optimisation)** | Modèles mathématiques adaptés / **paramétrés** à l'entreprise |
+
+**Quatre points de l'optimisation :**
+1. Itinéraire optimal
+2. Utilisation économique des véhicules
+3. Chargement conforme et optimal
+4. Transmission auto des données (**sans papier**)`;
+
+const DEMO_802_THEORIE_SUMMARY = `## À retenir — Module 802
+
+### Surveillance
+Indicateurs + enregistreurs (chocs, T°, humidité…)  
+Preuve qualité · ↓ dommages · assurance si preuve
+
+### Track & Trace
+Scan code-barres (ou RFID avancé) · statut central  
+Poste : n° envoi · ~180 j · quittance = responsabilité
+
+### Planification
+Tournées · LIFO · facteurs trafic / clients / capacité  
+Optimisation assistée : itinéraire · véhicules · chargement · données`;
+
+const DEMO_802_APERCU_FULL = `## Aperçu du module 802
+
+Ce module traite du **transport** côté ICT : surveillance des conditions, Track & Trace et planification / optimisation des tournées.
+
+### Vous allez découvrir
+1. Indicateurs et enregistreurs de transport (lien module 307)
+2. Track & Trace classique et avancé (RFID) · parcours colis postal
+3. Planification des tournées (LIFO, facteurs) et optimisation assistée
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT`;
+
+const DEMO_802_APERCU_SUMMARY = `## Aperçu — Module 802
+- Surveillance · enregistreurs
+- Track & Trace
+- Tournées · optimisation`;
+
+const DEMO_802_OBJECTIFS_FULL = `## Objectifs du module 802
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer pourquoi surveiller le transport et le rôle des **indicateurs / enregistreurs**
+- Décrire le **Track & Trace** (classique vs RFID) et le suivi d'un colis (statut, quittance)
+- Appliquer le principe **LIFO** et citer les facteurs de planification des tournées
+- Distinguer planification **manuelle** et **optimisation** assistée (4 axes)`;
+
+const DEMO_802_OBJECTIFS_SUMMARY = `## Objectifs
+- Surveillance · enregistreurs
+- Track & Trace · statut
+- LIFO · optimisation tournées`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -11411,6 +11539,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_801_THEORIE_FULL,
       summary: DEMO_801_THEORIE_SUMMARY,
+    },
+  },
+  "802": {
+    objectifs: {
+      full: DEMO_802_OBJECTIFS_FULL,
+      summary: DEMO_802_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_802_APERCU_FULL,
+      summary: DEMO_802_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_802_THEORIE_FULL,
+      summary: DEMO_802_THEORIE_SUMMARY,
     },
   },
 };
