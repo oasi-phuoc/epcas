@@ -6145,6 +6145,148 @@ const DEMO_404_OBJECTIFS_SUMMARY = `## Objectifs
 - Mécanisé / auto
 - 3 principes de stockage`;
 
+/** Contenu Module 405 — Dangers dans les entrepôts */
+const DEMO_405_THEORIE_FULL = `## 5. Dangers dans les entrepôts
+
+Potentiels fréquents : **accidents** · **incendie** · **vol** · **substances dangereuses** · **nuisibles**.
+
+Techniques de sécurité variables selon produits. Certaines entreprises connaissent les dangers sans appliquer les mesures.
+
+### 5.1 Risque d'accident
+
+Beaucoup d'engins + piétons dans un espace restreint. Voies pas toujours séparées → visiteurs particulièrement exposés. Rayonnages aussi soumis aux exigences de sécurité.
+
+> Stockage et transport interne = parmi les activités logistiques les **plus risquées**.
+
+**Empiler correctement :** sol plat et porteur · emplacement préparé · pile stable en elle-même · ne pas s'appuyer sur les murs · distances suffisantes · protéger les emballages · petites/légères sur grandes/lourdes · imbrication ou couches intermédiaires.
+
+**Remarque :** plus la pile est haute, plus une irrégularité du sol déplace le centre de gravité → risque d'effondrement + pression asymétrique.
+
+**Charge au sol :** max admissible affichée (kg/m² ou N/m²). En logistique : facteur ≈ **10** (75 kg → ~750 N). Détails → module **408**.
+
+**Rayonnages :** stabilité · ne pas dépasser charges fabricant (traverse, sol, total) · charges réparties. Lisses non vissées → **goupilles**. Grilles anti-chute · protections antichocs aux angles. Contrôles réguliers (déformations, goupilles).
+
+**Panneaux verticaux :** pas de « feuilletage » manuel · ne pas appuyer sans sécuriser · installations adaptées · compartiments ≤ **0,5 m**. Transport : préférer horizontal ; antidérapants.
+
+**Armoires à tiroirs :** fixer mur/sol · blocage multi-tiroirs · remplir bas → haut · lourds en bas.
+
+Toujours dégager **voies d'évacuation**, extincteurs, voies de circulation · portes coupe-feu non bloquées.
+
+#### 5.1.1 Types de mesures
+Humaines · techniques · matérielles · d'exploitation · légales. ~**80 %** erreurs humaines · ~**20 %** dispositifs manquants.
+
+#### 5.1.2 Horaires de travail (apprentis CH)
+Temps de travail = disponibilité pour l'employeur. Logistique : max **45 h/semaine**, **9 h/jour** (art. 9 LTr) dans une plage de 12 h (souvent 06–20 h ; jusqu'à 22 h si ≥ 16 ans). Repos quotidien ≥ **12 h** (< 18 ans). Nuit/dimanche : en principe interdits sans autorisation (exceptions formation). Contrôle écrit du temps obligatoire.
+
+#### 5.1.3 Organisation des secours
+Adapter à l'entreprise (risques, formation, postes, com, signalisation). S'entraîner. En urgence : **Observer → Réfléchir → Agir** (protéger/sauver d'abord, alerter).
+
+**Schéma d'annonce :** Qui ? Quoi ? Quand ? Où ? Combien ? Autres dangers ?
+
+Enquêter après incident pour améliorer.
+
+**Principe STOP** (ordre) :
+1. **S**ubstitution
+2. **T**echnique
+3. **O**rganisationnelle
+4. **P**ersonnes (EPI, instructions)
+
+Ex. rayonnage mobile EnterSite : cellules HS → plan de travail, pas de chariot pendant picking, gilets, chaussures de sécurité, instruction.
+
+EPI logistique : tête · mains · dos (posture) · pieds.
+
+### 5.2 Risque d'incendie
+
+Grandes quantités de matériaux → feu vite majeur. Règles : **interdiction de fumer** · prudence aux réparations.
+
+#### 5.2.1 Détection / extinction
+- **Détecteurs** fumée / chaleur (~60 °C) · alarme interne d'abord (ex. 3 min) pour écarter fausse alerte
+- **Sprinklers** : bouchon ~70 °C · jet jusqu'à ~8 m · prudence (dégâts d'eau)
+- **Extinction CO₂** : pas d'eau · quitter la pièce à la pré-alarme (asphyxie)
+
+#### 5.2.2 Classes de feu
+Choisir l'agent adapté — mauvais agent = inefficace ou dangereux.
+
+#### 5.2.3 Comportement
+**Alerter → Sauver → Éteindre** (ne pas retarder l'alarme).
+
+### 5.3 Risque de vol
+
+Causes : contrôles faibles · interfaces · retours négligés · faiblesses orga · absence de directives.
+
+Mesures : contrôles E/S fiables · retours soignés · séparation homme/marchandises · moyens techniques · emballage · contrôles sacs/portes.
+
+### 5.4 Matières dangereuses
+
+Danger pour personnes, animaux, environnement si mauvaise manipulation. Exigences strictes, contrôles autorités.
+
+**Principe :** autant que nécessaire, **aussi peu que possible**. Accès fermé · récipients fermés · loin aliments/médicaments · quantités limitées au poste si usage permanent.
+
+**FDS (fiche de données de sécurité) :** obligatoire · fabricant/importateur · dangers, protection, stockage, transport, élimination, accidents. Travailleur : suivre instructions / les demander / consulter FDS.
+
+**SGH/GHS :** 9 symboles (→ module **105**) · classification mondiale · commerce · SST / environnement / transport.
+
+**Zones :** pictogrammes Suva + interdiction d'accès.
+
+**Risques :** incendie (gaz toxiques, explosions, eaux d'extinction) · inondations · fuites/élimination incorrecte.
+
+Stockage : réduire risques · respect légal · état de l'art · piles sans endommager les récipients qui tombent.
+
+### 5.5 Nuisibles
+
+Trois groupes : champignons/bactéries · insectes · petits mammifères.
+
+Prévention : entrepôt sec, propre, peu poussiéreux · T°/humidité/lumière défavorables. Lutte : chimie, physique, prédateurs, humain — limitation possible, exclusion totale rare.`;
+
+const DEMO_405_THEORIE_SUMMARY = `## À retenir — Module 405
+
+### Accidents
+Piles stables · charge au sol · rayonnages (goupilles, grilles, antichocs)  
+~80 % humain · STOP · EPI · apprentis : 45 h / 9 h · secours (observer-réfléchir-agir)
+
+### Incendie
+Non-fumeur · détecteurs · sprinklers / CO₂ · classes de feu  
+**Alerter – Sauver – Éteindre**
+
+### Vol
+Contrôles E/S · retours · séparation · techniques
+
+### MD
+Peu que possible · FDS · SGH · zones signalées · accès fermé
+
+### Nuisibles
+Propreté + climat · lutte ciblée`;
+
+const DEMO_405_APERCU_FULL = `## Aperçu du module 405
+
+Ce module traite des **dangers dans l'entrepôt** : accidents, incendie, vol, matières dangereuses et nuisibles — avec mesures de prévention et comportement d'urgence.
+
+### Vous allez découvrir
+1. Empilage, charge au sol, sécurité des rayonnages
+2. Mesures, horaires apprentis, secours, principe STOP
+3. Détection/extinction incendie et classes de feu
+4. Vol, MD (FDS, SGH), nuisibles
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 404`;
+
+const DEMO_405_APERCU_SUMMARY = `## Aperçu — Module 405
+- Accidents & STOP
+- Incendie · vol · MD · nuisibles`;
+
+const DEMO_405_OBJECTIFS_FULL = `## Objectifs du module 405
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Appliquer les règles de **sécurité** d'empilage et de rayonnage
+- Expliquer le principe **STOP**, l'organisation des **secours** et les bases du **temps de travail** apprentis
+- Décrire prévention et comportement en cas d'**incendie**
+- Citer mesures anti-**vol**, règles MD (**FDS**, SGH) et lutte contre les **nuisibles**`;
+
+const DEMO_405_OBJECTIFS_SUMMARY = `## Objectifs
+- Accidents / STOP / secours
+- Incendie · vol · MD · nuisibles`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -6647,6 +6789,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_404_THEORIE_FULL,
       summary: DEMO_404_THEORIE_SUMMARY,
+    },
+  },
+  "405": {
+    objectifs: {
+      full: DEMO_405_OBJECTIFS_FULL,
+      summary: DEMO_405_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_405_APERCU_FULL,
+      summary: DEMO_405_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_405_THEORIE_FULL,
+      summary: DEMO_405_THEORIE_SUMMARY,
     },
   },
 };
