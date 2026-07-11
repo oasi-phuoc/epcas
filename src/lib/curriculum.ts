@@ -10081,6 +10081,229 @@ const DEMO_704_OBJECTIFS_SUMMARY = `## Objectifs
 - Couverture · service · ABC
 - Erreurs · prévention`;
 
+/** Contenu Module 705 — La rentabilité de l'entrepôt */
+const DEMO_705_THEORIE_FULL = `## 5. La rentabilité de l'entrepôt
+
+Gérer les marchandises pour générer le **moins de coûts** possible. Types de coûts : voir aussi module **702** (approfondis ici).
+
+### 5.1 Aperçu des types de coûts
+
+Connaître la **structure des coûts** (propre à chaque entreprise) = condition pour améliorer.
+
+#### 5.1.1 Coûts totaux
+**Coûts totaux = coûts fixes + coûts variables** (module **702**).
+
+Seuls, ils ne disent pas si l'entreprise est performante. Les comparer à une période précédente (mois, trimestre, année…) → **tendance** +/−.
+
+#### 5.1.2 Taux de couverture des coûts
+
+**Taux de couverture (%) = coûts totaux / chiffre d'affaires × 100**
+
+| Résultat | Interprétation |
+| --- | --- |
+| **> 100 %** | CA ne couvre pas les coûts → **pertes** |
+| **< 100 %** | Coûts couverts par le CA → **gains** (rentable) |
+
+👉 Structure EnterSite : totaux = fixes + variables · rentable si couverture **< 100 %**.
+
+### 5.2 Coûts de stockage
+
+Liés à la gestion des stocks. **Fixes** = permanents, indépendants du volume. **Variables** = proportionnels à l'activité.
+
+#### Exemple EnterSite — trimestres
+
+| | 1er trim. | 2e trim. |
+| --- | --- | --- |
+| Chiffre d'affaires | Fr. 48 440.– | Fr. 46 550.– |
+| Coûts fixes | Fr. 8 550.– | Fr. 8 550.– |
+| Coûts variables | Fr. 26 475.– | Fr. 22 900.– |
+| **Résultat** | Fr. 13 415.– | Fr. 15 100.– |
+
+Meilleurs prix d'achat au T2 → variables ↓ · CA ↓ mais **résultat ↑**.  
+👉 ↓ coûts (fixes ou variables) → ↑ résultat · bénéfice = travail **rentable**.
+
+#### Composants
+
+| Coûts fixes | Coûts variables |
+| --- | --- |
+| Amortissements · Personnel · Intérêts · Loyers · Entretien · Assurances · Systèmes de gestion | Marchandises · Vol, vieillissement, dépréciation · Goulets d'étranglement · Énergie |
+
+#### 5.2.1 Amortissements
+Perte de valeur d'un bien (bâtiment, équipement…) due à l'usure. Durées indicatives :
+
+| Bien | Durée |
+| --- | --- |
+| Bâtiment | 25 ans |
+| Rayonnage haut | 15 ans |
+| Rayonnages à palettes | 10 ans |
+| Installations de transport | 10 ans |
+| Chariots élévateurs | 5 ans |
+
+Calcul **linéaire** (souvent sur 50 % de l'investissement pour les intérêts, cf. ex. ci-dessous).
+
+**Ex.** Chariot Fr. 18 000.– / 5 ans = **Fr. 3 600.–**/an. An 2 au bilan : 18 000 − 3 600 = **Fr. 14 400.–**.
+
+#### 5.2.2–5.2.7 Autres coûts fixes
+- **Personnel** → module **703**
+- **Intérêts** : capital étranger (hypothèque, prêt…) · taux lié à la BNS / marché + risque entreprise · taux théorique (fictif) pour le coût du capital
+- **Loyers** : contrat d'usage (bâtiment, entrepôts…)
+- **Entretien / maintenance** (prolonger la durée de vie) — repères vs investissement : bâtiments **1,2 %** · transport **2,5 %** · manutention **8 %**
+- **Assurances** (corporel, matériel, pécuniaire) : ≈ **0,1–0,5 %** de l'investissement (entrepôt)
+- **Systèmes (ERP / stocks)** : maintenance, mises à jour, licences (partiellement imputés à l'entrepôt)
+
+#### 5.2.8–5.2.11 Coûts variables
+- **Marchandises** : actifs circulants · capital immobilisé tant que stockées · création de valeur à la vente / production (détail §5.3–5.4)
+- **Vol, vieillissement, dépréciation** : inventaire ≥ 1×/an · qualité / DLC / conditions de stockage
+- **Goulets** : place manquante → location / 3PL (valeurs indicatives)
+
+| Service | Prix indicatif (Fr.) |
+| --- | --- |
+| Espace ~6 m haut / m² | 80–200 |
+| Palette/an (normal) | 85–95 |
+| Palette/an (sécurité ↑) | 110–120 |
+| Frigorifique / congélateur | 140–150 / 155–170 |
+| EM / palette | 5–10 |
+| Picking / article · / gamme | 0,60–1,00 · 5–7 |
+
+- **Énergie** (gaz, électricité, eau…) : ≈ **0,5–1,0 %** de l'investissement
+
+#### Exemple — coût total d'un chariot à mât rétractable (Fr. 36 000.–)
+
+Amort. 5 ans · intérêt calculé **8 %** · entretien **6 %** · énergie **950.–**/an · assurances **0,5 %**.
+
+| Poste | Calcul | Montant |
+| --- | --- | --- |
+| Énergie | donné | Fr. 950.– |
+| Assurances | 36 000 × 0,5 % | Fr. 180.– |
+| Entretien | 36 000 × 6 % | Fr. 2 160.– |
+| **Coût de fonctionnement** | somme | **Fr. 3 290.–** |
+| Amortissement | 36 000 / 5 | Fr. 7 200.– |
+| Intérêt | 36 000 / 2 × 8 % | Fr. 1 440.– |
+| **Coût du capital** | somme | **Fr. 8 640.–** |
+
+### 5.3 Niveaux de stocks
+
+Stocks évoluent avec la demande · surveillance permanente · réapprovisionnement (fournisseur / production). Le **point de commande** dépend de la conso prévue pendant le délai + du délai.
+
+#### 5.3.1 Stock minimum (stock de couverture)
+Quantité pour couvrir la demande pendant l'approvisionnement (conso moyenne × délai). Articles critiques → minimum ↑ (évite ruptures, ↑ valeur stock).
+
+#### 5.3.2 Stock de sécurité
+Libre selon stratégie · réservé aux **exceptions** (conso ↑, retards, erreurs). Coûte cher → surtout articles **stratégiques**.  
+👉 **Aussi peu que possible, aussi élevé que nécessaire.**
+
+#### 5.3.3 Stock maximum
+Plafond pour éviter des coûts trop élevés · souvent atteint à l'arrivée de la commande.
+
+**Stock maximum = cote d'alerte + quantité optimale de commande**
+
+#### 5.3.4 Point de commande (cote d'alerte)
+Niveau qui déclenche une nouvelle commande. ↑ délai → ↑ point de commande.  
+Sans stock sécurité = stock minimum · avec sécurité = minimum + sécurité.
+
+**Point de commande = (délai d'approvisionnement × conso journalière) + stock sécurité**
+
+**Ex.** Toner Brother TN2320 : 10 pces/j · sécurité 40 · qté optimale 70 · délai 4 j · stock au 31/08 = 90.
+
+- Point de commande = (10 × 4) + 40 = **80**
+- Stock maximum = 40 + 70 = **110**
+
+Commande le 1er et 8 sept. (point atteint) · livraison le 5 et 12 (sécurité atteinte) → reconstitution jusqu'au max.
+
+#### 5.3.5 Stock moyen
+Quantité moyenne sur une période → détail module **704**.
+
+### 5.4 Minimisation des coûts de stockage
+
+Objectif : ↑ bénéfices en ↓ coûts. Conflit : minimiser la **valeur** du stock **et** maximiser la **disponibilité**.
+
+| Stock trop élevé | Stock trop faible |
+| --- | --- |
+| Capital immobilisé ↑ · coûts entrepôt ↑ · risque vieillissement / perte de valeur | Pénurie · perte clients · pertes production / ventes |
+
+#### 5.4.1 Taux d'intérêt de stockage
+
+Données : taux d'intérêt du **marché** · **rotation** · **durée moyenne** de stockage.
+
+**Ex.** Toner HP Cyan : 60 vendues · stock moy. 20 · taux marché **2,5 %** · prix de revient **71.–**.
+
+| Étape | Calcul | Résultat |
+| --- | --- | --- |
+| Rotation | 60 / 20 | **3** fois |
+| Durée moy. | 360 / 3 | **120** jours |
+| Taux intérêt stockage | 2,5 % × 120 / 360 | **0,84 %** |
+| Coût capital immobilisé | 0,84 × 20 × 71 | **Fr. 1 192,80** |
+
+👉 Rotation faible → taux d'intérêt de stockage ↑ (coûteux si peu utilisés).
+
+#### 5.4.2 Taux des coûts de stockage (possession)
+
+Nécessaire pour la **quantité optimale de commande** (module **311**).  
+Besoin : coûts de stockage · valeur moyenne du stock (stock moy. × prix de revient) · taux d'intérêt du marché.
+
+**Taux (%) = (coûts de stockage / valeur moy. du stock × 100) + intérêts du marché**
+
+Priorité de réduction : d'abord **variables**, puis **fixes** si besoin.
+
+**Ex.** 2022 : coûts stockage 25 000 · valeur moy. 335 000 · intérêt 2,5 %.  
+25 000 / 335 000 × 100 = **7,45 %** + 2,5 % = **9,95 %**.
+
+👉 Taux ↑ = mauvaise gestion ou coûts trop élevés.
+
+#### Autres leviers
+- Respecter consommables · soigner / entretenir engins · consignes de sécurité
+- Indicateurs de stocks (module **704**) · optimiser les niveaux de stocks`;
+
+const DEMO_705_THEORIE_SUMMARY = `## À retenir — Module 705
+
+### Structure & couverture
+Totaux = fixes + variables  
+Couverture = totaux / CA × 100 · rentable si **< 100 %**
+
+### Coûts de stockage
+Fixes (amort., personnel, intérêts, loyers…) · variables (marchandises, pertes, énergie…)  
+Amort. linéaire · intérêts sur capital moyen
+
+### Niveaux
+Min · sécurité · max · point de commande  
+PC = (délai × conso/j) + sécurité · « peu / nécessaire »
+
+### Minimisation
+Taux intérêt stockage · taux possession (+ marché)  
+Conflit valeur stock vs disponibilité · module **704** / **311**`;
+
+const DEMO_705_APERCU_FULL = `## Aperçu du module 705
+
+Ce module traite de la **rentabilité de l'entrepôt** : structure des coûts, composants du stockage, niveaux de stocks et leviers de minimisation.
+
+### Vous allez découvrir
+1. Coûts totaux et taux de couverture (< 100 % = rentable)
+2. Composants fixes / variables et calcul d'un coût d'équipement
+3. Stock min, sécurité, max et point de commande
+4. Taux d'intérêt de stockage et taux des coûts de possession
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Bloc 700 FICO`;
+
+const DEMO_705_APERCU_SUMMARY = `## Aperçu — Module 705
+- Couverture des coûts
+- Coûts de stockage (fixes / variables)
+- Niveaux · minimisation`;
+
+const DEMO_705_OBJECTIFS_FULL = `## Objectifs du module 705
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Distinguer **coûts totaux**, fixes et variables et calculer le **taux de couverture**
+- Identifier les composants des coûts de stockage et calculer amortissement / coût d'un équipement
+- Calculer **point de commande**, stock max et expliquer min / sécurité
+- Calculer **taux d'intérêt de stockage** et **taux des coûts de possession** et citer des leviers de minimisation`;
+
+const DEMO_705_OBJECTIFS_SUMMARY = `## Objectifs
+- Couverture · structure des coûts
+- Composants · amortissement
+- Niveaux · taux stockage / possession`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -11017,6 +11240,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_704_THEORIE_FULL,
       summary: DEMO_704_THEORIE_SUMMARY,
+    },
+  },
+  "705": {
+    objectifs: {
+      full: DEMO_705_OBJECTIFS_FULL,
+      summary: DEMO_705_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_705_APERCU_FULL,
+      summary: DEMO_705_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_705_THEORIE_FULL,
+      summary: DEMO_705_THEORIE_SUMMARY,
     },
   },
 };
