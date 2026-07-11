@@ -2596,6 +2596,154 @@ const DEMO_204_OBJECTIFS_SUMMARY = `## Objectifs
 - Étude de marché
 - Types / formes / tailles`;
 
+/** Contenu Module 205 — Marketing */
+const DEMO_205_THEORIE_FULL = `## 5. Marketing
+
+### 5.1 Objectifs du marketing
+
+Le marketing d'EnterSite AG vise à **promouvoir la vente** de produits et services. Les ventes ↑ → chiffre d'affaires ↑ → bénéfice (en règle générale). Générer des bénéfices est l'objectif principal : un bénéfice est intégré dans le prix.
+
+Objectifs marketing typiques :
+- préserver / augmenter la **part de marché**
+- améliorer la **notoriété**
+- ancrer une **image positive**
+
+### 5.2 Personnes impliquées
+
+Le marketing est une science pratiquée par des professionnels, mais chez EnterSite presque tous les collaborateurs y participent (délibérément ou non). Il englobe tous les niveaux :
+- direction
+- service commercial (vente, marketing)
+- production
+- administration et services
+
+Plus ces domaines se complètent, plus le succès sur le marché est grand.
+
+### 5.3 Loi de l'offre et de la demande
+
+Principe économique : l'équilibre entre **offre** (quantité disponible) et **demande** détermine le **prix de marché**.
+
+#### 5.3.1 Effet de l'offre
+**Exemple salades :** récolte abondante → offre >> demande → prix bas, destructions, bénéfice espéré non réalisé.  
+Inversement : gel/grêle → offre limitée → prix ↑ (atténué par imports grâce à la mondialisation).
+
+Les fournisseurs peuvent aussi réguler (ex. États pétroliers : ↑ extraction pour baisser le prix, ↓ pour le faire monter).
+
+#### 5.3.2 Effet de la demande
+Demande ↑ sans production qui suit → prix ↑.  
+**Exemple maïs / biodiesel :** demande industrielle ↑ → pénurie alimentaire, tortilla mexicaine ×2.
+
+**Remarque :**
+- Offre ↑ / demande stable → prix ↓
+- Offre ↓ / demande stable → prix ↑
+- Demande ↑ / offre stable → prix ↑
+- Demande ↓ / offre stable → prix ↓
+
+### 5.4 Instruments — Marketing-Mix (4P)
+
+Infos marché → stratégie → combinaison de mesures = **Marketing-Mix** (origine USA).
+
+**Product (Produit)**  
+Utilité + qualité. Gamme, technique, design, packaging. Doit s'intégrer dans l'assortiment ; design attractif.
+
+**Price (Prix)**  
+Critère d'achat clé. Dépend du produit, MP, RH, distribution, R&D. Ni trop bas ni trop haut : acceptable pour le client **et** rentable. Pression : concurrence, rabais, conditions de paiement.
+
+**Place (Lieu / distribution)**  
+Qui sont les acheteurs ? Où ? Vente directe ou indirecte ? Où placer le produit dans l'assortiment / le point de vente pour maximiser les ventes ?
+
+**Promotion (Publicité / communication)**  
+Placement + prix ne suffisent pas. Campagnes et promotions en magasin. Choix des supports selon le **budget**.
+
+### 5.5 La publicité
+
+#### 5.5.1 Éléments d'une annonce
+Logo · Nom du produit · Image · Headline · Infos produit · Slogan
+
+#### 5.5.2 Concept AIDA
+- **A**ttention — capter l'attention
+- **I**ntérêt — aiguiser l'intérêt
+- **D**ésir — stimuler le désir
+- **A**ction — déclencher l'achat
+
+#### 5.5.3 Informative vs suggestive
+- **Informative** — factuelle, rationnelle, avantages / caractéristiques
+- **Suggestive** — émotions / inconscient ; infos secondaires
+
+**Remarque :** dans les deux cas, les coûts doivent être proportionnés au CA attendu.
+
+#### 5.5.4 Caractéristiques d'une bonne publicité
+Effet durable ; souvent appréciée avec musique/humour. Doit être :
+- mémorable / attractive (originale, pas de mauvais goût)
+- bien ciblée
+- fidèle à la réalité (ne pas vanter ce que le produit n'a pas)
+
+« Une bonne publicité, c'est : viser la tête et toucher le portefeuille. »
+
+#### 5.5.5 Publicité en ligne
+Visibilité, ciblage, mesure via **taux de clics**. Souvent facturée **au clic**. Outils : Google Ads, Facebook Ads, Instagram Ads, Amazon Advertising.
+
+- **E-mail** — lien + invitation à cliquer ; mesure par clics
+- **Bannières** — graphiques sur pages ; risque de *banner blindness* → designs plus voyants
+- **Content Ad** — publicité discrète, difficile à distinguer du contenu
+- **Pop-up / pop-under** — fenêtres automatiques ; pop-up invasif, pop-under sous la page ; bloqueurs ; **Hover Ads** masquent le contenu jusqu'à fermeture`;
+
+const DEMO_205_THEORIE_SUMMARY = `## À retenir — Module 205
+
+### Objectifs marketing
+Ventes → CA → bénéfice · part de marché · notoriété · image
+
+### Qui ?
+Professionnels + presque toute l'entreprise (direction, vente, prod, admin)
+
+### Offre / demande
+Offre ↑ → prix ↓ · Offre ↓ → prix ↑  
+Demande ↑ → prix ↑ · Demande ↓ → prix ↓
+
+### 4P
+**Product** utilité/qualité · **Price** rentable + acceptable · **Place** canaux · **Promotion** com/pub
+
+### Publicité
+Éléments : logo, nom, image, titre, infos, slogan  
+**AIDA** : Attention → Intérêt → Désir → Action  
+Informative (faits) vs suggestive (émotions)  
+Coûts proportionnés au CA
+
+### Online
+CPC / taux de clics · e-mail, bannières, content ad, pop-up/hover`;
+
+const DEMO_205_APERCU_FULL = `## Aperçu du module 205
+
+Ce module présente le **marketing** : objectifs, acteurs, offre/demande, 4P et publicité.
+
+### Vous allez découvrir
+1. Objectifs (part de marché, notoriété, image)
+2. Loi de l'offre et de la demande
+3. Marketing-Mix (4P)
+4. Publicité AIDA, types et formats en ligne
+
+### Source
+EnterSite — Logistics by ASFL / SVBL`;
+
+const DEMO_205_APERCU_SUMMARY = `## Aperçu — Module 205
+- Objectifs marketing
+- Offre / demande
+- 4P + publicité (AIDA, online)`;
+
+const DEMO_205_OBJECTIFS_FULL = `## Objectifs du module 205
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Citer les objectifs du marketing et qui y participe
+- Expliquer la **loi de l'offre et de la demande** avec des exemples
+- Décrire le **Marketing-Mix (4P)**
+- Appliquer le schéma **AIDA** et distinguer publicité informative / suggestive
+- Identifier les principaux formats de publicité en ligne`;
+
+const DEMO_205_OBJECTIFS_SUMMARY = `## Objectifs
+- Objectifs + acteurs
+- Offre/demande
+- 4P, AIDA, pub online`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -2804,6 +2952,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_204_THEORIE_FULL,
       summary: DEMO_204_THEORIE_SUMMARY,
+    },
+  },
+  "205": {
+    objectifs: {
+      full: DEMO_205_OBJECTIFS_FULL,
+      summary: DEMO_205_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_205_APERCU_FULL,
+      summary: DEMO_205_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_205_THEORIE_FULL,
+      summary: DEMO_205_THEORIE_SUMMARY,
     },
   },
 };
