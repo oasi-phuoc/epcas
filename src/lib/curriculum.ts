@@ -7204,6 +7204,117 @@ const DEMO_501_OBJECTIFS_SUMMARY = `## Objectifs
 - Idée → produit
 - Structure multi-vues`;
 
+/** Contenu Module 502 — La logistique de production */
+const DEMO_502_THEORIE_FULL = `## 2. Logistique de production
+
+### 2.1 Définition
+
+Processus d'une entreprise de fabrication situé entre la logistique d'**approvisionnement** (input) et de **distribution** (output).
+
+Elle **planifie et contrôle** le flux de marchandises :
+- Approvisionner la production depuis les entrepôts (matières premières, auxiliaires, consommables…)
+- Après fabrication : **évacuer** et stocker correctement les produits
+- Soutenir les activités de production
+
+### 2.2 Objectifs et tâches
+
+Toutes les mesures du processus de **création de valeur** : de la prise en charge des **facteurs de production** jusqu'au transfert des produits finis à la distribution.
+
+Mettre à disposition matériaux et informations : **bon type**, **bonne quantité**, **bonne qualité**, **bon moment** — comparer la **règle des 6B** (Jünemann, module 101).
+
+| Objectif | Sens |
+| --- | --- |
+| Délais d'**exécution** courts | Temps de passage ↓ |
+| Grand respect des **délais** | Fiabilité |
+| **Stocks** aussi bas que possible | Coûts de stockage ↓ |
+| Niveau de **qualité** élevé | Peu de rebuts / retours |
+| Utilisation optimale de la **capacité** | Homme + machine |
+| **Voies de transport** optimales | Flux dans l'atelier |
+
+👉 En résumé : réduire au maximum les **coûts de fabrication**.
+
+### 2.3 Types de stocks dans la production
+
+#### 2.3.1 Stocks d'approvisionnement / de production
+
+Stocker matières premières, semi-finis et finis nécessaires à la production.
+
+- **Entrepôt d'approvisionnement** : réception des marchandises **achetées**
+- **Entrepôts de production** : souvent dans la zone de prod. → distances ↓  
+  Petites entreprises : les deux souvent **réunis**
+
+| Type | Rôle |
+| --- | --- |
+| Production **en amont** | MP, semi-finis, finis pour démarrer le process |
+| **Intermédiaire** | Semi-finis en attente d'une étape suivante |
+| Production **en aval** | Semi-finis / finis prêts pour suite (ex. peinture) ou marché |
+| Stock de **proximité** | Petits espaces, souvent **mobiles** · libre-service · en général **sans** compta ERP pièce à pièce (vis = poste consommable du produit fini) |
+
+### 2.4 Logistique opérationnelle d'élimination
+
+Collecter, trier, emballer, stocker et évacuer les déchets — préparation et exécution **écologique** et **économique**.
+
+Ordre de priorité : **prévention** → **valorisation** → **élimination**.
+
+#### 2.4.1 Tâches (logistique classique)
+
+| Type | Contenu |
+| --- | --- |
+| Prestation **principale** | Transport, Transbordement, Stockage (**TTS**) |
+| Prestation **supplémentaire** | Collecte, tri, emballage / regroupement |
+| Prestation d'**information** | Commandes, suivi, traçabilité |
+
+🔎 Détails élimination : module **106**.`;
+
+const DEMO_502_THEORIE_SUMMARY = `## À retenir — Module 502
+
+### Place
+Approvisionnement → **logistique de production** → distribution
+
+### Mission
+Fournir facteurs / infos (6B) · évacuer / stocker · ↓ coûts de fabrication
+
+### Objectifs
+Exécution courte · délais · stocks bas · qualité · capacité · voies optimales
+
+### Stocks
+Amont · intermédiaire · aval · proximité (souvent hors ERP détail)
+
+### Déchets
+Prévention > valorisation > élimination · TTS + tri + info (→ 106)`;
+
+const DEMO_502_APERCU_FULL = `## Aperçu du module 502
+
+Ce module situe la **logistique de production** entre approvisionnement et distribution : objectifs, types de stocks et logistique d'élimination.
+
+### Vous allez découvrir
+1. Définition et position dans la chaîne
+2. Objectifs (délais, stocks, qualité, capacité…) et lien 6B
+3. Stocks amont / intermédiaire / aval / proximité
+4. Élimination des déchets (TTS, priorité écologique)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 501`;
+
+const DEMO_502_APERCU_SUMMARY = `## Aperçu — Module 502
+- Place & objectifs (6B)
+- Types de stocks
+- Élimination`;
+
+const DEMO_502_OBJECTIFS_FULL = `## Objectifs du module 502
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Situer la **logistique de production** entre approvisionnement et distribution
+- Citer ses **objectifs** et les relier aux **6B**
+- Distinguer les **types de stocks** (amont, intermédiaire, aval, proximité)
+- Décrire les tâches de la logistique d'**élimination** et l'ordre prévention → valorisation → élimination`;
+
+const DEMO_502_OBJECTIFS_SUMMARY = `## Objectifs
+- Place & 6B
+- Types de stocks
+- Élimination`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -7804,6 +7915,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_501_THEORIE_FULL,
       summary: DEMO_501_THEORIE_SUMMARY,
+    },
+  },
+  "502": {
+    objectifs: {
+      full: DEMO_502_OBJECTIFS_FULL,
+      summary: DEMO_502_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_502_APERCU_FULL,
+      summary: DEMO_502_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_502_THEORIE_FULL,
+      summary: DEMO_502_THEORIE_SUMMARY,
     },
   },
 };
