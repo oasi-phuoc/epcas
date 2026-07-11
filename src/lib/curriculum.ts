@@ -2306,6 +2306,161 @@ const DEMO_202_OBJECTIFS_SUMMARY = `## Objectifs
 - Hygiène
 - Charte entreprise`;
 
+/** Contenu Module 203 — Gestion de soi */
+const DEMO_203_THEORIE_FULL = `## 3. Gestion de soi
+
+L'**autogestion** est la compétence à se gérer soi-même. Des techniques issues du management, de la psychologie et de la gestion personnelle aident à augmenter sa motivation (**intrinsèque**), clarifier ses objectifs et mieux les atteindre. Compétences partielles : motivation, fixation d'objectifs, planification, gestion du temps, organisation, capacité d'apprentissage, contrôle des résultats via le feedback.
+
+### 3.1 Se connaître — la fenêtre de Johari
+
+Quelle est ma perception de moi-même, quelle est celle des autres ? Nous pensons souvent communiquer clairement et « lire » les autres — ce n'est pas le cas. Chacun a des secrets (honte, peur…). La **fenêtre de Johari** distingue quatre zones pour mieux travailler et vivre ensemble.
+
+1. **Personne publique** — comportement et motivation connus de moi **et** des autres
+2. **Mon secret** — connu de moi, caché aux autres
+3. **Zone aveugle** — visible pour les autres, inconscient pour moi (habitudes, refoulé, préconscient)
+4. **L'inconnu** — inconnu de moi **et** des autres (inconscient)
+
+#### 3.1.1 Les cinq piliers de l'identité (Hilarion Petzold)
+
+1. **Corporalité** — corps, esprit, psychologie ; base de l'identité. Menaces : maladie, accident, traumatisme.
+2. **Relations sociales** — contacts, soutien, reconnaissance. Menaces : rupture, décès, isolement.
+3. **Travail et prestations** — tâche utile, capacités, réalisation. Menace : perte / absence de tâche.
+4. **Sécurité matérielle** — niveau de vie, finances, existence ; liée aux expériences d'enfance. Menace : peurs existentielles.
+5. **Valeurs et idéaux** — vivre selon ses valeurs = harmonie ; conflits si valeurs divergent. Ce pilier peut soutenir l'identité même si d'autres fléchissent.
+
+### 3.2 Styles de direction (Kurt Lewin)
+
+Le style de leadership peut varier selon la situation, puis revenir à sa forme habituelle.
+
+#### 3.2.1 Autoritaire (décision et directives exclusives)
+**+** résolution rapide, résultats court terme, tâches/responsabilités claires, orienté action  
+**−** tensions (peu de consensus), peu de flexibilité, surcharge du supérieur
+
+#### 3.2.2 Laissez-faire (délégation large)
+**+** potentiel / idées des collaborateurs, innovation, soulagement du supérieur  
+**−** incertitude, responsabilités floues, tâches désagréables non faites, pas d'unité de doctrine
+
+#### 3.2.3 Coopératif (codécision)
+**+** résultats long terme, collaborateurs satisfaits, flexibilité, appartenance  
+**−** décisions lentes, résultats court terme parfois moins bons, exigences élevées en leadership psychologique
+
+#### 3.2.4 Caritatif (besoins des collaborateurs prioritaires)
+**+** climat humain, soutien aux inquiets, questions critiques possibles  
+**−** sollicitude = contrôle ressenti, manque de défi / motivation, erreurs et doublons faute d'alignement objectifs
+
+### 3.3 Types de conflits (Thomas Kilmann)
+
+Là où l'on travaille ensemble, des conflits apparaissent. Chacun veut ne pas « perdre la face ». Le comportement se différencie selon la prise en compte des **besoins** des parties (pas seulement des solutions).
+
+### 3.4 Six étapes de gestion des conflits
+
+1. Je suis dérangé par…
+2. Mon objectif est… (je veux…)
+3. Ton objectif est… (que veux-tu…)
+4. Points communs
+5. Recherche de solutions (idées → accepter → évaluer)
+6. Accord (concret, détaillé, limité dans le temps)
+
+### 3.5 Défi intellectuel — le stress
+
+Stress = stimuli internes et externes. Il existe un stress **positif** et un stress **négatif**.
+
+#### 3.5.1 Eustress
+Facteurs positifs : ↑ attention, performance maximale, sans dommage ; effet bénéfique psychique et physique.
+
+#### 3.5.2 Distress (disstress)
+Stimuli menaçants / trop exigeants ; négatif si pas de compensation ou stress fréquent → développer des stratégies.
+
+#### 3.5.3 Réactions humaine
+Programme évolutif **combat ou fuite**. Autres : agression, fuite, acceptation, déni, peur, dépression.
+
+Corps non conçu pour un stress permanent : cœur ↑, muscles tendus, respiration ↑, agitation, concentration ↓.
+
+**Remarque :** exigences professionnelles ↑ → pression temps / performance.
+
+**Compensation :** sport d'endurance, contacts sociaux (privés / entreprise), yoga, communication pour résoudre conflits.
+
+### 3.6 Défi physique — sécurité au travail
+
+#### 3.6.1 Sources de danger
+Dangers aigus (accidents) et insidieux (troubles chroniques, posture). En logistique : risques typiques. ~**80 %** des accidents = comportement dangereux ; ~**20 %** = conditions dangereuses.
+
+Comportements dangereux : non-respect des règles, négligence, non-application des protections, prise de risque volontaire.
+
+#### 3.6.2 Minimiser les risques
+
+**Pieds** — roues / chariots (pression élevée, ex. > 20 kN) ; clous. Pas de baskets/sandales. Chaussures de protection (orteils, plante). Règles : pas sous charges soulevées ; loin des roues ; rien au sol ; pieds dans le véhicule sur engins.
+
+**Dos** — 24 vertèbres mobiles + sacrum/coccyx ; disques = amortisseurs. Activités à risque : reconditionnement, picking, chargement. Prendre sans se pencher profondément ; plans de prélèvement/rangement proches ; moyens auxiliaires (élévateur, diable…). **Dos droit** ; sangles si besoin.
+
+**Mains** — gants pour empilage lourd, surfaces rugueuses, tri palettes, caisses bois, cerclages ; gants caoutchouc pour substances agressives ; gants légers hygiène / peau sensible.
+
+**Tête** — casque si palans / gerbage / moto (loi) / manœuvre (+ gilet). Zone de gerbage : personne à proximité.
+
+**Yeux** — lunettes si corrosifs, éclats/poussière, contrôle batterie élévateur. Douche oculaire (solution saline) → puis **ophtalmologue en urgence**.
+
+**Cerclages (feuillards)** — couper pour extrémité courte + longue ; maintenir la longue (bois/gants, pas mains nues).
+
+**Ergonomie** — aménager postes et équipements pour limiter fatigue et problèmes de santé ; adapter à la tâche et au physique. Signal d'alerte : tensions nuque.`;
+
+const DEMO_203_THEORIE_SUMMARY = `## À retenir — Module 203
+
+### Autogestion
+Motivation, objectifs, temps, organisation, feedback
+
+### Johari
+Public · Secret · Aveugle · Inconnu
+
+### 5 piliers identité
+Corps · Social · Travail · Sécurité matérielle · Valeurs
+
+### Leadership (Lewin)
+Autoritaire · Laissez-faire · Coopératif · Caritatif  
+(+/− selon situation)
+
+### Conflits
+Kilmann (besoins) · 6 étapes → accord concret daté
+
+### Stress
+**Eustress** + · **Distress** − · combat/fuite · compensation (sport, social, yoga)
+
+### Sécurité physique
+80 % comportement · EPI pieds/dos/mains/tête/yeux  
+Dos droit + aides · ergonomie`;
+
+const DEMO_203_APERCU_FULL = `## Aperçu du module 203
+
+Ce module traite de la **gestion de soi** : connaissance de soi, leadership, conflits, stress et sécurité physique au travail.
+
+### Vous allez découvrir
+1. Fenêtre de Johari et 5 piliers de l'identité
+2. Styles de direction (Lewin)
+3. Conflits (Kilmann) et 6 étapes
+4. Eustress / distress et prévention accidents / EPI / ergonomie
+
+### Source
+EnterSite — Logistics by ASFL / SVBL`;
+
+const DEMO_203_APERCU_SUMMARY = `## Aperçu — Module 203
+- Se connaître (Johari, piliers)
+- Leadership, conflits, stress
+- Sécurité et ergonomie`;
+
+const DEMO_203_OBJECTIFS_FULL = `## Objectifs du module 203
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer la **fenêtre de Johari** et les **cinq piliers** de l'identité
+- Comparer les styles de direction de Lewin (avantages / inconvénients)
+- Appliquer les **six étapes** de gestion des conflits
+- Distinguer eustress et distress et citer des moyens de compensation
+- Identifier les risques physiques logistiques et les mesures de protection / ergonomie`;
+
+const DEMO_203_OBJECTIFS_SUMMARY = `## Objectifs
+- Johari + piliers
+- Leadership / conflits / stress
+- EPI et ergonomie`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -2486,6 +2641,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_202_THEORIE_FULL,
       summary: DEMO_202_THEORIE_SUMMARY,
+    },
+  },
+  "203": {
+    objectifs: {
+      full: DEMO_203_OBJECTIFS_FULL,
+      summary: DEMO_203_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_203_APERCU_FULL,
+      summary: DEMO_203_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_203_THEORIE_FULL,
+      summary: DEMO_203_THEORIE_SUMMARY,
     },
   },
 };
