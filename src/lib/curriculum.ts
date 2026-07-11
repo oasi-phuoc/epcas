@@ -5464,6 +5464,166 @@ const DEMO_311_OBJECTIFS_SUMMARY = `## Objectifs
 - Commande + Andler
 - ABC/XYZ · réception`;
 
+/** Contenu Module 312 — Données de stockage */
+const DEMO_312_THEORIE_FULL = `## 12. Données de stockage
+
+### 12.1 STOCK : définition et importance
+
+Le **stock** = ensemble des produits stockés (matières premières, semi-finis, finis).
+
+Rôle : couvrir les besoins futurs (clients / production) et garantir une exploitation normale. Coût = **capital immobilisé**. Trop élevé → argent manquant pour d'autres investissements. Trop faible → rupture, CA ↓, retards de production.
+
+> Règle : **aussi peu que possible — autant que nécessaire.**
+
+Niveau idéal = satisfaire demande interne/externe **sans** surstocks. Exige chaînes d'approvisionnement fiables + **prévisions de vente** transparentes.
+
+### 12.2 Classification (date / périssabilité)
+
+| Groupe | Caractéristique | Principe | Exemples |
+| --- | --- | --- | --- |
+| **Avec date d'expiration** | À consommer avant date | **FEFO** (First Expired, First Out) | Médicaments, yaourt, lait… |
+| **Périssables** | Qualité qui se dégrade vite | **FIFO** (First In, First Out) | Surgelés, viande/poisson, fruits/légumes, fleurs, chimie |
+| **Non périssables** | Qualité stable dans le temps | **LIFO** possible | Vis/écrous, tubes/profilés, machines |
+
+### 12.3 Types de stocks
+
+**Stock physique (réel)** — couvre la demande courante clients/production, quel que soit l'emplacement.
+
+**Stock mini (minimum)** — couvre la consommation pendant le délai de réapprovisionnement.
+
+> Stock mini = consommation journalière × délai de réapprovisionnement (jours)
+
+**Stock de sécurité** — quantité toujours présente (souvent dans l'ERP) pour :
+- besoins supplémentaires non prévus / aléas de production
+- délai de réappro retardé  
+→ maintient la **capacité de livraison**.
+
+**Stock maximum** — limite supérieure (place, coûts, obsolescence technique — ex. multimédia).
+
+**Point de commande (cote d'alerte)** — seuil déclenchant une nouvelle commande :
+
+> Point de commande = (consommation journalière × délai réappro) + stock de sécurité
+
+**Stock négatif (manquant)** — pas physique ; indique la quantité manquante / incapacité à livrer. À éviter.
+
+**Stock temporaire** — lié aux temps de passage différents (AQ entrée, conditionnement sortie…).
+
+**Stock saisonnier** — demande liée à une saison/événement (ex. lapins de Pâques).
+
+**Stock dormant** — obsolète techniquement ou périmé → à retirer.
+
+**Stock spéculatif** — achat anticipé (hausse de prix / risques livraison) au-delà du stock actif.
+
+### 12.4 Aspect opérationnel
+
+| Notion | Sens |
+| --- | --- |
+| **Stock optimal** | Équilibre besoins / commandes / coûts de stockage (rentabilité) |
+| **Sur réservation / JIT** | Court terme · quantités exactes · stocks bas |
+| **Réservation** | Précommandé pour un but · encore physique jusqu'à la sortie |
+| **Stock total / physique** | Quantité réellement présente |
+| **Stock net** | Total − réservations |
+| **Stock disponible** | Total − réservé − AQ − bloqué |
+| **Stock AQ** | Physique mais non utilisable tant que contrôle qualité en cours · dans total, pas disponible · si KO → bloqué |
+| **Stock bloqué** | Non utilisable/livrable · dans total, pas disponible |
+
+### 12.5 Gestion des stocks
+
+#### 12.5.1–12.5.2 Article
+
+Marchandise stockée **identique dans toutes ses parties**. Une caractéristique différente (ex. hauteur) → **nouveau n° d'article**.
+
+Ex. cylindre ∅ 45 mm : H 125 / 135 / 145 → trois n° distincts.
+
+#### 12.5.3 En-tête de fiche (données **statiques**)
+
+| Champ | Rôle |
+| --- | --- |
+| N° d'article | Identification unique |
+| Désignation | Complément / anti-confusion |
+| Unité de livraison (UL) | Qté min. de commande fournisseur (ex. par 5) |
+| Unité de vente (UV) | Qté min. de vente (souvent 1) |
+| Prix d'achat | Interne · valeur de stock · ≠ prix de vente |
+| Fournisseur | Fournisseur standard |
+| Stock maximum | Limite |
+| Point de commande | Proposition de commande auto |
+| Stock de sécurité | Capacité de livraison |
+
+#### 12.5.4 Mouvements (données **dynamiques**)
+
+Date · Entrées (↑) · Sorties (↓) · Réservé · AQ · Bloqué · **Disponible** · **Total**  
+Total = disponible + réservé + AQ + bloqué.
+
+#### 12.5.5–12.5.7 Comptabilisations
+
+- Entrées/sorties **physiques** → disponible et total bougent de la **même** quantité.
+- Entrée en **AQ** → ↑ total, pas le disponible ; libération OK → AQ → disponible (total inchangé) ; part KO → **bloqué** ; retour fournisseur → sortie + ↓ total.
+- **Réservation** → ↑ réservé, ↓ disponible, total inchangé ; à la sortie prévue → réservé → 0, ↓ total ; disponible déjà ajusté.
+- Sortie supplémentaire le même jour qu'une réservation : disponible ↓ seulement de la nouvelle sortie ; total ↓ réservation + nouvelle sortie.
+
+#### 12.5.8 Cycle graphique (schéma typique)
+
+Baisse régulière → point de commande → commande → arrivée avant stock mini → hausse (parfois jusqu'au max) → forte demande : stock de sécurité évite la rupture · ou consommation trop forte → stock mini épuisé → **rupture / non-livraison**.
+
+### 12.6 Conclusion
+
+Ces données donnent du sens opérationnel aux **6B** (Jünemann) : bonne marchandise, quantité, qualité, moment, endroit, prix.`;
+
+const DEMO_312_THEORIE_SUMMARY = `## À retenir — Module 312
+
+### Stock
+Aussi peu que possible — autant que nécessaire  
+Surstock = capital · rupture = CA / production
+
+### Classification
+FEFO (DLC) · FIFO (périssable) · LIFO possible (non périssable)
+
+### Formules
+Stock mini = conso/j × délai  
+Point de commande = stock mini + stock de sécurité
+
+### Types
+Physique · sécurité · max · négatif · saisonnier · dormant · spéculatif · temporaire  
+Disponible = total − réservé − AQ − bloqué
+
+### Fiche
+En-tête statique · mouvements dynamiques  
+AQ/bloqué/réservation : effets distincts sur disponible vs total`;
+
+const DEMO_312_APERCU_FULL = `## Aperçu du module 312
+
+Ce module présente les **données de stockage** : définition du stock, classification, types de stocks, fiche article et comptabilisations (disponible, AQ, bloqué, réservé).
+
+### Vous allez découvrir
+1. Importance du niveau de stock
+2. FEFO / FIFO / LIFO
+3. Stock mini, sécurité, max, point de commande
+4. Stock disponible vs total (AQ, bloqué, réservé)
+5. Fiche de stock et exemples de comptabilisation
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du bloc 300 / transition stockage`;
+
+const DEMO_312_APERCU_SUMMARY = `## Aperçu — Module 312
+- Niveau de stock idéal
+- Types & formules
+- Fiche · disponible / total`;
+
+const DEMO_312_OBJECTIFS_FULL = `## Objectifs du module 312
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer l'importance du **niveau de stock** pour l'entreprise
+- Classer les stocks (FEFO / FIFO / LIFO) et citer les principaux **types**
+- Calculer **stock mini** et **point de commande**
+- Distinguer stock **disponible**, réservé, AQ, bloqué et **total**
+- Lire une **fiche de stock** et comptabiliser entrées, sorties, AQ et réservations`;
+
+const DEMO_312_OBJECTIFS_SUMMARY = `## Objectifs
+- Niveau de stock
+- Types & formules
+- Fiche / comptabilisations`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -5896,6 +6056,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_311_THEORIE_FULL,
       summary: DEMO_311_THEORIE_SUMMARY,
+    },
+  },
+  "312": {
+    objectifs: {
+      full: DEMO_312_OBJECTIFS_FULL,
+      summary: DEMO_312_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_312_APERCU_FULL,
+      summary: DEMO_312_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_312_THEORIE_FULL,
+      summary: DEMO_312_THEORIE_SUMMARY,
     },
   },
 };
