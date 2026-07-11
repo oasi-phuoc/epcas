@@ -9127,6 +9127,146 @@ const DEMO_611_OBJECTIFS_SUMMARY = `## Objectifs
 - Trieurs · temps
 - Ratios · conception`;
 
+/** Contenu Module 612 — La planification des transports */
+const DEMO_612_THEORIE_FULL = `## 12. La planification des transports
+
+### 12.1 En mutation
+
+Objectif : livrer de façon **économique**, **rapide** et **sûre**. Contraintes : écologie · délais clients · pénurie de chauffeurs · pression coûts / énergie (transport parfois > **30 %** des coûts logistiques) · sécurité · lois.  
+~**5000** entreprises de transport en CH · majorité des prestations par la **route**.
+
+### 12.2 Principe d'une tournée
+
+Distribution de détail → **plan de tournée** selon lieux de déchargement · métier des **disponents**.
+
+#### 12.2.1 LIFO
+Dernier chargé = premier déchargé. Ex. : Estavayer 1er stop → chargé **en dernier** · Genève dernier stop → chargé **en premier**.
+
+Efficacité aussi : itinéraire / restrictions · véhicules · priorités clients · engins de déchargement · temps de travail/repos chauffeurs.
+
+#### 12.2.2 Organisation (disposition)
+*Dispositio* = ordre / affectation. Décisions → ordres de transport.  
+**Télématique** : localisation, suivi · données : position · ETA · trafic · avancement · temps de conduite restant · pauses · clôture tâche client.
+
+#### 12.2.3 Cadre légal (aperçu)
+| Abrév. | Domaine |
+| --- | --- |
+| **LTr** | Travail, pauses, repos |
+| **LCR** | Circulation routière |
+| **OSR** | Signalisation |
+| **RPLP** | Redevance PL (module **606**) |
+| **OTR** | Durée travail / repos chauffeurs |
+| **ADR/SDR** | Marchandises dangereuses |
+
+#### 12.2.4 Planification des tournées
+Données obligatoires : expéditeur / destinataire (adresse, date/heure, particularités) · envoi (type, pièces, dimensions, poids, MD, froid, valeur/assurance).
+
+Facteurs : **géographie** (relief, météo, cols, interdictions Gothard/San Bernardino…) · **écologie** (km ↓, conso ↓) · **rentabilité** (véhicule, itinéraires directs, RPLP, coûts vs revenus).
+
+Étapes : collecter/trier ordres · véhicule optimal · contraintes · chauffeur adapté · enregistrer h/km · améliorer.
+
+### 12.3 Make or Buy (distribution)
+
+Lien module **301**. Opérationnelle (coûts court terme) vs **stratégique** (long terme + critères subjectifs · analyse valeur / pondération).
+
+#### 12.3.1 Critères
+**Coûts** · **risques** (fiabilité, dépendance prestataires) · **qualité** (transparence interne) · **image** · **liquidités** (investissements flotte) · **ressources** (chauffeurs, véhicules).
+
+#### 12.3.2 Scoring
+Critères pondérés (ex. coûts **40 %**) · variantes notées · somme 100 %. Ex. : flotte interne gagne → conserver / développer.
+
+#### 12.3.3 Scoring +/−
+**+** quantitatif + qualitatif · multi-critères · multi-départements · transparent.  
+**−** pondération subjective · effort ↑.
+
+### 12.4 Denrées périssables
+
+Bases : LDA · **ODAlOUs** · ordonnances. **Devoir d'annonce** (art. 20) si activité alimentaire.
+
+#### 12.4.1 Contenants
+Uniquement contenants alimentaires · symbole **verre-fourchette** (UE) = contact alimentaire sûr.
+
+#### 12.4.2 Chaîne du froid
+Réfrigération < **+5 °C** · congélation < **−18 °C**. Ininterrompue prod. → conso.
+
+Indicatifs : beurre +10 · viande / lait +6 · haché/poisson +2 · surgelés −18 · glaces −20. Étiquettes obligatoires.
+
+#### 12.4.3 HACCP
+*Hazard Analysis Critical Control Points* · origines spatiales (1959) · hygiène UE depuis 2006.
+
+**7 principes :** identifier dangers · CCP · valeurs limites · surveillance · mesures correctives · vérification système · **documentation**.
+
+#### 12.4.4 Surveillance T°
+Enregistreurs / numérique · pré-refroidir/réchauffer si besoin · panne → informer disponent immédiatement · rupture = risque non-commercialisation.
+
+### 12.5 Répartition & arrimage
+
+Rappel module **606** : accélération · décélération · centrifuge · verticales.  
+Légal : ≥**20 %** essieu directeur · ≥**25 %** tracteur · max essieux / poids total.  
+Responsabilité finale : **chauffeur** (même si tiers a chargé). Brochure ASTAG « Charger correctement, arrimer correctement ».
+
+Unités : cadre + couvercle + cerclage · cylindriques (plat / cales) · panneaux (cerclage L+T si glissant) · support adapté longueur.
+
+### 12.6 Regroupage & Cross-Docking
+
+**Regroupage :** remplir unités à moitié vides pour ↓ km / carburant.
+
+**Cross-Docking** (module **604**) :
+| Variante | Idée |
+| --- | --- |
+| **1 étape** | Fournisseur prépare déjà pour le client · réception → expédition |
+| **2 étapes** | Regroupement en nouvelles unités au hub |
+| **Multi-niveaux** | + montage, remplissage, conditionnement, découpe, étiquetage… · éventuellement + stock |
+
+**+** stock ↓ · étapes ↓ · CO₂ ↓. Judicieux : grandes qté stables · périssables · actions · haute valeur / délais courts.`;
+
+const DEMO_612_THEORIE_SUMMARY = `## À retenir — Module 612
+
+### Tournées
+LIFO · disposition · télématique · LTr/LCR/OTR/RPLP/ADR
+
+### Make or Buy
+Scoring pondéré · coûts, risques, qualité, image…
+
+### Froid & HACCP
+Annonce · verre-fourchette · chaîne froide · 7 principes
+
+### Charge & CD
+Essieux 20/25 % · chauffeur responsable  
+Regroupage · Cross-Docking 1/2/multi`;
+
+const DEMO_612_APERCU_FULL = `## Aperçu du module 612
+
+Ce module traite de la **planification des transports** : tournées, disposition, Make or Buy, denrées périssables et cross-docking.
+
+### Vous allez découvrir
+1. Planification de tournées et LIFO
+2. Cadre légal et télématique
+3. Make or Buy / scoring
+4. Chaîne du froid, HACCP, arrimage et Cross-Docking
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite des modules 606 / 611`;
+
+const DEMO_612_APERCU_SUMMARY = `## Aperçu — Module 612
+- Tournées · LIFO · disposition
+- Make or Buy · froid / HACCP
+- Arrimage · Cross-Docking`;
+
+const DEMO_612_OBJECTIFS_FULL = `## Objectifs du module 612
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer la **planification de tournées** (LIFO, disposition, cadre légal)
+- Mener une réflexion **Make or Buy** / scoring en distribution
+- Appliquer les bases **denrées / chaîne du froid** et les **7 principes HACCP**
+- Relier **répartition/arrimage**, regroupage et variantes de **Cross-Docking**`;
+
+const DEMO_612_OBJECTIFS_SUMMARY = `## Objectifs
+- Tournées & disposition
+- Make or Buy · HACCP
+- Arrimage · Cross-Docking`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -9951,6 +10091,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_611_THEORIE_FULL,
       summary: DEMO_611_THEORIE_SUMMARY,
+    },
+  },
+  "612": {
+    objectifs: {
+      full: DEMO_612_OBJECTIFS_FULL,
+      summary: DEMO_612_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_612_APERCU_FULL,
+      summary: DEMO_612_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_612_THEORIE_FULL,
+      summary: DEMO_612_THEORIE_SUMMARY,
     },
   },
 };
