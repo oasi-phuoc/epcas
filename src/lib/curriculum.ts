@@ -1860,6 +1860,196 @@ const DEMO_109_OBJECTIFS_SUMMARY = `## Objectifs
 - CP 179 / 321ter + CO 321a
 - Courrier & mots de passe`;
 
+/** Contenu Module 110 — Définition de la gestion des marchandises */
+const DEMO_110_THEORIE_FULL = `## 10. Définition de la gestion des marchandises
+
+### 10.1 Que comprend la gestion des marchandises ?
+
+La gestion des marchandises regroupe tous les **flux de marchandises et de données** au sein d'une entreprise (**en interne**). Points clés :
+
+- **Approvisionnement et stockage** — planification des besoins (matières premières, fournitures, produits commerciaux, services, informations) → §10.5.1
+- **Logistique interne** — préparation des commandes et transports internes → §10.5.2
+- **Production et élimination** — flux en production, rebuts et déchets → §10.5.3
+- **Distribution** — livraison des produits prêts à vendre → §10.5.4
+
+Trois niveaux d'intégration :
+
+1. **Gestion intégrée des matières** — articles et infos requis par la production, gérés de façon centrale
+2. **Gestion intégrée avancée** — approvisionnement de toute l'entreprise (approvisionnement, stocks, planification de production)
+3. **Gestion totalement intégrée des matériaux** — jusqu'à la livraison au marché des biens et services
+
+Schéma progressif : Approvisionnement + Logistique + Production → (+ planification production) → (+ distribution).
+
+**Difficulté :** faire coïncider les objectifs des services (couvrir les besoins, capacité de livraison, moins de manquants, moins de coûts de stockage…).
+
+**À retenir :** dans la gestion matière, le **bon article** est mis à disposition au **bon moment**, au **bon endroit**, dans la **bonne quantité**, avec la **bonne qualité** et au **bon prix** (**6B** — Jünemann).
+
+### 10.2 Objectifs et tâches
+
+Optimiser le flux de marchandises (approvisionnement, mise à disposition interne, stockage, distribution) de façon **économique** (coûts réduits, disponibilité rapide). But ultime : **optimisation des marges**. Des **indicateurs** (§10.6) servent à comparer, piloter et optimiser.
+
+**Objectif fondamental :** couvrir les besoins de la production et/ou des prestations de service **à temps** et de manière **économique**.
+
+Trois groupes d'objectifs :
+
+**Objectifs formels** (plutôt long terme, économiques, en valeur)
+- **Coûts d'achat** — passation de commande + prix d'achat (à minimiser)
+- **Frais de stockage** — capital immobilisé, faible rotation (à maintenir bas)
+- **Coûts de ruptures de stock** — éviter erreurs / mauvaises dates de commande
+
+**Objectifs spécifiques** — les 6B (bonne marchandise, endroit, moment, quantité, qualité, prix) + délai fournisseur inférieur au délai client souhaité si pas en stock
+
+**Objectifs sociaux / environnementaux**
+- Emballage respectueux de l'environnement
+- Recyclage
+- Protection de l'environnement (ex. transport)
+
+Souvent **conflit d'objectifs** (ex. emballage écolo ↑ vs prix ↑).
+
+### 10.3 Importance
+
+Facteur essentiel pour les **marges**. Impacts sur qualité, **fiabilité des livraisons** et rentabilité.
+
+Un **diagramme Sankey** visualise les quantités de flux internes (épaisseur de flèche = volume). Aide à prioriser les principaux flux pour l'optimisation.
+
+### 10.4 Données statiques et dynamiques (ERP)
+
+#### 10.4.1 Données de base (Master Data) — statiques
+Réutilisées longtemps : n° d'article, désignation, unité (pce, kg, L, m), emplacement (fixe), fournisseur, poids, volume…  
+Aussi : clients, fournisseurs, personnel, nomenclatures / listes de pièces.
+
+#### 10.4.2 Données de mouvement (Transaction Data) — dynamiques
+Évoluent en permanence : stock, consommation, commandes, factures…
+
+**Remarque :** les mouvements s'appuient sur les données de base. Fiabilité des deux = clé d'une bonne gestion des articles.
+
+### 10.5 Domaines de la gestion des matières
+
+#### 10.5.1 Approvisionnement et stockage
+
+Fournir matières premières (bois, acier, granulés…), auxiliaires (vis, emballages…), consommables (lubrifiants…), marchandises commerciales (non transformées), services, informations (dessins…).
+
+**Détermination des besoins — 3 méthodes**
+1. **Déterministe** (programme) — nomenclatures, gammes, OF, prévisions, commandes (articles coûteux, investissements)
+2. **Stochastique** (consommation) — historique extrapolé + conjoncture (retail, commandes court terme)
+3. **Heuristique** — estimation subjective (nouveaux articles)
+
+**Questions d'optimisation :** make or buy · besoins nets · choix fournisseur · modes de transport · quand · analyse ABC
+
+Exemple besoin net :
+- Besoin total 250 − stock 100 − commandes 50 = **besoin net 100** → risque de rupture, il faut agir.
+
+**Stockage :** éviter les attentes ; stocks optimaux ; moins d'intermédiaires ; distances internes courtes ; haute disponibilité. La logistique de stockage décide quoi / où / combien / comment stocker et sortir.
+
+**Réception :** contrôle identité, quantité, qualité.  
+**Entreposage :** affectation fixe, chaotique/flexible, zones par catégorie, ABC selon rotation.
+
+#### 10.5.2 Intralogistique
+
+**Préparation des commandes**
+- 1 étape (par commande) / 2 étapes (par articles, puis répartition)
+- En série / en parallèle (zones)
+- Dynamique (marchandise → homme) / statique (homme → marchandise)
+- Uni- / bi- / multidimensionnelle
+
+Souvent **formes mixtes**.
+
+**Transports internes :** mouvements dans l'entreprise ; critères = distance, priorité, délais, volume/poids, capacité engins, sécurité. Objectif : moins de temps de passage et de trajets à vide, coûts ↓, appro production sûr.
+
+#### 10.5.3 Production et élimination
+
+Questions : quoi produire (type, qty, délais) ? Comment éviter stocks intermédiaires ? Comment organiser transports/trajets ?
+
+Élimination rebuts/déchets : économique, normes de recyclage, environnement (objectifs sociaux). Entrées (MP, énergie…) / sorties (déchets, chaleur, eaux usées, bruit…) — voir module 501.
+
+#### 10.5.4 Distribution
+
+Livraison des produits demandés par le marché. Questions : emballage transport, sécurité, make or buy, transporteurs, vente directe/indirecte.
+
+### 10.6 Indicateurs (KPI)
+
+Chiffre pour évaluer / comparer un contexte opérationnel ou économique. En gestion des matières : **Key Performance Indicators**.
+
+**Exemples**
+
+Rotation des stocks = besoin annuel / stock  
+Ex. 150 000 / 100 000 = **1,5×** (stock renouvelé 1,5 fois)
+
+Durée de stockage = 360 / rotation  
+Ex. 360 / 1,5 = **240 jours**  
+(**Année bancaire :** 12 mois × 30 j = **360 j/an**)
+
+Taux de service = commandes honorées / commandes reçues × 100  
+Ex. 237 / 262 × 100 ≈ **90,45 %**
+
+Intensité matières = achats × 100 / CA  
+Ex. 82 / 154 Mio ≈ **53,25 %** du CA pour les achats
+
+**ROI (Du Pont, 1919) :** rentabilité mesurée au capital investi — système d'indicateurs reliant plusieurs ratios.
+
+Autres ratios de stockage : voir le recueil de formules logistique.`;
+
+const DEMO_110_THEORIE_SUMMARY = `## À retenir — Module 110
+
+### Gestion des marchandises
+Flux **internes** marchandises + données : Appro · Intralog · Prod/Élim · Distrib  
+Intégration : intégrée → avancée → totalement intégrée  
+**6B** (Jünemann) au cœur
+
+### Objectifs
+Fondamental : besoins **à temps** + **économiques** · marges  
+Formels (coûts achat/stock/rupture) · Spécifiques (6B) · Sociaux (écolo)  
+→ souvent **conflits d'objectifs**
+
+### Données ERP
+**Base** (Master) = statiques · **Mouvement** (Transaction) = dynamiques
+
+### Besoins
+Déterministe · Stochastique · Heuristique  
+Besoin net = total − stock − commandes en cours
+
+### Stockage / picking / transport
+Quoi/où/combien · ABC · picking 1/2 étapes, série/parallèle, dynamique/statique  
+Transport interne : distances, priorités, sécurité
+
+### KPI
+Rotation · durée (360/rot.) · taux de service · intensité matières · **ROI**`;
+
+const DEMO_110_APERCU_FULL = `## Aperçu du module 110
+
+Ce module définit la **gestion des marchandises** : périmètre, objectifs, données, domaines et indicateurs.
+
+### Vous allez découvrir
+1. Périmètre et niveaux d'intégration (6B)
+2. Objectifs formels, spécifiques et sociaux
+3. Données de base vs de mouvement
+4. Approvisionnement, intralogistique, production, distribution
+5. KPI (rotation, durée, taux de service, ROI…)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL`;
+
+const DEMO_110_APERCU_SUMMARY = `## Aperçu — Module 110
+- Gestion matière interne + 6B
+- Objectifs / données / domaines
+- KPI essentiels`;
+
+const DEMO_110_OBJECTIFS_FULL = `## Objectifs du module 110
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Définir la gestion des marchandises et ses niveaux d'intégration
+- Relier la gestion matière aux **6B**
+- Distinguer objectifs formels, spécifiques et sociaux (et leurs conflits)
+- Différencier données de **base** et de **mouvement**
+- Expliquer déterministe / stochastique / heuristique et le calcul du besoin net
+- Citer les principes de picking et les KPI courants (rotation, durée, taux de service, ROI)`;
+
+const DEMO_110_OBJECTIFS_SUMMARY = `## Objectifs
+- Périmètre + 6B + objectifs
+- Master / Transaction data
+- Besoins, picking, KPI`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -1998,6 +2188,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_109_THEORIE_FULL,
       summary: DEMO_109_THEORIE_SUMMARY,
+    },
+  },
+  "110": {
+    objectifs: {
+      full: DEMO_110_OBJECTIFS_FULL,
+      summary: DEMO_110_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_110_APERCU_FULL,
+      summary: DEMO_110_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_110_THEORIE_FULL,
+      summary: DEMO_110_THEORIE_SUMMARY,
     },
   },
 };
