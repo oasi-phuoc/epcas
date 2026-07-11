@@ -112,7 +112,7 @@ const moduleSeeds: ModuleSeed[] = [
   { code: "312", title: "Données de stockage", blockId: "block-300" },
 
   // 400 Logistics
-  { code: "401", title: "Les rôles du stockage", blockId: "block-400" },
+  { code: "401", title: "Le rôle du stockage", blockId: "block-400" },
   { code: "402", title: "Les genres de stockage", blockId: "block-400" },
   { code: "403", title: "Les formes de stockage", blockId: "block-400" },
   { code: "404", title: "Les exigences techniques", blockId: "block-400" },
@@ -5624,6 +5624,98 @@ const DEMO_312_OBJECTIFS_SUMMARY = `## Objectifs
 - Types & formules
 - Fiche / comptabilisations`;
 
+/** Contenu Module 401 — Le rôle du stockage */
+const DEMO_401_THEORIE_FULL = `## 1. Le rôle du stockage
+
+### 1.1 La fonction de réserve
+
+Le stockage de réserves n'est pas nouveau : denrées alimentaires chez nos ancêtres ; en Suisse, **réserves obligatoires** de la Confédération pour l'approvisionnement en crise ; chez l'écureuil, noisettes dispersées (comparable au stockage **chaotique** → module **406**).
+
+**Définition chez EnterSite AG :** « stockage » désigne à la fois le **local** où l'on stocke et les **biens** qui y sont conservés.
+
+**Remarque :** on ne peut souvent pas acheter uniquement la quantité immédiatement nécessaire → l'entrepôt tient un **stock de réserve**.
+
+### 1.2 Aperçu des fonctions de stockage
+
+#### 1.2.1 Fonction de sécurité
+
+Forme la plus importante. Stocks d'urgence = fonction de **réserve**, aussi appelée **tampon** ou **compensation**, pour surmonter des situations critiques :
+
+- retards de livraison / difficultés de transport
+- variations de consommation (demande ↑ ou aléas de production)
+- marchandises livrées insuffisantes ou défectueuses
+
+**Remarque :** en langage technique, on parle aussi de **stock de sécurité**.
+
+#### 1.2.2 Fonction de transformation
+
+Dans les entrepôts commerciaux : transvaser, mélanger, trier — mettre les marchandises à disposition dans les **quantités** souhaitées ou en **kits**.
+
+Exemples typiques :
+- reconditionnement
+- coupe / découpe
+- mélange (chimie, colorants)
+- prémontage de composants
+- séchage (ex. bois)
+
+#### 1.2.3 Fonction de contrôle et de tri
+
+Dans le flux de marchandises :
+- identification
+- contrôle quantité et état
+- suivi des délais
+
+**Tri :** marchandises obsolètes, inutiles ou périmées → élimination selon directives entreprise.
+
+#### 1.2.4 Fonction de spéculation
+
+Acheter au bon moment (avant hausse de prix) pour obtenir un avantage — ex. mazout en été, revente plus cher ensuite.
+
+#### 1.2.5 Fonction d'affinage ou de maturation
+
+Certaines marchandises n'atteignent leur qualité optimale qu'après stockage adapté (fromage, vin, produits carnés…). Locaux souvent appelés **entrepôts de maturation**.`;
+
+const DEMO_401_THEORIE_SUMMARY = `## À retenir — Module 401
+
+### Stockage
+Local + biens · réserve nécessaire (pas seulement le besoin immédiat)  
+Chaotique ≈ « cachettes » dispersées → module 406
+
+### Fonctions
+1. **Sécurité** (tampon / stock de sécurité) — retards, variations, défauts  
+2. **Transformation** — reconditionnement, kits, découpe, mélange, séchage…  
+3. **Contrôle & tri** — ID, qté/état, délais · élimination obsolète/périmé  
+4. **Spéculation** — achat anticipé pour prix  
+5. **Affinage / maturation** — fromage, vin, charcuterie…`;
+
+const DEMO_401_APERCU_FULL = `## Aperçu du module 401
+
+Ce module introduit le **rôle du stockage** : fonction de réserve et autres fonctions (sécurité, transformation, contrôle, spéculation, maturation).
+
+### Vous allez découvrir
+1. Définition du stockage chez EnterSite
+2. Fonction de sécurité / stock de sécurité
+3. Transformation, contrôle-tri, spéculation, affinage
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Début du bloc 400`;
+
+const DEMO_401_APERCU_SUMMARY = `## Aperçu — Module 401
+- Réserve & définition
+- 5 fonctions du stockage`;
+
+const DEMO_401_OBJECTIFS_FULL = `## Objectifs du module 401
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Définir le **stockage** (local et biens) et la fonction de **réserve**
+- Expliquer la fonction de **sécurité** (stock de sécurité / tampon)
+- Citer et illustrer les fonctions de **transformation**, **contrôle-tri**, **spéculation** et **affinage/maturation**`;
+
+const DEMO_401_OBJECTIFS_SUMMARY = `## Objectifs
+- Définition + réserve
+- 5 fonctions du stockage`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -6070,6 +6162,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_312_THEORIE_FULL,
       summary: DEMO_312_THEORIE_SUMMARY,
+    },
+  },
+  "401": {
+    objectifs: {
+      full: DEMO_401_OBJECTIFS_FULL,
+      summary: DEMO_401_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_401_APERCU_FULL,
+      summary: DEMO_401_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_401_THEORIE_FULL,
+      summary: DEMO_401_THEORIE_SUMMARY,
     },
   },
 };
