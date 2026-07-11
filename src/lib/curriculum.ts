@@ -8055,6 +8055,118 @@ const DEMO_602_OBJECTIFS_SUMMARY = `## Objectifs
 - Choix & contraintes
 - Normes · durabilité`;
 
+/** Contenu Module 603 — L'arrimage des marchandises */
+const DEMO_603_THEORIE_FULL = `## 3. L'arrimage des marchandises
+
+Pour sécuriser un chargement de palettes : **filmage (stretch)** · **rétraction** · **cerclage**.
+
+### Filmage / stretching
+Envelopper avec un **film étirable** (dérouleur manuel ou filmeuse).
+
+- Étirer le film pendant l'enveloppement → stabilité (réglage de la tension)
+- Inclure la **palette** dans le stretch pour stabilité optimale · **sauf** avant contrôle de profil auto (sinon rejet « palette défectueuse »)
+- Idéal pour charges **homogènes** · arêtes saillantes peuvent percer · charges avec éléments lourds → **+ cerclage** plastique
+
+👉 Langage courant : « filmer » = souvent banderolage étirable (à distinguer de la rétraction thermique).
+
+### Rétraction
+Housse **thermo-rétractable** (souvent PVC épais) chauffée (soufflante / flamme / four) → se resserre. Protège intempéries, poussière, vol. Peu écologique. **Non étirable** : une fois abîmée, protection insuffisante. Ne pas surchauffer un même endroit.
+
+### Cerclage
+Feuillard autour de grosses unités. **Vertical** = souvent le mieux (relie palette + charge). **Horizontal** plus rare (ex. fûts). Piles très instables : combinaison V+H · parfois mieux d'ajouter du stretch plutôt qu'un cerclage horizontal.
+
+### 3.1 Choisir le bon feuillard
+
+Critères : résistance à la traction · extensibilité · capacité de rappel · prix · environnement.
+
+| Matériau | Traction (N/mm²) | Extensibilité | Rappel | Prix | Écolo |
+| --- | --- | --- | --- | --- | --- |
+| Plastique **PP / PET** | 330–400 | 16–22 % | Très grand | Bon marché | PET recyclable |
+| Textile / polyester | 470–570 | 11–16 % | Grand | Cher | Non recyclable |
+| **Acier** | 700–1100 | 6–12 % | Petit | Très cher | Recyclable |
+
+#### 3.1.1 Résistance à la traction
+N/mm² = force pour déchirer 1 mm². Comparer plutôt la **force de rupture** :  
+**Force de rupture = section × résistance** · section = largeur × épaisseur.  
+(Pratique : ~10 N ≈ 1 kg.)
+
+**Ex. EnterSite** — palette toner 600 kg · 2 cerclages → ≥ **300 kg** / feuillard.
+
+| | Plastique | Acier |
+| --- | --- | --- |
+| Dimensions | 20 × 0,4 mm → 8 mm² | 15 × 0,6 mm → 9 mm² |
+| Traction | 400 N/mm² | 1200 N/mm² |
+| Rupture | 3200 N ≈ **320 kg** | 10 800 N ≈ **1080 kg** |
+
+Les deux suffisent → trancher sur d'autres critères.
+
+#### 3.1.2 Allongement
+% d'extension jusqu'à rupture · PP le plus extensible.
+
+#### 3.1.3 Capacité de rétractation (rappel)
+Capacité à se **resserrer** après étirement · importante si la charge se tasse. Plastique ≫ acier (acier étiré ne se contracte presque plus).
+
+### 3.2 Types de fermeture
+
+Avec **boucle** · avec **chape** · **sans chape** (soudage, poinçonnage, encliquetage).
+
+#### 3.2.1 Boucle
+Économique · fils polyester / textile / PP · rouvrable / retendable · bois, meubles, sécurisation temporaire interne.
+
+#### 3.2.2 Chape
+Tendre → poser chape → écraser / poinçonner · plastique ou métal · appareils combinés (tension + chape + soudure).
+
+#### 3.2.3 Sans chape
+Plus rationnel · soudure / encliquetage. Plastique : soudeuses **vibrantes** (frottement 200–300 Hz) · ultrasons surtout sur machines auto haut rendement.
+
+#### 3.2.4 Ficelle
+Industrie des boissons : caisses souvent sécurisées par **une ficelle** pré-coupée · rapide et économique · adopté ailleurs.`;
+
+const DEMO_603_THEORIE_SUMMARY = `## À retenir — Module 603
+
+### 3 méthodes
+Stretch (étirer, inclure palette sauf profil) · rétraction (chaleur, PVC) · cerclage (V > H)
+
+### Feuillard
+PP/PET · textile · acier  
+Comparer **force de rupture** (= section × traction)  
+Plastique = rappel ↑ si charge se tasse
+
+### Fermetures
+Boucle · chape · sans chape (vibration) · ficelle boissons`;
+
+const DEMO_603_APERCU_FULL = `## Aperçu du module 603
+
+Ce module traite de l'**arrimage** des charges palettisées : filmage, rétraction, cerclage, choix du feuillard et fermetures.
+
+### Vous allez découvrir
+1. Stretch, rétraction et cerclage
+2. Choix du feuillard (traction, allongement, rappel)
+3. Calcul de la force de rupture
+4. Fermetures (boucle, chape, sans chape, ficelle)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite des modules 601–602`;
+
+const DEMO_603_APERCU_SUMMARY = `## Aperçu — Module 603
+- Stretch · rétraction · cerclage
+- Feuillards & force de rupture
+- Types de fermeture`;
+
+const DEMO_603_OBJECTIFS_FULL = `## Objectifs du module 603
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Comparer **filmage**, **rétraction** et **cerclage**
+- Choisir un **feuillard** (PP/PET, textile, acier) selon traction, allongement et rappel
+- Calculer une **force de rupture** et l'appliquer à un cas (ex. 2 cerclages)
+- Distinguer les **fermetures** (boucle, chape, sans chape, ficelle)`;
+
+const DEMO_603_OBJECTIFS_SUMMARY = `## Objectifs
+- Stretch / rétraction / cerclage
+- Feuillard & rupture
+- Fermetures`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -8753,6 +8865,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_602_THEORIE_FULL,
       summary: DEMO_602_THEORIE_SUMMARY,
+    },
+  },
+  "603": {
+    objectifs: {
+      full: DEMO_603_OBJECTIFS_FULL,
+      summary: DEMO_603_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_603_APERCU_FULL,
+      summary: DEMO_603_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_603_THEORIE_FULL,
+      summary: DEMO_603_THEORIE_SUMMARY,
     },
   },
 };
