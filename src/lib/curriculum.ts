@@ -1727,6 +1727,139 @@ const DEMO_108_OBJECTIFS_SUMMARY = `## Objectifs
 - 8 problèmes mondiaux
 - Agenda 2030 / 17 ODD`;
 
+/** Contenu Module 109 — Accès et protection des données */
+const DEMO_109_THEORIE_FULL = `## 9. Accès et protection des données
+
+### 9.1 Autorisation d'accès
+
+Accepterais-tu qu'un étranger ait un accès illimité à ton appartement ? Probablement pas. C'est pourquoi, comme la plupart des gens, tu fermes la porte de ton appartement. Celui qui se trouve dans l'appartement d'un habitant sans son consentement commet une violation de domicile ; celui qui s'introduit de force commet un cambriolage.
+
+Un propriétaire d'entreprise ne veut pas non plus d'hôtes indésirables. Il définit, selon la fonction des employés, le **droit d'accès** aux locaux et remet les **clés** ou **badges** correspondants (sécurité électronique). Une responsabilité particulière est liée à chaque clé ou badge.
+
+**Règles :**
+- Ne jamais confier une clé/badge à une autre personne sans contrôle (y compris connaissances et proches)
+- Conserver en lieu sûr lorsqu'elle n'est pas utilisée
+- Ne jamais laisser sur les portes
+- Ne jamais déposer sous le paillasson ou dans la boîte aux lettres
+- Ne pas porter de mention de l'entreprise (sécurité)
+
+**Remarque :** la perte d'une clé ou d'un badge doit être **immédiatement** signalée à l'employeur.
+
+La perte peut coûter cher : remplacement de toutes les serrures concernées. Sur les systèmes à puce électronique, une clé perdue peut être **désactivée** (sans changer les serrures), mais cela a aussi un coût.
+
+### 9.2 Secret épistolaire
+
+Sous le titre des infractions contre l'honneur et le domaine secret ou privé, le **Code pénal suisse (CP)** protège la sphère privée. La violation du secret épistolaire est sanctionnée par l'**art. 179 CP**. Il s'applique à la sphère professionnelle **et** privée. C'est un **délit sur plainte** (investigations seulement si la personne lésée le demande), contrairement à un délit poursuivi d'office.
+
+**Art. 179 CP — Violation du secret épistolaire**
+
+Quiconque, sans en avoir le droit, ouvre un pli ou colis fermé pour en connaître le contenu, ou quiconque, ayant pris connaissance de faits en ouvrant un pli/colis non destiné, les divulgue ou en tire profit, est, **sur plainte**, puni d'une **amende**.
+
+**Pour les employés :**
+- Le contenu des lettres/colis à transporter ne les concerne pas (Poste, courrier interne, particuliers)
+- Seules les personnes chargées d'ouvrir le courrier reçu peuvent le faire
+- Même avec mandat : attention aux noms personnels dans l'adresse
+- Mentions **personnel**, **confidentiel** ou **personnel/confidentiel** → **ne jamais ouvrir**
+
+**Exemples d'adresses :**
+
+| Adresse | Action |
+|---------|--------|
+| EnterSite AG + adresse (sans nom) | ✅ Ouvrir |
+| EnterSite AG « À l'attention de Reto Gugger » | ✅ Sans avis contraire : ouvrir sur instruction |
+| Monsieur Reto Gugger + EnterSite AG | ❌ N'ouvrir que si M. Gugger l'a expressément demandé |
+| Monsieur Reto Gugger + « Personnel/confidentiel » | ❌ **Ne jamais ouvrir** |
+
+### 9.3 Secret postal
+
+Le **secret postal** (CP) est plus large que le secret épistolaire : il protège non seulement le **contenu**, mais aussi **expéditeur** et **destinataire** dans leurs fonctions. Ex. : un facteur n'a pas le droit de dire à un tiers qui reçoit du courrier, de qui et à quelle fréquence.
+
+Les infos de sphère hautement privée ne doivent jamais être transmises (actes judiciaires, commandements de payer…). Raconter qu'une rente AVS sera versée le lendemain peut mettre en danger livreurs et bénéficiaires.
+
+**Art. 321ter CP — Violation du secret de la poste et des télécommunications**
+
+Sanction possible : peine privative de liberté de **trois ans au plus** ou peine pécuniaire, notamment pour transmission d'infos sur relations postales / paiements / télécoms, ouverture d'envoi fermé, etc. Reste punissable après la fin de l'emploi. Exceptions (ex. déterminer l'ayant droit, prévenir des dommages) et réserves légales (obligation de renseigner / témoigner).
+
+### 9.4 Secret des affaires
+
+Selon le **Code des obligations**, tout employé doit garder les secrets d'affaires de son employeur.
+
+**Art. 321a al. 4 CO** (devoir de diligence et de loyauté) : pendant le contrat, le travailleur ne doit pas utiliser ni révéler des faits confidentiels (secrets de fabrication et d'affaires) ; le secret peut subsister **après** la fin du contrat tant que l'exigent les intérêts légitimes de l'employeur.
+
+**Remarque :** faire preuve de retenue en « bavardant » sur l'entreprise ; les critiques publiques laissent une impression négative.
+
+### 9.5 Sécurité des données
+
+À l'ère du traitement électronique, la protection des données est cruciale. Première « porte » : **nom d'utilisateur + mot de passe** (« se connecter »). Le système enregistre chaque accès (date/heure). Les droits d'accès correspondent généralement à la fonction. Réseaux souvent gérés par des administrateurs système ; les collaborateurs (y compris logisticiens) doivent respecter des règles.
+
+#### 9.5.1 Protection par mot de passe
+
+Utile à l'entreprise **et** au collaborateur : empêche qu'un tiers se connecte sous son identité.
+
+**Bon mot de passe :**
+- connu de personne d'autre
+- nulle part écrit
+- difficile à trouver (éviter date de naissance, lieu, surnoms, etc.)
+- **ne pas réutiliser** (surtout pas le mot de passe Windows sur n'importe quel site)
+- au moins **8 caractères** : majuscules + minuscules + chiffres + caractères spéciaux
+- le changer régulièrement (souvent exigé par le système)
+
+**Virus / vers / chevaux de Troie :** programmes aux effets variables (gênants → formatage / vol de mots de passe bancaires). La propagation repose souvent sur l'imprudence des utilisateurs. Compléments : module **805**.`;
+
+const DEMO_109_THEORIE_SUMMARY = `## À retenir — Module 109
+
+### Accès physique
+Clés/badges selon fonction · ne jamais prêter sans contrôle · pas sur la porte / paillasson · pas de nom d'entreprise · **signaler toute perte immédiatement**
+
+### Secret épistolaire (CP 179)
+Délit **sur plainte** · amende  
+Ne pas ouvrir le courrier d'autrui · « personnel / confidentiel » = **jamais**  
+Adresse entreprise seule → OK · nom perso → prudence / mandat
+
+### Secret postal (CP 321ter)
+Protège contenu **+** expéditeur/destinataire · peine jusqu'à **3 ans**  
+Ne pas divulguer qui reçoit quoi / quand (ex. AVS, actes)
+
+### Secret des affaires (CO 321a al. 4)
+Ne pas révéler secrets de fabrication/affaires · peut durer **après** le contrat
+
+### Données / mots de passe
+Login tracé · droits selon fonction  
+≥ 8 car. mixtes · unique · secret · changé régulièrement  
+Attention virus / phishing (→ module 805)`;
+
+const DEMO_109_APERCU_FULL = `## Aperçu du module 109
+
+Ce module traite de l'**accès** et de la **protection des données** : locaux, courrier, secrets et informatique.
+
+### Vous allez découvrir
+1. Autorisation d'accès (clés / badges) et responsabilités
+2. Secret épistolaire et secret postal (Code pénal)
+3. Secret des affaires (Code des obligations)
+4. Sécurité des données et bons mots de passe
+
+### Source
+EnterSite — Logistics by ASFL / SVBL`;
+
+const DEMO_109_APERCU_SUMMARY = `## Aperçu — Module 109
+- Accès locaux
+- Secrets épistolaire / postal / affaires
+- Mots de passe et données`;
+
+const DEMO_109_OBJECTIFS_FULL = `## Objectifs du module 109
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Appliquer les règles de responsabilité liées aux clés/badges
+- Distinguer **secret épistolaire**, **secret postal** et **secret des affaires**
+- Décider quand un courrier peut / ne peut pas être ouvert
+- Formuler les règles d'un bon **mot de passe** et les risques liés aux malwares`;
+
+const DEMO_109_OBJECTIFS_SUMMARY = `## Objectifs
+- Clés/badges
+- CP 179 / 321ter + CO 321a
+- Courrier & mots de passe`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -1851,6 +1984,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_108_THEORIE_FULL,
       summary: DEMO_108_THEORIE_SUMMARY,
+    },
+  },
+  "109": {
+    objectifs: {
+      full: DEMO_109_OBJECTIFS_FULL,
+      summary: DEMO_109_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_109_APERCU_FULL,
+      summary: DEMO_109_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_109_THEORIE_FULL,
+      summary: DEMO_109_THEORIE_SUMMARY,
     },
   },
 };
