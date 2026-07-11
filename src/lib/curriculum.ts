@@ -7086,6 +7086,124 @@ const DEMO_410_OBJECTIFS_SUMMARY = `## Objectifs
 - Continus & transferts
 - Accumulation · sécurité`;
 
+/** Contenu Module 501 — La production */
+const DEMO_501_THEORIE_FULL = `## 1. Production
+
+### 1.1 Définition
+
+Du latin *producere* = « produire ». La **production** désigne la fabrication de :
+- **Biens matériels** — voiture, téléphone, pain, montres…
+- **Énergies** — électricité, chaleur, essence…
+- **Services** — émissions TV, assurances…
+
+C'est une **transformation** d'*inputs* (facteurs de production) en *outputs* via des techniques spécifiques :
+
+| Facteur | Exemples |
+| --- | --- |
+| Prestation de **travail** | Personnes, spécialistes |
+| **Matériel** d'exploitation | Machines de production |
+| **Matériaux** | Matières premières, matériaux bruts |
+
+Processus de **création de valeur** : combiner les facteurs d'entrée pour obtenir des sorties de la plus haute qualité possible.
+
+### 1.2 Objectifs et tâches
+
+> « Si tu veux construire un bateau, ne rassemble pas les hommes pour trouver du bois… mais enseigne-leur la nostalgie de la mer vaste et infinie. » — Antoine de Saint-Exupéry
+
+Objectif fondamental : un **bon produit** qui répond aux attentes clients — idéalement les **dépasse**.
+
+| Objectif | Sens |
+| --- | --- |
+| **Coûts** réduits | Produire au meilleur prix possible |
+| **Rendement** élevé | Produire le plus possible |
+| Haute **qualité** | Exigences respectées · le moins de **rebuts** possible |
+| Respect des **délais** | Livrer à temps (ni trop tôt, ni trop tard) |
+| **Charge** de travail élevée | Employés et machines suffisamment occupés |
+| **Temps de passage** réduit | Délai de fabrication le plus court possible |
+| **Satisfaction** clients | Répondre à leurs attentes |
+
+Les matières premières ou produits non finis passent de l'état actuel à l'état souhaité (**transformation**). Main-d'œuvre + machines, outils, énergie.
+
+👉 La production accomplit une **transformation**.
+
+### 1.3 Développement de produits
+
+#### 1.3.1 De l'idée au produit
+
+Toutes les activités menant à un produit **vendable** : vision / idée → lancement marché.
+
+**Exemple Zeridwen** — poupée pour initier les 4–9 ans au brossage manuel. Témoins lumineux dans la dentition → l'enfant reproduit les gestes. Marché potentiel Europe ≈ **11,8 millions** d'unités (étude HEB).
+
+Parcours typique :
+1. **Dessins techniques** → **modèle fonctionnel** (fonctionne, pas encore vendable)
+2. Modèle fonctionnel → **modèle de série** (proposé sur le marché)
+3. **Achats** : fournisseurs de matières premières
+4. **PCP** (planification et contrôle de la production) : pièces, processus sans faille
+5. Produit commercialisé
+
+### 1.4 Structure des produits
+
+Organise le produit selon des critères pour planifier / contrôler : conception → achat → production → montage.
+
+| Service | Point de vue |
+| --- | --- |
+| **Construction** | Quelles **fonctions** ? |
+| **Achats** | Semi-finis, finis, matières premières à **acheter** ? |
+| **Production** | Quelles **machines** pour les composants ? |
+| **Montage** | Dans quel **ordre** monter composants / sous-ensembles ? |
+
+#### 1.4.1 Objectif
+Structure aussi **simple** et **neutre client** (standardisée) que possible jusqu'aux niveaux supérieurs. Différences individuelles (= souhaits clients) le **plus tard possible** dans le process.
+
+👉 Sert à la **documentation complète** d'un produit (ou famille) sous plusieurs angles (conception, fabrication…).`;
+
+const DEMO_501_THEORIE_SUMMARY = `## À retenir — Module 501
+
+### Définition
+Production = biens · énergies · services  
+Inputs → transformation → outputs (création de valeur)
+
+### Objectifs
+Coûts ↓ · rendement ↑ · qualité ↑ · délais · charge · temps de passage ↓ · satisfaction
+
+### Développement
+Idée → dessins → modèle fonctionnel → série · Achats + PCP
+
+### Structure produit
+Vues construction / achats / production / montage  
+Standardiser tôt · personnaliser **tard**`;
+
+const DEMO_501_APERCU_FULL = `## Aperçu du module 501
+
+Premier module du bloc **Production** : définition, objectifs, développement de produits et structure produit.
+
+### Vous allez découvrir
+1. Définition et facteurs de production (inputs → outputs)
+2. Objectifs (coûts, qualité, délais, temps de passage…)
+3. De l'idée au produit (ex. Zeridwen)
+4. Structure produit multi-points de vue
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Bloc 500 Production`;
+
+const DEMO_501_APERCU_SUMMARY = `## Aperçu — Module 501
+- Définition & objectifs
+- Développement & structure produit`;
+
+const DEMO_501_OBJECTIFS_FULL = `## Objectifs du module 501
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Définir la **production** et ses facteurs (travail, matériel, matériaux)
+- Citer les **objectifs** principaux (coûts, qualité, délais, temps de passage…)
+- Décrire le parcours **idée → produit** (modèle fonctionnel / série, rôle Achats et PCP)
+- Expliquer la **structure produit** selon construction, achats, production et montage`;
+
+const DEMO_501_OBJECTIFS_SUMMARY = `## Objectifs
+- Définition & objectifs
+- Idée → produit
+- Structure multi-vues`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -7672,6 +7790,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_410_THEORIE_FULL,
       summary: DEMO_410_THEORIE_SUMMARY,
+    },
+  },
+  "501": {
+    objectifs: {
+      full: DEMO_501_OBJECTIFS_FULL,
+      summary: DEMO_501_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_501_APERCU_FULL,
+      summary: DEMO_501_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_501_THEORIE_FULL,
+      summary: DEMO_501_THEORIE_SUMMARY,
     },
   },
 };
