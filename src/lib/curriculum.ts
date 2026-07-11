@@ -2601,148 +2601,199 @@ const DEMO_205_THEORIE_FULL = `## 5. Marketing
 
 ### 5.1 Objectifs du marketing
 
-Le marketing d'EnterSite AG vise à **promouvoir la vente** de produits et services. Les ventes ↑ → chiffre d'affaires ↑ → bénéfice (en règle générale). Générer des bénéfices est l'objectif principal : un bénéfice est intégré dans le prix.
+Le marketing d'EnterSite AG a pour objectif de **promouvoir la vente** de ses produits et services. Les ventes font augmenter le chiffre d'affaires et donc le bénéfice (en règle générale). Générer des bénéfices est l'objectif principal : un bénéfice est calculé dans le prix des produits ou services. Le bénéfice augmente lorsque davantage de produits et services sont vendus.
 
-Objectifs marketing typiques :
-- préserver / augmenter la **part de marché**
-- améliorer la **notoriété**
-- ancrer une **image positive**
+Afin de réaliser un maximum de bénéfices, les objectifs visés par le marketing sont :
+- la **préservation**, voire l'**augmentation** de sa part de marché
+- l'amélioration de sa **notoriété**
+- l'ancrage d'une **image positive** sur le marché
 
-### 5.2 Personnes impliquées
+### 5.2 Personnes impliquées dans le marketing
 
-Le marketing est une science pratiquée par des professionnels, mais chez EnterSite presque tous les collaborateurs y participent (délibérément ou non). Il englobe tous les niveaux :
-- direction
-- service commercial (vente, marketing)
-- production
-- administration et services
+Le marketing est une science. Pour le pratiquer de manière systématique, ce sont des **professionnels** qui s'en chargent. Au sein d'EnterSite AG, presque tous les collaborateurs participent délibérément ou non au marketing. Il englobe tous les niveaux et tous les domaines. Plus ils se complètent, plus l'entreprise aura du succès sur le marché.
 
-Plus ces domaines se complètent, plus le succès sur le marché est grand.
+Niveaux et domaines :
+- la **direction**
+- le **service commercial** (vente, marketing)
+- les collaborateurs de la **production**
+- les collaborateurs de l'**administration** et des services
 
-### 5.3 Loi de l'offre et de la demande
+### 5.3 La loi de l'offre et de la demande
 
-Principe économique : l'équilibre entre **offre** (quantité disponible) et **demande** détermine le **prix de marché**.
+Principe fondamental de l'économie : dynamique entre fournisseurs et consommateurs. L'équilibre entre la quantité disponible (**offre**) et la **demande** détermine le **prix de marché**.
 
-#### 5.3.1 Effet de l'offre
-**Exemple salades :** récolte abondante → offre >> demande → prix bas, destructions, bénéfice espéré non réalisé.  
-Inversement : gel/grêle → offre limitée → prix ↑ (atténué par imports grâce à la mondialisation).
+#### 5.3.1 L'effet de l'offre
 
-Les fournisseurs peuvent aussi réguler (ex. États pétroliers : ↑ extraction pour baisser le prix, ↓ pour le faire monter).
+**Exemple — salades :** les maraîchers ont salué une « récolte du siècle ». Le temps favorable a fait mûrir toutes les salades en même temps. Malgré les offres spéciales des grands distributeurs et des prix très bas, une partie de la production a dû être détruite. Offre >> demande → baisses de prix, bénéfice espéré non réalisé.
 
-#### 5.3.2 Effet de la demande
-Demande ↑ sans production qui suit → prix ↑.  
-**Exemple maïs / biodiesel :** demande industrielle ↑ → pénurie alimentaire, tortilla mexicaine ×2.
+**Effet inverse :** gel, grêle ou pluie prolongée → pertes de récolte → offre limitée → clients prêts à payer plus cher → prix ↑. Ce mécanisme est toutefois limité par la **mondialisation** (imports) : les consommateurs choisissent entre produits locaux chers et produits importés moins chers.
+
+Les fournisseurs peuvent aussi réguler l'offre (ex. États pétroliers : extraire plus pour baisser le prix, réduire la production pour le faire monter).
+
+#### 5.3.2 L'effet de la demande
+
+Si la demande augmente sans que la production suive, l'offre est trop faible → prix ↑. Parfois, la demande étrangère fait aussi grimper le prix.
+
+**Exemple — maïs / biocarburants :** alternatives au pétrole → biodiesel à base de maïs ou canne à sucre → demande ↑ → pénurie dans des pays « pauvres ». Au Mexique, le prix de la tortilla (plat national) a **doublé** ; le gouvernement a dû prendre des mesures d'urgence.
 
 **Remarque :**
-- Offre ↑ / demande stable → prix ↓
-- Offre ↓ / demande stable → prix ↑
+- Quantité offerte ↑ / demande stable → prix ↓
+- Quantité offerte ↓ / demande stable → prix ↑
 - Demande ↑ / offre stable → prix ↑
 - Demande ↓ / offre stable → prix ↓
 
-### 5.4 Instruments — Marketing-Mix (4P)
+### 5.4 Les instruments du marketing
 
-Infos marché → stratégie → combinaison de mesures = **Marketing-Mix** (origine USA).
+Pour définir sa stratégie de marketing (stratégie de vente), EnterSite AG doit se procurer des **informations sur le marché**, puis définir les mesures pour s'y imposer. Il s'agit le plus souvent d'une combinaison de mesures = **Marketing-Mix**. La description avec les **4 P** vient des États-Unis.
 
-**Product (Produit)**  
-Utilité + qualité. Gamme, technique, design, packaging. Doit s'intégrer dans l'assortiment ; design attractif.
+#### Product (Produit)
 
-**Price (Prix)**  
-Critère d'achat clé. Dépend du produit, MP, RH, distribution, R&D. Ni trop bas ni trop haut : acceptable pour le client **et** rentable. Pression : concurrence, rabais, conditions de paiement.
+La commercialisation dépend d'abord de l'**utilité** (personne n'achète un produit inutile) et de la **qualité** (plus elle est élevée, mieux c'est). Éléments : stratégie de gamme, caractéristiques techniques, design, packaging.
 
-**Place (Lieu / distribution)**  
-Qui sont les acheteurs ? Où ? Vente directe ou indirecte ? Où placer le produit dans l'assortiment / le point de vente pour maximiser les ventes ?
+Le produit doit s'intégrer dans l'**assortiment** (ex. : on ne cherche pas des jouets dans un magasin de sport). Le design doit être plaisant et contemporain pour attirer l'attention.
 
-**Promotion (Publicité / communication)**  
-Placement + prix ne suffisent pas. Campagnes et promotions en magasin. Choix des supports selon le **budget**.
+#### Price (Prix)
+
+Critère important dans la décision d'achat. Dépend notamment de : nature du produit, coût des matières premières, ressources humaines et matérielles (production / distribution), dépenses de recherche. Ni trop bas ni trop haut : un bon prix est un prix que les clients sont prêts à payer **et** qui permet d'être suffisamment **rentable**.
+
+Pression sur le prix : offres concurrentes, demandes de rabais ou de conditions de paiement avantageuses.
+
+#### Place (Lieu)
+
+Questions au lancement : qui sont les acheteurs actuels et potentiels ? Où se trouvent-ils ? Vente **directe** ou **indirecte** (commerces) ? Pour un nouveau produit dans un assortiment existant : où le placer pour maximiser les ventes ?
+
+#### Promotion (Publicité)
+
+Un placement optimal et un prix acceptable ne garantissent pas encore des ventes suffisantes. Des actions de **communication** (publicité) sont nécessaires pour attirer l'attention. Campagnes publicitaires et promotions internes aux points de vente. Grande variété de supports ; le choix dépend avant tout du **budget**.
 
 ### 5.5 La publicité
 
-#### 5.5.1 Éléments d'une annonce
-Logo · Nom du produit · Image · Headline · Infos produit · Slogan
+#### 5.5.1 Éléments qui composent les annonces
 
-#### 5.5.2 Concept AIDA
-- **A**ttention — capter l'attention
-- **I**ntérêt — aiguiser l'intérêt
-- **D**ésir — stimuler le désir
+- **Logo** (signe distinctif d'un produit ou d'une entreprise)
+- **Nom** du produit
+- **Image** (photo, graphique, etc.)
+- **Headline** (titre)
+- **Informations** sur le produit
+- **Slogan** (devise, principe directeur)
+
+#### 5.5.2 Le concept AIDA
+
+Pour que la publicité atteigne son but et que le client achète, les producteurs d'annonces procèdent selon **AIDA** :
+
+- **A**ttention — attirer, capter l'attention du consommateur
+- **I**ntérêt — aiguiser son intérêt
+- **D**ésir — stimuler son désir
 - **A**ction — déclencher l'achat
 
-#### 5.5.3 Informative vs suggestive
-- **Informative** — factuelle, rationnelle, avantages / caractéristiques
-- **Suggestive** — émotions / inconscient ; infos secondaires
+#### 5.5.3 Publicité informative et suggestive
 
-**Remarque :** dans les deux cas, les coûts doivent être proportionnés au CA attendu.
+- **Informative** — factuelle : informe sur les avantages en mettant en avant les caractéristiques. Discours **rationnel** pour convaincre que le produit répond aux besoins → acte d'achat.
+- **Suggestive** — les caractéristiques sont secondaires. Influence l'**inconscient** par suggestion ; éveille des **émotions** qui incitent à acheter, même sans lien direct avec le produit.
+
+**Remarque :** dans toute publicité (informative ou suggestive), les **coûts** sont un facteur important. Ils doivent être économiquement acceptables, c'est-à-dire proportionnés au chiffre d'affaires pouvant être obtenu avec le produit.
 
 #### 5.5.4 Caractéristiques d'une bonne publicité
-Effet durable ; souvent appréciée avec musique/humour. Doit être :
-- mémorable / attractive (originale, pas de mauvais goût)
-- bien ciblée
-- fidèle à la réalité (ne pas vanter ce que le produit n'a pas)
 
-« Une bonne publicité, c'est : viser la tête et toucher le portefeuille. »
+La publicité doit avoir un effet **durable**. Les clients apprécient davantage les publicités avec de la **musique** et de l'**humour**, moins celles avec des dessins animés et des démonstrations de produits.
+
+Une bonne publicité est :
+- **mémorable**, qui attire l'attention (originale, divertissante, pas de mauvais goût)
+- **bien ciblée**
+- **fidèle à la réalité** — elle ne vante que les caractéristiques que le produit possède réellement
+
+Agence hambourgeoise : « Une bonne publicité, c'est : viser la tête et toucher le portefeuille. »
 
 #### 5.5.5 Publicité en ligne
-Visibilité, ciblage, mesure via **taux de clics**. Souvent facturée **au clic**. Outils : Google Ads, Facebook Ads, Instagram Ads, Amazon Advertising.
 
-- **E-mail** — lien + invitation à cliquer ; mesure par clics
-- **Bannières** — graphiques sur pages ; risque de *banner blindness* → designs plus voyants
-- **Content Ad** — publicité discrète, difficile à distinguer du contenu
-- **Pop-up / pop-under** — fenêtres automatiques ; pop-up invasif, pop-under sous la page ; bloqueurs ; **Hover Ads** masquent le contenu jusqu'à fermeture`;
+Être présent sur Internet permet de développer sa **visibilité**, de **cibler** précisément un public selon des critères précis, et de **mesurer** l'impact via le **taux de clics**. Celui-ci aide à distinguer les publicités efficaces et à mieux cibler les coûts. Souvent facturée **au clic** (honoraires de succès).
+
+Outils de campagnes : **Google Ads**, **Facebook Ads**, **Instagram Ads**, **Amazon Advertising** (taux de conversion, rentabilité).
+
+**Publicité par e-mail**  
+E-mail aux clients potentiels avec un lien vers le site, invitation à cliquer. Mesure également via le taux de clics.
+
+**Bannières publicitaires**  
+Messages graphiques attachés à une page Internet pour attirer l'attention. Le produit promu n'a pas forcément de lien avec le contenu de la page. Prolifération → *banner blindness* (aveuglement des bannières) → messages conçus de manière toujours plus voyante.
+
+**Content Ad**  
+Publicité associée au site de manière discrète, difficile à distinguer du contenu. Certains utilisateurs ne réalisent qu'après coup qu'ils ont lu de la publicité.
+
+**Pop-up / pop-under**  
+Fenêtre qui s'affiche automatiquement lors de la navigation.
+- **Pop-up** — plus petite, chevauche le contenu (invasive)
+- **Pop-under** — non invasive ; visible surtout après fermeture de l'onglet
+- Bloqueurs de pop-ups possibles
+- **Hover Ads** — masquent le contenu et forcent l'attention ; il faut fermer la fenêtre pour accéder à la page`;
 
 const DEMO_205_THEORIE_SUMMARY = `## À retenir — Module 205
 
 ### Objectifs marketing
-Ventes → CA → bénéfice · part de marché · notoriété · image
+Promouvoir ventes → CA → bénéfice  
+Part de marché · notoriété · image positive
 
 ### Qui ?
-Professionnels + presque toute l'entreprise (direction, vente, prod, admin)
+Professionnels + presque toute l'entreprise  
+Direction · commercial · production · admin/services
 
 ### Offre / demande
+Équilibre offre–demande → prix de marché  
 Offre ↑ → prix ↓ · Offre ↓ → prix ↑  
-Demande ↑ → prix ↑ · Demande ↓ → prix ↓
+Demande ↑ → prix ↑ · Demande ↓ → prix ↓  
+Ex. : salades (surproduction) · maïs / biodiesel (demande ↑)
 
-### 4P
-**Product** utilité/qualité · **Price** rentable + acceptable · **Place** canaux · **Promotion** com/pub
+### 4P (Marketing-Mix)
+**Product** — utilité, qualité, gamme, design, assortiment  
+**Price** — acceptable client + rentable ; pression concurrence/rabais  
+**Place** — acheteurs, canaux direct/indirect, placement  
+**Promotion** — communication / pub selon budget
 
 ### Publicité
-Éléments : logo, nom, image, titre, infos, slogan  
+Éléments : logo, nom, image, headline, infos, slogan  
 **AIDA** : Attention → Intérêt → Désir → Action  
 Informative (faits) vs suggestive (émotions)  
-Coûts proportionnés au CA
+Coûts proportionnés au CA  
+Bonne pub : mémorable, ciblée, réaliste
 
 ### Online
-CPC / taux de clics · e-mail, bannières, content ad, pop-up/hover`;
+Taux de clics / CPC · Google/Facebook/Instagram/Amazon Ads  
+E-mail · bannières (*banner blindness*) · Content Ad · pop-up / pop-under / Hover Ads`;
 
 const DEMO_205_APERCU_FULL = `## Aperçu du module 205
 
-Ce module présente le **marketing** : objectifs, acteurs, offre/demande, 4P et publicité.
+Ce module présente le **marketing** chez EnterSite AG : objectifs, acteurs, loi de l'offre et de la demande, Marketing-Mix (4P) et publicité.
 
 ### Vous allez découvrir
-1. Objectifs (part de marché, notoriété, image)
-2. Loi de l'offre et de la demande
-3. Marketing-Mix (4P)
-4. Publicité AIDA, types et formats en ligne
+1. Objectifs (part de marché, notoriété, image) et personnes impliquées
+2. Effets de l'offre et de la demande sur les prix (exemples concrets)
+3. Marketing-Mix : Product, Price, Place, Promotion
+4. Publicité : éléments d'annonce, AIDA, informative vs suggestive
+5. Formats en ligne : e-mail, bannières, Content Ad, pop-up / Hover Ads
 
 ### Source
 EnterSite — Logistics by ASFL / SVBL`;
 
 const DEMO_205_APERCU_SUMMARY = `## Aperçu — Module 205
-- Objectifs marketing
-- Offre / demande
-- 4P + publicité (AIDA, online)`;
+- Objectifs + acteurs marketing
+- Offre / demande → prix
+- 4P + publicité (AIDA, types, online)`;
 
 const DEMO_205_OBJECTIFS_FULL = `## Objectifs du module 205
 
 À l'issue de ce module, l'apprenti·e est capable de :
 
-- Citer les objectifs du marketing et qui y participe
-- Expliquer la **loi de l'offre et de la demande** avec des exemples
-- Décrire le **Marketing-Mix (4P)**
-- Appliquer le schéma **AIDA** et distinguer publicité informative / suggestive
-- Identifier les principaux formats de publicité en ligne`;
+- Citer les objectifs du marketing et les personnes / domaines impliqués
+- Expliquer la **loi de l'offre et de la demande** et son effet sur les prix, avec des exemples
+- Décrire le **Marketing-Mix (4P)** : Product, Price, Place, Promotion
+- Lister les éléments d'une annonce et appliquer le schéma **AIDA**
+- Distinguer publicité **informative** et **suggestive**
+- Identifier les principaux formats de **publicité en ligne** (e-mail, bannières, Content Ad, pop-up)`;
 
 const DEMO_205_OBJECTIFS_SUMMARY = `## Objectifs
 - Objectifs + acteurs
-- Offre/demande
-- 4P, AIDA, pub online`;
+- Offre / demande → prix
+- 4P, AIDA, info vs suggestive
+- Formats pub online`;
 
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
