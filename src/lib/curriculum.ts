@@ -6677,6 +6677,267 @@ const DEMO_408_OBJECTIFS_SUMMARY = `## Objectifs
 - Charge · Ast · taux
 - Flux & numérotation`;
 
+/** Contenu Module 409 — Les engins de manutention */
+const DEMO_409_THEORIE_FULL = `## 9. Les engins de manutention
+
+Suite du module **407** (moyens de transport). Le transport d'objets tient compte de l'**économie** (rentabilité) et de l'**écologie**. Ce module traite des véhicules qui se déplacent **au sol**.
+
+### 9.1 Définition
+
+**Engin de manutention** = véhicule · **au sol** = qui touche le sol pour se déplacer.
+
+Classé selon le mouvement **horizontal** — pas la hauteur de levage. Un chariot à contrepoids avec 12 m de levage reste un engin de manutention au sol.
+
+### 9.2 Types d'engins au sol
+
+| Catégorie | Types |
+| --- | --- |
+| Engins à **timon** | Transpalette électrique · gerbeur électrique |
+| **Préparation** de commandes | Petite levée · grande levée (vertical) |
+| **Tracteur** (S1) | Tracteur |
+| **Chariot élévateur** | Contrepoids (R1) · mât rétractable (R2) · télescopique (R4) · latéral (R3) · multidirectionnel |
+| Engin de **mise en stock** | Gerbeur · tri-directionnel |
+| **Transstockeur** | Desserte rayonnages moyennes/grandes hauteurs |
+
+#### Porte-à-faux vs bras porteurs
+- **Porte-à-faux** : charge hors base des roues — télescopique, contrepoids, mise en stock
+- **Bras porteurs** : charge entre/sur les bras — mât rétractable, gerbeur, multidirectionnel
+
+#### 9.2.1 Transpalette électrique à timon
+Levée de **transport** · surtout chargement / déchargement de véhicules.  
+**+** maniabilité · économique · **−** transport seulement
+
+#### 9.2.2 Gerbeur électrique à timon (S2)
+Transport **et** empilage / stockage au 1er niveau de rayonnage.  
+**+** maniabilité · hauteur · **−** hauteur limitée
+
+#### 9.2.3 Tracteurs (S1)
+« Tractent » de grandes quantités : marchandises préparées dans des chariots roulants.  
+**+** vitesse · simplicité · **−** maniabilité · déplace chariots seulement
+
+#### 9.2.4 Chariot élévateur télescopique (R4)
+Bras télescopique massif déplacé vers l'arrière → sert de **contrepoids** (seul ce type de construction permet de soulever).  
+**+** capacité · hauteur · **−** coûts · maniabilité
+
+#### 9.2.5 Préparateur de commandes vertical
+Chariot **2D** : vertical + horizontal, mais lié au sol.  
+**+** allées étroites · 2 axes · **−** coûts · vitesse
+
+#### 9.2.6 Préparateur à petite levée
+Déplace homme + support de charge horizontalement vers le prélèvement.  
+**+** vitesse · maniabilité · **−** pas de picking vertical haut
+
+#### 9.2.7 Contrepoids (R1)
+Le plus connu · tailles et entraînements variés · intérieur / extérieur. Capacité = taille + poids. Outils portés possibles.  
+**+** charge · variantes · outils · V+H · **−** coûts · maniabilité
+
+#### 9.2.8 Mât rétractable (R2)
+Le mât recule la charge **entre** la base des roues (contrairement au contrepoids où le poids propre fixe la capacité).  
+**+** charge · variantes · maniabilité · V+H · **−** coûts · sol plan · vue avant limitée
+
+#### 9.2.9 Gerbeur à conducteur porté assis
+Siège **latéral** · pas de mât qui s'avance. Convient à l'expédition. Peut prendre **2 palettes** (fourches + levée initiale).  
+**+** maniabilité · V+H · **−** charge limitée · vue avant · sol plan
+
+#### 9.2.10 Transstockeur
+Desserte de rayonnages moyens/hauts · formes variables. **Pas de retournement** dans l'allée → largeur minimale. Guidage manuel, semi-auto ou auto · souvent rails sol + plafond.  
+**+** opération min. · V+H · occupation max · auto · **−** coûts · pas de longs trajets
+
+#### 9.2.11 Mise en stock tri-directionnel
+Allées très étroites (~**1500–1800 mm**) · pas de retournement. Conducteur porté en hauteur **ou** cabine au sol. Fourches **pivotantes** (tri-directionnel) → stocker/déstocker haut.  
+**+** allée min. · occupation · **−** coûts · sol plan · pas de longs trajets
+
+#### 9.2.12 Multidirectionnel
+Change de sens **sur place** (roues L/R, même diagonale). Maniabilité exceptionnelle pour un engin massif.  
+**+** sens sélectionnable · charge ↑ · V+H · **−** coûts · massif · sol plan
+
+#### 9.2.13 Latéral (R3)
+Marchandises **longues**. Cabine dans le sens de marche · mât coulissant **perpendiculaire** → prise latérale, dépôt sur pont de chargement.  
+**+** intérieur/extérieur · longs · vitesse · **−** coûts · rayon · hauteur limitée · usage dédié
+
+### 9.3 Marché
+
+Grande concurrence (comme l'auto). Marques spécialisées · regrouper autant d'appareils que possible chez un même fournisseur. En Suisse : **Linde** et **Still** (groupe **Kion**).
+
+#### 9.3.1 Fabricants (CA mondial, Md USD)
+
+| Fabricant | Origine | 2013 | 2020 |
+| --- | --- | --- | --- |
+| Toyota Industries | Japon | 7,71 | 12,7 |
+| Groupe Kion | Allemagne | 6,11 | 6,9 |
+| Jungheinrich | Allemagne | 3,16 | 4,6 |
+| Mitsubishi Nichiyu | Japon | 1,96 | 3,8 |
+| Crown | USA | 2,4 | 3,6 |
+| Hyster-Yale | USA | 2,67 | 2,8 |
+| Anhui / Hangcha | Chine | ~1 | 1,9 / 1,3 |
+| Manitou | France | — | 1,3 |
+| Doosan | Corée | — | 1,0 |
+
+*(Source Statista — ordres de grandeur)*
+
+#### 9.3.2 Types d'entraînement
+
+| Mode | Points clés |
+| --- | --- |
+| **Diesel** | Extérieur · puissance ↑ (jusqu'à ~100 t) · pas d'intérieur (échappements) · le plus résistant |
+| **Gaz** | Intérieur **et** extérieur si bonne ventilation · combine diesel + élec. |
+| **Électrique** | Le plus utilisé · silencieux · zéro échappement · charge batterie · puissance souvent ↓ · récupération possible |
+| **Hybride** | Générateur diesel/gaz **ou** moteur élec. · intérieur et extérieur |
+
+Essence : rare.
+
+#### 9.3.3 Comparaison
+
+**Combustion (diesel / essence / gaz)**  
+**+** rapidement opérationnel · pentes · chargement/déchargement · charge ↑ (poids propre) · achat souvent ↓  
+**−** bruit · émissions · odeur · entretien (usure)
+
+**Électrique**  
+**+** sans échappement · silencieux · coûts d'exploitation ↓ · maniabilité  
+**−** charge batterie · frais généraux · coût d'acquisition · moins de puissance
+
+**Hybride**  
+**+** environnement · faible usure · maniabilité · conso ↓  
+**−** acquisition · entretien ↑
+
+### 9.4 Parties de l'engin
+
+#### 9.4.1 Mât de levage
+Soulever hydrauliquement fourches + charge.
+
+| Type | Remarque |
+| --- | --- |
+| Simplex | Quasi disparu |
+| Duplex | Minimum moderne |
+| Triplex | Déjà standard |
+| Quadruplex | Rare · plus épais/lourd |
+
+« Mât à bonne visibilité » : chaînes / cylindres **latéraux** → vue avant dégagée.
+
+#### 9.4.2 Types de courses
+- **Sans levée libre** : le mât se déploie avec la fourche (locaux hauts · modèles anciens)
+- **Levée libre partielle** : fourche jusqu'à ~**400 mm** sans déployer le mât
+- **Levée libre complète** : fourche jusqu'à hauteur de construction sans sortir le profilé intérieur → locaux bas, camions, wagons (préférer à l'achat)
+
+#### 9.4.3 Fourches
+Inclinaison = sécuriser au transport + déposer avec délicatesse. Contrepoids : mât inclinable. Mât rétractable : mât souvent rigide → **fourches inclinables**.
+
+#### 9.4.4 Rallonges
+Longueur type Euro-palette : **800–1200 mm** (plus la capacité est faible, plus les fourches sont courtes). Petites capacités : profilé en U + cheville. Grosses : profilé creux fermé.
+
+#### 9.4.5 Fourches rétractables
+Rallonges avancées **hydrauliquement** · camions chargés d'un seul côté · rayonnages doubles accessibles d'un côté.
+
+👉 **CdG** : rallonges / rétractables avancent le centre de gravité → informer le cariste · **diagramme de charge** sur l'engin.
+
+#### 9.4.6 Fourches relevables
+Voie publique : fourches relevées **ou** barre de protection. Relevables si circulation publique régulière (quais, gares). Occasionnel → barre suffit.
+
+### 9.5 Outils portés
+
+| Outil | Rôle |
+| --- | --- |
+| **Grille de protection** | Protège le cariste des chutes d'éléments · attention en rayonnage (décrochage) |
+| **Ripage latéral** | Positionnement au cm · garder position **neutre** médiane |
+| **Écartement des fourches** | Largeur hydraulique depuis le siège · **double fourche** = 2 palettes · pas pour pincer non-palettisé |
+| **Tête rotative** | Vider bacs / pivoter palettes · souvent + pinces · bacs à sabots fermés |
+| **Pince à balles** | Charges non sensibles à la pression (papier, cellulose, électroménager) |
+| **Pince à bobines** | Surfaces arrondies · 1 ou 2 grappins · papier (tonnes) · + rotative |
+| **Pince à pierres** | Parallélépipèdes · carrières · mâchoires structurées · hydraulique |
+| **Grappin bois rond** | Grumes / troncs · parcs à bois · engins lourds |
+| **Éperon** | Rouleaux de moquette jusqu'à ~4 m · CdG à mi-longueur · conduite prudente |
+| **Potence** | Saisie par le haut · machines, armatures, longs · CdG · ne pas télescoper chargé |
+| **Compresseur de charge** | Stabilise piles non sanglées (boissons…) · force adaptée · soupape si long trajet |
+
+### 9.6 FTS / AGV
+
+Systèmes de transport **sans conducteur** (FTS / AGV) : grandes quantités sur **itinéraires identiques** (souvent entrepôt ↔ production). Anciens modèles : arceau souple anti-collision à l'avant.
+
+#### 9.6.1 Guidage
+- **Induction** : câble noyé dans le sol + générateur de fréquence · bifurcations programmables
+- **Optique** : piste réfléchissante balayée par capteurs
+
+#### 9.6.2 Systèmes intelligents
+Plus de guidage fixe · **parcours d'apprentissage** · ultrasons / laser anti-collision · validation auprès d'un poste central aux croisements.
+
+### 9.7 Transstockeurs auto / semi-auto
+
+#### 9.7.1 Manuel / semi-automatique
+Sur **rails** · commandés par une personne · mât vertical guidé haut/bas · plate-forme vers l'emplacement. Semi-auto : picking **statique** · conducteur ou saisie du n° d'emplacement. « Homme va à la marchandise ».
+
+#### 9.7.2 Automatique
+Sans conducteur · ordres WMS · stockent / prélèvent palettes ou conteneurs. **Double jeu** : enchaîne entrée puis sortie sans retour au point de départ. Souvent **1 appareil / allée** (coût ↑, efficacité et sécurité d'approvisionnement ↑). Entrée : **contrôle de profil** (dimensions).
+
+### 9.8 Autostore
+
+Technologie de stockage **robotisée** (entreprise norvégienne, 1996) — cube automatisé, pas issue de l'auto asiatique. >**45 pays** · partenaires locaux (vente, install, maintenance).
+
+#### 9.8.1 Fonctionnement
+Matériel + logiciel.
+
+- **Grille** : structure remplie de caisses · planifiée selon le bâtiment (« technique Lego »)
+- **Robots** : rails sur la grille · axes **X/Y** · désempilent en profondeur · modèles selon conso/taille
+- **Caisses** : empilées · 1 étiquette = 1 emplacement · multi-compartiments / multi-articles possibles · tailles variées
+
+#### 9.8.2 Avantages
+Occupation d'espace **max** · vitesse · **24/7** (pas de congés) · logiciel réordonne : articles à **rotation rapide** en haut, faible rotation en bas (phases calmes).`;
+
+const DEMO_409_THEORIE_SUMMARY = `## À retenir — Module 409
+
+### Définition
+Engin au sol = déplacement horizontal au sol (hauteur secondaire)
+
+### Types
+Timon (S2) · préparateurs · tracteur (S1)  
+Contrepoids (R1) · retract (R2) · latéral (R3) · télesco (R4) · multi  
+Transstockeur · mise en stock tri-directionnel
+
+### Entraînements
+Diesel (ext.) · gaz · électrique (fréquent) · hybride  
+Toyota · Kion (Linde/Still) · Jungheinrich…
+
+### Technique
+Mâts Simplex→Quad · levée libre partielle (~40 cm) / complète  
+Fourches / rallonges / rétractables → **CdG** + diagramme  
+Outils : ripage, pinces, éperon, potence, compresseur…
+
+### Auto
+AGV induction / optique / intelligent  
+Transstockeur WMS · double cycle · contrôle de profil  
+Autostore = grille + robots + caisses`;
+
+const DEMO_409_APERCU_FULL = `## Aperçu du module 409
+
+Ce module détaille les **engins de manutention au sol** : types, marché et entraînements, composants, outils portés, AGV, transstockeurs et Autostore.
+
+### Vous allez découvrir
+1. Définition et catalogue des engins (S/R, porte-à-faux vs bras porteurs)
+2. Diesel / gaz / élec. / hybride et fabricants
+3. Mâts, levées libres, fourches, outils portés (CdG)
+4. FTS/AGV, transstockeurs, Autostore
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite des modules 407–408`;
+
+const DEMO_409_APERCU_SUMMARY = `## Aperçu — Module 409
+- Engins au sol (types S/R)
+- Entraînements & composants
+- AGV · transstockeur · Autostore`;
+
+const DEMO_409_OBJECTIFS_FULL = `## Objectifs du module 409
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Définir un **engin de manutention au sol** et citer les principaux types (timon, préparateurs, élévateurs, transstockeur…)
+- Comparer les **entraînements** (diesel, gaz, élec., hybride) selon intérieur/extérieur
+- Décrire mâts, **levées libres**, fourches et **outils portés**, en tenant compte du **centre de gravité**
+- Expliquer AGV/FTS, **transstockeurs** (manuel → auto) et le principe **Autostore**`;
+
+const DEMO_409_OBJECTIFS_SUMMARY = `## Objectifs
+- Types d'engins
+- Entraînements & pièces
+- AGV / Autostore`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -7235,6 +7496,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_408_THEORIE_FULL,
       summary: DEMO_408_THEORIE_SUMMARY,
+    },
+  },
+  "409": {
+    objectifs: {
+      full: DEMO_409_OBJECTIFS_FULL,
+      summary: DEMO_409_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_409_APERCU_FULL,
+      summary: DEMO_409_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_409_THEORIE_FULL,
+      summary: DEMO_409_THEORIE_SUMMARY,
     },
   },
 };
