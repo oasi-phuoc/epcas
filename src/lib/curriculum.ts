@@ -1364,6 +1364,200 @@ const DEMO_106_OBJECTIFS_SUMMARY = `## Objectifs
 - 3 voies CH (décharge / UIOM / recyclage)
 - A–E, 2030, littering`;
 
+/** Contenu Module 107 — Catégories de déchets CH */
+const DEMO_107_THEORIE_FULL = `## 7. Les catégories de déchets CH
+
+Le module 106 a montré qu'en Suisse, **80 à 90 millions de tonnes** de déchets sont générées chaque année. Environ **deux tiers** sont des matériaux d'excavation et de déblais. Comme ceux-ci peuvent être en grande partie réutilisés directement, ils ne sont pas considérés comme des déchets pour certaines statistiques.
+
+Si l'on ne tient pas compte des matériaux d'excavation et de déblais, **24 millions de tonnes** de déchets sont produits chaque année en Suisse (~**2,5 tonnes par habitant**). L'OFEV classe les déchets en **quatre catégories**, avec des sous-catégories.
+
+Sur ces 24 Mt :
+- ~**65 %** déchets de chantier
+- ~**5,7 Mt** déchets urbains (souvent via UIOM)
+- ~**2,4 Mt** déchets spéciaux
+- ~**0,2 Mt** boues d'épuration
+
+### Les quatre catégories principales
+
+**Déchets de chantier**
+En Suisse, de grandes quantités sont stockées dans une pluralité de petites décharges parfois peu appropriées. On distingue notamment : déchets encombrants de chantier (tri), gravats, déchets d'exploitation, déchets industriels et artisanaux. Les déchets industriels/artisanaux comprennent les déchets de production qui ne sont ni spéciaux ni urbains (ex. certaines scories métalliques, sable de fonderie, boues papetières). Leur élimination diffère des urbains (quantités, nocivité).
+
+**Déchets urbains**
+Déchets des ménages et déchets de composition comparable. Incluent déchets mixtes (ordures), encombrants et objets destinés au tri — **partie gérée par les services publics** (communes / associations intercommunales) : compostables, sacs poubelle, verre, métaux, plastique, etc.
+
+**Déchets spéciaux**
+Contrôlés par les cantons et au niveau fédéral via l'**OMoD** (ordonnance sur les mouvements de déchets). Recyclage écologique « traditionnel » souvent impossible ; grande diversité → traitements spécifiques. Majoritairement industrie/artisanat : boues organiques, matières inorganiques, acides/bases chargés de métaux lourds, piles, terres polluées, adjuvants de filtration, résidus chimiques, etc.
+
+**Boues d'épuration**
+Issues de l'assainissement des eaux usées. Matières solides minérales et organiques ; teneur en eau **90 à 99 %**.
+
+### 7.1 L'inventaire des déchets (sélection)
+
+**Bois usagé** — selon teneur en substances nocives :
+- bois naturel (forêt)
+- poussières / sciures (menuiseries)
+- meubles vernis ou traités
+- bois imprégné
+
+Seul le bois naturel non traité peut être incinéré à feu ouvert / sans filtre. Bois traités et agglomérés → **UIOM**. Petites quantités ménages → encombrants.
+
+**Pneus usagés** — rechapage si possible ; sinon souvent **cimenteries** (énergie). Dépôt en décharge **interdit depuis 2000**.
+
+**Emballages / canettes aluminium** — refonte ≈ **95 %** d'énergie en moins vs bauxite. Presses / points de collecte ; grande valeur marchande.
+
+**Matière d'excavation** — polluée vs non polluée. Non polluée → décharges / partiellement gravier. Polluée (« contaminée ») → traitements selon degré (ex. Kölliken : EPI intégrale).
+
+**Piles et batteries** — obligation de report aux points de vente / collecte. Reprise gratuite (sauf batteries > 5 kg). Contiennent fer, Ni, Mn, Zn ; parfois Cd, Pb (Hg autrefois). **TEA** dans le prix.
+
+**Déchets biogènes** — compostage / fermentation préférables à l'UIOM. ~1,3 Mt/an ; une part encore dans les ordures → UIOM.
+
+**Appareils électriques et électroniques** — reprise gratuite (**OREA**). Métaux recyclables + métaux lourds. Collecte sélective décharge les urbains / UIOM.
+
+**Emballages en verre** — collecte triée (blanc / brun / vert) ; fusion → nouveaux contenants ; reste → construction / isolation.
+
+**Boues d'épuration** — ~4 Mt liquides / an (~200 000 t matière sèche). Contiennent engrais (P, N) mais aussi métaux lourds / pathogènes. **Depuis 2003 : interdiction d'épandage agricole.**
+
+**Appareils réfrigérants** — avant 1994 : fréons (couche d'ozone). Sous **OREA** ; dépôts gratuits.
+
+**Plastiques mixtes** — hors PET, encore beaucoup d'incinération UIOM ; fort potentiel de recyclage.
+
+**Lampes fluorescentes** — mercure / métaux lourds ; reprise gratuite (SENS). Ampoules à incandescence / halogènes → déchets urbains.
+
+**Déchets médicaux** — crématoriums ou UIOM, conteneurs spéciaux ; ordonnance spécifique.
+
+**Métaux** — ferreux (magnétiques), non ferreux (Cu, laiton), gris (Pb, Zn, Sn, Al), nobles (Au, Ag). Points communaux + récupérateurs.
+
+**Meubles** — encombrants / reprise magasins / seconde main.
+
+**Papier et carton** — collecte bord de route ; tri qualité ; import/export selon besoins des usines.
+
+**Bouteilles PET** — collecte par type (> 26 000 points). Pollution si PE lait / PET huile-vinaigre mélangés.
+
+**Acier émaillé / fer blanc** — ~5 000 points ; ~12 000 t/an ; taux ~79 %.
+
+**Textiles et chaussures** — ~40 000 t collectées/an (souvent œuvres) ; autant encore dans les ordures.
+
+**Emballages** — stratégie CH d'optimisation (> 20 ans) : légers, recyclables ou éliminables avec urbains.
+
+### 7.2 Les dispositions légales
+
+Sans règles : risques environnementaux, qualité de vie, tourisme. La gestion des déchets est omniprésente dans la législation.
+
+#### 7.2.1 Constitution fédérale (Cst.)
+
+**Art. 74 Cst. :** la Confédération légifère sur la protection de l'être humain et de son environnement naturel contre les atteintes nuisibles ou incommodantes.
+
+Hiérarchie : Constitution → lois → ordonnances (modalités d'application).
+
+#### 7.2.2 Loi sur la protection de l'environnement (LPE)
+
+Adoptée en **1983** (après l'ancrage constitutionnel de 1971). Régit notamment :
+- limitation et élimination des déchets
+- planification et obligation d'éliminer
+- financement
+- assainissement des sites pollués
+
+**Remarque :** la LPE met l'accent sur la **limitation** de la pollution par les déchets.
+
+#### 7.2.3 Ordonnances clés
+
+Basées sur la LPE et la LEaux :
+
+**OTD** (traitement des déchets) — réduction/traitement, décharges, dépôts provisoires, UIOM, compostage.
+
+**OMoD** (mouvements de déchets) — mouvements internes CH (remise, réception, transport de spéciaux), transfrontaliers, exécution. Concerne déchets spéciaux et déchets soumis à contrôle.
+
+**OREA** — restitution, reprise et élimination des appareils électriques/électroniques (loisirs, bureautique, ICT, électroménager, luminaires, sources lumineuses, outils, sport, jouets…).
+
+### 7.3 Les déchets spéciaux
+
+#### 7.3.1 Définition
+
+Déchets qui, par leurs propriétés chimiques ou physiques, sont **nocifs** pour l'environnement ou l'homme et exigent un **traitement particulier**. Pas avec les urbains. Ex. : peintures, colles, solvants, acides, chimie, détergents, piles, huiles/graisses, sols pollués, séparateurs d'hydrocarbures, huiles moteur, batteries auto, filtrats, émulsions, eaux/boues métalliques…
+
+~**10 %** de la quantité totale de déchets (OFEV 2016) ; surtout industrie.
+
+#### 7.3.2 Traitement spécial
+
+Manutention et traitement hautement professionnels. Sites, installations et méthodes réglementés. Seules les personnes / entreprises avec **autorisation cantonale** peuvent accepter des déchets spéciaux. Classification labo (toxicité/danger) → tri, traitement, emballage, stockage temporaire → recyclage ou traitement énergétique / physico-chimique.
+
+#### 7.3.3 Danger potentiel
+
+Mauvaise manutention → infiltration eau / sol / air. **Paracelse :** « Tout est poison… la dose seule fait que quelque chose n'est pas un poison. » Conservation correcte + protection des influences extérieures réduisent le danger. En cas de doute : traiter comme dangereux.
+
+#### 7.3.4 Sept précautions élémentaires
+
+**Manutention**
+1. Ne pas ouvrir le contenant
+2. Précaution maximale (ne pas renverser, éviter casse/poussière)
+3. Pas à mains nues ; gants si contact ; se laver les mains ; lunettes si projections
+
+**Stockage**
+4. Accès contrôlé (verrouillable)
+5. Ne pas mélanger substances inconnues
+6. À l'abri des intempéries
+7. Contenants étanches / bacs de rétention
+
+### 7.4 Élimination des déchets spéciaux
+
+Responsabilité de spécialistes. Particuliers → point de vente. Entreprises → fournisseur / repreneur. Grandes quantités : enregistrement banque de données **OFEV**. Le remettant ne remet qu'à un **repreneur autorisé** (autorisation cantonale) et doit **vérifier** cette autorisation.`;
+
+const DEMO_107_THEORIE_SUMMARY = `## À retenir — Module 107
+
+### Volumes (hors excavation/déblais)
+**~24 Mt/an** · ~2,5 t/habitant  
+Chantier ~65 % · Urbains ~5,7 Mt · Spéciaux ~2,4 Mt · Boues ~0,2 Mt
+
+### 4 catégories OFEV
+1. **Chantier** (gravats, industriels/artisanaux…)
+2. **Urbains** (ménages + comparables, services publics)
+3. **Spéciaux** (OMoD, traitements spécifiques)
+4. **Boues d'épuration** (90–99 % eau ; plus d'épandage depuis 2003)
+
+### Inventaire (clés)
+Bois traité → UIOM · Pneus : pas décharge (2000) · Alu : −95 % énergie · Piles : TEA + reprise · Électro : OREA · Verre / PET / fer blanc / textiles / papier…
+
+### Droit
+**Cst. 74** → **LPE (1983)** → **OTD · OMoD · OREA**
+
+### Déchets spéciaux
+Nocifs → traitement particulier · ~10 % · autorisation cantonale · labo  
+Paracelse = dose · 7 précautions (manutention + stockage)  
+Remise uniquement à repreneur **autorisé** (vérifier)`;
+
+const DEMO_107_APERCU_FULL = `## Aperçu du module 107
+
+Ce module détaille les **catégories de déchets en Suisse**, l'inventaire des flux, le cadre légal et les déchets spéciaux.
+
+### Vous allez découvrir
+1. Les 4 catégories OFEV et ordres de grandeur
+2. Un inventaire des principaux flux (bois, pneus, alu, piles, électro…)
+3. Cst., LPE, OTD, OMoD, OREA
+4. Déchets spéciaux : définition, dangers, précautions, élimination
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · OFEV`;
+
+const DEMO_107_APERCU_SUMMARY = `## Aperçu — Module 107
+- 4 catégories + inventaire
+- Cadre légal CH
+- Déchets spéciaux et précautions`;
+
+const DEMO_107_OBJECTIFS_FULL = `## Objectifs du module 107
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Distinguer les **quatre catégories** de déchets OFEV et citer des ordres de grandeur
+- Attribuer des exemples concrets (bois, pneus, piles, électro…) aux bonnes filières
+- Situer **Cst., LPE, OTD, OMoD, OREA**
+- Définir un déchet spécial et expliquer pourquoi il exige un traitement particulier
+- Appliquer les **précautions** de manutention/stockage et le principe du repreneur autorisé`;
+
+const DEMO_107_OBJECTIFS_SUMMARY = `## Objectifs
+- 4 catégories + inventaire
+- LPE / OTD / OMoD / OREA
+- Spéciaux : danger, précautions, autorisation`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -1460,6 +1654,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_106_THEORIE_FULL,
       summary: DEMO_106_THEORIE_SUMMARY,
+    },
+  },
+  "107": {
+    objectifs: {
+      full: DEMO_107_OBJECTIFS_FULL,
+      summary: DEMO_107_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_107_APERCU_FULL,
+      summary: DEMO_107_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_107_THEORIE_FULL,
+      summary: DEMO_107_THEORIE_SUMMARY,
     },
   },
 };
