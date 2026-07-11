@@ -7647,6 +7647,151 @@ const DEMO_505_OBJECTIFS_SUMMARY = `## Objectifs
 - Bulk & besoins
 - Types de BOM`;
 
+/** Contenu Module 506 — L'assurance qualité dans la production */
+const DEMO_506_THEORIE_FULL = `## 6. Assurance qualité (AQ) dans la production
+
+Suite du module **501** : la **qualité** est un objectif central — la maintenir et l'**améliorer**.
+
+### 6.1 MQ vs AQ
+
+#### 6.1.1 Management de la qualité (MQ)
+Définir la **structure** pour atteindre la qualité : types/orga de fabrication, flux matériel, tâches → souvent dans un **manuel qualité**.
+
+👉 Le MQ s'applique à **toute** l'entreprise (tous processus influençant la satisfaction client), pas seulement au produit.
+
+**Ex. EnterSite** — cartouche GT10-TN221 : documentation écrite (fournisseurs, MP, type/orga, flux) + tâches collaborateurs.
+
+#### 6.1.2 Assurance qualité (AQ)
+Après le MQ : **détecter et éliminer** à temps les influences négatives · garantir le respect des directives MQ.  
+Contrairement au **contrôle qualité** (produit), l'AQ contrôle **activités et processus**. Si le niveau n'est pas atteint → retrait / cycle d'amélioration.
+
+**Ex.** Après prod. + expédition : qualité / satisfaction / coûts OK ? Oui → MQ validée · Non → cycle d'amélioration.
+
+### 6.2 Méthodes MQ / AQ
+
+#### 6.2.1 Kaizen
+*Kai* = changement · *zen* = pour le mieux. Japon / auto (~1980) · amélioration **progressive**. Outil clé : cycle **PDCA**.
+
+#### 6.2.2 Cycle PDCA (Shewhart)
+| Phase | Sens |
+| --- | --- |
+| **PLAN** | Problème · ressources · solution · conditions · objectifs |
+| **DO** | Mettre en œuvre · rôles clairs · communication · imprévus possibles |
+| **CHECK** | Phase **critique** · ce qui marche · points faibles · causes |
+| **ACT** | Évaluer · poursuivre si objectifs OK · **remettre en question** en continu |
+
+👉 Amélioration constante · productivité / efficacité ↑.
+
+#### 6.2.3–6.2.5 Processus d'amélioration continue (PAC)
+Amélioration constante produits / process / services · **petites** mesures rapides · ancré dans la culture.
+
+Démarche type : trier · éviter · propreté · ménage · ordre · simplicité · standardisation.  
+Domaines : **bureau** (ordre → moins d'erreurs) · **fabrication / logistique** (distances ↓ · accès · flux d'info).  
+Effets : potentiel collaborateurs · compétitivité · emplois. Facteurs clés : culture + bonne gestion.
+
+#### 6.2.6 Muda (gaspillage)
+Activités **sans valeur ajoutée** · souvent « cécité professionnelle » → analyse (idéalement regard externe).
+
+**7 mudas :**
+1. **Surstockage** / stock inutile  
+2. **Surproduction**  
+3. **Transport** / déplacement inutile  
+4. **Temps d'attente**  
+5. **Erreurs** / qualité insuffisante (rebuts, reprises)  
+6. **Surprocessing** (traitements inutiles)  
+7. **Sous-utilisation** des compétences  
+
+Démarche : identifier → évaluer (bases uniformes · **Pareto** 20/80) → contre-mesures → prioriser (court/moyen/long terme · responsables · dates · contrôle). Impliquer les collaborateurs.
+
+#### 6.2.7 ISO 9001
+Certification = confirmation formelle MQ/AQ.  
+- **ISO 9001** : systèmes de management de la qualité  
+- **ISO 14001** : management environnemental  
+
+Suisse : **SN EN ISO 9001:2015** (norme suisse + européenne + ISO · version 2015).
+
+Couvre : organisation SMQ · personnel / infra · réalisation produit · mesure / analyse / amélioration.  
+**+** adéquation presta/qualité · satisfaction client · perf. · coûts ↓ · com. · moral · image. Coût élevé → avantages doivent le justifier.
+
+**Audits :** interne (formés en interne) · externe (organisme indépendant) avant certification.
+
+### 6.3 Ressources et efficacité énergétique
+
+#### 6.3.1 Économie circulaire
+Ressources limitées · métaux rares · émissions → repenser recyclage et flux. Maximiser l'efficacité des ressources · avantage concurrentiel.
+
+**Urban Mining** : récupérer matières (métaux, plastiques) depuis appareils urbains mis au rebut (ex. démarche type Bosch).
+
+Idéal : zéro déchet · substances réintroduites · cycles matériaux/énergie ralentis et resserrés · cadre politique uniforme.
+
+👉 Réduire déchets · recycler · allonger le cycle de vie (réemploi / transformation).
+
+### 6.4 Traçabilité
+
+Suivre le produit : MP → production → distribution → utilisateur → élimination. Exigée (ex. ISO 9001) · auto, électronique, alimentaire, pharma.
+
+Documenter fabricants / fournisseurs / intermédiaires à chaque étape.
+
+**Pourquoi ?** En cas de défaut : identifier composant, fournisseur, autres produits touchés → réagir vite.  
+👉 Qualité **et** sécurité produit.
+
+**Ex. qualité :** capteurs pression pneus bas de gamme → fausses alertes → coût / image > économie achat.  
+**Ex. sécurité :** plaquettes de frein défectueuses → retrouver véhicules / propriétaires → rappel.
+
+### 6.5 Instructions de procédure (IP)
+
+Quand · dans quelle situation · par qui · de quelle manière. Schéma + responsables + outils. Indispensables pour ISO 9001 · contrôlées en audit · doivent être **appliquées** au quotidien.
+
+### 6.6 Autres méthodes
+Nombreux outils AQ dans le monde (sélection non exhaustive dans la formation) · Kaizen, PDCA, PAC, Muda, ISO restent des piliers.`;
+
+const DEMO_506_THEORIE_SUMMARY = `## À retenir — Module 506
+
+### MQ vs AQ
+MQ = structure / manuel · toute l'entreprise  
+AQ = garantir & améliorer process (≠ contrôle produit seul)
+
+### Méthodes
+Kaizen · **PDCA** · PAC · **7 Muda** · ISO 9001 (+ audits)
+
+### Ressources
+Économie circulaire · Urban Mining · efficacité énergie
+
+### Traçabilité & IP
+Historique complet · qualité + sécurité · IP pour ISO`;
+
+const DEMO_506_APERCU_FULL = `## Aperçu du module 506
+
+Ce module traite de l'**assurance qualité** en production : MQ/AQ, Kaizen, PDCA, PAC, Muda, ISO 9001, économie circulaire, traçabilité et IP.
+
+### Vous allez découvrir
+1. Différence Management vs Assurance qualité
+2. Kaizen, PDCA, PAC et 7 mudas
+3. ISO 9001 et audits
+4. Économie circulaire, traçabilité, instructions de procédure
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite des modules 501–505`;
+
+const DEMO_506_APERCU_SUMMARY = `## Aperçu — Module 506
+- MQ / AQ
+- PDCA · Muda · ISO
+- Traçabilité · IP`;
+
+const DEMO_506_OBJECTIFS_FULL = `## Objectifs du module 506
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Distinguer **MQ** et **AQ** (et du contrôle qualité produit)
+- Expliquer **Kaizen**, le cycle **PDCA** et le **PAC**
+- Citer les **7 mudas** et le principe **ISO 9001** (audits inclus)
+- Relier **traçabilité**, **économie circulaire** et **IP** à la qualité / sécurité`;
+
+const DEMO_506_OBJECTIFS_SUMMARY = `## Objectifs
+- MQ vs AQ
+- PDCA · Muda · ISO
+- Traçabilité · IP`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -8303,6 +8448,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_505_THEORIE_FULL,
       summary: DEMO_505_THEORIE_SUMMARY,
+    },
+  },
+  "506": {
+    objectifs: {
+      full: DEMO_506_OBJECTIFS_FULL,
+      summary: DEMO_506_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_506_APERCU_FULL,
+      summary: DEMO_506_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_506_THEORIE_FULL,
+      summary: DEMO_506_THEORIE_SUMMARY,
     },
   },
 };
