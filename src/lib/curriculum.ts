@@ -230,7 +230,7 @@ const moduleSeeds: ModuleSeed[] = [
   // 900 Integrate
   {
     code: "901",
-    title: "Planifier et évaluer les ordres",
+    title: "Planifier et évaluer les projets logistiques",
     blockId: "block-900",
   },
   { code: "902", title: "Les études de cas", blockId: "block-900" },
@@ -11482,6 +11482,107 @@ const DEMO_809_OBJECTIFS_SUMMARY = `## Objectifs
 - Poste de contrôle · KPI
 - Rôle · profil collab.`;
 
+/** Contenu Module 901 — Planifier et évaluer les projets logistiques */
+const DEMO_901_THEORIE_FULL = `## 1. Planifier et évaluer les projets logistiques
+
+Les entreprises cherchent clients et projets (marketing). Mission du logisticien : bien gérer les tâches logistiques. Tous les projets ne réussissent pas · facteurs souvent ambigus → **étude de faisabilité** pour une vue d'ensemble.
+
+**Phases éprouvées** (rappel cycle **PDCA**, module **506**) :
+1. Étude de faisabilité
+2. Planification du projet
+3. Exécution du projet
+4. Évaluation du projet
+
+### 1.1 Étude de faisabilité (Feasibility Study)
+
+Analyser les solutions possibles · identifier les risques · estimer les chances de réussite. Plus le projet est complexe, plus l'étude l'est.
+
+Vérifie si les solutions atteignent les **conditions cadres** (logistique, services, production…). L'évaluation économique (avantages pour le client) n'en fait pas toujours partie · souvent via **analyse coûts-bénéfices**.
+
+| Objectifs | Résultats |
+| --- | --- |
+| Estimer les investissements | Analyser / évaluer les solutions |
+| Assurer la qualité | Documenter opportunités et risques |
+| Identifier les risques | Préconiser une décision |
+| Identifier la solution optimale | |
+
+Petits projets : solution rapide, peu de ressources · étude légère. Grands défis / longues ressources → vérifier :
+
+| Faisabilité | Contenu |
+| --- | --- |
+| **Technique** | Réalisable ? propriétés des matériaux… |
+| **Économique** | Moyens de l'investisseur · investir avant paiement client · marge à la fin |
+| **Politique** | Parties prenantes (collab., fournisseurs, clients) · culturel / éthique / sociopolitique |
+| **Juridique** | Conformité réglementaire |
+| **Organisationnelle** | Organisation capable de planifier, piloter, surveiller |
+| **Ressources** | Personnel, matériel, machines, savoir-faire (lié au financier / orga.) |
+
+### 1.2 Planification du projet
+
+Démarre **après** faisabilité OK **et** mandat **écrit** (donneur / preneur d'ordre).
+
+Activités sur un **axe temporel** : qui · quel matériel · quand. Planning **simple, clair, lisible** · marge de sécurité (réserve horaire). Bonne planification = clé du succès.
+
+> « Attends-toi à l'inattendu, et rien ne pourra jamais te surprendre. »
+
+### 1.3 Exécution du projet
+
+**Communication** centrale · collaborateurs = ressource clé. Points de situation = positifs (amélioration), pas « contrôle excessif ». Écarts / problèmes : détecter tôt, traiter vite · procédure connue de l'équipe.
+
+Le responsable **documente** les activités → pistes d'amélioration / capitalisation pour le prochain mandat.
+
+### 1.4 Évaluation du projet
+
+Dès la fin : objectifs / résultats atteints ? Comparer données théoriques (faisabilité) ↔ **réalité**. Pas forcément corriger a posteriori · surtout apprendre pour les **futurs** mandats.
+
+Évaluation avec **FICO** · présentée au supérieur / direction. Idéal : planning = résultat, ou mieux que prévu.`;
+
+const DEMO_901_THEORIE_SUMMARY = `## À retenir — Module 901
+
+### Cycle projet
+Faisabilité → Planif. → Exécution → Éval. (PDCA / 506)
+
+### Faisabilité
+Technique · éco · politique · juridique · orga · ressources  
+Objectifs : investissements, qualité, risques, solution opt.
+
+### Suite
+Plan : qui / quoi / quand + réserve  
+Exécution : communiquer · documenter  
+Éval. : théorie ↔ réalité · avec FICO`;
+
+const DEMO_901_APERCU_FULL = `## Aperçu du module 901
+
+Ce module présente le cycle de **gestion des projets logistiques** : faisabilité, planification, exécution et évaluation.
+
+### Vous allez découvrir
+1. Les 4 phases (lien PDCA, module 506)
+2. Contenu et critères d'une étude de faisabilité
+3. Planification (axe temporel, réserve) et exécution (communication, documentation)
+4. Évaluation finale avec FICO et capitalisation
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Bloc 900 Integrate`;
+
+const DEMO_901_APERCU_SUMMARY = `## Aperçu — Module 901
+- 4 phases projet
+- Étude de faisabilité
+- Planif. · exécution · évaluation`;
+
+const DEMO_901_OBJECTIFS_FULL = `## Objectifs du module 901
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Citer les **4 phases** de gestion d'un projet logistique et le lien avec le PDCA
+- Expliquer les **objectifs / résultats** et les types de **faisabilité**
+- Décrire les principes d'une bonne **planification** et d'une **exécution** maîtrisée
+- Justifier l'importance de l'**évaluation** finale (théorie ↔ réalité, FICO)`;
+
+const DEMO_901_OBJECTIFS_SUMMARY = `## Objectifs
+- 4 phases · PDCA
+- Faisabilité (6 axes)
+- Planif. · exéc. · éval.`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -12558,6 +12659,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_809_THEORIE_FULL,
       summary: DEMO_809_THEORIE_SUMMARY,
+    },
+  },
+  "901": {
+    objectifs: {
+      full: DEMO_901_OBJECTIFS_FULL,
+      summary: DEMO_901_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_901_APERCU_FULL,
+      summary: DEMO_901_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_901_THEORIE_FULL,
+      summary: DEMO_901_THEORIE_SUMMARY,
     },
   },
 };
