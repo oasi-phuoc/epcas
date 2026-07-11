@@ -3439,6 +3439,166 @@ const DEMO_208_OBJECTIFS_SUMMARY = `## Objectifs
 - Promotions + cross-selling
 - Contrat + CGV`;
 
+/** Contenu Module 209 — After-Sales-Service */
+const DEMO_209_THEORIE_FULL = `## 9. After-Sales-Service (service après-vente / SAV)
+
+Le **service après-vente** désigne les mesures de marketing prises **après** une vente réussie pour **fidéliser** les clients à long terme. Objectifs :
+- confirmer ultérieurement la décision d'achat
+- convaincre d'effectuer d'**autres achats**
+- augmenter la **satisfaction** en général
+
+Le SAV doit être adapté **individuellement** à chaque client·e.
+
+Dans la distribution, le SAV ouvre souvent des **affaires supplémentaires**. Un bon SAV renforce le lien durable : plus l'expérience est bonne et confortable, plus le client a de chances de **revenir**.
+
+### Fidéliser les clients
+
+Exemples de services techniques et/ou commerciaux après l'achat :
+- formation des opérateurs
+- maintenance et réparation
+- services de gestion
+
+### 9.1 Réclamations
+
+À distinguer du **droit de rétractation** et de la **garantie**.
+
+Une **réclamation** peut être introduite lorsque le produit présente un **défaut matériel** déjà présent **avant** la remise. Il y a défaut matériel si la marchandise ne correspond pas à la qualité convenue dans le contrat. Le vendeur doit livrer sans défaut ; sinon le client a droit à la **garantie** (droit légal).
+
+Idée de base de la loi : maintenir le contrat — mais le client ne doit pas se contenter d'un produit défectueux. Il peut demander **réparation** ou **échange**.
+
+#### 9.1.2 Le droit de réclamation
+
+**Délai légal : 2 ans.** Le commerçant ne peut pas raccourcir cette période de garantie.
+
+Attention : ce n'est **pas** une garantie de durabilité — le fournisseur répond des défauts qui existaient **déjà au moment de l'achat**.
+
+Factures et justificatifs sont aussi soumis à des **délais de conservation**.
+
+#### Différence plainte / réclamation
+
+| | |
+| --- | --- |
+| **Réclamation** | Porte sur un produit/service précis ; droit légal à la garantie si non-conformité au contrat |
+| **Plainte** | Expression du **mécontentement** (sans forcément invoquer la garantie) |
+
+### 9.2 Le service à la clientèle
+
+#### 9.2.1 Le jeu-concours
+
+Jeu de hasard avec un ou plusieurs prix. En règle générale, seuls les jeux orchestrés à des fins de **publicité** ou de **collecte de données**, **sans paiement** du joueur, sont des jeux promotionnels. Ce n'en sont pas si le but est autre (ex. piège à abonnement / conclusion de contrat).
+
+Types : loteries, concours (écrit, électronique, téléphone), devinettes, quiz, tombolas, paris, etc.
+
+**Objectif commercial :** publicité + obtention de **données personnelles** (marketing direct / commerce d'adresses) ; aussi attraction sur les réseaux sociaux.
+
+**Attention aux arnaques :** avis de gain sans participation → demande de « frais », numéros surtaxés, événements avec marchandises chères de mauvaise qualité.
+
+#### 9.2.2 Enquêtes auprès des clients
+
+La **satisfaction client** est un facteur clé de succès. Sans savoir ce que le client veut (ou ne veut pas) → risque de CA en baisse.
+
+**Enquête de satisfaction** (Customer Satisfaction Survey) : infos systématiques sur satisfaction, attentes, habitudes d'achat. Bien faite → confiance + image ; bases pour améliorer et exploiter le potentiel.
+
+**Objectifs d'une enquête :**
+- déterminer besoins, souhaits, attitudes, attentes
+- détecter à temps les évolutions négatives (alerte précoce)
+- identifier forces et faiblesses
+- poser les bases des stratégies marketing/vente
+- prévenir l'exode des clients
+- montrer que l'entreprise se soucie de ses clients
+- augmenter la fidélité (**Satisfied → Loyal → Advocate** : satisfait → fidèle → ambassadeur)
+- motiver les employés via les retours positifs
+
+**Formes d'enquête** (adapter au groupe cible ; lieu, étendue, moment, méthode) :
+- enquête **en ligne** (la plus courante à l'ère numérique : large portée, coût bas, moment choisi par le client)
+- enquête **téléphonique**
+- enquête **personnelle**
+
+### 9.3 Tolérance / bonne volonté (geste commercial)
+
+Contexte : cycles de vie produits raccourcis + tendances rapides → satisfaction et fidélisation cruciales. Instrument souvent oublié : la **bonne volonté**.
+
+#### 9.3.1 Qu'entend-on par bonne volonté ?
+
+**Complaisance / geste commercial** = concession **unilatérale et volontaire** entre parties. L'entreprise n'y est **pas** légalement tenue.
+
+- Accordable seulement **après** exécution complète d'une commande
+- Juridiquement : décision volontaire de **renoncer** à des droits contractuels
+- Se distingue de la **garantie** (régie par la loi)
+
+### 9.4 Garantie
+
+Deux notions à distinguer :
+
+**Garantie (légale / vendeur)**  
+En Suisse : **2 ans** de garantie sur les objets achetés — le vendeur garantit l'absence de défaut. Délai **obligatoire**, non raccourcissable. Il est toutefois permis d'**exclure totalement** une garantie dans un contrat ; dans ce cas, regarder la garantie fabricant.
+
+**Garantie du fabricant**  
+Le **fabricant** (pas le vendeur) offre une garantie sans défaut. **Non réglementée** par la loi : étendue et durée libres. Souvent réparation / pièces 1–5 ans ; parfois garantie de bon fonctionnement.
+
+**Remarque :** garantie vendeur et garantie fabricant **ne s'excluent pas**. Le mode d'emploi y fait souvent référence — parfois **enregistrement** obligatoire chez le fabricant.`;
+
+const DEMO_209_THEORIE_SUMMARY = `## À retenir — Module 209
+
+### SAV
+Après la vente : fidéliser, confirmer l'achat, racheter, satisfaction  
+Personnalisé · affaires supplémentaires · lien durable  
+Ex. : formation, maintenance, réparation, gestion
+
+### Réclamation vs plainte
+**Réclamation** = défaut matériel déjà présent → garantie (réparation/échange)  
+Délai **2 ans** (pas de raccourcissement ; ≠ garantie de durabilité)  
+**Plainte** = expression du mécontentement
+
+### Service clientèle
+Jeux-concours : pub / données ; attention arnaques (faux gains)  
+Enquêtes : Satisfied → Loyal → Advocate  
+Formes : online, téléphone, personnel
+
+### Bonne volonté
+Geste **volontaire** (pas une obligation légale) ≠ garantie  
+Après exécution complète de la commande
+
+### Garantie
+Vendeur : 2 ans (Suisse), obligatoire sauf exclusion totale  
+Fabricant : libre (durée/étendue) · peut coexister · parfois enregistrement`;
+
+const DEMO_209_APERCU_FULL = `## Aperçu du module 209
+
+Ce module présente le **After-Sales-Service** (SAV) : fidélisation après vente, réclamations, enquêtes et jeux-concours, geste commercial, garanties.
+
+### Vous allez découvrir
+1. Rôle du SAV et fidélisation
+2. Réclamations (délai 2 ans) vs plaintes
+3. Jeux-concours et enquêtes de satisfaction
+4. Bonne volonté (geste commercial)
+5. Garantie vendeur vs garantie fabricant
+
+### Source
+EnterSite — Logistics by ASFL / SVBL`;
+
+const DEMO_209_APERCU_SUMMARY = `## Aperçu — Module 209
+- SAV et fidélisation
+- Réclamation / plainte (2 ans)
+- Enquêtes + jeux-concours
+- Geste commercial · garanties`;
+
+const DEMO_209_OBJECTIFS_FULL = `## Objectifs du module 209
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer le rôle du **SAV** et la fidélisation client
+- Distinguer **réclamation**, **plainte** et droits liés à la garantie
+- Décrire jeux-concours (objectifs / risques) et **enquêtes** de satisfaction
+- Définir la **bonne volonté** (geste commercial) face à la garantie légale
+- Différencier **garantie vendeur** et **garantie fabricant**`;
+
+const DEMO_209_OBJECTIFS_SUMMARY = `## Objectifs
+- SAV / fidélisation
+- Réclamation vs plainte
+- Enquêtes + concours
+- Geste commercial · garanties`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -3703,6 +3863,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_208_THEORIE_FULL,
       summary: DEMO_208_THEORIE_SUMMARY,
+    },
+  },
+  "209": {
+    objectifs: {
+      full: DEMO_209_OBJECTIFS_FULL,
+      summary: DEMO_209_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_209_APERCU_FULL,
+      summary: DEMO_209_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_209_THEORIE_FULL,
+      summary: DEMO_209_THEORIE_SUMMARY,
     },
   },
 };
