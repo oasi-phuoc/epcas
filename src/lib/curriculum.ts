@@ -52,7 +52,7 @@ const moduleSeeds: ModuleSeed[] = [
 
   // 200 Customer Service
   { code: "201", title: "Le client", blockId: "block-200" },
-  { code: "202", title: "Mon apparence", blockId: "block-200" },
+  { code: "202", title: "L'attitude personnelle / apparence", blockId: "block-200" },
   { code: "203", title: "La gestion de soi", blockId: "block-200" },
   { code: "204", title: "Le marché", blockId: "block-200" },
   { code: "205", title: "Le marketing", blockId: "block-200" },
@@ -2153,6 +2153,159 @@ const DEMO_201_OBJECTIFS_SUMMARY = `## Objectifs
 - Lien commande → CA → salaire
 - Relation / fidélité / marketing`;
 
+/** Contenu Module 202 — L'attitude personnelle / apparence */
+const DEMO_202_THEORIE_FULL = `## 2. L'attitude personnelle
+
+La manière dont on se présente a une grande influence sur l'effet produit sur les autres. Il faut donc réfléchir consciemment à son apparence et l'adapter à la situation.
+
+### 2.1 Ma position
+
+Je transmets mon attitude ou mes convictions en montrant l'exemple de ma morale et de mes valeurs. Quelques valeurs possibles : chère (cherté / estime), honnêteté, amitié, fidélité, ordre, ponctualité.
+
+**Remarque :** chaque personne fait des expériences différentes qui façonnent ses valeurs. Si j'ai intégré la ponctualité, être à l'heure compte pour moi — mais mes valeurs ne sont pas forcément celles des autres.
+
+### 2.2 Ma communication
+
+Vis-à-vis du client, j'adapte mon langage à la situation et je communique **honnêtement**. Je n'utilise pas le même registre qu'avec ma famille ou mes amis. Je choisis consciemment :
+- les **mots** (communication verbale)
+- mon **attitude corporelle** (non verbale)
+
+La communication est approfondie dans le module **206**.
+
+### 2.3 Mes vêtements
+
+Les vêtements influencent mon apparence et mon image. Préférer des vêtements **discrets** ; éviter d'être trop ou pas assez habillé.
+
+- **Dress code** = adapté à la situation
+- **Underdressed** = pas assez bien habillé
+- **Overdressed** = trop bien habillé
+
+En privé, je peux exprimer mes goûts. Au travail, je **représente l'entreprise**. EnterSite AG attend des vêtements décents, surtout au contact clientèle ; certains départements ont des **vêtements de travail uniformes**. Après le travail : retirer la tenue pro et remettre des vêtements personnels.
+
+### 2.4 Mon hygiène
+
+Le terme vient de **Hygeia** (déesse grecque de la santé). L'**OMS** : « La santé est un état de complet bien-être physique, mental et social, et ne consiste pas seulement en une absence de maladie ou d'infirmité ».
+
+L'hygiène étudie la santé. Déjà connue dans l'Empire romain (micro-organismes) ; dès **1840**, preuve que la désinfection limite les transmissions. Aujourd'hui : nettoyage, désinfection, stérilisation.
+
+#### 2.4.1 Histoire de l'hygiène (sélection)
+
+- **1348 — Peste** : ~100 millions de personnes touchées (Europe, Afrique du Nord, Proche-Orient) ; ~1/3 ne survivent pas ; foyer Asie centrale
+- **1892 — Choléra à Hambourg** : chaleur, Elbe bas/chaud ; ~17 000 infectés, moitié morts ; sous-estimation initiale
+- **1918 — Grippe espagnole** : plus de morts que la 1re Guerre mondiale (~17 M) ; propagation mondiale ; origine incertaine
+- **1920 — Tuberculose** : apogée Autriche 1870–1885 (Vienne 909/100 000) ; lien industrialisation
+- **1981 — SIDA** : transmission sexuelle, incurable ; CH ~16 700 personnes vivant avec le virus (données du cours) ; campagnes d'info, Aide Suisse contre le Sida (1985)
+- **2020 — Covid-19** : Wuhan 31.12.2019 ; SARS-CoV-2 ; OMS : urgence de santé publique internationale (30.01.2020)
+
+#### 2.4.2 Hygiène personnelle
+
+Bonne hygiène = prévention des maladies **et** meilleure impression client.
+
+**Santé et reconnaissance :** douche, cheveux, dents, oreilles, ongles ; alimentation adaptée avant un rendez-vous important (éviter café/Red Bull/odeurs fortes type oignon-ail). Apparence non soignée = effet repoussant (social / carrière). Laver aussi les vêtements régulièrement.
+
+**Remarque :** trop de déodorant ou de parfum peut aussi être négatif — modération.
+
+**Bactéries et virus :** certains utiles (digestion, défense) ; système immunitaire. En hiver, plus de rhumes souvent liés à l'énergie consacrée au réchauffement → immunité moins disponible.
+
+**Voies de transmission :** contact (poignées, poignées de main, objets) ; **gouttelettes** (~1 m en parlant/toussant/éternuant) — grippe surtout.
+
+**Mesures (valables hors pandémie aussi) :**
+- distance suffisante
+- tousser/éternuer dans un mouchoir ou au creux du bras
+- mouchoir en papier à usage unique
+- **se laver les mains régulièrement**
+
+### 2.5 La charte d'entreprise
+
+Déclaration écrite des **principes et valeurs** internes et externes. Guide l'action (motivation) et affiche ce que l'entreprise défend (**Corporate Identity**). Décrit la vision et cadre stratégies / objectifs / opérations.
+
+#### 2.5.1 Fonctions
+
+**Interne — légitimer les décisions**
+- Que représentons-nous ? (**Vision**)
+- Que voulons-nous accomplir ? (**Mission**)
+- Quelles valeurs guident nos actions ? (**Charte**)
+
+**Externe — orienter clients et parties prenantes**
+- Que représente cette entreprise ?
+- Quelle image poursuit-elle ?
+
+#### 2.5.2 Charte EnterSite AG (extraits)
+
+**Principes :** n'être actif que là où l'on est meilleur ; développer collaborateurs via responsabilités ; entreprise prospère, indépendante, taille gérable.
+
+**Prestations :** services utiles avec savoir-faire ; commerce de produits adaptés aux problèmes clients ; services d'accompagnement élevés ; offre évolutive.
+
+**Marchés :** clients industriels et privés.
+
+**Qualité / techno :** « toujours une idée d'avance » (collaborateurs, travail, produits).
+
+**Financement :** rendement approprié, bilan équilibré.
+
+**Collaborateurs :** compétents, motivés, satisfaits ; information, délégation, initiative ; salaire selon fonction/performance/marché ; cadres : intégrité, leadership, entrepreneurial.
+
+**Guide :** management participatif adapté à la situation ; **Management by Objectives (MbO)** ; management by exception (signaler les écarts) ; voie hiérarchique pour les instructions (flexible pour l'info / projets).
+
+**Clients / fournisseurs :** service client au cœur ; justes mais exigeants envers fournisseurs.
+
+**Public :** économie de marché libre ; collaboration loyale institutions ; associations ; information objective ; engagement politique/armée souvent positif.
+
+**Environnement :** intégrer l'écologie (production, énergie, déchets, MP, emballages) ; mesures au-delà du légal si possible, même avec surcoût.`;
+
+const DEMO_202_THEORIE_SUMMARY = `## À retenir — Module 202
+
+### Attitude
+Apparence consciente adaptée à la situation
+
+### Position / valeurs
+Honnêteté, fidélité, ordre, ponctualité… · personnelles ≠ universelles
+
+### Communication
+Registre client ≠ privé · verbal + non verbal · honnêteté (→ module 206)
+
+### Vêtements
+Dress code · under/overdressed · au travail = représenter l'entreprise · tenues pro
+
+### Hygiène
+OMS = bien-être global · histoire des épidémies (peste → Covid)  
+Soins personnels + vêtements propres · mains / distance / toux  
+Trop de parfum = négatif aussi
+
+### Charte
+Vision / Mission / valeurs · identité interne + image externe  
+EnterSite : client au centre, qualité, MbO, écologie`;
+
+const DEMO_202_APERCU_FULL = `## Aperçu du module 202
+
+Ce module traite de l'**attitude personnelle** au contact client : valeurs, communication, tenue, hygiène et charte d'entreprise.
+
+### Vous allez découvrir
+1. Valeurs et position personnelle
+2. Communication verbale / non verbale
+3. Dress code et hygiène
+4. Charte EnterSite AG (vision, mission, principes)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL`;
+
+const DEMO_202_APERCU_SUMMARY = `## Aperçu — Module 202
+- Attitude, com, tenue, hygiène
+- Charte d'entreprise`;
+
+const DEMO_202_OBJECTIFS_FULL = `## Objectifs du module 202
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Relier ses **valeurs** à son attitude professionnelle
+- Adapter communication et **tenue** au contexte client
+- Expliquer l'importance de l'**hygiène** (santé + image) et les gestes de prévention
+- Décrire le rôle d'une **charte** (vision, mission, valeurs)`;
+
+const DEMO_202_OBJECTIFS_SUMMARY = `## Objectifs
+- Valeurs + com + tenue
+- Hygiène
+- Charte entreprise`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -2319,6 +2472,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_201_THEORIE_FULL,
       summary: DEMO_201_THEORIE_SUMMARY,
+    },
+  },
+  "202": {
+    objectifs: {
+      full: DEMO_202_OBJECTIFS_FULL,
+      summary: DEMO_202_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_202_APERCU_FULL,
+      summary: DEMO_202_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_202_THEORIE_FULL,
+      summary: DEMO_202_THEORIE_SUMMARY,
     },
   },
 };
