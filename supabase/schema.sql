@@ -23,8 +23,18 @@ create table public.profiles (
   created_at timestamptz not null default now()
 );
 
+create table public.blocks (
+  id uuid primary key default gen_random_uuid(),
+  code text not null unique,
+  title text not null,
+  sort_order int not null default 0,
+  created_at timestamptz not null default now()
+);
+
 create table public.modules (
   id uuid primary key default gen_random_uuid(),
+  block_id uuid not null references public.blocks (id) on delete cascade,
+  code text not null unique,
   title text not null,
   sort_order int not null default 0,
   published boolean not null default false,
@@ -74,6 +84,7 @@ create table public.attempts (
 
 alter table public.classes enable row level security;
 alter table public.profiles enable row level security;
+alter table public.blocks enable row level security;
 alter table public.modules enable row level security;
 alter table public.lessons enable row level security;
 alter table public.exercises enable row level security;
@@ -103,6 +114,11 @@ create policy "profiles_update_own"
   using (id = auth.uid() or public.is_trainer());
 
 -- Contenu publié lisible par tous les authentifiés ; formateur tout gère
+create policy "blocks_read" on public.blocks for select to authenticated
+  using (true);
+create policy "blocks_write" on public.blocks for all to authenticated
+  using (public.is_trainer()) with check (public.is_trainer());
+
 create policy "modules_read" on public.modules for select to authenticated
   using (published or public.is_trainer());
 create policy "modules_write" on public.modules for all to authenticated

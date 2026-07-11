@@ -1,6 +1,14 @@
 import type { AppState } from "./types";
+import {
+  buildCurriculumLessons,
+  buildCurriculumModules,
+  curriculumBlocks,
+} from "./curriculum";
 
 export const DEMO_PASSWORD = "epcas2026";
+
+const modules = buildCurriculumModules();
+const lessons = buildCurriculumLessons();
 
 export const initialState: AppState = {
   classRoom: {
@@ -28,74 +36,34 @@ export const initialState: AppState = {
       active: true,
     },
   ],
-  modules: [
-    {
-      id: "mod-1",
-      title: "Fondamentaux de la logistique & flux",
-      order: 1,
-      published: true,
-    },
-  ],
-  lessons: [
-    {
-      id: "lesson-1",
-      moduleId: "mod-1",
-      title: "Les flux logistiques en entrepôt",
-      order: 1,
-      published: true,
-      contentFull: `## Objectif
-
-Comprendre le parcours d'une marchandise dans un entrepôt, de la réception à l'expédition.
-
-## Les grands flux
-
-1. **Réception** — contrôle quantitatif et qualitatif à l'arrivée.
-2. **Mise en stock** — affectation d'un emplacement (adresse de stockage).
-3. **Préparation** — picking selon la commande client.
-4. **Expédition** — colisage, étiquetage, chargement.
-
-## Vocabulaire clé
-
-- **SKU** : unité de stock / référence article.
-- **FIFO** : premier entré, premier sorti.
-- **Cross-docking** : transit sans stockage durable.
-
-## Bonnes pratiques
-
-Toujours tracer les mouvements (BL, bons de transfert) et signaler les écarts immédiatement.`,
-      contentSummary: `## À retenir
-
-- Parcours : **réception → stock → préparation → expédition**
-- **SKU** = référence / unité de stock
-- **FIFO** = premier entré, premier sorti
-- Tracer chaque mouvement et signaler les écarts`,
-    },
-  ],
+  blocks: curriculumBlocks,
+  modules,
+  lessons,
   exercises: [
     {
       id: "ex-qcm-1",
-      lessonId: "lesson-1",
-      title: "Ordre des flux",
+      lessonId: "lesson-101-theorie",
+      title: "Chaîne logistique historique",
       type: "qcm",
       difficulty: "facile",
       published: true,
       payload: {
         question:
-          "Quel est l'ordre correct des flux principaux en entrepôt ?",
+          "Quelle est la séquence moderne qui correspond à « Chasser - Transformer - Consommer » ?",
         choices: [
-          "Préparation → Réception → Expédition → Stock",
-          "Réception → Stock → Préparation → Expédition",
-          "Expédition → Stock → Réception → Préparation",
-          "Stock → Expédition → Préparation → Réception",
+          "Distribution - Production - Approvisionnement",
+          "Approvisionnement - Production - Distribution",
+          "Production - Distribution - Approvisionnement",
+          "Stockage - Transport - Vente",
         ],
         correctIndex: 1,
         explanation:
-          "La marchandise arrive (réception), est rangée (stock), puis préparée et enfin expédiée.",
+          "Approvisionnement, production et distribution forment la chaîne logistique moderne.",
       },
     },
     {
       id: "ex-math-1",
-      lessonId: "lesson-1",
+      lessonId: "lesson-104-theorie",
       title: "Taux de remplissage palette",
       type: "math",
       difficulty: "moyen",
@@ -111,25 +79,31 @@ Toujours tracer les mouvements (BL, bons de transfert) et signaler les écarts i
     },
     {
       id: "ex-open-1",
-      lessonId: "lesson-1",
-      title: "Définir un SKU",
+      lessonId: "lesson-101-theorie",
+      title: "Définir la chaîne Approvisionnement – Production – Distribution",
       type: "open",
       difficulty: "facile",
       published: true,
       payload: {
-        question: "Qu'est-ce qu'un SKU en logistique ?",
-        modelAnswer: "Un SKU est une unité de stock / référence article.",
-        requiredKeywords: ["stock", "unité|sku|référence|reference"],
-        optionalKeywords: ["article"],
+        question:
+          "En une phrase, que relie la chaîne Approvisionnement – Production – Distribution ?",
+        modelAnswer:
+          "Elle relie l'achat/approvisionnement des biens, leur transformation, puis leur distribution au client.",
+        requiredKeywords: [
+          "approvisionnement|achat",
+          "production|transformation",
+          "distribution|client",
+        ],
+        optionalKeywords: ["flux", "logistique"],
         explanation:
-          "SKU = Stock Keeping Unit : identifiant d'une référence en stock.",
+          "Les trois maillons couvrent le parcours complet des marchandises.",
       },
     },
   ],
   progress: {
     "user-apprentice": [
       {
-        lessonId: "lesson-1",
+        lessonId: "lesson-101-theorie",
         status: "reading",
         modePref: "full",
       },

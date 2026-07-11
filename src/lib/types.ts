@@ -10,6 +10,13 @@ export interface ClassRoom {
   year: string;
 }
 
+export interface Block {
+  id: string;
+  code: string;
+  title: string;
+  order: number;
+}
+
 export interface UserAccount {
   id: string;
   email: string;
@@ -32,6 +39,8 @@ export interface Lesson {
 
 export interface Module {
   id: string;
+  blockId: string;
+  code: string;
   title: string;
   order: number;
   published: boolean;
@@ -88,6 +97,7 @@ export interface AttemptRecord {
 export interface AppState {
   classRoom: ClassRoom;
   users: UserAccount[];
+  blocks: Block[];
   modules: Module[];
   lessons: Lesson[];
   exercises: Exercise[];

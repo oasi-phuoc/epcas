@@ -18,11 +18,14 @@ export default function AccueilPage() {
   const isTrainer = currentUser.role === "trainer";
   const progress = getUserProgress(currentUser.id);
   const attempts = getAttemptsForUser(currentUser.id);
-  const lessonsDone = progress.filter((p) => p.status === "done").length;
+  const focusLessons = state.lessons.filter((l) => l.moduleId === "mod-101");
+  const lessonsDone = focusLessons.filter((l) =>
+    progress.some((p) => p.lessonId === l.id && p.status === "done"),
+  ).length;
   const lessonPct =
-    state.lessons.length === 0
+    focusLessons.length === 0
       ? 0
-      : (lessonsDone / state.lessons.length) * 100;
+      : (lessonsDone / focusLessons.length) * 100;
 
   return (
     <div>
@@ -52,10 +55,8 @@ export default function AccueilPage() {
             </Link>
           </Panel>
           <Panel>
-            <p className="text-sm text-ink-muted">Leçons publiées</p>
-            <p className="mt-2 font-display text-3xl">
-              {state.lessons.filter((l) => l.published).length}
-            </p>
+            <p className="text-sm text-ink-muted">Modules EnterSite</p>
+            <p className="mt-2 font-display text-3xl">{state.modules.length}</p>
             <Link href="/formateur/contenu" className="mt-4 inline-block">
               <Button size="sm" variant="secondary">
                 Éditer le contenu
@@ -80,17 +81,20 @@ export default function AccueilPage() {
               <Badge tone="accent">Exercices</Badge>
             </div>
             <h2 className="mt-3 font-display text-2xl">
-              {state.lessons[0]?.title ?? "Module en préparation"}
+              Module 101 — Histoire de la logistique
             </h2>
             <div className="mt-4">
-              <ProgressBar value={lessonPct} label="Leçons terminées" />
+              <ProgressBar value={lessonPct} label="Module 101 — pages lues" />
             </div>
             <div className="mt-5 flex flex-wrap gap-2">
-              <Link href="/theorie/lesson-1">
+              <Link href="/theorie/lesson-101-theorie">
                 <Button>Continuer la théorie</Button>
               </Link>
+              <Link href="/theorie">
+                <Button variant="secondary">Tous les modules</Button>
+              </Link>
               <Link href="/exercices">
-                <Button variant="secondary">S&apos;entraîner</Button>
+                <Button variant="ghost">S&apos;entraîner</Button>
               </Link>
             </div>
           </Panel>

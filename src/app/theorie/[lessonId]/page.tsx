@@ -15,6 +15,20 @@ import { useAppStore } from "@/lib/store";
 
 function renderMarkdownLite(text: string) {
   return text.split("\n").map((line, i) => {
+    if (line.startsWith("#### ")) {
+      return (
+        <h4 key={i} className="mt-4 text-base font-semibold text-ink">
+          {line.replace("#### ", "")}
+        </h4>
+      );
+    }
+    if (line.startsWith("### ")) {
+      return (
+        <h3 key={i} className="mt-5 font-display text-xl text-ink">
+          {line.replace("### ", "")}
+        </h3>
+      );
+    }
     if (line.startsWith("## ")) {
       return (
         <h2 key={i} className="mt-6 font-display text-2xl text-ink first:mt-0">
@@ -61,19 +75,19 @@ function formatInline(text: string) {
 
 export default function LessonPage() {
   const params = useParams<{ lessonId: string }>();
-  const {
-    state,
-    currentUser,
-    getUserProgress,
-    setLessonProgress,
-  } = useAppStore();
+  const { state, currentUser, getUserProgress, setLessonProgress } =
+    useAppStore();
 
   const lesson = state.lessons.find((l) => l.id === params.lessonId);
+  const mod = lesson
+    ? state.modules.find((m) => m.id === lesson.moduleId)
+    : undefined;
   const progress = useMemo(() => {
     if (!currentUser) return null;
     return (
-      getUserProgress(currentUser.id).find((p) => p.lessonId === params.lessonId) ??
-      null
+      getUserProgress(currentUser.id).find(
+        (p) => p.lessonId === params.lessonId,
+      ) ?? null
     );
   }, [currentUser, getUserProgress, params.lessonId]);
 
@@ -83,6 +97,7 @@ export default function LessonPage() {
   }
 
   const summaryMode = progress?.modePref === "summary";
+  const isPlaceholder = lesson.contentFull.includes("Contenu à importer");
 
   function toggleMode(checked: boolean) {
     setLessonProgress(currentUser!.id, lesson!.id, {
@@ -99,15 +114,28 @@ export default function LessonPage() {
     <div>
       <PageHeader
         title={lesson.title}
-        description="Basculez en mode résumé pour ne garder que l’essentiel."
+        description={
+          mod
+            ? `Module ${mod.code} — ${mod.title}`
+            : "Basculez en mode résumé pour réviser."
+        }
         actions={
-          <Link href="/theorie">
+          <Link href={mod ? `/theorie/module/${mod.id}` : "/theorie"}>
             <Button variant="ghost" size="sm">
-              ← Modules
+              ← Module
             </Button>
           </Link>
         }
       />
+
+      {isPlaceholder ? (
+        <div className="mb-4">
+          <Alert tone="info">
+            Placeholder EnterSite — contenu OneNote à importer. Le formateur
+            peut déjà éditer cette page.
+          </Alert>
+        </div>
+      ) : null}
 
       <div className="mb-4 animate-soft-pop">
         <Switch
@@ -118,11 +146,12 @@ export default function LessonPage() {
         />
       </div>
 
-      <Panel className="animate-fade-up prose-epcas">
+      <Panel className="animate-fade-up">
         <div className="mb-4 flex flex-wrap gap-2">
           <Badge tone={summaryMode ? "accent" : "primary"}>
             {summaryMode ? "Résumé" : "Complet"}
           </Badge>
+          {mod ? <Badge tone="neutral">{mod.code}</Badge> : null}
           {progress?.status === "done" ? (
             <Badge tone="success">Lu</Badge>
           ) : null}

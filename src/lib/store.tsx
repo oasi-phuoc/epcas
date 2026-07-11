@@ -19,7 +19,7 @@ import type {
   UserAccount,
 } from "./types";
 
-const STORAGE_KEY = "epcas-logistique-v1";
+const STORAGE_KEY = "epcas-logistique-v2";
 
 type AppStore = {
   state: AppState;
@@ -44,16 +44,48 @@ type AppStore = {
 
 const AppStoreContext = createContext<AppStore | null>(null);
 
+function normalizeState(parsed: Partial<AppState> | null): AppState {
+  if (!parsed) return initialState;
+
+  const hasCurriculum =
+    Array.isArray(parsed.blocks) &&
+    parsed.blocks.length === initialState.blocks.length &&
+    Array.isArray(parsed.modules) &&
+    parsed.modules.length === initialState.modules.length;
+
+  if (!hasCurriculum) {
+    return {
+      ...initialState,
+      users: parsed.users ?? initialState.users,
+      progress: parsed.progress ?? {},
+      attempts: parsed.attempts ?? [],
+      currentUserId: parsed.currentUserId ?? null,
+    };
+  }
+
+  const lessonMap = new Map(
+    (parsed.lessons ?? []).map((l) => [l.id, l] as const),
+  );
+  const lessons = initialState.lessons.map((l) => lessonMap.get(l.id) ?? l);
+
+  return {
+    ...initialState,
+    ...parsed,
+    blocks: initialState.blocks,
+    modules: initialState.modules,
+    lessons,
+    users: parsed.users ?? initialState.users,
+    progress: parsed.progress ?? {},
+    attempts: parsed.attempts ?? [],
+    currentUserId: parsed.currentUserId ?? null,
+  };
+}
+
 function readStorage(): AppState {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return initialState;
-    const parsed = JSON.parse(raw) as AppState;
-    return {
-      ...initialState,
-      ...parsed,
-      currentUserId: parsed.currentUserId ?? null,
-    };
+    return normalizeState(JSON.parse(raw) as Partial<AppState>);
   } catch {
     return initialState;
   }
@@ -92,12 +124,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
   const storedState = useMemo(() => {
     if (!raw) return initialState;
     try {
-      const parsed = JSON.parse(raw) as AppState;
-      return {
-        ...initialState,
-        ...parsed,
-        currentUserId: parsed.currentUserId ?? null,
-      };
+      return normalizeState(JSON.parse(raw) as Partial<AppState>);
     } catch {
       return initialState;
     }
