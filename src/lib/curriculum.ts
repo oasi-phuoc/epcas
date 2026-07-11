@@ -1143,6 +1143,227 @@ const DEMO_105_OBJECTIFS_SUMMARY = `## Objectifs
 - Stockage / périssabilité / conservation
 - Dangerosité + types de manutention`;
 
+/** Contenu Module 106 — Élimination des déchets CH */
+const DEMO_106_THEORIE_FULL = `## 6. L'élimination des déchets CH
+
+### 6.1 Qu'est-ce qu'un déchet ?
+
+Il n'est pas toujours évident de définir un déchet. La loi définit les déchets comme suit :
+
+**Loi sur la protection de l'environnement (LPE) — Art. 7 al. 6**
+
+**« Par déchets, on entend les choses meubles dont le détenteur se défait ou dont l'élimination est commandée par l'intérêt public ». **
+
+Il s'agit donc avant tout d'une question de temps : tout bien de consommation tôt ou tard ne sert plus, et devient alors un déchet. Contrairement aux biens de consommation, la nature ne connaît pas les déchets. Car les processus naturels se composent de cycles, au cours desquels chaque substance retourne à son état d'origine de façon périodique. Les déchets sont donc toujours produits par l'homme.
+
+Au fil des siècles, la production mondiale de déchets a considérablement évolué. Longtemps, il a été possible d'éliminer dans le jardin les choses qui ne servaient plus. Ce type d'élimination n'était pas encore problématique puisqu'il s'agissait de petites quantités et que ceux-ci étaient moins nocifs (souvent organiques : bois, argile, restes de nourriture). Avec les grandes villes et l'industrialisation, la production de déchets par unité de surface a rapidement augmenté. Une réglementation s'est avérée nécessaire. De plus, les produits et les déchets ont une composition de plus en plus complexe.
+
+**Remarque :** l'association de différents matériaux rend encore plus difficile une élimination respectueuse de l'environnement. (Source : OFEV)
+
+Dans le langage technique, les déchets sont appelés **résidus**, résidus stabilisés, ou **matières revalorisables**. Ces termes indiquent que les déchets ne sont pas toujours gênants ou superflus, mais qu'ils peuvent être réutilisés de manière judicieuse. Le défi réside dans la diversité des matières résiduelles :
+
+- solides, liquides ou gazeuses ; pures ou mélangées
+- inoffensives, dangereuses ou toxiques (voire les deux)
+- réutilisables / valorisables, ou seulement compressibles / neutralisables
+
+**Exemple :** l'eau devient aussi un déchet (eaux usées). Les boues d'épuration, qui ne peuvent plus être épandues en agriculture, servent de combustible dans les **UIOM**.
+
+Une définition possible : **« Une mauvaise matière au mauvais moment, dans la mauvaise situation et au mauvais endroit ». **
+
+### 6.2 Importance et rôle des déchets
+
+L'élimination des déchets a pris beaucoup d'importance pour les raisons suivantes :
+
+- conscience écologique croissante
+- pression pour des produits favorables à l'environnement
+- protection de l'environnement comme facteur concurrentiel
+- augmentation des coûts d'élimination
+- renforcement de la réglementation
+
+Pour la logistique d'élimination d'une entreprise, cela signifie :
+
+- développer une attitude positive et orientée vers l'avenir
+- rechercher des solutions économiques
+- présenter les plans et les résultats atteints
+
+La logistique d'élimination réglemente l'organisation du flux de matériel interne et externe des déchets produits. Prestations principales :
+
+| Prestation centrale | Prestation complémentaire | Prestation d'informations |
+|---------------------|---------------------------|---------------------------|
+| Stockage | Collecte | Traitement des commandes |
+| Transport | Tri | |
+| Recyclage | Conditionnement | |
+
+**Remarque :** éliminer = mettre en valeur, exploiter ou faire disparaître les déchets.
+
+### 6.3 Flux de matières dans la gestion des déchets
+
+Chaque année, la Suisse produit environ **80 à 90 millions de tonnes** de déchets. L'OFEV distingue notamment :
+
+**Déchets urbains**
+- provenant des ménages
+- provenant d'entreprises < 250 ETP dont la composition est comparable aux déchets ménagers
+
+**Matériaux de déblais et d'excavation**
+- déblais : roches meubles, gravier, sable excavés
+- excavation : blocs / roches brisées extraits mécaniquement ou à l'explosif
+
+La plus grande partie est constituée de matériaux d'excavation et de déblais non pollués ainsi que de matériaux de déconstruction. En raison de son niveau de vie élevé, la Suisse produit **716 kg** de déchets par personne (parmi les volumes urbains les plus élevés au monde). Près de **53 %** de ces déchets sont recyclés. La Confédération veut prendre en compte tous les flux tout au long de la chaîne de création de valeur. (Source : OFEV)
+
+### 6.4 Les modes d'élimination des déchets en Suisse
+
+La Suisse dispose d'un système moderne : **décharges**, **incinération (UIOM)** et **recyclage**. Le recyclage est l'objectif principal à renforcer.
+
+#### 6.4.1 Décharges
+
+Les résidus d'incinération ou les déchets non valorisables sont déposés dans des décharges autorisées. Les déchets doivent répondre à certaines exigences (sinon traitement préalable).
+
+**LPE Art. 30c al. 1 :** les déchets destinés à être stockés définitivement doivent être traités de façon à contenir le moins possible de carbone organique et à être aussi peu solubles dans l'eau que possible.
+
+Cinq types de décharges (**A → E**, danger croissant) :
+
+| Type | Placement | Exemples |
+|------|-----------|----------|
+| **A** | Excavation / déblais non pollués | Gravier, terre, sable |
+| **B** | Matériaux inertes | Briques, tuiles, béton |
+| **C** | Déchets inorganiques (souvent après traitement) | Terre polluée, balayures |
+| **D** | Résidus d'incinération | Mâchefers / scories UIOM |
+| **E** | Réacteur (fort potentiel de danger) | Isolation, amiante, asphalte |
+
+#### 6.4.2 Incinération — UIOM
+
+En Suisse, l'ensemble des déchets inflammables non recyclables doit être incinéré dans des installations appropriées (~**30 UIOM**). Seuls mâchefer et résidus de filtration finissent en décharge.
+
+**LPE Art. 30c al. 2 :** il est interdit d'incinérer ailleurs que dans une installation (sauf déchets naturels forêts/champs/jardins sans immissions excessives).
+
+Trois objectifs de l'incinération :
+
+1. **Réduction volume (~90 %) et poids (~75 %)**
+2. **Réduction des émissions polluantes** (filtres, lavage des fumées, DeNOx…)
+3. **Production d'énergie / chauffage urbain** (~25 % électricité, ~75 % chaleur potentielle)
+
+L'UIOM est aussi un **point de collecte central** régional (conseil au tri, lutte contre décharges sauvages).
+
+#### 6.4.3 Le recyclage
+
+**Recyclage = collecte, tri, traitement et valorisation des matières** — circuit fermé ; matière première **secondaire**.
+
+Intérêts : moins de déchets, préservation des ressources, moins de CO₂, économie d'énergie. Le recyclage doit aussi être **économiquement viable** à long terme.
+
+**Taux de recyclage Suisse ~53 %** (leader européen). Exemples OFEV 2020 (extraits) : vieux papiers 82 %, verre 94 %, PET 81 %, alu 94 %, piles 64 %.
+
+**Distribution / redistribution :** lors des livraisons aux filiales, on récupère souvent emballages et retours (PET, verre, piles, appareils).
+
+**Systèmes de transport**
+- **Livraison :** le client apporte ses déchets au point de collecte
+- **Enlèvement :** ramassage (ex. ordures ménagères)
+
+**Financement**
+- **CAR / CAE** (contribution anticipée) — souvent volontaire / marché
+- **TEA / TAR** (taxe d'élimination anticipée) — LPE ; ex. piles via **INOBAT**
+
+Organisations (ex.) : kompost.ch, IGORA (alu), PET-Recycling, INOBAT, Swiss Recycling (papier), FERRO, Vetrorecycling, SENS, Swico, SLRS.
+
+**Organique :** compostage (~1/3 des déchets urbains) ; biogaz (fermentation → méthane/CO₂ → électricité/chaleur).
+
+**Inorganique :** fer blanc (aimant), aluminium (IGORA ; refonte ≈ 20× moins d'énergie que bauxite), verre (points de collecte → transformation), plastiques (faible taux ; PET mieux organisé), piles, appareils (Swico / SENS).
+
+### 6.5 Objectif 2030 — la pyramide des déchets
+
+Objectifs nationaux :
+1. Dissocier production de déchets et croissance économique
+2. Éviter les effets nuisibles sur l'homme et l'environnement
+
+D'ici **2030**, l'OFEV vise un cycle basé à **75 %** sur des matières premières **secondaires** et **25 %** sur des **primaires**.
+
+Pyramide : **éviter > réduire > valoriser** (*Reduce, Reuse, Recycle*).
+
+### 6.6 L'élimination dans les entreprises de logistique
+
+Les entreprises logistiques produisent surtout des **matériaux d'emballage** ; elles gèrent aussi souvent les déchets des points de vente / de production. Conditionnement fréquent via **compacteurs / broyeurs**. Collaboration possible avec prestataires d'élimination.
+
+**Check-list d'élimination** (aide à l'exécution) : groupe OFEV A–E, matière, symbole, conteneur, consignes, point de collecte, transporteur, organisme d'élimination, symbole recyclage, avertissements, classification ADR/SDR.
+
+Groupes OFEV (exemple check-list) :
+- **A** inoffensifs · **B** risque contamination · **C** agents infectieux · **D** spéciaux · **E** médicaux / éthiques
+
+### 6.7 Les déchets sauvages (littering)
+
+Le **littering** = jeter / abandonner de petites quantités de déchets urbains sans utiliser les infrastructures. Problème pour ~3/4 des communes. Coûts de nettoyage ≈ **200 millions CHF/an**. Compétence cantonale.
+
+**Causes :** espace public « mobile », anonymat, effets de groupe, valeurs personnelles (ex. hausse Covid).
+
+**Conséquences (OFEV) :** esthétiques, écologiques, économiques.
+
+**Mesures :** sensibilisation (ex. IGSU), éducation, sanctions (selon cantons/villes) — l'exemplarité a le plus grand impact.`;
+
+const DEMO_106_THEORIE_SUMMARY = `## À retenir — Module 106
+
+### Définition (LPE Art. 7 al. 6)
+Chose meuble dont on se défait **ou** dont l'élimination est commandée par l'intérêt public.  
+Déchets = produits par l'homme (la nature = cycles).
+
+### Enjeux pour l'entreprise
+Conscience écolo · coûts · loi → attitude, solutions économiques, reporting  
+Prestations : stockage, transport, recyclage + collecte/tri/conditionnement + infos
+
+### Suisse — ordres de grandeur
+- **80–90 Mt/an** (surtout excavation / déblais / déconstruction)
+- **~716 kg/habitant** déchets urbains · **~53 %** recyclés
+
+### 3 voies
+1. **Décharges A→E** (danger croissant) — LPE 30c al.1
+2. **UIOM** (~30) — volume −90 %, poids −75 %, énergie/chaleur — LPE 30c al.2
+3. **Recyclage** = collecte + tri + traitement + valorisation (MP secondaires)
+
+### Financement
+CAR/CAE · TEA/TAR (ex. piles INOBAT)
+
+### Objectif 2030
+**75 % secondaires / 25 % primaires** · Pyramide : **éviter > réduire > valoriser**
+
+### Logistique d'entreprise
+Emballages, retours filiales, compactage, check-lists (groupes A–E, ADR/SDR)
+
+### Littering
+Déchets sauvages · ~200 MCHF/an · causes sociales · mesures : sensibiliser, éduquer, sanctionner`;
+
+const DEMO_106_APERCU_FULL = `## Aperçu du module 106
+
+Ce module présente l'**élimination des déchets en Suisse** : cadre légal, flux, décharges, UIOM, recyclage, entreprises et littering.
+
+### Vous allez découvrir
+1. Définition légale du déchet (LPE)
+2. Types et volumes de déchets (OFEV)
+3. Décharges A–E, UIOM, recyclage et organisations CH
+4. Objectif 2030 et pyramide des déchets
+5. Concepts d'élimination en entreprise et littering
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · OFEV`;
+
+const DEMO_106_APERCU_SUMMARY = `## Aperçu — Module 106
+- Qu'est-ce qu'un déchet (LPE)
+- Décharges / UIOM / recyclage
+- Objectif 2030 + littering`;
+
+const DEMO_106_OBJECTIFS_FULL = `## Objectifs du module 106
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Définir un déchet selon la **LPE**
+- Expliquer l'importance de la logistique d'élimination pour l'entreprise
+- Distinguer les principaux types de déchets et ordres de grandeur en Suisse
+- Comparer **décharge**, **UIOM** et **recyclage**
+- Citer les types de décharges **A à E**
+- Expliquer le financement (CAR/CAE, TEA) et l'objectif 2030
+- Décrire le littering, ses causes, conséquences et mesures`;
+
+const DEMO_106_OBJECTIFS_SUMMARY = `## Objectifs
+- Définition LPE + rôle entreprise
+- 3 voies CH (décharge / UIOM / recyclage)
+- A–E, 2030, littering`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -1225,6 +1446,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_105_THEORIE_FULL,
       summary: DEMO_105_THEORIE_SUMMARY,
+    },
+  },
+  "106": {
+    objectifs: {
+      full: DEMO_106_OBJECTIFS_FULL,
+      summary: DEMO_106_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_106_APERCU_FULL,
+      summary: DEMO_106_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_106_THEORIE_FULL,
+      summary: DEMO_106_THEORIE_SUMMARY,
     },
   },
 };
