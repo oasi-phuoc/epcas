@@ -10575,6 +10575,120 @@ const DEMO_802_OBJECTIFS_SUMMARY = `## Objectifs
 - Track & Trace · statut
 - LIFO · optimisation tournées`;
 
+/** Contenu Module 803 — Logiciel d'exploitation */
+const DEMO_803_THEORIE_FULL = `## 3. Logiciel d'exploitation
+
+### 3.1 ERP (Enterprise Resource Planning)
+
+Application **complexe** : plusieurs logiciels / systèmes qui communiquent pour soutenir la **planification des ressources** de l'entreprise. Souvent divisé en **modules** combinables selon les besoins et avec des capacités variables.
+
+### 3.2 CRM (Customer Relationship Management)
+
+Orientation de l'entreprise vers ses **clients** · objectifs : **acquisition** et **fidélisation**. Collecte des données pertinentes → marketing relationnel aligné sur les besoins.
+
+| Sens du CRM | Contenu |
+| --- | --- |
+| **Logiciel** | Base techno pour saisir, analyser, présenter les interactions client |
+| **Stratégie** | Orientations des processus vers une expérience client optimale |
+| **Processus** | Procédures techno + stratégiques + systématiques d'orientation client |
+
+### 3.3 Vente / Marketing
+
+**Vente (sales) :** identification des groupes cibles · approche / acquisition · vente jusqu'à la livraison · de plus en plus le **suivi** post-vente (nouvelles ventes).
+
+**Marketing :** quels produits / services le marché souhaite · produire ce que les clients achètent (quantité suffisante) · comment influencer l'achat de nouveautés.
+
+### 3.4 Ressources humaines (RH)
+
+Objectifs : efficacité / productivité · sécurité des postes · capacité de travail et motivation · recrutement / fidélisation à coût raisonnable · climat / culture de direction · alignement sur l'objectif entreprise.
+
+### 3.5 Planification et contrôle de la production (PCP)
+
+Frontière gestion d'entreprise / informatique. Planifier, mettre en place et surveiller la production en **quantité** et **délais**. Couvre aussi l'amont (approvisionnement) et l'aval (distribution) · **gestion des matériaux** centrale.
+
+#### 3.5.1 Tâches
+Planification du travail / temps de passage · gestion du matériel (approvisionnement + stockage) · type et organisation de fabrication · expédition (distribution).
+
+**Durée de fabrication** = temps pour passer toutes les étapes · base du taux d'exploitation des machines. Recalcul quotidien (ou +) : pannes / manque de matériel impactent tout.
+
+**Leviers d'optimisation :** système PCP · ↓ taille des lots · ↓ temps d'adaptation · ↓ transport / attentes / stockage · ↓ stocks.
+
+Stocks utiles pour : capacité de livraison · délais de réappro · fluctuations demande · séries économiques. Lien étroit : ↓ temps de passage ↔ ↓ stocks.
+
+### 3.6 Management de projet
+
+Gérer un projet **quelle que soit sa taille** (du déménagement au grand projet industriel) : objectifs · stratégie · organisation / coordination des facteurs de production · gestion des collaborateurs.
+
+### 3.7 Management qualité
+
+Mesures pour une qualité **constante** des produits / services. Critique en alimentaire / pharma (santé) · aéronautique : chaque pièce avec **certificat** d'origine / matériaux (risque de falsification). Contrôle souvent par spécialistes (poste CQ / labo) · crucial si la prod. dépend de pièces achetées.
+
+### 3.8 Comptabilité financière (CoFi)
+
+Déterminer le **résultat global** · documenter actifs et variations de stocks · bénéfice / perte de la période · utile à l'entreprise, actionnaires, créanciers · **compte de résultat** + **bilan**.
+
+#### 3.8.1 Comptabilité
+| Domaine | Contenu |
+| --- | --- |
+| **Créanciers** | Obligations de paiement · factures **entrantes** (fournisseur) |
+| **Débiteurs** | Créances de l'entreprise · factures **sortantes** (client) |
+
+#### 3.8.2 Controlling
+Contrôle de gestion : contrôler les opérations · analyses → rentabilité, bénéfices, valeur.
+
+### 3.9 Gestion de matériel (GM)
+
+Gestion, planification et contrôle des **mouvements de matériel** (marchandises / biens). En production : approvisionner la fab. · lien étroit avec la **PCP**. International : « Materials Management ».
+
+#### 3.9.1 Achat
+Activités opérationnelles et stratégiques d'**acquisition** (matériaux, marchandises, moyens d'exploitation, services) — module **301**. Plus étroit que **approvisionnement** (qui inclut aussi la logistique d'appro). Objectif : lieu / délai / quantité / qualité + rapport qualité-prix. Inclut souvent la **gestion des relations fournisseurs**.
+
+#### 3.9.2 E-Commerce (WebEDI)
+Échange numérique fournisseur ↔ acheteur (radio simple → IA). Internet, BDD, médias sociaux, banque en ligne, chatbots… → distances spatiales surmontées · parfois sans contact physique · évite le magasin / conseil face-à-face.`;
+
+const DEMO_803_THEORIE_SUMMARY = `## À retenir — Module 803
+
+### Socle
+ERP = modules ressources · CRM = client (logiciel / stratégie / processus)
+
+### Domaines métier
+Vente / marketing · RH · PCP (délais, lots, stocks)  
+Projet · qualité · CoFi (créanciers / débiteurs + controlling)
+
+### Matériel
+GM + achat (301) · E-Commerce / WebEDI`;
+
+const DEMO_803_APERCU_FULL = `## Aperçu du module 803
+
+Ce module présente les principaux **logiciels / domaines d'exploitation** d'une entreprise : ERP et modules associés (CRM, PCP, CoFi, GM…).
+
+### Vous allez découvrir
+1. ERP et CRM (logiciel, stratégie, processus)
+2. Vente, marketing, RH, PCP et management projet / qualité
+3. Comptabilité financière, controlling et gestion de matériel (achat, e-commerce)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT`;
+
+const DEMO_803_APERCU_SUMMARY = `## Aperçu — Module 803
+- ERP · CRM
+- PCP · CoFi · qualité
+- GM · achat · e-commerce`;
+
+const DEMO_803_OBJECTIFS_FULL = `## Objectifs du module 803
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer le rôle d'un **ERP** et des modules associés
+- Distinguer CRM logiciel / stratégie / processus et situer vente, marketing, RH
+- Décrire les tâches de la **PCP** et les leviers de réduction des temps / stocks
+- Situer **CoFi** (créanciers / débiteurs), controlling, **GM** et e-commerce dans le système d'info`;
+
+const DEMO_803_OBJECTIFS_SUMMARY = `## Objectifs
+- ERP · CRM
+- PCP · qualité · projet
+- CoFi · GM · e-commerce`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -11553,6 +11667,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_802_THEORIE_FULL,
       summary: DEMO_802_THEORIE_SUMMARY,
+    },
+  },
+  "803": {
+    objectifs: {
+      full: DEMO_803_OBJECTIFS_FULL,
+      summary: DEMO_803_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_803_APERCU_FULL,
+      summary: DEMO_803_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_803_THEORIE_FULL,
+      summary: DEMO_803_THEORIE_SUMMARY,
     },
   },
 };
