@@ -3599,6 +3599,158 @@ const DEMO_209_OBJECTIFS_SUMMARY = `## Objectifs
 - Enquêtes + concours
 - Geste commercial · garanties`;
 
+/** Contenu Module 301 — Logistique d'approvisionnement */
+const DEMO_301_THEORIE_FULL = `## 1. La logistique d'approvisionnement
+
+Sujet du quotidien à différents niveaux et rôles : personne seule, famille ou **entreprise** — chacune doit se procurer des produits. Quantités différentes, mais réflexions et démarche **similaires**.
+
+Chez les particuliers : fournisseurs et prix souvent connus → achat facile. En entreprise : défi de taille.
+
+L'**achat** est une tâche centrale. Des spécialistes (**acheteurs**) recherchent, négocient et fournissent la marchandise au meilleur rapport qualité/prix et les conditions de livraison.
+
+**Règle des 6B** (objectif, Jünemann) : **bonne** marchandise, **bonne** quantité, **bonne** qualité, **bon** moment, **bon** endroit, **bon** prix.
+
+Défis : large choix dans un monde interconnecté, influences politiques et naturelles, aspects financiers, protection de l'environnement, etc.
+
+### 1.1 La procédure d'approvisionnement
+
+Atteindre les objectifs d'achat exige connaissances spécialisées, compétences de négociation et répartition claire des tâches — souvent **stratégiques** vs **opérationnelles**.
+
+#### Missions stratégiques (planification)
+- Négociation des conditions de prix et de livraison
+- Collaboration au développement des produits
+- Garantie du savoir-faire (*know-how*)
+- Optimisation des processus d'approvisionnement
+- Garantie à long terme des sources d'approvisionnement
+
+**Remarque :** souvent effectuées par les **cadres** de l'approvisionnement.
+
+#### Missions opérationnelles (exécution)
+- Passation de la commande
+- Contrôle des délais
+- Contrôle de la livraison
+
+**Remarque :** peuvent être exécutées aussi par des acheteurs juniors. La commande respecte ce qui a été décidé au niveau stratégique.
+
+#### 1.1.1 But de l'approvisionnement
+
+Comme tout individu, l'entreprise se procure ce dont elle a besoin pour fonctionner, par ex. :
+- biens
+- informations
+- prestations de services
+- capitaux
+- main-d'œuvre
+- licences, brevets
+
+Exemples : matières premières (fèves de cacao) ; main-d'œuvre (récolte de légumes).
+
+**Catégories de biens à acquérir :**
+- **Biens de consommation durables**
+- **Matériaux de production** — matières premières, matières auxiliaires, consommables
+- **Biens d'équipement** — machines de fabrication/bureau, halles de production et de stockage
+- **Prestations de services** — nettoyage, gardiennage, formation, support informatique
+
+### 1.2 Make or Buy (faire ou acheter)
+
+Question du quotidien : « Je le fais ou je l'achète ? » (ex. pain maison vs boulangerie). Facteurs : **prix**, **qualité**, **temps**.
+
+Même logique en entreprise : qu'est-ce qui est plus rentable / génère plus de profit — fabriquer soi-même ou faire fabriquer ? Décision ancrée dans la **stratégie**.
+
+Principe guide :
+
+> Nous ne faisons que ce que nous savons faire **mieux** que les autres.
+
+- **Make** — l'entreprise croit être la mieux placée ; s'appuie sur ses **compétences clés**.
+- **Buy** — les acheteurs cherchent le producteur le plus apte à fabriquer et livrer.
+
+### 1.3 Externalisation (*outsourcing*)
+
+*out* = hors de · *source* = source
+
+Transfert d'une activité (en tout ou en partie) vers un **partenaire externe**, basé sur des **contrats** (durée, objectif des prestations). Choix du partenaire crucial ; confiance et communication ouverte.
+
+**Exemples typiques :** travaux de nettoyage, assistance informatique, distribution, comptabilité, etc.
+
+### 1.4 Quelles quantités doit-on acheter ?
+
+Question clé : « Combien ? » — comme en cuisine (nombre de convives).
+
+En entreprise : **prévision** et **planification des besoins** (valeurs empiriques + attentes pour le futur proche). Quantité discutée avec le fournisseur ; conditions de livraison clarifiées.
+
+Cela aide à :
+- fixer les quantités à acheter et le **nombre de commandes par an**
+- définir conditions et modalités de livraison avec le partenaire
+
+Autres aspects : ressources en personnel, capacité de stockage, consommation/écoulement des marchandises → chaque entreprise a une planification **individuelle**.
+
+### 1.5 À quel moment acheter ?
+
+Principe : acheter quand les besoins se font sentir. Exceptions :
+- **Produits saisonniers** — disponibles seulement à certaines périodes
+- **Achats spéculatifs** — profiter d'une hausse/baisse de prix (facteurs politiques/économiques). Ex. : pétrole, devises (CHF / EUR) ; aussi situations comme la spéculation sur les masques`;
+
+const DEMO_301_THEORIE_SUMMARY = `## À retenir — Module 301
+
+### Approvisionnement
+Acheteurs : meilleur rapport qualité/prix + conditions  
+**6B** : bonne marchandise, qualité, prix, moment, endroit, quantité  
+Défis : choix, politique, nature, finance, environnement
+
+### Stratégique vs opérationnel
+**Stratégique** (cadres) : négociation, développement, know-how, processus, sources long terme  
+**Opérationnel** : commande, délais, livraison
+
+### Quoi acheter ?
+Biens, infos, services, capitaux, main-d'œuvre, licences…  
+Catégories : durables · MP/auxiliaires/consommables · équipements · services
+
+### Make or Buy
+Prix · qualité · temps  
+« Ne faire que ce qu'on fait mieux que les autres » · compétences clés
+
+### Externalisation
+Transfert contractuel vers partenaire externe (nettoyage, IT, distribution, compta…)
+
+### Combien / quand ?
+Prévision + planification des besoins  
+Saisonnier · spéculatif (pétrole, devises…)`;
+
+const DEMO_301_APERCU_FULL = `## Aperçu du module 301
+
+Ce module introduit la **logistique d'approvisionnement** : rôle des acheteurs, procédure stratégique/opérationnelle, Make or Buy, externalisation, quantités et moments d'achat.
+
+### Vous allez découvrir
+1. Défis et règle des 6B
+2. Missions stratégiques vs opérationnelles
+3. But de l'approvisionnement et catégories de biens
+4. Make or Buy et externalisation
+5. Quantités (prévisions) et timing (saisonnier / spéculatif)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL`;
+
+const DEMO_301_APERCU_SUMMARY = `## Aperçu — Module 301
+- Approvisionnement & 6B
+- Stratégique / opérationnel
+- Make or Buy · outsourcing
+- Quantités & timing`;
+
+const DEMO_301_OBJECTIFS_FULL = `## Objectifs du module 301
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer le rôle de la **logistique d'approvisionnement** et des acheteurs (dont la règle des **6B**)
+- Distinguer missions **stratégiques** et **opérationnelles**
+- Citer ce que l'entreprise peut s'approvisionner et classer les biens
+- Expliquer la décision **Make or Buy** et l'**externalisation**
+- Décrire comment déterminer **quantités** et **moments** d'achat (prévisions, saisonnier, spéculatif)`;
+
+const DEMO_301_OBJECTIFS_SUMMARY = `## Objectifs
+- Approvisionnement & 6B
+- Stratégique / opérationnel
+- Make or Buy · outsourcing
+- Quantités & timing`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -3877,6 +4029,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_209_THEORIE_FULL,
       summary: DEMO_209_THEORIE_SUMMARY,
+    },
+  },
+  "301": {
+    objectifs: {
+      full: DEMO_301_OBJECTIFS_FULL,
+      summary: DEMO_301_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_301_APERCU_FULL,
+      summary: DEMO_301_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_301_THEORIE_FULL,
+      summary: DEMO_301_THEORIE_SUMMARY,
     },
   },
 };
