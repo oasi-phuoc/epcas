@@ -9390,6 +9390,129 @@ const DEMO_613_OBJECTIFS_SUMMARY = `## Objectifs
 - Cadre postal
 - LPMVM · marges`;
 
+/** Contenu Module 614 — CPD — Possibilités de dépôt */
+const DEMO_614_THEORIE_FULL = `## 14. Possibilités de dépôt
+
+### 14.1 Bases
+Le **dépôt** = point de départ du voyage logistique : envoi déposé / réceptionné / préparé pour transport, tri, distribution.  
+Ex. EnterSite : LOGO vient chercher les appareils · factures/lettres déposées en boîte aux lettres publique.
+
+### 14.2 Termes
+| Terme | Sens |
+| --- | --- |
+| Retirer / collecter / réceptionner | Point de vue **entreprise de distribution** |
+| Déposer | Point de vue **client** qui remet l'envoi |
+| Expéditeur / déposant | Qui envoie |
+| Destinataire | Qui reçoit |
+| Entreprise de distribution / CEC & courrier | Prise en charge, transport, livraison |
+| Clientèle privée / commerciale | Usage perso vs professionnel |
+
+### 14.3 Possibilités
+
+#### 14.3.1 Prise en charge
+Collaborateurs viennent chercher chez le client · privée ou commerciale · régulière ou à la demande.
+
+- **Privé** : commande en ligne / Post-App · domicile ou adresse choisie  
+- **Commercial** : lettres, colis, VinoLog, express, étranger · selon besoins
+
+#### 14.3.2 Déposer soi-même
+
+**Points desservis**  
+Filiales propres ou **partenaires** (Poste : Volg, Landi… · DPD : magasins, pharmacies…).
+
+**Points non desservis**  
+- **Boîtes aux lettres** (Poste) · 24/7 · lettres affranchies  
+- **Automates à colis** (My Post 24, DHL…) · dépôt / expédition · affranchissement possible sur place  
+- **Point clientèle commerciale self-service** : convention + badge · envois affranchis dans conteneurs · levée 1×/jour
+
+👉 Prise en charge = confort + contact · coûts personnel/véhicules.  
+Desservi = moins de ramassage · loyers/personnel.  
+Non desservi = 24/7 · ↓ personnel · ↑ acquisition/entretien.
+
+### 14.4 Prise en charge chez les clients
+
+#### 14.4.1 Privé (ex. Poste pick@home)
+Ordre → smartphone facteur. Standard : contrôler/traiter ordre · scanner · confirmer prise en charge · suite expédition. Cas spéciaux : étiquette retour, emballage, produits sans code-barres (consignes QMS).
+
+#### 14.4.2 Commercial
+| Mode | Contenu |
+| --- | --- |
+| **Régulier** | Jours/plages contractuels |
+| **Occasionnel** | Sur commande |
+
+Petites qté (≤ ~5) : souvent pendant tournée distribution · grandes qté : tournée camion dédiée (plage ~½ h).
+
+### 14.5 Levée des points non desservis
+
+Respecter **horaires** et processus → satisfaction client.
+
+#### 14.5.1 Boîtes aux lettres (5 étapes)
+1. Respecter heures de levée (lun–ven ≠ sam · **pas** d'anticipation)  
+2. Scanner code-barres **intérieur** (qualité)  
+3. Vider entièrement (coins, fond, rebord)  
+4. Bien fermer / vérifier la clé  
+5. Coup d'œil arrière avant départ (envois tombés)
+
+Protéger des intempéries et regards (**secret postal**).
+
+#### 14.5.2 Événements particuliers
+Sales/endommagées → photo + signaler · sous-affranchis → centre / carte perception · trousseau Key Finder → supérieur · client veut récupérer lettre → description + ID = expéditeur · bulletin + billet → supérieur (argent en BA interdite).
+
+#### 14.5.3 Automates (My Post 24)
+Versions **1.0** (écran) / **2.0** (smartphone/scanner).  
+**D'abord retirer** les envois (casiers libres) · puis entreposer.
+
+1. Login (écran ou app + Bluetooth)  
+2. « Retirer un envoi » · vider **par catégorie** (dépôt, retour…)  
+3. Comparer nb retiré ↔ total affiché · manquants → office + Masterkey  
+4. Déconnexion · charger véhicule **par catégorie**  
+5. Livraison séparée par catégorie
+
+#### 14.5.4 Erreurs automates
+Deux envois / casier · automate plein. Prévention : bien vérifier fond · vider **avant** d'entreposer.`;
+
+const DEMO_614_THEORIE_SUMMARY = `## À retenir — Module 614
+
+### Dépôt
+Prise en charge · points desservis · non desservis (BA, automates, self-service CC)
+
+### Processus
+Privé pick@home · commercial régulier/occasionnel  
+BA : 5 étapes · horaires stricts · secret postal  
+My Post 24 : retirer d'abord · par catégories`;
+
+const DEMO_614_APERCU_FULL = `## Aperçu du module 614
+
+Module **CPD** : possibilités de **dépôt** et levée des points non desservis.
+
+### Vous allez découvrir
+1. Termes et canaux de dépôt
+2. Prise en charge privée / commerciale
+3. Points desservis et non desservis
+4. Levée BA et automates My Post 24
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · CPD Distribution`;
+
+const DEMO_614_APERCU_SUMMARY = `## Aperçu — Module 614
+- Canaux de dépôt
+- Prise en charge
+- Levée BA / automates`;
+
+const DEMO_614_OBJECTIFS_FULL = `## Objectifs du module 614
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Distinguer **prise en charge**, points **desservis** et **non desservis**
+- Décrire les processus de prise en charge **privée** et **commerciale**
+- Appliquer la levée des **boîtes aux lettres** (5 étapes + cas particuliers)
+- Expliquer le vidage des **automates** (ordre retirer → entreposer, catégories)`;
+
+const DEMO_614_OBJECTIFS_SUMMARY = `## Objectifs
+- Canaux de dépôt
+- Prise en charge
+- Levée BA / automates`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -10242,6 +10365,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_613_THEORIE_FULL,
       summary: DEMO_613_THEORIE_SUMMARY,
+    },
+  },
+  "614": {
+    objectifs: {
+      full: DEMO_614_OBJECTIFS_FULL,
+      summary: DEMO_614_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_614_APERCU_FULL,
+      summary: DEMO_614_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_614_THEORIE_FULL,
+      summary: DEMO_614_THEORIE_SUMMARY,
     },
   },
 };
