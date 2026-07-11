@@ -855,6 +855,294 @@ const DEMO_104_OBJECTIFS_SUMMARY = `## Objectifs
 - Prestataire ≠ producteur
 - Micro / méta / macro`;
 
+/** Contenu Module 105 — Marchandises */
+const DEMO_105_THEORIE_FULL = `## 5. Marchandises
+
+Le terme « marchandises » désigne les objets physiques avec lesquels la logistique est organisée. Les marchandises sont également appelées articles, biens ou produits. La gestion de la grande diversité de marchandises constitue le plus grand défi de la logistique.
+
+### 5.1 Caractéristiques et manipulation des marchandises
+
+Toutes les marchandises ont des propriétés spécifiques dont il faut tenir compte lors de leur manipulation. Les pommes, par exemple, sont par nature périssables et sensibles à la pression et à la température. Comme les points de pression accélèrent leur détérioration, les pommes nécessitent une manipulation particulièrement délicate. Les moyens techniques utilisés pour la manipulation des pommes doivent être conçus de manière à ne pas les endommager. D'autres marchandises nécessitent d'autres moyens techniques spécifiques.
+
+Lors du choix des moyens auxiliaires, il convient de tenir compte des caractéristiques suivantes des marchandises :
+
+- La dimension, le volume
+- La densité (poids spécifique)
+- L'état de la matière (gazeux, liquide, solide)
+- La périssabilité
+- La fragilité
+- L'empilabilité
+- La valeur (stockage antivol)
+
+Les exigences en matière d'une soigneuse manipulation des marchandises sont presque aussi nombreuses que les marchandises elles-mêmes. Chaque secteur a ses propres règles en matière de manipulation des marchandises.
+
+### 5.2 Degré de transformation
+
+Au cours du processus de production, la plupart des biens passent par plusieurs étapes de transformation. À chaque étape de transformation, d'autres caractéristiques peuvent être prises en compte. Selon le degré de transformation, les marchandises sont classées en **matières premières**, **produits semi-finis** et **produits finis**.
+
+#### 5.2.1 Matières premières
+
+Les matières premières sont des marchandises non transformées. Les matières premières dites « primaires » proviennent directement de la nature, comme par exemple les ressources minérales telles que le minerai de fer, le pétrole et le charbon. Le bois, le sable, l'eau, etc. peuvent également être utilisés comme matières premières. Les « matières premières secondaires » sont les matières premières que l'on a récupérées à partir de déchets (recyclage).
+
+#### 5.2.2 Produits semi-finis
+
+Les produits semi-finis sont des matières premières qui ont été assez transformées pour pouvoir être réutilisées (par exemple l'acier et les planches de bois). La farine utilisée pour faire du pain est également un produit semi-fini, obtenue à partir de la matière première : le blé. Le sel est aussi une matière première. Le sel domestique utilisé dans le pain est toutefois un produit semi-fini, voire un produit fini, car il a été nettoyé, éventuellement complété de fluor et conditionné. Les composants électroniques sont également des produits semi-finis, car il en faut un certain nombre pour les assembler et utiliser un appareil qui fonctionne.
+
+#### 5.2.3 Produits finis
+
+On appelle produits finis les produits qui ne nécessitent aucune transformation supplémentaire pour servir le consommateur final. Il en existe un très grand nombre, du simple pain à la machine la plus complexe. De nos jours, de nombreux biens de consommation courante sont également des produits finis, comme par exemple la pizza surgelée.
+
+#### 5.2.4 Évaluer le degré de transformation
+
+La perception du degré de transformation d'un produit peut varier en fonction de son observateur.
+
+Si on a comme objectif de produire du jus de pomme, on évalue la pomme comme matière première. Mais qu'en est-il lorsque la pomme est cueillie directement sur l'arbre et consommée ? Dans ce cas, il s'agit d'un produit fini.
+
+**Remarque :** le degré de traitement peut varier en fonction du point de vue de son observateur.
+
+### 5.3 Les critères d'aptitude au stockage des marchandises
+
+Les propriétés d'une marchandise sont d'une importance cruciale pour le stockage. Le choix du lieu de stockage est essentiellement déterminé par trois critères :
+
+1. la **périssabilité**
+2. la **dangerosité**
+3. la **manutention**
+
+Dans certaines situations, plusieurs caractéristiques doivent être prises en compte simultanément lors du choix du lieu de stockage. Les marchandises dangereuses, par exemple, peuvent également être périssables.
+
+### 5.4 La périssabilité
+
+Les produits stockés peuvent se détériorer sous l'effet d'une multitude d'influences. Les influences extérieures entraînent une détérioration spontanée ou une destruction lente des produits stockés. Les influences spontanées typiques sont :
+
+- les influences mécaniques (choc, chute, pression)
+- la chaleur
+- le froid
+- l'humidité
+- les décharges électrostatiques (ESD)
+
+Les détériorations spontanées ne surviennent généralement pas pendant le stockage, mais lors de la réception, du contrôle, du transport interne ou de l'entreposage. Une méthode de travail minutieuse permet d'éviter de nombreux dommages.
+
+#### 5.4.1 Les influences mécaniques (choc, chute, pression)
+
+C'est principalement lors du transport que les marchandises sont soumises à des contraintes mécaniques. En raison du mouvement de transport, des forces agissent sur la marchandise : elle peut se heurter, se renverser ou tomber. Des mesures de sécurité appropriées permettent d'éviter les dommages. Des marchandises de grande valeur peuvent être endommagées ou détruites en raison d'une inclinaison trop importante, par exemple une machine sensible. L'endommagement de marchandises stockées par des objets durs ou pointus est également considéré comme une influence mécanique. Les fourches des chariots élévateurs, en particulier, provoquent régulièrement des dommages.
+
+#### 5.4.2 La chaleur
+
+Les produits sensibles à la température peuvent être rapidement détruits par la chaleur. Dans le domaine du stockage, la chaleur peut avoir de graves conséquences. Si les marchandises réfrigérées sont exposées trop longtemps à une température trop élevée ou si elles ne sont pas assez refroidies, elles peuvent devenir inutilisables. C'est le cas par exemple des produits laitiers ou carnés. Les marchandises livrées trop chaudes en raison d'une rupture de la chaîne du froid ne peuvent même pas être acceptées.
+
+#### 5.4.3 Le froid
+
+Tout comme la chaleur, le froid peut également causer des dégâts. Certains légumes et fruits exotiques, mais aussi les fleurs, ne supportent pas des températures négatives. Même si ces produits ne sont exposés que brièvement à des températures négatives, certaines parties peuvent geler. La « brûlure de congélation » qui s'ensuit rend les produits inutilisables. Les logisticiens veillent à ce que les marchandises restent toujours dans la plage de température idéale pour elles et ne soient pas exposées à de fortes variations de température.
+
+#### 5.4.4 L'humidité
+
+L'action spontanée de l'humidité et de l'eau détruit rapidement les marchandises stockées. Elles doivent être protégées par l'emballage ou ne doivent pas être exposées à l'humidité. La pluie détruit les marchandises tout comme le déclenchement d'un système d'arrosage.
+
+#### 5.4.5 Les décharges électrostatiques (ESD)
+
+L'être humain génère en permanence des charges électrostatiques qui se déchargent au contact de la terre. Ce phénomène est connu sous le nom d'**Electrostatic Discharge (ESD)**. Les composants électroniques tels que les microprocesseurs ou les transistors (semi-conducteurs) peuvent être détruits par l'ESD. Des mesures de protection doivent donc être prises partout où de tels composants sont stockés, installés ou transportés. Les collaborateurs qui manipulent des pièces électroniques doivent être mis à la terre. La règle la plus importante pour le secteur de la logistique : **ne sortir les composants électroniques de leur emballage de protection que si cela s'avère absolument nécessaire**.
+
+### 5.5 La périssabilité due à des influences de longue durée
+
+Alors qu'il est possible d'éviter avec précaution que des marchandises soient endommagées par des influences extérieures spontanées, il n'est pas toujours possible d'identifier des influences dommageables de longue durée. La connaissance de la fragilité des marchandises constitue donc la base d'un stockage sans dommage. Ce sont surtout les influences suivantes qui peuvent provoquer des dommages :
+
+- la pression à l'empilage
+- la température de stockage incorrecte
+- l'humidité de l'air inadaptée (trop humide ou trop sec)
+- l'influence de la lumière
+- le vieillissement
+- les nuisibles
+- l'influence réciproque des marchandises stockées
+
+#### 5.5.1 La pression à l'empilage
+
+L'empilage des marchandises génère une pression d'empilement. Seules les marchandises insensibles à la pression peuvent être stockées en empilage. Les marchandises peuvent être endommagées si le poids de la pile est trop important ou si des points de pression apparaissent suite à un empilage imprécis.
+
+Les sacs doivent faire l'objet d'une attention particulière lors de l'empilement en bloc. Ceux-ci peuvent éclater dans des cas extrêmes. Les collaborateurs attentifs font attention aux emballages écrasés ou aux empilements inclinés et évitent les dommages en les démontant à temps. Les légumes ou les fruits ne peuvent être empilés que dans des récipients stables. Ces récipients ne doivent pas être remplis complètement, de manière à protéger entièrement leur contenu.
+
+#### 5.5.2 La température de stockage
+
+Les produits frais ne peuvent être stockés que dans des entrepôts climatisés, réfrigérés ou congelés. Valeurs indicatives :
+
+- **Viande et charcuterie :** 0 à +2 °C
+- **Produits laitiers :** +2 à +4 °C
+- **Fruits et légumes :** +4 à +6 °C
+- **Antichambres des entrepôts frigorifiques :** +4 à +6 °C
+- **Produits surgelés :** en dessous de -18 °C
+
+Les matières organiques sont attaquées ou décomposées par des bactéries et des champignons. Ces micro-organismes ont besoin de chaleur et d'humidité pour se multiplier. La réfrigération limite fortement leur prolifération. En dessous de **-18 °C**, la propagation s'arrête complètement : les micro-organismes n'entrent pas nécessairement en mort, mais en une sorte d'hibernation. Dès que la température augmente, la multiplication recommence. **Les aliments surgelés ne doivent donc pas être recongelés après avoir été décongelés.**
+
+On distingue :
+
+- la **réfrigération** : 0–5 °C
+- la **congélation** : -18 °C
+
+#### 5.5.3 L'hygrométrie
+
+Le terme « humidité de l'air » désigne la part d'eau contenue dans un mètre cube d'air. Les spécialistes parlent d'**humidité relative** de l'air, car la part d'eau n'est pas constante, mais dépend de la température. L'air chaud peut absorber beaucoup plus d'eau que l'air froid.
+
+**Hygrométrie trop élevée :** les produits sensibles à l'humidité absorbent l'humidité de l'air (réaction « hygroscopique », ex. papier). Les poudres peuvent s'agglutiner (ex. sucre). Les emballages d'appareils électroniques sont souvent accompagnés de sachets dessiccateurs (gel de silice / argile sèche).
+
+**Hygrométrie trop faible :** fruits et légumes ont besoin d'environ **90 %** d'humidité pour ne pas se rider. Un rétrécissement trop important rend les produits inutilisables ; le bois peut se fissurer.
+
+#### 5.5.4 La lumière
+
+Les produits stockés contenant de l'huile et de la graisse se détériorent sous l'influence de la lumière (surtout les UV). La graisse peut rancir ; plastiques et caoutchouc peuvent être fragilisés. L'obscurité permet d'éviter ces dommages.
+
+#### 5.5.5 Le vieillissement
+
+Les produits stockés peuvent perdre de la valeur ou devenir inutilisables par simple vieillissement (produits tendance). À l'inverse, certains produits (vin, whisky) sont stockés pour vieillir et atteindre leur pleine valeur.
+
+#### 5.5.6 Les nuisibles
+
+Trois groupes de nuisibles peuvent nuire aux marchandises stockées :
+
+1. champignons, spores et bactéries (micro-organismes)
+2. insectes (coléoptères, mites, etc.)
+3. petits mammifères (souris, rats)
+
+Mesures : constructives, hygiène, conditions de stockage optimales, contrôle permanent. La lutte biologique (ex. guêpes microscopiques contre certaines larves dans les silos) est également étudiée.
+
+#### 5.5.7 L'influence réciproque des marchandises
+
+Les marchandises organiques peuvent s'influencer réciproquement. Les pommes dégagent un gaz qui accélère la maturation des autres fruits. D'autres aliments (ex. produits de boulangerie non emballés) absorbent aisément les odeurs.
+
+### 5.6 La protection des marchandises stockées
+
+Depuis toujours, les hommes essaient de prolonger la conservation de leurs aliments.
+
+#### Méthodes traditionnelles
+
+**5.6.1 Le séchage** — viande, poisson, fruits (méthode ancienne).
+
+**5.6.2 Le salage (saumurage)** — viande frottée au sel ou à la saumure (ex. salami).
+
+**5.6.3 Fumage** — exposition à la fumée de bois : conservation + goût spécifique.
+
+**5.6.4 La pasteurisation** — du nom de Louis Pasteur : chauffage à environ **70 °C** pour tuer la plupart des micro-organismes (lait, fromage, jus…).
+
+**5.6.5 Stérilisation** — chauffage jusqu'à environ **120 °C** : toutes les bactéries sont tuées ; beaucoup de vitamines aussi.
+
+#### Méthodes plus récentes
+
+**5.6.6 La réfrigération** — locaux réfrigérés / climatisés selon le produit.
+
+**5.6.7 La congélation** — produits surgelés ; entrepôts énergivores.
+
+**5.6.8 La mise sous vide** — évacuation de l'air du sac plastique (charcuterie…).
+
+**5.6.9 L'emballage sous atmosphère protectrice** — air remplacé par un gaz inerte ; moins « écrasé » que le sous-vide.
+
+**5.6.10 Le conditionnement sous atmosphère contrôlée (CA)** — Controlled Atmosphere : température, hygrométrie et composition de l'air constantes ; O₂ réduit, CO₂ augmenté → maturation ralentie (surtout fruits).
+
+**5.6.11 Le stockage ULO** — Ultra Low Oxygen : perfectionnement du CA ; oxygène maintenu à une valeur extrêmement faible.
+
+### 5.7 La dangerosité
+
+Les exigences en matière de stockage découlent de la nature du danger. Le stockage des marchandises dangereuses est traité en détail dans le module 405.
+
+#### Symboles de danger (à partir de 2012) — repères
+
+- **Attention danger** — irritation, allergies, somnolence, intox. unique, ozone… (ex. tablettes lave-vaisselle, Javel)
+- **Inflammable** — feu / étincelles / frottements / air / eau (ex. allume-feu, aérosols, solvants)
+- **Comburant** — active / favorise un incendie, dégage de l'oxygène (ex. décolorant, eau oxygénée)
+- **Explosif** — explosion sous influence ou mauvais stockage (ex. explosifs)
+- **Gaz sous pression** — gaz comprimés / liquéfiés / dissous ; risque d'éclatement (ex. propane, CO₂)
+- **Danger pour l'environnement** — milieux aquatiques (ex. insecticides, huiles moteur)
+- **Corrosif** — brûlures peau / yeux (ex. nettoyant fours, déboucheurs)
+- **Dangereux pour la santé** — organes, cancer, génétique, fertilité… (ex. essence, peintures)
+- **Toxique** — intoxications graves / mort en très petites quantités (ex. mort-aux-rats)
+
+#### 5.7.1 Manipulation des produits chimiques en toute sécurité
+
+| Étape | Points clés |
+|-------|-------------|
+| **Achat** | Symboles, avertissements, alternatives moins dangereuses, ne pas suracheter |
+| **Utilisation** | Notice, consignes, EPI (lunettes, gants), ne rien laisser sans surveillance |
+| **Stockage** | Hors de portée des enfants, jamais dans des récipients alimentaires, consignes d'élimination, mesures structurelles (coupe-feu, bacs), plan d'incident |
+
+#### 5.7.2 La manutention des marchandises
+
+Critères principaux : volume, dimension, densité, empilage, état d'agrégation (solide / liquide / gazeux), valeur.
+
+Trois types de marchandises pour la manutention :
+
+1. **Faciles à manutentionner** — empilables, volume petit à moyen, dimensions standards, longueur max. **1,20 m**, adaptées palette EUR / rayonnages courants.
+2. **Formes particulières ou encombrantes** — solutions individuelles, créativité, **sécurité prioritaire**.
+3. **Grande valeur** — zones sécurisées (grillages, locaux verrouillables, armoires / rayonnages rotatifs). Protection aussi pour alcool, tabac, pharma, confidentialité / nouveaux produits.`;
+
+const DEMO_105_THEORIE_SUMMARY = `## À retenir — Module 105
+
+### Marchandises
+Objets physiques = articles / biens / produits. Grande diversité = défi n°1.
+
+### Caractéristiques à gérer
+Dimension/volume · densité · état (S/L/G) · périssabilité · fragilité · empilabilité · valeur
+
+### Degré de transformation
+- **MP** : non transformées (primaires / secondaires = recyclage)
+- **Semi-finis** : assez transformés pour réemploi (acier, farine, composants…)
+- **Finis** : prêts pour le consommateur  
+→ le classement dépend du **point de vue**
+
+### Critères de stockage
+**Périssabilité · Dangerosité · Manutention**
+
+### Dommages spontanés
+Mécanique · chaleur · froid · humidité · **ESD** (ne sortir l'électronique de son emballage que si nécessaire)
+
+### Dommages longs
+Pression empilage · T° · hygrométrie · lumière · vieillissement · nuisibles · influence réciproque (ex. gaz des pommes)
+
+### Températures repères
+Viande 0–2 · Laitiers 2–4 · Fruits/légumes 4–6 · Surgelés **< -18**  
+Réfrigération 0–5 / Congélation -18 · **ne pas recongeler**
+
+### Conservation
+Tradition : séchage, salage, fumage, pasteurisation (~70 °C), stérilisation (~120 °C)  
+Moderne : froid, sous-vide, atmosphère protectrice, **CA**, **ULO**
+
+### Dangereux
+Symboles CLP ; achat / usage / stockage sécurisés (module 405)
+
+### Manutention
+Facile (palette EUR, ≤ 1,20 m) · Encombrant (solution ad hoc) · Haute valeur (zones sécurisées)`;
+
+const DEMO_105_APERCU_FULL = `## Aperçu du module 105
+
+Ce module traite des **marchandises** : caractéristiques, degrés de transformation, stockage, conservation et dangerosité.
+
+### Vous allez découvrir
+1. Propriétés et manipulation des marchandises
+2. Matières premières / semi-finis / finis
+3. Périssabilité (spontanée et de longue durée)
+4. Méthodes de conservation
+5. Dangerosité et manutention (facile / encombrant / haute valeur)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL`;
+
+const DEMO_105_APERCU_SUMMARY = `## Aperçu — Module 105
+- Caractéristiques des marchandises
+- Transformation MP → semi-fini → fini
+- Stockage, conservation, danger, manutention`;
+
+const DEMO_105_OBJECTIFS_FULL = `## Objectifs du module 105
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Identifier les caractéristiques pertinentes pour manipuler une marchandise
+- Classer une marchandise selon son degré de transformation
+- Expliquer les critères d'aptitude au stockage (périssabilité, dangerosité, manutention)
+- Citer les causes de détérioration (spontanées et longues) et les mesures de protection
+- Distinguer les principales méthodes de conservation
+- Appliquer les bases de sécurité pour les produits chimiques et la manutention`;
+
+const DEMO_105_OBJECTIFS_SUMMARY = `## Objectifs
+- Caractéristiques + degré de transformation
+- Stockage / périssabilité / conservation
+- Dangerosité + types de manutention`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -923,6 +1211,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_104_THEORIE_FULL,
       summary: DEMO_104_THEORIE_SUMMARY,
+    },
+  },
+  "105": {
+    objectifs: {
+      full: DEMO_105_OBJECTIFS_FULL,
+      summary: DEMO_105_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_105_APERCU_FULL,
+      summary: DEMO_105_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_105_THEORIE_FULL,
+      summary: DEMO_105_THEORIE_SUMMARY,
     },
   },
 };
