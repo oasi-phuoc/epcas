@@ -2795,6 +2795,291 @@ const DEMO_205_OBJECTIFS_SUMMARY = `## Objectifs
 - 4P, AIDA, info vs suggestive
 - Formats pub online`;
 
+/** Contenu Module 206 — Communication */
+const DEMO_206_THEORIE_FULL = `## 6. Communication
+
+### 6.1 Moyens de communication
+
+La communication est omniprésente : elle englobe toutes les formes de transmission de messages d'un **émetteur** à un **récepteur**, qu'elle ait un but précis ou non.
+
+Particularité : chaque partenaire agit à la fois comme émetteur **et** récepteur. Même si une seule personne parle (verbal), l'autre « répond » au moins par le langage corporel (**non-verbal**).
+
+### 6.2 Fonctionnement de la communication
+
+Pour qu'une communication humaine soit réussie, trois éléments au moins sont réunis :
+- **émetteur**
+- **message**
+- **récepteur**
+(plus un **canal** de transmission)
+
+#### Contact indirect
+L'émetteur envoie un message reçu par le récepteur **sans réponse**. Ex. : radio, télévision. Le présentateur n'a pas d'interlocuteur : il ne sait pas si le message a été reçu/compris ni ce que le destinataire en pense (pas de retour direct).
+
+#### Contact direct
+Le message est suivi d'un retour = **feedback**. L'émetteur transmet **et** observe le récepteur. Le feedback peut être **verbal** ou **non-verbal** ; il est enregistré par l'émetteur et influence la suite. L'émetteur interprète surtout les signaux non-verbaux.
+
+**Remarque :** la communication peut être verbale ou non-verbale.
+
+#### 6.2.1 Un modèle de communication — émetteur-récepteur
+
+La communication = transmission d'une information d'un émetteur à un récepteur.
+
+1. L'émetteur **code** le message (représentation compréhensible par les deux parties)
+2. Le message passe par un **canal** (direct ou indirect)
+3. Le récepteur **décode** / interprète
+4. Des **interférences** peuvent survenir à chaque étape ; les deux doivent partager le même code
+5. La **réponse** du récepteur = **feedback** (processus en sens inverse) : elle indique si le message a été compris. Le feedback peut aussi être perturbé.
+
+**Remarque :** Entre ce que je pense, ce que je veux dire, ce que je crois dire, ce que je dis… et ce que vous voulez entendre, entendez, croyez comprendre, voulez comprendre, comprenez… il y a **au moins neuf possibilités** de ne pas se comprendre !
+
+#### 6.2.2 Le feedback aide tout le monde
+
+Le **feedback** = retour d'information : réponse du récepteur à l'émetteur (positif/négatif, verbal/non-verbal). Il faut l'écouter pour savoir si le message a été reçu et compris.
+
+On devrait aussi **envoyer** du feedback (idéal : verbal + non-verbal) pour améliorer la communication et réduire les malentendus.
+
+**Feedback utile :**
+- Exprimer honnêtement comment on comprend le message et ce qu'on ressent
+- Relier le feedback au **contenu**, pas à la personne
+- Donner beaucoup de feedback, rapidement (verbal et non-verbal)
+
+**Exemple :** tu envoies un message à un ami pour un service → sa réponse est un feedback.
+
+#### 6.2.3 L'écoute active
+
+Technique visant à encourager les échanges : **reformulations** et **interrogations** pour montrer qu'on écoute et comprend. Crée une atmosphère de confiance pour s'exprimer librement.
+
+**Pratiquer l'écoute active :**
+- Être là pour l'autre pendant un certain temps
+- S'intéresser réellement à l'autre
+- Savoir se taire (laisser l'autre s'exprimer)
+- S'adapter ; être attentif
+- Accepter l'autre tel qu'il/elle est
+- Rester soi-même ; ne pas prendre en charge les problèmes de l'autre
+- Se mettre à la place de l'autre
+
+**Trois phases d'écoute active** (schéma du support) :
+1. **Encourager** — ouvrir l'échange, inviter à parler
+2. **Clarifier** — reformuler, poser des questions pour vérifier la compréhension
+3. **Approfondir** — confirmer, synthétiser, aller plus loin si besoin
+
+### 6.3 Types de communication
+
+#### 6.3.1 Communication verbale
+
+Messages transmis par les **mots**. Le non-verbal est tout aussi important, voire plus. Quand verbal et non-verbal sont en adéquation → **congruence** (communication plus efficace).
+
+**Exemple :** « Quand est-ce que la marchandise promise arrivera-t-elle enfin ? »  
+Ce n'est pas seulement une demande de date : le ton montre la colère / le mécontentement et un appel à respecter les accords. Message à **quatre niveaux** (modèle classique) :
+
+| Niveau | Exemple de lecture |
+| --- | --- |
+| **Contenu factuel** | Demande de la date de livraison |
+| **Révélation de soi** | « Je suis fâché / mécontent » |
+| **Relation** | Pression / reproche envers le fournisseur |
+| **Appel** | « Respecte les accords / livre enfin » |
+
+Le **choix des mots** influence la perception et la réaction. La formulation ci-dessus sonne comme un reproche → l'autre se défend. Art : exprimer clairement les faits **sans blesser**.
+
+Alternative possible :  
+« Nous n'avons malheureusement pas encore reçu la marchandise, mais nous en aurions désespérément besoin. »
+
+**Remarque :** le langage **expressif** (ton, émotion) est souvent encore plus important que le contenu. Les nourrissons ne réagissent qu'au langage expressif.
+
+#### 6.3.2 Communication non-verbale
+
+Tous les **signaux corporels** et façons de parler qui accompagnent le message verbal. Difficiles à contrôler ; souvent inconscients.
+
+Utile pour comprendre le message dans sa globalité : peut appuyer ou altérer le verbal, et transmettre une info **émotionnelle**. Influence la relation. **Congruence** = mots + corps + voix portent le même message → plus convaincant.
+
+**Éléments non-verbaux :**
+- Volume (fort, faible)
+- Ton de la voix (décontracté, objectif, brusque, menaçant)
+- Vitesse d'élocution (lente, rapide, précipitée)
+- Intonation (uniforme, avec insistance…)
+- Expressions du visage
+- Intensité du contact visuel
+- Langage corporel et position
+- Gestuelle et toucher
+
+Environ **deux tiers** de la communication se ferait sans mots. Le non-verbal = expression de pensées/sentiments **et** caractéristique des relations.
+
+| Signal | Signification |
+| --- | --- |
+| Posture décontractée | Détente, confiance en soi |
+| Bras croisés sur la poitrine | Défense |
+| Se détourner | Désintérêt |
+| Posture rigide | Tension |
+| Se balancer / gestes des mains | Impatience |
+| Soutenir la tête | Réflexion ou ennui |
+| Regard ouvert, visage amical | Intérêt, volonté de dialogue |
+| Acquiescer de la tête | Compréhension ou accord |
+| Froncer les sourcils | Incompréhension, mécontentement, scepticisme |
+| Coins de la bouche vers le bas | Insatisfaction, scepticisme (souvent + froncement) |
+| Baisser la tête / regarder le sol | Incertitude ou défi |
+| Passer devant (couper) l'interlocuteur | Manque d'intérêt ou insécurité |
+
+### 6.4 Questions dans la communication
+
+Questionner ≠ simplement poser des questions : poser les **bonnes** questions au **bon** moment. Alliés : écoute active + reformulation (feedback). Attention aussi au non-verbal (le sien et celui de l'interlocuteur) et s'adapter.
+
+Objectifs possibles : obtenir des infos, prendre contact, prospecter, négocier, conclure / obtenir une validation.
+
+Au quotidien pro : se procurer des infos via des **questions ciblées** (un art).
+
+#### 6.4.1 Question fermée
+
+Vise une réponse **courte et précise** : valider, accord ou refus, sans développement. Souvent **oui** / **non**. Commence généralement par un **verbe**.
+
+Exemples :
+- « As-tu préparé la commande client ? »
+- « Est-ce que le chargement du camion est terminé ? »
+- « Est-ce que vous êtes satisfait du résultat que vous avez obtenu ? »
+- « Le prix est-il un critère pour vous ? »
+- « As-tu fait tes devoirs ? »
+- « Est-ce que tu veux bien partager avec moi un peu de ton casse-croûte ? »
+
+#### 6.4.2 Question ouverte
+
+Efficace pour cerner **besoins** et **attentes** : invite à développer. On ne répond pas brièvement par oui/non. Méthode **QQOQCP** : Qui, Quoi/Quel, Où, Quand, Comment/Combien, Pourquoi.
+
+Exemples :
+- « Qui sont les parties prenantes engagées dans cette problématique ? »
+- « Quel est le problème ? »
+- « Où puis-je trouver cette référence ? »
+- « Quand a eu lieu le problème ? »
+- « Comment se manifeste le problème ? »
+- « Combien d'intervenants est-il possible de consulter ? »
+- « Pourquoi avoir choisi cette solution ? »
+
+**Variante** : commence par un verbe mais demande quand même de s'exprimer :
+- « Pouvez-vous me donner la raison de votre absence ? »
+- « Est-il possible de me décrire le déroulement des faits ? »
+
+### 6.5 Conduire une conversation
+
+On préfère parler à certaines personnes sans toujours savoir pourquoi. Sympathies/antipathies peu contrôlables — mais la **manière de réagir** aux propos joue un grand rôle.
+
+#### 6.5.1 Moteurs de communication
+
+Prises de position qui incitent l'interlocuteur à **continuer** / en dire plus. Signalent compréhension, empathie, intérêt (= écoute active).
+
+Exemples :
+- « Ça a l'air intéressant ! »
+- « Je ne le savais pas. »
+- « Qu'est-ce que tu veux dire ? »
+- « Il faut que tu en dises plus. »
+- « Je te crois quand tu dis que… »
+
+#### 6.5.2 Obstacles de communication
+
+Rendent l'échange difficile voire impossible : désintérêt, ou environnement inadapté.
+
+Manque d'intérêt : ignorer, formulations dévalorisantes → blessure ou agressivité ; nuit aussi aux rapprochements futurs.
+
+En **service clientèle** : ne pas utiliser d'obstacles. Mieux : dire ouvertement qu'on n'a plus le temps et qu'on ne peut pas poursuivre.
+
+**Obstacles possibles :**
+- Émettre des recommandations / donner son avis (trop tôt)
+- Passer l'interlocuteur en interrogatoire
+- Ramener la conversation sur soi
+- Minimiser ou mépriser les propos de l'autre
+- Environnement inadapté
+
+**Exemples typiques :**
+- « Ce que tu ne dis pas, tu ne le crois pas toi-même ! »
+- « N'importe qui peut dire ça ! »
+- « Qui a bien pu te raconter ça ? »
+- « Je comprends pourquoi c'est comme ça, ça ne peut pas être autrement ! »
+- « Tu dois juste… »
+- Lieux communs : « Les années d'apprentissage ne sont pas des années de travail ! »
+- Recettes simples : « Tu dois apprendre plus ! »
+- Insinuations : « Tu dois te coucher plus tard ! »
+- Catégorisations : « À ton âge, on ne peut pas encore comprendre ! »
+- Parler uniquement de soi : « Eh bien, j'ai toujours fait comme ça… »
+
+#### 6.5.3 Mettre fin aux conversations
+
+Conclure aussi bien que la conversation elle-même. Idéal : terminer par un **commentaire positif**.
+
+Points à tenir :
+- Remercier le client (ex. suggestions), réitérer des excuses si besoin
+- Résumer brièvement les points en suspens et la suite
+- Prendre congé, si possible en le **nommant**
+
+Client bavard / charge de travail : formules pour clore sans le prendre personnellement :
+- « J'aimerais vous écouter plus longtemps, mais malheureusement, mes fonctions m'obligent à poursuivre mon travail. »
+- « Il faut absolument que nous continuions à parler une autre fois. Malheureusement, je ne peux pas faire attendre les autres clients plus longtemps. »
+- « Il y aurait encore beaucoup de choses intéressantes à dire à ce sujet. Peut-être aurons-nous le temps d'échanger à nouveau quelques mots demain ? »`;
+
+const DEMO_206_THEORIE_SUMMARY = `## À retenir — Module 206
+
+### Bases
+Émetteur ↔ récepteur · verbal + non-verbal  
+Contact **indirect** (sans feedback) vs **direct** (avec feedback)
+
+### Modèle
+Coder → canal → décoder · interférences · feedback  
+≥ 9 possibilités de malentendu
+
+### Feedback & écoute active
+Feedback utile : honnête, sur le contenu, rapide (verbal + non-verbal)  
+Écoute active : reformuler, questionner, confiance  
+3 phases : encourager → clarifier → approfondir
+
+### Types
+**Verbale** (mots) + **non-verbale** (corps, voix) → **congruence**  
+4 niveaux d'un message : factuel, soi, relation, appel  
+~2/3 sans mots · tableau des signaux corporels
+
+### Questions
+**Fermée** → oui/non, précise (souvent verbe)  
+**Ouverte** → développer (QQOQCP) ; variantes « Pouvez-vous… »
+
+### Conduire une conversation
+**Moteurs** : « Ça a l'air intéressant ! », etc.  
+**Obstacles** : avis, interrogatoire, parler de soi, mépris, lieu inadapté  
+**Clore** : merci, résumé, suite, congé nommé · formules polies si charge de travail`;
+
+const DEMO_206_APERCU_FULL = `## Aperçu du module 206
+
+Ce module traite de la **communication** : émetteur/récepteur, feedback, écoute active, verbal/non-verbal, types de questions et conduite d'une conversation (moteurs, obstacles, clôture).
+
+### Vous allez découvrir
+1. Moyens et fonctionnement (contact direct / indirect)
+2. Modèle émetteur-récepteur, feedback, écoute active
+3. Communication verbale et non-verbale (congruence, signaux)
+4. Questions fermées et ouvertes (QQOQCP)
+5. Moteurs / obstacles et comment conclure avec un client
+
+### Source
+EnterSite — Logistics by ASFL / SVBL`;
+
+const DEMO_206_APERCU_SUMMARY = `## Aperçu — Module 206
+- Émetteur / récepteur, feedback
+- Verbal / non-verbal, congruence
+- Questions fermées / ouvertes
+- Moteurs, obstacles, clôture`;
+
+const DEMO_206_OBJECTIFS_FULL = `## Objectifs du module 206
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer le fonctionnement de la communication (émetteur, message, récepteur, feedback)
+- Distinguer contact **direct** et **indirect**
+- Décrire le **feedback** utile et pratiquer l'**écoute active**
+- Différencier communication **verbale** et **non-verbale** et viser la **congruence**
+- Interpréter des signaux corporels courants
+- Formuler des questions **fermées** et **ouvertes** (QQOQCP)
+- Identifier moteurs et obstacles de communication
+- Conclure correctement une conversation client`;
+
+const DEMO_206_OBJECTIFS_SUMMARY = `## Objectifs
+- Modèle + feedback + écoute active
+- Verbal / non-verbal
+- Questions fermées / ouvertes
+- Moteurs, obstacles, clôture`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -3017,6 +3302,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_205_THEORIE_FULL,
       summary: DEMO_205_THEORIE_SUMMARY,
+    },
+  },
+  "206": {
+    objectifs: {
+      full: DEMO_206_OBJECTIFS_FULL,
+      summary: DEMO_206_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_206_APERCU_FULL,
+      summary: DEMO_206_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_206_THEORIE_FULL,
+      summary: DEMO_206_THEORIE_SUMMARY,
     },
   },
 };
