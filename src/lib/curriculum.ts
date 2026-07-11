@@ -118,7 +118,7 @@ const moduleSeeds: ModuleSeed[] = [
   { code: "404", title: "Les prescriptions de stockage", blockId: "block-400" },
   { code: "405", title: "Dangers dans l'entrepôt", blockId: "block-400" },
   { code: "406", title: "Les principes de stockage", blockId: "block-400" },
-  { code: "407", title: "Les systèmes de convoyage", blockId: "block-400" },
+  { code: "407", title: "Les moyens de transport", blockId: "block-400" },
   { code: "408", title: "L'organisation de l'entrepôt", blockId: "block-400" },
   { code: "409", title: "Les engins de manutention", blockId: "block-400" },
   {
@@ -6373,6 +6373,134 @@ const DEMO_406_OBJECTIFS_SUMMARY = `## Objectifs
 - Case vs chaotique
 - FIFO / LIFO / HIFO`;
 
+/** Contenu Module 407 — Moyens de transport */
+const DEMO_407_THEORIE_FULL = `## 7. Moyens de transport
+
+### 7.1 Notions de base
+
+**Convoyage** et **transport** sont liés. Chez EnterSite / en logistique interne : **transporter** = déplacer des marchandises **au sein** de l'entreprise (unité d'exploitation délimitée : logistique, production…).
+
+Deux familles :
+- **Installations fixes** : convoyeurs à rouleaux, bandes…
+- **Engins mobiles** (sans installation fixe) : chariots élévateurs, etc.
+
+### 7.2 Moyens de transport dans la logistique
+
+Du simple appareil aux systèmes complexes. Classification possible selon plusieurs critères.
+
+#### 7.2.1 Critères de subdivision
+
+| Critère | Exemples |
+| --- | --- |
+| **Guidage** | Sur rails (transstockeur) · sans rail (FTS / AGV) |
+| **Mobilité** | Flux 2D (chariot élévateur) · 1D (convoyeur à rouleaux) |
+| **Entraînement** | Manuel (transpalette) · mécanique (appareil à timon) |
+| **Automatisation** | Opérateur (préparateur) · ordinateur (transstockeur auto) |
+| **Type de marchandise** | Unitaire (palettes) · vrac · liquides |
+
+#### 7.2.2 Choisir le bon moyen
+Type de marchandise · poids/dimensions · quantité · direction et longueur du trajet · effet de rationalisation recherché.
+
+#### 7.2.3 Manuels
+Toujours utiles sur **courtes** distances : flexibles et économiques. Ex. : transpalette manuel · chariot à bras · palan à chaîne.
+
+#### 7.2.4 Convoyeurs continus
+Transport **permanent** sur parcours linéaire. Grandes quantités (production de masse, Poste…).
+
+**+** automatisation · peu de personnel  
+**−** investissement ↑ · rentable seulement si forte utilisation · pas pour tous produits · panne = arrêt du flux
+
+Ex. : bande · rouleaux · chaîne.
+
+#### 7.2.5 Ponts et portiques roulants
+Levage **aérien** · déplacement 3D possible · lourds / encombrants. Intérieur ou extérieur.
+
+#### 7.2.6 Engins de manutention internes
+Au sol · manuels ou mécaniques · largeur d'allée (**AST**) adaptée. Sans rail = flexibilité.
+
+Ex. : transpalette électrique à timon · gerbeur · tracteur porté · préparateurs de commandes (petite levée…).
+
+#### 7.2.7 Chariot élévateur
+Engin le plus fréquent. Fourches / accessoires · mât hydraulique · inclinaison (prise/dépose, anti-glissement). Variantes : contrepoids · mât rétractable · gerbeur assis…
+
+**RFID** sur engins : enregistrement auto palettes · attribution emplacements · régulation vitesse (zones/MD) · optimisation d'itinéraires.
+
+#### 7.2.8 Transstockeur
+Guidé par **rails** dans l'allée · stockage/déstockage rationnel. Souvent 1 appareil / allée (coût ↑, rendement ↑). Déplacement entre allées via aiguillages possible (capacité ↓).
+
+Auto : fourche télescopique. Alternative : **engin de mise en stock** (allée un peu plus large · manuel · siège au sol ou poste sur mât).
+
+### 7.3 Loi du levier
+
+Chariot à **contrepoids** = levier à deux bras. Charge hors base des roues · essieu **avant** = point d'appui. Moment du chariot > moment de la charge sinon **basculement**.
+
+Pour ↑ capacité : alourdir le chariot · allonger l'arrière · raccourcir le bras de charge.
+
+| Terme | Sens (contrepoids) |
+| --- | --- |
+| Point d'appui P | Essieu avant |
+| Forces F | Charge / contrepoids |
+| Bras a | Distance essieu → force |
+| Moment | Force × bras (Nm) |
+
+Équilibre ex. : 0,4 m × 200 N = 80 Nm = 0,8 m × 100 N.
+
+Sûr tant que : **M gauche (contrepoids) > M droite (mât + charge)**.
+
+### 7.4 Diagrammes de capacité de charge
+
+Plaque signalétique : charge max **jamais** dépassée. Diagramme : poids autorisé selon **distance du centre de gravité** et souvent **hauteur de levage**.
+
+- Sans hauteur (ex. gerbeur à timon) : lire poids vs distance CdG
+- Avec hauteur : capacité **↓** quand hauteur ↑ · même lecture + tenir compte du niveau`;
+
+const DEMO_407_THEORIE_SUMMARY = `## À retenir — Module 407
+
+### Transport interne
+Déplacement dans l'entreprise · fixes vs engins mobiles
+
+### Classification
+Rails/sans · 1D/2D · manuel/méca · opérateur/PC · unitaire/vrac/liquide
+
+### Moyens
+Manuel (court) · convoyeurs continus · ponts · chariots · élévateur (+ RFID) · transstockeur
+
+### Levier / capacité
+Contrepoids = 2 bras · M chariot > M charge  
+Diagramme : CdG + hauteur · ne jamais dépasser`;
+
+const DEMO_407_APERCU_FULL = `## Aperçu du module 407
+
+Ce module présente les **moyens de transport** internes : classification, types d'engins, loi du levier et diagrammes de charge.
+
+### Vous allez découvrir
+1. Notions transport / convoyage internes
+2. Critères de choix et familles d'engins
+3. Chariot élévateur, RFID, transstockeur
+4. Loi du levier et lecture des diagrammes de capacité
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 406`;
+
+const DEMO_407_APERCU_SUMMARY = `## Aperçu — Module 407
+- Familles de moyens de transport
+- Élévateur · transstockeur
+- Levier & diagrammes de charge`;
+
+const DEMO_407_OBJECTIFS_FULL = `## Objectifs du module 407
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Distinguer transport interne et types de **moyens** (fixes / mobiles)
+- Classer et **choisir** un moyen selon critères (marchandise, trajet, automatisation…)
+- Expliquer le rôle du **chariot élévateur** et du **transstockeur**
+- Appliquer la **loi du levier** et lire un **diagramme de capacité de charge**`;
+
+const DEMO_407_OBJECTIFS_SUMMARY = `## Objectifs
+- Classification & choix
+- Élévateur / transstockeur
+- Levier · diagrammes`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -6903,6 +7031,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_406_THEORIE_FULL,
       summary: DEMO_406_THEORIE_SUMMARY,
+    },
+  },
+  "407": {
+    objectifs: {
+      full: DEMO_407_OBJECTIFS_FULL,
+      summary: DEMO_407_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_407_APERCU_FULL,
+      summary: DEMO_407_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_407_THEORIE_FULL,
+      summary: DEMO_407_THEORIE_SUMMARY,
     },
   },
 };
