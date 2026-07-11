@@ -19,7 +19,7 @@ import type {
   UserAccount,
 } from "./types";
 
-const STORAGE_KEY = "epcas-logistique-v9";
+const STORAGE_KEY = "epcas-logistique-v10";
 
 type AppStore = {
   state: AppState;

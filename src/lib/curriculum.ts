@@ -1558,6 +1558,175 @@ const DEMO_107_OBJECTIFS_SUMMARY = `## Objectifs
 - LPE / OTD / OMoD / OREA
 - Spéciaux : danger, précautions, autorisation`;
 
+/** Contenu Module 108 — Élimination des déchets global */
+const DEMO_108_THEORIE_FULL = `## 8. L'élimination des déchets global
+
+### 8.1 Les systèmes de management environnemental (SME)
+
+Un **système de management environnemental (SME)** fait partie intégrante de l'ensemble du système de management d'une entreprise. Il s'intéresse à la gestion de l'entreprise dans une optique environnementale. L'**OFEV** encourage le développement de technologies favorables à l'environnement et collabore avec entreprises, organisations et instituts.
+
+Les SME permettent une intégration structurée et globale des objectifs environnementaux dans la gestion. Sans constituer une « marque d'écologie », ils indiquent que les questions environnementales sont ancrées dans les processus et les structures, et que des réponses optimisées sont recherchées en permanence. Pour l'OFEV, un SME est une clé du **développement économique durable**. Sa mise en œuvre exige des collaborateurs compétents à tous les niveaux.
+
+#### 8.1.1 Contenu d'un SME
+
+Une entreprise avec un SME s'engage à améliorer sa performance environnementale. Elle doit :
+
+- s'identifier par rapport aux différentes atteintes à l'environnement
+- s'engager à respecter en permanence les directives environnementales
+- définir ses propres objectifs et programmes environnementaux
+- déterminer la structure organisationnelle et les moyens pour atteindre ses objectifs
+- procéder régulièrement à des **audits environnementaux**
+- publier un **rapport** sur l'environnement et rendre compte de la performance réalisée
+
+#### 8.1.2 Avantages d'un SME
+
+**Avantages internes**
+- rationalisation, diminution des coûts
+- respect des lois, sécurité juridique
+- innovations technologiques, prévention des atteintes
+- motivation des collaborateurs
+
+**Avantages externes**
+- compétitivité accrue, avantage concurrentiel
+- meilleure image (clients, public)
+- meilleures relations avec les autorités
+- davantage de transparence (actionnaires, banques, assurances)
+
+#### 8.1.3 Certification — ISO 14001
+
+Depuis **1996**, la norme **ISO 14001** permet de certifier les SME. Elle définit des critères mondiaux. La certification renforce la confiance (clients, fournisseurs, collaborateurs, autorités, investisseurs, société) et prouve l'intégration d'un comportement écologique dans les processus.
+
+Avantages liés à la gestion environnementale durable :
+- protection de l'environnement plus systématique
+- risques et pollution minimisés
+- prise de conscience des collaborateurs
+- compétitivité et image améliorées
+- présentation possible dans un rapport environnement / développement durable
+
+Les informations doivent être visibles, notamment dans le rapport annuel.
+
+#### 8.1.4 ISO 20121 — grandes manifestations
+
+La norme **ISO 20121** a fait ses preuves lors des **Jeux olympiques de Londres 2012**. Elle vise le développement durable dans l'événementiel (organisateurs, visiteurs, fournisseurs) et optimise le processus de gestion.
+
+**Exemple JO 2012 :** les vestes des ~70 000 bénévoles Adidas étaient fabriquées à partir de **matériaux recyclés** (ex. vieilles bouteilles PET).
+
+### 8.2 Les problèmes environnementaux mondiaux
+
+Même avec de bons investissements en Suisse, les changements environnementaux mondiaux exigent une collaboration internationale. Huit problèmes majeurs :
+
+#### 8.2.1 Changement climatique
+Refroidissement ou réchauffement ; aujourd'hui surtout **réchauffement**. Depuis les années 1980, hausse de la température moyenne (environ 0,2 °C → près de 1 °C). Conséquences : vagues de chaleur, tempêtes, inondations.
+
+Causes notamment :
+- déforestation tropicale → libération de CO₂ (effet de serre)
+- combustion d'énergies fossiles (charbon, pétrole…)
+- méthane des élevages (ex. vaches)
+- mobilité (voitures, bateaux, avions)
+
+#### 8.2.2 Pénurie d'eau
+Suisse : ~**120 litres/habitant/jour**. Sur Terre : ~**97 %** eau salée, ~**2 %** gelée, ~**1 %** douce utilisable. Causes : modes de vie + pollution des rivières.
+
+#### 8.2.3 Pollution de l'air
+Gaz d'échappement industrie / voitures / avions. Grandes villes davantage touchées. OMS (2012) : ~**8 millions** de décès liés à la pollution de l'air.
+
+#### 8.2.4 Érosion des sols
+Sols = stockage de nutriments, eau et **plus de carbone que toutes les forêts**. Comportement humain → sols plus stériles ; produits non dégradables hors cycle naturel. ~**1 %** des sols perdus chaque année (constructions, autres usages, pollution).
+
+#### 8.2.5 Surpopulation
+Pas un problème environnemental « direct », mais un problème de **ressources**. Population ~2,77 Md (1955) → ~7,79 Md (2020) ; âge moyen 23 → 31. Plus d'habitants = plus de biens, énergie, eau, terres arables → déforestation → climat.
+
+#### 8.2.6 Déforestation
+Global Forest Watch : ~**30 millions d'hectares**/an détruits. Conséquences : climat, extinction d'espèces, érosion. Liens avec prospérité, démographie, produits (ex. huile de palme).
+
+#### 8.2.7 Extinction des espèces
+Habitat réduit / chasse. UICN : sur ~90 000 espèces évaluées, ~**25 800** menacées. Causes liées au mode de vie humain (érosion, déforestation, déchets…).
+
+#### 8.2.8 Déchets plastiques
+Statistiques : l'équivalent d'un camion de plastique dans la mer **chaque minute** ; ~**8 Mt**/an directement en mer + ~**32 Mt** dans l'environnement (voies détournées vers les océans). Plastique non dégradable pendant des siècles (bouteille ~**500 ans** → microplastiques). Cinq grands **vortex** de déchets ; Pacifique Nord estimé entre 700 000 et > 15 000 000 km².
+
+### 8.3 Agenda 2030 — objectifs de développement durable
+
+Le **25 septembre 2015**, l'ONU a adopté l'**Agenda 2030** : **17 objectifs** et **169 sous-objectifs** (suite des Objectifs du Millénaire).
+
+Les 17 ODD (résumé) :
+1. Éliminer la pauvreté
+2. Éliminer la faim / agriculture durable
+3. Vie saine et bien-être
+4. Éducation de qualité
+5. Égalité des sexes
+6. Eau et assainissement
+7. Énergie fiable et durable
+8. Croissance / emploi décent
+9. Infrastructure / industrialisation / innovation
+10. Réduire les inégalités
+11. Villes durables
+12. Consommation et production durables
+13. Lutte contre les changements climatiques
+14. Océans et ressources marines
+15. Écosystèmes terrestres / forêts / biodiversité
+16. Paix, justice, institutions
+17. Partenariat mondial
+
+La coopération entre États est décisive : ce n'est qu'ensemble que de tels objectifs pourront être atteints.`;
+
+const DEMO_108_THEORIE_SUMMARY = `## À retenir — Module 108
+
+### SME
+Management d'entreprise orienté environnement · clé du développement durable (OFEV)
+
+**Exigences :** impacts · conformité · objectifs/programmes · organisation · audits · rapport
+
+**Avantages :** coûts/légal/innovation/motivation (interne) · compétitivité/image/autorités/transparence (externe)
+
+**ISO 14001** (depuis 1996) — certification SME mondiale  
+**ISO 20121** — événements durables (ex. JO Londres 2012, tenues PET recyclé)
+
+### 8 problèmes mondiaux
+1. Climat (CO₂, méthane, mobilité…)
+2. Eau (~1 % douce utilisable)
+3. Air (~8 M décès OMS 2012)
+4. Érosion des sols (~1 %/an)
+5. Surpopulation → pression ressources
+6. Déforestation (~30 M ha/an)
+7. Extinction d'espèces (~25 800 menacées / 90 000)
+8. Plastique océanique (~8 Mt/an ; vortex ; ~500 ans/bouteille)
+
+### Agenda 2030 (ONU, 2015)
+**17 ODD** · 169 cibles · coopération internationale indispensable  
+Liens logistique : production/consommation durables, climat, océans, villes…`;
+
+const DEMO_108_APERCU_FULL = `## Aperçu du module 108
+
+Ce module élargit l'élimination des déchets à l'échelle **globale** : SME, problèmes environnementaux mondiaux et Agenda 2030.
+
+### Vous allez découvrir
+1. Contenu, avantages et certification des SME (ISO 14001 / 20121)
+2. Huit grands problèmes environnementaux mondiaux
+3. Les 17 Objectifs de développement durable de l'Agenda 2030
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · OFEV · ONU`;
+
+const DEMO_108_APERCU_SUMMARY = `## Aperçu — Module 108
+- SME + ISO 14001 / 20121
+- 8 problèmes mondiaux
+- Agenda 2030 (17 ODD)`;
+
+const DEMO_108_OBJECTIFS_FULL = `## Objectifs du module 108
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer ce qu'est un **SME** et ce qu'il exige d'une entreprise
+- Citer avantages internes/externes et le rôle d'**ISO 14001** / **ISO 20121**
+- Décrire les **huit problèmes** environnementaux mondiaux et leurs liens avec la logistique / consommation
+- Situer l'**Agenda 2030** et les 17 ODD`;
+
+const DEMO_108_OBJECTIFS_SUMMARY = `## Objectifs
+- SME + ISO
+- 8 problèmes mondiaux
+- Agenda 2030 / 17 ODD`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -1668,6 +1837,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_107_THEORIE_FULL,
       summary: DEMO_107_THEORIE_SUMMARY,
+    },
+  },
+  "108": {
+    objectifs: {
+      full: DEMO_108_OBJECTIFS_FULL,
+      summary: DEMO_108_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_108_APERCU_FULL,
+      summary: DEMO_108_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_108_THEORIE_FULL,
+      summary: DEMO_108_THEORIE_SUMMARY,
     },
   },
 };
