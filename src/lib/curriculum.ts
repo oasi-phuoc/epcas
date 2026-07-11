@@ -11397,6 +11397,91 @@ const DEMO_808_OBJECTIFS_SUMMARY = `## Objectifs
 - Notes · partage
 - Balises · modèles · manuscrit`;
 
+/** Contenu Module 809 — Poste de contrôle */
+const DEMO_809_THEORIE_FULL = `## 9. Poste de contrôle
+
+### 9.1 Intralogistique
+
+Terme d'origine allemande (manutention / stockage). **Logistique interne** à l'entreprise : contrôler, exécuter et organiser le **flux de matériel** interne.
+
+👉 Même domaine que le flux de matériel interne / micro-logistique · met en évidence la frontière **interne ↔ externe**.
+
+#### 9.1.1 Rôles
+Réception et sortie · systèmes de stockage · transport · logiciel picking / tri · télématique, capteurs, robotique · logiciels métier · systèmes complets.
+
+👉 Harmoniser le plus grand nombre possible de domaines et de conditions.
+
+### 9.2 Le poste de contrôle
+
+Aussi appelé **panneau de commande** · point central d'un **WMS** · assiste la gestion globale entrepôt / exploitation. Importance croissante avec capteurs et robotique.
+
+#### 9.2.1 Objectifs
+Regrouper les **KPI** d'intralogistique (saisie, évaluation, analyse récurrente), par ex. :
+
+- Volume / urgences en commissionnement
+- Transports utilisés / actifs
+- Capacité personnel (expédition, picking)
+- Livraisons entrantes encore ouvertes
+- Taux de prélèvement · volume prévu du jour
+
+Aussi : **représentation graphique** des processus → réagir vite aux perturbations / imprévus · flux sans faille. Questions typiques : dysfonctionnements manutention ? logiciel ?
+
+Niveau technique du poste de contrôle → impact fort sur l'**efficacité** des processus.
+
+#### 9.2.2 Rôle
+Selon l'infrastructure : visualisation · planification · optimisation · prévisions vs réalité · limites de performance · controlling · état du système.
+
+Le responsable peut ↑ / modifier ressources ou mesures organisationnelles. En général le poste de contrôle **évalue, prépare et visualise** — il ne pilote pas toujours directement.  
+Particularité : les collaborateurs **associent** les recommandations à leur expérience · **eux** décident des mesures finales.
+
+#### 9.2.3 Exigences collaborateurs
+Pivot de l'intralogistique · formation logistique solide + expérience · bonnes compétences **IT / Excel** · pensée analytique, process, prévoyante · **travail en équipe** fréquent.
+
+#### 9.2.4 Conclusion
+Instrument de **contrôle opérationnel** en intralogistique : soutient planification et pilotage · visualise / surveille en continu · détecte écarts objectifs ↔ réalité · propose des **recommandations d'action**.`;
+
+const DEMO_809_THEORIE_SUMMARY = `## À retenir — Module 809
+
+### Intralogistique
+Flux matériel **interne** · EM/SM, stock, transport, picking, capteurs…
+
+### Poste de contrôle
+Centralise KPI + visualisation processus  
+Évalue / recommande · humains décident  
+Profil : logistique + Excel + analyse + équipe`;
+
+const DEMO_809_APERCU_FULL = `## Aperçu du module 809
+
+Ce module situe l'**intralogistique** et le rôle du **poste de contrôle** (panneau de commande) dans l'entrepôt.
+
+### Vous allez découvrir
+1. Définition et rôles de l'intralogistique
+2. Objectifs du poste de contrôle (KPI et visualisation)
+3. Rôles opérationnels et exigences des collaborateurs
+4. Conclusion : contrôle opérationnel et recommandations
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT`;
+
+const DEMO_809_APERCU_SUMMARY = `## Aperçu — Module 809
+- Intralogistique
+- Poste de contrôle (KPI · process)
+- Profil collaborateurs`;
+
+const DEMO_809_OBJECTIFS_FULL = `## Objectifs du module 809
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Définir l'**intralogistique** et citer ses domaines d'activité
+- Expliquer les **objectifs** du poste de contrôle (indicateurs + visualisation)
+- Décrire son **rôle** (évaluation / recommandations vs décision humaine)
+- Citer les **exigences** envers les collaborateurs du poste de contrôle`;
+
+const DEMO_809_OBJECTIFS_SUMMARY = `## Objectifs
+- Intralogistique
+- Poste de contrôle · KPI
+- Rôle · profil collab.`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -12459,6 +12544,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_808_THEORIE_FULL,
       summary: DEMO_808_THEORIE_SUMMARY,
+    },
+  },
+  "809": {
+    objectifs: {
+      full: DEMO_809_OBJECTIFS_FULL,
+      summary: DEMO_809_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_809_APERCU_FULL,
+      summary: DEMO_809_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_809_THEORIE_FULL,
+      summary: DEMO_809_THEORIE_SUMMARY,
     },
   },
 };
