@@ -9819,6 +9819,110 @@ const DEMO_701_OBJECTIFS_SUMMARY = `## Objectifs
 - Déroulement
 - Différences`;
 
+/** Contenu Module 703 — Les coûts du personnel */
+const DEMO_703_THEORIE_FULL = `## 3. Coût du personnel
+
+Les collaborateurs sont essentiels au succès — et génèrent des **coûts de personnel**, souvent parmi les plus importants. Catégories (lien module **702**) : salaires · prestations sociales · prestations spéciales (formation, gratifications…) · administration RH.
+
+### 3.1 Point de vue entreprise (EnterSite)
+
+#### Directs vs indirects
+| Directs | Indirects |
+| --- | --- |
+| Salaire **brut** / rémunération | Équipement poste · recrutement |
+| Cotisations retraite, maladie, chômage… | |
+| Primes vacances / Noël · gratifications | |
+| Frais pro (formation, déplacements) | |
+| Maintien salaire maladie | |
+
+#### 3.1.1 Salaire vs rémunération
+- **Salaire** : pour travail **effectué** · variable (heures, tâche, pièces)
+- **Rémunération** : montant **fixe** · indépendant du volume · payée aussi en vacances · heures supp. souvent compensées (pas payées cash)
+
+#### 3.1.2 Réduire les coûts
+Jusqu'à ~**80 %** des coûts totaux selon secteur. Leviers : **réserves** (saisons) · ↓ heures supp. (compensation) · ↓ absentéisme · **externalisation** (qualité à préserver, module **301**).
+
+#### 3.1.3 Fixes vs temporaires
+Emploi fixe : mensuel · vacances · déductions · essai + préavis ~3 mois.  
+Temporaire : agence / **freelance** (indépendant gère impôts/social) · agence gère l'admin.
+
+Objectif employeur responsable : emploi durable · maîtriser les coûts court **et** long terme.
+
+### 3.2 Point de vue collaborateur
+
+**Brut** = avant déductions légales · **net** = versé.
+
+#### 3.2.1 Trois piliers
+| Pilier | Contenu |
+| --- | --- |
+| **1** Public | AVS · AI · PC · AC · APG (militaire, maternité, paternité) · répartition (actifs → retraités) · cotisation dès 18 ans si actif |
+| **2** Professionnel | LPP · LAA · LFLP · sur-obligatoire · avec pilier 1 ≈ **60–70 %** dernier salaire |
+| **3** Privé | Facultatif · **3a** (vieillesse / logement · déductible) · **3b** (épargne / risques) |
+
+#### 3.2.2 Déductions (ordre 2021, part employé)
+AVS **4,35 %** · AI **0,7 %** · APG **0,25 %** · AANP **0,75 %** · AC **1,1 %** · total ≈ **7,15 %**.  
+LPP si revenu > **21 510 CHF**/an (seuil indiqué).
+
+**Ex.** Brut 52 000 → déductions 3 718 → net **48 282**.
+
+👉 Personnel ≠ seulement salaire : + **charges sociales**.
+
+### 3.3 Droits et obligations (CO)
+
+| | Employeur | Employé |
+| --- | --- | --- |
+| **Droits** | Prestation complète · fidélité · vérité · direction | Revenu · emploi · expression · égalité |
+| **Obligations** | Assistance · personnalité/données · égalité H/F · biens · certificat | Travail personnel · diligence/loyauté · comptes · heures supp. · ordres |
+
+#### 3.3.1 Protection santé (LAA art. 82)
+Employeur : mesures prévention (expérience, technique, conditions) · faire collaborer le personnel.  
+Employé : assister · EPI · dispositifs de sécurité · ne pas les retirer sans autorisation.  
+Travaux à risques particuliers : certificat de formation possible (CF).`;
+
+const DEMO_703_THEORIE_SUMMARY = `## À retenir — Module 703
+
+### Coûts
+Directs (brut, sociales…) · indirects (recrutement, poste)  
+Salaire (variable) vs rémunération (fixe)
+
+### Collaborateur
+3 piliers · brut → net (~7 % déductions 2021) · LPP
+
+### Cadre
+Droits/obligations CO · LAA prévention`;
+
+const DEMO_703_APERCU_FULL = `## Aperçu du module 703
+
+Ce module traite des **coûts de personnel** : vision entreprise et collaborateur, trois piliers et cadre légal.
+
+### Vous allez découvrir
+1. Coûts directs / indirects et salaire vs rémunération
+2. Leviers de réduction et emploi fixe / temporaire
+3. Trois piliers et déductions (brut / net)
+4. Droits et obligations CO / LAA
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 702`;
+
+const DEMO_703_APERCU_SUMMARY = `## Aperçu — Module 703
+- Coûts directs / indirects
+- 3 piliers · brut/net
+- Droits CO / LAA`;
+
+const DEMO_703_OBJECTIFS_FULL = `## Objectifs du module 703
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Distinguer coûts de personnel **directs** / **indirects** et salaire / rémunération
+- Expliquer des leviers de **réduction** des coûts et les formes d'emploi
+- Décrire les **trois piliers** et calculer un ordre de grandeur brut → net
+- Citer les droits/obligations **CO** et les devoirs **LAA** de prévention`;
+
+const DEMO_703_OBJECTIFS_SUMMARY = `## Objectifs
+- Directs / indirects
+- 3 piliers · déductions
+- CO · LAA`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -10727,6 +10831,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_701_THEORIE_FULL,
       summary: DEMO_701_THEORIE_SUMMARY,
+    },
+  },
+  "703": {
+    objectifs: {
+      full: DEMO_703_OBJECTIFS_FULL,
+      summary: DEMO_703_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_703_APERCU_FULL,
+      summary: DEMO_703_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_703_THEORIE_FULL,
+      summary: DEMO_703_THEORIE_SUMMARY,
     },
   },
 };
