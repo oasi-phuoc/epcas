@@ -3751,6 +3751,185 @@ const DEMO_301_OBJECTIFS_SUMMARY = `## Objectifs
 - Make or Buy · outsourcing
 - Quantités & timing`;
 
+/** Contenu Module 302 — Approvisionnement / achat de marchandises */
+const DEMO_302_THEORIE_FULL = `## 2. L'approvisionnement de marchandises
+
+Dans le module **301** : quantité et moment de la commande. Ici : **où** et **comment** envoyer la commande.
+
+### 2.1 Où acheter ?
+
+Défi différent pour un achat privé et un achat en entreprise. Aujourd'hui : nombreuses possibilités (dont **e-commerce**). Facteurs décisifs : **budget** (1re sélection), **disponibilité**, **relation** avec le fournisseur.
+
+#### Exemple — achat d'un ordinateur portable
+
+Questions principales quasi identiques pour un particulier et une entreprise (EnterSite AG).
+
+| Étape | Apprenti (1 pce) | EnterSite AG (86 pces) |
+| --- | --- | --- |
+| Situation | Portable pour formation logisticien | Équiper les collaborateurs |
+| Identifier le besoin | Besoin d'un portable | Idem |
+| Définir le budget | Combien puis-je payer ? | Idem |
+| Définir les exigences | Quelle performance ? | Idem |
+| Rechercher des fournisseurs | Internet, expériences, environs, amis | Idem |
+| Consultation sur place | Vérifier attentes / connaissances spécialisées | — |
+| Demander une offre | — | Appel d'offres : qualité + prix |
+| Évaluation de l'offre | Rapport qualité-prix, conditions, délai, confiance | Idem |
+| Achat | Payer et prendre en charge | Idem |
+| Évaluation | Attentes satisfaites ? Expérience → fidélité ou exclusion | Idem |
+
+**Sélection de fournisseurs possibles :** grossistes et fournisseurs de différentes marques · e-commerce.
+
+#### 2.1.1 Déroulement schématique d'une commande
+
+Besoin → (demande d'offre) → offre → commande → confirmation → livraison → facture / paiement  
+(selon le cas, l'étape offre peut être sautée si le fournisseur est déjà choisi)
+
+### 2.2 La loi de l'offre et de la demande
+
+#### 2.2.1 La demande
+
+**Demande** = quantité d'un produit commandée par le client à un prix donné. Peut venir d'une commande client, des besoins de fabrication, du réapprovisionnement, etc.
+
+**Loi de la demande :** plus c'est cher, moins il y a de demande.
+
+Origine : Antoine Augustin **Cournot** (1838) — courbe de demande et concept d'**élasticité** (réaction de l'offre/demande aux variations de prix ou de revenus).
+
+**Exemple — cartes graphiques 2020**  
+NVIDIA / AMD pour PS5, Xbox, PC. Demande ↑ (ventes massives) → retards (ex. PS5), stocks épuisés. Causes : Covid (usines bloquées/fermées) + demande appareils ↑ ~175 %. Offre insuffisante → prix des cartes restantes ×3.
+
+#### 2.2.2 L'offre
+
+**Offre** = quantité proposée par le vendeur à un prix donné. Groupes de marchandises (ex.) :
+- Agriculture : fruits, légumes
+- Énergie : fossile, renouvelable, nucléaire
+- Textile : habillement
+- Papier/carton : emballages
+- Cuir, caoutchouc, plastiques
+- Produits chimiques / pharma
+- Pierres et terres : verre, matériaux de construction
+- Métaux : fer, acier…
+- Machines, électronique
+- Véhicules
+- Instruments, horlogerie, bijoux
+- Autres : meubles, jouets
+- Métaux précieux : art, or, platine
+
+Courbe de l'offre : **Alfred Marshall** (après Cournot).
+
+**Fonctionnement :** EnterSite visite un salon impression 3D → 4 fournisseurs = offre de quantité 4. Plus le prix ↑, plus la quantité offerte ↑ (et plus de vendeurs entrent) → **loi de l'offre**.
+
+#### 2.2.3 L'équilibre du marché
+
+Sur un marché en **équilibre** :
+
+**Quand les prix ↑**
+- quantité **offerte** ↑ (producteurs encouragés à produire/vendre)
+- quantité **demandée** ↓ (acheteurs moins prêts)
+
+**Quand les prix ↓**
+- quantité **offerte** ↓
+- quantité **demandée** ↑
+
+### 2.3 Le processus de commande
+
+Les parties consignent juridiquement leurs accords, les présentent et les contrôlent.
+
+#### 2.3.1 L'offre
+
+Déclenché par un **besoin non satisfait**. Le client peut contacter plusieurs fournisseurs et demander une **offre** (appel d'offres) pour trouver le plus approprié (qualité/prix). Pas obligatoire : si le fournisseur est déjà choisi → commande directe.
+
+**Minimum dans la demande d'offre :**
+- article souhaité
+- quantité
+- date de livraison
+- adresse de livraison
+
+**Attention :** l'offre a une **date de validité**. Jusqu'à cette date, le fournisseur s'engage. Si le client change les conditions → offre plus valable. Confirmation client → contenu fixé → dans le processus, confirmation entraîne la **commande**.
+
+#### 2.3.2 La commande
+
+Basée sur l'offre (si phase offre) ou définie à ce stade. **Caractère obligatoire** : les deux parties doivent respecter le contenu.
+
+| | **Droits** | **Obligations** |
+| --- | --- | --- |
+| **Acheteur** | Obtenir la chose et en devenir propriétaire ; en cas de vice : remplacement, réduction ou rédhibition | Payer le prix dans les délais |
+| **Vendeur** | Recevoir le paiement | Transmettre la chose et céder la propriété |
+
+Non-respect → solution commune ; sinon **CGV** ou **CO**.
+
+**Minimum dans une commande :**
+- article (n° + description)
+- quantité
+- date de livraison
+- adresse de livraison
+- prix
+
+#### 2.3.3 La confirmation de commande
+
+Document (souvent écrit, ex. e-mail) confirmant **réception** et **contenu** de la commande. Ex. : confirmation EnterSite AG.
+
+#### 2.3.4 La facture
+
+Clôture du processus : marchandise livrée selon confirmation, propriété transférée ; paiement selon CO à la date convenue. Forme libre (mise en page).
+
+**Minimum sur une facture :**
+- nom et adresse du fournisseur
+- numéro de **TVA** du fournisseur
+- nom et adresse du destinataire
+- date de livraison
+- désignation exacte de la livraison / prestation
+- prix
+- montant de la **TVA**
+- signature`;
+
+const DEMO_302_THEORIE_SUMMARY = `## À retenir — Module 302
+
+### Où acheter ?
+Budget · disponibilité · relation fournisseur · e-commerce  
+Même logique particulier / entreprise (besoin → budget → exigences → fournisseurs → offre/évaluation → achat → bilan)
+
+### Offre / demande
+**Demande** ↑ quand prix ↓ (Cournot, élasticité)  
+**Offre** ↑ quand prix ↑ (Marshall)  
+Équilibre : prix ↑ → offre ↑ / demande ↓ · prix ↓ → inverse  
+Ex. cartes graphiques 2020
+
+### Processus de commande
+Demande d'offre (article, qté, délai, adresse) · validité  
+**Commande** obligatoire · droits/obligations acheteur-vendeur (CO/CGV)  
+**Confirmation** · **Facture** (TVA, désignation, prix, signature…)`;
+
+const DEMO_302_APERCU_FULL = `## Aperçu du module 302
+
+Ce module précise **où** et **comment** commander : choix du fournisseur, offre/demande, processus de commande (offre → commande → confirmation → facture).
+
+### Vous allez découvrir
+1. Critères « où acheter » (exemple portable)
+2. Loi de l'offre et de la demande / équilibre
+3. Offre, commande, confirmation, facture (contenus minimaux)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 301`;
+
+const DEMO_302_APERCU_SUMMARY = `## Aperçu — Module 302
+- Où acheter ?
+- Offre / demande / équilibre
+- Processus de commande`;
+
+const DEMO_302_OBJECTIFS_FULL = `## Objectifs du module 302
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer comment choisir **où** acheter (budget, disponibilité, relation, canaux)
+- Décrire la **loi de l'offre et de la demande** et l'équilibre de marché
+- Dérouler le **processus de commande** : offre, commande, confirmation, facture
+- Lister les éléments **minimaux** d'une demande d'offre, d'une commande et d'une facture`;
+
+const DEMO_302_OBJECTIFS_SUMMARY = `## Objectifs
+- Où acheter
+- Offre / demande
+- Processus commande + documents`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -4043,6 +4222,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_301_THEORIE_FULL,
       summary: DEMO_301_THEORIE_SUMMARY,
+    },
+  },
+  "302": {
+    objectifs: {
+      full: DEMO_302_OBJECTIFS_FULL,
+      summary: DEMO_302_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_302_APERCU_FULL,
+      summary: DEMO_302_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_302_THEORIE_FULL,
+      summary: DEMO_302_THEORIE_SUMMARY,
     },
   },
 };
