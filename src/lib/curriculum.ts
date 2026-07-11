@@ -3188,6 +3188,257 @@ const DEMO_207_OBJECTIFS_SUMMARY = `## Objectifs
 - Vente / motifs d'achat
 - Scoring fournisseurs`;
 
+/** Contenu Module 208 — At-Sale-Service */
+const DEMO_208_THEORIE_FULL = `## 8. At-Sales-Service (Service à la vente)
+
+### 8.1 Le comportement d'achat
+
+Comportement de l'acheteur·euse concernant l'achat d'un bien ou d'un service. Intègre motivations et aspects très différents.
+
+Ex. : comportement d'un **consommateur final** ≠ celui d'un **acheteur d'entreprise** (ressources, profit). Même entre consommateurs finaux, motifs et modèles varient fortement.
+
+#### 8.1.1 Comment le client est-il incité à acheter ?
+
+La **psychologie de vente** étudie le comportement d'achat. Résultats appliqués dans la conception des magasins :
+
+**Présentation à hauteur des yeux**  
+Produits à hauteur des yeux → plus souvent achetés que ceux pour lesquels il faut tendre les bras ou se baisser.
+
+**Présentation devant la caisse**  
+Attente aux caisses = occasion de vendre de petits articles (sucreries…). Cible typique : mères avec enfants (quémande pendant l'attente).
+
+**Les odeurs**  
+Ex. : boulangerie au milieu de la surface de vente. L'odeur du pain frais incite à acheter du pain **et** d'autres aliments. Conseil : ne pas faire ses courses le ventre vide — les clients affamés remplissent plus le caddie.
+
+Aucun produit n'est placé au hasard : les experts marketing calculent **quand, où et comment** le client se sert de préférence.
+
+#### 8.1.2 Timbres de rabais, points, coupons : la collecte
+
+Les marketeurs exploitent l'**instinct de collecte** (bons, points, coupons).
+
+Deux manières :
+1. **Traditionnelle** — carte de fidélité où le client colle points/étiquettes ; carte pleine → lot ou réduction. Variante : cumul de tickets de caisse jusqu'à un total d'achat.
+2. **Numérique** — carte de fidélité type carte de crédit ; le vendeur saisit les achats électroniquement, solde communiqué périodiquement (bons, etc.). Le client n'est plus responsable de la collecte.
+
+Différence clé : méthode 1 → souvent juste une adresse ; méthode 2 → perte d'anonymat, peu d'influence sur les données → « **clients transparents** ». Protection via une **loi stricte sur la protection des données** ; les grossistes garantissent le respect.
+
+**Remarque :** collecte numérique = le client communique des données sur son comportement d'achat → le vendeur adapte assortiment, promotions ciblées, etc.
+
+#### 8.1.3 Nouvelles technologies
+
+Étude du comportement via technologies avancées, ex. **IRM** : réactions du cerveau aux produits/emballages visibles en images → intégrées aux stratégies de vente.
+
+Centres commerciaux : plus grands, proches d'un **parc d'attractions**. Pour beaucoup, l'achat = loisir ; pour d'autres = aventure (chercher, comparer les prix).
+
+### 8.2 Les situations de vente
+
+**Vente quotidienne** (consommation courante) : peu de travail, conseils accessoires, sentiments secondaires. Le client achète car il a besoin du produit/service. Il souhaite :
+- être servi rapidement
+- un règlement simple
+- un service orienté client
+- une bonne qualité à un prix raisonnable
+- une bonne prestation
+
+**Produit complexe / cher** (ex. voiture) ou prestation globale → **vente accompagnée de conseils**. Grand choix, complexité, prix élevé peuvent déconcerter → le client veut des conseils de spécialiste.
+
+### 8.3 L'entretien de vente
+
+Requiert connaissances spécialisées, **tact** et bonnes connaissances des personnes. Souvent le vendeur ne connaît pas le client et doit, rapidement, identifier besoins et motifs d'achat. Sinon : insatisfaction, départ sans achat.
+
+**Un bon vendeur :**
+- évalue correctement le motif d'achat
+- s'adresse personnellement (« vous », pas « on »)
+- centre la conversation sur l'objet de la vente
+- indique l'**utilité** du produit/service
+- vend le bon produit / la bonne prestation
+
+**Objections** neutres mais non justifiées → contre-arguments ; sinon admettre et s'informer. **Jamais** de contrevérités.
+
+Si le client **provoque** (non objectif) :
+- rester calme
+- écouter activement
+- laisser le client s'exprimer
+- intonation neutre
+- ne pas convaincre à n'importe quel prix
+
+**Remarque :** être curieusement **d'accord** avec un interlocuteur énervé peut lui retirer ses arguments (plutôt que de le contredire).
+
+### 8.4 Entretiens de vente en face à face
+
+Communication **en personne**. Objectif : conclusion d'un **contrat** (service ou produit).
+
+Comprend :
+- **Prospection** — approche directe d'un nouveau client potentiel
+- **Communication** — conseiller, informer, influencer selon les objectifs de l'entreprise
+- **Service** — dépannage, formation, etc.
+
+**Remarque :** la **vente personnelle** est l'instrument le plus important de la vente. Efficacité = personnel qualifié techniquement + personnalité ouverte et communicative.
+
+#### 8.4.1 La vente personnelle
+
+Utile surtout pour produits nécessitant des **explications** et pour les **services**.
+
+Types courants de vente personnelle :
+- vente en magasin / comptoir
+- vente sur site client (service extérieur)
+- vente par démonstration / conseil spécialisé
+
+#### 8.4.2 Exemple — entretien en parfumerie
+
+**Vanessa Maliqi**, 16 ans, 2e année d'apprentissage en parfumerie.
+
+1. Vanessa salue et propose son aide.
+2. Cliente : parfum féminin longue durée, bon marché, fête des mères ; demande différence **EdT** / **EdP**.
+3. Vanessa explique :
+   - **EdT** (eau de toilette) : 6–9 % de concentré, plus volatile, léger (idéal été)
+   - **EdP** (eau de parfum) : 10–14 % ; variante intense jusqu'à ~20 % ; perceptible plus longtemps → en utiliser peu
+4. Elle demande l'âge / usages de la mère (40 ans, occasions spéciales).
+5. Conseil : eau de toilette fruitée/légère (ex. Azzaro Mademoiselle).
+6. Cliente : merci + emballage cadeau.
+
+### 8.5 Entretiens par téléphone / conférence
+
+**Télévente** :
+- **Inbound** (entrante) — passive : le client appelle et commande
+- **Outbound** (sortante) — active : le vendeur appelle des prospects
+
+Importance croissante : décharge le service extérieur (coûts élevés).
+
+**Points d'attention (téléphone / conf-call) :**
+- se présenter clairement et vérifier le bon interlocuteur
+- parler distinctement, sourire « s'entend »
+- structurer l'entretien (objectif, besoins, offre, suite)
+- noter les infos et confirmer les accords par écrit si besoin
+- rester professionnel malgré l'absence de langage corporel visible
+
+### 8.6 La promotion des ventes
+
+Ensemble des mesures pour **augmenter les ventes**. But : hausse du CA et du bénéfice.
+
+**Actions (ventes promotionnelles)**  
+Mesure la plus fréquente : baisse de prix, « 3 pour le prix de 2 », etc. Sert à introduire de nouveaux produits, réduire stocks, écouler fins de série / dates de péremption. Prix attractif → clients essaient un produit inconnu.
+
+**Démonstrations et dégustations**  
+Échantillons (souvent nouveaux produits) + parfois préparation sur place → curiosité et envie d'acheter. Camelots : démonstration théâtrale ; plus le vendeur est divertissant, plus il écoule.
+
+#### 8.6.1 Vente additionnelle (cross-selling)
+
+Le client achète le produit prévu **plus** un second produit lié.  
+Ex. : billet train Zurich + billet tram / carte journalière urbaine.
+
+Bien perçu si **lié** à l'achat et non envahissant (ex. piles pour appareil photo, produit d'entretien pour chaussures neuves).
+
+### 8.7 Le contrat de vente : droits et obligations
+
+Selon **CO art. 184 al. 1** : le vendeur s'oblige à livrer la chose et à en transférer la propriété ; l'acheteur s'engage à payer le prix. Échange « coup pour coup ».
+
+| | **Droits** | **Obligations** |
+| --- | --- | --- |
+| **Acheteur** | Obtenir la chose et en devenir propriétaire ; en cas de vice : remplacement, réduction ou rédhibition | Payer le prix dans les délais |
+| **Vendeur** | Recevoir le paiement du prix | Transmettre la chose et céder la propriété |
+
+#### 8.7.1 Conclusion du contrat
+
+Peut être **verbal**, **écrit** ou **tacite**. En affaires : privilégier l'écrit. Souvent précédé d'une **offre** (proposition CO) ; la **commande** conclut le contrat.
+
+#### 8.7.2 Résiliation du contrat
+
+Bases : **CO art. 184 al. 1** (et dispositions liées).
+
+**Exécution** — motif principal de « fin » du contrat : prestation exécutée.
+
+**Résiliation** — seulement si prévu par la loi, ex. :
+- demeure du débiteur (CO 107 et 109)
+- retard / défaut de paiement (CO 214 / CO 95)
+- droit de conversion de l'acheteur (CO 205) — type particulier
+
+**Impossibilité** — si la prestation devient impossible : règles spécifiques (conséquences juridiques selon le cas).
+
+### 8.8 Conditions générales de vente (CGV)
+
+En Suisse, on peut aménager les bases légales via le contrat et les conditions. Souvent regroupées dans les **CGV**.
+
+**Remarque :** les CGV servent à l'exécution rapide de **contrats de masse**.
+
+#### 8.8.1 Contenu des CGV
+
+Grande liberté à la conclusion → les CGV peuvent contenir des règles que les clients n'accepteraient pas dans le corps du contrat. Rédigées par **une** partie ; l'autre doit vérifier et accepter/contester. Une **clause** les intègre au contrat → signature = acceptation.
+
+#### 8.8.2 Conditions commerciales déloyales
+
+Surnommées « **petits caractères** » : volumineux / difficiles à lire → acceptation par commodité. Organisations de consommateurs : risques trop souvent reportés sur le client.
+
+**LCD art. 8** — agit de façon déloyale celui qui utilise des CGV qui, en contradiction avec la bonne foi, prévoient au détriment du consommateur une **disproportion notable et injustifiée** entre droits et obligations du contrat.
+
+#### 8.8.3 Exemples actuels (liens support)
+
+- La Poste Suisse — CGV prestations postales clientèle commerciale
+- CFF — CGV demi-tarif
+- Swisscom — CGV clients professionnels`;
+
+const DEMO_208_THEORIE_SUMMARY = `## À retenir — Module 208
+
+### Comportement d'achat
+Final ≠ entreprise · psychologie de vente  
+Hauteur des yeux · caisse · odeurs · placement calculé  
+Fidélité : manuelle vs numérique (« clients transparents » + LPD)  
+IRM / centres = shopping-loisir
+
+### Situations & entretien
+Courant : rapidité, simplicité, qualité/prix  
+Complexe/cher : conseil spécialisé  
+Bon vendeur : motif, « vous », utilité, bon produit  
+Objections / provocation : calme, écoute, pas de mensonge
+
+### Face à face & téléphone
+Prospection · communication · service  
+Inbound (client appelle) / Outbound (vendeur appelle)
+
+### Promotion
+Actions prix · dégustations/démos · **cross-selling** (lié, non forcé)
+
+### Contrat & CGV
+CO 184 : livraison/propriété ↔ prix  
+Conclusion : oral/écrit/tacite · offre → commande  
+Résiliation : cas légaux (demeure, paiement, conversion…)  
+CGV = contrats de masse · LCD art. 8 (conditions abusives)`;
+
+const DEMO_208_APERCU_FULL = `## Aperçu du module 208
+
+Ce module traite du **At-Sales-Service** (service à la vente) : comportement d'achat, situations et entretien de vente, téléphone, promotions, contrat de vente et CGV.
+
+### Vous allez découvrir
+1. Incitations à l'achat (magasin, fidélité, technologies)
+2. Situations de vente courante vs conseil
+3. Entretien face à face et télévente (inbound/outbound)
+4. Promotion des ventes et cross-selling
+5. Contrat de vente (CO) et conditions générales (LCD art. 8)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL`;
+
+const DEMO_208_APERCU_SUMMARY = `## Aperçu — Module 208
+- Comportement d'achat & magasin
+- Entretien / télévente
+- Promotions + cross-selling
+- Contrat CO + CGV / LCD`;
+
+const DEMO_208_OBJECTIFS_FULL = `## Objectifs du module 208
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Décrire le **comportement d'achat** et des techniques d'incitation en magasin
+- Distinguer vente courante et vente avec **conseil**
+- Conduire les bases d'un **entretien de vente** (face à face et téléphone)
+- Expliquer la **promotion des ventes** et le **cross-selling**
+- Citer droits/obligations du **contrat de vente** (CO) et le rôle des **CGV** / LCD art. 8`;
+
+const DEMO_208_OBJECTIFS_SUMMARY = `## Objectifs
+- Comportement d'achat
+- Entretien / télévente
+- Promotions + cross-selling
+- Contrat + CGV`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -3438,6 +3689,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_207_THEORIE_FULL,
       summary: DEMO_207_THEORIE_SUMMARY,
+    },
+  },
+  "208": {
+    objectifs: {
+      full: DEMO_208_OBJECTIFS_FULL,
+      summary: DEMO_208_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_208_APERCU_FULL,
+      summary: DEMO_208_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_208_THEORIE_FULL,
+      summary: DEMO_208_THEORIE_SUMMARY,
     },
   },
 };
