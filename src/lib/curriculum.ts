@@ -7792,6 +7792,125 @@ const DEMO_506_OBJECTIFS_SUMMARY = `## Objectifs
 - PDCA · Muda · ISO
 - Traçabilité · IP`;
 
+/** Contenu Module 601 — La préparation de commandes */
+const DEMO_601_THEORIE_FULL = `## 1. La préparation de commandes
+
+Rassembler des articles d'un assortiment (entrepôt) selon les **commandes clients**. Aussi appelé « préparation » · anglais : **picking**.
+
+### 1.1 Stratégies et notions
+
+#### 1.1.1 Types
+| Type | Principe |
+| --- | --- |
+| **Statique** | L'**homme va à la marchandise** · stock immobile · préparateur à pied / engin |
+| **Dynamique** | La **marchandise vient à l'homme** · système amène vers la zone picking · reste restocké |
+
+👉 Entrepôts auto souvent dynamiques · investissement ↑ · personnel ↓.
+
+#### 1.1.2 Modes de déplacement
+- **Unidimensionnel** : horizontal seulement · sol / 1er niveau · petite levée / chariots · déplacement rapide · 1 emplacement sol / article · réappro nécessaire
+- **Bidimensionnel** : horizontal **+** vertical · grande levée / transstockeurs · temps d'accès ↑ · pas de manutention réserve→picking
+
+#### 1.1.3 Prélèvement
+- **Manuel** : préparateur → bac (même en auto souvent)
+- **Automatique** : trieurs / robots → bac · **très rare**
+
+#### 1.1.4 Transfert (dans l'entrepôt)
+- **Centralisé** : vers zone d'expédition pour emballage
+- **Décentralisé** : dépôt près du picking (fin d'allée / convoyeur) puis regroupement central · distances ↓ · productivité ↑ · fréquent avec transstockeurs / hauts rayonnages
+
+#### 1.1.5 Informations
+| Mode | Caractéristique |
+| --- | --- |
+| **Batch** | Lots de commandes · papier fréquent · données pas toujours actuelles · inventaire = interruption |
+| **Real-time** | Données → MDE en direct · modifs jusqu'à mise à dispo · stocks actualisés · réappro auto |
+
+👉 Temps réel : délais ↓ · disponibilité ↑ · inventaire à tout moment.
+
+#### 1.1.6 Secteurs
+**Un seul** secteur · ou **plusieurs** zones (collecte multi-zones).
+
+#### 1.1.7 Une ou plusieurs commandes
+- **Orienté commande** (1 commande) : tout pour le même client → emballage direct
+- **Orienté article** (plusieurs) : 1re étape prélèvement multi-commandes · 2e répartition · distances ↓ si longs trajets
+
+#### 1.1.8 Série ou parallèle
+- **Série** (1 étape) : zones les unes après les autres · grosses commandes = temps ↑
+- **Parallèle** (2 étapes) : parties traitées **simultanément** par plusieurs préparateurs → regroupement · temps ↓ pour commandes volumineuses
+
+#### 1.1.9 Par allée
+Accès allées d'un seul côté · articles **A** (fréquence ↑) près de l'allée principale · analyse **ABC** (module **408**).
+
+#### Exemple EnterSite AG
+Statique · déplacement **2D** (grande levée) · prélèvement **manuel** · transfert **centralisé** · 3 zones (toners, IT, cave « C ») · en principe **1 étape** orientée commande · cave en **2 étapes** orientée article · **série** · scanners MDE / WLAN = **temps réel**.
+
+### 1.2 Techniques spéciales (sans papier)
+
+Assistées ordi · objectif : données rapides · réaction ↓ · erreurs ↓ · base = **MDE**.
+
+| Technique | Principe |
+| --- | --- |
+| **Pick-by-Scan** | MDE affiche la commande · le plus répandu · souvent pas 2 mains libres |
+| **Pick-by-Voice** | Casque + micro · mains libres · vitesse / qualité ↑ |
+| **Pick-by-Light** | LED indiquent emplacement + quantité · confirmation touche · **1 commande / zone** |
+| **Pick-by-Vision** | Lunettes AR · infos superposées (lieu, qté, n°) · 2 mains libres · SGS · temps réel |
+
+👉 Aident au quotidien · investissement ↑ vs classiques.
+
+### 1.3 Pick-and-Pack
+
+Prélèvement **et** conditionnement en **une** opération · article → emballage prêt à expédier · pas de poste emballage dédié. Contrôle ID/qté : préparateur, contrôleur ou auto.
+
+Possible si : produits déjà préemballés · emballages **normalisés** · pas d'emballage complexe.`;
+
+const DEMO_601_THEORIE_SUMMARY = `## À retenir — Module 601
+
+### Types
+Statique (homme→marchandise) · dynamique (marchandise→homme)
+
+### Dimensions & prélèvement
+1D / 2D · manuel (fréquent) / auto (rare)  
+Transfert centralisé ou décentralisé
+
+### Stratégies
+Batch vs real-time · 1 / multi secteurs  
+Orienté commande vs article · série vs parallèle · ABC allées
+
+### Tech
+Scan · Voice · Light · Vision · Pick-and-Pack`;
+
+const DEMO_601_APERCU_FULL = `## Aperçu du module 601
+
+Premier module du bloc **Distribution** : stratégies et techniques de **préparation de commandes** (picking).
+
+### Vous allez découvrir
+1. Types (statique / dynamique) et modes de déplacement
+2. Prélèvement, transfert, infos, secteurs, série/parallèle
+3. Techniques Pick-by-Scan / Voice / Light / Vision
+4. Procédure Pick-and-Pack
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Bloc 600`;
+
+const DEMO_601_APERCU_SUMMARY = `## Aperçu — Module 601
+- Stratégies de picking
+- Techniques sans papier
+- Pick-and-Pack`;
+
+const DEMO_601_OBJECTIFS_FULL = `## Objectifs du module 601
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Distinguer préparation **statique** / **dynamique** et déplacement **1D** / **2D**
+- Comparer modes de prélèvement, transfert, infos (batch / real-time) et série / parallèle
+- Expliquer prélèvement **orienté commande** vs **orienté article**
+- Décrire Pick-by-Scan, Voice, Light, Vision et **Pick-and-Pack**`;
+
+const DEMO_601_OBJECTIFS_SUMMARY = `## Objectifs
+- Stratégies picking
+- Scan / Voice / Light / Vision
+- Pick-and-Pack`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -8462,6 +8581,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_506_THEORIE_FULL,
       summary: DEMO_506_THEORIE_SUMMARY,
+    },
+  },
+  "601": {
+    objectifs: {
+      full: DEMO_601_OBJECTIFS_FULL,
+      summary: DEMO_601_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_601_APERCU_FULL,
+      summary: DEMO_601_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_601_THEORIE_FULL,
+      summary: DEMO_601_THEORIE_SUMMARY,
     },
   },
 };
