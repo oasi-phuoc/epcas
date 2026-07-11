@@ -9513,6 +9513,118 @@ const DEMO_614_OBJECTIFS_SUMMARY = `## Objectifs
 - Prise en charge
 - Levée BA / automates`;
 
+/** Contenu Module 615 — CPD — Préparer les envois postaux */
+const DEMO_615_THEORIE_FULL = `## 15. Préparer les envois pour le processus de tri
+
+### 15.1–15.6 Envois spéciaux & MD
+
+**Envois spéciaux** = traitement particulier (ex. vin). **MD** = danger personnes/environnement. **LQ** (*Limited Quantity*) = quantités MD autorisées en CEC.
+
+| Catégorie | Idée / limites |
+| --- | --- |
+| **MD** | Inflammable, toxique… · ADR · étiquette + code presta · n° ONU + poids brut |
+| **Marchandises** | > encombrants ou > **30 kg** · sur palette |
+| **Encombrants** | > colis standard (Poste **100×60×60**, 30 kg · DHL **120×60×60**, 31,5 kg) ou sans emballage |
+| **Traitement manuel** | Forme/emballage/adresse empêchent le tri auto |
+| **Liquides** | Quantités + emballage adaptés (vin…) |
+| **Précieux / fragiles / T°** | Assurance · tri manuel · signalétique froid |
+| **Animaux vivants** | Surtout **coursier** (sauf insectes alimentaires) |
+| **Militaire / cécogramme** | N° militaire · boîtes jaunes non affranchies |
+
+**Interdits CEC (ex.) :** trop grands/lourds · MD hors LQ · animaux vivants (sauf exceptions).  
+**MD interdites :** explosifs, feux d'artifice, bouteilles gaz BBQ ≥1 L, batteries Li > **100 Wh**.  
+**LQ autorisées (ex.) :** aérosols, désinfectant ≤1 L, pâte combustible ≤1 L · parfum/peinture jusqu'à ~5 L (Poste).
+
+### 15.7–15.11 Préparation aux points de dépôt
+
+**Préparation** = trier avant centre (ex. express dans même RX). Points de dépôt : guichets, filiales, BA, automates…
+
+**Lettres — critères :** à oblitérer / déjà ok · presta (A/B/B2) · auto / manuel · format **FN** (≤B5) / **GF** (≤B4) / MIX · gabarits bleu/jaune. Puis **séparation par 7** · étiquettes sur BB. Si temps : oblitérer sur place · sinon au centre.
+
+**Colis :** presta (Priority / Economy / Express) + type (encombrants, vin…) → même **RX**.
+
+👉 Erreur de rollbox (Express dans Economy) = retard + client mécontent.  
+Envoi abîmé / bruits suspects → mettre de côté · informer responsable.
+
+### 15.12–15.14 Supports de charges & étiquetage
+
+| Support | Usage / limites |
+| --- | --- |
+| Contenant réutilisable | Plastique · isolé si T° |
+| **BB** (lettres) | Max **15 kg** (tapis centre) |
+| **SB** (collectifs) | Lettres/BB entre sites · max **460 kg** |
+| **RX** (rollbox) | Colis · contrôle sécurité annuel · ≤6 RX accrochés (≤3 encombrants) |
+| Palettes | En nombre / > encombrants |
+| Sacs | Internationaux (DHL Destination Bags ≤25 kg) · Poste sacs ouverts / journaux / dépôt courrier (≠ fonds / justificatifs) |
+| Conteneurs avion / **WB** | Air · rail/route (grue) |
+
+Étiquetage = **quoi** + **où**. Poste : A/B · FN/GF · auto/manuel. DHL : n°/code-barres conteneur. Planzer : QR + GPS.
+
+### 15.15–15.17 Centres & NPA
+
+Sites près **autoroute + rail** (interdiction nuit PL 22h–5h → train). Proche population · pas plein centre-ville.
+
+**NPA** 4 chiffres (CH pionnière) : 1 = rayon O→E · 2 = territoire · 3 = (ex-ligne ferroviaire) · 4 = localité. Secteurs urbains / NPA entreprise / isolés.  
+1er chiffre → centre / région de desserte · suite → tournée facteur.
+
+### 15.18–15.23 Hubs, niveaux & modes
+
+**Hub** = nœud de regroupement / tri / réacheminement · **cross-docking** ↓ trajets.
+
+| Niveaux | Exemple |
+| --- | --- |
+| **1** | Direct (coursier, repas) |
+| **2** | Usine → magasin / transport marchandises |
+| **3** | Automate → centre → destinataire |
+| **Multi** | International (avion, dédouanement…) |
+
+**Modes :** route (flexible, RPLP, nuit) · rail (volume, écolo, peu de raccordements) · eau (lent, cheap) · air (rapide, cher). En CH distribution : surtout **route + rail**.`;
+
+const DEMO_615_THEORIE_SUMMARY = `## À retenir — Module 615
+
+### Spéciaux & MD
+Encombrants · manuel · LQ · interdits (explosifs, Li>100 Wh, animaux CEC…)
+
+### Préparation
+Lettres : séparation par 7 · colis : presta + type → RX  
+Étiqueter BB/RX correctement
+
+### Supports & réseau
+BB 15 kg · RX · WB · NPA 4 chiffres · hubs / CD  
+Niveaux 1→multi · route + rail`;
+
+const DEMO_615_APERCU_FULL = `## Aperçu du module 615
+
+Module **CPD** : préparer les envois (spéciaux, MD, supports, NPA, hubs).
+
+### Vous allez découvrir
+1. Envois spéciaux, MD et Limited Quantity
+2. Préparation lettres/colis et séparation par 7
+3. Supports de charges et étiquetage
+4. NPA, hubs, niveaux de distribution et modes
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · CPD Distribution`;
+
+const DEMO_615_APERCU_SUMMARY = `## Aperçu — Module 615
+- Spéciaux · MD · LQ
+- Préparation · supports
+- NPA · hubs · modes`;
+
+const DEMO_615_OBJECTIFS_FULL = `## Objectifs du module 615
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Classer les **envois spéciaux** et appliquer les règles **MD / LQ**
+- Préparer lettres et colis (séparation, rollbox, signalétique)
+- Choisir et **étiqueter** les supports de charges
+- Relier **NPA**, hubs, niveaux de distribution et modes de transport`;
+
+const DEMO_615_OBJECTIFS_SUMMARY = `## Objectifs
+- Spéciaux · MD · LQ
+- Préparation · supports
+- NPA · hubs`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -10379,6 +10491,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_614_THEORIE_FULL,
       summary: DEMO_614_THEORIE_SUMMARY,
+    },
+  },
+  "615": {
+    objectifs: {
+      full: DEMO_615_OBJECTIFS_FULL,
+      summary: DEMO_615_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_615_APERCU_FULL,
+      summary: DEMO_615_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_615_THEORIE_FULL,
+      summary: DEMO_615_THEORIE_SUMMARY,
     },
   },
 };
