@@ -8879,6 +8879,104 @@ const DEMO_609_OBJECTIFS_SUMMARY = `## Objectifs
 - Ports · TEU · manutention
 - Forces & arrimage`;
 
+/** Contenu Module 610 — Le transport combiné */
+const DEMO_610_THEORIE_FULL = `## 10. Le transport combiné
+
+Plusieurs modes de transport interagissent. Véhicules, semi-remorques, caisses mobiles ou **conteneurs** passent d'un mode à l'autre sans grand effort via des **interfaces** :
+
+- Gares de marchandises (rail/route)
+- Terminaux à conteneurs (rail/route)
+- Centres de tri courrier/colis (rail/route)
+- Installations portuaires (eau/rail/route)
+- Aéroports (air/route/rail)
+
+Aux interfaces : **entrepôts de transbordement** (module **402**) — reconditionnement, tri, stock temporaire, contrôles, dédouanement.
+
+👉 Combiner = profiter des atouts de chaque mode · contourner les inconvénients · viser la combinaison **optimale**.  
+**Ex.** Zurich Aéroport : air + route + rail.
+
+### 10.1 Chaussée roulante (ROLA)
+
+**Ferroutage accompagné** : camion sur wagon à plancher bas · chauffeur dans voiture-couchette · reprend le véhicule à destination. Dès **1968** en CH · **Hupac** · ~100 trains/jour · (ex. 2011 : 724 000 envois routiers).
+
+#### 10.1.1 Ferroutage non accompagné
+Tracteur laisse la **semi-remorque** au terminal · remorque voyage seule · reprise par un tracteur à destination (chauffeur + tracteur nécessaires).
+
+### 10.2 Conteneurs ISO
+
+Dimensions normalisées → multi-modes sans déchargement intermédiaire · sécurité (fermeture / scellés). Origine US **1956** · mesures en **pieds** (1 pied = **30,48 cm**). Courants : **20'** et **40'** (grands / maritimes).
+
+| | 20' | 40' |
+| --- | --- | --- |
+| L ext. | 6,058 m | 12,192 m |
+| l / H ext. | 2,438 / 2,591 m | idem |
+| Volume | ~33,2 m³ | ~67,7 m³ |
+| Vide / utile / total | 2250 / 21 750 / **24 000** kg | 3780 / 26 700 / **30 480** kg |
+
+Types : fermé (le plus fréquent · étanche pour pont navire) · porte frontale / latérale · frigo · parois amovibles · **High-Cube** · toit ouvert · citerne…
+
+👉 Incontournables dans un monde globalisé.
+
+### 10.3 Autres systèmes d'échange
+
+#### 10.3.1 ACTS
+*Abroll-Container-Transport-Service* (1988) · conteneur avec **roulettes** + **crochet** · dépôt au sol / bascule par camion spécial · papier, gravats, déchets… Sur rail : châssis **pivotant** sur wagon → pivot + verrouillage · à destination pivot externe → tirage sur camion.
+
+#### 10.3.2 Caisses / conteneurs interchangeables
+Normalisés comme ISO · reposent sur **supports rabattables**. Camion sous la caisse · suspensions pneumatiques · béquilles rabattues · grue pour mise sur wagon.
+
+#### 10.3.3 Cargo Domino
+Rail/route · caisses adaptées camion + wagon · profilé transversal · **pas de rotation** · camion à côté · poussée **perpendiculaire** sur le wagon.
+
+#### 10.3.4 Combinaison route–rail
+Nuit : rail vers centres régionaux · jour : distribution camion · soir : recollecte palettes → wagons.
+
+#### 10.3.5 Cargo Sous Terrain (CST)
+Tunnels souterrains · désengorger les routes · ~**30 km/h** constant · 1er tronçon Härkingen–Niederbipp → Zurich prévu **2031**.`;
+
+const DEMO_610_THEORIE_SUMMARY = `## À retenir — Module 610
+
+### Combiné
+Interfaces · profiter des atouts de chaque mode
+
+### ROLA
+Accompagné (chauffeur couchette) · non accompagné (semi seule)
+
+### ISO
+20'/40' · scellés · types variés · ACTS · caisses · Domino · CST`;
+
+const DEMO_610_APERCU_FULL = `## Aperçu du module 610
+
+Ce module présente le **transport combiné** : interfaces, ROLA, conteneurs ISO et systèmes d'échange (ACTS, Domino, CST).
+
+### Vous allez découvrir
+1. Interfaces et logique multi-modes
+2. Chaussée roulante accompagnée / non accompagnée
+3. Conteneurs ISO (dimensions, types)
+4. ACTS, caisses mobiles, Domino, route–rail, Cargo Sous Terrain
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite des modules 606–609`;
+
+const DEMO_610_APERCU_SUMMARY = `## Aperçu — Module 610
+- Interfaces · ROLA
+- Conteneurs ISO
+- ACTS · Domino · CST`;
+
+const DEMO_610_OBJECTIFS_FULL = `## Objectifs du module 610
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer le **transport combiné** et le rôle des **interfaces**
+- Distinguer ferroutage **accompagné** (ROLA) et **non accompagné**
+- Décrire les conteneurs **ISO** (20'/40', types) et leur intérêt
+- Comparer **ACTS**, caisses mobiles, **Cargo Domino** et situer **CST**`;
+
+const DEMO_610_OBJECTIFS_SUMMARY = `## Objectifs
+- Combiné & interfaces
+- ROLA · ISO
+- ACTS · Domino · CST`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -9675,6 +9773,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_609_THEORIE_FULL,
       summary: DEMO_609_THEORIE_SUMMARY,
+    },
+  },
+  "610": {
+    objectifs: {
+      full: DEMO_610_OBJECTIFS_FULL,
+      summary: DEMO_610_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_610_APERCU_FULL,
+      summary: DEMO_610_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_610_THEORIE_FULL,
+      summary: DEMO_610_THEORIE_SUMMARY,
     },
   },
 };
