@@ -101,7 +101,7 @@ const moduleSeeds: ModuleSeed[] = [
   { code: "309", title: "Le contrôle de la qualité", blockId: "block-300" },
   {
     code: "310",
-    title: "La préparation à l'entreposage",
+    title: "La préparation à la mise en stock",
     blockId: "block-300",
   },
   {
@@ -5107,6 +5107,156 @@ const DEMO_309_OBJECTIFS_SUMMARY = `## Objectifs
 - Quarantaine / échantillons
 - Complet vs échantillonnage`;
 
+/** Contenu Module 310 — Préparation à la mise en stock */
+const DEMO_310_THEORIE_FULL = `## 10. Préparation à la mise en stock
+
+Dernière étape de la logistique d'**approvisionnement**, après contrôles qualité et quantité. Organisation selon exigences internes et nature de la marchandise (stockage, transport, vente).
+
+Sans exigences particulières → stockage direct. Sinon : **réemballage**, **repacking** ou **étiquetage** spécial.
+
+### 10.1 Objectifs d'un nouvel emballage
+
+Raisons de reconditionner / réétiqueter :
+
+**Présentation**  
+Inscription, logo ou couleur ≠ emballage de vente cible → déballer et réemballer.
+
+**Emballage incorrect**  
+Taille inadaptée (POS), endommagé, image de vente, perte de fonction de protection → nouvel emballage adapté.
+
+**Marquage des promotions**  
+Réduction / nouveau prix indiqués sur le produit.
+
+**Nouvelles tailles d'emballage**  
+Achat à la pièce mais ventes en lots → assembler des pièces (conception de lot).
+
+**Création de bundles**  
+Ex. EnterSite : toners C/M/Y/K vendus séparément **ou** en « Rainbow Kit » regroupé.
+
+**Manutention**  
+Faciliter la logistique (ex. bac à bec pour centaines de vis vs pièce à pièce).
+
+**Type de stockage / préparation**  
+Rayonnages à palettes → préparer sur palettes conformes ; emplacements de prélèvement → bacs.
+
+**Automatisation**  
+Ex. rayonnage palettes auto → marquage d'identification pour stockage/déstockage système.
+
+### 10.2 Enregistrement de la marchandise
+
+En fin de préparation : **enregistrement** dans l'ERP (même si pas de modification d'emballage).
+
+Réception **planifiée** (module 303) : commande déjà pré-enregistrée → à la préparation, enregistrement + transfert vers l'emplacement.
+
+### 10.3 Gestion des stocks
+
+L'article est enregistré dès réception de la commande.
+
+#### 10.3.1 Notions de base
+
+Terminologie **non uniforme** selon sources.
+
+**Article** = marchandise en stock dont toutes les parties sont **identiques**. Une caractéristique différente = autre article.
+
+Ex. toners :
+- CE410X 305 X Toner BLACK
+- CE411A 305 Toner CYAN
+- CE412A 305 Toner YELLOW
+- CE413A 305 Toner MAGENTA
+
+#### 10.3.2 En-tête de la fiche de stock
+
+Données article / stock (SGS ou ERP) :
+
+| # | Élément | Rôle |
+| --- | --- | --- |
+| 1 | **N° d'article** | Identification unique |
+| 2 | **Désignation** | Contrôle visuel, anti-confusion |
+| 3 | **UL** (unité de livraison) | Qté minimale livrée par le fournisseur (ex. 5) |
+| 4 | **UV** (unité de vente) | Qté minimale de vente (souvent 1) |
+| 5 | **Prix d'achat** | Coût d'acquisition · évaluation stocks · **confidentiel** · ≠ prix de vente (PV) |
+| 6 | **Fournisseur** | Réactivité en cas d'irrégularité |
+| 7 | **Stock maximal** | Selon rotation + espace · évite surstocks coûteux |
+| 8 | **Point de commande** (cote d'alerte) | Niveau déclenchant une nouvelle commande (souvent auto) |
+| 9 | **Stock de sécurité** (stock min.) | Réserve « coups durs » · ne devrait pas être franchi |
+
+#### 10.3.3 Les saisies comptables
+
+| # | Colonne | Effet |
+| --- | --- | --- |
+| 10 | **Date** | Saisie (+ souvent ID utilisateur pour traçabilité) |
+| 11 | **Entrées** | ↑ stock |
+| 12 | **Sorties** | ↓ stock |
+| 13 | **Stock réservé** | Physique mais non disponible · ↓ disponible, pas le total |
+| 14 | **Stock AQ** | En attente de contrôle · physique, non disponible |
+| 15 | **Stock bloqué** | Inutilisable / non livrable · dans le total, pas le disponible |
+| 16 | **Stock disponible** | Livrable immédiatement |
+| 17 | **Stock total** | Disponible + réservé + AQ + bloqué |
+
+#### 10.3.4 Exemple de comptabilisation
+
+Stock initial 01.09 : **10'000** (disponible = total).
+
+| Date | Entrée | Sortie | Disponible / Total |
+| --- | --- | --- | --- |
+| 01.09 | | | 10'000 |
+| 02.09 | | 2'870 | 7'130 |
+| 03.09 | | 1'640 | 5'490 |
+| 04.09 | | 3'980 | 1'510 |
+| 05.09 | 5'000 | | 6'510 |
+| 06.09 | | 2'300 | 4'210 |
+
+Entrées/sorties concrètes → disponible et total fluctuent de la **même** quantité (sans réservation/AQ/blocage).`;
+
+const DEMO_310_THEORIE_SUMMARY = `## À retenir — Module 310
+
+### Préparation stockage
+Après contrôles Q/qté · reconditionnement si besoin  
+Raisons : présentation, emballage, promo, lots/bundles, manutention, type de stockage, automatisation
+
+### Enregistrement
+ERP en fin de process · réception planifiée = commande pré-enregistrée
+
+### Fiche de stock
+Article = caractéristiques identiques  
+En-tête : n°, désignation, UL, UV, prix d'achat, fournisseur, max, point de commande, sécurité  
+Mouvements : entrées/sorties · réservé · AQ · bloqué · **disponible** · **total**  
+Total = disponible + réservé + AQ + bloqué`;
+
+const DEMO_310_APERCU_FULL = `## Aperçu du module 310
+
+Ce module traite de la **préparation à la mise en stock** : reconditionnement, enregistrement ERP et bases de la gestion des stocks (fiche, mouvements).
+
+### Vous allez découvrir
+1. Objectifs du nouvel emballage / repacking / bundles
+2. Enregistrement dans l'ERP
+3. Notions : article, UL, UV, stocks max / alerte / sécurité
+4. Colonnes de la fiche (disponible, réservé, AQ, bloqué, total)
+5. Exemple de comptabilisation entrée/sortie
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Fin du processus d'approvisionnement`;
+
+const DEMO_310_APERCU_SUMMARY = `## Aperçu — Module 310
+- Repacking / bundles
+- Enregistrement ERP
+- Fiche de stock & mouvements`;
+
+const DEMO_310_OBJECTIFS_FULL = `## Objectifs du module 310
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer pourquoi et comment **préparer** (réemballer / étiqueter) avant stockage
+- Décrire l'**enregistrement** des marchandises dans l'ERP
+- Définir un **article** et lire l'en-tête d'une fiche de stock (UL, UV, point de commande…)
+- Distinguer stock **disponible**, réservé, AQ, bloqué et **total**
+- Comptabiliser des **entrées** et **sorties** simples`;
+
+const DEMO_310_OBJECTIFS_SUMMARY = `## Objectifs
+- Préparation / repacking
+- Fiche de stock
+- Disponible vs total`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -5511,6 +5661,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_309_THEORIE_FULL,
       summary: DEMO_309_THEORIE_SUMMARY,
+    },
+  },
+  "310": {
+    objectifs: {
+      full: DEMO_310_OBJECTIFS_FULL,
+      summary: DEMO_310_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_310_APERCU_FULL,
+      summary: DEMO_310_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_310_THEORIE_FULL,
+      summary: DEMO_310_THEORIE_SUMMARY,
     },
   },
 };
