@@ -8658,6 +8658,118 @@ const DEMO_607_OBJECTIFS_SUMMARY = `## Objectifs
 - Chargement & forces
 - MD · avenir`;
 
+/** Contenu Module 608 — Le transport aérien */
+const DEMO_608_THEORIE_FULL = `## 8. Le transport aérien
+
+### 8.1 Importance du fret aérien
+
+Élément clé du commerce international · **vitesse** inégalée. Pour la Suisse : accès aux marchés mondiaux · ~**50 %** de la valeur des exportations (2019 : 157 Md CHF sur 312 Md via aéroports CH · hors or/métaux précieux dans certaines études). Crise COVID : rapatriements + approvisionnement urgent.
+
+👉 Mode le plus **rapide** à l'échelle mondiale.
+
+### 8.2 Domaines d'application
+
+Animaux vivants · fleurs / fruits · journaux / films · mode / saisonnier · pièces urgentes · médicaments · délais précis · courrier aérien · haute valeur / sensibles / sujettes au vol · secours · documents · organes / dépouilles.
+
+### 8.3 Trafic de remplacement aérien
+
+Optimiser les capacités : acheminement **camion** vers/depuis hub (ex. Luxembourg → Zurich · CH → Francfort puis Asie). Concurrence entre prestataires. Semi-remorques souvent à **plancher à rouleaux**.
+
+### 8.4 Aéroports suisses
+
+Trois aéroports nationaux : **Zurich**, **Genève**, **Bâle**.
+
+#### 8.4.1 Zurich
+~**70 %** du marché fret CH · **hub** · Swiss WorldCargo ~**65 %** · majorité en avions passagers · ~**70 %** fret de transfert · >1200 t/jour · ~1400 collab. · manutention Cargologic / Dnata · ~120 transporteurs alentours.
+
+#### 8.4.2 Genève
+Plaque régionale/nationale · frontière CH–FR · produits haute valeur (chimie, montres…).
+
+#### 8.4.3 EuroAirport Bâle-Mulhouse
+Seul aéroport **binational** · région tri-nationale · 5 km Allemagne · import/export CH **et** UE · pharma · liaisons autoroutes CH/FR/DE.
+
+### 8.5 Unités, moyens, avions
+
+#### 8.5.1 Unités
+**BUP** (*Bulk Unitization Program*) : unitisation type « conteneur ISO » du maritime.  
+**ULD** (*Unit Load Devices*) : conteneurs / plaques aluminium + filet · ↓ nb d'unités · personnel/temps au sol ↓.
+
+#### 8.5.2 Moyens
+Remorques + tracteur · chariot porte-conteneurs · **plates-formes élévatrices** à rouleaux pour chargement avion.
+
+#### 8.5.3 Avions
+Cargos moins nombreux / discrets. **Belly freight** : fret sous la cabine passagers · réseau long-courrier souvent rentable **seulement** avec fret.
+
+### 8.6 Dédouanement et contrôles
+
+Toute import/export via douane · contrôles ciblés · taxes. Futur : déclaration **numérique** (ex. n° **Air Waybill**).  
+**Vétérinaire de frontière** : épizooties · hygiène alimentaire · espèces menacées.  
+**Service phytosanitaire** : maladies végétales / ravageurs.
+
+### 8.7 Forces dynamiques
+
+Décollage / atterrissage · transbordement jusqu'à ~**1,0 g** (+ secousses chargement).
+
+### 8.8 Expédition
+
+#### 8.8.1 Emballage
+Par l'expéditeur selon règles générales · cas spéciaux (MD…).
+
+#### 8.8.2 Chargement ULD
+Directives **IATA** · formation **IATA Cargo** obligatoire · principes proches du routier · film + filet.
+
+#### 8.8.3 MD (DGR)
+*Dangerous Goods Regulations* : quelles MD · quantités nettes max. · emballages spéciaux · incompatibilités · parfois **Cargo Aircraft Only**. Pictogrammes · **Shipper's Declaration** (équivalent ONU, qté nette, classe, groupe, instruction d'emballage · parfois n° urgence 24h). Entreprises spécialisées fréquentes.
+
+#### 8.8.4 Air Waybill (AWB)
+Contrat expéditeur (*shipper*) ↔ compagnie (*carrier*). **Non négociable** (≠ Bill of Lading maritime).
+
+Rôles : confirmation de prise en charge · instructions manipulation/acheminement · justificatif assurance · niveau de responsabilité · possible déclaration douane · base de facturation fret.`;
+
+const DEMO_608_THEORIE_SUMMARY = `## À retenir — Module 608
+
+### Importance
+Plus rapide · ~50 % valeur export CH · hubs Zurich / GVA / Bâle
+
+### Technique
+ULD / BUP · belly freight · remplacement camion  
+Douane · vétérinaire · phytosanitaire
+
+### Expédition
+IATA · DGR · AWB (non négociable)`;
+
+const DEMO_608_APERCU_FULL = `## Aperçu du module 608
+
+Ce module présente le **fret aérien** : importance pour la Suisse, aéroports, ULD, contrôles et documents (AWB, DGR).
+
+### Vous allez découvrir
+1. Poids économique du fret aérien
+2. Domaines d'application et trafic de remplacement
+3. Zurich, Genève, Bâle · ULD et belly freight
+4. Douane, forces, emballage, MD et Air Waybill
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 607`;
+
+const DEMO_608_APERCU_SUMMARY = `## Aperçu — Module 608
+- Fret aérien CH
+- ULD · aéroports
+- AWB · DGR`;
+
+const DEMO_608_OBJECTIFS_FULL = `## Objectifs du module 608
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer l'importance du **fret aérien** pour la Suisse
+- Situer les trois **aéroports** nationaux et le rôle des **ULD**
+- Décrire douane / contrôles et les **forces** en aérien
+- Distinguer **AWB**, règles **IATA** et **DGR** pour les MD`;
+
+const DEMO_608_OBJECTIFS_SUMMARY = `## Objectifs
+- Importance & aéroports
+- ULD · belly freight
+- AWB · DGR`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -9426,6 +9538,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_607_THEORIE_FULL,
       summary: DEMO_607_THEORIE_SUMMARY,
+    },
+  },
+  "608": {
+    objectifs: {
+      full: DEMO_608_OBJECTIFS_FULL,
+      summary: DEMO_608_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_608_APERCU_FULL,
+      summary: DEMO_608_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_608_THEORIE_FULL,
+      summary: DEMO_608_THEORIE_SUMMARY,
     },
   },
 };
