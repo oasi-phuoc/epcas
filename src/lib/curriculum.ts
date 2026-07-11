@@ -115,7 +115,7 @@ const moduleSeeds: ModuleSeed[] = [
   { code: "401", title: "Le rôle du stockage", blockId: "block-400" },
   { code: "402", title: "Les genres de stockage", blockId: "block-400" },
   { code: "403", title: "Les formes de stockage", blockId: "block-400" },
-  { code: "404", title: "Les exigences techniques", blockId: "block-400" },
+  { code: "404", title: "Les prescriptions de stockage", blockId: "block-400" },
   { code: "405", title: "Dangers dans l'entrepôt", blockId: "block-400" },
   { code: "406", title: "Les principes de stockage", blockId: "block-400" },
   { code: "407", title: "Les systèmes de convoyage", blockId: "block-400" },
@@ -6038,6 +6038,113 @@ const DEMO_403_OBJECTIFS_SUMMARY = `## Objectifs
 - FIFO/LIFO selon forme
 - Solutions modernes`;
 
+/** Contenu Module 404 — Prescriptions de stockage */
+const DEMO_404_THEORIE_FULL = `## 4. Prescriptions de stockage
+
+### 4.1 Entrepôts ouverts, couverts, fermés
+
+#### 4.1.1 À ciel ouvert
+Biens **insensibles** aux intempéries et peu exposés au vol. Terrain accessible, souvent clôturé.
+
+Ex. : citernes · vrac (charbon, sable, gravier) · bois non transformé · ciment durci · containers · tubes béton en bloc.
+
+#### 4.1.2 Couverts (semi-ouverts)
+Toit, **ouverts** sur les côtés. Protection soleil/pluie ; insensibles aux variations T°/humidité ; peu de risque de vol.
+
+Ex. : engins de chantier · tubes acier · planches brutes · palettes vides · tuiles/briques.
+
+#### 4.1.3 Fermés
+Marchandises sensibles aux intempéries ou au vol. Un ou plusieurs étages · murs + toit. Hauts rayonnages : souvent **structure de stockage d'abord**, puis enveloppe du bâtiment.
+
+### 4.2 Hauteurs d'entrepôt
+
+#### 4.2.1 Faible hauteur
+Stockage au sol · chariots conventionnels (mâts ~**7 m**). Courant en **PME** · peu coûteux · rayonnages dans locaux existants.
+
+#### 4.2.2 Moyenne hauteur
+Jusqu'à ~**15 m** · locaux existants souvent ≤ 7 m → nouvelles infrastructures. Engins adaptés : chariots pour rayonnages hauts / allées étroites / mât rétractable / **transstockeurs**.
+
+#### 4.2.3 Grande hauteur (MGH)
+Jusqu'à ~**45 m** · rares en Suisse. Pas de chariots libres traditionnels → systèmes de stockage **complexes**.
+
+### 4.3 Structure de l'entrepôt
+
+#### 4.3.1 Mécanisés
+Rayonnages moyens / hauts + **transstockeurs à conducteur**. Efficaces pour nombreux articles en petites quantités. Souvent 1 appareil / allée (changement d'allée rare).
+
+#### 4.3.2 Automatiques
+Matériel + **logiciels** · supervision humaine (dysfonctionnements). Accès restreint — danger **mortel** si entrée non autorisée. Transstockeurs commandés par ordinateur (entrée via convoyeurs / sortie via WMS).
+
+#### 4.3.3 Systèmes complexes
+Éléments en réseau : déchargement/chargement · stockage statique/dynamique · convoyeurs continus (bande, rouleaux) · discontinus (chariots, AGV, transstockeurs, monte-charge) · picking · emballage.
+
+Défi : harmoniser les performances · une panne ne doit pas tout arrêter.
+
+### 4.4 Conditions pour un stockage optimal
+
+Stockage professionnel = conservation **ordonnée**. Trois principes :
+
+#### 4.4.1 Propreté
+Locaux, installations, outils, marchandises, voies.
+
+Avantages : moins d'accidents · durabilité des équipements · satisfaction collaborateurs · image · moins de pertes/dégradations.
+
+#### 4.4.2 Spaciosité
+Assez d'espace → manutention optimale · entrées/sorties plus rapides · moins de recherches/déplacements inutiles · moins d'accidents.
+
+#### 4.4.3 Netteté (clarté)
+- **Zones** : entrée → sortie (+ secteurs selon entreprise)
+- **Zones de stockage** : volume, rotation, valeur, périssabilité, dangerosité…
+- **Marquage / étiquetage** : vue d'ensemble du transit interne
+- **N° d'articles** : identification, information, contrôle, classification
+- **Localisation** : attribution à un emplacement · base de la gestion informatisée · évite recherches et trajets à vide`;
+
+const DEMO_404_THEORIE_SUMMARY = `## À retenir — Module 404
+
+### Enveloppe
+Ouvert (intempéries OK) · couvert (toit) · fermé (sensible/vol)
+
+### Hauteur
+Faible ~7 m · moyenne ~15 m · grande jusqu'à ~45 m (MGH)
+
+### Structure
+Mécanisé (transstockeur conducteur) · automatique (WMS, accès restreint) · système complexe (réseau d'installations)
+
+### 3 principes
+**Propreté** · **spaciosité** · **netteté** (zones, marquage, n°, localisation)`;
+
+const DEMO_404_APERCU_FULL = `## Aperçu du module 404
+
+Ce module traite des **prescriptions de stockage** : types d'enveloppe, hauteurs, structures (mécanisé/automatique) et conditions d'un stockage optimal.
+
+### Vous allez découvrir
+1. Entrepôts ouverts, couverts, fermés
+2. Faible / moyenne / grande hauteur
+3. Entrepôts mécanisés, automatiques et systèmes complexes
+4. Propreté, spaciosité, netteté (zones, localisation)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 403`;
+
+const DEMO_404_APERCU_SUMMARY = `## Aperçu — Module 404
+- Ouvert / couvert / fermé
+- Hauteurs & automatisation
+- Propreté · espace · clarté`;
+
+const DEMO_404_OBJECTIFS_FULL = `## Objectifs du module 404
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Distinguer entrepôts **ouverts**, **couverts** et **fermés**
+- Situer les entrepôts selon leur **hauteur** et les engins associés
+- Comparer structures **mécanisées**, **automatiques** et **complexes**
+- Appliquer les principes de **propreté**, **spaciosité** et **netteté** (zones, marquage, localisation)`;
+
+const DEMO_404_OBJECTIFS_SUMMARY = `## Objectifs
+- Types d'enveloppe & hauteurs
+- Mécanisé / auto
+- 3 principes de stockage`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -6526,6 +6633,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_403_THEORIE_FULL,
       summary: DEMO_403_THEORIE_SUMMARY,
+    },
+  },
+  "404": {
+    objectifs: {
+      full: DEMO_404_OBJECTIFS_FULL,
+      summary: DEMO_404_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_404_APERCU_FULL,
+      summary: DEMO_404_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_404_THEORIE_FULL,
+      summary: DEMO_404_THEORIE_SUMMARY,
     },
   },
 };
