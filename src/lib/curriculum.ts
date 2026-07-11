@@ -160,7 +160,7 @@ const moduleSeeds: ModuleSeed[] = [
     title: "Les systèmes de distribution",
     blockId: "block-600",
   },
-  { code: "605", title: "Service d'envoi postal", blockId: "block-600" },
+  { code: "605", title: "Mode d'envoi postal", blockId: "block-600" },
   { code: "606", title: "Le transport routier", blockId: "block-600" },
   { code: "607", title: "Le transport ferroviaire", blockId: "block-600" },
   { code: "608", title: "Le transport aérien", blockId: "block-600" },
@@ -8296,6 +8296,139 @@ const DEMO_604_OBJECTIFS_SUMMARY = `## Objectifs
 - Postal · DEC
 - Incoterms`;
 
+/** Contenu Module 605 — Mode d'envoi postal */
+const DEMO_605_THEORIE_FULL = `## 5. Mode d'envoi postal
+
+### 5.1 Adressage
+
+Base d'un flux sans faille dépôt → distribution. Autrefois : adresses de fermes + mémoire des facteurs. Aujourd'hui : critères stricts pour machines (jusqu'à ~**18 millions** de lettres/jour).
+
+**Lettres — points clés :**
+- Aligné à **gauche** · 3 à 6 lignes · pas de lignes vides
+- Nom entreprise / nom + prénom complets
+- Rue + n° · ou **Case postale** + n°
+- **NPA** + localité complets
+- Pas de soulignement ni espaces entre lettres
+
+Étiquette à gauche ou droite (droite = plus de place expéditeur / pub).
+
+**Colis — conseils Poste :**
+1. Police 3–4 mm (12–16 pt) · laser / jet d'encre · pas décorative
+2. Destinataire : personne/entreprise · rue/n° ou CP · NPA + localité
+3. Expéditeur : de préférence **vertical** · à gauche · ≥ **10 mm** du destinataire
+4. **Code-barres** d'envoi (expéditeur + n° d'envoi)
+5. Étiquettes prestations (ex. Priority, Signature) à **droite** du code-barres
+
+👉 Étiquetage correct = travail Poste simplifié · évite hausses de prix.
+
+### 5.2 Modes d'envoi
+
+#### 5.2.1 Lettres
+| Prestation | Contenu |
+| --- | --- |
+| **Courrier A** | J+1 · lun–sam |
+| **Courrier B** | Plus économique · au plus tard 3e jour ouvrable · lun–ven |
+| **Recommandé (R)** | Signature · preuve · assuré jusqu'à **500 CHF** · J+1 lun–ven |
+| **En main propre (RMP)** | Remise uniquement à la personne nommée |
+| **Remboursement (BLN)** | Signature + paiement · crédit compte postal expéditeur |
+| **Swiss-Express Lune** | Avant **9 h** · J+1 lun–sam |
+| **SameDay Coursier** | Jour même · lun–ven · plus cher |
+
+#### 5.2.2 Colis
+| Prestation | Contenu |
+| --- | --- |
+| **PostPac Priority (PRI)** | J+1 lun–ven |
+| **PostPac Economy** | 2e jour ouvrable lun–ven |
+| **Encombrants (SP)** | Volumineux / non emballés · tri **manuel** |
+| **Signature (SI)** | Contre signature · responsabilité jusqu'à **1 500 CHF** |
+| **BLN / RMP** | Comme lettres |
+| **Assurance (AS)** | Comme SI + jusqu'à **5 000 CHF** · discret (aspect SI) |
+| **Fragile (FRA)** | Soin particulier · jusqu'à **5 000 CHF** · manuel |
+| **Lune / SameDay** | Comme lettres |
+
+Listes non exhaustives · combinaisons possibles. Autres CEP/DEC sur le marché.
+
+### 5.3 Envoi à l'étranger
+
+Contrôle douanier pays d'origine **et** destination · documents complets.  
+Colis > **2 kg** : Urdorf (camion) ou Zurich Aéroport (avion).  
+Documents / petites marchandises ≤ **2 kg** : hub ZH-Mülligen (colis ≤ 2 kg = « documents » en postal international).  
+Autres CEP internationaux actifs.
+
+### 5.4 Centres de tri
+
+#### 5.4.1 Lettres
+3 grands centres · zone d'oblitération / 1er tri. Machine lit rue + NPA. Si échec → photo → saisie manuelle (ex. Coire). Code-barres bas = ordre 2e tri.  
+Tri **séquencé** : centre · secteur · rue · n° · ordre des boîtes → facteur reçoit conteneur (BB) déjà classé.
+
+#### 5.4.2 Colis
+Séparation au dépôt (Priority / Economy · encombrants · Express) · RollBox RX. 1er tri par NPA · 2e tri vers centres de distribution (train/camion) · secteurs.
+
+#### 5.4.3 Santé
+**Exosquelette** : structure externe · ergonomie · ↓ accidents dos (lien module **405**) · testé par la Poste.  
+Préférer auxiliaires (chariots, tables à ciseaux, ventouses, diables…) · règles **SUVA** de levage.
+
+### 5.5 Distribution
+
+Ville : lettres / colis / express souvent séparés · campagne : même coursier. Fusion PostMail + PostLogistics → **Logistics Services**.  
+Moyens : pied, vélo, tricycle élec. (**DXP**, cargo, VR-bike), voiture, camionnette. Service public = couverture nationale. Ville : > **2000** lettres/jour · campagne : moins d'envois mais parfois > **50 km**.
+
+Scanner (smartphone) · codes-barres · données ménage · nouveaux clients → système **AMP** (mis à jour quotidiennement) · sert au tri séquencé.
+
+**Preuve d'identité** (ex. RMP) : carte d'identité · passeport · permis CH · livret étrangers · carte d'identité Poste.
+
+#### 5.5.1 PickPost
+> **2500** points (gares, magasins, stations…) · retrait flexible lettres recommandées / colis · pas de frais extra · avis SMS/e-mail.
+
+#### 5.5.2 My Post 24
+Automates **24/7** · retrait / dépôt · adresse alternative / 2e livraison. CEP privés : offres similaires.`;
+
+const DEMO_605_THEORIE_SUMMARY = `## À retenir — Module 605
+
+### Adressage
+Gauche · NPA · code-barres · étiquettes prestations
+
+### Prestations
+A/B · R · RMP · BLN · Lune · SameDay  
+Priority / Economy · SI · AS · FRA · SP
+
+### Flux
+Étranger (Urdorf / ZRH / Mülligen)  
+Tri lettres séquencé · colis RollBox  
+Distribution + AMP · PickPost · My Post 24`;
+
+const DEMO_605_APERCU_FULL = `## Aperçu du module 605
+
+Ce module détaille le **mode d'envoi postal** : adressage, prestations lettres/colis, étranger, centres de tri et distribution.
+
+### Vous allez découvrir
+1. Règles d'adressage lettres et colis
+2. Prestations de base et complémentaires
+3. Export postal et traitement en centres de tri
+4. Distribution, identité, PickPost et My Post 24
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 604`;
+
+const DEMO_605_APERCU_SUMMARY = `## Aperçu — Module 605
+- Adressage & prestations
+- Tri · distribution
+- PickPost · My Post 24`;
+
+const DEMO_605_OBJECTIFS_FULL = `## Objectifs du module 605
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Appliquer les règles d'**adressage** lettres et colis
+- Comparer les principales **prestations** (A/B, Priority/Economy, Signature…)
+- Décrire le flux **étranger** et le **tri** (lettres séquencé, colis)
+- Expliquer la **distribution**, PickPost et My Post 24`;
+
+const DEMO_605_OBJECTIFS_SUMMARY = `## Objectifs
+- Adressage & prestations
+- Tri & distribution
+- PickPost / My Post 24`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -9022,6 +9155,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_604_THEORIE_FULL,
       summary: DEMO_604_THEORIE_SUMMARY,
+    },
+  },
+  "605": {
+    objectifs: {
+      full: DEMO_605_OBJECTIFS_FULL,
+      summary: DEMO_605_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_605_APERCU_FULL,
+      summary: DEMO_605_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_605_THEORIE_FULL,
+      summary: DEMO_605_THEORIE_SUMMARY,
     },
   },
 };
