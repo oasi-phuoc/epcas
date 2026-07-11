@@ -8429,6 +8429,120 @@ const DEMO_605_OBJECTIFS_SUMMARY = `## Objectifs
 - Tri & distribution
 - PickPost / My Post 24`;
 
+/** Contenu Module 606 — Le transport routier */
+const DEMO_606_THEORIE_FULL = `## 6. Le transport routier
+
+### 6.1 Trafic routier
+
+Malgré la **RPLP** (depuis 2001), la route reste avantageuse : flexibilité et liberté d'organisation (quoi, quand, où). Idéale pour la **distribution fine**. Contreparties : embouteillages · réglementation forte (nuit, dimanche, fériés, temps de conduite…).
+
+Trafic dense surtout sur le **plateau** · axe N–S via le **Gothard**. Les PL suisses transportent surtout des biens d'approvisionnement (denrées alimentaires en tête, ex. 2019).
+
+#### 6.1.1 Forces dynamiques
+Mesurées en m/s² (N) · pesanteur ≈ **10 m/s²** = **1 g** · 1 kg ≈ 10 N.
+
+| Force | Sens / effet |
+| --- | --- |
+| **Accélération** | Vers l'**arrière** · ↑ avec masse et accélération |
+| **Décélération** | Vers l'**avant** · inertie · souvent > accélération (freinage fort) · jusqu'à ~1 g |
+| **Centrifuge** | Vers l'**extérieur** du virage · ↑ avec rayon ↓ et vitesse · **vitesse au carré** (×2 vitesse → ×4 force) · risque de renversement si charge glisse |
+| **Verticales** (vibrations) | Secousses · ↓ frottement / adhérence · charge peut « perdre » le sol → **arrimage** |
+
+👉 Comprendre ces forces = mieux sécuriser le chargement.
+
+#### 6.1.2 Sécuriser le véhicule
+Avant chargement : véhicule correctement sécurisé (procédures / checklist).
+
+### 6.2 Répartition de la charge
+
+#### 6.2.1 Bases légales
+Positionner pour :
+- ≥ **20 %** du poids effectif sur l'essieu **directeur**
+- ≥ **25 %** sur l'essieu **tracteur**
+- ne pas dépasser charges max. / essieu ni **poids total**
+
+Permis de circulation : charges essieux · poids à vide · charge utile · poids total.
+
+#### 6.2.2 Chargement et sécurisation
+| Mode | Principe |
+| --- | --- |
+| Arrimage de **blocage** | Contact tous côtés avec parois → pas de déplacement |
+| Arrimage de **force** | Charge libre sur le pont · exigences d'arrimage **élevées** |
+| Plan de **répartition** | Vérifie si charge complète peut aller contre paroi frontale |
+
+#### 6.2.3 Chargement
+Palettes : transversal · longitudinal · mixte. Itinéraire de déchargement → **LIFO**.
+
+**Procédure :**
+1. Définir le **bloc** (L/T/mixte) + **centre de gravité** (milieu du bloc)
+2. Calculer la **longueur** du bloc
+3. Centrer sur la surface · répartir selon poids / CdG · LIFO selon tournée
+4. Avec plan de charge utile : CdG dans la **zone verte** · sinon pas contre la paroi frontale
+
+#### 6.2.4 Sécurisation
+Arrimer contre **toutes** les forces dynamiques. Moyens : sangles · chaînes · filets · tapis antidérapants · barres (H/V) · coussins d'air…
+
+### 6.3 RPLP
+
+Depuis 2005 : trains routiers / articulés jusqu'à **40 t** (accords bilatéraux UE). Objectif politique : report vers le **rail** (transit alpin). RPLP votée 1998 · en vigueur **2001** · véhicules > **3,5 t** (exceptions).
+
+Tarif selon **émissions** (véhicules propres = moins taxés). CH : appareil électronique + tachygraphe · contrôle **GPS**. Étrangers : appareil ou paiement douane (carte à puce).
+
+**Objectifs :** freiner hausse du trafic lourd · report rail · ↓ impact environnemental.
+
+**Recettes :** 1/3 cantons (coûts routiers non couverts) · 2/3 Confédération (ferroviaire, bruit : NLFA, Rail 2000, TGV…). Facturation mensuelle par l'administration des douanes.
+
+👉 Coûts élevés → véhicules récents rentables **et** plus écologiques.
+
+**Ex. EnterSite** — Rupperswil → Marly · **122 km** · 26 t · EURO 5 ≈ **98.35 CHF** · EURO 6 ≈ **72.30 CHF**.`;
+
+const DEMO_606_THEORIE_SUMMARY = `## À retenir — Module 606
+
+### Route
+Flexible · distribution fine · réglementée · embouteillages
+
+### Forces
+Accélération · décélération · centrifuge (v²) · vibrations → arrimage
+
+### Charge
+≥20 % directeur · ≥25 % tracteur · max essieux / poids total  
+Blocage vs force · LIFO · sangles, tapis, barres…
+
+### RPLP
+>3,5 t · selon émissions · report rail · 1/3 cantons · 2/3 Confédération`;
+
+const DEMO_606_APERCU_FULL = `## Aperçu du module 606
+
+Ce module traite du **transport routier** : forces dynamiques, répartition/sécurisation de charge et RPLP.
+
+### Vous allez découvrir
+1. Atouts et contraintes du trafic routier en Suisse
+2. Forces dynamiques et sécurisation
+3. Répartition légale et moyens d'arrimage
+4. RPLP (objectifs, calcul, recettes)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 605`;
+
+const DEMO_606_APERCU_SUMMARY = `## Aperçu — Module 606
+- Forces dynamiques
+- Répartition & arrimage
+- RPLP`;
+
+const DEMO_606_OBJECTIFS_FULL = `## Objectifs du module 606
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer les atouts / contraintes du **transport routier** en Suisse
+- Relier les **forces dynamiques** à la sécurisation du chargement
+- Appliquer les règles de **répartition** (essieux) et citer les moyens d'arrimage
+- Décrire la **RPLP** (objectifs, tarification, utilisation des recettes)`;
+
+const DEMO_606_OBJECTIFS_SUMMARY = `## Objectifs
+- Forces & arrimage
+- Répartition légale
+- RPLP`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -9169,6 +9283,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_605_THEORIE_FULL,
       summary: DEMO_605_THEORIE_SUMMARY,
+    },
+  },
+  "606": {
+    objectifs: {
+      full: DEMO_606_OBJECTIFS_FULL,
+      summary: DEMO_606_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_606_APERCU_FULL,
+      summary: DEMO_606_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_606_THEORIE_FULL,
+      summary: DEMO_606_THEORIE_SUMMARY,
     },
   },
 };
