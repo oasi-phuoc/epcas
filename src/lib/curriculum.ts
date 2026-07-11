@@ -11114,6 +11114,171 @@ const DEMO_806_OBJECTIFS_SUMMARY = `## Objectifs
 - Fonctions · graphiques
 - Source publipostage`;
 
+/** Contenu Module 807 — PowerPoint Microsoft 365 */
+const DEMO_807_THEORIE_FULL = `## 7. PowerPoint Microsoft 365
+
+Créer des présentations (projection, web, entretien, cours, séances). Imprimable pour notes. Possible : défilement auto · animations · sons · vidéos · liens.  
+👉 PowerPoint = **support** · les techniques orales de présentation s'apprennent à part.
+
+### 7.1 L'écran de travail
+
+Nouvelle présentation → ruban (onglets Fichier, Accueil, Insertion, Création, Transitions, Animations, Diaporama…).
+
+#### 7.1.1 Barre d'outils Accès rapide
+Si absente : **Fichier → Options → Barre d'outils Accès rapide** → Afficher. Ajouter au minimum : **Commencer depuis le début** · Enregistrer · Annuler · Refaire. Personnaliser aussi via le bouton ▼ de la barre.
+
+### 7.2–7.3 Outils d'aide
+**Annuler / Refaire** via Accès rapide.  
+**Affichage** : cocher Règle / Grille pour aligner les objets.
+
+### 7.4 Créer une présentation
+
+| Méthode | Démarche |
+| --- | --- |
+| Modèle / thème | Fichier → Nouveau → vignette |
+| Depuis existant | Fichier → Ouvrir → **Ouvrir une copie** → modifier → Enregistrer sous |
+
+### 7.5 Mode Masque des diapositives
+
+Trame commune : thème, polices, emplacements, puces. Modifications → **toutes** les diapositives.
+
+- Police / gras / italique / couleur (Accueil)
+- Puces / numéros / niveaux · Personnaliser (Webdings, Wingdings…)
+- Logo : Insertion → Images · fermer le masque ensuite
+
+### 7.6 Construire les diapositives
+
+Après fermeture du masque :
+
+| Action | Où |
+| --- | --- |
+| Nouvelle diapositive | Accueil → Diapositives |
+| Disposition | Titre · Titre et contenu · Deux contenus… |
+
+**Saisie :** Enter = nouveau paragraphe · **Shift+Enter** = saut de ligne. Formats issus du masque. Niveaux de puces : Augmenter / Diminuer le retrait.
+
+### 7.7 Tableau
+
+Disposition Titre et contenu → icône Tableau → lignes / colonnes. Onglets **Création** et **Mise en page**.
+
+Sélection cellule / colonne / ligne / tableau entier · Insérer / Supprimer lignes-colonnes · Scinder · Fusionner · Trier.
+
+### 7.8 Graphique
+
+PowerPoint s'appuie sur **Excel**.
+
+| Méthode | Démarche |
+| --- | --- |
+| Objet Excel | Insertion → Objet → À partir d'un fichier · **Liaison** = maj auto |
+| Titre et contenu | Icône Graphique → type → données fictives à adapter |
+
+### 7.9 Vidéo
+
+Formats mp3/mp4/mov… · disposition Titre et contenu ou Insertion → Vidéo.
+
+- **Fichier** local ou **Vidéo en ligne** (YouTube…) = moins lourd
+- **Découper** (onglet Lecture) · lecture aperçu · plein écran / luminosité (Format vidéo)
+
+### 7.10–7.11 SmartArt & images
+
+SmartArt → **Hiérarchie** (organigramme).  
+Images : Insertion (ou dans le masque) · Format image · **Aligner / Grouper** plusieurs images.
+
+### 7.12 Personnaliser
+
+| Réglage | Contenu |
+| --- | --- |
+| Taille | Défaut **16:9** (grand écran) · ou 4:3 / personnalisé (Conception) |
+| Arrière-plan | Masquer graphiques du masque sur une diapo (Mise en forme de l'arrière-plan) |
+
+### 7.13 Pied de page / numérotation
+
+Insertion → En-tête et pied de page : Date · N° diapositive · Texte pied → **Appliquer partout**.
+
+### 7.14 Audio
+
+Insertion → Audio → Fichier sur PC · ou **Enregistrer l'audio** (micro) → haut-parleur sur la diapo.
+
+### 7.15 Transition
+
+Effet d'apparition d'une diapo → suivante. Onglet **Transitions** : effet · options · durée · Après (auto) · **Appliquer partout**. Icône sous la miniature = transition présente.
+
+### 7.16 Animation
+
+Effets sur **objets** (pas toute la diapo) :
+
+| Type | Moment |
+| --- | --- |
+| Entrée | À l'arrivée |
+| Accentuation | Objet déjà là |
+| Sortie | Disparition |
+| Trajectoire | Mouvement |
+
+Volet Animation : ordre · démarrage (clic / avec précédent / après) · délai / durée · son associé.
+
+### 7.17 Diaporama
+
+| Config | Usage |
+| --- | --- |
+| Présentateur (plein écran) | Exposé live (défaut) |
+| Borne | Boucle jusqu'à Échap (stands) |
+| Personnalisé | Sous-ensemble / ordre choisi de diapos |
+| Mode Présentateur | 2 moniteurs (notes + public) |
+
+### 7.18 Enregistrer
+
+- **.pptx** : transitions + animations · visionneuse compatible côté destinataire
+- **Vidéo** : Fichier → Exporter → Créer une vidéo (wmv…) · résolution / minutage
+
+### 7.19 Imprimer
+
+Fichier → Imprimer (Ctrl+P) : copies · imprimante · toutes / sélection / active · n° de diapos par page · recto / recto-verso.`;
+
+const DEMO_807_THEORIE_SUMMARY = `## À retenir — Module 807
+
+### Socle
+Ruban · Accès rapide · Masque (= trame globale)  
+Dispositions · tableaux · graphiques Excel · images / SmartArt
+
+### Média & effets
+Vidéo (fichier / en ligne) · audio · transitions · animations (4 types)
+
+### Diffusion
+Diaporama présentateur / borne / personnalisé  
+Enregistrer pptx ou vidéo · imprimer notes`;
+
+const DEMO_807_APERCU_FULL = `## Aperçu du module 807
+
+Ce module couvre **PowerPoint Microsoft 365** : création de diapositives, médias, animations et diffusion.
+
+### Vous allez découvrir
+1. Écran, Accès rapide, masque et dispositions
+2. Tableaux, graphiques, images, SmartArt, vidéo et audio
+3. Transitions, animations et configuration du diaporama
+4. Enregistrement (.pptx / vidéo) et impression
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT`;
+
+const DEMO_807_APERCU_SUMMARY = `## Aperçu — Module 807
+- Masque · dispositions · objets
+- Média · transitions · animations
+- Diaporama · export · impression`;
+
+const DEMO_807_OBJECTIFS_FULL = `## Objectifs du module 807
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Créer une présentation (modèle / copie) et personnaliser le **masque**
+- Insérer texte, tableaux, graphiques, images, SmartArt, vidéo et audio
+- Appliquer **transitions** et **animations** (ordre, minutage)
+- Configurer le diaporama, enregistrer (.pptx / vidéo) et imprimer`;
+
+const DEMO_807_OBJECTIFS_SUMMARY = `## Objectifs
+- Masque · diapositives · objets
+- Média · animations
+- Diaporama · export`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -12148,6 +12313,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_806_THEORIE_FULL,
       summary: DEMO_806_THEORIE_SUMMARY,
+    },
+  },
+  "807": {
+    objectifs: {
+      full: DEMO_807_OBJECTIFS_FULL,
+      summary: DEMO_807_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_807_APERCU_FULL,
+      summary: DEMO_807_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_807_THEORIE_FULL,
+      summary: DEMO_807_THEORIE_SUMMARY,
     },
   },
 };
