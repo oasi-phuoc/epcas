@@ -10966,6 +10966,154 @@ const DEMO_805_OBJECTIFS_SUMMARY = `## Objectifs
 - Styles · TdM
 - En-têtes · impression`;
 
+/** Contenu Module 806 — Excel Microsoft 365 */
+const DEMO_806_THEORIE_FULL = `## 6. Excel Microsoft 365
+
+Les fichiers Excel s'appellent des **classeurs**. Nouveau classeur vierge · modèles · liste **Récent** · **Ouvrir** un existant.
+
+### 6.1 L'écran de travail
+
+Ruban, barre de formule, feuille (lignes / colonnes / cellules), onglets de feuilles.
+
+### 6.2 Saisir des données
+
+Texte, chiffres, dates/heures, formules, fonctions. Excel reconnaît chiffres / dates / heures pour les calculs.  
+Texte aligné à **gauche** · nombres à **droite**. Paramètres régionaux **Suisse** : souvent le **point** comme séparateur décimal.
+
+**Sélection multiple** (zones non contiguës) : maintenir **Ctrl** pendant la sélection.
+
+#### 6.2.1 Formater un nombre
+Par défaut : format **Standard**. Menu contextuel → **Format de cellule** → décimales · séparateur de milliers…
+
+### 6.3 Calculs simples
+
+#### 6.3.1 Principe des formules
+Toute formule commence par **=**.
+
+| Opérateurs | Exemples |
+| --- | --- |
+| Maths \`+ − * / % ^\` | \`=5%\` → 0,05 · \`=2^3\` → 8 |
+| Comparaison \`= <> < > <= >=\` | résultat **VRAI** / **FAUX** |
+| Concaténation \`&\` | \`"Ouest"&" et "&"Nord"\` |
+| Référence \`:\` \`;\` | \`B1:C4\` plage · \`B1;C4\` cellules séparées |
+
+**Fonctions** = formules préécrites (ex. **MOYENNE**).
+
+#### 6.3.2 Formule simple
+Cellule résultat → \`=\` → cliquer les cellules + opérateurs → **Enter**. Ex. \`=B2*C2\`.
+
+#### 6.3.3 Fonctions statistiques (Accueil → Édition)
+| Fonction | Rôle |
+| --- | --- |
+| Somme | Total |
+| Moyenne | Moyenne |
+| Nb | Nombre de valeurs numériques |
+| Max / Min | Plus grande / plus petite |
+
+**Priorités :** \`2*3+4=10\` · \`2*(3+4)=14\` → utiliser des **parenthèses**.
+
+#### 6.3.4 Référence absolue
+Fixer une cellule à la recopie : touche **F4** → \`$A$1\` · 2ᵉ F4 = ligne seule · 3ᵉ = colonne seule.
+
+### 6.4 Calcul avec fonctions
+
+\`=\` + début du nom → liste · double-clic → arguments.
+
+| Fonction | Usage |
+| --- | --- |
+| ARRONDI / .INF / .SUP | Arrondir (ex. paquets / palettes) |
+| ARRONDI.AU.MULTIPLE | Ex. 5 centimes · ou \`=ARRONDI(n*20;0)/20\` (négatifs visibles) |
+| RANG · GRANDE/PETITE.VALEUR | Classement / nᵉ valeur |
+| NB.SI · NB.SI.ENS · SOMME.SI(.ENS) | Compter / sommer sous condition |
+| SI · SIERREUR | Condition · masquer #N/A (ex. avec RECHERCHV) |
+| NBVAL · NB | Non vides / nombres |
+| VPM | Mensualité prêt |
+| RECHERCHV / RECHERCHX | Recherche dans un tableau |
+| GAUCHE / DROITE | Extraire caractères |
+| ANNEE / MOIS / JOUR | Extraire d'une date |
+| \`&\` / CONCATENER | Lier textes (espace entre \`" "\`) |
+
+**Données → Convertir** : séparer un texte (ex. \`1400\` | \`Yverdon-les-Bains\`).  
+**Heures > 24 h :** format \`[hh]:mm\` · calendrier 1904 pour heures négatives (options).
+
+#### 6.4.1–6.4.3 Formats
+- **%** : Excel ×100 → ne pas ×100 dans la formule
+- Boutons ↑/↓ décimales
+- Format **Comptabilité** + symbole monétaire (CHF…)
+
+### 6.5 Afficher les formules
+
+Raccourci **Ctrl + accent grave** (\` sous Windows) : bascule formules ↔ résultats.
+
+### 6.6 Créer un graphique
+
+#### 6.6.1 Types
+| Type | Usage |
+| --- | --- |
+| Histogramme / courbe | Évolution dans le temps |
+| Secteurs | % d'une seule série |
+| Barres | Comparaisons |
+
+#### 6.6.2–6.6.4 Création
+Sélectionner données (Ctrl si non contiguës) → **Insertion** → Graphiques recommandés ou type choisi.  
+**Déplacer le graphique** → Nouvelle feuille (onglet Création).
+
+### 6.7 Publipostage (mailing)
+
+Envoi en nombre = **2 fichiers** :
+
+| Fichier | Contenu |
+| --- | --- |
+| Document de base (Word) | Texte fixe + **champs** |
+| Source de données (Excel) | Infos variables = **champs** × **enregistrements** |
+
+**Procédure :** créer Excel → lettre Word → Publipostage → **Sélection des destinataires** (liste existante) → insérer champs → **Aperçu** → **Terminer** (document fusionné).`;
+
+const DEMO_806_THEORIE_SUMMARY = `## À retenir — Module 806
+
+### Bases
+Classeur · saisie · format nombres · Ctrl sélection multiple
+
+### Formules
+Commencent par = · opérateurs · F4 absolu · Somme/Moyenne/Max…  
+Fonctions utiles : SI, RECHERCHV, ARRONDI, NB.SI…
+
+### Graphiques & mailing
+Types adaptés · Insertion · nouvelle feuille  
+Excel = source · Word = publipostage`;
+
+const DEMO_806_APERCU_FULL = `## Aperçu du module 806
+
+Ce module couvre les bases d'**Excel Microsoft 365** : saisie, formules, fonctions, graphiques et lien avec le publipostage Word.
+
+### Vous allez découvrir
+1. Saisie et formatage des données
+2. Formules, opérateurs, références absolues et fonctions
+3. Graphiques recommandés et types principaux
+4. Source de données Excel pour un publipostage Word
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT`;
+
+const DEMO_806_APERCU_SUMMARY = `## Aperçu — Module 806
+- Saisie · formules · fonctions
+- Graphiques
+- Publipostage (source Excel)`;
+
+const DEMO_806_OBJECTIFS_FULL = `## Objectifs du module 806
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Saisir et formater des données dans un classeur Excel
+- Créer des formules (opérateurs, priorités, **références absolues F4**)
+- Utiliser des fonctions statistiques et métiers (SI, RECHERCHV, ARRONDI…)
+- Créer un graphique adapté et préparer une **source de données** pour le publipostage`;
+
+const DEMO_806_OBJECTIFS_SUMMARY = `## Objectifs
+- Saisie · formules · F4
+- Fonctions · graphiques
+- Source publipostage`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -11986,6 +12134,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_805_THEORIE_FULL,
       summary: DEMO_805_THEORIE_SUMMARY,
+    },
+  },
+  "806": {
+    objectifs: {
+      full: DEMO_806_OBJECTIFS_FULL,
+      summary: DEMO_806_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_806_APERCU_FULL,
+      summary: DEMO_806_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_806_THEORIE_FULL,
+      summary: DEMO_806_THEORIE_SUMMARY,
     },
   },
 };
