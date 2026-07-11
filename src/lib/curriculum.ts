@@ -8543,6 +8543,121 @@ const DEMO_606_OBJECTIFS_SUMMARY = `## Objectifs
 - Répartition légale
 - RPLP`;
 
+/** Contenu Module 607 — Le transport ferroviaire */
+const DEMO_607_THEORIE_FULL = `## 7. Le transport ferroviaire
+
+Variante **économique** et **écologique** pour de grandes quantités. En Suisse : crucial pour contourner l'**interdiction de nuit** des camions. Interrégional / national souvent au **rail** · ramassage / livraison finale souvent à la **route**.
+
+Rôle central CH dans le trafic **N–S** européen. Asie → Europe : rail gagne vs maritime (« **nouvelle route de la soie** » / BRI).
+
+**CFF Cargo** : ~**29,8 Mt**/an (wagons complets, trains complets, combiné) ≈ **10 000** trajets camion/jour.
+
+**+** vs autres modes : plus rapide que mer · moins cher que air · nettement plus écologique qu'air / eau / route.
+
+**Ex. ports rhénans (Bâle)** — objectif **50 %** conteneurs sur rail (vs ~10 % aujourd'hui / 90 % camion) · **Gateway Basel Nord** : mieux relier rail–route–eau.
+
+### 7.1 Principaux itinéraires
+
+#### 7.1.1 Suisse
+Axe **N–S** (Gothard dès 1882 · NLFA) · axe **O–E** Genève → Suisse orientale via Berne / Zurich.
+
+#### 7.1.2 Europe
+Liaisons N–S cruciales. Traité de **Maastricht** (1992) : accès au réseau européen au-delà des frontières.
+
+#### 7.1.3 Global
+Chine dominante · investissements mer + rail · **Belt and Road Initiative (BRI)**.
+
+#### 7.1.4 NLFA
+Œuvre du siècle · 3 tunnels de base + accès :
+- **Lötschberg** 34,7 km (2007)
+- **Saint-Gothard** **57 km** (2016) — plus long tunnel ferroviaire du monde
+- **Ceneri** 15,4 km (sept. 2020) — achèvement NLFA
+
+**Avantages :**
+- Capacité : 210 créneaux/jour transit · objectif 260 (fin 2022)
+- Temps : Rotterdam–Milan ≈ **−2 h**
+- Trains jusqu'à **750 m** · ~**2100 t** N→S / **2000 t** S→N · ~**100 km/h**
+- Durabilité : >3000 emplacements semi-remorques/jour · **0,3 t CO₂** économisée / remorque · jusqu'à ~**890 t CO₂**/jour à pleine capacité
+
+👉 Coût total NLFA > **22,6 milliards CHF**.
+
+### 7.2 Forces dynamiques (rail)
+
+Aiguillages / manœuvres = contraintes fortes.
+
+| Force | Ordre de grandeur |
+| --- | --- |
+| **Décélération** | Jusqu'à **4 g** en gare de triage (« laisser-couler ») |
+| **Vibrations / centrifuge** | ~**0,3 g** (aiguillages, virages) |
+
+#### 7.2.1 Sécuriser les wagons
+Avant chargement : véhicules correctement sécurisés.
+
+#### 7.2.2 Charger correctement
+**Chargeur / client** responsable (CIM art. 13 al. 2 · CGV CFF Cargo) : directives, limites de charge, poids exact sur lettre de voiture.
+
+Règles : charger / sécuriser selon directives · répartir uniformément · éviter max. pour marchandises hygroscopiques (bois, sable…) · utiliser équipements de pesage.
+
+Poids important sur les **essieux** · compactage (cloisons, coussins d'air).  
+**Ne jamais** mettre le fragile contre les parois frontales.
+
+Rapports max. : essieux **1:2** · bogies **1:3** · transversal : écart ≤ **25 %** (facteur 1,25).  
+*Bogie* = chariot sous le véhicule portant les essieux/roues.
+
+### 7.3 Marchandises dangereuses
+
+Wagons MD : **classe de danger** + **n° ONU**.  
+Ex. : danger **33** (liquides inflammables, double = particularité) + ONU **1203** = essence.
+
+### 7.4 Avenir
+
+Projets de report route → rail · **Cargo Sous Terrain** (module **610**) · tubes rapides type **Hyperloop** (plus lointain).`;
+
+const DEMO_607_THEORIE_SUMMARY = `## À retenir — Module 607
+
+### Rail CH
+Éco · contourne interdiction nuit · CFF Cargo ~30 Mt/an  
+NLFA : Lötschberg · Gothard 57 km · Ceneri · >22,6 Md CHF
+
+### Forces
+Triage jusqu'à 4 g · vibrations ~0,3 g
+
+### Chargement
+Responsabilité chargeur · essieux 1:2 · bogies 1:3  
+MD : classe + ONU · avenir CST / Hyperloop`;
+
+const DEMO_607_APERCU_FULL = `## Aperçu du module 607
+
+Ce module présente le **transport ferroviaire** : axes, NLFA, forces dynamiques, chargement et MD.
+
+### Vous allez découvrir
+1. Avantages du rail et rôle de la Suisse (N–S, BRI)
+2. NLFA (tunnels, capacités, CO₂)
+3. Forces en triage et règles de chargement
+4. Marquage MD et perspectives (CST)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 606`;
+
+const DEMO_607_APERCU_SUMMARY = `## Aperçu — Module 607
+- Axes · NLFA · BRI
+- Chargement & forces
+- MD · avenir`;
+
+const DEMO_607_OBJECTIFS_FULL = `## Objectifs du module 607
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer les atouts du **rail** et le rôle de la Suisse / NLFA
+- Décrire les **forces dynamiques** en ferroviaire (triage, vibrations)
+- Appliquer les principes de **chargement** (responsabilité, rapports essieux/bogies)
+- Lire un marquage **MD** (classe + ONU) et citer des perspectives d'avenir`;
+
+const DEMO_607_OBJECTIFS_SUMMARY = `## Objectifs
+- Rail & NLFA
+- Chargement & forces
+- MD · avenir`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -9297,6 +9412,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_606_THEORIE_FULL,
       summary: DEMO_606_THEORIE_SUMMARY,
+    },
+  },
+  "607": {
+    objectifs: {
+      full: DEMO_607_OBJECTIFS_FULL,
+      summary: DEMO_607_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_607_APERCU_FULL,
+      summary: DEMO_607_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_607_THEORIE_FULL,
+      summary: DEMO_607_THEORIE_SUMMARY,
     },
   },
 };
