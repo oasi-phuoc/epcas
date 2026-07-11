@@ -5716,6 +5716,161 @@ const DEMO_401_OBJECTIFS_SUMMARY = `## Objectifs
 - Définition + réserve
 - 5 fonctions du stockage`;
 
+/** Contenu Module 402 — Les genres de stockage */
+const DEMO_402_THEORIE_FULL = `## 2. Les genres de stockage
+
+Tous les entrepôts ne sont pas identiques. Critères de planification (ex. EnterSite AG) :
+- Quelles **marchandises** stocker ?
+- Dans quel **domaine d'activité** ?
+- **Où** se trouve l'entrepôt ?
+- Quelle **fonction** doit-il remplir ?
+
+### 2.1 Distinction selon les marchandises
+
+Caractéristiques influençant manipulation et stockage (→ module **105**) :
+- dimensions / volume
+- densité (poids)
+- état physique (solide, liquide, gazeux)
+- durabilité (périssable, fragile, empilable)
+- valeur (stockage sécurisé)
+- etc.
+
+#### 2.1.1 Entrepôt de matières premières
+
+Acier, bois, coton… = composants principaux de la production. Stock **centralisé** pour toute l'entreprise ou **décentralisé** près de la production. Chez EnterSite : surtout fonction **tampon** pour la chaîne de production.
+
+#### 2.1.2 Entrepôt self-service
+
+Petit stock de petites quantités d'articles **fréquents** (vis, rondelles, joints…). Les collaborateurs se servent **sans** comptabiliser chaque prélèvement. Contrôles périodiques pour recalculer les stocks.
+
+#### 2.1.3 Entrepôt de produits finis
+
+Produits non vendus immédiatement → stockage temporaire. Lien **production ↔ vente**. En détail/gros : **stock de vente** (achat producteur → vente petites quantités). L'espace de vente au client = aussi « entrepôt de vente ».
+
+### 2.2 Distinction par secteur
+
+Chaque branche a ses dispositions.
+
+#### 2.2.1 Entreprises de fabrication (production)
+
+Ex. EnterSite : stylos, cartouches, agrafes. Trois types d'entrepôts dans le processus :
+
+**En amont** — approvisionner la fabrication (MP, semi-finis…) pour une production équilibrée et une bonne utilisation des moyens.
+
+**Intermédiaire** — temps d'attente entre étapes (prémontage → fabrication → peinture → montage final). Fonction de **transition**. Pharma : « **bulk** » (grands récipients, pas encore emballage de vente).
+
+**En aval** —
+- approvisionnement régulier commerce/vente
+- absorption des excédents de production
+- équilibre offre / demande
+
+#### 2.2.2 Entreprise de distribution
+
+Poste, expéditeurs, transports → entrepôts de **transbordement** (→ module **600**).
+
+**Entrepôt de transbordement** = sans stock durable. Stockage temporaire pour :
+- changement de moyen de transport
+- tri des envois
+- préparation au chargement
+- formalités douanières / importation
+
+Souvent aux **nœuds** : ports, gares, aéroports, terminaux conteneurs, centres de tri.
+
+**Tâches administratives :** douane · contrôles de sécurité · lettres de voiture · facturation transport.
+
+#### 2.2.3 Entreprises commerciales
+
+Grandes quantités pour détail et fabrication.
+
+**Centre / entrepôt de distribution (livraison)** — réduit distance et délai vers les clients. Un producteur peut aussi stocker chez un transporteur pour livraisons rapides.
+
+**Entrepôt de consignation** — marchandises propriété du **fournisseur**, stockées chez le client ; prélèvements décomptés périodiquement. Client : flux assuré + **moins** de capital immobilisé.
+
+### 2.3 Choix du site géographique
+
+**Facteurs internes :** type de biens · poids · volume · durabilité · taux de rotation  
+
+**Facteurs externes :** règles de construction · environnement · bruit · marchandises dangereuses · circulation  
+
+#### 2.3.1 Centralisé vs décentralisé (production)
+
+Idéal : proximité production. Choix central / décentralisé.
+
+**Centralisé — avantages :**
+- stocks plus bas
+- achats facilités (moins de commandes, plus de volume → rabais)
+- meilleure exploitation de l'espace
+- infrastructure optimisée
+- planification du personnel facilitée
+
+**Décentralisé** — si distance trop grande (lourds/volumineux, **JIT**).  
+Avantages : flux d'infos ↑ · trajets ↓ · marchandises spéciales mieux coordonnées.
+
+### 2.4 Entrepôt temporaire
+
+Accueillir temporairement jusqu'à enlèvement/consommation. Ex. : consignes à bagages, casiers, boîtes aux lettres — souvent **courte** durée (heures).
+
+Exception : dépôts intermédiaires de déchets radioactifs en Suisse (parfois **années** faute de stockage définitif).
+
+### 2.5 Entrepôt de maturation
+
+Produits qui doivent mûrir : fromage (4–12 mois), produits carnés, vin/bière/spiritueux, fruits.
+
+Goût évolue (fromage : doux → corsé). Climat décisif ; grottes / anciens ouvrages militaires ; entretien (solution saline).
+
+Fruits exotiques : transport verts → **mûrisseries** (ex. bananes des grands distributeurs).`;
+
+const DEMO_402_THEORIE_SUMMARY = `## À retenir — Module 402
+
+### Critères
+Marchandises · activité · localisation · fonction
+
+### Selon marchandises
+MP (tampon) · self-service · produits finis / vente
+
+### Selon secteur
+**Production** : amont · intermédiaire (bulk) · aval  
+**Distribution** : transbordement (sans stock durable) + admin  
+**Commerce** : centre distribution · **consignation** (propriété fournisseur)
+
+### Site
+Internes vs externes · centralisé (stocks ↓, rabais) vs décentralisé (trajets ↓, JIT)
+
+### Autres
+Temporaire (casiers…) · maturation (fromage, vin, bananes)`;
+
+const DEMO_402_APERCU_FULL = `## Aperçu du module 402
+
+Ce module présente les **genres de stockage** selon marchandises, secteur, site, et les cas particuliers (temporaire, maturation).
+
+### Vous allez découvrir
+1. Entrepôts MP, self-service, produits finis
+2. Production (amont/intermédiaire/aval), distribution, commerce
+3. Centralisé vs décentralisé
+4. Transbordement, consignation, maturation
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 401`;
+
+const DEMO_402_APERCU_SUMMARY = `## Aperçu — Module 402
+- Genres selon marchandises & secteurs
+- Central / décentral
+- Transbordement · consignation · maturation`;
+
+const DEMO_402_OBJECTIFS_FULL = `## Objectifs du module 402
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Distinguer les entrepôts selon les **marchandises** (MP, self-service, finis)
+- Expliquer les entrepôts de **production**, **distribution** et **commerce**
+- Comparer stockage **centralisé** et **décentralisé**
+- Décrire transbordement, **consignation**, entrepôts **temporaires** et de **maturation**`;
+
+const DEMO_402_OBJECTIFS_SUMMARY = `## Objectifs
+- Genres d'entrepôts
+- Central / décentral
+- Transbordement · consignation · maturation`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -6176,6 +6331,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_401_THEORIE_FULL,
       summary: DEMO_401_THEORIE_SUMMARY,
+    },
+  },
+  "402": {
+    objectifs: {
+      full: DEMO_402_OBJECTIFS_FULL,
+      summary: DEMO_402_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_402_APERCU_FULL,
+      summary: DEMO_402_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_402_THEORIE_FULL,
+      summary: DEMO_402_THEORIE_SUMMARY,
     },
   },
 };
