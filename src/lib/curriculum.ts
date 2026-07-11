@@ -708,6 +708,153 @@ const DEMO_103_OBJECTIFS_SUMMARY = `## Objectifs
 - Objectif = meilleur flux marchandises + données
 - Maîtriser les 6B / 7B / 8B`;
 
+/** Contenu Module 104 — Flux des marchandises */
+const DEMO_104_THEORIE_FULL = `## 4. Flux des marchandises
+
+Dans le module 102, les notions de processus logistique et de gestion de la chaîne d'approvisionnement (SCM) ont été approfondies. Ces notions se ressemblent et poursuivent des objectifs similaires. Les objectifs sont notamment le flux optimal des marchandises. Pour atteindre cet objectif, le flux de marchandises doit être connu et organisé de manière optimale. Le cas échéant, l'organisation d'un flux de marchandises nécessite le soutien d'un partenaire.
+
+### Chaîne de processus (rappel)
+
+Au sein de la chaîne logistique, le flux de marchandises mobilise notamment :
+
+**Approvisionnement → Transport / Transbordement / Stockage → Production → Transport / Transbordement / Stockage → Distribution → Élimination**
+
+Les fonctions **TTS** (transport, transbordement, stockage) soutiennent ces étapes.
+
+### 4.1 Approvisionnement
+
+L'achat de biens est une tâche responsable qui incombe à ceux que l'on appelle les **acheteurs**. Les acheteurs sont des professionnels qualifiés qui recherchent les biens présentant le meilleur rapport qualité/prix possible et qui négocient les conditions et les contrats de livraison avec les fournisseurs. Les acheteurs sont chargés de veiller à ce que leurs entreprises disposent toujours des biens adéquats, de haute qualité et au meilleur prix.
+
+La mondialisation et les nouvelles possibilités numériques ont fait de l'approvisionnement un défi majeur. Il n'est pas exceptionnel que les fournisseurs se trouvent dans d'autres fuseaux horaires ou régions linguistiques.
+
+### 4.2 Production
+
+La production industrielle nécessite l'utilisation de machines. Comme leur acquisition est coûteuse, il convient de les utiliser au maximum de leurs capacités. Cela nécessite une planification et une gestion précises de l'ensemble du processus de production. Les machines doivent être « alimentées » en matières premières et les produits fabriqués doivent être évacués.
+
+Pour la logistique de production, trouver la **bonne quantité** pour le processus de production est un grand défi. Des quantités trop importantes peuvent entraîner une surproduction (engorgement). En revanche, la production de trop petites quantités n'est pas intéressante financièrement.
+
+### 4.3 Distribution
+
+La distribution des biens du producteur au consommateur final s'appelle la **distribution**. Elle peut se faire de différentes manières. Par exemple, la poste distribue les envois adressés jusqu'au destinataire, c'est-à-dire jusqu'au consommateur final. C'est également le cas d'autres entreprises de transport de colis et de services.
+
+Dans le cas du commerce de détail, en revanche, ce ne sont pas les clients qui sont directement livrés, mais les **points de vente**. Le client peut s'y procurer la marchandise souhaitée et l'emporter chez lui. L'évolution du transport routier entraîne constamment de nouveaux défis.
+
+### 4.4 Élimination des déchets
+
+L'élimination des déchets est le **dernier maillon** de la chaîne logistique. Dans la mesure du possible, les matières résiduelles doivent être réutilisées, ce que l'on appelle le **recyclage**. Les matières qui ne peuvent pas être recyclées sont généralement incinérées.
+
+Les entreprises de logistique s'occupent quotidiennement de l'élimination correcte des déchets résiduels. Il s'agit par exemple de matériaux d'emballage ou d'objets usagés. Il convient d'accorder une attention particulière aux **substances nocives** qui sont produites lors de l'élimination de nombreux produits d'usage courant.
+
+### 4.5 Fonctions TTS
+
+Les processus de soutien au sein du SCM sont appelés fonctions **TTS** (**T**ransport, **T**ransbordement / manutention et **S**tockage). La différence avec les processus décrits précédemment réside dans le fait que les processus TTS ont une fonction de **soutien** au sein des domaines et entre eux.
+
+#### 4.5.1 TTS — Transport
+
+Les marchandises peuvent être transportées via différents modes de transport : **route, rail, eau et air**. Selon le mode de transport, d'autres moyens de transport entrent en ligne de compte. Le choix du mode de transport, et donc du moyen de transport, se fait généralement en fonction des critères de **prix**, de **sécurité**, de **vitesse** et d'**efficacité**. Avec l'augmentation massive des transports de marchandises au cours des dernières années, les critères **écologiques** (compatibilité avec l'environnement) ont en outre gagné en importance.
+
+#### 4.5.2 TTS — Transbordement (manutention)
+
+Lorsque des marchandises sont réceptionnées ou transférées d'un moyen de transport à un autre, on parle de **transbordement** de marchandises. Le transbordement signifie que les marchandises sont **déchargées**, **stockées temporairement** et **chargées** à nouveau.
+
+#### 4.5.3 TTS — Stockage
+
+Le stockage professionnel des marchandises est une tâche centrale au sein de la chaîne logistique. Il existe une multitude de types d'entrepôts et de systèmes différents. Chaque entrepôt a son caractère spécifique. La forme de l'entrepôt et les installations techniques dépendent des marchandises stockées et de la durée de stockage.
+
+### 4.6 Le flux de marchandises : prestataire de services vs producteur
+
+Le flux de marchandises peut prendre différentes formes. L'ordre correct résulte de la tâche à accomplir. Les différences sont évidentes si l'on compare un simple flux de marchandises d'un prestataire de services et d'un producteur.
+
+#### 4.6.1 Flux de marchandises — Prestataires de services
+
+Le prestataire de services **achète** ses biens et les **revend**. Il est spécialisé dans l'achat de biens de bonne qualité, leur stockage en conservant leur valeur et leur vente au bon client.
+
+#### 4.6.2 Flux de marchandises — Producteur
+
+Contrairement au prestataire de services, le producteur **modifie** le produit au sein du flux de marchandises. C'est pourquoi l'assemblage ou la production font également partie de ses attributions. Le produit passe d'une matière première ou d'un produit semi-fini à l'entrée des marchandises à un produit semi-fini ou à un produit fini à la sortie des marchandises.
+
+**Remarque :** un flux de marchandises est très spécifique à l'entreprise. Il existe donc une grande diversité de représentations et de termes utilisés.
+
+### 4.7 Tailles logistiques
+
+La logistique est nécessaire lorsque les fournisseurs veulent vendre quelque chose que les clients veulent acheter. Les fournisseurs sont des entreprises qui livrent des matières premières, des produits semi-finis ou des produits finis contre paiement. Les clients sont des acheteurs de ces biens, qui les paient. Il est rare qu'une entreprise soit uniquement fournisseur ou uniquement client ; la plupart sont les deux.
+
+En y regardant de plus près, on trouve partout un type de logistique, grande ou petite, simple ou compliquée. Même un ménage privé est en fait une logistique car, là aussi, il faut organiser l'approvisionnement en biens de consommation courante et l'élimination des déchets et, là aussi, cela ne fonctionne que si la communication est efficace.
+
+Il existe plusieurs termes techniques pour désigner la division de la logistique en différentes tailles :
+
+- **Intralogistique** (aussi logistique interne ou **micro-logistique**) : logistique interne allant de l'entrée à la sortie des marchandises (terme souvent utilisé par les fabricants de chariots de manutention).
+- **Logistique interentreprises** ou **méta-logistique** : logistique créée entre au moins deux entreprises.
+- **Macro-logistique** ou **logistique mondiale** : mouvements de marchandises internationaux ou même intercontinentaux entre deux entreprises.`;
+
+const DEMO_104_THEORIE_SUMMARY = `## À retenir — Module 104
+
+### But
+Organiser un **flux de marchandises optimal** (souvent avec partenaires).
+
+### Maillons
+**Approvisionnement** → **Production** → **Distribution** → **Élimination**  
++ soutien **TTS**
+
+### Approvisionnement
+Acheteurs : qualité/prix, contrats, fournisseurs parfois mondiaux / autres fuseaux
+
+### Production
+Maximiser l'usage des machines ; éviter surproduction **et** lots trop petits
+
+### Distribution
+Jusqu'au client final (colis) **ou** via points de vente (retail)
+
+### Élimination
+Dernier maillon · recyclage prioritaire · attention substances nocives
+
+### TTS
+- **T**ransport : route / rail / eau / air — critères prix, sécurité, vitesse, efficacité, écologie
+- **T**ransbordement : décharger → stocker temporairement → recharger
+- **S**tockage : type d'entrepôt selon marchandise et durée
+
+### Prestataire vs producteur
+- Prestataire : achète → stocke → revend (sans transformer)
+- Producteur : transforme (MP / semi-fini → produit)
+
+### Tailles
+- **Micro / intralogistique** : dans le site
+- **Méta** : entre entreprises
+- **Macro** : international / intercontinental`;
+
+const DEMO_104_APERCU_FULL = `## Aperçu du module 104
+
+Ce module décrit le **flux des marchandises** le long de la chaîne logistique et les fonctions de soutien TTS.
+
+### Vous allez découvrir
+1. Approvisionnement, production, distribution, élimination
+2. Les fonctions TTS (transport, transbordement, stockage)
+3. Différences prestataire de services / producteur
+4. Micro-, méta- et macro-logistique
+
+### Source
+EnterSite — Logistics by ASFL / SVBL`;
+
+const DEMO_104_APERCU_SUMMARY = `## Aperçu — Module 104
+- Flux : Appro → Prod → Distrib → Élimination
+- TTS + tailles (micro / méta / macro)`;
+
+const DEMO_104_OBJECTIFS_FULL = `## Objectifs du module 104
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Décrire le flux de marchandises dans la chaîne de processus logistique
+- Expliquer les rôles de l'approvisionnement, de la production, de la distribution et de l'élimination
+- Définir les fonctions **TTS** et leurs critères
+- Différencier le flux d'un **prestataire** et celui d'un **producteur**
+- Distinguer micro-, méta- et macro-logistique`;
+
+const DEMO_104_OBJECTIFS_SUMMARY = `## Objectifs
+- Maillons du flux de marchandises
+- TTS
+- Prestataire ≠ producteur
+- Micro / méta / macro`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -762,6 +909,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_103_THEORIE_FULL,
       summary: DEMO_103_THEORIE_SUMMARY,
+    },
+  },
+  "104": {
+    objectifs: {
+      full: DEMO_104_OBJECTIFS_FULL,
+      summary: DEMO_104_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_104_APERCU_FULL,
+      summary: DEMO_104_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_104_THEORIE_FULL,
+      summary: DEMO_104_THEORIE_SUMMARY,
     },
   },
 };
