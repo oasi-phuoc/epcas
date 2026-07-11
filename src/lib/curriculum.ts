@@ -9267,6 +9267,129 @@ const DEMO_612_OBJECTIFS_SUMMARY = `## Objectifs
 - Make or Buy · HACCP
 - Arrimage · Cross-Docking`;
 
+/** Contenu Module 613 — CPD — Qualité de service dans la distribution */
+const DEMO_613_THEORIE_FULL = `## 13. Qualité du service dans les entreprises de distribution
+
+### 13.1–13.2 Principes & notions
+
+**Qualité de service** = mesure dans laquelle l'entreprise répond (idéalement dépasse) les attentes clients — pas seulement « livré à l'heure », mais aussi **comment** (amabilité, état du colis…).
+
+| Notion | Sens |
+| --- | --- |
+| **Orientation service** | Produits/services systématiquement alignés sur besoins clients |
+| **Qualité de service** | Écart attentes ↔ prestation perçue |
+| **Image** | Réputation née d'expériences, opinions, communication |
+
+### 13.3–13.6 Exemple « stand kebab » & 6B
+
+Attentes typiques : amabilité · attente courte · hygiène · produit chaud/frais · prix équitable…
+
+**Règle des 6B** (rappel Jünemann) appliquée au service :
+bonne **marchandise** · **qualité** · **moment** · **endroit** · **quantité** · **prix**.
+
+**Mauvaise qualité →** perte clients · ↓ recettes · licenciements · insolvabilité. Bouche-à-oreille : insatisfait ≈ **10–15** personnes informées.  
+**Bonne qualité →** fidélisation · nouveaux clients · image ↑ · CA ↑ · emplois.
+
+### 13.7 Ton influence
+En tenue / véhicule d'entreprise = **ambassadeur**. Comportement = image. Livrer selon les 6B renforce l'entreprise et l'emploi.
+
+---
+
+### 13.8–13.12 Marché postal & cadre légal
+
+| Terme | Sens |
+| --- | --- |
+| **CEC** | Coursier · Express · Colis |
+| **Courrier** | Lettres |
+| **Service public / universel** | Prestations importantes partout en CH · même prix / qualité |
+| **Loi sur la poste** | Mandat Confédération |
+| **Monopole** | Seule l'entreprise peut offrir la presta |
+
+**Poste** = SA de droit public · **100 %** Confédération.
+
+| Catégorie | Contenu |
+| --- | --- |
+| **Réservé** | Lettres intérieures ≤ **50 g** · monopole · amende jusqu'à **100 000 CHF** si concurrent |
+| **Non réservé** | Poste **doit** · concurrents **peuvent** (grandes lettres, colis…) |
+| **Service libre** | Poste **peut** · pas d'obligation · concurrence (coursier, cars postaux, adressage…) · **ne pas** financer par recettes du service universel |
+
+Autres services publics : CFF, Swisscom, SRF…
+
+---
+
+### 13.13–13.16 Coûts & marge
+
+| Notion | Sens |
+| --- | --- |
+| **Coûts de distribution** | Fabricant → client final |
+| **Marge** | Prix de vente − prix d'achat (≠ bénéfice net : encore personnel, transport, emballage…) |
+| **Flux monétaire** | Où l'argent entre / sort |
+
+Défis : livrer **vite** et **pas cher**. Marges distribution **faibles** → analyser / optimiser coûts.
+
+Ex. livraison repas : personnel (nuit/fériés) · véhicule · emballage / smartphone · systèmes / remboursements.
+
+### 13.17–13.19 LPMVM
+
+Facteurs de coûts tout au long du process :
+
+| Lettre | Contenu |
+| --- | --- |
+| **L**oyer | Bâtiments, entretien, énergie |
+| **P**ersonnes | Salaires, assurances, tenues, formation |
+| **M**achines | Tri, codeurs, convoyeurs, exosquelettes… |
+| **V**éhicules | Achat, énergie, entretien |
+| **M**atériel | Scanners, rollbox, emballage, boîtes aux lettres… |
+
+Coûts différents selon dépôt **desservi** (filiale) vs **non desservi** (automate).
+
+### 13.20 Trois flux
+**Marchandises** · **informations** · **argent** — toujours ensemble. Flux monétaire + = recettes > dépenses.`;
+
+const DEMO_613_THEORIE_SUMMARY = `## À retenir — Module 613
+
+### Qualité
+Orientation service · image · 6B · ambassadeur  
+Mauvaise qualité = bouche-à-oreille ×10–15
+
+### Postal
+Poste = Confédération · réservé ≤50 g · non réservé · libre
+
+### Coûts
+Marge faible · **LPMVM** · flux marchandises / info / argent`;
+
+const DEMO_613_APERCU_FULL = `## Aperçu du module 613
+
+Module **CPD** : qualité de service en distribution, cadre postal et coûts (LPMVM).
+
+### Vous allez découvrir
+1. Qualité, orientation service, image et 6B
+2. Effets d'une bonne / mauvaise qualité · rôle du collaborateur
+3. Service universel, réservé / non réservé / libre
+4. Marges, défis coût/délai et grille **LPMVM**
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · CPD Distribution`;
+
+const DEMO_613_APERCU_SUMMARY = `## Aperçu — Module 613
+- Qualité & 6B
+- Service public postal
+- LPMVM · marges`;
+
+const DEMO_613_OBJECTIFS_FULL = `## Objectifs du module 613
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Définir qualité de service, orientation service et **image**, et appliquer les **6B**
+- Expliquer les effets d'une bonne / mauvaise qualité et son rôle d'**ambassadeur**
+- Distinguer service **réservé**, **non réservé** et **libre** (loi sur la poste)
+- Analyser les **coûts de distribution** via **LPMVM** et la notion de **marge**`;
+
+const DEMO_613_OBJECTIFS_SUMMARY = `## Objectifs
+- Qualité · 6B · image
+- Cadre postal
+- LPMVM · marges`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -10105,6 +10228,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_612_THEORIE_FULL,
       summary: DEMO_612_THEORIE_SUMMARY,
+    },
+  },
+  "613": {
+    objectifs: {
+      full: DEMO_613_OBJECTIFS_FULL,
+      summary: DEMO_613_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_613_APERCU_FULL,
+      summary: DEMO_613_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_613_THEORIE_FULL,
+      summary: DEMO_613_THEORIE_SUMMARY,
     },
   },
 };
