@@ -4064,6 +4064,170 @@ const DEMO_303_OBJECTIFS_SUMMARY = `## Objectifs
 - Comptant / facture
 - Planifiée vs non planifiée + ERP`;
 
+/** Contenu Module 304 — Identification de la livraison */
+const DEMO_304_THEORIE_FULL = `## 4. Identification de la livraison
+
+Lorsque le transporteur entre sur le site, la marchandise est **physiquement arrivée**. Qu'elle soit planifiée ou non, elle doit être **identifiée**.
+
+> **Identification** = identifier de manière distincte ; comparer ou associer quelque chose / quelqu'un.
+
+### 4.1 Identification globale
+
+Première question : **la marchandise nous est-elle destinée ?**
+
+On demande au transporteur les **documents d'accompagnement** pour vérifier l'**adresse de livraison**. Décharger puis découvrir que ce n'est pas pour EnterSite AG serait une perte de temps et d'argent.
+
+Même logique dans le privé : vérifier l'adresse avant d'ouvrir un envoi postal.
+
+#### 4.1.1 Ouverture des véhicules de transport
+
+**Camion (route)**  
+Après l'identification globale, le transporteur peut ouvrir. Avant déchargement : toujours respecter les **consignes de sécurité** de l'entreprise.
+
+**Transports ferroviaires, semi-remorques, conteneurs**  
+En transport **non accompagné** (pas de chauffeur sur place) : inspecter l'extérieur (état). Si documents présents et mesures de sécurité prises → ouverture possible.
+
+#### 4.1.2 Plombs douaniers
+
+Livraison de l'étranger → prescriptions douanières à connaître.
+
+Les **scellés / plombs douaniers** sur camions, semi-remorques ou conteneurs **ne doivent en aucun cas** être coupés ou desserrés sans autorisation. Ouverture selon règles entreprise ; parfois spécialiste douanes ou personne habilitée. Procédure à clarifier **au préalable**.
+
+Coupure / détachement seulement si documents nécessaires **ou** accord d'une personne compétente des douanes + instructions de l'entreprise.
+
+#### 4.1.3 Première vision
+
+Après ouverture des portes : bref coup d'œil sur l'**état** du chargement. Chargement bousculé / palettes renversées → contraintes trop fortes → dommages possibles pendant le transport.
+
+Dommages **climatiques** (humidité, température) plus difficiles à détecter. Trafic international : attention particulière ; organismes de contrôle qualité si besoin.
+
+### 4.2 Identification détaillée
+
+Une fois confirmé que la livraison est destinée à EnterSite, véhicule ouvert et première impression OK → contrôler si la **bonne marchandise** a été livrée.
+
+Questions :
+- Qui est le **fournisseur** ?
+- Documents de livraison disponibles ?
+- Plomb douanier à ne pas ouvrir ?
+- Étranger : documents **douaniers** complets ?
+- N° d'articles / désignations = bulletin de livraison ?
+- Nombre de colis / palettes = bon de livraison ?
+
+### 4.3 Documents d'accompagnement des marchandises
+
+Prescrits en transport international (route, rail, air, mer) et aussi en transport intérieur.
+
+#### 4.3.1 Le bon de transport
+
+Ordre de transport émis par l'entreprise de transport. Indique : expéditeur, destinataire, type et quantité, poids brut, unité de livraison, éventuellement valeur en douane, instructions particulières. Permet au transporteur de réclamer son salaire. Conservation selon dispositions entreprise. Forme libre.
+
+**Minimum :** adresse de l'expéditeur · adresse du destinataire.
+
+#### 4.3.2 Lettre de voiture CMR
+
+Selon la **Convention relative au contrat de transport international de marchandises par route**. Valable pour transports routiers de marchandises à titre onéreux — surtout au-delà des frontières vers pays participants (UE et hors UE : Russie, Turquie, Islande… ; la Suisse en fait partie).
+
+Nécessaire si **au moins un** des deux pays (chargement ou déchargement) est partie à la convention. Remplie avant transport et remise au transporteur (douanes, etc.).
+
+**Particularités :**
+- toujours **3 exemplaires originaux**, signés par expéditeur **et** transporteur
+- art. 6 CMR : infos séparées sur la marchandise + infos spécifiques
+- art. 9 CMR : **effet probatoire**
+- obligations de contrôle distinctes pour le transporteur
+
+Pratique : fret préparé en entrepôt → palettes → sortie → chargement → lettre de voiture signée (souvent automatisé/numérisé). Importante pour la **responsabilité** en cas de dommages pendant le transport.
+
+#### 4.3.3 Lettre de voiture (ferroviaire)
+
+Transport ferroviaire : transmise par e-mail ; données sur **transpondeur** → conducteur + plan de transport. L'étiquette / transpondeur indique : expéditeur, destinataire, nombre et désignation des unités, poids, matériel échangeable.
+
+#### 4.3.4 Le bulletin de livraison
+
+Informe sur les marchandises livrées ; sert au **contrôle**. Vérifier : contenu de la livraison + conformité à la **commande**. Entreprises au registre du commerce : conservation **10 ans**.
+
+**Corrections :** idéalement en présence du transporteur (contresigne). Différences inscrites **directement** sur le bon. Pas de règle juridique unique — **jamais** effacer / Tipp-Ex ; corrections clairement visibles ; signatures transporteur **et** destinataire. Accords **oraux** non probants. Contestation grave → informer **immédiatement** le fournisseur.
+
+### 4.4 La réception sous réserve
+
+Si une réception approfondie est impossible → « **réception sous réserve** » notée sur le bon de livraison. Il faut une **raison** (un simple cachet sans motif ne suffit pas). Ex. : emballage endommagé. Si défauts confirmés ensuite → réclamation dans le délai légal ; cas graves : remplacement ou résiliation.
+
+Marchandises non comptables immédiatement → **ne pas** accepter sans réserve + signature.
+
+**Conditions d'une acceptation sous réserve valable :**
+- intitulé : « Acceptation sous réserve » (aussi à la main)
+- **motif** (ex. emballage écrasé)
+- date
+- signature
+
+### 4.5 Réglementations et contrats transfrontaliers
+
+#### 4.5.1 Traité de Maastricht
+
+Signé le 7.2.1992, en vigueur le 1.11.1993. Structure l'UE en trois piliers : Communauté européenne · politique étrangère et de sécurité · coopération policière et judiciaire.
+
+Impact transport : fin des planifications purement nationales incompatibles (autoroutes qui « disparaissent », trains inutilisables…). Aujourd'hui : locomotives, wagons et personnel peuvent opérer **au-delà des frontières**.
+
+#### 4.5.2 Convention de Vienne (CVIM)
+
+Convention des Nations unies sur les contrats de vente internationale de marchandises. Signée le 11.4.1988 (10 pays à l'origine) ; aujourd'hui ~**89** pays signataires (> 3/4 du commerce international).
+
+Objectif : règles **uniformes** pour les contrats de vente internationaux, égalité et avantage mutuel, réduction des obstacles juridiques.`;
+
+const DEMO_304_THEORIE_SUMMARY = `## À retenir — Module 304
+
+### Identification
+**Globale** : destinée à nous ? (adresse / documents) avant déchargement  
+**Détaillée** : bonne marchandise ? (fournisseur, docs, douane, articles, quantités)  
+Ouverture : sécurité · non accompagné = inspection extérieure  
+**Plombs douaniers** : ne pas ouvrir sans autorisation  
+Première vision : état visible + attention climat / international
+
+### Documents
+Bon de transport · **CMR** (3 originaux, effet probatoire, responsabilité) · lettre de voiture rail · **bulletin de livraison** (contrôle + conservation 10 ans)  
+Corrections : visibles, signées, pas d'effacement ; oral ≠ preuve
+
+### Sous réserve
+Motif + date + signature · pas un cachet vide  
+Sinon réclamation / remplacement / résiliation possibles
+
+### International
+Maastricht → réseaux transfrontaliers  
+CVIM (Vienne) → règles uniformes vente internationale`;
+
+const DEMO_304_APERCU_FULL = `## Aperçu du module 304
+
+Ce module traite de l'**identification de la livraison** à la réception : globale puis détaillée, documents d'accompagnement, réception sous réserve et cadres internationaux.
+
+### Vous allez découvrir
+1. Identification globale (adresse, ouverture, plombs, première vision)
+2. Identification détaillée (articles, quantités, docs)
+3. Bon de transport, CMR, lettre de voiture, bulletin de livraison
+4. Réception sous réserve
+5. Traité de Maastricht et Convention de Vienne (CVIM)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 303`;
+
+const DEMO_304_APERCU_SUMMARY = `## Aperçu — Module 304
+- Identification globale / détaillée
+- Documents (CMR, bulletin…)
+- Sous réserve · cadres internationaux`;
+
+const DEMO_304_OBJECTIFS_FULL = `## Objectifs du module 304
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Distinguer identification **globale** et **détaillée**
+- Appliquer les règles d'ouverture (sécurité, plombs douaniers)
+- Citer les principaux **documents d'accompagnement** (bon de transport, CMR, lettre de voiture, bulletin)
+- Effectuer correctement une **réception sous réserve**
+- Situer Maastricht et la **CVIM** dans le transport / commerce international`;
+
+const DEMO_304_OBJECTIFS_SUMMARY = `## Objectifs
+- Globale vs détaillée
+- Documents + plombs
+- Sous réserve · CVIM / Maastricht`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -4384,6 +4548,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_303_THEORIE_FULL,
       summary: DEMO_303_THEORIE_SUMMARY,
+    },
+  },
+  "304": {
+    objectifs: {
+      full: DEMO_304_OBJECTIFS_FULL,
+      summary: DEMO_304_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_304_APERCU_FULL,
+      summary: DEMO_304_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_304_THEORIE_FULL,
+      summary: DEMO_304_THEORIE_SUMMARY,
     },
   },
 };
