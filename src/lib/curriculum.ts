@@ -93,7 +93,11 @@ const moduleSeeds: ModuleSeed[] = [
     title: "Contrôle sommaire et traitement des dommages",
     blockId: "block-300",
   },
-  { code: "308", title: "Le contrôle détaillé", blockId: "block-300" },
+  {
+    code: "308",
+    title: "Les contrôles de quantités",
+    blockId: "block-300",
+  },
   { code: "309", title: "Le contrôle de la qualité", blockId: "block-300" },
   {
     code: "310",
@@ -4795,6 +4799,161 @@ const DEMO_307_OBJECTIFS_SUMMARY = `## Objectifs
 - Dégâts & indicateurs
 - Protocole sinistre`;
 
+/** Contenu Module 308 — Contrôles de quantités */
+const DEMO_308_THEORIE_FULL = `## 8. Les contrôles de quantités
+
+Compter, mesurer et peser sont des contrôles centraux dans le transport de marchandises. En Europe : système **décimal**. Autres unités encore utilisées (douzaine, pint, etc.).
+
+**Exemples d'unités :**
+- Baril (USA) : 158,8 l pétrole
+- Gallon USA : 3,79 l · Gallon GB : 4,55 l
+- Douzaine : 12 · Grosse : 144 (12×12)
+- Inch : 2,54 cm
+- Carat : 0,2 g
+- Paire : 2
+- Pint (GB) : 0,568 l
+- Shipping ton (US) : 1,132 m³
+- TB / TJB : taille de navire
+- **TEU** : conteneur 20 pieds
+
+### 8.1 Mesurer
+
+Souvent longueur / largeur / hauteur. Autrefois : pied, pas, coude…  
+**1 pied = 0,3048 m**
+
+1791 : Assemblée nationale française → mesures uniformes ; mètre = 1/10 000 000 de la distance Pôle Nord–Équateur. **Convention du mètre** (1875) : Suisse parmi les 17 signataires ; aujourd'hui 51 membres + 26 associés. Mètre étalon (platine-iridium) à Paris (1799).
+
+### 8.2 Techniques de comptage
+
+Compétences numériques + **quantités partielles** pour éviter de tout compter pièce à pièce.
+
+Ex. : 1536 pièces en cartons de 12 → 128 cartons × 12 (échantillon du contenu carton). Encore plus simple avec 3 niveaux : pièces/carton × cartons/couche × couches.
+
+Ex. simple : 8 pièces/couche × 4 couches = **32**  
+Ex. complexe : 2×12 + 1×27 + 3×(4×21) = **303**
+
+#### 8.2.1 Compteur manuel
+
+Bouton + affichage cumulatif — grandes quantités sur la durée (ex. visiteurs).
+
+#### 8.2.2 Mesure des longueurs (quotidien / travail)
+
+Mètre courant suffit souvent. **Compteur métrique** (fils, câbles…) ; souvent remplacé par **laser**. Roue de mesure + compteur pour câbles/cordes ; confection automatique chez producteurs.
+
+#### 8.2.3 Accessoires de mesure des longueurs (précision)
+
+Mètres pliants/rubans parfois imprécis (plusieurs mm/m). Qualité : classe de précision **DIN 866** (I–III).
+
+- **Pied à coulisse** (calibre) : épaisseur, diamètre, profondeur · ~1/10 mm
+- **Micromètre** (palmer) : 0,01 mm à 1/1000 mm · matériaux fins · fragile
+- **Gabarit / chablon** : Poste (tarifs lettres), contrôle vis, tolérances
+
+#### 8.2.4 Mesure des volumes
+
+Récipient jaugé ; stations-service : compteur mécanique/électronique.
+
+- **Pompe à piston** : aspiration/refoulement ; compteur × volume cylindre
+- **Débitmètre** : débit liquide/gaz ; aussi ultrasons
+- **Scanner volumétrique** : dimensions emballages/palettes → entrée marchandises, emplacements, chargement transport
+
+#### 8.2.5 Mesure du poids
+
+Poids lié à la gravité (Lune ~6× plus faible). Unité de force : **newton (N)** ; langage courant : « poids ».
+
+Deux principes :
+1. **Comparaison des masses** (avec poids connu)
+2. **Dynamomètre** (mesure directe de la force)
+
+**Balances de comparaison**
+- **Bras égaux** : levier ; poids normalisés jusqu'à équilibre
+- **Romaine** : bras inégaux ; contrepoids mobile + échelle
+
+**Dynamomètre / balances à ressort**
+- Force contre ressort ; sensible à la gravité locale → calibrer sur lieu d'usage ; ressort s'use → poids trop élevés
+- Dynamomètres de traction (grues) : marchandises suspendues, jusqu'à plusieurs tonnes
+
+#### 8.2.6 Balances professionnelles
+
+| Type | Usage |
+| --- | --- |
+| **Balance de table** | Petites marchandises · bureau, petites pièces, sortie |
+| **Balance compteuse** | Poids de référence (ex. 10 pces) → calcule le nombre total · inventaires (vis, clous…) |
+| **Plate-forme de pesage** | Charges importantes · sol ou rampe · **ne pas rester** sur la balance ; retirer le véhicule après dépôt (sans tarage préalable du véhicule) |
+| **Pèse-palettes** | Adapté palettes · moyen de transport non pesé · aussi intégré convoyeurs |
+| **Manutention + pesage** | Transpalette/chariot avec écran · systèmes embarqués camions |
+| **Pont-bascule** | Camions/wagons · poids total − tare véhicule = charge · douanes, gares, transbordement… |
+
+### 8.3 Utilisation des balances
+
+Règles :
+- Instruments de précision : propres, entretien par spécialistes ; ne pas toucher au mécanisme
+- Respecter charge **max** (et parfois min) ; ponts-bascules : pas toujours adaptés aux chariots
+- Mode d'emploi ; balances électroniques : **préchauffage** ; souvent laisser allumées la journée
+
+#### 8.3.1 Tarer et calibrer
+
+- **Tarer** : mettre à zéro avec emballage vide → peser sans compter la **tare** (poids emballage)
+- **Calibrer** : remettre à zéro avant usage (sol, déséquilibre, nouveau lieu / gravité). Sans conséquence financière → possible sans officier
+
+#### 8.3.2 Obligation de vérification
+
+**Cst. art. 125** : métrologie = Confédération → **loi fédérale sur la métrologie**. Contrôles périodiques par **vérificateur** ; marque d'identification. Non vérifié → mention « non vérifié officiellement ».
+
+Plombs de contrôle : ne pas endommager ; manquants/endommagés → signaler + **mettre hors service**.
+
+**Soumis à vérification (ex.) :** douanes · pompes à essence vente. Tolérance type : > 2 l → écart max **0,5 %**.
+
+**Non soumis (ex.) :** ravitaillement interne entreprise · mélanges process · remplissage emballages finaux.`;
+
+const DEMO_308_THEORIE_SUMMARY = `## À retenir — Module 308
+
+### Unités
+Décimal + baril, gallon, douzaine, inch, pint, TEU…
+
+### Compter / mesurer
+Quantités partielles (couches × cartons × pièces)  
+Compteur manuel · mètre / laser · DIN 866 · pied à coulisse · micromètre · gabarit  
+Volumes : pompe piston, débitmètre, scanner volumétrique
+
+### Peser
+Comparaison de masses vs dynamomètre  
+Table · compteuse · plate-forme · pèse-palettes · embarqué · pont-bascule  
+**Tarer** = soustraire emballage · **Calibrer** = remettre à zéro  
+Vérification fédérale + plombs · tolérances`;
+
+const DEMO_308_APERCU_FULL = `## Aperçu du module 308
+
+Ce module traite des **contrôles de quantités** : compter, mesurer et peser — unités, techniques et instruments utilisés en logistique.
+
+### Vous allez découvrir
+1. Unités décimales et étrangères (TEU, gallon…)
+2. Techniques de comptage par quantités partielles
+3. Mesure longueurs / volumes (pied à coulisse, micromètre, débitmètre…)
+4. Types de balances professionnelles
+5. Tarage, calibrage et obligation de vérification (métrologie CH)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 307`;
+
+const DEMO_308_APERCU_SUMMARY = `## Aperçu — Module 308
+- Compter / mesurer / peser
+- Instruments & balances
+- Tarer · calibrer · vérification`;
+
+const DEMO_308_OBJECTIFS_FULL = `## Objectifs du module 308
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Utiliser des **unités** courantes et des techniques de comptage par quantités partielles
+- Choisir des outils de **mesure** (longueurs, volumes) adaptés
+- Distinguer les principaux types de **balances** et leur usage
+- Expliquer **tarage**, **calibrage** et l'**obligation de vérification** en Suisse`;
+
+const DEMO_308_OBJECTIFS_SUMMARY = `## Objectifs
+- Unités & comptage
+- Mesure & balances
+- Tarer / calibrer / vérification`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -5171,6 +5330,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_307_THEORIE_FULL,
       summary: DEMO_307_THEORIE_SUMMARY,
+    },
+  },
+  "308": {
+    objectifs: {
+      full: DEMO_308_OBJECTIFS_FULL,
+      summary: DEMO_308_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_308_APERCU_FULL,
+      summary: DEMO_308_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_308_THEORIE_FULL,
+      summary: DEMO_308_THEORIE_SUMMARY,
     },
   },
 };
