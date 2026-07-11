@@ -106,7 +106,7 @@ const moduleSeeds: ModuleSeed[] = [
   },
   {
     code: "311",
-    title: "Concepts d'approvisionnement",
+    title: "Les concepts de l'approvisionnement",
     blockId: "block-300",
   },
   { code: "312", title: "Données de stockage", blockId: "block-300" },
@@ -5257,6 +5257,213 @@ const DEMO_310_OBJECTIFS_SUMMARY = `## Objectifs
 - Fiche de stock
 - Disponible vs total`;
 
+/** Contenu Module 311 — Concepts d'approvisionnement */
+const DEMO_311_THEORIE_FULL = `## 11. Les concepts de l'approvisionnement
+
+### 11.1 Approvisionnement (*Procurement / Purchasing*)
+
+Service qui s'occupe de l'approvisionnement de l'entreprise : matériel de production, services (conseil, formation…), marchandises destinées à la revente.
+
+Tendance : on produit moins soi-même, on **achète plus** → importance croissante. Achats autrefois locaux/régionaux → aujourd'hui **mondiaux**. Tous les flux de marchandises sont déclenchés par l'approvisionnement et mis en œuvre par la **logistique**.
+
+### 11.2 Formes d'approvisionnement
+
+Le marché exige un **délai de réapprovisionnement** acceptable. Le **délai d'approvisionnement** (commande → dispo stock) doit être **≤** ce délai accepté. Sinon → gérer l'article **en stock** pour livrer immédiatement.
+
+**Composition du délai d'approvisionnement :**
+1. Détermination et communication des besoins
+2. Offres, négociations, choix fournisseurs
+3. Déroulement de la commande
+4. Attente confirmation
+5. Délai de livraison
+6. Délai de transport
+7. Entrée marchandises (contrôles qté/qualité)
+8. Transport vers entrepôt / lieu de consommation
+
+Si le fournisseur ne tient pas le délai accepté → risque de **perdre le client**.
+
+| Forme | Principe | Avantages | Inconvénients |
+| --- | --- | --- | --- |
+| **Approvisionnement (stock)** | Acheter plus que le besoin immédiat · réserve en entrepôt | Autonomie marché/fournisseurs · capacité de livraison | Capital immobilisé · risque de stocks morts |
+| **Juste-à-temps (JIT)** | Acheter seulement quand besoin, quantité exacte | Peu d'immobilisation · collaboration fournisseurs | Stocks « sur la route » · pollution · dépendance ponctualité/qualité |
+| **Synchronisé fabrication** | Variante JIT : livraison exacte à la date de prod. (ex. auto) | Stocks très bas · partenaire intégré | Dépendance forte |
+
+Souvent **mix** des trois selon articles / concept.
+
+### 11.3 Concepts de sourcing
+
+Formes mixtes fréquentes.
+
+| Concept | Idée |
+| --- | --- |
+| **Global sourcing** | Achats internationaux · coûts · logistique mondiale |
+| **Local sourcing** | Région/pays · biens critiques · moins de retards transport · prix parfois ↑ |
+| **Single sourcing** | Un seul fournisseur · partenariat long terme · optimisation processus · volume/rabais |
+| **Double sourcing** | Deux fournisseurs concurrents · moins de dépendance · volumes parfois trop faibles pour rabais |
+| **Multiple sourcing** | Plusieurs fournisseurs · prix court terme · interchangeabilité · biens standardisés (ex. max 33 % chez un fournisseur) |
+| **Modular / system sourcing** | Modules/sous-ensembles prêts · montage final · hors compétences clés · dépendance fournisseurs |
+
+### 11.4 Stock et délai d'approvisionnement
+
+Pas de gros stocks si article toujours dispo chez fournisseurs régionaux. Stocks bas si courte distance + réappro permanent. Distance ↑ ou dispo irrégulière → stocks ↑.
+
+> Le stock couvre les besoins (clients/production) **en attendant** la prochaine livraison.
+
+**Ex. bananes :** récolte verte → carton → bateau ~2 semaines en CA (atmosphère contrôlée) → mûrisserie → rayon.
+
+**Dilemme :** stock élevé = coûts (capital) · stock bas = risque de mauvaise disponibilité.
+
+### 11.5 Procédures de commande (variation liée à la consommation)
+
+À chaque article : une **procédure de commande**.
+
+| Procédure | Déclencheur | Quantité | Remarques |
+| --- | --- | --- | --- |
+| **Point de commande · qté fixe** | Stock ≤ point de commande | Toujours **q** fixe | Simple · forte rotation · contrats long terme · risque surstock si demande ↓ |
+| **Point de commande · qté variable** | Stock ≤ point de commande | Remonter au **max** | Suit les ventes · espace max stable · calcul à chaque fois |
+| **Rythme · date fixe · qté variable** | Moment **t** fixe | Jusqu'au max | Pas de cote d'alerte · livraisons régulières contractuelles · risque dépassement max si ventes ↓ |
+| **Rythme · date fixe · qté fixe** | Moment **t** fixe | **q** fixe | Ventes stables · automatisable si bons paramètres |
+
+Point de commande à qté fixe = **orienté consommation** (cadence suit l'usage).
+
+### 11.6 Quantité de commande optimale (Qopt)
+
+**Harris** (1913) / **Andler** (1929) · angl. **EOQ** (*Economic Order Quantity*).
+
+Deux courbes :
+- **Coûts de stockage** ↑ avec la quantité
+- **Coûts de passation de commande** / pièce ↓ avec la quantité
+
+Qopt = intersection / point bas des coûts totaux.
+
+Coûts de commande (internes) : offres, commande, réception, AQ, factures… souvent estimés **100–200 CHF**/commande (ou plus). Ex. : 150 CHF / 1 pce = 150 · / 4 pces = 37.50…
+
+#### 11.6.1 Formule d'Andler — conditions
+
+Besoins connus et constants · entrée/consommation uniformes · prix et coûts de commande constants · coûts de stockage connus et constants.
+
+| Symbole | Sens |
+| --- | --- |
+| Q / Qopt | Quantité (optimale) de commande |
+| m ou M | Besoin annuel |
+| a ou B | Coût de passation de commande |
+| p ou P | Prix d'achat unitaire |
+| q ou L | Coût de stockage (% valeur) |
+
+Formule usuelle (Andler / EOQ) :
+
+**Qopt = √( 2 × M × B  /  (P × L) )**
+
+(avec L en décimal, ex. 28 % → 0,28)
+
+#### 11.6.2 Exemple
+
+M = 30'000 · P = 4.50 · B = 1'250 · L = 28 %  
+→ Qopt ≈ **7'715** pièces (~8'000 dans un tableau) · ~**4** commandes/an.
+
+### 11.7 Analyse ABC / XYZ
+
+#### 11.7.1 Pareto (80/20)
+
+Vilfredo Pareto (1906) : ~20 % de la pop. → ~80 % de la fortune. Généralisé : 20 % d'effort → 80 % de résultat ; 20 % clients → 80 % CA. En stockage → **analyse ABC**.
+
+| Classe | Part quantité (ex.) | Part valeur/rotation (ex.) | Action typique |
+| --- | --- | --- | --- |
+| **A** | 20 % | 75 % | Près de la sortie/prod · priorité achats |
+| **B** | 30 % | 20 % | Zone centrale · 2e priorité |
+| **C** | 50 % | 5 % | Zone arrière · 3e priorité |
+
+Critères : **rotation** et/ou **valeur**.
+
+#### 11.7.2 ABC selon valeur de commande
+
+Classer articles par valeur cumulée. Ex. : 4 articles = 20 % qté et ~80 % valeur → effort particulier (négociations prix).
+
+#### 11.7.3 Optimisation des emplacements
+
+Stockage chaotique → trajets longs. Après ABC : articles **A** près de la production → trajets ↓.
+
+#### 11.7.4 Analyse XYZ (prévisibilité)
+
+| Classe | Consommation | Prévision |
+| --- | --- | --- |
+| **X** | Très régulière | Grande précision |
+| **Y** | Tendance régulière ↑/↓ | Moyenne |
+| **Z** | Très irrégulière | Faible |
+
+Liens formes d'appro : stock · au cas par cas · JIT.
+
+#### 11.7.5 Fusion ABC × XYZ
+
+XA/XB/XC = plus faciles à planifier · ZA/ZB/ZC = plus difficiles.
+
+**Contrats sur appel / cadres** (souvent YA, ZA) : quantité annuelle garantie · fournisseur tient stock · acheteur commande le besoin net (→ module 110) · délai court · stocks bas · bons prix.
+
+### 11.8 Conséquences sur la réception des marchandises
+
+Réception = entre livraison et stockage (modules 304, 308, 309) : déchargement, contrôles, AQ, stockage ou signalement achats.
+
+**Effet du mode d'acquisition :** passer un article XB d'Andler/lots à **JIT** → plus de livraisons → **surcharge** réception (peut annuler le gain stock).
+
+**Solution (ex.) :** fournisseur ISO 9001 inclut les points de contrôle client dans son contrôle sortie + certificat → réception réduite à réception/stockage/enregistrement. Applicable **au cas par cas** selon directives internes.`;
+
+const DEMO_311_THEORIE_SUMMARY = `## À retenir — Module 311
+
+### Approvisionnement
+Achat mondial croissant · délai appro ≤ délai marché accepté sinon stock
+
+### Formes
+Stock · JIT · sync. fabrication (mix fréquent)
+
+### Sourcing
+Global / local · single / double / multiple · modular-system
+
+### Commande
+Point commande q fixe/variable · rythme date fixe q fixe/variable  
+**Andler/EOQ** : Qopt = √(2MB / PL) · conditions restrictives
+
+### ABC-XYZ
+Pareto 80/20 · A près sortie · XYZ = prévisibilité  
+XA–XC faciles · ZA–ZC difficiles · contrats cadres/appel
+
+### Réception
+JIT ↑ fréquences → charge réception · certificat fournisseur ISO possible`;
+
+const DEMO_311_APERCU_FULL = `## Aperçu du module 311
+
+Ce module clôture le bloc **approvisionnement** : formes d'appro, concepts de sourcing, procédures de commande, formule d'Andler, analyses ABC/XYZ et impact sur la réception.
+
+### Vous allez découvrir
+1. Délai d'approvisionnement vs délai accepté par le marché
+2. Stock, JIT, sync. fabrication
+3. Global/local, single/double/multiple, modular sourcing
+4. Quatre procédures de commande + Qopt (Andler)
+5. ABC, XYZ, contrats cadres et effets sur la réception
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Fin du bloc 300`;
+
+const DEMO_311_APERCU_SUMMARY = `## Aperçu — Module 311
+- Formes d'appro & sourcing
+- Procédures de commande + Andler
+- ABC/XYZ · impact réception`;
+
+const DEMO_311_OBJECTIFS_FULL = `## Objectifs du module 311
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Relier **délai d'approvisionnement** et besoin de stock
+- Comparer stock, **JIT** et sync. fabrication ainsi que les concepts de **sourcing**
+- Choisir une **procédure de commande** adaptée
+- Calculer une **Qopt** (Andler) dans les conditions du modèle
+- Utiliser les analyses **ABC** et **XYZ** et en déduire des formes d'appro / emplacements
+- Expliquer l'impact du mode d'acquisition sur la **réception**`;
+
+const DEMO_311_OBJECTIFS_SUMMARY = `## Objectifs
+- Formes & sourcing
+- Commande + Andler
+- ABC/XYZ · réception`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -5675,6 +5882,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_310_THEORIE_FULL,
       summary: DEMO_310_THEORIE_SUMMARY,
+    },
+  },
+  "311": {
+    objectifs: {
+      full: DEMO_311_OBJECTIFS_FULL,
+      summary: DEMO_311_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_311_APERCU_FULL,
+      summary: DEMO_311_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_311_THEORIE_FULL,
+      summary: DEMO_311_THEORIE_SUMMARY,
     },
   },
 };
