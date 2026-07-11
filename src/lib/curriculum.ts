@@ -2461,6 +2461,141 @@ const DEMO_203_OBJECTIFS_SUMMARY = `## Objectifs
 - Leadership / conflits / stress
 - EPI et ergonomie`;
 
+/** Contenu Module 204 — Le marché */
+const DEMO_204_THEORIE_FULL = `## 4. Le marché
+
+Au néolithique, l'homme commence à récolter et stocker des céréales, puis à les cultiver. Certains se spécialisent (poterie, outils, taille de pierre) et échangent le surplus contre de la nourriture.
+
+À la fin de l'âge du bronze, on échange des marchandises contre d'autres — il faut savoir négocier. Ainsi naissent les **marchés**, où marchand et acheteur se rencontrent (marchandises contre marchandises ou contre argent). Aujourd'hui encore : marché aux légumes, aux poissons, de Noël…
+
+Pour qu'un marché se crée, il faut un **besoin** : envie ou souhait de remédier à un manque ressenti ou réel. L'élimination du manque = **satisfaction du besoin**. Les besoins varient selon l'âge, le pays, la profession, le lieu, l'époque… Exemple EnterSite : besoin de disques durs de stockage externes (**NAS**) → modèle d'entreprise.
+
+### 4.1 L'étude de marché
+
+Autrefois, l'expérience suffisait (marché gérable). Le marché grandissant, les entreprises doivent l'étudier avec des méthodes de marketing pour réduire les incertitudes et décider correctement.
+
+#### 4.1.1 Pourquoi est-elle devenue nécessaire ?
+- Plus d'entreprises → concurrence / lutte d'exclusion
+- Marchés saturés ou biens de substitution → innovation
+- Mondialisation → nouveaux marchés
+- Renchérissement des matières premières
+- etc.
+
+Questions typiques : proposons-nous quelque chose de nouveau ? Améliorer le CA ? Nouveau groupe de clients ?
+
+**Remarque :** tout changement sur le marché nécessite au préalable une étude de marché approfondie.
+
+#### 4.1.2 Quels résultats ?
+Recueillir des infos pour décider : opportunités / menaces, agir à temps.
+- Situation actuelle (concurrents, influenceurs…)
+- Nouvelles tendances et besoins
+- Minimiser les risques de mauvaises décisions
+
+#### 4.1.3 Étude vs analyse
+
+Une forme plus simple / moins coûteuse : **étude de marché** — observer (Internet, presse) ou interviewer clients/fournisseurs ; **pas** une collecte systématique.
+
+Les **prévisions de marché** s'appuient sur ces données pour orienter la politique commerciale.
+
+**Remarque (définitions du cours) :**
+- **Analyse / étude systématique** : analyse scientifique et situationnelle du marché comme base de la planification marketing
+- **Étude occasionnelle** : collecte non systématique, parfois interne à l'entreprise
+
+**Exemple EnterSite :** baisse des ventes d'armoires serveur → enquête clients (téléphone + Key Account Managers) → cause = qualité insuffisante → chefs produits améliorent la conception (avec rentabilité).
+
+### 4.2 Types et formes de marché
+
+#### 4.2.1 Types de marché
+
+**Par objet / service :**
+- Biens de consommation (livres, food, vêtements, électronique…)
+- Travail
+- Services (juridique, soins, divertissement…)
+- Monétaire (crédits court terme)
+- Immobilier
+- Autres (matières premières, art…)
+
+**Par fonction :** marché d'**approvisionnement** · marché de **vente**
+
+**Par type d'accès :**
+- **Ouverts** — aucune restriction ; concurrence (ex. caisses maladie)
+- **Fermés** — accès limité (capital min., qualifications…) ; service public / infrastructures (Poste, CFF…)
+- **Limités** — conditions restreintes (ex. taxis / concessions). Outils : licences, concessions, brevets, preuve de capacité / de capital
+
+#### 4.2.2 Formes de marché (offre / demande)
+
+- **Monopole** — un seul offreur (gazoducs, eau, réseau de transport…)
+- **Oligopole** — peu d'offreurs (pétrole, électricité, mobile…)
+- **Polypole** — beaucoup d'offreurs et demandeurs ; concurrence libre (marché hebdo, logement…)
+- **Monopsone** — beaucoup d'offreurs, un seul demandeur (ex. souvent illustré côté marché du travail selon le cours)
+
+Matrice simplifiée : un / peu / beaucoup × offreur / demandeur → monopole, oligopole, polypole, monopsone, formes bilatérales / limitées…
+
+### 4.3 Taille d'un marché
+
+Influence le marketing. Mesurée notamment par l'étendue géographique ou le nombre de clients potentiels.
+
+#### 4.3.1 Taille géographique
+1. **Local** — magasin de village
+2. **Régional** — marché hebdomadaire
+3. **National** — téléphonie mobile CH
+4. **International** — UE
+5. **Global** — marché financier`;
+
+const DEMO_204_THEORIE_SUMMARY = `## À retenir — Module 204
+
+### Marché
+Lieu / mécanisme d'échange (biens ↔ biens ou ↔ argent)  
+Naît d'un **besoin** → satisfaction du manque
+
+### Étude de marché
+Nécessaire (concurrence, saturation, mondialisation…)  
+But : infos → décisions, opportunités/menaces  
+Étude simple (observation/entretiens) ≠ analyse systématique scientifique  
+Prévisions → politique commerciale
+
+### Types
+Par objet · Approvisionnement/Vente · Ouvert / Fermé / Limité
+
+### Formes
+**Monopole** (1 offreur) · **Oligopole** (peu) · **Polypole** (beaucoup) · **Monopsone** (1 demandeur)
+
+### Taille géo
+Local → Régional → National → International → Global`;
+
+const DEMO_204_APERCU_FULL = `## Aperçu du module 204
+
+Ce module présente le **marché** : origines, besoins, étude de marché, types, formes et tailles.
+
+### Vous allez découvrir
+1. Besoin et naissance d'un marché
+2. Pourquoi et comment étudier le marché
+3. Types (objet, fonction, accès) et formes (monopole, oligopole…)
+4. Tailles géographiques
+
+### Source
+EnterSite — Logistics by ASFL / SVBL`;
+
+const DEMO_204_APERCU_SUMMARY = `## Aperçu — Module 204
+- Besoin / marché
+- Étude de marché
+- Types, formes, tailles`;
+
+const DEMO_204_OBJECTIFS_FULL = `## Objectifs du module 204
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Relier **besoin**, marché et satisfaction
+- Expliquer le rôle de l'**étude de marché** et citer des résultats attendus
+- Classer un marché par objet, fonction et type d'accès
+- Distinguer monopole, oligopole, polypole, monopsone
+- Situer un marché selon sa **taille géographique**`;
+
+const DEMO_204_OBJECTIFS_SUMMARY = `## Objectifs
+- Besoin → marché
+- Étude de marché
+- Types / formes / tailles`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -2655,6 +2790,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_203_THEORIE_FULL,
       summary: DEMO_203_THEORIE_SUMMARY,
+    },
+  },
+  "204": {
+    objectifs: {
+      full: DEMO_204_OBJECTIFS_FULL,
+      summary: DEMO_204_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_204_APERCU_FULL,
+      summary: DEMO_204_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_204_THEORIE_FULL,
+      summary: DEMO_204_THEORIE_SUMMARY,
     },
   },
 };
