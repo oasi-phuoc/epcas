@@ -10304,6 +10304,149 @@ const DEMO_705_OBJECTIFS_SUMMARY = `## Objectifs
 - Composants · amortissement
 - Niveaux · taux stockage / possession`;
 
+/** Contenu Module 801 — L'identification des marchandises */
+const DEMO_801_THEORIE_FULL = `## 1. Identification des marchandises
+
+Chez les grands distributeurs, chaque article porte un **GTIN** (Global Trade Item Number). À la caisse, un **scanner laser** lit les barres / espaces clairs et récupère désignation + prix depuis l'ordinateur central. Un numéro seul ne suffit pas : il faut l'accès à la liste du système.
+
+**Avantages :** plus de saisie manuelle · ticket détaillé · changements de prix (promos) en rayon seulement, pas sur chaque article.
+
+### 1.1 SSCC (Serial Shipping Container Code)
+
+Série de numéros pour **étiqueter les palettes** · jusqu'à **128** caractères · alphanumérique (chiffres + lettres). Données aussi imprimées en clair sur l'étiquette. Permet le **Track & Trace** tout au long du trajet — à condition de lire à **chaque interface**. En Allemagne : **NVE** (numéro d'unité d'expédition).
+
+### 1.2 GTIN-8, GTIN-13, ISBN
+
+#### 1.2.1 Global Trade Item Number (GTIN)
+Code-barres **1-D** sur les produits en magasin · identification à la caisse + prix depuis la BDD. Chaque numéro est **unique au monde** (sinon confusion à la caisse).
+
+| Bureau | Rôle |
+| --- | --- |
+| **GS1 Suisse** | Enregistrement GTIN (Suisse) |
+| **Agence ISBN Suisse** | Livres (ISBN) |
+
+👉 **GTIN-13** = standard le plus répandu en Europe (13 positions). **UPC** (USA, 12 chiffres) : on ajoute un **0** devant → GTIN-13 compatible.
+
+### 1.3 Structure GTIN-13, GTIN-8, ISBN
+
+Les premiers chiffres = **pays** ou **groupe de produits** · le **dernier** = chiffre de contrôle.
+
+| Préfixe | Signification |
+| --- | --- |
+| 400–440 | Allemagne |
+| **76** | Suisse et Liechtenstein |
+| 90–91 | Autriche |
+| 00–13 | États-Unis |
+| 977 | Périodiques (monde) |
+| 978–979 | Livres (monde) |
+
+#### 1.3.1 ISBN vs GTIN-13
+**ISBN** = International Standard Book Number. Ancien **ISBN-10** → intégré au GTIN-13 en **2007** via préfixe **978** (ou **979**).
+
+**Ex.** 978-3-7657-1111-4 → GTIN-13 sans tirets : **9783765711114**
+
+| Segment | Sens |
+| --- | --- |
+| 978 | Livre |
+| 3 | Pays / langue |
+| 7657 | Maison d'édition |
+| 1111 | N° éditeur |
+| 4 | Contrôle |
+
+### 1.4 GTIN-128 (GS1-128)
+
+Code-barres de **transport** pour unités de commande / livraison / transport · scan EM/SM · assurance qualité. Sur palettes, cartons, emballages standard, présentoirs… Souvent + **SSCC** pour Track & Trace mondial. Utilisé aussi où la **sécurité** compte (santé, chimie, alimentation).
+
+**Tracking** = où est la marchandise maintenant · **Tracing** = traçabilité du parcours.
+
+### 1.5 Code QR (Quick Response)
+
+Développé en **1994** par **Denso Wave** (Japon) pour la logistique automobile Toyota. Matrice **2D** de points · 3 repères d'orientation · correction d'erreurs jusqu'à **~30 %** de perte. Lecture via smartphone (« mobile tagging »). Usages : expositions, musées, sentiers, monuments…
+
+#### 1.5.1 Stockage
+Étiquette article avec **DLC** + **n° de lot** · souvent + GTIN-128. En entreprise certifiée : rattacher un produit à son lot même après vente → **rappel ciblé** (seuls les lots concernés).
+
+### 1.6 Code Data Matrix
+
+Code **2D** très répandu · inscriptions permanentes (laser, estampage aiguille…) · chimie / médecine · tickets / adressage postal. Norme **ISO/IEC 16022**. Capacité jusqu'à **~3 116** chiffres ou **~2 335** caractères ASCII. Angle droit de lignes continues = position. Correction d'erreurs → souvent plus sûr / compact que le 1-D.
+
+#### 1.6.1 Distribution
+Adresse magazine via Data Matrix · lecture par **caméra** (2D, sans mouvement optique). QR : jusqu'à ~**4 000** caractères (magazines) · Data Matrix plus **petit** → industrie. Aussi : affranchissement envois en nombre · retour courrier indistribuable (Poste).
+
+### 1.7 Placement des codes
+
+#### Palettes
+Étiquettes sur **≥ 2 côtés**, au-dessus du coin. Symbole le plus bas à **45 cm** du sol (± **5 cm**). Distance bord extérieur ≥ **5 cm**.
+
+#### Cartons
+Marquage sur **≥ 2 côtés**, en bas à droite. Distances : **34 mm** à droite (+0 / −23 mm) · **32 mm** vers le bas. Étiquette de recouvrement possible.
+
+#### Longs / cylindriques
+Diamètre ≥ **20 mm** ou arête ≥ **30 mm** → étiquette autocollante · sinon **étiquette volante**. Marquage radial : longueur du symbole ≤ **1/6** de la circonférence.
+
+### 1.8 RFID (Radio Frequency Identification)
+
+Identification / localisation **automatique** sans contact visuel obligatoire. Objectifs logistique : ↓ ruptures · ↑ contrôle erreurs · ↓ coûts personnel. Commerce : suivi palettes / cartons sur toute la chaîne.
+
+#### 1.8.1 Composants
+| Élément | Rôle |
+| --- | --- |
+| **Transpondeur / tag** (puce + antenne) | Fixé sur/dans l'objet (souvent adhésif) |
+| **Lecteur / encodeur** | Lit ou modifie les données · passif ou actif · cm → > 1 km selon fréquence / puissance / environnement |
+
+#### 1.8.2 Applications
+Antivol magasins · accès bâtiments / remontées · EM / transport / stockage · blanchisseries · bibliothèques · animaux · vision : caisse supermarché / passeports / implants médicaux (débat vie privée).
+
+**Ex.** Hôpital (Caroline du Nord) : puce bébé → alarme « Code Pink » aux sorties → enlèvement évité.  
+**Ex.** Chronométrage sport (marathon, Ironman) : puce chaussure / vélo · temps live.`;
+
+const DEMO_801_THEORIE_SUMMARY = `## À retenir — Module 801
+
+### Codes 1-D
+GTIN-13 (EU) · GTIN-8 · UPC→+0 · ISBN→978/979  
+SSCC (palettes) · GS1-128 (transport + Track & Trace)  
+Préfixe 76 = CH/LI · dernier chiffre = contrôle
+
+### Codes 2-D
+QR (jusqu'à ~30 % erreur · lots / DLC)  
+Data Matrix (ISO · compact · industrie / Poste)
+
+### Placement & RFID
+Palettes ≥2 côtés · 45 cm du sol  
+RFID = tag + lecteur · sans contact · antivol, accès, chronométrage…`;
+
+const DEMO_801_APERCU_FULL = `## Aperçu du module 801
+
+Ce module présente les principaux systèmes d'**identification des marchandises** : codes-barres 1-D, codes 2-D, règles de placement et RFID.
+
+### Vous allez découvrir
+1. GTIN, SSCC et GS1-128 (caisse, palettes, transport)
+2. Structure ISBN / GTIN-13 et préfixes pays
+3. Codes QR et Data Matrix (stockage, distribution)
+4. Placement des étiquettes et principes RFID
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT`;
+
+const DEMO_801_APERCU_SUMMARY = `## Aperçu — Module 801
+- GTIN · SSCC · GS1-128
+- QR · Data Matrix
+- Placement · RFID`;
+
+const DEMO_801_OBJECTIFS_FULL = `## Objectifs du module 801
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer le rôle du **GTIN** à la caisse et la différence GTIN-8 / GTIN-13 / ISBN / UPC
+- Décrire **SSCC** et **GS1-128** pour le suivi des unités de transport
+- Comparer **QR** et **Data Matrix** et citer des usages logistiques
+- Appliquer les règles de **placement** des codes et expliquer le principe **RFID** (tag + lecteur)`;
+
+const DEMO_801_OBJECTIFS_SUMMARY = `## Objectifs
+- GTIN · SSCC · GS1-128
+- QR · Data Matrix
+- Placement · RFID`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -11254,6 +11397,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_705_THEORIE_FULL,
       summary: DEMO_705_THEORIE_SUMMARY,
+    },
+  },
+  "801": {
+    objectifs: {
+      full: DEMO_801_OBJECTIFS_FULL,
+      summary: DEMO_801_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_801_APERCU_FULL,
+      summary: DEMO_801_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_801_THEORIE_FULL,
+      summary: DEMO_801_THEORIE_SUMMARY,
     },
   },
 };
