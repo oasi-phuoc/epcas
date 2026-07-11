@@ -10835,6 +10835,137 @@ const DEMO_804_OBJECTIFS_SUMMARY = `## Objectifs
 - Veille / panne
 - Licences · copyright`;
 
+/** Contenu Module 805 — Word Microsoft 365 */
+const DEMO_805_THEORIE_FULL = `## 5. Word Microsoft 365
+
+Le traitement de texte est central en pro et en privé (lettres simples → documentations illustrées) · compétence de base dans presque toutes les professions.
+
+### 5.1 L'écran de travail
+
+Interface Word : ruban (onglets Accueil, Insertion, Références…), zone de texte, règle, barre d'état.
+
+### 5.2 Écrire un texte
+
+#### 5.2.1 Texte courant
+- Activer **Afficher tout** (**Ctrl+Shift+8** / bouton ¶) pour voir les caractères non imprimables
+- Saisir « au kilomètre » : Word gère les retours de ligne · **Enter** = nouveau **paragraphe** · **Shift+Enter** = saut de ligne dans le même paragraphe · **Shift** = majuscule
+- **Delete** = caractère suivant · **Retour arrière** = précédent · double-clic + Delete = mot · triple-clic = paragraphe
+- **Modifier la casse** (onglet Accueil) · flèches **Annuler / Rétablir**
+- Saut de page : **Ctrl+Enter**
+
+#### 5.2.2 Date et heure système
+Insertion → Date et heure → choisir format / langue · option **Mettre à jour automatiquement** si besoin → OK.
+
+#### 5.2.3 Symboles
+Insertion → **Symbole** (ou Autres symboles). Polices utiles : Texte normal · Symbol (grec / maths) · Webdings / Wingdings (graphiques).
+
+### 5.3 Paragraphe
+
+Curseur n'importe où dans le paragraphe · groupe **Paragraphe** (Accueil) : alignement · interligne · espacement · retraits.
+
+### 5.4 Tabulateurs
+
+Taquet + touche **Tab** pour aligner précisément.
+
+| Type | Effet |
+| --- | --- |
+| Gauche | Alignement à gauche |
+| Centré | Centré sur le taquet |
+| Droite | Alignement à droite |
+| Décimal | Alignement sur la virgule |
+
+Clics sur le bouton à gauche de la **règle** pour choisir le type · clic sur la règle pour poser · ou boîte **Tabulation** (groupe Paragraphe).
+
+### 5.5 Bordure et trame
+
+Sélectionner le(s) paragraphe(s) **avec** la marque ¶ · Accueil → Bordure et trame : Encadrement / Ombre · Style, Couleur, Largeur · **trame** = fond coloré.
+
+### 5.6 Puces et numérotation
+
+Accueil → Puces ou Numérotation · **Aucune** dans la bibliothèque pour supprimer.
+
+#### 5.6.1 Liste à plusieurs niveaux
+Accueil → Liste à plusieurs niveaux · changer de niveau avec **Augmenter / Diminuer le retrait** (curseur entre n° et texte). Pour une future table des matières : styles **Titre 1, Titre 2…**
+
+### 5.7 Styles de présentation
+
+Formats de caractères / paragraphes **mémorisés** · réutilisables. Accueil → galerie **Styles**. Styles **Titre** indispensables pour la table des matières.
+
+### 5.8 Table des matières
+
+1. Appliquer Titre 1, Titre 2… aux titres
+2. Positionner le curseur
+3. **Références** → Table des matières → modèle prédéfini
+
+#### 5.8.1 Mise à jour
+Clic dans la table → bouton **Mettre à jour la table** (après modifications du texte).
+
+### 5.9 En-tête et pied de page
+
+Textes dans les marges haut / bas · souvent sur **toutes** les pages.
+
+#### 5.9.1 Prédéfini
+Insertion → En-tête / Pied de page → modèle → compléter si besoin.
+
+#### 5.9.2 Première page différente
+Modifier l'en-tête/pied → cocher **Première page différente** (masque E/P sur la page 1).
+
+#### 5.9.3 Fermer
+Bouton Fermer ou double-clic hors de la zone E/P.
+
+### 5.10 Numéroter les pages
+
+Insertion → Numéro de page → Haut / Bas de page · styles prédéfinis.
+
+### 5.11 Imprimer
+
+**Fichier → Imprimer** : aperçu à droite · choisir imprimante et paramètres · quitter via la flèche haut gauche.`;
+
+const DEMO_805_THEORIE_SUMMARY = `## À retenir — Module 805
+
+### Saisie
+Afficher tout · Enter vs Shift+Enter · Ctrl+Enter page  
+Date/heure · Symboles · Annuler/Rétablir
+
+### Mise en forme
+Paragraphe · tabulateurs · bordures/trames · puces / listes  
+Styles Titre → table des matières (Références)
+
+### Pages
+En-tête / pied · 1re page différente · n° de page · Imprimer`;
+
+const DEMO_805_APERCU_FULL = `## Aperçu du module 805
+
+Ce module couvre les bases de **Word Microsoft 365** : saisie, mise en forme, styles, table des matières et impression.
+
+### Vous allez découvrir
+1. Saisie de texte, date/heure et symboles
+2. Paragraphes, tabulateurs, bordures, listes
+3. Styles, table des matières, en-têtes / pieds et numérotation
+4. Aperçu avant impression
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT`;
+
+const DEMO_805_APERCU_SUMMARY = `## Aperçu — Module 805
+- Saisie · paragraphes · listes
+- Styles · table des matières
+- En-têtes · impression`;
+
+const DEMO_805_OBJECTIFS_FULL = `## Objectifs du module 805
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Saisir et corriger un texte (paragraphes, sauts, casse, date, symboles)
+- Mettre en forme paragraphes, tabulateurs, bordures/trames et listes
+- Appliquer des **styles Titre** et générer / mettre à jour une **table des matières**
+- Insérer en-têtes, pieds de page, numéros de page et préparer l'impression`;
+
+const DEMO_805_OBJECTIFS_SUMMARY = `## Objectifs
+- Saisie · mise en forme
+- Styles · TdM
+- En-têtes · impression`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -11841,6 +11972,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_804_THEORIE_FULL,
       summary: DEMO_804_THEORIE_SUMMARY,
+    },
+  },
+  "805": {
+    objectifs: {
+      full: DEMO_805_OBJECTIFS_FULL,
+      summary: DEMO_805_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_805_APERCU_FULL,
+      summary: DEMO_805_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_805_THEORIE_FULL,
+      summary: DEMO_805_THEORIE_SUMMARY,
     },
   },
 };
