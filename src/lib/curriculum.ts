@@ -10689,6 +10689,152 @@ const DEMO_803_OBJECTIFS_SUMMARY = `## Objectifs
 - PCP · qualité · projet
 - CoFi · GM · e-commerce`;
 
+/** Contenu Module 804 — Fondation Microsoft 365 / Bases & droit d'auteur */
+const DEMO_804_THEORIE_FULL = `## 4. Bases de l'informatique et droit d'auteur
+
+### 4.1 Démarrage et arrêt de l'ordinateur
+
+Après mise sous tension : **booting** (microprogramme) → vérif. périphériques → chargement du système d'exploitation en mémoire → fenêtre de connexion / bureau.
+
+👉 Attendre la **fin du démarrage** avant d'insérer USB / SSD avec données personnelles.
+
+#### 4.1.1 Connexion
+En entreprise / école : environnement **réseau / domaine** · compte utilisateur + données partagées. Auth : mot de passe, PIN, code image, empreinte, iris…
+
+- Sécurise les **droits d'accès**
+- Droits souvent **limités** · seuls les **admins** ont des droits illimités
+- Saisir le nom d'utilisateur + mot de passe attribués par l'admin
+
+### 4.2 L'interface du bureau
+
+Après Enter : le **bureau** commande vos actions.
+
+#### 4.2.1 Corbeille
+Icône différente si vide / pleine. Double-clic pour ouvrir · **Restaurer** pour récupérer · **Delete** pour supprimer définitivement depuis la corbeille.
+
+#### 4.2.2 Accès dossiers / fichiers
+Double-clic sur l'icône du dossier.
+
+#### 4.2.3 Arrière-plan
+Clic droit Bureau → **Personnaliser** → **Arrière-plan** :
+
+| Option | Effet |
+| --- | --- |
+| Remplir | Rogne pour occuper tout l'espace |
+| Ajuster | Agrandit en gardant les proportions |
+| Étendre | Idem, proportions conservées |
+| Étirer | Agrandit à la taille du bureau |
+| Vignette | Répète l'image |
+| Centrer | Cadre au centre |
+
+#### 4.2.4 Raccourcis
+Menu contextuel fichier/dossier/app → Afficher plus d'options → **Envoyer vers** → Bureau (créer un raccourci). Petite **flèche** en bas à gauche = raccourci.
+
+#### 4.2.5–4.2.6 Menu démarrer & Recherche
+Bouton Démarrer → liste des apps. Bouton **Recherche** (barre des tâches) : fichiers, apps, sites web.
+
+#### 4.2.7 Explorateur de fichiers
+Accès via icône barre des tâches. Windows 11 crée un **dossier personnel** (Documents, Téléchargements, Images, Musique, Vidéos, OneDrive, Bureau…). Stocké sous \`C:\\Utilisateurs\\…\` · pas d'accès par défaut aux dossiers des autres · dossier **Public** pour partager sur la machine.
+
+#### 4.2.8–4.2.12 Barre des tâches & outils
+- **Épingler** une app : menu contextuel → Épingler à la barre des tâches
+- **Capture** : app Capture d'écran ou **Win+Shift+S**
+- Paramètres barre des tâches via menu contextuel
+- **Clavier tactile** (environnement tactile) via paramètres barre des tâches
+- Langue clavier, Internet/Wi‑Fi, haut-parleur, batterie, date/heure : zone de notification (bas droite)
+
+### 4.3 Nombres et dates (pays)
+
+Souvent via **Panneau de configuration** (compte admin) · formats régionaux : nombres, symbole monétaire, heure, date.
+
+### 4.4 Créer / nommer un dossier
+
+Explorateur → dossier cible (souvent Documents) → **Nouveau → Dossier** (ou **Ctrl+Shift+N**) → nommer → Enter. Renommer par clic · sous-dossiers idem · **Ctrl+C / Ctrl+V** pour copier-coller.
+
+### 4.5 Sessions
+
+Plusieurs utilisateurs sur la même machine sans tout fermer : ouvrir / activer une autre session.
+
+| Action | Effet |
+| --- | --- |
+| **Se déconnecter** | Ferme la session + apps/fichiers (enregistrer d'abord) |
+| Choisir un autre user | Nouvelle session · la précédente peut rester en **attente** |
+
+### 4.6 Arrêt / veille / redémarrage
+
+Démarrer → **Marche/Arrêt**. **Veille** : peu d'énergie · apps ouvertes · reprise rapide.
+
+### 4.7 Application bloquée
+
+**Ctrl+Alt+Suppr** → Gestionnaire des tâches → sélectionner l'app → **Fin de tâche** (parfois plusieurs fois).
+
+### 4.8 Droit d'auteur et licences
+
+#### 4.8.1 Types de logiciels / usages
+
+| Type | Idée clé |
+| --- | --- |
+| **Bêta** | Préversion · bogues possibles · aussi sous droit d'auteur |
+| **Freeware** | Gratuit mais sous copyright |
+| **Libre / open source** | Code source publié · copier, modifier, redistribuer (ex. Linux) |
+| **Shareware** | Essai gratuit · puis paiement ou fonctions bloquées |
+| **Copie pirate** | Usage sans licence · violation du droit d'auteur |
+
+**Partage de fichiers :** upload **et** download relevant du droit d'auteur. Usage privé depuis sources légales (et en pratique aussi illégales pour le download/stream) souvent toléré en CH · **upload** d'œuvres protégées **interdit** sauf si vous détenez les droits / œuvre libre.
+
+#### 4.8.2 Copyright (Suisse)
+Régi par la loi fédérale + accords internationaux. **Copies privées** autorisées : sphère perso / proches · enseignants en cours · copies internes entreprises / admins / instituts.
+
+#### 4.8.3 Licence de logiciel
+On n'« achète » pas le logiciel : on acquiert une **licence** (CLUF / EULA à accepter). Souvent : 2ᵉ copie sur appareil mobile pour l'utilisateur principal. **ID produit** = authenticité (ex. Office : Fichier → Compte → À propos).
+
+#### 4.8.4 Plagiat
+Vol de propriété intellectuelle · punissable. Poursuites difficiles (Internet, lois variables). En CH : surtout distribution depuis un PC en Suisse · streaming / download souvent peu poursuivis. Suivre l'évolution légale (ex. actions BSA).`;
+
+const DEMO_804_THEORIE_SUMMARY = `## À retenir — Module 804
+
+### Windows
+Boot → connexion domaine · bureau · corbeille · raccourcis  
+Explorateur · dossiers perso · sessions · veille / arrêt  
+Ctrl+Alt+Suppr si app bloquée · Win+Shift+S capture
+
+### Droit d'auteur
+Licence ≠ propriété · CLUF · freeware / libre / shareware / pirate  
+Copies privées OK · upload d'œuvres protégées non  
+Plagiat = infraction · CH : situation nuancée`;
+
+const DEMO_804_APERCU_FULL = `## Aperçu du module 804
+
+Ce module pose les **bases Windows** (bureau, fichiers, sessions) et introduit le **droit d'auteur** / licences logicielles — fondation avant Word, Excel, etc.
+
+### Vous allez découvrir
+1. Démarrage, connexion et interface du bureau Windows 11
+2. Fichiers, dossiers, sessions, arrêt / veille, Gestionnaire des tâches
+3. Formats régionaux et outils de la barre des tâches
+4. Licences, copyright suisse, partage de fichiers et plagiat
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT`;
+
+const DEMO_804_APERCU_SUMMARY = `## Aperçu — Module 804
+- Bureau Windows · fichiers · sessions
+- Arrêt / veille · panne
+- Licences · copyright · plagiat`;
+
+const DEMO_804_OBJECTIFS_FULL = `## Objectifs du module 804
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Démarrer / se connecter / utiliser le **bureau** Windows (corbeille, raccourcis, explorateur)
+- Créer des dossiers, gérer les **sessions**, arrêter / mettre en veille et quitter une app bloquée
+- Paramétrer formats régionaux et outils de la barre des tâches
+- Distinguer types de licences / logiciels et appliquer les règles de base du **droit d'auteur** (CH)`;
+
+const DEMO_804_OBJECTIFS_SUMMARY = `## Objectifs
+- Bureau · fichiers · sessions
+- Veille / panne
+- Licences · copyright`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -11681,6 +11827,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_803_THEORIE_FULL,
       summary: DEMO_803_THEORIE_SUMMARY,
+    },
+  },
+  "804": {
+    objectifs: {
+      full: DEMO_804_OBJECTIFS_FULL,
+      summary: DEMO_804_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_804_APERCU_FULL,
+      summary: DEMO_804_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_804_THEORIE_FULL,
+      summary: DEMO_804_THEORIE_SUMMARY,
     },
   },
 };
