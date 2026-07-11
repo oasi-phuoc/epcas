@@ -138,7 +138,7 @@ const moduleSeeds: ModuleSeed[] = [
   { code: "504", title: "Le flux de matériel", blockId: "block-500" },
   {
     code: "505",
-    title: "La planification et le contrôle",
+    title: "Planification et contrôle de la production (PCP)",
     blockId: "block-500",
   },
   {
@@ -7545,6 +7545,108 @@ const DEMO_504_OBJECTIFS_SUMMARY = `## Objectifs
 - Kanban · Two-Bin · JIT/JIS
 - LCA · Jidoka`;
 
+/** Contenu Module 505 — Planification et contrôle de la production (PCP) */
+const DEMO_505_THEORIE_FULL = `## 5. Planification et contrôle de la production (PCP)
+
+Les ventes établissent un **programme de vente**. Les achats organisent MP / semi-finis / finis. Pour la fabrication interne : **programme de production** → planification des besoins matières → identifier la **couverture insuffisante** → **délais & capacités** → quand les ordres sont prêts, le **contrôle** de production surveille tout le process.
+
+### Tâches de la PCP
+
+| Étape | Contenu |
+| --- | --- |
+| **Programme de production** | Produits : type, quantité, délai |
+| **Gestion matériel / quantités** | Pièces, sous-ensembles, achats : type, quantité, délai |
+| **Délais & capacités** | Temps de traitement · capacités homme/machine · ordre de prod. |
+| **Lancement d'ordre** | Démarrage · attribution des travaux / ordres |
+| **Suivi des commandes** | Avancement · capacités · commandes fournisseurs · entrées |
+
+### 5.1 Production push / pull
+
+| | **Push** (flux poussé) | **Pull** (flux tiré) |
+| --- | --- | --- |
+| Pilotage | Unité **centrale** de planification / contrôle | Souvent **décentralisé** · besoins clients |
+| Flux | Infos et marchandises **même sens** | Infos **à contre-courant** du matériel (client → amont) |
+| Effets | Stocks ↑ · délais ↑ · coûts de planification ↑ | Stocks ↓ · délais ↓ · planification ↓ · orientation client ↑ |
+
+Production **selon les besoins** en pull.
+
+### 5.2 Production en vrac (bulk)
+
+*Bulk* = masse / quantité. Marchandises en **très grandes** quantités (cargaisons…) · souvent pour commerçants / transformateurs · semi-finis ou biens de production pour un produit final.
+
+👉 Même caractéristiques · quantités **non limitées** · production **récurrente** (= logique de masse).
+
+### 5.3 Liste des pièces / nomenclature
+
+Programme de vente = **besoin primaire** (produits vendables, ex. voitures) · composé de pièces / sous-ensembles.
+
+**Nomenclature** (*Bill of Materials*, BOM) : tous les articles et sous-ensembles du produit final = **besoins secondaires** (servent à produire le primaire).
+
+Comparaison besoins secondaires ↔ stock actuel → **besoins secondaires nets**.
+
+**Exemple :** primaire 100 voitures · secondaire 400 pneus · stock 100 → besoin net **300** pneus.
+
+#### 5.3.1 Types de nomenclature
+
+**Quantitative** — tous les composants **sans** structure (interne / externe). Clair pour **achats** / coûts · pas pour le montage (pas d'appartenance / hiérarchie).  
+Codes usuels : **B** = sous-ensemble · **E** = fabrication interne · **F** = pièce externe.
+
+**Structurelle** — forme **hiérarchisée** · stade de fabrication visible · quantités par module (ex. 1 produit A → 3 groupes II → 2 A → 6). Tableau possible, moins lisible.
+
+**Modulaire** — découpe de la structurelle · montre l'assemblage d'un **sous-ensemble** donné (niveaux de fabrication).
+
+**Variantes** — produit final avec **légères différences** (couleur vélo · boîte auto · tension 120 V / 230 V…).
+
+Utilisées en : planification prod., matériaux, capacités, temps, montage, achats, coûts…  
+👉 Qualité des nomenclatures **critique** : erreurs = perturbations + coûts.`;
+
+const DEMO_505_THEORIE_SUMMARY = `## À retenir — Module 505
+
+### PCP
+Programme prod. → quantités → délais/capacités → lancement → suivi
+
+### Push / Pull
+Push : central, stocks ↑ · Pull : besoins client, stocks ↓
+
+### Bulk
+Masse récurrente, quantités non limitées
+
+### Nomenclature (BOM)
+Primaire → secondaires → nets (secondaires − stock)  
+Quantitative · structurelle · modulaire · variantes`;
+
+const DEMO_505_APERCU_FULL = `## Aperçu du module 505
+
+Ce module présente la **PCP** : du programme de production au suivi, push/pull, production en vrac et nomenclatures (BOM).
+
+### Vous allez découvrir
+1. Les 5 tâches de la PCP
+2. Flux poussé vs tiré
+3. Production en vrac (bulk)
+4. Besoins primaire / secondaire / net et types de nomenclature
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite des modules 501–504`;
+
+const DEMO_505_APERCU_SUMMARY = `## Aperçu — Module 505
+- PCP (5 tâches)
+- Push / pull · bulk
+- Nomenclatures BOM`;
+
+const DEMO_505_OBJECTIFS_FULL = `## Objectifs du module 505
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Décrire les étapes de la **PCP** (programme → suivi)
+- Comparer production **push** et **pull**
+- Expliquer la production en **vrac** et le calcul **besoin primaire / secondaire / net**
+- Distinguer les types de **nomenclature** (quantitative, structurelle, modulaire, variantes)`;
+
+const DEMO_505_OBJECTIFS_SUMMARY = `## Objectifs
+- PCP & push/pull
+- Bulk & besoins
+- Types de BOM`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -8187,6 +8289,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_504_THEORIE_FULL,
       summary: DEMO_504_THEORIE_SUMMARY,
+    },
+  },
+  "505": {
+    objectifs: {
+      full: DEMO_505_OBJECTIFS_FULL,
+      summary: DEMO_505_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_505_APERCU_FULL,
+      summary: DEMO_505_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_505_THEORIE_FULL,
+      summary: DEMO_505_THEORIE_SUMMARY,
     },
   },
 };
