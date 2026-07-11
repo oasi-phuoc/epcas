@@ -4954,6 +4954,159 @@ const DEMO_308_OBJECTIFS_SUMMARY = `## Objectifs
 - Mesure & balances
 - Tarer / calibrer / vérification`;
 
+/** Contenu Module 309 — Contrôle de la qualité */
+const DEMO_309_THEORIE_FULL = `## 9. Contrôle de la qualité
+
+### 9.1 Importance de l'assurance qualité
+
+L'**assurance qualité** = toutes les mesures pour garantir une qualité **constante** des produits/services.
+
+Particularité élevée : agroalimentaire, aéronautique, pharmaceutique (santé, sécurité). Ex. aéronautique : chaque composant avec **certificat** (origine, matériaux) — risque de certificats falsifiés → défi pour le contrôle.
+
+Souvent confié à des collaborateurs formés : service AQ ou **laboratoire** d'essai. Crucial si la production dépend de la qualité des achats.
+
+### 9.2 Définition de la qualité
+
+> « La qualité, c'est quand la **performance** correspond à l'**attente**. »
+
+### 9.3 Critères de qualité
+
+- **Subjectifs** — opinions, sentiments, jugement personnel (ex. : choisir VW pour la réputation du SAV)
+- **Objectifs** — mesurables : géométrie, labo, contrôles, couleur, évaluations clients (ex. : 96 % d'avis positifs à la réception d'hôtel ; écarts géométriques sur échantillons)
+
+**Outils possibles :** contrôle géométrique · colorimètre / nuancier · composition chimique en labo · contrôle de fonctionnement (sommaire ou approfondi).
+
+#### 9.3.1 Contrôles par échantillonnage
+
+Prélèvement d'échantillons à l'arrivée pour vérifier composition, dureté, couleur, épaisseur, etc. Suivre les **procédures internes** ; étiquetage **100 % fiable**. Courant en chimie et alimentaire (ex. céréales avant déchargement bateau).
+
+**Stock AQ / quarantaine**  
+Marchandises échantillonnées **non disponibles** tant que le contrôle n'a pas validé. Zone dédiée (« AQ », quarantaine) + étiquettes si besoin — pas de mélange avec stock libre / production.
+
+**Rôle de la logistique**  
+Souvent : prélever, étiqueter, transmettre au service compétent ; solde en quarantaine. Après résultat : **refuser/renvoyer** ou **valider** et stocker.
+
+### 9.4 Niveau de qualité
+
+| Niveau | Sens |
+| --- | --- |
+| **Sous-qualité** | N'atteint pas les exigences · apparemment moins cher · retours, perte de confiance |
+| **Bonne qualité** | Correspond aux attentes · juste prix · partenaire fiable |
+| **Sur-qualité** | Au-delà des besoins · plus cher à produire · trop cher pour un besoin « basique » |
+
+### 9.5 Contrôles de qualité dans les entreprises
+
+De l'anglais *quality assurance* : tous les processus pour une qualité constante. Indispensable pour répondre au client. Gestion de la qualité / ISO → module **506**.
+
+### 9.6 Techniques de contrôle
+
+Selon sensibilité des marchandises, fiabilité fournisseur, risques production. Méthodes définies en management qualité : **contrôle complet** ou **par échantillonnage**.
+
+#### 9.6.1 Contrôle complet
+
+**Toute** la livraison contrôlée — coûteux (ex. kits à démonter/assembler). Justifié notamment si :
+- premier achat / fournisseur non éprouvé
+- défauts graves antérieurs
+- mauvaise impression à l'arrivée
+- biens très chers / haute qualité exigée
+- forte dépendance à la qualité reçue
+
+But : éviter la répétition d'erreurs et la perte de confiance clients.
+
+#### 9.6.2 Contrôles par échantillonnage
+
+Fournisseur fiable → échantillonnage suffit. Parfois **aucun** contrôle destinataire si le fournisseur a un SMQ approuvé (ex. ISO 9001) et accord écrit.
+
+**Improvisé (spontané)** — non planifié, là où c'est le plus simple :
+- recomptage partiel
+- soulever le haut pour voir le bas
+- pesage partiel
+- ouvrir une unité pour vérifier le contenu
+
+**Planifié** — quantité et technique prédéfinies par la qualité ; résultats discutés avec le fournisseur → améliorations. Simple ou multiple.
+
+**Échantillonnage simple**  
+Ex. : 2 unités par livraison, ou 1 livraison sur 2. Ou **plans d'échantillonnage** :
+- grandeur du **lot**
+- **n** = quantité prélevée
+- **Tol n** = défauts autorisés
+- **niveau de qualité** (1–3 ; plus bas = plus strict)
+- **niveau de contrôle** : approfondi / normal / sommaire (quantité contrôlée)
+
+**Échantillonnage multiple**  
+Plusieurs prélèvements ; tableau : **Refuser** / **Poursuivre** / **Accepter**. On continue tant qu'on est en « poursuivre ».
+
+Ex. pratique (palette 980 paquets de vis, lots de 30) :
+- défauts cumulés 1 → poursuivre
+- 1 → poursuivre
+- 2 → poursuivre
+- 3 → poursuivre
+- 3 → **accepter**  
+Total testé : 150 · défectueux : 3
+
+### 9.7 Contrôle du fonctionnement
+
+Contrôle opérationnel : complet ou par échantillonnage. Nécessaire si marchandises sensibles. Rudimentaire (allumer) ou complet (banc d'essai). Critères : entreprise et/ou loi.
+
+Ex. : lampe de chevet = allumer ; composants électroniques = montage sur banc de test.
+
+Entre entreprises certifiées : souvent le fournisseur s'engage par écrit à contrôler avant livraison → destinataire peut s'en dispenser.`;
+
+const DEMO_309_THEORIE_SUMMARY = `## À retenir — Module 309
+
+### Qualité
+Performance = attente  
+AQ cruciale (agro, aéro, pharma) · certificats · labo  
+Critères subjectifs vs objectifs
+
+### Logistique & AQ
+Échantillonnage + étiquetage fiable  
+**Quarantaine / stock AQ** jusqu'à validation  
+Prélever → transmettre → refuser ou stocker
+
+### Niveaux
+Sous-qualité · bonne · sur-qualité
+
+### Méthodes
+**Complet** : cher, cas critiques / nouveaux fournisseurs  
+**Échantillonnage** : improvisé ou planifié (simple / multiple)  
+Plans : lot, n, Tol n, niveaux qualité & contrôle  
+Fonctionnement : allumage → banc d'essai · parfois délégué au fournisseur (ISO)`;
+
+const DEMO_309_APERCU_FULL = `## Aperçu du module 309
+
+Ce module traite du **contrôle de la qualité** : définition, critères, échantillonnage, niveaux de qualité et techniques (complet / échantillonnage / fonctionnement).
+
+### Vous allez découvrir
+1. Assurance qualité et enjeux (certificats, labo)
+2. Critères subjectifs / objectifs et outils
+3. Stock AQ / quarantaine et rôle de la logistique
+4. Sous-qualité, bonne qualité, sur-qualité
+5. Contrôle complet vs échantillonnage (simple / multiple) et contrôle de fonctionnement
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 308 · Lien module 506`;
+
+const DEMO_309_APERCU_SUMMARY = `## Aperçu — Module 309
+- AQ & critères de qualité
+- Quarantaine / échantillonnage
+- Complet vs plans d'échantillonnage`;
+
+const DEMO_309_OBJECTIFS_FULL = `## Objectifs du module 309
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Définir la **qualité** et l'**assurance qualité**
+- Distinguer critères **subjectifs** et **objectifs**
+- Expliquer le rôle de la logistique (échantillons, **quarantaine AQ**)
+- Comparer **sous- / bonne / sur-qualité**
+- Choisir entre contrôle **complet** et **par échantillonnage** (improvisé, simple, multiple) et décrire un contrôle de **fonctionnement**`;
+
+const DEMO_309_OBJECTIFS_SUMMARY = `## Objectifs
+- Qualité & AQ
+- Quarantaine / échantillons
+- Complet vs échantillonnage`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -5344,6 +5497,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_308_THEORIE_FULL,
       summary: DEMO_308_THEORIE_SUMMARY,
+    },
+  },
+  "309": {
+    objectifs: {
+      full: DEMO_309_OBJECTIFS_FULL,
+      summary: DEMO_309_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_309_APERCU_FULL,
+      summary: DEMO_309_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_309_THEORIE_FULL,
+      summary: DEMO_309_THEORIE_SUMMARY,
     },
   },
 };
