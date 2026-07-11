@@ -9625,6 +9625,112 @@ const DEMO_615_OBJECTIFS_SUMMARY = `## Objectifs
 - Préparation · supports
 - NPA · hubs`;
 
+/** Contenu Module 616 — CPD — Processus dans les centres de distribution */
+const DEMO_616_THEORIE_FULL = `## 16. Processus dans les centres de tri / distribution
+
+### Principes
+Lettres et colis : machines et process différents · même logique : **1er tri** puis **2e tri**.
+
+### 16.1 Notions
+| Terme | Sens |
+| --- | --- |
+| Commissionnement | Regrouper pour bases / suite |
+| Préparation des envois | Avant tri (presta, format…) |
+| Région de desserte | Zone du **tri secondaire** du centre |
+| CCR | Centres colis **régionaux** (soutien) |
+| **Tri de dépôt** | 1er tri · hors région → autre centre |
+| **Tri de distribution** | 2e tri · dans la région du centre |
+| **Tri séquentiel (GFS)** | Ordre de la tournée facteur |
+| Base de distribution | Office où part la tournée |
+| Clinique des colis | Réparation colis endommagés |
+
+### 16.2–16.4 Flux global
+Entrée → préparation → 1er tri → 2e tri (même centre ou autre) → commissionnement → sortie.  
+3 **PZ** principaux · NPA / tableaux d'acheminement. CCR ex. : Vétroz, Ostermundigen, Härkingen, Urdorf, Cadenazzo…
+
+### 16.5–16.7 Tri lettres (Poste)
+**Logistique de site** (gestion quais/véhicules) → **entrée** (robots/manuel · PromoPost/journaux parfois directs) → **préparation** (FN/GF · auto/manuel · A/B · oblitération) → **tri** (IRV, DBCS, GFSA · GF · manuel) → codage auto / **vidéocodage** (ex. Coire) → casiers / buts de tri.
+
+**GFS** : 2–3 phases après tri distribution → ordre boîtes / noms → **BB** → commissionnement (**SB**) → sortie (train si autre centre · route si bases).
+
+Outils : CFC · IRV · robot portail · casiers manuels · unité GF · GFSA.
+
+### 16.8–16.9 Tri colis (Poste)
+1. **Entrée** — endommagés → clinique · non-colis retirés · aptitude mécanique · adresse vers le haut  
+2. **Identification** — ACS · pesée/mesure clients · VCS · MCS  
+3. **Tri** — distribution (même centre) vs dépôt (autre)  
+4. **Sortie autres centres** — RX → WB · souvent **train**  
+5. **Sortie** — bases de distribution (route)
+
+Machines : **plateaux inclinables** (1 envoi/plateau · glissement variable) · **bandes transversales** (précis, soigneux, rapide) · **rouleaux inclinés** (fond plat requis). Aussi : convoyeurs, FTS, robots.
+
+### 16.10 Sécurité
+Badge · clôture · éclairage · sacs **transparents** · vestiaires perso · caméras · alarmes.  
+Travail : instruction machines · passeport formation · MD · permis Suva chariots.
+
+### 16.11–16.15 NPA, IATA, MIL
+Rappel NPA 4 chiffres (module **615**) · Liechtenstein 9485–9498. Internationaux : 5–7 chiffres / lettres · certains pays sans.  
+**IATA** : 3 lettres aéroport (ZRH, LHR, CDG) · aussi sur AWB/codes.  
+**MIL** : adresse campagne · franc de port ≤ **5 kg** (sans presta payante) · code MIL · Poste seule · remise poste de campagne / sous-officier.
+
+**Ex. retour baskets :** Aarau → Härkingen (1er tri) → train Daillens (10XX) → 2e tri → base → commerçant.
+
+### 16.16–16.23 Logistique entre centres & aides
+| Outil | Rôle |
+| --- | --- |
+| **Grue de terminal** | Portique · WB sur wagons · max ~**20 t** |
+| Pilotage logistique extérieure | Centrale · ordres véhicules/grues |
+| Véhicules de site | Manœuvre WB |
+| **Caisses mobiles** | RX ou **vrac** (volume ↑ · déchargement ↓) |
+| **Camions double pont** | Jusqu'à **36** RX vs 24 (2×12 WB) · plancher hydraulique |
+
+Signalétique : Planzer (fiche + Datamatrix) · Poste (fiche avant RX · écran lieu cible vrac).
+
+Aides internes : tracteurs RX · chariots SB/palettes · mât rétractable · contrepoids.  
+Ergo : plates-formes · points de déversement · bandes télescopiques · aides traction · trottinettes.`;
+
+const DEMO_616_THEORIE_SUMMARY = `## À retenir — Module 616
+
+### Tri
+Dépôt vs distribution · GFS · CCR  
+Lettres : IRV/GFSA · Colis : ACS + trieurs
+
+### Sécurité & réseau
+Badge · Suva · NPA · IATA · MIL  
+WB · grue 20 t · double pont 36 RX`;
+
+const DEMO_616_APERCU_FULL = `## Aperçu du module 616
+
+Dernier module **CPD** du bloc 600 : processus et moyens dans les **centres de tri**.
+
+### Vous allez découvrir
+1. Tri de dépôt / distribution et GFS
+2. Flux lettres et colis (Poste)
+3. Machines, sécurité, NPA / IATA / MIL
+4. Grues, WB, double pont et aides ergonomiques
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · CPD Distribution`;
+
+const DEMO_616_APERCU_SUMMARY = `## Aperçu — Module 616
+- Processus de tri
+- Machines · sécurité
+- WB · NPA · MIL`;
+
+const DEMO_616_OBJECTIFS_FULL = `## Objectifs du module 616
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Distinguer **tri de dépôt**, **tri de distribution** et **GFS**
+- Décrire les flux **lettres** et **colis** en centre (entrée → sortie)
+- Citer machines clés et mesures de **sécurité**
+- Relier NPA / IATA / MIL et les outils de **logistique de site** (WB, grue, double pont)`;
+
+const DEMO_616_OBJECTIFS_SUMMARY = `## Objectifs
+- Dépôt / distribution / GFS
+- Flux & machines
+- Sécurité · WB · MIL`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -10505,6 +10611,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_615_THEORIE_FULL,
       summary: DEMO_615_THEORIE_SUMMARY,
+    },
+  },
+  "616": {
+    objectifs: {
+      full: DEMO_616_OBJECTIFS_FULL,
+      summary: DEMO_616_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_616_APERCU_FULL,
+      summary: DEMO_616_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_616_THEORIE_FULL,
+      summary: DEMO_616_THEORIE_SUMMARY,
     },
   },
 };
