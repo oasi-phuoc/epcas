@@ -3930,6 +3930,140 @@ const DEMO_302_OBJECTIFS_SUMMARY = `## Objectifs
 - Offre / demande
 - Processus commande + documents`;
 
+/** Contenu Module 303 — Réception des marchandises */
+const DEMO_303_THEORIE_FULL = `## 3. Processus de réception des marchandises
+
+### 3.1 Réception des marchandises
+
+Activité centrale de la logistique. Après le processus d'approvisionnement, vient la **réception des marchandises**.
+
+#### 3.1.1 La base juridique
+
+Trois situations fréquentes, réglementées dans le **Code des obligations (CO)** :
+
+| Situation | Domaine logistique | Base CO |
+| --- | --- | --- |
+| **Acceptation en tant qu'acheteur** d'un bien mobilier | Approvisionnement | Titre 6e Achat et échange · art. **184–186** (droits/obligations) · art. **187–215** (vente mobilière). Transport international : Convention de Vienne |
+| **Acceptation en tant que transporteur** | Transport | Titre 16e Contrat de transport · art. **440–457** |
+| **Acceptation pour conservation** | Stockage | Titre 19e Contrat de dépôt · art. **472–491** |
+
+### 3.2 Acceptation en tant qu'acheteur (vente mobilière)
+
+**CO art. 184 al. 1 et 2 :**
+- Par le contrat de vente, le vendeur s'engage à **remettre** l'objet ; l'acheteur à **payer** le prix.
+- Sauf accord contraire : prestations en même temps (**« donnant donnant »**).
+- Le prix est suffisamment déterminé s'il peut l'être selon les circonstances.
+
+**Rappel (module 302) — droits / obligations :**
+
+| | Droits | Obligations |
+| --- | --- | --- |
+| **Acheteur** | Obtenir la chose et en devenir propriétaire ; en cas de vice : remplacement, réduction ou rédhibition | Payer le prix dans les délais |
+| **Vendeur** | Recevoir le paiement | Transmettre la chose et céder la propriété |
+
+#### 3.2.1 Acceptation lors de l'achat au comptant
+
+« Donnant donnant » = chaque partie remplit successivement sa part :
+1. Je prends l'objet dans le rayon
+2. À la caisse, je **paie** avant de quitter le magasin
+
+#### 3.2.2 Achat sur facture
+
+Règle de base : payer **immédiatement** après réception. Certains fournisseurs accordent 10 jours ou **30 jours**.
+
+**Déroulement :**
+1. Contrat de vente négocié et signé
+2. Vendeur livre les marchandises
+3. Acheteur confirme la réception → marchandise **acceptée** ; sous sa **garde**, pas encore pleinement en sa **possession** (au sens du paiement)
+4. Vendeur établit la facture
+5. Acheteur paie dans le délai → à partir de là, les marchandises **appartiennent** à l'acheteur
+
+Flux matériel + flux d'informations en parallèle (commande → livraison → confirmation → facture → paiement).
+
+**Remarque :** établir une **liste de contrôle** pour la réception ; tout écart → signaler au supérieur.
+
+### 3.3 Réception planifiée et non planifiée
+
+#### 3.3.1 Réception planifiée
+
+Date, type et quantité **connus** à l'avance. Mesures possibles :
+- réserver un **quai** de chargement
+- réserver un espace en zone de réception
+- préparer les **documents**
+- préparer les moyens auxiliaires (palettes vides, chariots, moyens de contrôle…)
+- organiser le **personnel**
+- déterminer l'**emplacement** de stockage
+
+→ réception rapide, efforts et coûts réduits.
+
+**Attention :** arrivée hors créneau → accès peut être **refusé**. Le transporteur doit respecter le créneau ; tout écart (embouteillage, accident, douane…) doit être **signalé tôt** pour reprogrammer.
+
+**Exemple ERP :** commandes saisies dans l'ERP (→ module 804) pour contrôler date, articles, quantités. Données consultables immédiatement par d'autres collaborateurs.
+
+**Infos typiques pour le contrôle d'entrée :**
+- fournisseur
+- date de réservation / type de documents de livraison
+- n° d'article et désignation
+- quantité commandée
+- quantité effectivement livrée (saisie au contrôle)
+- lieu de stockage
+- disponibilité (libre, stock bloqué, contrôle qualité…)
+
+#### 3.3.2 Réception non planifiée
+
+Livraison dont **ni la date ni la quantité** n'étaient connues (pas de créneau convenu, ou notification non parvenue à la réception).
+
+**Exemple Poste :** clients au guichet sans annonce préalable → réception non planifiée du point de vue de la Poste.
+
+En entrepôt : à **éviter**. Une commande devrait entraîner une info disponible. Si non annoncé → souvent un **manque de communication** entre achats et logistique.`;
+
+const DEMO_303_THEORIE_SUMMARY = `## À retenir — Module 303
+
+### Bases juridiques (CO)
+Acheteur (vente mobilière 184–215) · Transporteur (440–457) · Dépôt (472–491)  
+Vente : remise ↔ paiement · « donnant donnant » sauf accord contraire
+
+### Comptant vs facture
+Comptant : paye avant de partir  
+Facture : livraison → acceptation (garde) → facture → paiement → propriété  
+Liste de contrôle + signaler les écarts
+
+### Planifiée vs non planifiée
+**Planifiée** : quai, espace, docs, moyens, personnel, emplacement · respecter créneau · ERP  
+**Non planifiée** : date/qté inconnues · à éviter en entrepôt (souvent mauvais flux info achats ↔ logistique)`;
+
+const DEMO_303_APERCU_FULL = `## Aperçu du module 303
+
+Ce module traite de la **réception des marchandises** : bases juridiques (CO), acceptation acheteur (comptant / facture), réception planifiée vs non planifiée.
+
+### Vous allez découvrir
+1. Cadre CO (acheteur, transporteur, dépôt)
+2. Donnant donnant, achat comptant et sur facture
+3. Préparation d'une réception planifiée (quai, ERP…)
+4. Risques des réceptions non planifiées
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite des modules 301–302`;
+
+const DEMO_303_APERCU_SUMMARY = `## Aperçu — Module 303
+- CO : acheteur / transporteur / dépôt
+- Comptant vs facture
+- Réception planifiée / non planifiée`;
+
+const DEMO_303_OBJECTIFS_FULL = `## Objectifs du module 303
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Relier la réception de marchandises aux bases du **CO** (acheteur, transporteur, dépôt)
+- Expliquer l'acceptation en vente mobilière (**donnant donnant**, comptant, facture)
+- Distinguer réception **planifiée** et **non planifiée** et citer les préparatifs utiles
+- Décrire le rôle d'un **ERP** et les infos de contrôle à l'entrée`;
+
+const DEMO_303_OBJECTIFS_SUMMARY = `## Objectifs
+- Bases CO réception
+- Comptant / facture
+- Planifiée vs non planifiée + ERP`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -4236,6 +4370,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_302_THEORIE_FULL,
       summary: DEMO_302_THEORIE_SUMMARY,
+    },
+  },
+  "303": {
+    objectifs: {
+      full: DEMO_303_OBJECTIFS_FULL,
+      summary: DEMO_303_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_303_APERCU_FULL,
+      summary: DEMO_303_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_303_THEORIE_FULL,
+      summary: DEMO_303_THEORIE_SUMMARY,
     },
   },
 };
