@@ -4435,6 +4435,212 @@ const DEMO_305_OBJECTIFS_SUMMARY = `## Objectifs
 - Sécurisation + engins S/R
 - Auxiliaires · signaux`;
 
+/** Contenu Module 306 — Contrôle des contenants / supports de charge */
+const DEMO_306_THEORIE_FULL = `## 6. Contrôle des contenants
+
+Après l'identification détaillée (module **304**), on contrôle souvent les **emballages / contenants** pendant ou après le déchargement. Contrôle consciencieux = assez de **temps** et d'**espace**.
+
+### 6.1 Qu'est-ce qu'un contenant ?
+
+Regroupement de marchandises/matériaux en une **nouvelle unité** pour simplifier transport, stockage et déstockage.
+
+Exemples : unités palettisées · fûts · récipients plastique · caisses bois…
+
+**Coûts** non négligeables. Exemple (situation 2022) — Euro palette avec cadres :
+
+| Désignation | Qté | Coût unitaire | Total |
+| --- | --- | --- | --- |
+| Palette Euro | 1 | CHF 18.30 | CHF 18.30 |
+| Cadre Euro | 3 | CHF 48.– | CHF 144.– |
+| Couvercle Euro | 1 | CHF 17.80 | CHF 17.80 |
+| **Total contenants** | | | **CHF 180.10** |
+
+Sur une livraison complète, les coûts montent vite → travailler concentré et **éviter les pertes** à l'échange.
+
+### 6.2 Le support de charge
+
+Marchandises empilées sur supports de charge ; la **palette** s'est imposée mondialement, mais **pas** de dimensions uniques.
+
+| Région / type | Dimensions (L × l × h) | Poids approx. | Remarques |
+| --- | --- | --- | --- |
+| Euro type **1** | 1200 × 800 × 144 mm | 22 kg | Standard le plus courant |
+| Euro type **2** | 1200 × 1000 × 162 mm | ~28 kg | « Textile » |
+| Euro type **3** | 1200 × 1200 × 162 mm | ~35 kg | « Chimique » / « Baloise » · EPAL 3 charges lourdes |
+| Euro type **6** | 600 × 800 × 144 mm | ~18 kg | Demi-palette / Düsseldorf |
+| **USA** | 48" × 40" (1219 × 1016 mm) | ~30 kg | Palette américaine |
+| **Asie** | 1100 × 1100 × 144 mm | ~28 kg | Conteneurs outre-mer (larg. 2430 mm) |
+
+Souvent aussi des palettes **sur mesure** hors normes.
+
+#### 6.2.1 Support de charge selon EURO
+
+~**450 millions** d'Euro palettes en circulation. Type **1** = de loin le plus utilisé ; échangeables dans les pays du pool (dont Suisse).
+
+**Pool européen de palettes (EPP)** : initié CFF 1952 (pool CH) → chemins de fer allemands 1962 (EPP). Union ferroviaire pour simplifier transports via palettes (et cadres/couvercles) échangeables.
+
+**Charges Euro palette type 1 :**
+- **1000 kg** — charge aléatoire
+- **1500 kg** — charge uniforme
+- **2000 kg** — charge compacte et uniforme sur toute la surface
+
+##### Critères d'échange — palettes
+
+Non échangeables si non conformes construction/marquage **ou** défauts :
+1. Planche manquante
+2. Planche cassée transversalement/obliquement
+3. Accrocs laissant apparaître tiges/têtes de clous (seuils selon planches)
+4. Plot manquant ou fendu (plus d'un clou visible)
+5. Marque **EPAL** ou **EUR** manquante
+
+Aussi non échangeables : mauvais état général · capacité de charge non garantie · trop sales · plusieurs plots fendus · composants non conformes.
+
+##### Critères — cadres et couvercles (Suisse)
+
+**Cadres** non échangeables si : signes non conformes · paroi enfoncée · fente avec tige de vis · parois intérieures très sales · plusieurs parois endommagées · mauvais état général.
+
+**Couvercles** non échangeables si : planche manquante/cassée/fendue avec clous visibles · arête bordure cassée > moitié longueur et brèche > 20 cm · sigle chemins de fer manquant/illisible.
+
+### 6.3 EPAL (European Pallet Association)
+
+Organisation faîtière fabricants/réparateurs de supports EPAL ; plus grand pool **ouvert** ; assurance qualité (fabrication et réparation sous EPAL).
+
+#### 6.3.1 Normes de qualité (repères)
+
+1. Marque EPAL  
+2. Marque compagnie ferroviaire européenne  
+3. Marque pool (EPAL ou EUR)  
+4. Plan de cloutage standardisé  
+5. Planches inférieures chanfreinées  
+6. Pas de moisissure  
+7. Agrafe de contrôle qualité EPAL  
+8. Après réparation : clou de réparation EPAL  
+
+### 6.4 Procédure d'échange de palettes EURO
+
+Centaines de palettes/jour possibles → à restituer (coût).
+
+#### 6.4.1 Pools d'engins échangeables
+
+*Pool* = « réservoir ». Adhésion **non** obligatoire.
+
+- **Ouvert** : engins propriété des participants ; remise ↔ remplacement de même valeur ; règlement. 3 variantes d'échange (évite de tout recharger).
+- **Fermé** : voir CHEP (§ 6.5)
+
+#### 6.4.2 Échange standard (pièce contre pièce)
+
+Ex. : 30 Euro palettes livrées → 30 vides rendues. Coûts équilibrés ; échanger des palettes **équivalentes**.
+
+#### 6.4.3 Échange contre un bon
+
+Si pas assez de vides : **bon** (forme libre) reconnaissant la dette (type + nombre). Valable juridiquement avec **signature** d'un collaborateur.
+
+#### 6.4.4 Échange avec compte courant
+
+Registre (papier/Excel/portail) des entrées/sorties. **Solde** : positif pour l'un, négatif pour l'autre → le solde négatif a droit aux engins. Ex. : Portail de palettes ou fichier Excel partagé.
+
+### 6.5 Support de charge selon CHEP
+
+*Commonwealth Handling Equipment Pool* — alternative aux euros. Origine Australie (WW2 / AMHSC) ; aujourd'hui ~220 centres / 35 pays. « Palettes **bleues** » ; aussi quarts 600×400 et USA.
+
+#### 6.5.1 Pool fermé
+
+Une entreprise propriétaire loue aux autres. Différences vs ouvert :
+- **Location** (collecte + réparation incluses), pas d'achat
+- **Pas** d'échange pièce à pièce : on informe CHEP (nombre, type, destinataire)
+- Vides → point de collecte CHEP
+
+### 6.6 Supports de charge spéciaux
+
+| Type | Caractéristiques |
+| --- | --- |
+| Palette **tôle d'acier** | Jusqu'à 2 t ; 1200×800, 1000×800, 1200×1000 |
+| Palette **synthétique** | Couleurs/dimensions variées ; zones humides, chimie, alimentaire |
+| Palettes **INKA** | Empilables, usage unique marchandises légères ; copeaux compressés |
+| Palette à **fûts** | Fûts couchés |
+| **Pal-Box** | Carton + plots styropor ; fourches/transpalette |
+| **Cadre grillagé** | Désormais échangeable EPP si critères OK |
+| **Box-palettes** métal | Vrac (copeaux, verre…), déchets/recyclage |
+| **Box à claire-voie** | Fruits/légumes, aération ; saisonniers |
+| **Varitainers** / palettes réservoirs | Liquides / vrac fin ; parfois MD ; dims Euro |
+| Conteneurs **réservoirs** | 0,8–1,2 m³ ; agroalimentaire |
+
+#### 6.6.1 Matériels auxiliaires (non échangeables pool)
+
+Supports **frontaux** (rouleaux, balles) · supports **latéraux** (aide empilage) — adaptés Euro I, **hors** accord pool.
+
+### 6.7 Supports de charge sur roulettes
+
+Manipulation / transbordement facilités.
+
+- **Palettes à roulettes** — métal, montants rabattables, roulettes d'un côté → rouler en soulevant l'autre (wagons)
+- **Rollcontainers** — petits lots courts trajets ; approvisionnement magasins ; barres en camion
+- **Conteneur de collecte** (ex. Poste) — conteneurs de courrier (BB)
+
+### 6.8 Emballages à usage unique
+
+Utilisés **une** fois puis éliminés → coûts déchets + impact environnemental ; souvent encore indispensables. → module **602**.
+
+### 6.9 Emballages réutilisables
+
+Conçus pour plusieurs usages ; pas de déchet direct si le circuit est respecté. Souvent plastique (ex. Dispo-Box → module **602**).`;
+
+const DEMO_306_THEORIE_SUMMARY = `## À retenir — Module 306
+
+### Contenant
+Unité regroupée (palette, fût, caisse…) · coûts réels · pas de pertes à l'échange
+
+### Palettes
+Euro 1 : 1200×800 · charges 1000 / 1500 / 2000 kg  
+Types 2, 3, 6 · USA · Asie  
+**EPP** / **EPAL** · critères d'échange (planches, plots, marques EUR/EPAL)  
+Cadres & couvercles : critères CH
+
+### Échange
+Pool **ouvert** : pièce/pièce · bon (signé) · compte courant  
+Pool **fermé CHEP** : location, pas d'échange, collecte
+
+### Spéciaux & roulettes
+Acier, plastique, INKA, fûts, Pal-Box, grillagé, box métal/claire-voie, varitainers…  
+Rollcontainers · palettes à roulettes
+
+### Emballages
+Usage unique vs réutilisable → module 602`;
+
+const DEMO_306_APERCU_FULL = `## Aperçu du module 306
+
+Ce module traite du **contrôle des contenants** et des **supports de charge** : types de palettes, EPAL/EPP, échanges, CHEP, supports spéciaux et emballages.
+
+### Vous allez découvrir
+1. Contenant et coûts (Euro + cadres)
+2. Types de palettes (Europe, USA, Asie) et charges Euro
+3. Critères d'échange EPAL / cadres / couvercles
+4. Pools ouvert (échange) vs fermé (CHEP)
+5. Supports spéciaux, roulettes, usage unique / réutilisable
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite des modules 304–305`;
+
+const DEMO_306_APERCU_SUMMARY = `## Aperçu — Module 306
+- Contenants & palettes Euro
+- EPAL / critères d'échange
+- Pools ouvert vs CHEP
+- Supports spéciaux`;
+
+const DEMO_306_OBJECTIFS_FULL = `## Objectifs du module 306
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Définir un **contenant** / support de charge et citer les principaux types de palettes
+- Appliquer les **critères d'échange** Euro / EPAL (palettes, cadres, couvercles)
+- Distinguer pool **ouvert** et pool **fermé** (CHEP) et les modes d'échange
+- Identifier des supports **spéciaux** et sur roulettes
+- Différencier emballages **à usage unique** et **réutilisables**`;
+
+const DEMO_306_OBJECTIFS_SUMMARY = `## Objectifs
+- Contenants / palettes
+- Critères d'échange EPAL
+- Pools · supports spéciaux`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -4783,6 +4989,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_305_THEORIE_FULL,
       summary: DEMO_305_THEORIE_SUMMARY,
+    },
+  },
+  "306": {
+    objectifs: {
+      full: DEMO_306_OBJECTIFS_FULL,
+      summary: DEMO_306_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_306_APERCU_FULL,
+      summary: DEMO_306_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_306_THEORIE_FULL,
+      summary: DEMO_306_THEORIE_SUMMARY,
     },
   },
 };
