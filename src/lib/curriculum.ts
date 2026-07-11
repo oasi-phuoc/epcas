@@ -7911,6 +7911,150 @@ const DEMO_601_OBJECTIFS_SUMMARY = `## Objectifs
 - Scan / Voice / Light / Vision
 - Pick-and-Pack`;
 
+/** Contenu Module 602 — Les emballages */
+const DEMO_602_THEORIE_FULL = `## 2. Les emballages
+
+### 2.1 Emballer, mais pourquoi ?
+
+| Fonction | Rôle |
+| --- | --- |
+| **Protection** | Contre humidité, lumière, température, chutes, chocs, salissures, corrosion, vol, micro-organismes… · et protéger l'environnement du contenu (MD, tranchant…) |
+| **Logistique** | Regrouper · permettre l'empilage · mieux utiliser stockage/chargement · accélérer chargement · convoyeurs = emballages **normalisés** |
+| **Information** | Mentions obligatoires, technique, composition, **marketing** (emballage de vente) |
+
+👉 Aujourd'hui : pas seulement protéger — la logistique dépend d'un bon emballage.
+
+**Ex. EnterSite** — écran ACER : carton + polystyrène · protection mécanique · palettisable · design « gamers » + infos techniques.
+
+### 2.2 Termes DIN 55405
+
+| Terme | Sens |
+| --- | --- |
+| **Matériel** d'emballage | Papier, carton, bois, métal, verre, plastique… |
+| **Produit emballé** | Contenu |
+| **Moyen** d'emballage | Boîte, caisse, bouteille, palette… (contient le produit) |
+| **Accessoires** | Calage / scellage : ruban, ficelle, chips, colle… |
+| **Emballage** | Moyen + accessoires |
+| **Paquet** | Produit + emballage |
+| **Unité d'emballage** | Paquet prêt à expédier / stocker |
+| **Jetable** | Usage unique · recyclé / jeté |
+| **Repris** (consigné) | Réutilisable |
+
+#### 2.2.1 Autres termes (hors DIN)
+- **Emballage de vente** : présentation en magasin + pub / infos
+- **Fictif** : fait croire à plus de contenu
+- **Suremballage** : protège l'emballage de vente (stockage / transport)
+- **Emballage final** : pour le transport (y compris film étirable / rétractable palettes → module **603**)
+
+### 2.3 Quel est le bon emballage ?
+
+Facteurs : fragilité · mode de transport · itinéraire / durée · consignes · entreposage · souhaits client · **environnement** · quantité · pub · poids / prix.
+
+**Ex.** Toner HP : exigences ≠ Afrique du Sud vs succursale Köniz.
+
+#### 2.3.1 Choix du moyen
+Jetables (incinérés / recyclés) vs **réutilisables** (pools ouvert / fermé).
+
+| Solution | Points clés |
+| --- | --- |
+| **Dispobox** | Plastique léger / stable · 7 tailles · plombable · **pool fermé** |
+| **IFCO** | « Internal Fish Container » (1985) · fruits/légumes · pliables · nettoyées · pool fermé |
+| **Bacs gerbables** | Nervures · charges + humidité · boissons… · fonds : plat, renforcé, nervuré, grillagé, « tête de taureau » |
+
+**Restrictions plastique :** fond tête de taureau ≠ convoyeurs à rouleaux · contact alimentaire = label UE · frais ≠ bac fermé (moisissures) · retours / contrôles anti-perte.
+
+#### 2.3.2 Accessoires de rembourrage
+« Aussi peu que possible, autant que nécessaire » · éviter mélanges peu professionnels. Secousses → solide **et** absorbant · chips seules ≠ OK (produit s'enfonce) → inserts carton + compactage. Outre-mer délicat : mousse expansive (« sur mesure », peu écologique).
+
+#### 2.3.3 Durabilité
+Réduire plastiques · emballages ingénieux · **Natural Branding** (laser sur fruits/légumes). Privilégier réutilisable.
+
+### 2.4 Contraintes de protection
+
+| Famille | Exemples |
+| --- | --- |
+| **Mécaniques** | Chutes · cisaillements/chocs · pressions · secousses |
+| **Climatiques** | Météo · géographie · T°, humidité, pression… |
+| **Nuisibles** | Moisissures · rongeurs / parasites |
+| **Vol / pillage** | Détournement |
+
+#### 2.4.1 Mécaniques
+Emballage = **zone de déformation** qui absorbe l'énergie du choc.
+
+- **Chute** : hauteur · masse · sol · type d'impact (plan / arête / angle)
+- **Cisaillement / choc** : palettes, wagons (manœuvres), conteneurs
+- **Pression** : empilage · intercalaires · lourds en bas
+- **Secousses** : routes, aiguillages, mer, turbulences aériennes
+
+#### 2.4.2 Climatiques
+Selon zones / saison / parcours / durée / mode. Condensation (T° / pression) → dégâts (électronique, cuir…).
+
+Mesures : polystyrène (isolation, souvent jetable) · **sachets silice** · mise sous **vide** · **VCI** (« papier gaz ») + papiers huilés / bitumés…
+
+#### 2.4.3 Nuisibles
+Attirés par l'odeur · carton ondulé faible · emballage intérieur **étanche aux odeurs** (film soudé · PVC / PE épais). Bois international : **ISPM-15** (IPPC) · exemptions : panneaux, contreplaqué, bois < 6 mm… · fumigation par spécialistes.
+
+#### 2.4.4 Vol
+Film opaque · pas d'étiquetage visible · composants séparés · panneaux anti-perçage…
+
+### 2.5 Normes d'emballage
+
+Dimensions transport normalisées (ISO) → s'adaptent à l'**Europalette** · L/l = surface · H = volume.
+
+#### 2.5.1 Empilage
+Préférer **imbriqué** (jointures décalées) à **en colonne** → stabilité ↑.
+
+#### 2.5.2 Marques
+Symboles de sensibilité : **DIN 55402** / **ISO R 780**.`;
+
+const DEMO_602_THEORIE_SUMMARY = `## À retenir — Module 602
+
+### 3 fonctions
+Protection · logistique · information
+
+### Vocabulaire DIN
+Matériel → moyen + accessoires = emballage · paquet · jetable / repris
+
+### Choix
+Fragilité, transport, durée, écolo…  
+Dispobox · IFCO · bacs · rembourrage minimal utile · durabilité
+
+### Contraintes
+Mécaniques · climatiques · nuisibles (ISPM-15) · vol  
+Empilage imbriqué · symboles DIN/ISO`;
+
+const DEMO_602_APERCU_FULL = `## Aperçu du module 602
+
+Ce module traite des **emballages** : fonctions, vocabulaire DIN, choix, contraintes et normes.
+
+### Vous allez découvrir
+1. Fonctions protection / logistique / information
+2. Termes DIN 55405 et notions associées
+3. Choix (Dispobox, IFCO, rembourrage, durabilité)
+4. Contraintes mécaniques, climatiques, nuisibles, vol · normes
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 601`;
+
+const DEMO_602_APERCU_SUMMARY = `## Aperçu — Module 602
+- Fonctions & vocabulaire DIN
+- Choix & durabilité
+- Contraintes & normes`;
+
+const DEMO_602_OBJECTIFS_FULL = `## Objectifs du module 602
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer les trois **fonctions** de l'emballage
+- Utiliser le vocabulaire **DIN 55405** (moyen, accessoires, paquet…)
+- Choisir un emballage / rembourrage selon contraintes et **durabilité**
+- Décrire les contraintes (mécaniques, climatiques, nuisibles, vol) et les **normes** (empilage, symboles)`;
+
+const DEMO_602_OBJECTIFS_SUMMARY = `## Objectifs
+- Fonctions & DIN
+- Choix & contraintes
+- Normes · durabilité`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -8595,6 +8739,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_601_THEORIE_FULL,
       summary: DEMO_601_THEORIE_SUMMARY,
+    },
+  },
+  "602": {
+    objectifs: {
+      full: DEMO_602_OBJECTIFS_FULL,
+      summary: DEMO_602_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_602_APERCU_FULL,
+      summary: DEMO_602_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_602_THEORIE_FULL,
+      summary: DEMO_602_THEORIE_SUMMARY,
     },
   },
 };
