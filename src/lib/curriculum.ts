@@ -9731,6 +9731,94 @@ const DEMO_616_OBJECTIFS_SUMMARY = `## Objectifs
 - Flux & machines
 - Sécurité · WB · MIL`;
 
+/** Contenu Module 701 — L'inventaire */
+const DEMO_701_THEORIE_FULL = `## 1. L'inventaire
+
+### 1.1 Obligation d'inventaire
+
+Entreprise inscrite au **registre du commerce** → bilan annuel. Les **stocks** (actifs) doivent être contrôlés : valeurs comptables (**théoriques**) vs physiques (**réelles**). Documents d'inventaire à conserver **10 ans**.
+
+📜 **CO art. 958c al. 2** : chaque poste du bilan / annexe est justifié par un inventaire (ou autre).
+
+👉 Inventaire ≥ **1×/an** · conservation **10 ans**.
+
+### 1.2 Types d'inventaire
+
+#### 1.2.1 À date fixe (jour de clôture)
+Comptage un jour précis · listes par secteur · équipes (voire tout le personnel) · papier ou **MDE**. Idéalement **aucune** entrée/sortie ce jour-là. Très précis.
+
+#### 1.2.2 Permanent (tournant)
+Tout au long de l'année · système indique aléatoirement quoi compter · **chaque** article ≥ 1×/an. Idéal avec inventaire **temps réel** (MDE) pour continuer les mouvements.
+
+#### 1.2.3 Par sondage à jour fixe
+Accord autorités fiscales · échantillon représentatif extrapolé · souvent pour articles **bon marché** · articles de valeur = inventaire complet.
+
+### 1.3 Déroulement
+
+Directive / plan d'inventaire **contraignant** (adapté à l'entreprise).
+
+**Sources d'erreur :** manque de personnel · unités peu claires · pannes / erreurs MDE.
+
+**Préparation :** instruction · concertation · délimiter les EM non planifiées · enlever emballages / palettes vides · étiquetage racks · pré-trier unités de comptage.
+
+**Pendant :** **mesurer** (mètres) · **peser** (poids) · **compter** (unités).
+
+### 1.4 Évaluation
+
+Théorique ↔ réelle. Écarts > seuil → **recompter**. Si confirmé → **différence d'inventaire** (souvent perte) · charge au compte de résultat.
+
+👉 Clarifier les écarts = pistes d'amélioration des process.
+
+### 1.5 Causes des différences
+
+**Stock physique (réel) :** erreurs réception/stockage · livraisons non détectées · pertes substance (retrait, décomposition, évaporation) · DLC · erreurs picking · casse · **vol**.
+
+**Stock comptable (théorique) :** saisies incorrectes · mouvements non enregistrés · doublons · mauvais article.`;
+
+const DEMO_701_THEORIE_SUMMARY = `## À retenir — Module 701
+
+### Obligation
+Bilan · théorique vs réel · 1×/an · docs 10 ans · CO 958c
+
+### Types
+Date fixe · tournant · sondage
+
+### Processus
+Directive · préparer · mesurer/peser/compter  
+Écarts → recompter → différences (souvent charges)`;
+
+const DEMO_701_APERCU_FULL = `## Aperçu du module 701
+
+Premier module du bloc **FICO** : obligation, types et déroulement de l'**inventaire**.
+
+### Vous allez découvrir
+1. Base légale (CO) et conservation 10 ans
+2. Inventaire fixe, tournant et par sondage
+3. Préparation, comptage et évaluation
+4. Causes des différences théoriques / réelles
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Bloc 700`;
+
+const DEMO_701_APERCU_SUMMARY = `## Aperçu — Module 701
+- Obligation légale
+- 3 types d'inventaire
+- Écarts & causes`;
+
+const DEMO_701_OBJECTIFS_FULL = `## Objectifs du module 701
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Expliquer l'**obligation** d'inventaire (CO, 1×/an, 10 ans)
+- Distinguer inventaire **fixe**, **tournant** et par **sondage**
+- Décrire la **préparation** et le déroulement (mesurer, peser, compter)
+- Analyser les **différences** d'inventaire et leurs causes`;
+
+const DEMO_701_OBJECTIFS_SUMMARY = `## Objectifs
+- Obligation & types
+- Déroulement
+- Différences`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -10625,6 +10713,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_616_THEORIE_FULL,
       summary: DEMO_616_THEORIE_SUMMARY,
+    },
+  },
+  "701": {
+    objectifs: {
+      full: DEMO_701_OBJECTIFS_FULL,
+      summary: DEMO_701_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_701_APERCU_FULL,
+      summary: DEMO_701_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_701_THEORIE_FULL,
+      summary: DEMO_701_THEORIE_SUMMARY,
     },
   },
 };
