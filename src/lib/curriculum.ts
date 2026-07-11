@@ -3080,6 +3080,114 @@ const DEMO_206_OBJECTIFS_SUMMARY = `## Objectifs
 - Questions fermées / ouvertes
 - Moteurs, obstacles, clôture`;
 
+/** Contenu Module 207 — Pre-Sale-Service */
+const DEMO_207_THEORIE_FULL = `## 7. Pre-Sale-Service (service à la prévente)
+
+### 7.1 Les besoins
+
+Celui qui souhaite vendre quelque chose doit connaître les **besoins** des clients potentiels.
+
+Du point de vue de la gestion d'entreprise :
+
+> Un besoin est la **sensation d'un manque** liée au **souhait de le combler**.
+
+#### 7.1.1 La pyramide des besoins
+
+L'importance des besoins peut être représentée avec la **pyramide des besoins** (Maslow). Les besoins **élémentaires** (manger, boire, dormir) constituent la base : leur satisfaction est nécessaire à la vie. Ce n'est que lorsque les besoins du niveau inférieur sont comblés que les besoins **supérieurs** entrent en ligne de compte.
+
+**Niveaux (de la base au sommet) :**
+1. **Physiologiques** — manger, boire, dormir…
+2. **Sécurité** — protection, santé, stabilité
+3. **Sociaux** — appartenance, affection, contacts
+4. **Estime** — reconnaissance, statut, considération
+5. **Réalisation de soi** — développement personnel, accomplissement
+
+**Constat :** une grande faim et une soif tenaillante évincent tous les autres besoins.
+
+**Exceptions / nuances :**
+- **Maladie** — besoins élémentaires moins prioritaires ; fort besoin de **sécurité** (guérir, soins, médicaments) et de besoins **sociaux** (affection, paroles réconfortantes)
+- **Examens / tests** — les besoins élémentaires perdent aussi de l'importance au profit d'autres (sécurité, estime…)
+
+### 7.2 Vente
+
+Pour qu'une vente se réalise, il faut au moins **deux personnes** : un **acheteur** et un **vendeur**. L'un veut acheter, l'autre veut vendre.
+
+Dans un contexte de gestion d'entreprise, la tâche principale de la vente est de générer un **chiffre d'affaires minimum** pour être rentable et assurer l'**existence** de l'entreprise.
+
+### 7.3 Motifs d'achat
+
+Raisons très différentes d'acheter un produit ou un service.
+
+- Revenu **faible** → concentration sur les besoins **élémentaires**
+- Revenu **plus élevé** → autres motifs possibles :
+  - **curiosité** (un produit plaît, envie d'essayer du nouveau)
+  - **augmentation de l'estime de soi** (symboles de statut social)
+  - **passion** (ex. vieilles voitures, objets d'art)
+  - **envie d'acheter** (objets dont on n'a pas vraiment besoin)
+
+### 7.4 Les évaluations des fournisseurs
+
+Pour trouver le **meilleur fournisseur** possible pour le produit requis, on effectue une **évaluation des fournisseurs**.
+
+Variantes possibles. Modèle éprouvé : la **grille de scoring** (notation) — évaluation ponctuelle avec notes, indices ou ratios. On sélectionne des critères, on mesure ou on estime, puis on agrège en une **valeur globale**. Avec une **pondération** individuelle, certains critères pèsent davantage dans l'évaluation globale.
+
+**Critères possibles** (comparables et mesurables au cas par cas) :
+- **qualité** — fonction, apparence, propriétés / caractéristiques des produits, services et services complémentaires
+- **compétences de livraison** — quantité, délai, informations, flexibilité
+- **prix** des produits et services
+- **risque de défaillance** du fournisseur
+- **confiance** et **fiabilité** dans la coopération
+- **dépendance** de l'acheteur vis-à-vis du fournisseur`;
+
+const DEMO_207_THEORIE_SUMMARY = `## À retenir — Module 207
+
+### Besoin
+Sensation d'un manque + souhait de le combler  
+Pyramide (Maslow) : physiologique → sécurité → social → estime → réalisation  
+Base d'abord ; exceptions : maladie, examens
+
+### Vente
+Acheteur + vendeur · CA minimum pour rentabilité / existence
+
+### Motifs d'achat
+Élémentaires (revenu faible) · curiosité · estime/statut · passion · envie d'acheter
+
+### Évaluation fournisseurs
+Grille de **scoring** + pondération  
+Critères : qualité, livraison, prix, risque, confiance/fiabilité, dépendance`;
+
+const DEMO_207_APERCU_FULL = `## Aperçu du module 207
+
+Ce module présente le **Pre-Sale-Service** (service à la prévente) : comprendre les besoins clients, le contexte de vente, les motifs d'achat et l'évaluation des fournisseurs.
+
+### Vous allez découvrir
+1. Définition du besoin et pyramide des besoins
+2. Rôle de la vente (acheteur / vendeur, CA)
+3. Motifs d'achat selon le revenu et les motivations
+4. Évaluation des fournisseurs (grille de scoring, critères)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL`;
+
+const DEMO_207_APERCU_SUMMARY = `## Aperçu — Module 207
+- Besoins + pyramide
+- Vente et motifs d'achat
+- Scoring fournisseurs`;
+
+const DEMO_207_OBJECTIFS_FULL = `## Objectifs du module 207
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Définir un **besoin** et expliquer la **pyramide des besoins**
+- Décrire le rôle de la **vente** (acheteur / vendeur, objectif de CA)
+- Citer des **motifs d'achat** selon le contexte (revenu, curiosité, statut, passion…)
+- Expliquer l'**évaluation des fournisseurs** via une grille de scoring et ses critères`;
+
+const DEMO_207_OBJECTIFS_SUMMARY = `## Objectifs
+- Besoin + pyramide
+- Vente / motifs d'achat
+- Scoring fournisseurs`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -3316,6 +3424,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_206_THEORIE_FULL,
       summary: DEMO_206_THEORIE_SUMMARY,
+    },
+  },
+  "207": {
+    objectifs: {
+      full: DEMO_207_OBJECTIFS_FULL,
+      summary: DEMO_207_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_207_APERCU_FULL,
+      summary: DEMO_207_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_207_THEORIE_FULL,
+      summary: DEMO_207_THEORIE_SUMMARY,
     },
   },
 };
