@@ -135,7 +135,7 @@ const moduleSeeds: ModuleSeed[] = [
     title: "L'organisation de la production",
     blockId: "block-500",
   },
-  { code: "504", title: "Le flux de marchandises", blockId: "block-500" },
+  { code: "504", title: "Le flux de matériel", blockId: "block-500" },
   {
     code: "505",
     title: "La planification et le contrôle",
@@ -7444,6 +7444,107 @@ const DEMO_503_OBJECTIFS_SUMMARY = `## Objectifs
 - Organisations
 - Lean`;
 
+/** Contenu Module 504 — Le flux de matériel */
+const DEMO_504_THEORIE_FULL = `## 4. Le flux de matériel
+
+Suite du module **503** (types / organisation) : comment gérer matières premières et semi-finis pour atteindre les objectifs de production (**501**). Planification délicate : caractéristiques et **quantités** influencent fortement le flux.
+
+### 4.1 Types de flux
+
+#### 4.1.1 Flux externe
+Souvent assuré par des **prestataires logistiques**. Choix des fournisseurs = qualité de service client. En **Lean** (503) : peu de réserves pour absorber retards / non-livraisons.
+
+#### 4.1.2 Flux interne
+Responsabilité de l'entreprise (ex. EnterSite AG). De la livraison MP/semi-finis jusqu'à leur mise en œuvre. Objectifs lean : efforts ↓ · processus clairs · tâches attribuées · **chemin le plus direct**.
+
+### 4.2 Système Kanban
+
+Méthode de gestion selon le principe du **flux tiré** (prélèvement / appel) · orienté uniquement sur le besoin du **poste consommateur**. Japonais : « carte » / « tableau ». Développé chez **Toyota** (1947) : productivité, rapidité client, espace limité, stocks coûteux.
+
+#### 4.2.1 Fonctionnement
+Si niveau < **minimum** → appel au sous-traitant. Le poste aval prélève ce dont il a besoin **après** l'opération amont. La fiche (Kanban) accompagne le lot et revient quand le lot est entamé. Règles strictes : seules pièces **conformes** livrées.
+
+Évolution : carte → **conteneur** étiqueté → **numérique** (code-barres / QR · ERP / GPAO → sous-traitant, module **505**) · moins d'erreurs et de pertes de temps.
+
+### 4.3 Système Two-Bin
+Deux conteneurs. Réappro quand le 1er est **vide** et le 2e **entamé**. Infos sur le conteneur. Quantité du 2e = couverture jusqu'au retour du 1er. Défi lean : assez, mais **pas trop**.
+
+### 4.4 Commande optique
+Marquage / signalétique sur le conteneur = seuil de commande. Déclenchement : bon, e-mail, scan code-barres/QR… Déterminer **où** placer le repère est plus délicat que de déclencher.
+
+### 4.5 Just in Time (JIT)
+
+« Juste à temps » : livrer MP / semi-finis **au poste** au moment voulu · ↓ coûts de stockage (idéalement sans stock) · fabrication sans retard. Exige flux **externe + interne** parfaitement organisés · toute la **supply chain**. Origine : Japon / automobile.
+
+**Exemple EnterSite (Rupperswil)** — cartouche SwissEnterSite (GT10-TN221) : 18 pièces, fournisseurs mondiaux. Commande client → besoin → pièces programmées jour J · monteurs + poste prêts → si JIT OK = coûts ↓ (pas de stock tampon).
+
+#### 4.5.1 Avantages / inconvénients
+
+**+** Économie stockage · pas d'immobilisation · process accéléré · évite « boutiques vides » · personnel d'appro ↓ · temps de passage ↓  
+
+**−** Dépendance flux externe · aléas (embouteillages, grèves, météo…) · worst case = **arrêt** de production (+ coûts / image)
+
+Contrats client–fournisseur : qualité + **sanctions** si objectifs non tenus.
+
+### 4.6 Just in Sequence (JIS)
+
+« Juste à temps **et dans le bon ordre** » · développement du JIT (surtout auto). Mêmes +/- que JIT. Différence : marchandise **déballée** et rangée dans l'ordre pour le monteur (« à portée de main »), pas seulement en emballage de transport près du poste.
+
+### 4.7 Low Cost Automation (LCA)
+
+Aussi « Lean Automation » : automatiser à partir de l'**existant** (outils, machines, personnel) · compléter **ponctuellement** avec composants standard du marché. Objectif : process automatisé au max. · tâches répétitives avec **moins de personnel** · temps de passage ↓.
+
+### 4.8 Jidoka
+
+« Automation **autonome** » : machine sans surveillance humaine continue · capteurs détectent les écarts → **avertissement / arrêt** · évite produits défectueux · qualité ↑. Étape vers une automatisation où la machine corrigerait elle-même les erreurs.`;
+
+const DEMO_504_THEORIE_SUMMARY = `## À retenir — Module 504
+
+### Flux
+Externe (prestataires, peu de réserve lean) · interne (chemin direct)
+
+### Tirage
+**Kanban** (flux tiré, Toyota) · Two-Bin · commande optique
+
+### JIT / JIS
+JIT = juste à temps · stocks ↓ · supply chain critique  
+JIS = JIT + ordre / déballé pour le monteur
+
+### Techno
+LCA (lean automation) · **Jidoka** (arrêt autonome si défaut)`;
+
+const DEMO_504_APERCU_FULL = `## Aperçu du module 504
+
+Ce module traite du **flux de matériel** en production : flux interne/externe, Kanban, Two-Bin, JIT/JIS, LCA et Jidoka.
+
+### Vous allez découvrir
+1. Flux externe vs interne
+2. Kanban, Two-Bin, commande optique
+3. JIT et JIS (avantages / risques)
+4. Low Cost Automation et Jidoka
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite des modules 501–503`;
+
+const DEMO_504_APERCU_SUMMARY = `## Aperçu — Module 504
+- Flux interne / externe
+- Kanban · Two-Bin · optique
+- JIT / JIS · LCA · Jidoka`;
+
+const DEMO_504_OBJECTIFS_FULL = `## Objectifs du module 504
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Distinguer flux de matériel **externe** et **interne**
+- Expliquer **Kanban**, **Two-Bin** et la commande **optique**
+- Comparer **JIT** et **JIS** (avantages, risques, contrats)
+- Décrire **LCA** et **Jidoka** dans une logique lean / qualité`;
+
+const DEMO_504_OBJECTIFS_SUMMARY = `## Objectifs
+- Flux interne / externe
+- Kanban · Two-Bin · JIT/JIS
+- LCA · Jidoka`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -8072,6 +8173,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_503_THEORIE_FULL,
       summary: DEMO_503_THEORIE_SUMMARY,
+    },
+  },
+  "504": {
+    objectifs: {
+      full: DEMO_504_OBJECTIFS_FULL,
+      summary: DEMO_504_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_504_APERCU_FULL,
+      summary: DEMO_504_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_504_THEORIE_FULL,
+      summary: DEMO_504_THEORIE_SUMMARY,
     },
   },
 };
