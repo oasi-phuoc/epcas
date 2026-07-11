@@ -582,6 +582,132 @@ const DEMO_102_OBJECTIFS_SUMMARY = `## Objectifs
 - Interfaces / partenaires
 - SCM ≠ seulement logistique`;
 
+/** Contenu Module 103 — Tâches et objectifs */
+const DEMO_103_THEORIE_FULL = `## 3. Tâches et objectifs de la logistique
+
+Nous vivons à une époque où les processus commerciaux doivent être organisés de manière efficace afin de répondre à la croissance du marché et aux besoins des clients. En conséquence, le terme de logistique est devenu très populaire. Auparavant, les livraisons et les achats au détail étaient effectués en personne ou par des canaux tels que le fax, le téléphone et le courrier recommandé. Aujourd'hui, la technologie et le monde numérique permettent de faire des achats en un seul clic de souris. Les entreprises communiquent entre elles à l'aide de logiciels sophistiqués.
+
+Le marketing prend une nouvelle forme. Les processus commerciaux (opérationnels, organisationnels, administratifs) sont planifiés d'un point de vue stratégique. La stratégie vise à optimiser la communication entre les secteurs au sein de l'entreprise ou entre les parties internes et externes. Cela doit permettre d'améliorer la production et la distribution. La tactique sert à saisir les changements soudains sur le marché afin que l'entreprise puisse y réagir de manière appropriée.
+
+Les ressources sont optimisées afin de réduire les coûts tout en augmentant les bénéfices. L'entreprise devient une organisation d'actifs et de capitaux. L'organisation est gérée dans les moindres détails afin de faire prospérer l'entreprise.
+
+Selon les principes de la gestion d'entreprise, une entreprise réalise des bénéfices lorsqu'elle travaille de manière **efficace** et **efficiente** :
+
+- **L'efficacité** est la capacité d'un établissement à atteindre les objectifs fixés dans les délais impartis.
+- **L'efficience** est la réalisation des objectifs sans gaspillage de ressources.
+
+La logistique est l'ensemble des activités organisationnelles, administratives et stratégiques qui régissent le flux de matières et d'informations connexes dans l'entreprise ; depuis la source chez les fournisseurs à la livraison des produits finis aux clients et au service après-vente. En d'autres termes, la logistique d'entreprise est une partie spécifique de la chaîne d'approvisionnement dont la mission est d'optimiser les activités de l'entreprise et ses relations avec le monde extérieur, en optimisant les ressources et en rendant les processus efficaces et efficients.
+
+### Objectifs de la logistique
+
+Les principales activités de la logistique sont l'acquisition de matériel et de ressources de production, y compris le capital humain, la transformation des ressources en produits ou services et la distribution des produits ou services sur le marché.
+
+### 3.1 Définition de la logistique
+
+Même si le terme logistique est facile à interpréter, la **Society Of Logistic Engineers (S.O.L.E.)** propose une autre définition :
+
+**« La logistique est l'art et la science de l'organisation, de la planification et de l'activité technique en ce qui concerne les exigences, la définition, l'approvisionnement et les ressources nécessaires pour soutenir les objectifs, les plans et les opérations ». **
+
+Source : http://www.sole.org/
+
+### 3.2 Présentation simplifiée des tâches et des objectifs de la logistique
+
+Au fil des années, la logistique a connu différentes définitions des tâches et des objectifs à atteindre. Les définitions ont évolué et se sont étoffées.
+
+#### 3.2.1 Objectif
+
+L'objectif de la logistique peut être déduit de la définition du terme :
+
+**L'objectif de la logistique est d'assurer le meilleur flux possible de marchandises et de données.**
+
+#### 3.2.2 Tâches
+
+La logistique ne peut atteindre cet objectif ambitieux qu'en fournissant des prestations de haute qualité, ce qui signifie qu'elle doit remplir les « tâches B » suivantes.
+
+**Définition des 6B selon le professeur Jünemann :**
+
+1. **Bonne marchandise**
+2. **Bonne quantité**
+3. **Bonne qualité**
+4. **Bon moment**
+5. **Bon endroit**
+6. **Bon prix**
+
+Deux autres « B » se sont ajoutés et gagnent en importance :
+
+7. **Bonnes informations**
+8. **Bons clients**
+
+La logistique consiste donc à **rendre les biens disponibles**. Les 6B montrent quels aspects doivent être pris en compte pour qu'une tâche logistique puisse être exécutée avec succès.
+
+### Le développement d'une définition de la logistique
+
+Pendant des années, la logistique s'est concentrée sur les **4B**, à savoir le bon produit, dans la bonne qualité, au bon moment et au bon endroit. Entre-temps, la quantité et les coûts sont venus s'y ajouter pour répondre à la réduction de l'intégration verticale (par exemple dans le cas d'une production en flux tendu, module 504). C'est ainsi que les **6B** se sont établis comme éléments clés de la logistique.
+
+L'évolution n'est pas encore terminée. Aujourd'hui, on parle aussi de **7B** (6B plus la bonne information) ou de **8B** (6B plus la bonne information et le bon client). On parle de ces extensions parce que la gestion et l'importance des processus logistiques augmentent, tant dans la production industrielle que dans l'ensemble de la société.`;
+
+const DEMO_103_THEORIE_SUMMARY = `## À retenir — Module 103
+
+### Contexte
+- Processus efficaces face à la croissance du marché et aux clients
+- Du fax/téléphone → au clic numérique
+- Stratégie (optimiser) + tactique (réagir au marché)
+
+### Efficacité vs efficience
+- **Efficacité** : atteindre les objectifs dans les délais
+- **Efficience** : atteindre les objectifs **sans gaspiller** les ressources
+
+### Objectif de la logistique
+**Meilleur flux possible de marchandises et de données**
+
+### Les « B » (Jünemann + extensions)
+1. Bonne marchandise  
+2. Bonne quantité  
+3. Bonne qualité  
+4. Bon moment  
+5. Bon endroit  
+6. Bon prix  
+7. Bonnes informations  
+8. Bons clients  
+
+Évolution : **4B → 6B → 7B / 8B**
+
+### Définition S.O.L.E.
+Art et science d'organiser, planifier et soutenir objectifs / plans / opérations (ressources, exigences, approvisionnement).`;
+
+const DEMO_103_APERCU_FULL = `## Aperçu du module 103
+
+Ce module clarifie les **tâches et objectifs** de la logistique dans l'entreprise moderne.
+
+### Vous allez découvrir
+1. Le rôle de la logistique dans des processus efficaces et efficients
+2. La définition S.O.L.E. de la logistique
+3. L'objectif : meilleur flux de marchandises et de données
+4. Les **6B / 7B / 8B** (Jünemann et extensions)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL`;
+
+const DEMO_103_APERCU_SUMMARY = `## Aperçu — Module 103
+- Efficacité / efficience
+- Objectif : flux marchandises + données
+- Les B de la logistique (6 à 8)`;
+
+const DEMO_103_OBJECTIFS_FULL = `## Objectifs du module 103
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Distinguer **efficacité** et **efficience**
+- Formuler l'**objectif** de la logistique (flux marchandises et données)
+- Énoncer et expliquer les **6B** (et les extensions 7B / 8B)
+- Relier la logistique d'entreprise à la chaîne d'approvisionnement
+- Citer la définition de la **S.O.L.E.**`;
+
+const DEMO_103_OBJECTIFS_SUMMARY = `## Objectifs
+- Efficacité ≠ efficience
+- Objectif = meilleur flux marchandises + données
+- Maîtriser les 6B / 7B / 8B`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -622,6 +748,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_102_THEORIE_FULL,
       summary: DEMO_102_THEORIE_SUMMARY,
+    },
+  },
+  "103": {
+    objectifs: {
+      full: DEMO_103_OBJECTIFS_FULL,
+      summary: DEMO_103_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_103_APERCU_FULL,
+      summary: DEMO_103_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_103_THEORIE_FULL,
+      summary: DEMO_103_THEORIE_SUMMARY,
     },
   },
 };
