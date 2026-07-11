@@ -11279,6 +11279,124 @@ const DEMO_807_OBJECTIFS_SUMMARY = `## Objectifs
 - Média · animations
 - Diaporama · export`;
 
+/** Contenu Module 808 — OneNote Microsoft 365 */
+const DEMO_808_THEORIE_FULL = `## 8. OneNote Microsoft 365
+
+Centraliser documents, ressources et notes (cours / projet) au même endroit · remplacer le bloc-notes papier · intégrer PowerPoint, Word, web, captures, notes manuscrites…
+
+### 8.1 Versions
+
+| Version | Particularité |
+| --- | --- |
+| **OneNote 2016** (bureau) | Ruban Office complet · sections horizontales · **seul** à stocker aussi en local (PC) + cloud · max. d'options (Fichier → Options) |
+| **OneNote pour Windows** | Préinstallé · ruban compact · navigation verticale · Premium M365 (relecture manuscrite, Chercheur, Maths…) |
+| **OneNote 365** | Équivalent cloud · données sur **OneDrive** |
+
+Fonctions et symboles proches d'une version à l'autre → on s'y retrouve vite.
+
+### 8.2 Structure
+
+**Bloc-notes** → **sections** → **pages** / sous-pages. Organisation libre · renommer, déplacer, supprimer à tout moment.
+
+### 8.3 Formation
+
+Aide Microsoft (vidéos à jour) :  
+[Formation OneNote](https://support.microsoft.com/fr-fr/office/vid%C3%A9o-de-formation-onenote-1c983b65-42f6-42c1-ab61-235aae5d0115)
+
+### 8.4 Premiers pas
+
+1. **Fichier → Nouveau** → emplacement (ex. OneDrive) → nom → Créer  
+2. Partage possible à la création ou plus tard  
+3. **+ Nouvelle section** · clic droit → Renommer  
+4. **Ajouter une page** · cliquer le titre en haut pour nommer
+
+### 8.5 Prise de notes
+
+- **Texte :** clic n'importe où · police / taille / couleur
+- **Dessin :** onglet Dessin · stylet / souris / doigt · formes, crayons, surligneurs, pinceaux
+
+### 8.6 Collaboration et partage
+
+Utile pour : coédition · révision · historique des versions (y compris partage avec soi-même).
+
+**Fichier → Partager** → e-mail · autorisations · message → Envoyer. Modifier les personnes à tout moment · coédition en temps réel.
+
+### 8.7 Astuces avancées
+
+#### 8.7.1 Recherche intelligente
+Révision → sélectionner des mots → **Recherche intelligente** (panneau web à droite) · ou saisir d'autres termes.
+
+#### 8.7.2 Audio
+Insertion → **Enregistrer l'audio** → Arrêter · fichier sur la page · Renommer (clic droit) · Lecture.
+
+### 8.8 Organisation avancée
+
+#### 8.8.1 Balises
+Cases à cocher, adresse (maison), etc. · créer les siennes : **Personnaliser mes balises** → Nouvelle balise (nom, symbole, couleur texte / surlignage).  
+**Rechercher des indicateurs** : panneau de toutes les balises du bloc-notes (cocher / décocher depuis le panneau).
+
+#### 8.8.2 Couleurs
+| Élément | Comment |
+| --- | --- |
+| Bloc-notes | Clic droit → Propriétés → couleur |
+| Section | Clic droit → Couleur de la section |
+| Page | Affichage → Couleur de page |
+
+### 8.9–8.10 Modèles
+
+**Insertion → Modèles de page** : Académique · Vierge · Professionnel · Décoratif · Planificateur.  
+**Enregistrer la page active comme modèle** → Mes modèles · option modèle par défaut de la section.
+
+#### Notes manuscrites
+Dessin → **Sélection par lasso** → **Entrée manuscrite en texte** (stylet → texte tapé).
+
+### 8.11 Conclusion
+
+Outil polyvalent · explorer les fonctions pour l'adapter à son style de travail.`;
+
+const DEMO_808_THEORIE_SUMMARY = `## À retenir — Module 808
+
+### Socle
+3 versions · structure bloc-notes / sections / pages  
+OneDrive (cloud) · 2016 = local possible
+
+### Usage
+Notes texte + dessin · partage / coédition  
+Balises · couleurs · modèles · audio · recherche intelligente  
+Lasso → manuscrit en texte`;
+
+const DEMO_808_APERCU_FULL = `## Aperçu du module 808
+
+Ce module présente **OneNote Microsoft 365** : organisation des notes, collaboration et fonctionnalités avancées.
+
+### Vous allez découvrir
+1. Versions OneNote et structure bloc-notes / sections / pages
+2. Création, saisie, dessin et partage
+3. Balises, couleurs, modèles et enregistrement audio
+4. Recherche intelligente et conversion manuscrit → texte
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT`;
+
+const DEMO_808_APERCU_SUMMARY = `## Aperçu — Module 808
+- Versions · structure
+- Notes · partage · balises
+- Modèles · audio · manuscrit`;
+
+const DEMO_808_OBJECTIFS_FULL = `## Objectifs du module 808
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Distinguer les **versions** OneNote et organiser un bloc-notes (sections / pages)
+- Prendre des notes (texte, dessin) et **partager** pour collaborer
+- Utiliser balises, couleurs et **modèles** (y compris modèles perso)
+- Enregistrer de l'audio, utiliser la recherche intelligente et convertir le **manuscrit en texte**`;
+
+const DEMO_808_OBJECTIFS_SUMMARY = `## Objectifs
+- Versions · structure
+- Notes · partage
+- Balises · modèles · manuscrit`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -12327,6 +12445,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_807_THEORIE_FULL,
       summary: DEMO_807_THEORIE_SUMMARY,
+    },
+  },
+  "808": {
+    objectifs: {
+      full: DEMO_808_OBJECTIFS_FULL,
+      summary: DEMO_808_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_808_APERCU_FULL,
+      summary: DEMO_808_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_808_THEORIE_FULL,
+      summary: DEMO_808_THEORIE_SUMMARY,
     },
   },
 };
