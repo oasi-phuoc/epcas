@@ -4228,6 +4228,213 @@ const DEMO_304_OBJECTIFS_SUMMARY = `## Objectifs
 - Documents + plombs
 - Sous réserve · CVIM / Maastricht`;
 
+/** Contenu Module 305 — Déchargement des marchandises */
+const DEMO_305_THEORIE_FULL = `## 5. Déchargement des marchandises
+
+Après le contrôle des documents (module **304**), les marchandises sont **déchargées** et contrôlées. Le déchargement sur rampe/quai comporte des risques → concentration + connaissances en **sécurité au travail**.
+
+Deux domaines :
+1. Dangers liés à l'**infrastructure**
+2. Dangers / risques liés au **travail**
+
+### 5.1 Dangers liés à l'infrastructure
+
+Risques liés aux conditions de construction (rampes, zones de circulation…) = **zones dangereuses**.
+
+#### 5.1.1 Surfaces de stockage et de circulation
+
+Zones de **stockage** clairement séparées des zones de **circulation** (aussi pour stockages en bloc non signalés).
+
+Largeurs minimales (piétons) :
+- voies **secondaires** ≥ **80 cm**
+- voies **principales** ≥ **120 cm**
+
+Marchandises : ne pas dépasser sur les voies (risque de trébuchement). **Aucune** marchandise sur les voies de circulation.
+
+#### 5.1.2 Autres endroits dangereux
+
+| # | Lieu | Points clés |
+| --- | --- | --- |
+| 1 | **Plateformes** | Sols surélevés ; barrières ; engins immobilisés (pas de déplacement intempestif) |
+| 2 | **Balances intégrées** | Pas de chariots de manutention sur plateformes de balance (sauf balances sol pour véhicules routiers) |
+| 3 | **Salissures** | Nettoyer vite ; éviter flaques et objets au sol |
+| 4 | **Portails / portes** | Hauteur, visibilité ; prudence, miroirs, vitesse réduite |
+| 5 | **Quai de chargement** | Risque de chute ; y aller seulement si nécessaire ; pas de stockage ; attention au déportement du chariot |
+| 6 | **Rails** | Traverser voies industrielles à ~**45°** (manuel cariste) |
+| 7 | **Plateformes élévatrices** | Assurer les engins ; distance suffisante au levage |
+| 8 | **Grilles / regards** | Risque d'effondrement / enfoncement ; vitesse réduite |
+| 9 | **Rampes** | Pas d'accélération ; charge toujours **en amont** de la pente ; vide = directives internes |
+
+##### Zone dangereuse : quai de chargement
+
+Souvent **sans** barrières permanentes (accès camions/wagons) → risque de chute.
+
+**Mesures :**
+- rampes assez larges : allée de travail (Ast) **+ 10 %** (manuel cariste)
+- bords marqués / protections amovibles
+- pas de stationnement ni stockage temporaire sur le quai
+- respect des mesures de prudence
+- rampes trop étroites / inadaptées → **interdiction** de circulation engins
+
+### 5.2 Risques liés au travail
+
+Points d'attention au chargement / déchargement :
+- sécurisation du véhicule
+- choix de l'engin de manutention approprié
+- usage correct des moyens auxiliaires (ponts, tôles de liaison…)
+- postes disposés pour circulation piétons/véhicules sûre
+
+#### 5.2.1 Sécurisation du véhicule
+
+Véhicules très divers (semi, camion, camionnette, wagon…).
+
+**Transport routier**
+- Chargement/déchargement arrière ou côté
+- **Guides de roues** : alignement, moins de chocs, positionnement près du quai (souvent jaune/noir)
+- **Butoirs de quai** : amortir le choc (fixes ou mobiles)
+- Une fois à quai : **frein de stationnement** + couper le contact
+- Avec chariots : forces de poussée → **cales** sous les roues + **chaîne/sangle** au quai
+- Équipements de sûreté automatiques possibles
+
+**Semi-remorques** : mêmes mesures + anti-basculement (**béquille**, pile de palettes / support dolly / dispositif anti-basculement).
+
+**Ferroviaire** : personnel qualifié ; **frein à main** et/ou **sabot de freinage** (entre rail et roue).
+
+#### 5.2.2 Choix correct de l'engin de manutention
+
+##### Catégories sans risque d'accident important (ex. CFST 6518)
+
+Instruction selon fabricant + sécurité entreprise (théorie + pratique, **documentée**). Formateurs : cours engins à timon auprès d'un centre reconnu **Suva**. Durée selon complexité.
+
+| Cat. | Exemples | Usage |
+| --- | --- | --- |
+| **S1** Tracteur | Remorquage, souvent électrique, siège | Peu/pas de charge |
+| **S2** À timon | Transpalette électrique (levée initiale) ; gerbeur (~5,5 m) ; variantes à conducteur porté | Courtes/moyennes distances, gerbage, chargement |
+| **S3** Préparateurs | Petite levée / horizontal | Préparation 1er–2e niveau ; plateforme ≤ ~1 m |
+
+##### Catégories « particulièrement dangereuses »
+
+Risque d'accident important. Apprentis : en principe non — **dérogation** (ordonnance jeunes) pour formations reconnues Suva (logisticiens). Formation base débutants **4 jours** (expérimentés 2 j) + complémentaire 1 j / type.
+
+| Cat. | Exemples | Usage |
+| --- | --- | --- |
+| **R1** Contrepoids | Élec./thermique 3–4 roues | Universel ; mât ~7 m ; jusqu'à ~2 t (légers) / 10–40 t+ (lourds, extérieur) |
+| **R2** Haute levée / retract | Gerbeur assis, mât rétractable, tri-directionnel, préparateur vertical, multidirectionnel | Intérieur ; jusqu'à ~5–15 m selon type |
+| **R3** Latéral | Chariot latéral | Marchandises longues (scieries) ; ~4 m |
+| **R4** Télescopique | Bras télescopique | Extérieur, polyvalent |
+
+**OPA art. 6 et 8** : informer des dangers ; travaux dangereux → employés formés.
+
+**Jeunes (< 18 ans)** : travaux dangereux interdits en principe ; conduite chariots = dangereuse → **18 ans** en règle générale. **Dérogation logisticiens** : dès **15 ans** en formation avec mesures d'accompagnement (art. 4 protection des jeunes / loi sur le travail art. 29).
+
+##### Transporter en toute sécurité
+
+Quai mal organisé, vitesse, palettes mal placées, signalisation non respectée → accidents. Base : **manuel du cariste**.
+
+**Statistique (ordres de grandeur) :** > 10 000 accidents engins / an en Suisse (~100 mio CHF). Causes graves (exemple DE) : collisions **48,7 %** · conducteur 20,6 % · monter/descendre 4,6 % · accessoire 6,5 % · chargement 9,8 % · autres 9,8 %.
+
+**Règle d'or :** regarder **dans le sens de la marche** (même trajets courts).
+
+**Exemple accident :** piéton non autorisé surgit → écrasé par chariot 6 t → mortel. Mesure : sens de marche = direction du regard ; vue toujours dégagée.
+
+#### 5.2.3 Moyens auxiliaires de liaison
+
+Pour palettes : **tôles de liaison** / **ponts de chargement** (hauteurs camion ≠ quai).
+
+Exigences minimales :
+- capacité de charge **indiquée** et suffisante
+- surface **antidérapante**
+- protection contre le **déplacement**
+
+Préférer modèles **accrochés au quai** et rabattables. Éviter rampes tordues/glissantes.
+
+**Plateformes élévatrices / rampes ajustables :** ne pas dépasser charge utile ; mode d'emploi affiché ; maintenance par spécialistes.
+
+#### 5.2.4 Ascenseurs et monte-charges
+
+Charge utile **affichée**. Avant entrée : **chariot + charge + conducteur** < capacité. Calculer avant d'entrer.
+
+**Incendie :** **jamais** d'ascenseur / monte-charge (effet cheminée → piège mortel).
+
+#### 5.2.5 Installations de stockage automatisées
+
+En principe **ne pas** rester dans HRL / automatismes. Dépannage = personnel formé. Pour y pénétrer : arrêter **toute** l'installation + sécuriser contre remise en marche (**cadenas** sur interrupteur principal). Ne jamais se fier à un simple « c'est arrêté ». Signaler / faire faire par le supérieur.
+
+#### 5.2.6 Électricité
+
+Lignes HT dangereuses. Ligne de contact ferroviaire **15 000 V** : s'approcher = danger de mort. Charger wagons ouverts seulement si lignes **déconnectées et mises à la terre**. **Ne pas toucher** même déconnectées/mises à la terre sans procédure.
+
+#### 5.2.7 Signalisation et restriction d'accès
+
+| Type | Forme / couleurs | Rôle |
+| --- | --- | --- |
+| **Avertissement** | Triangle jaune/noir (ou rouge/blanc en circulation) | Danger imminent ; souvent + interdiction |
+| **Interdiction** | Rond rouge/blanc | Contraignant — à respecter absolument |
+| **Obligation** | Rond bleu/blanc | Comportement imposé (casque, lunettes…) |
+| **Secours** | Souvent vert/blanc | Évacuation, aide d'urgence |
+
+**Ex. 1 :** zone explosion (jaune/noir) + interdiction chariots + dérogation chariots antidéflagrants.  
+**Ex. 2 :** grues (jaune/noir) + obligation casque + chaussures de sécurité.`;
+
+const DEMO_305_THEORIE_SUMMARY = `## À retenir — Module 305
+
+### Infrastructure
+Stockage ≠ circulation · secondaires ≥80 cm · principales ≥120 cm  
+Quai : risque chute · Ast+10 % · pas de stockage · bords marqués  
+Rampes : charge en amont · pas d'accélération · 45° sur rails
+
+### Sécuriser le véhicule
+Frein + contact OFF · cales · chaîne/sangle · guides/butoirs  
+Semi : béquille + anti-basculement  
+Rail : frein à main et/ou sabot
+
+### Engins (CFST)
+S1–S3 : moindre risque · instruction documentée  
+R1–R4 : particulièrement dangereux · formation Suva  
+Jeunes : 18 ans règle / apprentis logistique dès 15 ans (dérogation)  
+Regarder dans le sens de la marche · collisions = cause n°1
+
+### Auxiliaires & zones
+Ponts/tôles : charge, antidérapant, anti-déplacement  
+Monte-charge : chariot+charge+conducteur < charge utile · jamais en incendie  
+Automatismes : cadenas sur coupe-circuit · pas d'entrée sans consignes  
+Électricité HT / 15 kV : danger mortel  
+Signaux : avertissement / interdiction / obligation / secours`;
+
+const DEMO_305_APERCU_FULL = `## Aperçu du module 305
+
+Ce module traite du **déchargement** sous l'angle de la **sécurité au travail** : dangers d'infrastructure et risques liés au travail (véhicules, engins, auxiliaires, signalisation).
+
+### Vous allez découvrir
+1. Zones dangereuses (circulation, quai, rampes…)
+2. Sécurisation route / rail
+3. Catégories d'engins CFST (S / R) et formation
+4. Ponts de chargement, monte-charges, automatismes, électricité
+5. Signalisation de sécurité
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 304`;
+
+const DEMO_305_APERCU_SUMMARY = `## Aperçu — Module 305
+- Dangers infrastructure (quai, rampes…)
+- Sécurisation véhicules + engins
+- Auxiliaires, monte-charges, signaux`;
+
+const DEMO_305_OBJECTIFS_FULL = `## Objectifs du module 305
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Identifier les **dangers d'infrastructure** (circulation, quai, rampes…)
+- Expliquer la **sécurisation** des véhicules routiers et ferroviaires au déchargement
+- Distinguer catégories d'engins **S** et **R** (CFST) et les règles de formation / âge
+- Utiliser correctement ponts/tôles, monte-charges et règles d'accès aux automatismes
+- Reconnaître les **signaux** d'avertissement, interdiction, obligation et secours`;
+
+const DEMO_305_OBJECTIFS_SUMMARY = `## Objectifs
+- Infrastructure & quai
+- Sécurisation + engins S/R
+- Auxiliaires · signaux`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -4562,6 +4769,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_304_THEORIE_FULL,
       summary: DEMO_304_THEORIE_SUMMARY,
+    },
+  },
+  "305": {
+    objectifs: {
+      full: DEMO_305_OBJECTIFS_FULL,
+      summary: DEMO_305_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_305_APERCU_FULL,
+      summary: DEMO_305_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_305_THEORIE_FULL,
+      summary: DEMO_305_THEORIE_SUMMARY,
     },
   },
 };
