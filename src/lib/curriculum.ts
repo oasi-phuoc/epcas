@@ -2050,6 +2050,109 @@ const DEMO_110_OBJECTIFS_SUMMARY = `## Objectifs
 - Master / Transaction data
 - Besoins, picking, KPI`;
 
+/** Contenu Module 201 — Le client */
+const DEMO_201_THEORIE_FULL = `## 1. Le client
+
+Le client est une personne ou une entreprise qui achète des marchandises ou utilise des services d'une autre personne ou entreprise. Souvent, le client est également appelé « acheteur » ou « débiteur ». Le mot « débiteur » est souvent utilisé pour la facturation et la comptabilité.
+
+EnterSite AG a plusieurs types de clients :
+- **Particuliers** — commandes souvent en petites quantités ; livraison à domicile ou achat en boutique
+- **Grands commerçants** — commandes régulières, plusieurs articles ; livraison par colis pour les quantités plus importantes
+
+### 1.1 L'importance du client
+
+EnterSite AG et ses collaborateurs ont intérêt à exécuter au mieux chaque commande. Un client satisfait reviendra pour ses futures commandes. Chaque commande doit donc être exécutée avec une grande concentration du début à la fin.
+
+Pour chaque commande exécutée, EnterSite AG établit une **facture**. Si le client paie, cela génère un **chiffre d'affaires**. Ce chiffre d'affaires sert à payer le **salaire** des collaborateurs. Le salaire de tous les collaborateurs provient donc des paiements des clients.
+
+**Remarque :** en tant que logisticien·ne, je comprends que chaque commande client est la base de mon emploi et donc du paiement de mon salaire. En conséquence, je me comporte de manière **respectueuse** et **valorisante** envers tous les clients.
+
+### 1.2 « Le client est roi »
+
+Ce proverbe décrit souvent la relation client–entreprise. EnterSite AG le donne comme base à ses collaborateurs — **sans le prendre au pied de la lettre**.
+
+Il s'agit plutôt de construire une **relation commerciale** fondée sur :
+- le respect
+- l'estime
+- la confiance
+- la durabilité
+
+Les deux parties agissent d'égal à égal et cherchent à couvrir leurs besoins. Si la communication est artificielle ou malhonnête, la relation est tôt ou tard vouée à l'échec (divergences, nuisances aux affaires).
+
+**Remarque :** le client souhaite être pris au sérieux et que l'on communique **honnêtement** avec lui.
+
+### 1.3 Le client fidèle
+
+Un client fidèle achète **régulièrement** des produits ou services auprès d'EnterSite AG. La relation est cohérente pour les deux parties.
+
+Les clients fidèles peuvent discuter des prestations passées ou des développements futurs — source d'**amélioration** et de **réorientation** en faveur des clients. L'échange reste fondé sur respect, estime, confiance et durabilité.
+
+### 1.4 Les entreprises doivent connaître leurs clients
+
+Pour vendre avec succès, il faut connaître ses clients. Les questions « Qui sont mes clients ? » et « Qu'attendent-ils ? » relèvent surtout du **marketing**, qui analyse clients existants et potentiels.
+
+Ces informations aident à :
+- améliorer produits et services
+- développer de nouvelles offres
+- améliorer le service client et les processus internes
+- découvrir / conquérir de nouveaux clients, groupes cibles et marchés
+
+Le marketing est traité en profondeur dans le module **205**.`;
+
+const DEMO_201_THEORIE_SUMMARY = `## À retenir — Module 201
+
+### Client
+Personne ou entreprise qui achète biens/services · aussi « acheteur » / « débiteur » (compta)
+
+### Types (ex. EnterSite)
+Particuliers (petites qty) · grands commerçants (commandes régulières, colis)
+
+### Importance
+Commande bien exécutée → satisfaction → fidélité → **CA** → **salaires**  
+Logisticien·ne : respect et valorisation de chaque client
+
+### « Client est roi »
+Pas au pied de la lettre → relation d'égal à égal  
+Valeurs : respect, estime, confiance, durabilité · communication **honnête**
+
+### Client fidèle
+Achats réguliers · dialogue pour améliorer l'offre
+
+### Connaître le client
+Rôle du **marketing** (module 205) : analyser besoins → mieux vendre / innover / conquérir`;
+
+const DEMO_201_APERCU_FULL = `## Aperçu du module 201
+
+Ce module introduit la notion de **client** et son importance pour l'entreprise et le logisticien.
+
+### Vous allez découvrir
+1. Définition et types de clients
+2. Lien commande → chiffre d'affaires → salaire
+3. Relation client (« client est roi », fidélité)
+4. Pourquoi connaître ses clients (marketing)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL`;
+
+const DEMO_201_APERCU_SUMMARY = `## Aperçu — Module 201
+- Qui est le client
+- Importance / fidélité
+- Relation et marketing`;
+
+const DEMO_201_OBJECTIFS_FULL = `## Objectifs du module 201
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Définir ce qu'est un **client** (et les termes acheteur / débiteur)
+- Expliquer pourquoi chaque commande compte pour l'emploi et le salaire
+- Interpréter « le client est roi » comme une **relation** fondée sur le respect et l'honnêteté
+- Décrire le client fidèle et le rôle du marketing pour connaître la clientèle`;
+
+const DEMO_201_OBJECTIFS_SUMMARY = `## Objectifs
+- Définir le client
+- Lien commande → CA → salaire
+- Relation / fidélité / marketing`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -2202,6 +2305,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_110_THEORIE_FULL,
       summary: DEMO_110_THEORIE_SUMMARY,
+    },
+  },
+  "201": {
+    objectifs: {
+      full: DEMO_201_OBJECTIFS_FULL,
+      summary: DEMO_201_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_201_APERCU_FULL,
+      summary: DEMO_201_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_201_THEORIE_FULL,
+      summary: DEMO_201_THEORIE_SUMMARY,
     },
   },
 };
