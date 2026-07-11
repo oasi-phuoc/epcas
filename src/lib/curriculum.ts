@@ -8977,6 +8977,156 @@ const DEMO_610_OBJECTIFS_SUMMARY = `## Objectifs
 - ROLA · ISO
 - ACTS · Domino · CST`;
 
+/** Contenu Module 611 — La préparation de commandes (approfondissement) */
+const DEMO_611_THEORIE_FULL = `## 11. La préparation de commandes (approfondissement)
+
+### 11.1 Principes
+Regrouper des marchandises selon des **ordres** (internes / clients). Souvent sous-estimée · erreurs ou retards → impact direct production / clients.
+
+### 11.2 Termes
+**Préparateur** · **commissionnement** (= préparation) · **liste de prélèvement** (n° article, désignation, emplacement, qté… · papier ou système).
+
+#### 11.2.1–11.2.4 Erreurs
+Fréquentes : mauvaise **quantité** · mauvaise **marchandise** · mauvaise **unité** (pièce vs carton).
+
+**Causes personnelles :** motivation · concentration · responsabilité · valeurs · connaissances.  
+**Causes organisationnelles :** ordres confus · stock mal étiqueté · formation · pannes MDE.
+
+**Conséquences :** retours, express, coûts ↑ · perte d'**image** / clients.
+
+**Prévention :** ambiance · formation · contrôles (double, poids…) · procédures **sans document**.
+
+### 11.3 Système de préparation
+
+Trois sous-systèmes en interaction (ex. commande Karl König / toners EnterSite) :
+
+| Sous-système | Rôle |
+| --- | --- |
+| **Informations** | Saisie → préparation → transmission → quittance |
+| **Flux matériel** | Mise à dispo · déplacement · prélèvement · transfert (+ contrôle) |
+| **Organisation** | Zones · 1/multi commandes · série/parallèle · parcours |
+
+#### 11.3.1 Flux d'informations
+1. **Saisie** — web, écrit, téléphone · réservation stock  
+2. **Préparation** — batch ou **real-time** (+ infos emballage, dangers…) → module **601**  
+3. **Transmission**  
+   - **Hors ligne** : listes · flexible · plus d'erreurs / travail  
+   - **En ligne** : rendement ↑ · erreurs ↓ · contrôles auto · coût / panne IT  
+   - Pick-by-Scan / Voice / Light / Vision (**601**) · **Pick-by-RFID** (sans contact, radio)  
+4. **Quittance** — humaine (coche, scan, voix) ou **automatique** · déclenche souvent la compta sans document
+
+#### 11.3.2 Flux de matériel
+1. **Préparation** — **statique** (homme→marchandise · investissement ↓ · trajets ↑) vs **dynamique** (marchandise→homme · rendement ↑ · investissement ↑ · moins flexible express)  
+2. **Déplacement** — **1D** horizontal / **multi** (hauteur, meilleure occupation)  
+3. **Prélèvement** — manuel (± engins) · auto (trieurs/robots · volumes homogènes)  
+4. **Transfert** — centralisé vs décentralisé · **Pick-and-Pack** si préemballé / normalisé / simple  
+5. **Contrôle** — quand (après prélèvement / avant-après emballage) · qui · total vs échantillon · scan / RFID / poids
+
+#### 11.3.3 Organisation
+- **1 secteur** ou **plusieurs** zones (puis regroupement)  
+- **1 étape / commande** vs **multi-étapes / multi-commandes** (ordre collectif → répartition)  
+- Transmission **par ordre** (1 étape · responsabilités claires · pas d'opti trajets) vs **par article** (2 étapes · longs trajets / articles communs)  
+- **Série** (l'un après l'autre · lentes si grosses commandes) vs **parallèle** (simultané · temps ↓)
+
+#### 11.3.4 Parcours
+**Par allée** (A en tête) · **série** (toutes allées) · **MOP** (*Multi Order Picking* : plusieurs petites commandes / tour · 1 conteneur / commande).
+
+### 11.4 Trieurs
+Répartissent vers destinations via code lu au début.
+
+| Type | Principe | Adapté à |
+| --- | --- | --- |
+| **Plateau inclinable** (*Tilt Tray*) | Bac bascule → goulotte | Large spectre (ex. bagages) |
+| **Sabots** (*Sliding*) | Patins poussent sur plaques | Fonds lisses (cartons, blisters…) |
+| **Roulettes pivotantes** (*pop-up*) | Rouleaux relevés / inclinés | Sols rigides lisses · ≠ sachets |
+| **Bandes transversales** | Bandes perpendiculaires | Plus soigneux que bascule |
+| **Trappes / Split-Tray** | Fond s'ouvre vers le bas | Légers, souples (textiles, lettres) |
+
+### 11.5 Optimiser (5 temps partiels)
+
+| Temps | Contenu | Leviers (ex.) |
+| --- | --- | --- |
+| **Organisation** | Avant/après (docs, moyens, transfert) | Docs clairs · auxiliaires proches · Pick-and-Pack · sortie décentralisée |
+| **Déplacement** | Entre 2 prélèvements | Connaissance entrepôt · ordre système · ABC · regroupement · dynamique · engins |
+| **Prélèvement** | Saisir / déposer | Profondeur ↓ · hauteur idéale · ergonomie · unités saisissables |
+| **Mort** (secondaire) | Lire, compter, contrôler, réappro… | Lisibilité · balance · unités entières · Voice |
+| **Perdu** | Personnel (pauses, bavardage) / matériel (attentes) | Ambiance · orga · motivation · flex pauses · primes |
+
+Somme des temps partiels = **100 %** du temps picking.
+
+### 11.6 Critères & ratios
+
+Facteurs **statiques** (structure, ABC, stock…) et **dynamiques** (flux/jour, commandes, poids…). Structure commande / articles → indicateurs (positions/commande, rotation, dimensions…).
+
+**Formules utiles :**
+- Capacité (pos./h) = **3600 / temps prélèvement (s/pos.)**  
+  Ex. 85 s → **42,35** pos./h
+- Coût / pos. = coûts d'exploitation/h ÷ capacité/h → ex. 85 / 42,35 ≈ **2 CHF**
+- Coût / commande = total coûts picking ÷ nb commandes  
+- Positions moy. / commande = total positions ÷ nb commandes  
+- Taux d'erreur (%) = erreurs ÷ prélèvements × 100
+
+**Ex. effectif :** 1400 pos./j · 14 s prélèvement = 15 % du temps total → temps total/pos. ≈ 93,3 s → **36,3 h**/j → ≈ **5** préparateurs (8 h).  
+**Ex. capacité :** 15 s = 15 % → 100 s/pos. · 8 h = 28 800 s → **288** pos./jour.
+
+### 11.7 Conception d'entrepôts (exemples types)
+
+| Config | Idée clé | + / − typiques |
+| --- | --- | --- |
+| 1 | Picking bas + réserve au-dessus · dynamique petits · 1D | Flexible · personnel / surface / ergo − |
+| 2 | 2 palettes / préparateur · réappro **auto** transstockeur | Personnel ↓ · pas d'attente · investissement ↑ |
+| 3 | Dynamique · grands assortiments petits · FIFO · zones | Trajets courts · réappro manuel · investissement |
+| 4 | **2D** grande levée · palettes ou pièces · pas de réappro | Volume ↑ · sols / haut peu adaptés au picking |
+
+👉 Adapter volume, nb d'articles, rotation, etc.`;
+
+const DEMO_611_THEORIE_SUMMARY = `## À retenir — Module 611
+
+### Erreurs
+Qté / article / unité · causes perso + orga · coûts & image
+
+### 3 systèmes
+Info (saisie→quittance) · matériel (statique/dynamique) · orga (zones, série/parallèle, MOP)
+
+### Trieurs & temps
+Tilt / sabots / pop-up / bandes / trappes  
+5 temps : orga · déplacement · prélèvement · mort · perdu
+
+### Ratios
+3600/t · coût/pos. · taux d'erreur · conception selon flux`;
+
+const DEMO_611_APERCU_FULL = `## Aperçu du module 611
+
+Approfondissement du **picking** (suite **601**) : erreurs, trois sous-systèmes, trieurs, optimisation des temps et ratios.
+
+### Vous allez découvrir
+1. Erreurs, causes, conséquences et prévention
+2. Systèmes d'information, de matériel et d'organisation
+3. Types de trieurs et 5 temps partiels
+4. Ratios de performance et conceptions d'entrepôt
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 601 / 610`;
+
+const DEMO_611_APERCU_SUMMARY = `## Aperçu — Module 611
+- Erreurs & 3 systèmes
+- Trieurs · 5 temps
+- Ratios · conception`;
+
+const DEMO_611_OBJECTIFS_FULL = `## Objectifs du module 611
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Analyser les **erreurs** de picking (causes, conséquences, prévention)
+- Décrire les trois **sous-systèmes** (info, matériel, organisation) et options (série/parallèle, MOP…)
+- Différencier les principaux **trieurs** et les **5 temps** partiels
+- Calculer des **ratios** de performance et relier conception d'entrepôt aux besoins`;
+
+const DEMO_611_OBJECTIFS_SUMMARY = `## Objectifs
+- Erreurs & systèmes
+- Trieurs · temps
+- Ratios · conception`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -9787,6 +9937,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_610_THEORIE_FULL,
       summary: DEMO_610_THEORIE_SUMMARY,
+    },
+  },
+  "611": {
+    objectifs: {
+      full: DEMO_611_OBJECTIFS_FULL,
+      summary: DEMO_611_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_611_APERCU_FULL,
+      summary: DEMO_611_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_611_THEORIE_FULL,
+      summary: DEMO_611_THEORIE_SUMMARY,
     },
   },
 };
