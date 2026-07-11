@@ -8167,6 +8167,135 @@ const DEMO_603_OBJECTIFS_SUMMARY = `## Objectifs
 - Feuillard & rupture
 - Fermetures`;
 
+/** Contenu Module 604 — Les systèmes de distribution */
+const DEMO_604_THEORIE_FULL = `## 4. Les systèmes de distribution
+
+### 4.1 Canaux de vente
+
+#### 4.1.1 Vente directe
+Producteur → client final (**B2C**) · livraison ou retrait chez le producteur · pas d'intermédiaire → prix souvent plus avantageux · trajets parfois plus longs pour le client.
+
+#### 4.1.2 Vente indirecte
+Producteur → **intermédiaire** (ex. Coop, Migros) → autre distributeur ou client · **B2B** entre producteurs / commerçants.
+
+### 4.2 Distribution (répartition)
+
+#### 4.2.1 À un niveau
+Client chez le producteur **ou** producteur sur un point de vente (ferme, marché, magasin d'usine / outlet).
+
+#### 4.2.2 À plusieurs niveaux
+Passage par intermédiaire et/ou entrepôt d'un grand distributeur.
+
+**Centralisé vs décentralisé**  
+Un niveau supplémentaire se justifie si coûts d'entreposage ≤ économies de transport. Infra transport développée → tendance **centralisée**.
+
+Critères de décision : importance de la région · type de marchandise (périssable ?) · structure clientèle · proximité client · écologie · sites (prod., entrepôt central/régional, dépôt).
+
+##### Grande distribution — concept classique
+Réseau multiniveaux · centres d'achat + points de vente · large assortiment · défi logistique d'approvisionnement des magasins.
+
+##### Concept décentralisé
+Centres spécialisés par type (non-food, DIY, coloniales…) · commandes des magasins · préparation « pour magasins » · pas de stock régional : **transit** / regroupement = **Cross Docking**.
+
+**Cross Docking :** marchandises déjà pré-commissionnées par le fournisseur · pas (ou peu) de stockage · réexpédition rapide · picking reporté chez le fournisseur. Prérequis : commandes clients déjà passées · délais fournisseurs courts.  
+👉 Objectif : stocks ↓ · vitesse ↑ · coûts de stockage ↓.
+
+Entrepôts régionaux → souvent **plateformes frais** · gros points de vente parfois livrés directement depuis production / distribution centrale → réseau complexe.
+
+##### Vente par correspondance / e-commerce
+Commande en ligne · livraison domicile · ex. Galaxus, Coop, Migros, Lindt… · EnterSite AG a aussi sa boutique.
+
+### 4.3 Marché postal
+
+Ouverture du marché · plusieurs opérateurs · seule **La Poste Suisse SA** a l'obligation de service public : lettres et colis ≤ **20 kg** partout en Suisse à prix identiques/avantageux.
+
+#### 4.3.1 Réservé / non réservé / concurrentiel
+| Type | Contenu |
+| --- | --- |
+| **Réservé** (monopole) | Lettres ≤ **50 g** · exclusivité Poste (sauf étranger) · finance le service universel |
+| **Non réservé** | Lettres > 50 g + colis · Poste **en concurrence** |
+| **Concurrentiel** | Services que la Poste **peut** offrir (ex. express) · pas d'obligation |
+
+👉 Mission service public ↔ exclusivité < 50 g.
+
+#### 4.3.2 Transport Poste
+Dépôt → camion → centre de tri lettres/colis · même zone → district · sinon train vers autre centre → camion vers régions / bases colis → remise (scooter DXP, voiture, camionnette).
+
+### 4.4 Secteur des transports
+
+#### 4.4.1 DEC (documents, express, colis)
+Principaux : **Poste**, **DPD**, **DHL** · + messagers / coursiers vélo (villes).
+
+### 4.5 Exemples
+
+#### 4.5.1 Diverses marchandises
+Colis > **30 kg** souvent sur palette = transport de **colis unitaires** · ramassage → plateforme → tri régional → livraison camion.
+
+👉 Stratégie de distribution adaptée = succès entreprise.
+
+#### 4.5.2 Étranger
+Emballage spécial · **dédouanement** · assurance · spécialistes / transitaires.
+
+##### Incoterms 2020
+*International Commercial Terms* — répartissent entre vendeur et acheteur :
+- coûts (conditionnement, fret, assurances)
+- documents import / export
+- droits de douane / taxes
+- **transfert des risques**
+
+Familles usuelles (tout mode vs mer/fluvial) :  
+**EXW** · **FCA** · **CPT** · **CIP** · **DAP** · **DPU** · **DDP** (tout mode) · **FAS** · **FOB** · **CFR** · **CIF** (mer / fluvial).
+
+De EXW (quasi tout à charge acheteur) à **DDP** (vendeur jusqu'au lieu de destination dédouané).`;
+
+const DEMO_604_THEORIE_SUMMARY = `## À retenir — Module 604
+
+### Vente
+Directe (B2C) · indirecte (intermédiaires)
+
+### Distribution
+1 niveau · multi-niveaux · centralisé / décentralisé  
+**Cross Docking** · plateformes frais · e-commerce
+
+### Postal
+Service public · réservé ≤50 g · non réservé · concurrentiel  
+Flux : dépôt → tri → distribution
+
+### Transport & export
+DEC (Poste, DPD, DHL) · palettes >30 kg · **Incoterms**`;
+
+const DEMO_604_APERCU_FULL = `## Aperçu du module 604
+
+Ce module présente les **systèmes de distribution** : canaux de vente, concepts multiniveaux, marché postal, DEC et Incoterms.
+
+### Vous allez découvrir
+1. Vente directe / indirecte et distribution 1 / multi niveaux
+2. Concepts classiques vs décentralisés et Cross Docking
+3. Marché postal (réservé / non réservé / concurrentiel)
+4. DEC, colis unitaires et Incoterms 2020
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite des modules 601–603`;
+
+const DEMO_604_APERCU_SUMMARY = `## Aperçu — Module 604
+- Canaux & concepts de distribution
+- Cross Docking · postal
+- DEC · Incoterms`;
+
+const DEMO_604_OBJECTIFS_FULL = `## Objectifs du module 604
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Distinguer vente **directe** / **indirecte** et distribution à **un** / **plusieurs** niveaux
+- Expliquer centralisé vs décentralisé et le **Cross Docking**
+- Décrire le marché **postal** (service public, réservé ≤50 g…)
+- Situer les acteurs **DEC** et le rôle des **Incoterms** à l'export`;
+
+const DEMO_604_OBJECTIFS_SUMMARY = `## Objectifs
+- Canaux & Cross Docking
+- Postal · DEC
+- Incoterms`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -8879,6 +9008,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_603_THEORIE_FULL,
       summary: DEMO_603_THEORIE_SUMMARY,
+    },
+  },
+  "604": {
+    objectifs: {
+      full: DEMO_604_OBJECTIFS_FULL,
+      summary: DEMO_604_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_604_APERCU_FULL,
+      summary: DEMO_604_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_604_THEORIE_FULL,
+      summary: DEMO_604_THEORIE_SUMMARY,
     },
   },
 };
