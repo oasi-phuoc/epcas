@@ -9923,6 +9923,164 @@ const DEMO_703_OBJECTIFS_SUMMARY = `## Objectifs
 - 3 piliers · déductions
 - CO · LAA`;
 
+/** Contenu Module 704 — Stockage — Les indicateurs logistiques */
+const DEMO_704_THEORIE_FULL = `## 4. Les indicateurs logistiques (KPI'S)
+
+Les indicateurs (KPI) permettent à EnterSite AG de stocker à **moindre coût**. On peut les calculer pour l'entreprise entière, un **groupe d'articles** ou un **article**.
+
+### 4.1 Le stock moyen
+
+Donnée de base pour la rotation, le taux d'intérêt des stocks, les frais de stockage, etc. Période d'analyse type = **1 année** (12 mois).
+
+| Formule | Calcul | Fiabilité |
+| --- | --- | --- |
+| **1** | (début d'année + fin d'année) / **2** | Fiable sur courte période · sur 1 an seulement si faibles fluctuations |
+| **2** | (début + fins de chaque trimestre) / **5** | Plus précis · encore sensible aux variations |
+| **3** | (début + fins de chaque mois) / **13** | Le plus proche de la réalité · préférable sur longues périodes |
+
+#### Exemple — matériel de vissage pour A1CC530AS
+
+| Date | Stock |
+| --- | --- |
+| Solde initial (1er janv.) | 2000 |
+| 31 janv. | 300 |
+| 28 févr. | 750 |
+| 31 mars | 900 |
+| 30 avr. | 1100 |
+| 31 mai | 200 |
+| 30 juin | 850 |
+| 31 juil. | 700 |
+| 31 août | 1700 |
+| 30 sept. | 1400 |
+| 31 oct. | 600 |
+| 30 nov. | 800 |
+| 31 déc. | 1500 |
+
+- **F1 :** (2000 + 1500) / 2 = **1750** pièces  
+- **F2 :** (2000 + 900 + 850 + 1400 + 1500) / 5 = **1330** pièces  
+- **F3 :** (2000 + 300 + 750 + 900 + 1100 + 200 + 850 + 700 + 1700 + 1400 + 600 + 800 + 1500) / 13 = **984** pièces  
+
+👉 Plus le nombre de stocks pris en compte est élevé, plus le résultat est **précis**.
+
+### 4.2 La rotation des stocks
+
+Nombre de fois où le stock moyen a été **renouvelé** (entièrement consommé et reconstitué) sur la période. Calculable pour articles, groupes d'articles ou tout l'entrepôt.
+
+**Rotation = utilisation des marchandises (consommation) / stock moyen**
+
+**Ex.** Toner Q3960AR : 14 000 / 2 000 = **7** fois (facteur).
+
+- **Rotation rapide** : forte rotation · **lente** : faible rotation  
+- Alimentaire : souvent facteur **12–15**  
+- Facteur ≤ **1** : faible → vérifier si le stockage en vaut la peine (sauf pièces de rechange critiques ou biens en maturation — rotation peu pertinente)
+
+**Avantages** d'une rotation ↑ : coûts ↓ · immobilisation du capital / intérêts / places ↓ · risque de stockage ↓ (invendus).
+
+**Leviers :** commander plus petit / plus souvent · inventaire à jour (ex. permanent) · stocks maximums · juste-à-temps · retirer les articles qui ne fonctionnent pas.
+
+#### 4.2.1 La durée de stockage
+
+Laps de temps moyen entre entrée et sortie. Plus la rotation ↑, plus la durée ↓ (et inversement).
+
+**Durée de stockage = 360 jours (ou période choisie) / rotation**
+
+**Ex.** 360 / 7 ≈ **51,4 jours**.
+
+👉 Comparer rotation / durée avec N−1 ou le secteur = indice de **rentabilité**.
+
+### 4.3 La couverture des stocks
+
+Nombre de **jours** pendant lesquels le stock suffit au rythme de consommation moyenne / planifiée.
+
+**Stock disponible = stock physique − réservations + entrées prévues**
+
+**Couverture = niveau de stock / besoin journalier**
+
+**Ex.** 1300 pièces / 150 = **8,6 jours**.
+
+### 4.4 La capacité de livraison (taux de service)
+
+Clients : choix large + délais courts → forte disponibilité, mais **100 %** sur tout l'assortiment coûte cher. Principe : « **aussi peu que possible, autant que nécessaire** ». Via analyse **ABC** (module **311**), on augmente surtout les stocks des articles **A**.
+
+**Taux de service (%) = demandes satisfaites / demandes totales × 100**
+
+« Demande » peut être : une commande · une ligne · une pièce. La **période** (instantané vs semaines/mois) compte aussi. Analyser aussi les conséquences d'une rupture (image, préjudice).
+
+**Ex.** Toner Q3960AR, mars : ≈ **98,4 %** (réaliste pour solutions bureautiques). Ruptures en fin de semaine → adapter les livraisons. ~**98 %** souvent atteignable raisonnablement · **100 %** = effort disproportionné.
+
+### 4.5 Les erreurs de livraison
+
+Toute livraison avec irrégularité : mauvais destinataire / article / quantité · endommagé ou défectueux.
+
+#### 4.5.1 Éviter en tant que fournisseur
+N° d'articles univoques · contrôles optiques · documents précis (préparation, livraison).
+
+#### 4.5.2 Éviter en tant que destinataire
+Identification globale à la livraison (module **304**) : pour nous ? attendu ? commande en système ? Puis contrôle professionnel EM (modules **307–308**).
+
+#### 4.5.3 Différence de quantité
+Excédent ou manque. Pas toujours une « erreur » si **tolérance** contractuelle. Compter en **temps réel** à l'EM : écart négatif = perte pour le destinataire.
+
+**Dommages transport :** souvent mécaniques (pression, chute, choc) → constater tôt · PV écrit + photos · signaler (**307**).
+
+#### 4.5.4 Taux d'erreur de livraison
+
+**Taux d'erreur (%) = livraisons défectueuses / livraisons totales × 100**
+
+**Ex.** 22 / 550 × 100 = **4 %**.
+
+Calculable par position · par fournisseur/client · globalement sur une période. Indicateur de **qualité fournisseur** · accords qualité / **pénalités** possibles.`;
+
+const DEMO_704_THEORIE_SUMMARY = `## À retenir — Module 704
+
+### Stock moyen
+F1 /2 · F2 /5 · F3 /13 → + de points = + précis
+
+### Rotation & durée
+Conso / stock moy. · 360 / rotation  
+↑ rotation = ↓ coûts, capital, risques
+
+### Couverture & service
+Disponible = physique − réserv. + entrées  
+Couverture = stock / besoin/j  
+Service ≈ 98 % réaliste · ABC (**311**)
+
+### Erreurs
+Taux = défectueuses / total × 100  
+Prévention 304 / 307–308 · tolérances · PV dommages`;
+
+const DEMO_704_APERCU_FULL = `## Aperçu du module 704
+
+Ce module présente les principaux **KPI de stockage** : stock moyen, rotation, couverture, capacité de livraison et erreurs.
+
+### Vous allez découvrir
+1. Les 3 formules du stock moyen (année, trimestres, mois)
+2. Rotation des stocks et durée de stockage
+3. Couverture, taux de service et logique ABC
+4. Taux d'erreurs de livraison et mesures de prévention
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Bloc 700 FICO`;
+
+const DEMO_704_APERCU_SUMMARY = `## Aperçu — Module 704
+- Stock moyen (3 formules)
+- Rotation · couverture · service
+- Erreurs de livraison`;
+
+const DEMO_704_OBJECTIFS_FULL = `## Objectifs du module 704
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Calculer un **stock moyen** selon les 3 formules et justifier le choix
+- Calculer **rotation** et **durée de stockage** et en tirer des conclusions
+- Interpréter **couverture** et **taux de service** (dont logique ABC, module 311)
+- Calculer le **taux d'erreur** de livraison et citer des mesures de prévention (fournisseur / destinataire)`;
+
+const DEMO_704_OBJECTIFS_SUMMARY = `## Objectifs
+- Stock moyen · rotation · durée
+- Couverture · service · ABC
+- Erreurs · prévention`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -10845,6 +11003,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_703_THEORIE_FULL,
       summary: DEMO_703_THEORIE_SUMMARY,
+    },
+  },
+  "704": {
+    objectifs: {
+      full: DEMO_704_OBJECTIFS_FULL,
+      summary: DEMO_704_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_704_APERCU_FULL,
+      summary: DEMO_704_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_704_THEORIE_FULL,
+      summary: DEMO_704_THEORIE_SUMMARY,
     },
   },
 };
