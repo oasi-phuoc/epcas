@@ -90,7 +90,7 @@ const moduleSeeds: ModuleSeed[] = [
   },
   {
     code: "307",
-    title: "L'identification globale et le marquage",
+    title: "Contrôle sommaire et traitement des dommages",
     blockId: "block-300",
   },
   { code: "308", title: "Le contrôle détaillé", blockId: "block-300" },
@@ -4641,6 +4641,160 @@ const DEMO_306_OBJECTIFS_SUMMARY = `## Objectifs
 - Critères d'échange EPAL
 - Pools · supports spéciaux`;
 
+/** Contenu Module 307 — Contrôle sommaire et traitement des dommages */
+const DEMO_307_THEORIE_FULL = `## 7. Contrôle sommaire et traitement des dommages
+
+Erreurs et dommages ne sont pas rares en logistique. Il faut les **reconnaître**, en analyser les **causes** et améliorer le **taux d'erreur**.
+
+### 7.1 Erreur dans la livraison
+
+Les contrôles d'identification globale et détaillée (module **304**) doivent déjà faire ressortir défauts et erreurs.
+
+#### 7.1.1 Mauvais destinataire
+
+Livraison non destinée à EnterSite → l'identification **globale** doit l'éviter. Sinon : temps et coûts inutiles.
+
+Prévention : adresses et contacts clairs (interne + transversal) entre expéditeur, transporteur et destinataire.
+
+**Remarque :** risque accru pour les entreprises à **plusieurs succursales**.
+
+#### 7.1.2 Marchandises incorrectes
+
+Bon destinataire ≠ bon contenu. Expéditeur : **double contrôle** ou **scanners**. Destinataire : identification **détaillée**.
+
+#### 7.1.3 Mauvaise quantité
+
+Aussi une erreur de livraison. Le scanner « mauvaise marchandise » ne suffit pas toujours pour la quantité — surtout petites pièces en grandes quantités. Outils → module **308**.
+
+#### 7.1.4 Différence qualitative
+
+Dommages transport / influences extérieures : déchirures, bosses, déformations ; papier/humidité, etc. Livraison « correcte » sans la qualité attendue = erreur. Garantie qualité → module **309**.
+
+**Remarque :** contenants endommagés = aussi anomalie qualitative (empêchent la vente).
+
+#### 7.1.5 Livraison tardive
+
+Date convenue liée à production / livraison client. Non-respect → annulation possible, image dégradée, coûts ↑.
+
+#### 7.1.6 Taux d'erreur et conséquences
+
+Accord qualité fournisseur–client : **taux d'erreur** toléré (selon valeur/importance des articles) + conséquences (jusqu'à **pénalité**). Chaque erreur est de trop ; impact image possible. Le **taux d'erreur de livraison** est un chiffre-clé (approfondi en stockage).
+
+### 7.2 Dégâts
+
+Première vision (identification globale) : chargement déplacé / palettes renversées → contraintes fortes, dommages probables. Dommages **climatiques** (humidité, température) moins évidents — surtout en international ; bureaux de contrôle qualité si besoin.
+
+Suremballage de transport protège l'emballage de **vente**. Emballage de vente déjà endommagé → souvent **non présenté** en point de vente.
+
+#### 7.2.1 Emballages endommagés durant le transport
+
+Distinguer **suremballage** et **emballage de vente**.
+
+| Aspect | Interprétation |
+| --- | --- |
+| **Déchiré** | Contenu souvent endommagé ; emballage de vente abîmé → impropre à la vente |
+| **Taché** | Tache de l'intérieur = casse → inutilisable ; de l'extérieur = parfois OK pour suremballage, pas pour emballage de vente |
+| **Écrasé / cabossé** | Vérifier le contenu ; emballage de vente → **refuser** |
+
+#### 7.2.2 Moyens auxiliaires pour détecter les dommages
+
+Produits coûteux/délicats : indicateurs et enregistreurs pour chocs, basculement, froid, etc. Preuves pour assurance : **photos** et/ou **données**. Enjeu aussi : confiance client / réputation.
+
+**Indicateur de basculement**
+- Sable de quartz bleu : activer en retirant la séparation ; inclinaison ~**60°** → sable visible
+- Billes de verre : la bille se déplace et reste collée selon l'angle
+
+**Indicateur de choc**  
+Tube verre + liquide rouge : chute/choc anormal → coloration **irréversible** du tube central.
+
+**Indicateur de température**  
+Chaîne du froid critique ; dégâts peu visibles. Points de couleur → rouge si température dépassée.
+
+**Utilisation en 5 étapes :**
+1. Appliquer l'indicateur sur l'emballage
+2. Transporteur confirme l'intégrité à la prise en charge
+3. Réception vérifie à la livraison
+4. Transporteur confirme indicateur déclenché ou manquant
+5. Examen du produit → libération ou traitement du sinistre
+
+**Infrarouge**  
+Mesure rapide de température **instantanée** — ne reconstitue pas l'historique du transport.
+
+**Enregistreurs numériques**  
+Température, humidité, inclinaison, chocs en continu ; seuils ; app mobile. Usages exigeants : musées, pharma, médical…
+
+### 7.3 En cas de dommage
+
+Signalement **immédiat** au supérieur ; documentation selon directives (formulaire de constatation). Photos sous tous les angles → jointes au protocole.
+
+#### 7.3.1 Comportement selon le mode de livraison
+
+**Transport accompagné**
+- **Camion** : constater avec le chauffeur ; signature sur formulaire ; transmission au fournisseur
+- **Courrier / coursier** : déclaration de dommage (formulaire + délais selon prestataire) ; **conserver** l'envoi jusqu'à fin d'enquête
+
+**Transport non accompagné**
+- **Ferroviaire** : signaler au gestionnaire d'événements ferroviaires de la région (constat sur place)
+- **Conteneur par camion** : signaler transporteur/fournisseur ; parfois **interrompre** le déchargement jusqu'à évaluation
+
+#### Protocole des dégâts
+
+Mise en page libre ; contenu correct + **visa du transporteur** indispensables. Joindre **photos** + bon de transport / livraison traité.`;
+
+const DEMO_307_THEORIE_SUMMARY = `## À retenir — Module 307
+
+### Erreurs de livraison
+Mauvais destinataire · mauvaises marchandises · mauvaise quantité · qualité · retard  
+Prévention : ID globale/détaillée, double contrôle, scanners  
+Accord qualité → taux d'erreur toléré + pénalités possibles
+
+### Dégâts emballage
+Suremballage ≠ emballage de vente  
+Déchiré / taché / écrasé → vérifier contenu ; vente abîmée → refus
+
+### Indicateurs
+Basculement · choc · température (+ infrarouge instantané · enregistreurs)  
+5 étapes : poser → confirmer départ → contrôler arrivée → confirmer anomalie → libérer/traiter
+
+### En cas de sinistre
+Supérieur + formulaire + photos  
+Accompagné : signature chauffeur / déclaration coursier  
+Non accompagné : rail (gestionnaire) · conteneur (attendre consignes)  
+Protocole + visa transporteur`;
+
+const DEMO_307_APERCU_FULL = `## Aperçu du module 307
+
+Ce module traite du **contrôle sommaire** : types d'erreurs de livraison, constatation des dégâts, indicateurs de transport et comportement en cas de sinistre.
+
+### Vous allez découvrir
+1. Erreurs : destinataire, marchandise, quantité, qualité, retard
+2. Taux d'erreur et accords qualité
+3. Emballages endommagés (suremballage vs vente)
+4. Indicateurs (basculement, choc, température) et enregistreurs
+5. Protocole de dégâts selon le mode de livraison
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite des modules 304–306`;
+
+const DEMO_307_APERCU_SUMMARY = `## Aperçu — Module 307
+- Types d'erreurs de livraison
+- Dégâts & indicateurs
+- Protocole / comportement sinistre`;
+
+const DEMO_307_OBJECTIFS_FULL = `## Objectifs du module 307
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Citer les principaux types d'**erreurs de livraison** et comment les détecter
+- Distinguer dommages sur suremballage et emballage de **vente**
+- Expliquer le rôle des **indicateurs** (basculement, choc, température) et des enregistreurs
+- Appliquer la procédure en **5 étapes** et le comportement en cas de **sinistre** (protocole, photos, signatures)`;
+
+const DEMO_307_OBJECTIFS_SUMMARY = `## Objectifs
+- Erreurs de livraison
+- Dégâts & indicateurs
+- Protocole sinistre`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -5003,6 +5157,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_306_THEORIE_FULL,
       summary: DEMO_306_THEORIE_SUMMARY,
+    },
+  },
+  "307": {
+    objectifs: {
+      full: DEMO_307_OBJECTIFS_FULL,
+      summary: DEMO_307_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_307_APERCU_FULL,
+      summary: DEMO_307_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_307_THEORIE_FULL,
+      summary: DEMO_307_THEORIE_SUMMARY,
     },
   },
 };
