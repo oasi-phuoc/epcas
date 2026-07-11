@@ -6938,6 +6938,154 @@ const DEMO_409_OBJECTIFS_SUMMARY = `## Objectifs
 - Entraînements & pièces
 - AGV / Autostore`;
 
+/** Contenu Module 410 — Les dispositifs de convoyage */
+const DEMO_410_THEORIE_FULL = `## 10. Les dispositifs de convoyage
+
+Contrairement aux chariots de manutention (**mobiles**), les systèmes de convoyage sont **fixes**. Objectif similaire : amener les marchandises au bon endroit. Le **type** et la **quantité** déterminent le convoyeur.
+
+### 10.1 Convoyeur vertical
+
+Transport vers le **haut** ou le **bas** · complète souvent les convoyeurs horizontaux · liaison entre étages.
+
+#### 10.1.1 Plate-forme / table élévatrice (PEMP)
+Mouvement **alternatif** · souvent sur quais. Structure à **ciseaux** hydrauliques (= table élévatrice à ciseaux). Aussi : adapter la hauteur d'un plan de travail. Apparenté : **transpalette à ciseaux**.
+
+**Convoyeur à étages** (classique) : hisse le produit **et** une partie de la voie de transport à l'étage suivant.
+
+#### 10.1.2 Convoyeur en S
+Mouvement en forme de **S**. Rouleaux à l'étage bas → plates-formes tournantes du convoyeur S (vertical) → rouleaux à l'étage haut. Même idée : **Liftveyor** / ascenseur à sacs (produit + élément de voie soulevés ensemble).
+
+#### 10.1.3 Élévateurs de marchandises
+Contrairement aux monte-charges : transport **non accompagné**. Souvent intégrés au flux automatique.
+
+**Chargement / déchargement d'un seul côté**  
+Rouleaux → **contrôle de profil** → porte → étage → rouleaux. Capacité limitée (pas de prise/dépose simultanée au même étage). Sécurité d'accès : personnes interdites.
+
+**Deux côtés**  
+Capacité nettement ↑ : pendant qu'on décharge d'un côté, le chargement suivant est déjà prêt de l'autre · cycles croisés haut/bas.
+
+#### 10.1.4 Monte-charges inclinés
+Entrepôts (souvent **mobiles**), chantiers, fermes (balles de foin). Marchandises moyennes, pas trop lourdes · chargement/déchargement souvent **manuel**. Ex. : combiné avec basculement pour rouleaux de papier.
+
+### 10.2 Engins de levage
+
+Servent à **soulever** (pas à transporter sur distance comme un convoyeur).
+
+#### 10.2.1 Ponts roulants
+Enjambent la surface · rails de chaque côté. **Chariot roulant** = mécanisme de levage mobile latéralement sur la charpente. Ex. bipoutre 25 t.
+
+#### 10.2.2 Ponts roulants suspendus
+Charpente **suspendue** au rail (rails au plafond) · chariots à membrure inférieure. Plus légers / moins chers que les portiques · pas pour charges très lourdes. Passage possible vers travée voisine / voie suspendue.
+
+🔎 Check-lists **SUVA** : engins de levage · grues industrie/artisanat.
+
+#### 10.2.3 Portique roulant & Container-Carrier
+**Portique** : terminaux conteneurs, ports, zones de transbordement (sur rails).
+
+**Container-Carrier (cavalier)** : aussi un portique, mais **sur roues** (libre) · alternative au chariot élévateur à conteneurs. Empile jusqu'à ~**4** conteneurs · cabine ~8 m · mât >10 m · allées très étroites grâce à la construction en portique.
+
+#### 10.2.4 Dispositifs de prise de charge
+
+**Chariot roulant** — déplacement transversal du levage :
+- **Membrure inférieure** (monopoutre) : suspendu à la poutre
+- **Membrure supérieure** (bipoutre) : sur la face supérieure des poutres
+- **Chariot d'angle** : version spéciale
+
+**Moufle inférieure & crochet** — palan à câble = **mouflage** :
+- 1 poulie → palan simple · rapport **1:2**
+- 2 poulies → palan double · rapport **1:4**  
+Le crochet est fixé au moufle inférieur (partie mobile).
+
+#### 10.2.5 Règles de levage (grue / pont)
+
+1. **Interdit** de se tenir sous une charge suspendue · signal SUVA · vue d'ensemble · éloigner les non-autorisés
+2. Uniquement dispositifs de levage / suspension **contrôlés et appropriés** · jamais improvisés · charge nominale inscrite ou code couleur
+3. Contrôler régulièrement (fissures, frottement) · retirer si endommagé · attention produits chimiques (capacité ↓ sans dommage visible)
+4. Protéger des **arêtes vives** (gaines, tuyaux, élingues renforcées)
+5. **Nœuds interdits** (détruisent le tissu)
+6. Jamais poser sangle/élingue sur la **pointe** du crochet · linguet fermé · ne pas tordre
+7. **Centre de gravité** à la verticale sous le crochet · objets longs → **palonnier**
+8. Respecter l'**angle d'inclinaison β** : plus β ↑, capacité ↓ · **β > 60° interdit** · à 60° ≈ 50 % · à 45° ≈ 70 %
+
+### 10.3 Convoyeurs continus
+
+Suite modules **407 / 409**. Contrairement au discontinu : se déplace **en boucle**, toujours dans le **même sens** (pas de marche arrière) · virages et obstacles possibles.
+
+#### 10.3.1 Convoyeur à rouleaux (galets)
+Détail, caisses, palettes · souvent combiné (chaînes, bandes pour pentes/courbes). Intégration possible : remplisseuses, **cerclage**. Virages : entraînement souvent par bande.
+
+#### 10.3.2 Convoyeur à chaîne porteuse
+Entraînement **dynamique** (ex. entrée d'entrepôt auto). Chaînes sous les planches extérieures de palette · galets sous la planche centrale = appui. Prise longitudinale ou transversale · combinaison possible avec bande (palettes + Rolltainers).
+
+👉 Ne jamais pénétrer dans l'installation · traverser uniquement sur les **ponts** prévus.
+
+#### 10.3.3 Éléments de transfert
+Changer de direction, transférer ou retirer de la ligne.
+
+| Élément | Rôle |
+| --- | --- |
+| **Distributeur à chaîne** | Chaîne se soulève sous la charge → convoyeur parallèle |
+| **Pousseur à chaîne** | Pousse perpendiculairement (rouleaux transversaux / glissière) |
+| **Pousseur légers** | Bras hydraulique · colis postaux / tri |
+| **Table rotative** | Tourne la palette (ex. 90° devant monte-charge) |
+
+Signal : galet palpeur ou cellule photoélectrique.
+
+#### 10.3.4 Convoyeur à rouleaux à accumulation
+Sections commandables individuellement → stocker sans s'empiler. Freinage des rouleaux = arrêt.
+
+**Fonctionnement :** rouleaux de traction (ex. rouges) tirés vers le haut par un **ressort** → entraînent les porteurs. Produit sur **galet palpeur** → genouillère pousse l'entraînement vers le bas → plus d'entraînement. Galet déchargé → reprise.
+
+#### 10.3.5 Table à billes
+Billes encastrées (quelques mm) · déplacement **toutes directions** presque sans effort · reconditionnement (grandes feuilles papier…). Variante : buses d'air. Ex. : PEMP mobile + table à billes.`;
+
+const DEMO_410_THEORIE_SUMMARY = `## À retenir — Module 410
+
+### Fixe vs mobile
+Convoyage = **fixe** · chariots = mobiles · même but : déplacer
+
+### Vertical
+Table à ciseaux · convoyeur S / Liftveyor · élévateur (1 ou 2 côtés + profil) · monte-charge incliné
+
+### Levage
+Pont · suspendu · portique · Container-Carrier  
+Chariot membrure inf./sup. · mouflage 1:2 / 1:4  
+8 règles SUVA · β ≤ 60° · CdG sous crochet
+
+### Continu
+Boucle, un seul sens · rouleaux · chaîne porteuse · transfert (distributeur, pousseur, table rotative) · accumulation · table à billes`;
+
+const DEMO_410_APERCU_FULL = `## Aperçu du module 410
+
+Ce module présente les **dispositifs de convoyage** fixes : verticaux, engins de levage et convoyeurs continus (dont transferts et accumulation).
+
+### Vous allez découvrir
+1. Convoyeurs verticaux (ciseaux, S, élévateurs, inclinés)
+2. Ponts, portiques, Container-Carrier et règles de levage
+3. Convoyeurs continus : rouleaux, chaînes, transferts
+4. Accumulation et table à billes
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite des modules 407–409`;
+
+const DEMO_410_APERCU_SUMMARY = `## Aperçu — Module 410
+- Convoyage vertical & levage
+- Continus · transferts · accumulation`;
+
+const DEMO_410_OBJECTIFS_FULL = `## Objectifs du module 410
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Distinguer convoyage **fixe** et engins **mobiles**, et citer les convoyeurs **verticaux**
+- Décrire ponts / portiques / **Container-Carrier** et appliquer les **règles de levage** (dont angle β)
+- Expliquer les convoyeurs **continus** (rouleaux, chaînes) et les **éléments de transfert**
+- Décrire le principe du convoyeur à **accumulation** et de la **table à billes**`;
+
+const DEMO_410_OBJECTIFS_SUMMARY = `## Objectifs
+- Verticaux & levage
+- Continus & transferts
+- Accumulation · sécurité`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -7510,6 +7658,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_409_THEORIE_FULL,
       summary: DEMO_409_THEORIE_SUMMARY,
+    },
+  },
+  "410": {
+    objectifs: {
+      full: DEMO_410_OBJECTIFS_FULL,
+      summary: DEMO_410_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_410_APERCU_FULL,
+      summary: DEMO_410_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_410_THEORIE_FULL,
+      summary: DEMO_410_THEORIE_SUMMARY,
     },
   },
 };
