@@ -6287,6 +6287,92 @@ const DEMO_405_OBJECTIFS_SUMMARY = `## Objectifs
 - Accidents / STOP / secours
 - Incendie · vol · MD · nuisibles`;
 
+/** Contenu Module 406 — Principes de stockage */
+const DEMO_406_THEORIE_FULL = `## 6. Principes de stockage
+
+### 6.1 Lotissement par case (emplacement fixe)
+
+Chaque article a un emplacement **définitivement attribué** — « chaque chose à sa place ». Courant : rayons libre-service, entrepôts commerciaux, préparation de commandes.
+
+Souvent sans **SGS** (gestion de stock informatisée). Inconvénient : fortes fluctuations → **mauvaise** utilisation de l'espace (emplacement réservé au stock **maximal** même si case quasi vide).
+
+Cas optimal : stock max atteint (souvent juste après une livraison). Sinon : emplacements vides inutilisables pour d'autres articles.
+
+### 6.2 Stockage chaotique (anarchique)
+
+« Chaos » ≠ désordre ici. N'importe quel **emplacement libre** peut être attribué → meilleure exploitation de l'espace (pas de réservation du max par article).
+
+**Remarque :** possible **uniquement** avec gestion de stock **assistée par ordinateur**.
+
+#### 6.2.1 Conditions
+Tenir compte des caractéristiques produits et **interdictions de stockage en commun** (systèmes optimisés). Prendre en compte fréquences / rotations. Répartir sur plusieurs zones → une panne n'empêche pas de déstocker tout un groupe.
+
+### 6.3 FIFO — First In, First Out
+
+Toujours sortir l'unité de chargement la **plus ancienne**. Évite que les marchandises restent trop longtemps. Surtout **périssables** / DLC (comme le réfrigérateur à la maison).
+
+**Formes qui supportent le FIFO** (si bien utilisées) :
+- rayonnage **dynamique**
+- drive-in à **double entrée**
+- stockage en pile avec prélèvement à la **base**
+
+### 6.4 LIFO — Last In, First Out
+
+Généralement **non recommandé** (formation de « stocks » anciens). Inévitable avec :
+- stockage en **bloc**
+- lignes/rangées accessibles d'**un seul** côté
+- drive-in à **une** entrée
+
+Sur rayonnages palettes/compartiments : ni favorisé ni empêché — les logisticiens doivent gérer la rotation : **nouvelles marchandises derrière** les anciennes.
+
+### 6.5 HIFO — Highest In, First Out
+
+Procédure de **valorisation** des stocks : sortir d'abord les plus **chers** → stock valorisé aux prix d'achat les plus bas (chiffre d'affaires élevé / stock final faible à l'inventaire · parfois réduction du revenu imposable). Courant à l'étranger ; **pas** toujours autorisé (ex. droit commercial/fiscal allemand). Avantage : évaluation prudente (prix bas).`;
+
+const DEMO_406_THEORIE_SUMMARY = `## À retenir — Module 406
+
+### Emplacement
+**Lotissement par case** : fixe · simple · mauvaise occupation si stocks variables  
+**Chaotique** : emplacement libre · espace ↑ · **ordinateur obligatoire**
+
+### Rotation
+**FIFO** : plus ancien d'abord · périssables · dynamique / drive-in double / pile base  
+**LIFO** : plus récent d'abord · bloc / 1 côté / drive-in simple  
+Palettes/compartiments : stocker le neuf **derrière** l'ancien
+
+### HIFO
+Valorisation : plus cher sorti d'abord · stock à prix bas · règles fiscales variables`;
+
+const DEMO_406_APERCU_FULL = `## Aperçu du module 406
+
+Ce module présente les **principes de stockage** : emplacement fixe vs chaotique, et règles de rotation FIFO / LIFO / HIFO.
+
+### Vous allez découvrir
+1. Lotissement par case et limites d'occupation
+2. Stockage chaotique (SGS obligatoire)
+3. FIFO et formes de rayonnage compatibles
+4. LIFO et HIFO (valorisation)
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Suite du module 405`;
+
+const DEMO_406_APERCU_SUMMARY = `## Aperçu — Module 406
+- Case fixe vs chaotique
+- FIFO · LIFO · HIFO`;
+
+const DEMO_406_OBJECTIFS_FULL = `## Objectifs du module 406
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Comparer **lotissement par case** et stockage **chaotique**
+- Expliquer pourquoi le chaotique exige un **SGS**
+- Appliquer les principes **FIFO** et **LIFO** et citer les formes adaptées
+- Situer le **HIFO** comme méthode de valorisation`;
+
+const DEMO_406_OBJECTIFS_SUMMARY = `## Objectifs
+- Case vs chaotique
+- FIFO / LIFO / HIFO`;
+
 export function buildCurriculumModules(): Module[] {
   return moduleSeeds.map((m, index) => ({
     id: `mod-${m.code}`,
@@ -6803,6 +6889,20 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_405_THEORIE_FULL,
       summary: DEMO_405_THEORIE_SUMMARY,
+    },
+  },
+  "406": {
+    objectifs: {
+      full: DEMO_406_OBJECTIFS_FULL,
+      summary: DEMO_406_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_406_APERCU_FULL,
+      summary: DEMO_406_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_406_THEORIE_FULL,
+      summary: DEMO_406_THEORIE_SUMMARY,
     },
   },
 };
