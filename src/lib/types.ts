@@ -1,0 +1,97 @@
+export type Role = "trainer" | "apprentice";
+
+export type LessonStatus = "unread" | "reading" | "done";
+
+export type ExerciseType = "qcm" | "math" | "open";
+
+export interface ClassRoom {
+  id: string;
+  name: string;
+  year: string;
+}
+
+export interface UserAccount {
+  id: string;
+  email: string;
+  password: string;
+  displayName: string;
+  role: Role;
+  classId: string;
+  active: boolean;
+}
+
+export interface Lesson {
+  id: string;
+  moduleId: string;
+  title: string;
+  order: number;
+  contentFull: string;
+  contentSummary: string;
+  published: boolean;
+}
+
+export interface Module {
+  id: string;
+  title: string;
+  order: number;
+  published: boolean;
+}
+
+export interface QcmPayload {
+  question: string;
+  choices: string[];
+  correctIndex: number;
+  explanation: string;
+}
+
+export interface MathPayload {
+  question: string;
+  unit?: string;
+  answer: number;
+  tolerance?: number;
+  explanation: string;
+}
+
+export interface OpenPayload {
+  question: string;
+  modelAnswer: string;
+  requiredKeywords: string[];
+  optionalKeywords?: string[];
+  explanation: string;
+}
+
+export interface Exercise {
+  id: string;
+  lessonId?: string;
+  title: string;
+  type: ExerciseType;
+  difficulty: "facile" | "moyen" | "difficile";
+  payload: QcmPayload | MathPayload | OpenPayload;
+  published: boolean;
+}
+
+export interface LessonProgress {
+  lessonId: string;
+  status: LessonStatus;
+  modePref: "full" | "summary";
+}
+
+export interface AttemptRecord {
+  id: string;
+  exerciseId: string;
+  userId: string;
+  score: number;
+  maxScore: number;
+  createdAt: string;
+}
+
+export interface AppState {
+  classRoom: ClassRoom;
+  users: UserAccount[];
+  modules: Module[];
+  lessons: Lesson[];
+  exercises: Exercise[];
+  progress: Record<string, LessonProgress[]>;
+  attempts: AttemptRecord[];
+  currentUserId: string | null;
+}

@@ -247,12 +247,13 @@ Trame de départ (le formateur remplit / ajuste via l’interface) :
 ### Phase 0 — Plan *(fait)*
 Décisions + design system + stack.
 
-### Phase 1 — Socle + design system
+### Phase 1 — Socle + design system *(en cours / livré en mode démo)*
 - Tokens pastel + composants UI de base  
-- Auth + rôles + shell (nav bureau / mobile)  
+- Auth + rôles + shell (nav bureau / mobile) — **mode démo localStorage**  
 - Interface formateur : créer classe, créer comptes apprentis  
 - 1 module théorie démo (Complet / Résumé) éditable  
-- 1 QCM + 1 exercice maths + progression basique  
+- 1 QCM + 1 exercice maths + question ouverte mots-clés + progression basique  
+- Schéma SQL Supabase prêt (`supabase/schema.sql`)  
 
 ### Phase 2 — Pédagogie complète
 - Tous types d’exercices  

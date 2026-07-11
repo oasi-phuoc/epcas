@@ -1,0 +1,132 @@
+-- EPCAS Logistique — schéma Phase 1 (à exécuter dans Supabase SQL Editor)
+-- Région recommandée : EU (Frankfurt ou proche)
+
+create extension if not exists "pgcrypto";
+
+create type public.user_role as enum ('trainer', 'apprentice');
+create type public.lesson_status as enum ('unread', 'reading', 'done');
+create type public.exercise_type as enum ('qcm', 'math', 'open');
+
+create table public.classes (
+  id uuid primary key default gen_random_uuid(),
+  name text not null,
+  year text not null,
+  created_at timestamptz not null default now()
+);
+
+create table public.profiles (
+  id uuid primary key references auth.users (id) on delete cascade,
+  role public.user_role not null default 'apprentice',
+  class_id uuid references public.classes (id),
+  display_name text not null,
+  active boolean not null default true,
+  created_at timestamptz not null default now()
+);
+
+create table public.modules (
+  id uuid primary key default gen_random_uuid(),
+  title text not null,
+  sort_order int not null default 0,
+  published boolean not null default false,
+  created_at timestamptz not null default now()
+);
+
+create table public.lessons (
+  id uuid primary key default gen_random_uuid(),
+  module_id uuid not null references public.modules (id) on delete cascade,
+  title text not null,
+  content_full text not null default '',
+  content_summary text not null default '',
+  sort_order int not null default 0,
+  published boolean not null default false,
+  created_at timestamptz not null default now()
+);
+
+create table public.exercises (
+  id uuid primary key default gen_random_uuid(),
+  lesson_id uuid references public.lessons (id) on delete set null,
+  title text not null,
+  type public.exercise_type not null,
+  difficulty text not null default 'facile',
+  payload jsonb not null default '{}'::jsonb,
+  published boolean not null default false,
+  created_at timestamptz not null default now()
+);
+
+create table public.lesson_progress (
+  user_id uuid not null references public.profiles (id) on delete cascade,
+  lesson_id uuid not null references public.lessons (id) on delete cascade,
+  status public.lesson_status not null default 'unread',
+  mode_pref text not null default 'full' check (mode_pref in ('full', 'summary')),
+  updated_at timestamptz not null default now(),
+  primary key (user_id, lesson_id)
+);
+
+create table public.attempts (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references public.profiles (id) on delete cascade,
+  exercise_id uuid not null references public.exercises (id) on delete cascade,
+  score numeric not null,
+  max_score numeric not null default 1,
+  answers jsonb,
+  created_at timestamptz not null default now()
+);
+
+alter table public.classes enable row level security;
+alter table public.profiles enable row level security;
+alter table public.modules enable row level security;
+alter table public.lessons enable row level security;
+alter table public.exercises enable row level security;
+alter table public.lesson_progress enable row level security;
+alter table public.attempts enable row level security;
+
+create or replace function public.is_trainer()
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select exists (
+    select 1 from public.profiles p
+    where p.id = auth.uid() and p.role = 'trainer' and p.active
+  );
+$$;
+
+-- Profiles
+create policy "profiles_select_own_or_trainer"
+  on public.profiles for select
+  using (id = auth.uid() or public.is_trainer());
+
+create policy "profiles_update_own"
+  on public.profiles for update
+  using (id = auth.uid() or public.is_trainer());
+
+-- Contenu publié lisible par tous les authentifiés ; formateur tout gère
+create policy "modules_read" on public.modules for select to authenticated
+  using (published or public.is_trainer());
+create policy "modules_write" on public.modules for all to authenticated
+  using (public.is_trainer()) with check (public.is_trainer());
+
+create policy "lessons_read" on public.lessons for select to authenticated
+  using (published or public.is_trainer());
+create policy "lessons_write" on public.lessons for all to authenticated
+  using (public.is_trainer()) with check (public.is_trainer());
+
+create policy "exercises_read" on public.exercises for select to authenticated
+  using (published or public.is_trainer());
+create policy "exercises_write" on public.exercises for all to authenticated
+  using (public.is_trainer()) with check (public.is_trainer());
+
+create policy "progress_own" on public.lesson_progress for all to authenticated
+  using (user_id = auth.uid() or public.is_trainer())
+  with check (user_id = auth.uid() or public.is_trainer());
+
+create policy "attempts_own" on public.attempts for all to authenticated
+  using (user_id = auth.uid() or public.is_trainer())
+  with check (user_id = auth.uid() or public.is_trainer());
+
+create policy "classes_read" on public.classes for select to authenticated
+  using (true);
+create policy "classes_write" on public.classes for all to authenticated
+  using (public.is_trainer()) with check (public.is_trainer());
