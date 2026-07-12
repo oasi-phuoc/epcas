@@ -169,7 +169,7 @@ export interface AttemptRecord {
 }
 
 export interface AppState {
-  classRoom: ClassRoom;
+  classes: ClassRoom[];
   users: UserAccount[];
   blocks: Block[];
   modules: Module[];

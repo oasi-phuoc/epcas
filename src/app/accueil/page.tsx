@@ -118,9 +118,12 @@ export default function AccueilPage() {
             <Panel>
               <p className="text-sm text-ink-muted">Classe</p>
               <p className="mt-2 text-sm font-medium text-ink">
-                {state.classRoom.name}
+                {state.classes.find((c) => c.id === currentUser.classId)?.name ??
+                  "Non assignée"}
               </p>
-              <p className="text-xs text-ink-subtle">{state.classRoom.year}</p>
+              <p className="text-xs text-ink-subtle">
+                {state.classes.find((c) => c.id === currentUser.classId)?.year}
+              </p>
             </Panel>
           </div>
         </div>

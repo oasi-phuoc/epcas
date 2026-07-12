@@ -15,13 +15,14 @@ import type {
   Assessment,
   AssessmentQuestion,
   AttemptRecord,
+  ClassRoom,
   Exercise,
   Lesson,
   LessonProgress,
   UserAccount,
 } from "./types";
 
-const STORAGE_KEY = "epcas-logistique-v82";
+const STORAGE_KEY = "epcas-logistique-v83";
 
 type AppStore = {
   state: AppState;
@@ -32,6 +33,11 @@ type AppStore = {
   upsertUser: (user: Omit<UserAccount, "id"> & { id?: string }) => void;
   setUserActive: (userId: string, active: boolean) => void;
   setUsersActive: (userIds: string[], active: boolean) => void;
+  setUserClass: (userId: string, classId: string) => void;
+  upsertClass: (
+    classroom: Omit<ClassRoom, "id"> & { id?: string },
+  ) => string;
+  deleteClass: (classId: string) => void;
   updateLesson: (lesson: Lesson) => void;
   setLessonProgress: (
     userId: string,
@@ -60,6 +66,14 @@ const AppStoreContext = createContext<AppStore | null>(null);
 function normalizeState(parsed: Partial<AppState> | null): AppState {
   if (!parsed) return initialState;
 
+  const legacy = parsed as Partial<AppState> & { classRoom?: ClassRoom };
+  const classes =
+    Array.isArray(parsed.classes) && parsed.classes.length > 0
+      ? parsed.classes
+      : legacy.classRoom
+        ? [legacy.classRoom]
+        : initialState.classes;
+
   const hasCurriculum =
     Array.isArray(parsed.blocks) &&
     parsed.blocks.length === initialState.blocks.length &&
@@ -69,6 +83,7 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
   if (!hasCurriculum) {
     return {
       ...initialState,
+      classes,
       users: parsed.users ?? initialState.users,
       progress: parsed.progress ?? {},
       attempts: parsed.attempts ?? [],
@@ -86,6 +101,7 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
   return {
     ...initialState,
     ...parsed,
+    classes,
     blocks: initialState.blocks,
     modules: initialState.modules,
     lessons,
@@ -228,6 +244,63 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
           idSet.has(u.id) ? { ...u, active } : u,
         ),
       }));
+    },
+    [commit],
+  );
+
+  const setUserClass = useCallback(
+    (userId: string, classId: string) => {
+      commit((s) => ({
+        ...s,
+        users: s.users.map((u) =>
+          u.id === userId ? { ...u, classId } : u,
+        ),
+      }));
+    },
+    [commit],
+  );
+
+  const upsertClass = useCallback(
+    (classroom: Omit<ClassRoom, "id"> & { id?: string }) => {
+      const id = classroom.id ?? `class-${crypto.randomUUID().slice(0, 8)}`;
+      commit((s) => {
+        if (classroom.id) {
+          return {
+            ...s,
+            classes: s.classes.map((c) =>
+              c.id === classroom.id
+                ? { ...c, name: classroom.name, year: classroom.year }
+                : c,
+            ),
+          };
+        }
+        return {
+          ...s,
+          classes: [
+            ...s.classes,
+            { id, name: classroom.name, year: classroom.year },
+          ],
+        };
+      });
+      return id;
+    },
+    [commit],
+  );
+
+  const deleteClass = useCallback(
+    (classId: string) => {
+      commit((s) => {
+        if (s.classes.length <= 1) return s;
+        const fallback = s.classes.find((c) => c.id !== classId)?.id;
+        if (!fallback) return s;
+        return {
+          ...s,
+          classes: s.classes.filter((c) => c.id !== classId),
+          users: s.users.map((u) =>
+            u.classId === classId ? { ...u, classId: fallback } : u,
+          ),
+        };
+      });
     },
     [commit],
   );
@@ -413,6 +486,9 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     upsertUser,
     setUserActive,
     setUsersActive,
+    setUserClass,
+    upsertClass,
+    deleteClass,
     updateLesson,
     setLessonProgress,
     addAttempt,

@@ -44,7 +44,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <div className="border-b border-border px-5 py-5">
           <p className="font-display text-2xl text-ink">EPCAS</p>
           <p className="text-sm text-ink-muted">Logistique</p>
-          <p className="mt-3 text-xs text-ink-subtle">{state.classRoom.name}</p>
+          <p className="mt-3 text-xs text-ink-subtle">
+            {state.classes.length} classe{state.classes.length !== 1 ? "s" : ""}
+          </p>
         </div>
         <nav className="flex flex-1 flex-col gap-1 p-3">
           {links.map(({ href, label, icon: Icon }) => {

@@ -11,11 +11,23 @@ const modules = buildCurriculumModules();
 const lessons = buildCurriculumLessons();
 
 export const initialState: AppState = {
-  classRoom: {
-    id: "class-1",
-    name: "CFC Logisticien·ne — EPCA Sion",
-    year: "2025-2026",
-  },
+  classes: [
+    {
+      id: "class-1",
+      name: "CFC 1ʳᵉ année — EPCA Sion",
+      year: "2025-2026",
+    },
+    {
+      id: "class-2",
+      name: "CFC 2ᵉ année — EPCA Sion",
+      year: "2025-2026",
+    },
+    {
+      id: "class-3",
+      name: "CFC 3ᵉ année — EPCA Sion",
+      year: "2025-2026",
+    },
+  ],
   users: [
     {
       id: "user-trainer",
@@ -33,6 +45,42 @@ export const initialState: AppState = {
       displayName: "Alex Dupont",
       role: "apprentice",
       classId: "class-1",
+      active: true,
+    },
+    {
+      id: "user-apprentice-2",
+      email: "jamie@epcas.ch",
+      password: DEMO_PASSWORD,
+      displayName: "Jamie Martin",
+      role: "apprentice",
+      classId: "class-1",
+      active: true,
+    },
+    {
+      id: "user-apprentice-3",
+      email: "sam@epcas.ch",
+      password: DEMO_PASSWORD,
+      displayName: "Sam Bernard",
+      role: "apprentice",
+      classId: "class-2",
+      active: true,
+    },
+    {
+      id: "user-apprentice-4",
+      email: "lea@epcas.ch",
+      password: DEMO_PASSWORD,
+      displayName: "Léa Favre",
+      role: "apprentice",
+      classId: "class-2",
+      active: false,
+    },
+    {
+      id: "user-apprentice-5",
+      email: "noah@epcas.ch",
+      password: DEMO_PASSWORD,
+      displayName: "Noah Keller",
+      role: "apprentice",
+      classId: "class-3",
       active: true,
     },
   ],
