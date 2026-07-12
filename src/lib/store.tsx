@@ -498,7 +498,8 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
           return true;
         });
 
-        // Retirer ces modules des autres années du même niveau
+        // Règle métier : 1 module = 1 seule année (1/2/3) par niveau AFP|CFC.
+        // Toute affectation ici retire le module des autres années du même niveau.
         const sequences = s.sequences.map((seq) => {
           if (seq.level !== level) return seq;
           if (seq.studyYear === studyYear) {

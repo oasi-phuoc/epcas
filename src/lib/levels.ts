@@ -407,7 +407,8 @@ export function normalizeSequences(
     sequences.map((s) => [`${s.level}-${s.studyYear}`, s] as const),
   );
 
-  return defaults.map((def) => {
+  // 1) Nettoyage interne à chaque année
+  const perYear = defaults.map((def) => {
     const saved = byKey.get(`${def.level}-${def.studyYear}`);
     if (!saved) return def;
     const seen = new Set<string>();
@@ -420,6 +421,37 @@ export function normalizeSequences(
     });
     return { ...def, moduleIds };
   });
+
+  // 2) Un module = une seule année par niveau (AFP / CFC)
+  //    En cas de doublon (données anciennes), on conserve la 1ʳᵉ année trouvée.
+  const claimedByLevel = new Map<DiplomaLevel, Set<string>>();
+  for (const level of DIPLOMA_LEVELS) {
+    claimedByLevel.set(level, new Set());
+  }
+
+  return perYear.map((seq) => {
+    const claimed = claimedByLevel.get(seq.level)!;
+    const moduleIds = seq.moduleIds.filter((id) => {
+      if (claimed.has(id)) return false;
+      claimed.add(id);
+      return true;
+    });
+    return { ...seq, moduleIds };
+  });
+}
+
+/** Année où un module est déjà placé pour un niveau (ou null). */
+export function findModuleStudyYear(
+  sequences: LearningSequence[],
+  level: DiplomaLevel,
+  moduleId: string,
+): StudyYear | null {
+  for (const year of STUDY_YEARS) {
+    if (year > maxStudyYear(level)) continue;
+    const seq = getSequence(sequences, level, year);
+    if (seq?.moduleIds.includes(moduleId)) return year;
+  }
+  return null;
 }
 
 /** Modules d'un niveau non encore assignés à une année. */

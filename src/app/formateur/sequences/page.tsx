@@ -175,7 +175,7 @@ export default function SequencesPage() {
     <div>
       <PageHeader
         title="Séquences d'apprentissage"
-        description="Définissez l'ordre des modules par année (1ʳᵉ, 2ᵉ, 3ᵉ) et par niveau AFP / CFC."
+        description="Ordre des modules par année (1ʳᵉ, 2ᵉ, 3ᵉ) et niveau AFP / CFC. Un module ne peut être affecté qu'à une seule année par niveau."
       />
 
       <Panel className="mb-4">
@@ -339,8 +339,8 @@ export default function SequencesPage() {
             <Badge tone="neutral">{availableModules.length}</Badge>
           </div>
           <p className="mb-3 text-sm text-ink-muted">
-            Modules {level} non encore placés. Un module ne peut être que dans
-            une seule année.
+            Modules {level} non encore placés. Règle : un module = une seule
+            année (1, 2 ou 3) pour ce niveau.
           </p>
           {availableModules.length === 0 ? (
             <EmptyState
@@ -381,8 +381,9 @@ export default function SequencesPage() {
             <Badge tone="accent">{placedElsewhere.length}</Badge>
           </div>
           <p className="mb-3 text-sm text-ink-muted">
-            Pastille = année où le module est déjà affecté pour {level}. Cliquez
-            la pastille pour ouvrir cette année.
+            Ces modules sont déjà affectés à une autre année {level} — ils ne
+            peuvent pas être ajoutés ici sans les retirer d&apos;abord (ou
+            changez d&apos;année via la pastille).
           </p>
           {placedElsewhere.length === 0 ? (
             <p className="text-sm text-ink-subtle">
