@@ -31,6 +31,7 @@ type AppStore = {
   logout: () => void;
   upsertUser: (user: Omit<UserAccount, "id"> & { id?: string }) => void;
   setUserActive: (userId: string, active: boolean) => void;
+  setUsersActive: (userIds: string[], active: boolean) => void;
   updateLesson: (lesson: Lesson) => void;
   setLessonProgress: (
     userId: string,
@@ -217,6 +218,20 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     [commit],
   );
 
+  const setUsersActive = useCallback(
+    (userIds: string[], active: boolean) => {
+      if (userIds.length === 0) return;
+      const idSet = new Set(userIds);
+      commit((s) => ({
+        ...s,
+        users: s.users.map((u) =>
+          idSet.has(u.id) ? { ...u, active } : u,
+        ),
+      }));
+    },
+    [commit],
+  );
+
   const updateLesson = useCallback(
     (lesson: Lesson) => {
       commit((s) => ({
@@ -397,6 +412,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     logout,
     upsertUser,
     setUserActive,
+    setUsersActive,
     updateLesson,
     setLessonProgress,
     addAttempt,
