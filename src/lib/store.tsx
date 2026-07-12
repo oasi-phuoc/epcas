@@ -40,6 +40,8 @@ import type {
   AssessmentQuestion,
   AttemptRecord,
   ClassRoom,
+  ClassTask,
+  ClassTaskStatus,
   DiplomaLevel,
   Exercise,
   Lesson,
@@ -49,7 +51,7 @@ import type {
   UserAccount,
 } from "./types";
 
-const STORAGE_KEY = "epcas-logistique-v88";
+const STORAGE_KEY = "epcas-logistique-v89";
 
 /** Ancien placeholder OneNote : à remplacer par le curriculum dès qu'il est rempli. */
 function isPlaceholderLessonContent(text: string | undefined | null): boolean {
@@ -82,10 +84,19 @@ type AppStore = {
   setUserActive: (userId: string, active: boolean) => void;
   setUsersActive: (userIds: string[], active: boolean) => void;
   setUserClass: (userId: string, classId: string) => void;
+  setUsersClass: (userIds: string[], classId: string) => void;
   upsertClass: (
     classroom: Omit<ClassRoom, "id"> & { id?: string },
   ) => string;
+  setClassActive: (classId: string, active: boolean) => void;
+  emptyClass: (classId: string) => void;
   deleteClass: (classId: string) => void;
+  deleteUser: (userId: string) => void;
+  upsertClassTask: (
+    task: Omit<ClassTask, "id" | "createdAt" | "updatedAt"> & { id?: string },
+  ) => string;
+  deleteClassTask: (taskId: string) => void;
+  setClassTaskStatus: (taskId: string, status: ClassTaskStatus) => void;
   updateLesson: (lesson: Lesson) => void;
   updateModule: (module: Module) => void;
   setSequenceModuleIds: (
@@ -144,6 +155,7 @@ function normalizeClasses(
       ...c,
       level,
       studyYear: normalizeClassStudyYear({ ...c, level }),
+      active: c.active !== false,
     };
   });
 }
@@ -193,6 +205,7 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
       attempts: parsed.attempts ?? [],
       assessments: normalizeAssessments(parsed.assessments),
       assessmentQuestions: parsed.assessmentQuestions ?? [],
+      classTasks: parsed.classTasks ?? initialState.classTasks,
       sequences: normalizeSequences(parsed.sequences, initialState.modules),
       currentUserId: parsed.currentUserId ?? null,
     };
@@ -239,6 +252,9 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
     attempts: parsed.attempts ?? [],
     assessments: normalizeAssessments(parsed.assessments),
     assessmentQuestions: parsed.assessmentQuestions ?? [],
+    classTasks: Array.isArray(parsed.classTasks)
+      ? parsed.classTasks
+      : initialState.classTasks,
     currentUserId: parsed.currentUserId ?? null,
   };
 }
@@ -399,6 +415,20 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     [commit],
   );
 
+  const setUsersClass = useCallback(
+    (userIds: string[], classId: string) => {
+      if (userIds.length === 0) return;
+      const idSet = new Set(userIds);
+      commit((s) => ({
+        ...s,
+        users: s.users.map((u) =>
+          idSet.has(u.id) ? { ...u, classId } : u,
+        ),
+      }));
+    },
+    [commit],
+  );
+
   const upsertClass = useCallback(
     (classroom: Omit<ClassRoom, "id"> & { id?: string }) => {
       const id = classroom.id ?? `class-${crypto.randomUUID().slice(0, 8)}`;
@@ -416,6 +446,10 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
                     year: classroom.year,
                     level,
                     studyYear,
+                    active:
+                      classroom.active !== undefined
+                        ? classroom.active
+                        : c.active,
                   }
                 : c,
             ),
@@ -431,11 +465,44 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
               year: classroom.year,
               level,
               studyYear,
+              active: classroom.active !== false,
             },
           ],
         };
       });
       return id;
+    },
+    [commit],
+  );
+
+  const setClassActive = useCallback(
+    (classId: string, active: boolean) => {
+      commit((s) => ({
+        ...s,
+        classes: s.classes.map((c) =>
+          c.id === classId ? { ...c, active } : c,
+        ),
+      }));
+    },
+    [commit],
+  );
+
+  const emptyClass = useCallback(
+    (classId: string) => {
+      commit((s) => {
+        const fallback =
+          s.classes.find((c) => c.id !== classId && c.active)?.id ??
+          s.classes.find((c) => c.id !== classId)?.id;
+        if (!fallback) return s;
+        return {
+          ...s,
+          users: s.users.map((u) =>
+            u.role === "apprentice" && u.classId === classId
+              ? { ...u, classId: fallback }
+              : u,
+          ),
+        };
+      });
     },
     [commit],
   );
@@ -452,8 +519,91 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
           users: s.users.map((u) =>
             u.classId === classId ? { ...u, classId: fallback } : u,
           ),
+          classTasks: s.classTasks.filter((t) => t.classId !== classId),
         };
       });
+    },
+    [commit],
+  );
+
+  const deleteUser = useCallback(
+    (userId: string) => {
+      commit((s) => {
+        if (s.currentUserId === userId) return s;
+        const { [userId]: _removed, ...restProgress } = s.progress;
+        return {
+          ...s,
+          users: s.users.filter((u) => u.id !== userId),
+          progress: restProgress,
+          attempts: s.attempts.filter((a) => a.userId !== userId),
+          classTasks: s.classTasks.filter((t) => t.userId !== userId),
+        };
+      });
+    },
+    [commit],
+  );
+
+  const upsertClassTask = useCallback(
+    (
+      task: Omit<ClassTask, "id" | "createdAt" | "updatedAt"> & {
+        id?: string;
+      },
+    ) => {
+      const now = new Date().toISOString();
+      const id = task.id ?? `task-${crypto.randomUUID().slice(0, 8)}`;
+      commit((s) => {
+        if (task.id) {
+          return {
+            ...s,
+            classTasks: s.classTasks.map((t) =>
+              t.id === task.id
+                ? {
+                    ...t,
+                    ...task,
+                    id: task.id,
+                    updatedAt: now,
+                  }
+                : t,
+            ),
+          };
+        }
+        const created: ClassTask = {
+          id,
+          classId: task.classId,
+          userId: task.userId,
+          title: task.title,
+          description: task.description,
+          dueAt: task.dueAt,
+          status: task.status,
+          createdAt: now,
+          updatedAt: now,
+        };
+        return { ...s, classTasks: [created, ...s.classTasks] };
+      });
+      return id;
+    },
+    [commit],
+  );
+
+  const deleteClassTask = useCallback(
+    (taskId: string) => {
+      commit((s) => ({
+        ...s,
+        classTasks: s.classTasks.filter((t) => t.id !== taskId),
+      }));
+    },
+    [commit],
+  );
+
+  const setClassTaskStatus = useCallback(
+    (taskId: string, status: ClassTaskStatus) => {
+      const now = new Date().toISOString();
+      commit((s) => ({
+        ...s,
+        classTasks: s.classTasks.map((t) =>
+          t.id === taskId ? { ...t, status, updatedAt: now } : t,
+        ),
+      }));
     },
     [commit],
   );
@@ -759,8 +909,15 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     setUserActive,
     setUsersActive,
     setUserClass,
+    setUsersClass,
     upsertClass,
+    setClassActive,
+    emptyClass,
     deleteClass,
+    deleteUser,
+    upsertClassTask,
+    deleteClassTask,
+    setClassTaskStatus,
     updateLesson,
     updateModule,
     setSequenceModuleIds,

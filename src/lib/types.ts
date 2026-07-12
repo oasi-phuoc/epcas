@@ -29,6 +29,24 @@ export interface ClassRoom {
   level: DiplomaLevel;
   /** Année d'apprentissage (1ʳᵉ, 2ᵉ, 3ᵉ) */
   studyYear: StudyYear;
+  /** Classe active (désactivée = masquée du parcours courant, élèves conservés) */
+  active: boolean;
+}
+
+/** Tâche / consigne pédagogique assignée à une classe ou un élève */
+export type ClassTaskStatus = "todo" | "doing" | "done";
+
+export interface ClassTask {
+  id: string;
+  classId: string;
+  /** Si défini : tâche individuelle ; sinon : toute la classe */
+  userId?: string;
+  title: string;
+  description: string;
+  dueAt?: string;
+  status: ClassTaskStatus;
+  createdAt: string;
+  updatedAt: string;
 }
 
 /** Parcours d'apprentissage ordonné pour un couple niveau × année */
@@ -225,6 +243,7 @@ export interface AppState {
   assessments: Assessment[];
   assessmentQuestions: AssessmentQuestion[];
   sequences: LearningSequence[];
+  classTasks: ClassTask[];
   progress: Record<string, LessonProgress[]>;
   attempts: AttemptRecord[];
   currentUserId: string | null;

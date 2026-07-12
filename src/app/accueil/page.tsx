@@ -61,9 +61,9 @@ export default function AccueilPage() {
                   .length
               }
             </p>
-            <Link href="/formateur/comptes" className="mt-4 inline-block">
+            <Link href="/formateur/classes" className="mt-4 inline-block">
               <Button size="sm" variant="secondary">
-                Gérer les comptes
+                Gérer les classes
               </Button>
             </Link>
           </Panel>
@@ -99,11 +99,13 @@ export default function AccueilPage() {
             </Link>
           </Panel>
           <Panel>
-            <p className="text-sm text-ink-muted">Suivi classe</p>
-            <p className="mt-2 font-display text-3xl">Vue</p>
-            <Link href="/formateur" className="mt-4 inline-block">
+            <p className="text-sm text-ink-muted">Suivi & tâches</p>
+            <p className="mt-2 font-display text-3xl">
+              {state.classTasks.filter((t) => t.status !== "done").length}
+            </p>
+            <Link href="/formateur/classes" className="mt-4 inline-block">
               <Button size="sm" variant="secondary">
-                Ouvrir le suivi
+                Ouvrir les classes
               </Button>
             </Link>
           </Panel>

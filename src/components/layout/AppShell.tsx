@@ -10,7 +10,6 @@ import {
   LogOut,
   PencilLine,
   Settings,
-  UserRound,
   Users,
 } from "lucide-react";
 import { cn } from "@/lib/cn";
@@ -32,18 +31,24 @@ const apprenticeLinks = [
 
 const staffLinks = [
   { href: "/accueil", label: "Accueil", icon: Home },
-  { href: "/formateur", label: "Suivi", icon: Users },
+  { href: "/formateur/classes", label: "Classes", icon: Users },
   { href: "/formateur/contenu", label: "Théorie", icon: BookOpen },
   { href: "/formateur/exercices", label: "Exercices", icon: PencilLine },
   { href: "/formateur/sequences", label: "Séquences", icon: ListOrdered },
   { href: "/formateur/evaluations", label: "Évaluations", icon: ClipboardCheck },
-  { href: "/formateur/comptes", label: "Comptes", icon: UserRound },
   { href: "/parametres", label: "Paramètres", icon: Settings },
 ];
 
 function isActivePath(pathname: string, href: string) {
   if (href === "/accueil") return pathname === "/accueil";
-  if (href === "/formateur") return pathname === "/formateur";
+  if (href === "/formateur/classes") {
+    return (
+      pathname === href ||
+      pathname.startsWith(`${href}/`) ||
+      pathname === "/formateur" ||
+      pathname.startsWith("/formateur/comptes")
+    );
+  }
   if (href === "/formateur/contenu" || href === "/formateur/exercices") {
     return pathname === href || pathname.startsWith(`${href}/`);
   }

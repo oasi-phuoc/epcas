@@ -20,6 +20,7 @@ export const initialState: AppState = {
       year: "2025-2026",
       level: "AFP",
       studyYear: 1,
+      active: true,
     },
     {
       id: "class-1",
@@ -27,6 +28,7 @@ export const initialState: AppState = {
       year: "2025-2026",
       level: "CFC",
       studyYear: 1,
+      active: true,
     },
     {
       id: "class-2",
@@ -34,6 +36,7 @@ export const initialState: AppState = {
       year: "2025-2026",
       level: "CFC",
       studyYear: 2,
+      active: true,
     },
     {
       id: "class-3",
@@ -41,6 +44,7 @@ export const initialState: AppState = {
       year: "2025-2026",
       level: "CFC",
       studyYear: 3,
+      active: true,
     },
   ],
   users: [
@@ -194,5 +198,27 @@ export const initialState: AppState = {
   attempts: [],
   assessments: [],
   assessmentQuestions: [],
+  classTasks: [
+    {
+      id: "task-demo-1",
+      classId: "class-1",
+      title: "Lire le module 101 (théorie + glossaire)",
+      description: "Marquer les pages comme lues avant le prochain cours.",
+      dueAt: "2026-07-18",
+      status: "todo",
+      createdAt: "2026-07-12T08:00:00.000Z",
+      updatedAt: "2026-07-12T08:00:00.000Z",
+    },
+    {
+      id: "task-demo-2",
+      classId: "class-1",
+      userId: "user-apprentice",
+      title: "Refaire l'exercice QCM chaîne logistique",
+      description: "Score cible ≥ 80 %.",
+      status: "doing",
+      createdAt: "2026-07-12T08:05:00.000Z",
+      updatedAt: "2026-07-12T08:05:00.000Z",
+    },
+  ],
   currentUserId: null,
 };
