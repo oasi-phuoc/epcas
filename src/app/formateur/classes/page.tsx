@@ -1,30 +1,21 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { useMemo } from "react";
 import Link from "next/link";
 import {
-  Alert,
   Badge,
   Button,
   EmptyState,
   PageHeader,
   Panel,
-  Select,
-  TextField,
 } from "@/components/ui";
-import {
-  DIPLOMA_LABELS,
-  DIPLOMA_LEVELS,
-  STUDY_YEAR_LABELS,
-  maxStudyYear,
-  normalizeStudyYear,
-} from "@/lib/levels";
+import { STUDY_YEAR_LABELS } from "@/lib/levels";
 import { ROLE_LABELS, isStaffRole } from "@/lib/roles";
 import { countLessonsForLevel, useAppStore } from "@/lib/store";
-import type { DiplomaLevel, Role, StudyYear } from "@/lib/types";
 import {
   GraduationCap,
   Plus,
+  UserPlus,
   Users,
   UserRound,
 } from "lucide-react";
@@ -34,21 +25,8 @@ export default function ClassesHubPage() {
     currentUser,
     state,
     setClassActive,
-    upsertUser,
-    upsertClass,
     getUserProgress,
-    getAttemptsForUser,
   } = useAppStore();
-
-  const [message, setMessage] = useState<string | null>(null);
-
-  const [stuName, setStuName] = useState("");
-  const [stuEmail, setStuEmail] = useState("");
-  const [stuPassword, setStuPassword] = useState("");
-  const [stuRole, setStuRole] = useState<Role>("apprentice");
-  const [stuLevel, setStuLevel] = useState<DiplomaLevel>("CFC");
-  const [stuYear, setStuYear] = useState<StudyYear>(1);
-  const [stuClassId, setStuClassId] = useState("");
 
   const classes = useMemo(
     () =>
@@ -77,58 +55,6 @@ export default function ClassesHubPage() {
     return <EmptyState title="Accès réservé aux formateurs et admins" />;
   }
 
-  const classOptions = classes.map((c) => ({
-    value: c.id,
-    label: `${c.name}${c.active ? "" : " (désactivée)"}`,
-  }));
-
-  function createAccount(e: FormEvent) {
-    e.preventDefault();
-    if (!stuName.trim() || !stuEmail.trim()) return;
-    if (stuRole === "admin" && currentUser!.role !== "admin") {
-      setMessage("Seul un admin peut créer un compte admin.");
-      return;
-    }
-
-    let classId = stuClassId || classes.find((c) => c.active)?.id || classes[0]?.id;
-    if (stuRole === "apprentice") {
-      const match = classes.find(
-        (c) =>
-          c.active &&
-          c.level === stuLevel &&
-          c.studyYear === normalizeStudyYear(stuYear, stuLevel),
-      );
-      if (match) classId = match.id;
-      else {
-        classId = upsertClass({
-          name: `${stuLevel} ${STUDY_YEAR_LABELS[normalizeStudyYear(stuYear, stuLevel)]} — EPCA Sion`,
-          year: "2025-2026",
-          level: stuLevel,
-          studyYear: normalizeStudyYear(stuYear, stuLevel),
-          active: true,
-        });
-      }
-    }
-    if (!classId) return;
-    if (!stuPassword.trim()) {
-      setMessage("Indiquez un mot de passe pour le compte.");
-      return;
-    }
-
-    upsertUser({
-      email: stuEmail.trim().toLowerCase(),
-      password: stuPassword.trim(),
-      displayName: stuName.trim(),
-      role: stuRole,
-      classId,
-      active: true,
-    });
-    setStuName("");
-    setStuEmail("");
-    setStuPassword("");
-    setMessage("Compte créé.");
-  }
-
   return (
     <div>
       <PageHeader
@@ -136,17 +62,17 @@ export default function ClassesHubPage() {
         description="Gérez les classes, les effectifs, le suivi pédagogique et les tâches."
       />
 
-      {message ? (
-        <div className="mb-4">
-          <Alert tone="success">{message}</Alert>
-        </div>
-      ) : null}
-
       <div className="mb-4 flex flex-wrap gap-2">
         <Link href="/formateur/classes/nouvelle">
           <Button size="sm">
             <Plus className="h-4 w-4" />
             Nouvelle classe
+          </Button>
+        </Link>
+        <Link href="/formateur/classes/nouveau-compte">
+          <Button size="sm" variant="secondary">
+            <UserPlus className="h-4 w-4" />
+            Nouveau compte
           </Button>
         </Link>
         <Link href="/formateur/classes/eleves">
@@ -229,111 +155,30 @@ export default function ClassesHubPage() {
           </ul>
         </Panel>
 
-        <div className="space-y-4">
-          <Panel>
-            <h2 className="font-display text-xl text-ink">Nouveau compte</h2>
-            <form className="mt-3 space-y-3" onSubmit={createAccount}>
-              <TextField
-                label="Nom affiché"
-                value={stuName}
-                onChange={(e) => setStuName(e.target.value)}
-                required
-              />
-              <TextField
-                label="Email"
-                type="email"
-                value={stuEmail}
-                onChange={(e) => setStuEmail(e.target.value)}
-                required
-              />
-              <TextField
-                label="Mot de passe"
-                value={stuPassword}
-                onChange={(e) => setStuPassword(e.target.value)}
-              />
-              <Select
-                label="Rôle"
-                options={(
-                  currentUser.role === "admin"
-                    ? (["admin", "trainer", "apprentice"] as Role[])
-                    : (["trainer", "apprentice"] as Role[])
-                ).map((r) => ({ value: r, label: ROLE_LABELS[r] }))}
-                value={stuRole}
-                onChange={(e) => setStuRole(e.target.value as Role)}
-              />
-              {stuRole === "apprentice" ? (
-                <div className="grid gap-3 sm:grid-cols-2">
-                  <Select
-                    label="Niveau"
-                    options={DIPLOMA_LEVELS.map((l) => ({
-                      value: l,
-                      label: DIPLOMA_LABELS[l],
-                    }))}
-                    value={stuLevel}
-                    onChange={(e) => {
-                      const next = e.target.value as DiplomaLevel;
-                      setStuLevel(next);
-                      setStuYear(normalizeStudyYear(stuYear, next));
-                    }}
-                  />
-                  <Select
-                    label="Année"
-                    options={Array.from(
-                      { length: maxStudyYear(stuLevel) },
-                      (_, i) => {
-                        const y = (i + 1) as StudyYear;
-                        return {
-                          value: String(y),
-                          label: STUDY_YEAR_LABELS[y],
-                        };
-                      },
-                    )}
-                    value={String(stuYear)}
-                    onChange={(e) =>
-                      setStuYear(Number(e.target.value) as StudyYear)
-                    }
-                  />
-                </div>
-              ) : (
-                <Select
-                  label="Classe de rattachement"
-                  options={classOptions}
-                  value={stuClassId || classOptions[0]?.value || ""}
-                  onChange={(e) => setStuClassId(e.target.value)}
-                />
-              )}
-              <Button type="submit">
-                <Plus className="h-4 w-4" />
-                Créer le compte
-              </Button>
-            </form>
-          </Panel>
-
-          <Panel>
-            <h2 className="mb-3 flex items-center gap-2 font-display text-xl text-ink">
-              <UserRound className="h-5 w-5" />
-              Staff ({staff.length})
-            </h2>
-            <ul className="space-y-2">
-              {staff.map((u) => (
-                <li
-                  key={u.id}
-                  className="flex flex-wrap items-center justify-between gap-2 rounded-[var(--radius-md)] border border-border px-3 py-2"
-                >
-                  <span>
-                    <span className="block text-sm font-medium text-ink">
-                      {u.displayName}
-                    </span>
-                    <span className="text-xs text-ink-subtle">{u.email}</span>
+        <Panel>
+          <h2 className="mb-3 flex items-center gap-2 font-display text-xl text-ink">
+            <UserRound className="h-5 w-5" />
+            Staff ({staff.length})
+          </h2>
+          <ul className="space-y-2">
+            {staff.map((u) => (
+              <li
+                key={u.id}
+                className="flex flex-wrap items-center justify-between gap-2 rounded-[var(--radius-md)] border border-border px-3 py-2"
+              >
+                <span>
+                  <span className="block text-sm font-medium text-ink">
+                    {u.displayName}
                   </span>
-                  <Badge tone={u.role === "admin" ? "primary" : "accent"}>
-                    {ROLE_LABELS[u.role]}
-                  </Badge>
-                </li>
-              ))}
-            </ul>
-          </Panel>
-        </div>
+                  <span className="text-xs text-ink-subtle">{u.email}</span>
+                </span>
+                <Badge tone={u.role === "admin" ? "primary" : "accent"}>
+                  {ROLE_LABELS[u.role]}
+                </Badge>
+              </li>
+            ))}
+          </ul>
+        </Panel>
       </div>
     </div>
   );
