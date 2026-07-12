@@ -8,7 +8,7 @@ import {
   Panel,
   ProgressBar,
 } from "@/components/ui";
-import { getUserDiplomaLevel } from "@/lib/levels";
+import { getUserDiplomaLevel, STUDY_YEAR_LABELS } from "@/lib/levels";
 import { countLessonsForLevel, useAppStore } from "@/lib/store";
 
 export default function ProfilPage() {
@@ -20,6 +20,7 @@ export default function ProfilPage() {
     getAttemptsForUser,
     state,
     userLevel,
+    userStudyYear,
   } = useAppStore();
   if (!currentUser) return null;
 
@@ -30,7 +31,10 @@ export default function ProfilPage() {
     currentUser.role === "trainer"
       ? userLevel
       : getUserDiplomaLevel(currentUser, state.classes);
-  const lessonTotal = countLessonsForLevel(state, level);
+  const studyYear =
+    classroom?.studyYear ??
+    (currentUser.role === "apprentice" ? userStudyYear : 1);
+  const lessonTotal = countLessonsForLevel(state, level, studyYear);
   const done = progress.filter((p) => p.status === "done").length;
   const pct = lessonTotal === 0 ? 0 : (done / lessonTotal) * 100;
   const avg =
@@ -58,6 +62,9 @@ export default function ProfilPage() {
             <div className="mt-3 flex flex-wrap items-center gap-2">
               <span className="text-sm text-ink-muted">{classroom.name}</span>
               <Badge tone="primary">{classroom.level}</Badge>
+              <Badge tone="accent">
+                {STUDY_YEAR_LABELS[classroom.studyYear]}
+              </Badge>
             </div>
           ) : null}
           <div className="mt-5 flex flex-wrap gap-2">
@@ -78,20 +85,24 @@ export default function ProfilPage() {
         </Panel>
         {currentUser.role === "apprentice" ? (
           <Panel>
-            <ProgressBar value={pct} label={`Théorie ${level}`} />
+            <ProgressBar
+              value={pct}
+              label={`Théorie ${level} · ${STUDY_YEAR_LABELS[studyYear]}`}
+            />
             <div className="mt-4">
               <ProgressBar value={avg} label="Score moyen exercices" />
             </div>
             <Alert tone="info">
-              Contenu filtré selon votre niveau {level}. Après une mise à jour,
-              utilisez Reset démo si besoin.
+              Contenu filtré selon votre séquence {level}{" "}
+              {STUDY_YEAR_LABELS[studyYear]}. Après une mise à jour, utilisez
+              Reset démo si besoin.
             </Alert>
           </Panel>
         ) : (
           <Panel>
             <Alert tone="info">
-              En tant que formateur, gérez les comptes, les niveaux AFP/CFC et
-              le contenu depuis le menu dédié.
+              Formateur : configurez les séquences AFP/CFC par année dans le
+              menu Séquences.
             </Alert>
           </Panel>
         )}

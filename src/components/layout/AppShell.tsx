@@ -6,6 +6,7 @@ import {
   BookOpen,
   ClipboardCheck,
   Home,
+  ListOrdered,
   LogOut,
   PencilLine,
   UserRound,
@@ -27,10 +28,17 @@ const trainerLinks = [
   { href: "/accueil", label: "Accueil", icon: Home },
   { href: "/formateur", label: "Suivi", icon: Users },
   { href: "/formateur/contenu", label: "Contenu", icon: BookOpen },
+  { href: "/formateur/sequences", label: "Séquences", icon: ListOrdered },
   { href: "/formateur/evaluations", label: "Évaluations", icon: ClipboardCheck },
   { href: "/formateur/comptes", label: "Comptes", icon: UserRound },
   { href: "/profil", label: "Profil", icon: UserRound },
 ];
+
+function isActivePath(pathname: string, href: string) {
+  if (href === "/accueil") return pathname === "/accueil";
+  if (href === "/formateur") return pathname === "/formateur";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -48,11 +56,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             {state.classes.length} classe{state.classes.length !== 1 ? "s" : ""}
           </p>
         </div>
-        <nav className="flex flex-1 flex-col gap-1 p-3">
+        <nav className="flex flex-1 flex-col gap-1 overflow-y-auto p-3">
           {links.map(({ href, label, icon: Icon }) => {
-            const active =
-              pathname === href ||
-              (href !== "/accueil" && pathname.startsWith(href));
+            const active = isActivePath(pathname, href);
             return (
               <Link
                 key={href}
@@ -98,25 +104,23 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
         <nav className="fixed inset-x-0 bottom-0 z-20 border-t border-border bg-surface/90 backdrop-blur-md lg:hidden">
           <ul
-            className="mx-auto grid max-w-lg gap-1 px-1 py-2"
+            className="mx-auto grid max-w-lg gap-0.5 px-0.5 py-1.5"
             style={{
-              gridTemplateColumns: `repeat(${Math.min(links.length, 6)}, minmax(0, 1fr))`,
+              gridTemplateColumns: `repeat(${Math.min(links.length, 7)}, minmax(0, 1fr))`,
             }}
           >
-            {links.slice(0, 6).map(({ href, label, icon: Icon }) => {
-              const active =
-                pathname === href ||
-                (href !== "/accueil" && pathname.startsWith(href));
+            {links.slice(0, 7).map(({ href, label, icon: Icon }) => {
+              const active = isActivePath(pathname, href);
               return (
                 <li key={href}>
                   <Link
                     href={href}
                     className={cn(
-                      "flex min-h-11 flex-col items-center justify-center gap-0.5 rounded-[var(--radius-sm)] px-1 text-[10px] font-medium",
+                      "flex min-h-11 flex-col items-center justify-center gap-0.5 rounded-[var(--radius-sm)] px-0.5 text-[9px] font-medium",
                       active ? "text-primary-strong" : "text-ink-subtle",
                     )}
                   >
-                    <Icon className="h-5 w-5" />
+                    <Icon className="h-4 w-4" />
                     {label}
                   </Link>
                 </li>

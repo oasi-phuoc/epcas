@@ -4,11 +4,13 @@ import {
   buildCurriculumModules,
   curriculumBlocks,
 } from "./curriculum";
+import { buildDefaultSequences } from "./levels";
 
 export const DEMO_PASSWORD = "epcas2026";
 
 const modules = buildCurriculumModules();
 const lessons = buildCurriculumLessons();
+const sequences = buildDefaultSequences(modules);
 
 export const initialState: AppState = {
   classes: [
@@ -17,24 +19,28 @@ export const initialState: AppState = {
       name: "AFP 1ʳᵉ année — EPCA Sion",
       year: "2025-2026",
       level: "AFP",
+      studyYear: 1,
     },
     {
       id: "class-1",
       name: "CFC 1ʳᵉ année — EPCA Sion",
       year: "2025-2026",
       level: "CFC",
+      studyYear: 1,
     },
     {
       id: "class-2",
       name: "CFC 2ᵉ année — EPCA Sion",
       year: "2025-2026",
       level: "CFC",
+      studyYear: 2,
     },
     {
       id: "class-3",
       name: "CFC 3ᵉ année — EPCA Sion",
       year: "2025-2026",
       level: "CFC",
+      studyYear: 3,
     },
   ],
   users: [
@@ -105,6 +111,7 @@ export const initialState: AppState = {
   blocks: curriculumBlocks,
   modules,
   lessons,
+  sequences,
   exercises: [
     {
       id: "ex-qcm-1",

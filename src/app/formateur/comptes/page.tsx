@@ -13,8 +13,8 @@ import {
 } from "@/components/ui";
 import { useAppStore } from "@/lib/store";
 import { UserCheck, UserX } from "lucide-react";
-import { DIPLOMA_LABELS, DIPLOMA_LEVELS } from "@/lib/levels";
-import type { DiplomaLevel } from "@/lib/types";
+import { DIPLOMA_LABELS, DIPLOMA_LEVELS, STUDY_YEAR_LABELS, maxStudyYear } from "@/lib/levels";
+import type { DiplomaLevel, StudyYear } from "@/lib/types";
 
 export default function ComptesPage() {
   const {
@@ -43,6 +43,7 @@ export default function ComptesPage() {
   const [newClassName, setNewClassName] = useState("");
   const [newClassYear, setNewClassYear] = useState("2025-2026");
   const [newClassLevel, setNewClassLevel] = useState<DiplomaLevel>("CFC");
+  const [newClassStudyYear, setNewClassStudyYear] = useState<StudyYear>(1);
   const [filterClassId, setFilterClassId] = useState<string>("all");
   const [filterLevel, setFilterLevel] = useState<"all" | DiplomaLevel>("all");
 
@@ -58,10 +59,19 @@ export default function ComptesPage() {
     () =>
       classes.map((c) => ({
         value: c.id,
-        label: `${c.name} · ${DIPLOMA_LABELS[c.level]} (${c.year})`,
+        label: `${c.name} · ${DIPLOMA_LABELS[c.level]} ${STUDY_YEAR_LABELS[c.studyYear]}`,
       })),
     [classes],
   );
+
+  const studyYearOptions = useMemo(() => {
+    const max = maxStudyYear(newClassLevel);
+    const years: StudyYear[] = max === 2 ? [1, 2] : [1, 2, 3];
+    return years.map((y) => ({
+      value: String(y),
+      label: STUDY_YEAR_LABELS[y],
+    }));
+  }, [newClassLevel]);
 
   const levelFilteredClasses = useMemo(
     () =>
@@ -138,11 +148,14 @@ export default function ComptesPage() {
       name: newClassName.trim(),
       year: newClassYear.trim() || "2025-2026",
       level: newClassLevel,
+      studyYear: newClassStudyYear,
     });
     setNewClassName("");
     setClassId(id);
     setFilterClassId(id);
-    setMessage(`Classe ${newClassLevel} créée.`);
+    setMessage(
+      `Classe ${newClassLevel} ${STUDY_YEAR_LABELS[newClassStudyYear]} créée.`,
+    );
   }
 
   function toggleOne(id: string) {
@@ -190,14 +203,14 @@ export default function ComptesPage() {
     <div>
       <PageHeader
         title="Comptes apprentis"
-        description="Chaque élève est rattaché à une classe AFP ou CFC. Le niveau de la classe filtre le contenu visible."
+        description="Chaque élève est rattaché à une classe (niveau AFP/CFC + année d'apprentissage). Cela détermine la séquence de modules visible."
       />
 
       <Panel className="mb-4">
         <h2 className="font-display text-xl">Nouvelle classe</h2>
         <form
           onSubmit={onCreateClass}
-          className="mt-4 grid gap-3 sm:grid-cols-[1fr_10rem_8rem_auto]"
+          className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-[1fr_9rem_7rem_9rem_auto]"
         >
           <TextField
             label="Nom de la classe"
@@ -207,7 +220,7 @@ export default function ComptesPage() {
             required
           />
           <TextField
-            label="Année"
+            label="Année scolaire"
             value={newClassYear}
             onChange={(e) => setNewClassYear(e.target.value)}
             required
@@ -219,7 +232,20 @@ export default function ComptesPage() {
               label: DIPLOMA_LABELS[l],
             }))}
             value={newClassLevel}
-            onChange={(e) => setNewClassLevel(e.target.value as DiplomaLevel)}
+            onChange={(e) => {
+              const next = e.target.value as DiplomaLevel;
+              setNewClassLevel(next);
+              const max = maxStudyYear(next);
+              if (newClassStudyYear > max) setNewClassStudyYear(max);
+            }}
+          />
+          <Select
+            label="Année d'app."
+            options={studyYearOptions}
+            value={String(newClassStudyYear)}
+            onChange={(e) =>
+              setNewClassStudyYear(Number(e.target.value) as StudyYear)
+            }
           />
           <div className="flex items-end">
             <Button type="submit">Créer</Button>
@@ -351,6 +377,9 @@ export default function ComptesPage() {
                       {classroom.name}
                     </h2>
                     <Badge tone="primary">{classroom.level}</Badge>
+                    <Badge tone="accent">
+                      {STUDY_YEAR_LABELS[classroom.studyYear]}
+                    </Badge>
                   </div>
                   <p className="text-sm text-ink-muted">
                     {classroom.year} · {members.length} élève
@@ -366,15 +395,39 @@ export default function ComptesPage() {
                       label: DIPLOMA_LABELS[l],
                     }))}
                     value={classroom.level}
+                    onChange={(e) => {
+                      const level = e.target.value as DiplomaLevel;
+                      const max = maxStudyYear(level);
+                      upsertClass({
+                        id: classroom.id,
+                        name: classroom.name,
+                        year: classroom.year,
+                        level,
+                        studyYear:
+                          classroom.studyYear > max ? max : classroom.studyYear,
+                      });
+                    }}
+                    className="min-w-[6rem]"
+                  />
+                  <Select
+                    options={(maxStudyYear(classroom.level) === 2
+                      ? ([1, 2] as StudyYear[])
+                      : ([1, 2, 3] as StudyYear[])
+                    ).map((y) => ({
+                      value: String(y),
+                      label: STUDY_YEAR_LABELS[y],
+                    }))}
+                    value={String(classroom.studyYear)}
                     onChange={(e) =>
                       upsertClass({
                         id: classroom.id,
                         name: classroom.name,
                         year: classroom.year,
-                        level: e.target.value as DiplomaLevel,
+                        level: classroom.level,
+                        studyYear: Number(e.target.value) as StudyYear,
                       })
                     }
-                    className="min-w-[6rem]"
+                    className="min-w-[8rem]"
                   />
                   <Button
                     size="sm"

@@ -35,6 +35,9 @@ create table if not exists public.classes (
 alter table public.classes
   add column if not exists diploma_level public.diploma_level not null default 'CFC';
 
+alter table public.classes
+  add column if not exists study_year smallint not null default 1;
+
 create table if not exists public.profiles (
   id uuid primary key references auth.users (id) on delete cascade,
   role public.user_role not null default 'apprentice',

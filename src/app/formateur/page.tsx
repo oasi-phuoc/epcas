@@ -10,7 +10,7 @@ import {
   ProgressBar,
   Select,
 } from "@/components/ui";
-import { DIPLOMA_LABELS } from "@/lib/levels";
+import { DIPLOMA_LABELS, STUDY_YEAR_LABELS } from "@/lib/levels";
 import { countLessonsForLevel, useAppStore } from "@/lib/store";
 
 export default function FormateurSuiviPage() {
@@ -40,7 +40,7 @@ export default function FormateurSuiviPage() {
     { value: "all", label: "Toutes les classes" },
     ...classes.map((c) => ({
       value: c.id,
-      label: `${c.name} · ${DIPLOMA_LABELS[c.level]} (${c.year})`,
+      label: `${c.name} · ${DIPLOMA_LABELS[c.level]} ${STUDY_YEAR_LABELS[c.studyYear]}`,
     })),
   ];
 
@@ -57,7 +57,7 @@ export default function FormateurSuiviPage() {
     <div>
       <PageHeader
         title="Suivi des classes"
-        description="Progression des apprentis, séparée par classe et niveau AFP / CFC."
+        description="Progression des apprentis selon leur classe, niveau et année d'apprentissage."
       />
 
       <Panel className="mb-4">
@@ -72,7 +72,11 @@ export default function FormateurSuiviPage() {
       <div className="space-y-6">
         {groups.map(({ classroom, members }) => {
           const active = members.filter((m) => m.active).length;
-          const lessonTotal = countLessonsForLevel(state, classroom.level);
+          const lessonTotal = countLessonsForLevel(
+            state,
+            classroom.level,
+            classroom.studyYear,
+          );
           return (
             <section key={classroom.id}>
               <div className="mb-3">
@@ -81,11 +85,14 @@ export default function FormateurSuiviPage() {
                     {classroom.name}
                   </h2>
                   <Badge tone="primary">{classroom.level}</Badge>
+                  <Badge tone="accent">
+                    {STUDY_YEAR_LABELS[classroom.studyYear]}
+                  </Badge>
                 </div>
                 <p className="text-sm text-ink-muted">
                   {classroom.year} · {members.length} élève
                   {members.length !== 1 ? "s" : ""} · {active} actif
-                  {active !== 1 ? "s" : ""}
+                  {active !== 1 ? "s" : ""} · {lessonTotal} pages au programme
                 </p>
               </div>
 
@@ -153,6 +160,13 @@ export default function FormateurSuiviPage() {
       </div>
 
       <p className="mt-4 text-sm text-ink-muted">
+        <Link
+          href="/formateur/sequences"
+          className="text-primary-strong underline"
+        >
+          Configurer les séquences d&apos;apprentissage
+        </Link>
+        {" · "}
         <Link
           href="/formateur/comptes"
           className="text-primary-strong underline"

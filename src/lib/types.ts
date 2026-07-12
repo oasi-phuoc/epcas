@@ -3,6 +3,9 @@ export type Role = "trainer" | "apprentice";
 /** Niveau de diplôme fédéral suisse */
 export type DiplomaLevel = "AFP" | "CFC";
 
+/** Année d'apprentissage (AFP : 1–2, CFC : 1–3) */
+export type StudyYear = 1 | 2 | 3;
+
 export type LessonStatus = "unread" | "reading" | "done";
 
 export type ExerciseType = "qcm" | "math" | "open";
@@ -24,6 +27,17 @@ export interface ClassRoom {
   year: string;
   /** Niveau de la classe : détermine le contenu visible des apprentis */
   level: DiplomaLevel;
+  /** Année d'apprentissage (1ʳᵉ, 2ᵉ, 3ᵉ) */
+  studyYear: StudyYear;
+}
+
+/** Parcours d'apprentissage ordonné pour un couple niveau × année */
+export interface LearningSequence {
+  id: string;
+  level: DiplomaLevel;
+  studyYear: StudyYear;
+  /** Ordre pédagogique des modules (ids `mod-XXX`) */
+  moduleIds: string[];
 }
 
 export interface Block {
@@ -186,6 +200,7 @@ export interface AppState {
   exercises: Exercise[];
   assessments: Assessment[];
   assessmentQuestions: AssessmentQuestion[];
+  sequences: LearningSequence[];
   progress: Record<string, LessonProgress[]>;
   attempts: AttemptRecord[];
   currentUserId: string | null;

@@ -8,17 +8,28 @@ import {
   ProgressBar,
   Button,
 } from "@/components/ui";
-import { useAppStore } from "@/lib/store";
+import { STUDY_YEAR_LABELS } from "@/lib/levels";
+import { useAppStore, useVisibleModules } from "@/lib/store";
 
 export default function AccueilPage() {
-  const { currentUser, state, getUserProgress, getAttemptsForUser, userLevel } =
-    useAppStore();
+  const {
+    currentUser,
+    state,
+    getUserProgress,
+    getAttemptsForUser,
+    userLevel,
+    userStudyYear,
+  } = useAppStore();
+  const visibleModules = useVisibleModules();
   if (!currentUser) return null;
 
   const isTrainer = currentUser.role === "trainer";
   const progress = getUserProgress(currentUser.id);
   const attempts = getAttemptsForUser(currentUser.id);
-  const focusLessons = state.lessons.filter((l) => l.moduleId === "mod-101");
+  const firstModule = visibleModules[0];
+  const focusLessons = firstModule
+    ? state.lessons.filter((l) => l.moduleId === firstModule.id)
+    : [];
   const lessonsDone = focusLessons.filter((l) =>
     progress.some((p) => p.lessonId === l.id && p.status === "done"),
   ).length;
@@ -34,13 +45,13 @@ export default function AccueilPage() {
         title={`Bonjour, ${currentUser.displayName.split(" ")[0]}`}
         description={
           isTrainer
-            ? "Gérez les comptes, le contenu, les évaluations et le suivi de la classe."
-            : `Continuez votre formation ${userLevel} Logisticien·ne.`
+            ? "Gérez les comptes, les séquences, le contenu et le suivi."
+            : `Continuez votre formation ${userLevel} · ${STUDY_YEAR_LABELS[userStudyYear]}.`
         }
       />
 
       {isTrainer ? (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <Panel>
             <p className="text-sm text-ink-muted">Apprentis actifs</p>
             <p className="mt-2 font-display text-3xl">
@@ -52,6 +63,17 @@ export default function AccueilPage() {
             <Link href="/formateur/comptes" className="mt-4 inline-block">
               <Button size="sm" variant="secondary">
                 Gérer les comptes
+              </Button>
+            </Link>
+          </Panel>
+          <Panel>
+            <p className="text-sm text-ink-muted">Séquences</p>
+            <p className="mt-2 font-display text-3xl">
+              {state.sequences.filter((s) => s.moduleIds.length > 0).length}
+            </p>
+            <Link href="/formateur/sequences" className="mt-4 inline-block">
+              <Button size="sm" variant="secondary">
+                Configurer l&apos;ordre
               </Button>
             </Link>
           </Panel>
@@ -89,21 +111,28 @@ export default function AccueilPage() {
         <div className="space-y-4">
           <Panel className="animate-fade-up">
             <div className="flex flex-wrap items-center gap-2">
-              <Badge>Théorie</Badge>
-              <Badge tone="accent">Exercices</Badge>
+              <Badge tone="primary">{userLevel}</Badge>
+              <Badge tone="accent">{STUDY_YEAR_LABELS[userStudyYear]}</Badge>
             </div>
             <h2 className="mt-3 font-display text-2xl">
-              Module 101 — Histoire de la logistique
+              {firstModule
+                ? `Module ${firstModule.code} — ${firstModule.title}`
+                : "Aucun module dans votre séquence"}
             </h2>
-            <div className="mt-4">
-              <ProgressBar value={lessonPct} label="Module 101 — pages lues" />
-            </div>
+            <p className="mt-1 text-sm text-ink-muted">
+              {visibleModules.length} modules au programme de votre année
+            </p>
+            {firstModule ? (
+              <div className="mt-4">
+                <ProgressBar
+                  value={lessonPct}
+                  label={`Module ${firstModule.code} — pages lues`}
+                />
+              </div>
+            ) : null}
             <div className="mt-5 flex flex-wrap gap-2">
-              <Link href="/theorie/lesson-101-theorie">
-                <Button>Continuer la théorie</Button>
-              </Link>
               <Link href="/theorie">
-                <Button variant="secondary">Tous les modules</Button>
+                <Button>Voir mon parcours</Button>
               </Link>
               <Link href="/exercices">
                 <Button variant="ghost">S&apos;entraîner</Button>
@@ -124,7 +153,12 @@ export default function AccueilPage() {
               <p className="mt-1 flex flex-wrap items-center gap-2 text-xs text-ink-subtle">
                 <span>{classroom?.year}</span>
                 {classroom ? (
-                  <Badge tone="primary">Niveau {classroom.level}</Badge>
+                  <>
+                    <Badge tone="primary">{classroom.level}</Badge>
+                    <Badge tone="accent">
+                      {STUDY_YEAR_LABELS[classroom.studyYear]}
+                    </Badge>
+                  </>
                 ) : null}
               </p>
             </Panel>

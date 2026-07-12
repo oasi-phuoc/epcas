@@ -12,10 +12,16 @@ import {
 import { initialState, DEMO_PASSWORD } from "./demo-data";
 import {
   assessmentVisibleForLevel,
+  buildDefaultSequences,
+  getSequence,
   getUserDiplomaLevel,
+  getUserStudyYear,
   moduleVisibleForLevel,
   normalizeClassLevel,
+  normalizeClassStudyYear,
   normalizeLevels,
+  normalizeSequences,
+  sequenceId,
 } from "./levels";
 import type {
   AppState,
@@ -28,10 +34,11 @@ import type {
   Lesson,
   LessonProgress,
   Module,
+  StudyYear,
   UserAccount,
 } from "./types";
 
-const STORAGE_KEY = "epcas-logistique-v84";
+const STORAGE_KEY = "epcas-logistique-v85";
 
 type AppStore = {
   state: AppState;
@@ -39,6 +46,8 @@ type AppStore = {
   currentUser: UserAccount | null;
   /** Niveau diplôme de l'utilisateur connecté (via sa classe) */
   userLevel: DiplomaLevel;
+  /** Année d'apprentissage de l'utilisateur connecté */
+  userStudyYear: StudyYear;
   login: (email: string, password: string) => { ok: boolean; error?: string };
   logout: () => void;
   upsertUser: (user: Omit<UserAccount, "id"> & { id?: string }) => void;
@@ -51,6 +60,12 @@ type AppStore = {
   deleteClass: (classId: string) => void;
   updateLesson: (lesson: Lesson) => void;
   updateModule: (module: Module) => void;
+  setSequenceModuleIds: (
+    level: DiplomaLevel,
+    studyYear: StudyYear,
+    moduleIds: string[],
+  ) => void;
+  resetSequences: (level?: DiplomaLevel) => void;
   setLessonProgress: (
     userId: string,
     lessonId: string,
@@ -86,10 +101,14 @@ function normalizeClasses(
         ? [legacy]
         : initialState.classes;
 
-  return source.map((c) => ({
-    ...c,
-    level: normalizeClassLevel(c),
-  }));
+  return source.map((c) => {
+    const level = normalizeClassLevel(c);
+    return {
+      ...c,
+      level,
+      studyYear: normalizeClassStudyYear({ ...c, level }),
+    };
+  });
 }
 
 function normalizeModules(
@@ -137,6 +156,7 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
       attempts: parsed.attempts ?? [],
       assessments: normalizeAssessments(parsed.assessments),
       assessmentQuestions: parsed.assessmentQuestions ?? [],
+      sequences: normalizeSequences(parsed.sequences, initialState.modules),
       currentUserId: parsed.currentUserId ?? null,
     };
   }
@@ -145,14 +165,16 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
     (parsed.lessons ?? []).map((l) => [l.id, l] as const),
   );
   const lessons = initialState.lessons.map((l) => lessonMap.get(l.id) ?? l);
+  const modules = normalizeModules(parsed.modules);
 
   return {
     ...initialState,
     ...parsed,
     classes,
     blocks: initialState.blocks,
-    modules: normalizeModules(parsed.modules),
+    modules,
     lessons,
+    sequences: normalizeSequences(parsed.sequences, modules),
     users: parsed.users ?? initialState.users,
     progress: parsed.progress ?? {},
     attempts: parsed.attempts ?? [],
@@ -230,6 +252,11 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
 
   const userLevel = useMemo(
     () => getUserDiplomaLevel(currentUser, state.classes),
+    [currentUser, state.classes],
+  );
+
+  const userStudyYear = useMemo(
+    () => getUserStudyYear(currentUser, state.classes),
     [currentUser, state.classes],
   );
 
@@ -317,6 +344,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     (classroom: Omit<ClassRoom, "id"> & { id?: string }) => {
       const id = classroom.id ?? `class-${crypto.randomUUID().slice(0, 8)}`;
       const level = normalizeClassLevel(classroom);
+      const studyYear = normalizeClassStudyYear({ ...classroom, level });
       commit((s) => {
         if (classroom.id) {
           return {
@@ -328,6 +356,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
                     name: classroom.name,
                     year: classroom.year,
                     level,
+                    studyYear,
                   }
                 : c,
             ),
@@ -337,7 +366,13 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
           ...s,
           classes: [
             ...s.classes,
-            { id, name: classroom.name, year: classroom.year, level },
+            {
+              id,
+              name: classroom.name,
+              year: classroom.year,
+              level,
+              studyYear,
+            },
           ],
         };
       });
@@ -384,6 +419,72 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
             : m,
         ),
       }));
+    },
+    [commit],
+  );
+
+  const setSequenceModuleIds = useCallback(
+    (level: DiplomaLevel, studyYear: StudyYear, moduleIds: string[]) => {
+      const id = sequenceId(level, studyYear);
+      commit((s) => {
+        const valid = new Set(
+          s.modules
+            .filter((m) => moduleVisibleForLevel(m, level))
+            .map((m) => m.id),
+        );
+        const seen = new Set<string>();
+        const cleaned = moduleIds.filter((mid) => {
+          if (!valid.has(mid) || seen.has(mid)) return false;
+          seen.add(mid);
+          return true;
+        });
+
+        // Retirer ces modules des autres années du même niveau
+        const sequences = s.sequences.map((seq) => {
+          if (seq.level !== level) return seq;
+          if (seq.studyYear === studyYear) {
+            return { ...seq, id, moduleIds: cleaned };
+          }
+          return {
+            ...seq,
+            moduleIds: seq.moduleIds.filter((mid) => !seen.has(mid)),
+          };
+        });
+
+        const exists = sequences.some(
+          (seq) => seq.level === level && seq.studyYear === studyYear,
+        );
+        return {
+          ...s,
+          sequences: exists
+            ? sequences
+            : [
+                ...sequences,
+                { id, level, studyYear, moduleIds: cleaned },
+              ],
+        };
+      });
+    },
+    [commit],
+  );
+
+  const resetSequences = useCallback(
+    (level?: DiplomaLevel) => {
+      commit((s) => {
+        const defaults = buildDefaultSequences(s.modules);
+        if (!level) return { ...s, sequences: defaults };
+        return {
+          ...s,
+          sequences: s.sequences.map((seq) => {
+            if (seq.level !== level) return seq;
+            return (
+              defaults.find(
+                (d) => d.level === level && d.studyYear === seq.studyYear,
+              ) ?? seq
+            );
+          }),
+        };
+      });
     },
     [commit],
   );
@@ -558,6 +659,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     hydrated,
     currentUser,
     userLevel,
+    userStudyYear,
     login,
     logout,
     upsertUser,
@@ -568,6 +670,8 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     deleteClass,
     updateLesson,
     updateModule,
+    setSequenceModuleIds,
+    resetSequences,
     setLessonProgress,
     addAttempt,
     getUserProgress,
@@ -593,27 +697,43 @@ export function useAppStore() {
   return ctx;
 }
 
-/** Modules publiés visibles pour le niveau de l'utilisateur (formateur = tout). */
+function modulesForSequence(
+  state: AppState,
+  level: DiplomaLevel,
+  studyYear: StudyYear,
+): Module[] {
+  const seq = getSequence(state.sequences, level, studyYear);
+  const byId = new Map(state.modules.map((m) => [m.id, m] as const));
+  if (seq && seq.moduleIds.length > 0) {
+    return seq.moduleIds
+      .map((id) => byId.get(id))
+      .filter((m): m is Module => m != null && m.published);
+  }
+  // Fallback : tous les modules du niveau, ordre code
+  return state.modules
+    .filter((m) => m.published && moduleVisibleForLevel(m, level))
+    .sort((a, b) => a.code.localeCompare(b.code));
+}
+
+/** Modules publiés visibles pour l'utilisateur (formateur = tout ; apprenti = séquence année). */
 export function useVisibleModules(): Module[] {
-  const { state, currentUser, userLevel } = useAppStore();
+  const { state, currentUser, userLevel, userStudyYear } = useAppStore();
   return useMemo(() => {
     const published = state.modules.filter((m) => m.published);
     if (!currentUser || currentUser.role === "trainer") return published;
-    return published.filter((m) => moduleVisibleForLevel(m, userLevel));
-  }, [state.modules, currentUser, userLevel]);
+    return modulesForSequence(state, userLevel, userStudyYear);
+  }, [state, currentUser, userLevel, userStudyYear]);
 }
 
-/** Exercices publiés dont le module est accessible au niveau de l'apprenti. */
+/** Exercices publiés dont le module est dans la séquence de l'apprenti. */
 export function useExercises(): Exercise[] {
-  const { state, currentUser, userLevel } = useAppStore();
+  const { state, currentUser, userLevel, userStudyYear } = useAppStore();
   return useMemo(() => {
     const published = state.exercises.filter((e) => e.published);
     if (!currentUser || currentUser.role === "trainer") return published;
 
     const visibleModuleIds = new Set(
-      state.modules
-        .filter((m) => m.published && moduleVisibleForLevel(m, userLevel))
-        .map((m) => m.id),
+      modulesForSequence(state, userLevel, userStudyYear).map((m) => m.id),
     );
     const lessonModule = new Map(
       state.lessons.map((l) => [l.id, l.moduleId] as const),
@@ -625,7 +745,7 @@ export function useExercises(): Exercise[] {
       if (!moduleId) return true;
       return visibleModuleIds.has(moduleId);
     });
-  }, [state.exercises, state.modules, state.lessons, currentUser, userLevel]);
+  }, [state, currentUser, userLevel, userStudyYear]);
 }
 
 /** Blancs publiés pour le niveau de l'apprenti. */
@@ -641,11 +761,15 @@ export function useVisibleAssessments(): Assessment[] {
 export function countLessonsForLevel(
   state: AppState,
   level: DiplomaLevel,
+  studyYear?: StudyYear,
 ): number {
   const visibleIds = new Set(
-    state.modules
-      .filter((m) => m.published && moduleVisibleForLevel(m, level))
-      .map((m) => m.id),
+    (studyYear
+      ? modulesForSequence(state, level, studyYear)
+      : state.modules.filter(
+          (m) => m.published && moduleVisibleForLevel(m, level),
+        )
+    ).map((m) => m.id),
   );
   return state.lessons.filter(
     (l) => l.published && visibleIds.has(l.moduleId),
