@@ -82,9 +82,24 @@ export default function SequencesPage() {
     const years: StudyYear[] = level === "AFP" ? [1, 2] : [1, 2, 3];
     return years.map((y) => {
       const seq = getSequence(state.sequences, level, y);
-      return { year: y, count: seq?.moduleIds.length ?? 0 };
+      const codes = (seq?.moduleIds ?? [])
+        .map((id) => moduleById.get(id)?.code)
+        .filter((c): c is string => Boolean(c));
+      const blocks = {
+        "500": codes.filter((c) => c.startsWith("5")).length,
+        "600": codes.filter((c) => c.startsWith("6")).length,
+        "700": codes.filter((c) => c.startsWith("7")).length,
+      };
+      return { year: y, count: seq?.moduleIds.length ?? 0, blocks };
     });
-  }, [state.sequences, level]);
+  }, [state.sequences, level, moduleById]);
+
+  const blockHint = useMemo(() => {
+    if (level !== "CFC") {
+      return "En AFP, le bloc 600 (distribution) et 701 sont surtout en 2ᵉ année ; les modules Production / FICO approfondis sont réservés CFC.";
+    }
+    return "Répartition CFC par défaut : Production (500) · Distribution (600) · FICO (700) → surtout en 2ᵉ et 3ᵉ année. Changez d’année ci-dessus pour les voir.";
+  }, [level]);
 
   if (!currentUser) return null;
   if (!isStaffRole(currentUser.role)) {
@@ -151,18 +166,28 @@ export default function SequencesPage() {
           />
         </div>
         <div className="mt-3 flex flex-wrap gap-2">
-          {yearCounts.map(({ year, count }) => (
+          {yearCounts.map(({ year, count, blocks }) => (
             <button
               key={year}
               type="button"
               onClick={() => setStudyYear(year)}
-              className="rounded-[var(--radius-md)] border border-border px-2 py-1 text-xs transition hover:border-primary"
+              className="rounded-[var(--radius-md)] border border-border px-2 py-1.5 text-left text-xs transition hover:border-primary"
             >
               <Badge tone={year === effectiveYear ? "primary" : "neutral"}>
                 {STUDY_YEAR_LABELS[year]} · {count}
               </Badge>
+              {(blocks["500"] > 0 || blocks["600"] > 0 || blocks["700"] > 0) && (
+                <span className="mt-1 block text-[10px] text-ink-subtle">
+                  {blocks["500"] > 0 ? `500×${blocks["500"]} ` : ""}
+                  {blocks["600"] > 0 ? `600×${blocks["600"]} ` : ""}
+                  {blocks["700"] > 0 ? `700×${blocks["700"]}` : ""}
+                </span>
+              )}
             </button>
           ))}
+        </div>
+        <div className="mt-3">
+          <Alert tone="info">{blockHint}</Alert>
         </div>
         <div className="mt-4 flex flex-wrap gap-2">
           <Button
