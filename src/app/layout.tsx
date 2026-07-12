@@ -17,6 +17,20 @@ export const metadata: Metadata = {
   title: "EPCAS Logistique",
   description:
     "Plateforme pédagogique AFP & CFC Logisticien·ne — EPCA Sion. Théorie, exercices, blancs et suivi.",
+  manifest: "/manifest.webmanifest",
+  themeColor: "#2F6F5E",
+  appleWebApp: {
+    capable: true,
+    title: "EPCAS",
+    statusBarStyle: "default",
+  },
+  icons: {
+    icon: [
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/icon-192.png", sizes: "192x192", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({

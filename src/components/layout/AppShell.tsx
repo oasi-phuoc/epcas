@@ -9,6 +9,7 @@ import {
   ListOrdered,
   LogOut,
   PencilLine,
+  Settings,
   UserRound,
   Users,
 } from "lucide-react";
@@ -26,7 +27,7 @@ const apprenticeLinks = [
   { href: "/theorie", label: "Théorie", icon: BookOpen },
   { href: "/exercices", label: "Exercices", icon: PencilLine },
   { href: "/blancs", label: "Blancs", icon: ClipboardCheck },
-  { href: "/profil", label: "Profil", icon: UserRound },
+  { href: "/parametres", label: "Paramètres", icon: Settings },
 ];
 
 const staffLinks = [
@@ -37,7 +38,7 @@ const staffLinks = [
   { href: "/formateur/sequences", label: "Séquences", icon: ListOrdered },
   { href: "/formateur/evaluations", label: "Évaluations", icon: ClipboardCheck },
   { href: "/formateur/comptes", label: "Comptes", icon: UserRound },
-  { href: "/profil", label: "Profil", icon: UserRound },
+  { href: "/parametres", label: "Paramètres", icon: Settings },
 ];
 
 function isActivePath(pathname: string, href: string) {
@@ -45,6 +46,9 @@ function isActivePath(pathname: string, href: string) {
   if (href === "/formateur") return pathname === "/formateur";
   if (href === "/formateur/contenu" || href === "/formateur/exercices") {
     return pathname === href || pathname.startsWith(`${href}/`);
+  }
+  if (href === "/parametres") {
+    return pathname === href || pathname.startsWith(`${href}/`) || pathname === "/profil";
   }
   return pathname === href || pathname.startsWith(`${href}/`);
 }
