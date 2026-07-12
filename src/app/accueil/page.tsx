@@ -11,7 +11,7 @@ import {
 import { useAppStore } from "@/lib/store";
 
 export default function AccueilPage() {
-  const { currentUser, state, getUserProgress, getAttemptsForUser } =
+  const { currentUser, state, getUserProgress, getAttemptsForUser, userLevel } =
     useAppStore();
   if (!currentUser) return null;
 
@@ -26,6 +26,7 @@ export default function AccueilPage() {
     focusLessons.length === 0
       ? 0
       : (lessonsDone / focusLessons.length) * 100;
+  const classroom = state.classes.find((c) => c.id === currentUser.classId);
 
   return (
     <div>
@@ -34,7 +35,7 @@ export default function AccueilPage() {
         description={
           isTrainer
             ? "Gérez les comptes, le contenu, les évaluations et le suivi de la classe."
-            : "Continuez votre formation CFC Logisticien·ne."
+            : `Continuez votre formation ${userLevel} Logisticien·ne.`
         }
       />
 
@@ -118,11 +119,13 @@ export default function AccueilPage() {
             <Panel>
               <p className="text-sm text-ink-muted">Classe</p>
               <p className="mt-2 text-sm font-medium text-ink">
-                {state.classes.find((c) => c.id === currentUser.classId)?.name ??
-                  "Non assignée"}
+                {classroom?.name ?? "Non assignée"}
               </p>
-              <p className="text-xs text-ink-subtle">
-                {state.classes.find((c) => c.id === currentUser.classId)?.year}
+              <p className="mt-1 flex flex-wrap items-center gap-2 text-xs text-ink-subtle">
+                <span>{classroom?.year}</span>
+                {classroom ? (
+                  <Badge tone="primary">Niveau {classroom.level}</Badge>
+                ) : null}
               </p>
             </Panel>
           </div>

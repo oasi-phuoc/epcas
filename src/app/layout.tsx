@@ -16,7 +16,7 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   title: "EPCAS Logistique",
   description:
-    "Plateforme pédagogique CFC Logisticien·ne — EPCA Sion. Théorie, exercices, blancs et suivi.",
+    "Plateforme pédagogique AFP & CFC Logisticien·ne — EPCA Sion. Théorie, exercices, blancs et suivi.",
 };
 
 export default function RootLayout({

@@ -12,11 +12,12 @@ import {
   Switch,
 } from "@/components/ui";
 import { MarkdownLite } from "@/components/MarkdownLite";
+import { moduleVisibleForLevel } from "@/lib/levels";
 import { useAppStore } from "@/lib/store";
 
 export default function LessonPage() {
   const params = useParams<{ lessonId: string }>();
-  const { state, currentUser, getUserProgress, setLessonProgress } =
+  const { state, currentUser, getUserProgress, setLessonProgress, userLevel } =
     useAppStore();
 
   const lesson = state.lessons.find((l) => l.id === params.lessonId);
@@ -35,6 +36,20 @@ export default function LessonPage() {
   if (!currentUser) return null;
   if (!lesson) {
     return <Alert tone="danger">Leçon introuvable.</Alert>;
+  }
+
+  const isTrainer = currentUser.role === "trainer";
+  if (
+    !isTrainer &&
+    mod &&
+    !moduleVisibleForLevel(mod, userLevel)
+  ) {
+    return (
+      <Alert tone="danger">
+        Cette page appartient à un module réservé au CFC. Votre classe est en{" "}
+        {userLevel}.
+      </Alert>
+    );
   }
 
   const summaryMode = progress?.modePref === "summary";

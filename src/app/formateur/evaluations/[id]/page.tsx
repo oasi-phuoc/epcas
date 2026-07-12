@@ -17,11 +17,17 @@ import {
 } from "@/components/ui";
 import { useAppStore } from "@/lib/store";
 import {
+  DIPLOMA_LEVELS,
+  levelsLabel,
+  toggleLevel,
+} from "@/lib/levels";
+import {
   createTemplateQuestion,
   QUESTION_TYPE_META,
 } from "@/lib/question-templates";
 import type {
   AssessmentQuestion,
+  DiplomaLevel,
   FillBlankPayload,
   MatchingPayload,
   MathPayload,
@@ -595,6 +601,9 @@ export default function EvaluationEditPage() {
   const [maxAttempts, setMaxAttempts] = useState(
     String(assessment?.maxAttempts ?? 1),
   );
+  const [levels, setLevels] = useState<DiplomaLevel[]>(
+    assessment?.levels ?? ["AFP", "CFC"],
+  );
   const [templateType, setTemplateType] = useState<QuestionType>("qcm");
   const [saved, setSaved] = useState(false);
 
@@ -620,6 +629,7 @@ export default function EvaluationEditPage() {
       durationMin: Number(durationMin) || 45,
       maxAttempts: Number(maxAttempts) || 1,
       published: assessment!.published,
+      levels,
     });
     setSaved(true);
     setTimeout(() => setSaved(false), 2000);
@@ -673,6 +683,27 @@ export default function EvaluationEditPage() {
               value={maxAttempts}
               onChange={(e) => setMaxAttempts(e.target.value)}
             />
+          </div>
+          <div>
+            <p className="mb-2 text-sm font-medium text-ink">
+              Public cible — {levelsLabel(levels)}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {DIPLOMA_LEVELS.map((level) => {
+                const active = levels.includes(level);
+                return (
+                  <Button
+                    key={level}
+                    type="button"
+                    size="sm"
+                    variant={active ? "primary" : "secondary"}
+                    onClick={() => setLevels(toggleLevel(levels, level))}
+                  >
+                    {level}
+                  </Button>
+                );
+              })}
+            </div>
           </div>
           <div className="flex flex-wrap gap-2">
             <Button type="submit">Enregistrer les paramètres</Button>

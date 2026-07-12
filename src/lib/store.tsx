@@ -10,24 +10,35 @@ import {
   type ReactNode,
 } from "react";
 import { initialState, DEMO_PASSWORD } from "./demo-data";
+import {
+  assessmentVisibleForLevel,
+  getUserDiplomaLevel,
+  moduleVisibleForLevel,
+  normalizeClassLevel,
+  normalizeLevels,
+} from "./levels";
 import type {
   AppState,
   Assessment,
   AssessmentQuestion,
   AttemptRecord,
   ClassRoom,
+  DiplomaLevel,
   Exercise,
   Lesson,
   LessonProgress,
+  Module,
   UserAccount,
 } from "./types";
 
-const STORAGE_KEY = "epcas-logistique-v83";
+const STORAGE_KEY = "epcas-logistique-v84";
 
 type AppStore = {
   state: AppState;
   hydrated: boolean;
   currentUser: UserAccount | null;
+  /** Niveau diplôme de l'utilisateur connecté (via sa classe) */
+  userLevel: DiplomaLevel;
   login: (email: string, password: string) => { ok: boolean; error?: string };
   logout: () => void;
   upsertUser: (user: Omit<UserAccount, "id"> & { id?: string }) => void;
@@ -39,6 +50,7 @@ type AppStore = {
   ) => string;
   deleteClass: (classId: string) => void;
   updateLesson: (lesson: Lesson) => void;
+  updateModule: (module: Module) => void;
   setLessonProgress: (
     userId: string,
     lessonId: string,
@@ -63,16 +75,52 @@ type AppStore = {
 
 const AppStoreContext = createContext<AppStore | null>(null);
 
+function normalizeClasses(
+  classes: ClassRoom[] | undefined,
+  legacy?: ClassRoom,
+): ClassRoom[] {
+  const source =
+    Array.isArray(classes) && classes.length > 0
+      ? classes
+      : legacy
+        ? [legacy]
+        : initialState.classes;
+
+  return source.map((c) => ({
+    ...c,
+    level: normalizeClassLevel(c),
+  }));
+}
+
+function normalizeModules(
+  parsedModules: Module[] | undefined,
+): Module[] {
+  const saved = new Map((parsedModules ?? []).map((m) => [m.id, m] as const));
+  return initialState.modules.map((m) => {
+    const prev = saved.get(m.id);
+    if (!prev) return m;
+    return {
+      ...m,
+      published: prev.published ?? m.published,
+      levels: normalizeLevels(prev.levels ?? m.levels),
+    };
+  });
+}
+
+function normalizeAssessments(
+  assessments: Assessment[] | undefined,
+): Assessment[] {
+  return (assessments ?? []).map((a) => ({
+    ...a,
+    levels: normalizeLevels(a.levels),
+  }));
+}
+
 function normalizeState(parsed: Partial<AppState> | null): AppState {
   if (!parsed) return initialState;
 
   const legacy = parsed as Partial<AppState> & { classRoom?: ClassRoom };
-  const classes =
-    Array.isArray(parsed.classes) && parsed.classes.length > 0
-      ? parsed.classes
-      : legacy.classRoom
-        ? [legacy.classRoom]
-        : initialState.classes;
+  const classes = normalizeClasses(parsed.classes, legacy.classRoom);
 
   const hasCurriculum =
     Array.isArray(parsed.blocks) &&
@@ -87,7 +135,7 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
       users: parsed.users ?? initialState.users,
       progress: parsed.progress ?? {},
       attempts: parsed.attempts ?? [],
-      assessments: parsed.assessments ?? [],
+      assessments: normalizeAssessments(parsed.assessments),
       assessmentQuestions: parsed.assessmentQuestions ?? [],
       currentUserId: parsed.currentUserId ?? null,
     };
@@ -103,12 +151,12 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
     ...parsed,
     classes,
     blocks: initialState.blocks,
-    modules: initialState.modules,
+    modules: normalizeModules(parsed.modules),
     lessons,
     users: parsed.users ?? initialState.users,
     progress: parsed.progress ?? {},
     attempts: parsed.attempts ?? [],
-    assessments: parsed.assessments ?? [],
+    assessments: normalizeAssessments(parsed.assessments),
     assessmentQuestions: parsed.assessmentQuestions ?? [],
     currentUserId: parsed.currentUserId ?? null,
   };
@@ -178,6 +226,11 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
   const currentUser = useMemo(
     () => state.users.find((u) => u.id === state.currentUserId) ?? null,
     [state.users, state.currentUserId],
+  );
+
+  const userLevel = useMemo(
+    () => getUserDiplomaLevel(currentUser, state.classes),
+    [currentUser, state.classes],
   );
 
   const login = useCallback(
@@ -263,13 +316,19 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
   const upsertClass = useCallback(
     (classroom: Omit<ClassRoom, "id"> & { id?: string }) => {
       const id = classroom.id ?? `class-${crypto.randomUUID().slice(0, 8)}`;
+      const level = normalizeClassLevel(classroom);
       commit((s) => {
         if (classroom.id) {
           return {
             ...s,
             classes: s.classes.map((c) =>
               c.id === classroom.id
-                ? { ...c, name: classroom.name, year: classroom.year }
+                ? {
+                    ...c,
+                    name: classroom.name,
+                    year: classroom.year,
+                    level,
+                  }
                 : c,
             ),
           };
@@ -278,7 +337,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
           ...s,
           classes: [
             ...s.classes,
-            { id, name: classroom.name, year: classroom.year },
+            { id, name: classroom.name, year: classroom.year, level },
           ],
         };
       });
@@ -310,6 +369,20 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
       commit((s) => ({
         ...s,
         lessons: s.lessons.map((l) => (l.id === lesson.id ? lesson : l)),
+      }));
+    },
+    [commit],
+  );
+
+  const updateModule = useCallback(
+    (module: Module) => {
+      commit((s) => ({
+        ...s,
+        modules: s.modules.map((m) =>
+          m.id === module.id
+            ? { ...module, levels: normalizeLevels(module.levels) }
+            : m,
+        ),
       }));
     },
     [commit],
@@ -372,6 +445,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     ) => {
       const now = new Date().toISOString();
       const id = assessment.id ?? `asmt-${crypto.randomUUID().slice(0, 8)}`;
+      const levels = normalizeLevels(assessment.levels);
       commit((s) => {
         if (assessment.id) {
           return {
@@ -382,6 +456,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
                     ...a,
                     ...assessment,
                     id: assessment.id,
+                    levels,
                     updatedAt: now,
                   }
                 : a,
@@ -395,6 +470,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
           durationMin: assessment.durationMin,
           maxAttempts: assessment.maxAttempts,
           published: assessment.published,
+          levels,
           createdAt: now,
           updatedAt: now,
         };
@@ -481,6 +557,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     state,
     hydrated,
     currentUser,
+    userLevel,
     login,
     logout,
     upsertUser,
@@ -490,6 +567,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     upsertClass,
     deleteClass,
     updateLesson,
+    updateModule,
     setLessonProgress,
     addAttempt,
     getUserProgress,
@@ -515,6 +593,61 @@ export function useAppStore() {
   return ctx;
 }
 
+/** Modules publiés visibles pour le niveau de l'utilisateur (formateur = tout). */
+export function useVisibleModules(): Module[] {
+  const { state, currentUser, userLevel } = useAppStore();
+  return useMemo(() => {
+    const published = state.modules.filter((m) => m.published);
+    if (!currentUser || currentUser.role === "trainer") return published;
+    return published.filter((m) => moduleVisibleForLevel(m, userLevel));
+  }, [state.modules, currentUser, userLevel]);
+}
+
+/** Exercices publiés dont le module est accessible au niveau de l'apprenti. */
 export function useExercises(): Exercise[] {
-  return useAppStore().state.exercises.filter((e) => e.published);
+  const { state, currentUser, userLevel } = useAppStore();
+  return useMemo(() => {
+    const published = state.exercises.filter((e) => e.published);
+    if (!currentUser || currentUser.role === "trainer") return published;
+
+    const visibleModuleIds = new Set(
+      state.modules
+        .filter((m) => m.published && moduleVisibleForLevel(m, userLevel))
+        .map((m) => m.id),
+    );
+    const lessonModule = new Map(
+      state.lessons.map((l) => [l.id, l.moduleId] as const),
+    );
+
+    return published.filter((e) => {
+      if (!e.lessonId) return true;
+      const moduleId = lessonModule.get(e.lessonId);
+      if (!moduleId) return true;
+      return visibleModuleIds.has(moduleId);
+    });
+  }, [state.exercises, state.modules, state.lessons, currentUser, userLevel]);
+}
+
+/** Blancs publiés pour le niveau de l'apprenti. */
+export function useVisibleAssessments(): Assessment[] {
+  const { state, currentUser, userLevel } = useAppStore();
+  return useMemo(() => {
+    const published = state.assessments.filter((a) => a.published);
+    if (!currentUser || currentUser.role === "trainer") return published;
+    return published.filter((a) => assessmentVisibleForLevel(a, userLevel));
+  }, [state.assessments, currentUser, userLevel]);
+}
+
+export function countLessonsForLevel(
+  state: AppState,
+  level: DiplomaLevel,
+): number {
+  const visibleIds = new Set(
+    state.modules
+      .filter((m) => m.published && moduleVisibleForLevel(m, level))
+      .map((m) => m.id),
+  );
+  return state.lessons.filter(
+    (l) => l.published && visibleIds.has(l.moduleId),
+  ).length;
 }

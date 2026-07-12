@@ -4,10 +4,12 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { Badge, PageHeader, Panel, ProgressBar } from "@/components/ui";
-import { useAppStore } from "@/lib/store";
+import { levelsLabel } from "@/lib/levels";
+import { useAppStore, useVisibleModules } from "@/lib/store";
 
 export default function TheorieIndexPage() {
-  const { state, currentUser, getUserProgress } = useAppStore();
+  const { state, currentUser, getUserProgress, userLevel } = useAppStore();
+  const visibleModules = useVisibleModules();
   const [openBlocks, setOpenBlocks] = useState<Record<string, boolean>>({
     "block-100": true,
   });
@@ -15,7 +17,7 @@ export default function TheorieIndexPage() {
   const statsByModule = useMemo(() => {
     const progress = currentUser ? getUserProgress(currentUser.id) : [];
     const map = new Map<string, { total: number; done: number }>();
-    for (const mod of state.modules) {
+    for (const mod of visibleModules) {
       const lessons = state.lessons.filter(
         (l) => l.moduleId === mod.id && l.published,
       );
@@ -25,24 +27,37 @@ export default function TheorieIndexPage() {
       map.set(mod.id, { total: lessons.length, done });
     }
     return map;
-  }, [state.modules, state.lessons, currentUser, getUserProgress]);
+  }, [visibleModules, state.lessons, currentUser, getUserProgress]);
 
   if (!currentUser) return null;
 
   const blocks = [...state.blocks].sort((a, b) => a.order - b.order);
+  const isTrainer = currentUser.role === "trainer";
 
   return (
     <div>
       <PageHeader
         title="Théorie"
-        description="Cursus EnterSite CFC — blocs 100 à 900. Ouvrez un module pour voir ses pages."
+        description={
+          isTrainer
+            ? "Cursus EnterSite — blocs 100 à 900. Ouvrez un module pour voir ses pages."
+            : `Cursus ${userLevel} — modules adaptés à votre niveau. Ouvrez un module pour voir ses pages.`
+        }
       />
+
+      {!isTrainer ? (
+        <div className="mb-4">
+          <Badge tone="primary">Niveau {userLevel}</Badge>
+        </div>
+      ) : null}
 
       <div className="space-y-3">
         {blocks.map((block) => {
-          const modules = state.modules
-            .filter((m) => m.blockId === block.id && m.published)
+          const modules = visibleModules
+            .filter((m) => m.blockId === block.id)
             .sort((a, b) => a.code.localeCompare(b.code));
+          if (modules.length === 0) return null;
+
           const open = openBlocks[block.id] ?? false;
           const blockDone = modules.reduce(
             (s, m) => s + (statsByModule.get(m.id)?.done ?? 0),
@@ -55,7 +70,7 @@ export default function TheorieIndexPage() {
           const pct = blockTotal === 0 ? 0 : (blockDone / blockTotal) * 100;
 
           return (
-            <Panel key={block.id} className="p-0 overflow-hidden">
+            <Panel key={block.id} className="overflow-hidden p-0">
               <button
                 type="button"
                 className="flex w-full items-center gap-3 px-5 py-4 text-left transition hover:bg-surface-muted/60"
@@ -107,6 +122,11 @@ export default function TheorieIndexPage() {
                             <span className="mt-0.5 block font-medium text-ink">
                               {mod.title}
                             </span>
+                            {isTrainer ? (
+                              <span className="mt-0.5 block text-xs text-ink-subtle">
+                                {levelsLabel(mod.levels)}
+                              </span>
+                            ) : null}
                           </span>
                           <Badge
                             tone={

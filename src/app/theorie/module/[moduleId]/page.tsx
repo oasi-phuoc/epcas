@@ -9,16 +9,26 @@ import {
   PageHeader,
   Panel,
 } from "@/components/ui";
+import { levelsLabel, moduleVisibleForLevel } from "@/lib/levels";
 import { useAppStore } from "@/lib/store";
 
 export default function ModuleDetailPage() {
   const params = useParams<{ moduleId: string }>();
-  const { state, currentUser, getUserProgress } = useAppStore();
+  const { state, currentUser, getUserProgress, userLevel } = useAppStore();
   if (!currentUser) return null;
 
   const mod = state.modules.find((m) => m.id === params.moduleId);
   if (!mod) {
     return <Alert tone="danger">Module introuvable.</Alert>;
+  }
+
+  const isTrainer = currentUser.role === "trainer";
+  if (!isTrainer && !moduleVisibleForLevel(mod, userLevel)) {
+    return (
+      <Alert tone="danger">
+        Ce module est réservé au niveau CFC. Votre classe est en {userLevel}.
+      </Alert>
+    );
   }
 
   const block = state.blocks.find((b) => b.id === mod.blockId);
@@ -42,8 +52,13 @@ export default function ModuleDetailPage() {
       />
 
       <div className="mb-4 flex flex-wrap gap-2">
-        {block ? <Badge>{block.code} · {block.title}</Badge> : null}
+        {block ? (
+          <Badge>
+            {block.code} · {block.title}
+          </Badge>
+        ) : null}
         <Badge tone="neutral">{lessons.length} pages</Badge>
+        <Badge tone="accent">{levelsLabel(mod.levels)}</Badge>
       </div>
 
       <Panel>

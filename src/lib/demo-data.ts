@@ -13,19 +13,28 @@ const lessons = buildCurriculumLessons();
 export const initialState: AppState = {
   classes: [
     {
+      id: "class-afp-1",
+      name: "AFP 1ʳᵉ année — EPCA Sion",
+      year: "2025-2026",
+      level: "AFP",
+    },
+    {
       id: "class-1",
       name: "CFC 1ʳᵉ année — EPCA Sion",
       year: "2025-2026",
+      level: "CFC",
     },
     {
       id: "class-2",
       name: "CFC 2ᵉ année — EPCA Sion",
       year: "2025-2026",
+      level: "CFC",
     },
     {
       id: "class-3",
       name: "CFC 3ᵉ année — EPCA Sion",
       year: "2025-2026",
+      level: "CFC",
     },
   ],
   users: [
@@ -45,6 +54,15 @@ export const initialState: AppState = {
       displayName: "Alex Dupont",
       role: "apprentice",
       classId: "class-1",
+      active: true,
+    },
+    {
+      id: "user-apprentice-afp",
+      email: "afp@epcas.ch",
+      password: DEMO_PASSWORD,
+      displayName: "Camille Rossi",
+      role: "apprentice",
+      classId: "class-afp-1",
       active: true,
     },
     {

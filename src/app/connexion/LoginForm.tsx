@@ -12,7 +12,11 @@ export default function LoginForm() {
   const search = useSearchParams();
   const demo = search.get("demo");
   const presetEmail =
-    demo === "formateur" ? "formateur@epcas.ch" : "apprenti@epcas.ch";
+    demo === "formateur"
+      ? "formateur@epcas.ch"
+      : demo === "afp"
+        ? "afp@epcas.ch"
+        : "apprenti@epcas.ch";
 
   useEffect(() => {
     if (hydrated && currentUser) router.replace("/accueil");
@@ -92,12 +96,18 @@ function LoginFields({
 
         <div className="mt-6 space-y-2 rounded-[var(--radius-md)] bg-surface-muted p-3 text-xs text-ink-muted">
           <p className="font-medium text-ink">Comptes démo</p>
-          <p>Apprenti : apprenti@epcas.ch / {demoPassword}</p>
+          <p>CFC : apprenti@epcas.ch / {demoPassword}</p>
+          <p>AFP : afp@epcas.ch / {demoPassword}</p>
           <p>Formateur : formateur@epcas.ch / {demoPassword}</p>
           <div className="flex flex-wrap gap-2 pt-1">
             <Link href="/connexion?demo=apprenti">
               <Button size="sm" variant="secondary">
-                Remplir apprenti
+                Remplir CFC
+              </Button>
+            </Link>
+            <Link href="/connexion?demo=afp">
+              <Button size="sm" variant="secondary">
+                Remplir AFP
               </Button>
             </Link>
             <Link href="/connexion?demo=formateur">

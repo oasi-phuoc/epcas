@@ -1,5 +1,8 @@
 export type Role = "trainer" | "apprentice";
 
+/** Niveau de diplôme fédéral suisse */
+export type DiplomaLevel = "AFP" | "CFC";
+
 export type LessonStatus = "unread" | "reading" | "done";
 
 export type ExerciseType = "qcm" | "math" | "open";
@@ -19,6 +22,8 @@ export interface ClassRoom {
   id: string;
   name: string;
   year: string;
+  /** Niveau de la classe : détermine le contenu visible des apprentis */
+  level: DiplomaLevel;
 }
 
 export interface Block {
@@ -55,6 +60,8 @@ export interface Module {
   title: string;
   order: number;
   published: boolean;
+  /** Niveaux pour lesquels le module est visible */
+  levels: DiplomaLevel[];
 }
 
 export interface QcmPayload {
@@ -139,6 +146,8 @@ export interface Assessment {
   durationMin: number;
   maxAttempts: number;
   published: boolean;
+  /** Public cible (défaut AFP + CFC) */
+  levels: DiplomaLevel[];
   createdAt: string;
   updatedAt: string;
 }

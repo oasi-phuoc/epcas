@@ -14,8 +14,13 @@ import {
 } from "@/components/ui";
 import { MarkdownLite } from "@/components/MarkdownLite";
 import { MarkdownToolbar } from "@/components/MarkdownToolbar";
+import {
+  DIPLOMA_LEVELS,
+  levelsLabel,
+  toggleLevel,
+} from "@/lib/levels";
 import { useAppStore } from "@/lib/store";
-import type { Lesson } from "@/lib/types";
+import type { DiplomaLevel, Lesson } from "@/lib/types";
 import { Eye, Pencil } from "lucide-react";
 
 function LessonEditor({
@@ -160,17 +165,21 @@ function LessonEditor({
 }
 
 export default function ContenuPage() {
-  const { currentUser, state, updateLesson } = useAppStore();
+  const { currentUser, state, updateLesson, updateModule } = useAppStore();
+  const [levelFilter, setLevelFilter] = useState<"all" | DiplomaLevel>("all");
 
   const blocks = useMemo(
     () => [...state.blocks].sort((a, b) => a.order - b.order),
     [state.blocks],
   );
 
-  const modulesSorted = useMemo(
-    () => [...state.modules].sort((a, b) => a.code.localeCompare(b.code)),
-    [state.modules],
-  );
+  const modulesSorted = useMemo(() => {
+    const list = [...state.modules].sort((a, b) =>
+      a.code.localeCompare(b.code),
+    );
+    if (levelFilter === "all") return list;
+    return list.filter((m) => m.levels.includes(levelFilter));
+  }, [state.modules, levelFilter]);
 
   const defaultLesson = state.lessons.find((l) => l.id === "lesson-101-theorie");
   const defaultModule =
@@ -185,9 +194,19 @@ export default function ContenuPage() {
     defaultLesson?.id ?? state.lessons[0]?.id ?? "",
   );
 
-  const effectiveBlockId = blocks.some((b) => b.id === blockId)
+  const blockOptions = useMemo(() => {
+    const withModules = new Set(modulesSorted.map((m) => m.blockId));
+    return blocks
+      .filter((b) => withModules.has(b.id))
+      .map((b) => ({
+        value: b.id,
+        label: `${b.code} — ${b.title}`,
+      }));
+  }, [blocks, modulesSorted]);
+
+  const effectiveBlockId = blockOptions.some((b) => b.value === blockId)
     ? blockId
-    : (blocks[0]?.id ?? "");
+    : (blockOptions[0]?.value ?? "");
 
   const modulesInBlock = useMemo(
     () => modulesSorted.filter((m) => m.blockId === effectiveBlockId),
@@ -211,15 +230,7 @@ export default function ContenuPage() {
     : (lessonsInModule[0]?.id ?? "");
 
   const lesson = state.lessons.find((l) => l.id === effectiveLessonId);
-
-  const blockOptions = useMemo(
-    () =>
-      blocks.map((b) => ({
-        value: b.id,
-        label: `${b.code} — ${b.title}`,
-      })),
-    [blocks],
-  );
+  const currentModule = state.modules.find((m) => m.id === effectiveModuleId);
 
   const moduleOptions = useMemo(
     () =>
@@ -271,14 +282,28 @@ export default function ContenuPage() {
     <div>
       <PageHeader
         title="Contenu théorique"
-        description={`Éditez avec la barre de formatage (style Word), puis Preview. ${modulesSorted.length} modules.`}
+        description={`Éditez avec la barre de formatage (style Word), puis Preview. ${state.modules.length} modules · filtre niveau.`}
       />
       <Panel>
         <div className="mb-4">
           <Alert tone="info">
             Sélectionnez du texte, puis cliquez sur un bouton (Titre, Gras,
-            Puces…). Complet / Résumé basculent la partie éditée ou prévisualisée.
+            Puces…). Assignez chaque module à AFP, CFC ou les deux.
           </Alert>
+        </div>
+        <div className="mb-4">
+          <Select
+            label="Filtrer les modules par niveau"
+            options={[
+              { value: "all", label: "Tous les modules" },
+              { value: "AFP", label: "AFP seulement" },
+              { value: "CFC", label: "CFC seulement" },
+            ]}
+            value={levelFilter}
+            onChange={(e) =>
+              setLevelFilter(e.target.value as "all" | DiplomaLevel)
+            }
+          />
         </div>
         <div className="mb-4 grid gap-3 sm:grid-cols-3">
           <Select
@@ -300,6 +325,40 @@ export default function ContenuPage() {
             onChange={(e) => setLessonId(e.target.value)}
           />
         </div>
+
+        {currentModule ? (
+          <div className="mb-4 rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-3">
+            <p className="mb-2 text-sm font-medium text-ink">
+              Niveaux du module {currentModule.code} —{" "}
+              {levelsLabel(currentModule.levels)}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {DIPLOMA_LEVELS.map((level) => {
+                const active = currentModule.levels.includes(level);
+                return (
+                  <Button
+                    key={level}
+                    type="button"
+                    size="sm"
+                    variant={active ? "primary" : "secondary"}
+                    onClick={() =>
+                      updateModule({
+                        ...currentModule,
+                        levels: toggleLevel(currentModule.levels, level),
+                      })
+                    }
+                  >
+                    {level}
+                  </Button>
+                );
+              })}
+            </div>
+            <p className="mt-2 text-xs text-ink-subtle">
+              Les apprentis ne voient que les modules de leur niveau de classe.
+            </p>
+          </div>
+        ) : null}
+
         <LessonEditor
           key={lesson.id}
           lesson={lesson}

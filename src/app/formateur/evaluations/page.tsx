@@ -14,6 +14,12 @@ import {
   TextField,
 } from "@/components/ui";
 import { useAppStore } from "@/lib/store";
+import {
+  DIPLOMA_LEVELS,
+  levelsLabel,
+  toggleLevel,
+} from "@/lib/levels";
+import type { DiplomaLevel } from "@/lib/types";
 import { ClipboardPlus, Pencil, Trash2 } from "lucide-react";
 
 export default function EvaluationsListPage() {
@@ -30,6 +36,7 @@ export default function EvaluationsListPage() {
   const [description, setDescription] = useState("");
   const [durationMin, setDurationMin] = useState("45");
   const [maxAttempts, setMaxAttempts] = useState("1");
+  const [levels, setLevels] = useState<DiplomaLevel[]>(["AFP", "CFC"]);
   const [createdId, setCreatedId] = useState<string | null>(null);
 
   if (!currentUser) return null;
@@ -45,11 +52,13 @@ export default function EvaluationsListPage() {
       durationMin: Number(durationMin) || 45,
       maxAttempts: Number(maxAttempts) || 1,
       published: false,
+      levels,
     });
     setTitle("");
     setDescription("");
     setDurationMin("45");
     setMaxAttempts("1");
+    setLevels(["AFP", "CFC"]);
     setCreatedId(id);
   }
 
@@ -61,7 +70,7 @@ export default function EvaluationsListPage() {
     <div>
       <PageHeader
         title="Évaluations"
-        description="Créez des blancs / examens avec QCM, maths, appariement, texte à trous, etc."
+        description="Créez des blancs / examens ciblés AFP, CFC ou les deux."
       />
 
       <Panel className="mb-4">
@@ -94,6 +103,25 @@ export default function EvaluationsListPage() {
               onChange={(e) => setMaxAttempts(e.target.value)}
               min={1}
             />
+          </div>
+          <div>
+            <p className="mb-2 text-sm font-medium text-ink">Public cible</p>
+            <div className="flex flex-wrap gap-2">
+              {DIPLOMA_LEVELS.map((level) => {
+                const active = levels.includes(level);
+                return (
+                  <Button
+                    key={level}
+                    type="button"
+                    size="sm"
+                    variant={active ? "primary" : "secondary"}
+                    onClick={() => setLevels(toggleLevel(levels, level))}
+                  >
+                    {level}
+                  </Button>
+                );
+              })}
+            </div>
           </div>
           <Button type="submit">
             <ClipboardPlus className="h-4 w-4" />
@@ -135,6 +163,7 @@ export default function EvaluationsListPage() {
                       <Badge tone={a.published ? "success" : "warning"}>
                         {a.published ? "Publiée" : "Brouillon"}
                       </Badge>
+                      <Badge tone="accent">{levelsLabel(a.levels)}</Badge>
                     </div>
                     {a.description ? (
                       <p className="mt-1 text-sm text-ink-muted">{a.description}</p>

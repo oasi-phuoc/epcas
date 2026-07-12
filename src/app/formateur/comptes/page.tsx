@@ -13,6 +13,8 @@ import {
 } from "@/components/ui";
 import { useAppStore } from "@/lib/store";
 import { UserCheck, UserX } from "lucide-react";
+import { DIPLOMA_LABELS, DIPLOMA_LEVELS } from "@/lib/levels";
+import type { DiplomaLevel } from "@/lib/types";
 
 export default function ComptesPage() {
   const {
@@ -40,7 +42,9 @@ export default function ComptesPage() {
   const [selected, setSelected] = useState<string[]>([]);
   const [newClassName, setNewClassName] = useState("");
   const [newClassYear, setNewClassYear] = useState("2025-2026");
+  const [newClassLevel, setNewClassLevel] = useState<DiplomaLevel>("CFC");
   const [filterClassId, setFilterClassId] = useState<string>("all");
+  const [filterLevel, setFilterLevel] = useState<"all" | DiplomaLevel>("all");
 
   const apprentices = useMemo(
     () =>
@@ -50,29 +54,38 @@ export default function ComptesPage() {
     [state.users],
   );
 
-  const visibleApprentices = useMemo(
-    () =>
-      filterClassId === "all"
-        ? apprentices
-        : apprentices.filter((a) => a.classId === filterClassId),
-    [apprentices, filterClassId],
-  );
-
   const classOptions = useMemo(
     () =>
       classes.map((c) => ({
         value: c.id,
-        label: `${c.name} (${c.year})`,
+        label: `${c.name} · ${DIPLOMA_LABELS[c.level]} (${c.year})`,
       })),
     [classes],
   );
+
+  const levelFilteredClasses = useMemo(
+    () =>
+      filterLevel === "all"
+        ? classes
+        : classes.filter((c) => c.level === filterLevel),
+    [classes, filterLevel],
+  );
+
+  const visibleApprentices = useMemo(() => {
+    const classIds = new Set(levelFilteredClasses.map((c) => c.id));
+    return apprentices.filter((a) => {
+      if (!classIds.has(a.classId)) return false;
+      if (filterClassId !== "all" && a.classId !== filterClassId) return false;
+      return true;
+    });
+  }, [apprentices, levelFilteredClasses, filterClassId]);
 
   if (!currentUser) return null;
   if (currentUser.role !== "trainer") {
     return <EmptyState title="Accès réservé aux formateurs" />;
   }
 
-  const groups = classes.map((c) => {
+  const groups = levelFilteredClasses.map((c) => {
     const members = apprentices.filter((a) => a.classId === c.id);
     return {
       classroom: c,
@@ -124,11 +137,12 @@ export default function ComptesPage() {
     const id = upsertClass({
       name: newClassName.trim(),
       year: newClassYear.trim() || "2025-2026",
+      level: newClassLevel,
     });
     setNewClassName("");
     setClassId(id);
     setFilterClassId(id);
-    setMessage("Classe créée.");
+    setMessage(`Classe ${newClassLevel} créée.`);
   }
 
   function toggleOne(id: string) {
@@ -176,20 +190,20 @@ export default function ComptesPage() {
     <div>
       <PageHeader
         title="Comptes apprentis"
-        description="Chaque élève est rattaché à une classe. Gérez les comptes par groupe."
+        description="Chaque élève est rattaché à une classe AFP ou CFC. Le niveau de la classe filtre le contenu visible."
       />
 
       <Panel className="mb-4">
         <h2 className="font-display text-xl">Nouvelle classe</h2>
         <form
           onSubmit={onCreateClass}
-          className="mt-4 grid gap-3 sm:grid-cols-[1fr_10rem_auto]"
+          className="mt-4 grid gap-3 sm:grid-cols-[1fr_10rem_8rem_auto]"
         >
           <TextField
             label="Nom de la classe"
             value={newClassName}
             onChange={(e) => setNewClassName(e.target.value)}
-            placeholder="Ex. CFC 1ʳᵉ année — EPCA Sion"
+            placeholder="Ex. AFP 1ʳᵉ année — EPCA Sion"
             required
           />
           <TextField
@@ -197,6 +211,15 @@ export default function ComptesPage() {
             value={newClassYear}
             onChange={(e) => setNewClassYear(e.target.value)}
             required
+          />
+          <Select
+            label="Niveau"
+            options={DIPLOMA_LEVELS.map((l) => ({
+              value: l,
+              label: DIPLOMA_LABELS[l],
+            }))}
+            value={newClassLevel}
+            onChange={(e) => setNewClassLevel(e.target.value as DiplomaLevel)}
           />
           <div className="flex items-end">
             <Button type="submit">Créer</Button>
@@ -245,12 +268,32 @@ export default function ComptesPage() {
 
       <Panel className="mb-4">
         <div className="flex flex-wrap items-end gap-3">
+          <div className="min-w-[12rem] flex-1">
+            <Select
+              label="Filtrer par niveau"
+              options={[
+                { value: "all", label: "AFP + CFC" },
+                ...DIPLOMA_LEVELS.map((l) => ({
+                  value: l,
+                  label: DIPLOMA_LABELS[l],
+                })),
+              ]}
+              value={filterLevel}
+              onChange={(e) => {
+                setFilterLevel(e.target.value as "all" | DiplomaLevel);
+                setSelected([]);
+              }}
+            />
+          </div>
           <div className="min-w-[14rem] flex-1">
             <Select
               label="Filtrer par classe"
               options={[
                 { value: "all", label: "Toutes les classes" },
-                ...classOptions,
+                ...levelFilteredClasses.map((c) => ({
+                  value: c.id,
+                  label: `${c.name} · ${DIPLOMA_LABELS[c.level]}`,
+                })),
               ]}
               value={filterClassId}
               onChange={(e) => {
@@ -303,9 +346,12 @@ export default function ComptesPage() {
             <section key={classroom.id}>
               <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
                 <div>
-                  <h2 className="font-display text-2xl text-ink">
-                    {classroom.name}
-                  </h2>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h2 className="font-display text-2xl text-ink">
+                      {classroom.name}
+                    </h2>
+                    <Badge tone="primary">{classroom.level}</Badge>
+                  </div>
                   <p className="text-sm text-ink-muted">
                     {classroom.year} · {members.length} élève
                     {members.length !== 1 ? "s" : ""} · {active} actif
@@ -314,6 +360,22 @@ export default function ComptesPage() {
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-2">
+                  <Select
+                    options={DIPLOMA_LEVELS.map((l) => ({
+                      value: l,
+                      label: DIPLOMA_LABELS[l],
+                    }))}
+                    value={classroom.level}
+                    onChange={(e) =>
+                      upsertClass({
+                        id: classroom.id,
+                        name: classroom.name,
+                        year: classroom.year,
+                        level: e.target.value as DiplomaLevel,
+                      })
+                    }
+                    className="min-w-[6rem]"
+                  />
                   <Button
                     size="sm"
                     variant="secondary"

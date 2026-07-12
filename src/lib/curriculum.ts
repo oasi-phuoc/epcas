@@ -1,6 +1,7 @@
+import { defaultLevelsForModule } from "./levels";
 import type { Block, Lesson, Module } from "./types";
 
-/** Arborescence EnterSite CFC — EPCA Sion (OneNote Prof 2025-26) */
+/** Arborescence EnterSite — EPCA Sion (OneNote Prof 2025-26), répartie AFP / CFC */
 
 export const curriculumBlocks: Block[] = [
   { id: "block-100", code: "100", title: "Foundation", order: 100 },
@@ -11591,6 +11592,7 @@ export function buildCurriculumModules(): Module[] {
     title: m.title,
     order: index + 1,
     published: true,
+    levels: defaultLevelsForModule(m.code),
   }));
 }
 

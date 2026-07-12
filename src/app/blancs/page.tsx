@@ -8,22 +8,27 @@ import {
   Panel,
   Button,
 } from "@/components/ui";
-import { useAppStore } from "@/lib/store";
+import { levelsLabel } from "@/lib/levels";
+import { useAppStore, useVisibleAssessments } from "@/lib/store";
 import { QUESTION_TYPE_META } from "@/lib/question-templates";
 
 export default function BlancsPage() {
-  const { currentUser, state, getAssessmentQuestions } = useAppStore();
-  if (!currentUser) return null;
+  const { currentUser, userLevel, getAssessmentQuestions } = useAppStore();
+  const published = useVisibleAssessments().sort((a, b) =>
+    b.updatedAt.localeCompare(a.updatedAt),
+  );
 
-  const published = state.assessments
-    .filter((a) => a.published)
-    .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
+  if (!currentUser) return null;
 
   return (
     <div>
       <PageHeader
         title="Évaluations à blanc"
-        description="Examens composés par le formateur : timer, score, questions mixtes."
+        description={
+          currentUser.role === "trainer"
+            ? "Examens composés par le formateur : timer, score, questions mixtes."
+            : `Blancs publiés pour le niveau ${userLevel}.`
+        }
       />
 
       {published.length === 0 ? (
@@ -57,6 +62,7 @@ export default function BlancsPage() {
               <Panel key={a.id}>
                 <div className="flex flex-wrap items-center gap-2">
                   <Badge tone="success">Publié</Badge>
+                  <Badge tone="accent">{levelsLabel(a.levels)}</Badge>
                   {types.slice(0, 4).map((t) => (
                     <Badge key={t} tone="neutral">
                       {QUESTION_TYPE_META[t].short}

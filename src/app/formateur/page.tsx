@@ -10,7 +10,8 @@ import {
   ProgressBar,
   Select,
 } from "@/components/ui";
-import { useAppStore } from "@/lib/store";
+import { DIPLOMA_LABELS } from "@/lib/levels";
+import { countLessonsForLevel, useAppStore } from "@/lib/store";
 
 export default function FormateurSuiviPage() {
   const { currentUser, state, getUserProgress, getAttemptsForUser } =
@@ -39,7 +40,7 @@ export default function FormateurSuiviPage() {
     { value: "all", label: "Toutes les classes" },
     ...classes.map((c) => ({
       value: c.id,
-      label: `${c.name} (${c.year})`,
+      label: `${c.name} · ${DIPLOMA_LABELS[c.level]} (${c.year})`,
     })),
   ];
 
@@ -56,7 +57,7 @@ export default function FormateurSuiviPage() {
     <div>
       <PageHeader
         title="Suivi des classes"
-        description="Progression des apprentis, séparée par classe."
+        description="Progression des apprentis, séparée par classe et niveau AFP / CFC."
       />
 
       <Panel className="mb-4">
@@ -71,12 +72,16 @@ export default function FormateurSuiviPage() {
       <div className="space-y-6">
         {groups.map(({ classroom, members }) => {
           const active = members.filter((m) => m.active).length;
+          const lessonTotal = countLessonsForLevel(state, classroom.level);
           return (
             <section key={classroom.id}>
               <div className="mb-3">
-                <h2 className="font-display text-2xl text-ink">
-                  {classroom.name}
-                </h2>
+                <div className="flex flex-wrap items-center gap-2">
+                  <h2 className="font-display text-2xl text-ink">
+                    {classroom.name}
+                  </h2>
+                  <Badge tone="primary">{classroom.level}</Badge>
+                </div>
                 <p className="text-sm text-ink-muted">
                   {classroom.year} · {members.length} élève
                   {members.length !== 1 ? "s" : ""} · {active} actif
@@ -97,9 +102,7 @@ export default function FormateurSuiviPage() {
                       (p) => p.status === "done",
                     ).length;
                     const pct =
-                      state.lessons.length === 0
-                        ? 0
-                        : (done / state.lessons.length) * 100;
+                      lessonTotal === 0 ? 0 : (done / lessonTotal) * 100;
                     const attempts = getAttemptsForUser(a.id);
                     const avg =
                       attempts.length === 0
@@ -129,7 +132,8 @@ export default function FormateurSuiviPage() {
                           <ProgressBar value={avg} label="Exercices" />
                         </div>
                         <p className="mt-3 text-xs text-ink-subtle">
-                          {attempts.length} tentative(s) enregistrée(s)
+                          {done}/{lessonTotal} pages · {attempts.length}{" "}
+                          tentative(s)
                         </p>
                       </Panel>
                     );

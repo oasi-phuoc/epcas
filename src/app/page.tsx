@@ -25,8 +25,9 @@ export default function HomePage() {
             </span>
           </p>
           <p className="mt-5 max-w-lg text-lg text-ink-muted">
-            Formation CFC Logisticien·ne — EPCA Sion. Théorie, exercices,
-            évaluations à blanc et suivi, sur bureau comme sur mobile.
+            Formation AFP &amp; CFC Logisticien·ne — EPCA Sion. Théorie,
+            exercices, évaluations à blanc et suivi, adaptés au niveau de
+            chaque classe.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/connexion">

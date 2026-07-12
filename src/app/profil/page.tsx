@@ -2,12 +2,14 @@
 
 import {
   Alert,
+  Badge,
   Button,
   PageHeader,
   Panel,
   ProgressBar,
 } from "@/components/ui";
-import { useAppStore } from "@/lib/store";
+import { getUserDiplomaLevel } from "@/lib/levels";
+import { countLessonsForLevel, useAppStore } from "@/lib/store";
 
 export default function ProfilPage() {
   const {
@@ -17,14 +19,20 @@ export default function ProfilPage() {
     getUserProgress,
     getAttemptsForUser,
     state,
+    userLevel,
   } = useAppStore();
   if (!currentUser) return null;
 
   const progress = getUserProgress(currentUser.id);
   const attempts = getAttemptsForUser(currentUser.id);
+  const classroom = state.classes.find((c) => c.id === currentUser.classId);
+  const level =
+    currentUser.role === "trainer"
+      ? userLevel
+      : getUserDiplomaLevel(currentUser, state.classes);
+  const lessonTotal = countLessonsForLevel(state, level);
   const done = progress.filter((p) => p.status === "done").length;
-  const pct =
-    state.lessons.length === 0 ? 0 : (done / state.lessons.length) * 100;
+  const pct = lessonTotal === 0 ? 0 : (done / lessonTotal) * 100;
   const avg =
     attempts.length === 0
       ? 0
@@ -46,6 +54,12 @@ export default function ProfilPage() {
           <p className="mt-1 text-xs uppercase tracking-wide text-ink-subtle">
             {currentUser.role === "trainer" ? "Formateur" : "Apprenti"}
           </p>
+          {classroom ? (
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+              <span className="text-sm text-ink-muted">{classroom.name}</span>
+              <Badge tone="primary">{classroom.level}</Badge>
+            </div>
+          ) : null}
           <div className="mt-5 flex flex-wrap gap-2">
             <Button variant="secondary" onClick={logout}>
               Déconnexion
@@ -64,20 +78,20 @@ export default function ProfilPage() {
         </Panel>
         {currentUser.role === "apprentice" ? (
           <Panel>
-            <ProgressBar value={pct} label="Théorie lue" />
+            <ProgressBar value={pct} label={`Théorie ${level}`} />
             <div className="mt-4">
               <ProgressBar value={avg} label="Score moyen exercices" />
             </div>
             <Alert tone="info">
-              Les données sont stockées localement (mode démo Phase 1). Branchées
-              sur Supabase dès configuration.
+              Contenu filtré selon votre niveau {level}. Après une mise à jour,
+              utilisez Reset démo si besoin.
             </Alert>
           </Panel>
         ) : (
           <Panel>
             <Alert tone="info">
-              En tant que formateur, gérez les comptes et le contenu depuis le
-              menu dédié.
+              En tant que formateur, gérez les comptes, les niveaux AFP/CFC et
+              le contenu depuis le menu dédié.
             </Alert>
           </Panel>
         )}

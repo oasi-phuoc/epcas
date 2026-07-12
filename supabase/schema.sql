@@ -19,12 +19,21 @@ do $$ begin
 exception when duplicate_object then null;
 end $$;
 
+do $$ begin
+  create type public.diploma_level as enum ('AFP', 'CFC');
+exception when duplicate_object then null;
+end $$;
+
 create table if not exists public.classes (
   id uuid primary key default gen_random_uuid(),
   name text not null,
   year text not null,
+  diploma_level public.diploma_level not null default 'CFC',
   created_at timestamptz not null default now()
 );
+
+alter table public.classes
+  add column if not exists diploma_level public.diploma_level not null default 'CFC';
 
 create table if not exists public.profiles (
   id uuid primary key references auth.users (id) on delete cascade,
@@ -50,8 +59,12 @@ create table if not exists public.modules (
   title text not null,
   sort_order int not null default 0,
   published boolean not null default false,
+  levels public.diploma_level[] not null default array['AFP', 'CFC']::public.diploma_level[],
   created_at timestamptz not null default now()
 );
+
+alter table public.modules
+  add column if not exists levels public.diploma_level[] not null default array['AFP', 'CFC']::public.diploma_level[];
 
 create table if not exists public.lessons (
   id uuid primary key default gen_random_uuid(),
