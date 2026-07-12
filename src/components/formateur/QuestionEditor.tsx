@@ -90,23 +90,25 @@ export function QuestionEditor<T extends EditableQuestion>({
       </div>
 
       <div className="space-y-3">
-        <TextField
-          label="Titre interne"
-          value={question.title}
-          onChange={(e) => onChange({ ...question, title: e.target.value })}
-        />
-        <NumberField
-          label="Points"
-          value={String(question.points)}
-          min={0.5}
-          step={0.5}
-          onChange={(e) =>
-            onChange({
-              ...question,
-              points: Number(e.target.value) || 1,
-            })
-          }
-        />
+        <div className="grid gap-3 sm:grid-cols-[1fr_7rem]">
+          <TextField
+            label="Titre interne"
+            value={question.title}
+            onChange={(e) => onChange({ ...question, title: e.target.value })}
+          />
+          <NumberField
+            label="Points"
+            value={String(question.points)}
+            min={0.5}
+            step={0.5}
+            onChange={(e) =>
+              onChange({
+                ...question,
+                points: Number(e.target.value) || 1,
+              })
+            }
+          />
+        </div>
 
         {question.type === "qcm" ? (
           <QcmFields
