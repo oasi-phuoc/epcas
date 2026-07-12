@@ -6,12 +6,15 @@ type FsHandle = FileSystemDirectoryHandle;
 
 function openMetaDb(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
-    const req = indexedDB.open("epcas-offline", 1);
+    const req = indexedDB.open("epcas-offline", 2);
     req.onupgradeneeded = () => {
       const db = req.result;
       if (!db.objectStoreNames.contains("meta")) db.createObjectStore("meta");
       if (!db.objectStoreNames.contains("lessons")) {
         db.createObjectStore("lessons", { keyPath: "id" });
+      }
+      if (!db.objectStoreNames.contains("tracking_outbox")) {
+        db.createObjectStore("tracking_outbox", { keyPath: "id" });
       }
     };
     req.onsuccess = () => resolve(req.result);

@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Badge,
+  Button,
   EmptyState,
   PageHeader,
   Panel,
@@ -13,11 +14,26 @@ import {
 import { DIPLOMA_LABELS, STUDY_YEAR_LABELS } from "@/lib/levels";
 import { countLessonsForLevel, useAppStore } from "@/lib/store";
 import { isStaffRole } from "@/lib/roles";
+import { RefreshCw } from "lucide-react";
 
 export default function FormateurSuiviPage() {
-  const { currentUser, state, getUserProgress, getAttemptsForUser } =
-    useAppStore();
+  const {
+    currentUser,
+    state,
+    getUserProgress,
+    getAttemptsForUser,
+    refreshTrackingFromHub,
+  } = useAppStore();
   const [filterClassId, setFilterClassId] = useState<string>("all");
+  const [syncing, setSyncing] = useState(false);
+  const [syncMsg, setSyncMsg] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!currentUser || !isStaffRole(currentUser.role)) return;
+    void refreshTrackingFromHub().then(() => {
+      setSyncMsg("Suivi actualisé depuis le hub (online).");
+    });
+  }, [currentUser, refreshTrackingFromHub]);
 
   const classes = useMemo(
     () => [...state.classes].sort((a, b) => a.name.localeCompare(b.name, "fr")),
@@ -54,12 +70,41 @@ export default function FormateurSuiviPage() {
       (g) => filterClassId === "all" || g.classroom.id === filterClassId,
     );
 
+  async function refreshNow() {
+    setSyncing(true);
+    try {
+      await refreshTrackingFromHub();
+      setSyncMsg(
+        navigator.onLine
+          ? "Suivi synchronisé."
+          : "Hors-ligne — affichage du dernier hub connu.",
+      );
+    } finally {
+      setSyncing(false);
+    }
+  }
+
   return (
     <div>
       <PageHeader
         title="Suivi des classes"
-        description="Progression des apprentis selon leur classe, niveau et année d'apprentissage."
+        description="Progression des apprentis. Mise à jour automatique dès qu'un élève se reconnecte à Internet."
+        actions={
+          <Button
+            variant="secondary"
+            size="sm"
+            disabled={syncing}
+            onClick={() => void refreshNow()}
+          >
+            <RefreshCw className="h-4 w-4" />
+            Actualiser
+          </Button>
+        }
       />
+
+      {syncMsg ? (
+        <p className="mb-3 text-xs text-ink-subtle">{syncMsg}</p>
+      ) : null}
 
       <Panel className="mb-4">
         <Select

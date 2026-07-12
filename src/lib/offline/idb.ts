@@ -2,7 +2,7 @@ import type { LocalCatalog, LessonPackPayload } from "./types";
 import { emptyCatalog } from "./types";
 
 const DB_NAME = "epcas-offline";
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 
 function openDb(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
@@ -14,6 +14,9 @@ function openDb(): Promise<IDBDatabase> {
       }
       if (!db.objectStoreNames.contains("lessons")) {
         db.createObjectStore("lessons", { keyPath: "id" });
+      }
+      if (!db.objectStoreNames.contains("tracking_outbox")) {
+        db.createObjectStore("tracking_outbox", { keyPath: "id" });
       }
     };
     req.onsuccess = () => resolve(req.result);

@@ -24,6 +24,16 @@ import {
   normalizeSequences,
   sequenceId,
 } from "./levels";
+import {
+  enqueueAttempt,
+  enqueueProgress,
+} from "./offline/tracking-outbox";
+import {
+  flushTrackingOutbox,
+  mergeHubIntoState,
+  pullTrackingFromSupabase,
+  readTrackingHub,
+} from "./offline/tracking-sync";
 import type {
   AppState,
   Assessment,
@@ -86,6 +96,15 @@ type AppStore = {
   deleteAssessmentQuestion: (id: string) => void;
   getAssessmentQuestions: (assessmentId: string) => AssessmentQuestion[];
   resetDemo: () => void;
+  /** Envoie le suivi en attente (hors-ligne → online). */
+  syncTrackingNow: () => Promise<{
+    ok: boolean;
+    flushed: number;
+    pendingBefore: number;
+    error?: string;
+  }>;
+  /** Formateur : tire le hub suivi (local + Supabase si dispo). */
+  refreshTrackingFromHub: () => Promise<void>;
   demoPassword: string;
 };
 
@@ -509,6 +528,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
 
   const setLessonProgress = useCallback(
     (userId: string, lessonId: string, patch: Partial<LessonProgress>) => {
+      let nextProgress: LessonProgress | null = null;
       commit((s) => {
         const list = s.progress[userId] ?? [];
         const existing = list.find((p) => p.lessonId === lessonId);
@@ -520,6 +540,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
               modePref: "full",
               ...patch,
             };
+        nextProgress = next;
         return {
           ...s,
           progress: {
@@ -530,6 +551,11 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
           },
         };
       });
+      if (nextProgress) {
+        void enqueueProgress(userId, nextProgress).then(() => {
+          if (navigator.onLine) void flushTrackingOutbox();
+        });
+      }
     },
     [commit],
   );
@@ -542,6 +568,9 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
         createdAt: new Date().toISOString(),
       };
       commit((s) => ({ ...s, attempts: [record, ...s.attempts] }));
+      void enqueueAttempt(attempt.userId, record).then(() => {
+        if (navigator.onLine) void flushTrackingOutbox();
+      });
     },
     [commit],
   );
@@ -672,6 +701,29 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     setMemoryState(initialState);
   }, []);
 
+  const syncTrackingNow = useCallback(async () => {
+    const result = await flushTrackingOutbox();
+    return {
+      ok: result.ok,
+      flushed: result.flushed,
+      pendingBefore: result.pendingBefore,
+      error: result.error,
+    };
+  }, []);
+
+  const refreshTrackingFromHub = useCallback(async () => {
+    const remote = await pullTrackingFromSupabase();
+    const hub = remote ?? readTrackingHub();
+    commit((s) => {
+      const merged = mergeHubIntoState({
+        progress: s.progress,
+        attempts: s.attempts,
+        hub,
+      });
+      return { ...s, ...merged };
+    });
+  }, [commit]);
+
   const value: AppStore = {
     state,
     hydrated,
@@ -701,6 +753,8 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     deleteAssessmentQuestion,
     getAssessmentQuestions,
     resetDemo,
+    syncTrackingNow,
+    refreshTrackingFromHub,
     demoPassword: DEMO_PASSWORD,
   };
 

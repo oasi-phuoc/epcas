@@ -18,6 +18,7 @@ import {
   supportsDirectoryPicker,
   syncOfflineContent,
 } from "@/lib/offline/sync";
+import { countPendingOutbox } from "@/lib/offline/tracking-outbox";
 import type {
   ContentManifest,
   DiffItem,
@@ -27,7 +28,7 @@ import type {
 import { formatBytes } from "@/lib/offline/types";
 import { useAppStore, useVisibleModules } from "@/lib/store";
 import { isStaffRole } from "@/lib/roles";
-import { HardDrive, RefreshCw, Trash2 } from "lucide-react";
+import { HardDrive, RefreshCw, Trash2, UploadCloud } from "lucide-react";
 
 const kindLabel: Record<DiffItem["kind"], string> = {
   new: "Nouveau",
@@ -47,7 +48,7 @@ const kindTone: Record<
 };
 
 export function OfflineDownloadPanel() {
-  const { currentUser, state } = useAppStore();
+  const { currentUser, state, syncTrackingNow } = useAppStore();
   const visibleModules = useVisibleModules();
   const isStaff = currentUser ? isStaffRole(currentUser.role) : false;
 
@@ -67,6 +68,11 @@ export function OfflineDownloadPanel() {
   const [writeDisk, setWriteDisk] = useState(supportsDirectoryPicker());
   const [message, setMessage] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [pendingTracking, setPendingTracking] = useState(0);
+  const [trackingMsg, setTrackingMsg] = useState<string | null>(null);
+  const [online, setOnline] = useState(
+    typeof navigator !== "undefined" ? navigator.onLine : true,
+  );
 
   const allowedIds = useMemo(() => {
     if (scope === "all" || isStaff) return undefined;
@@ -102,6 +108,36 @@ export function OfflineDownloadPanel() {
   useEffect(() => {
     void refresh();
   }, [refresh]);
+
+  useEffect(() => {
+    const refreshPending = () => {
+      void countPendingOutbox().then(setPendingTracking);
+    };
+    refreshPending();
+    const onOnline = () => {
+      setOnline(true);
+      void syncTrackingNow().then((r) => {
+        setTrackingMsg(
+          r.flushed > 0
+            ? `Suivi envoyé : ${r.flushed} mise(s) à jour.`
+            : "Suivi déjà à jour.",
+        );
+        refreshPending();
+      });
+    };
+    const onOffline = () => {
+      setOnline(false);
+      setTrackingMsg("Hors-ligne — le suivi sera envoyé à la reconnexion.");
+    };
+    window.addEventListener("online", onOnline);
+    window.addEventListener("offline", onOffline);
+    const t = window.setInterval(refreshPending, 5000);
+    return () => {
+      window.removeEventListener("online", onOnline);
+      window.removeEventListener("offline", onOffline);
+      window.clearInterval(t);
+    };
+  }, [syncTrackingNow]);
 
   const changes = useMemo(
     () => diff.filter((d) => d.kind !== "unchanged"),
@@ -184,6 +220,58 @@ export function OfflineDownloadPanel() {
 
   return (
     <div className="space-y-4">
+      <Panel>
+        <div className="flex items-start gap-3">
+          <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[var(--radius-md)] border border-border bg-surface-muted text-primary-strong">
+            <UploadCloud className="h-5 w-5" />
+          </span>
+          <div className="min-w-0 flex-1">
+            <h2 className="font-display text-xl text-ink">Suivi des élèves</h2>
+            <p className="mt-1 text-sm text-ink-muted">
+              Progression et tentatives sont mises en file hors-ligne, puis
+              envoyées automatiquement dès qu&apos;Internet revient — le
+              formateur voit alors le suivi à jour.
+            </p>
+          </div>
+        </div>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <Badge tone={online ? "success" : "warning"}>
+            {online ? "En ligne" : "Hors-ligne"}
+          </Badge>
+          <Badge tone={pendingTracking > 0 ? "accent" : "neutral"}>
+            {pendingTracking > 0
+              ? `${pendingTracking} en attente`
+              : "Rien en attente"}
+          </Badge>
+        </div>
+        <div className="mt-4">
+          <Button
+            size="sm"
+            variant="secondary"
+            disabled={!online || busy}
+            onClick={() => {
+              void syncTrackingNow().then((r) => {
+                setTrackingMsg(
+                  r.error ??
+                    (r.flushed > 0
+                      ? `Suivi envoyé : ${r.flushed} élément(s).`
+                      : "Suivi déjà synchronisé."),
+                );
+                void countPendingOutbox().then(setPendingTracking);
+              });
+            }}
+          >
+            <UploadCloud className="h-4 w-4" />
+            Envoyer le suivi maintenant
+          </Button>
+        </div>
+        {trackingMsg ? (
+          <div className="mt-3">
+            <Alert tone={online ? "info" : "warning"}>{trackingMsg}</Alert>
+          </div>
+        ) : null}
+      </Panel>
+
       <Panel>
         <div className="flex items-start gap-3">
           <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[var(--radius-md)] border border-border bg-surface-muted text-primary-strong">
