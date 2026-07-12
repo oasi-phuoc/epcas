@@ -10,13 +10,14 @@ import {
   Panel,
   Switch,
 } from "@/components/ui";
-import { MarkdownLite } from "@/components/MarkdownLite";
+import { BookMarkdown } from "@/components/BookMarkdown";
 import {
   getLessonBody,
   isExercisePageSlug,
 } from "@/lib/lesson-content";
 import { moduleVisibleForLevel } from "@/lib/levels";
 import { isStaffRole } from "@/lib/roles";
+import { splitMarkdownBook } from "@/lib/markdown-book";
 import { useAppStore } from "@/lib/store";
 
 type LessonViewerProps = {
@@ -72,6 +73,11 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
   );
   const isPlaceholder = body.includes("Contenu à importer");
 
+  /** Mode complet : feuilleter par ### ; résumé = tout regroupé */
+  const book = !summaryMode ? splitMarkdownBook(body) : null;
+  const headerTitle =
+    !summaryMode && book?.chapterTitle ? book.chapterTitle : lesson.title;
+
   function toggleMode(checked: boolean) {
     setLessonProgress(currentUser!.id, lesson!.id, {
       modePref: checked ? "summary" : "full",
@@ -86,10 +92,12 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
   return (
     <div>
       <PageHeader
-        title={lesson.title}
+        title={headerTitle}
         description={
           mod
-            ? `Module ${mod.code} — ${mod.title}`
+            ? summaryMode
+              ? `Module ${mod.code} — ${mod.title} · Résumé regroupé`
+              : `Module ${mod.code} — ${mod.title} · ${lesson.title}`
             : "Basculez en mode résumé pour réviser."
         }
         actions={
@@ -115,7 +123,7 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
           checked={summaryMode}
           onChange={toggleMode}
           label="Mode résumé"
-          description="Affiche uniquement les points clés à retenir"
+          description="Regroupe tous les points clés sur une seule page"
         />
       </div>
 
@@ -125,11 +133,18 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
             {summaryMode ? "Résumé" : "Complet"}
           </Badge>
           {mod ? <Badge tone="neutral">{mod.code}</Badge> : null}
+          {!summaryMode && book && book.pages.length > 1 ? (
+            <Badge tone="neutral">{book.pages.length} feuillets</Badge>
+          ) : null}
           {progress?.status === "done" ? (
             <Badge tone="success">Lu</Badge>
           ) : null}
         </div>
-        <MarkdownLite text={body} />
+        <BookMarkdown
+          text={body}
+          paginate={!summaryMode}
+          resetKey={`${lessonId}-${summaryMode ? "sum" : "full"}`}
+        />
         <div className="mt-8 flex flex-wrap gap-2 border-t border-border pt-4">
           <Button onClick={markDone}>Marquer comme lu</Button>
           {!exercisePage ? (

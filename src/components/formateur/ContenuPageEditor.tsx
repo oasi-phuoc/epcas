@@ -13,6 +13,7 @@ import {
   TextField,
 } from "@/components/ui";
 import { MarkdownLite } from "@/components/MarkdownLite";
+import { BookMarkdown } from "@/components/BookMarkdown";
 import { MarkdownToolbar } from "@/components/MarkdownToolbar";
 import {
   FORMATEUR_EXERCISE_PAGES,
@@ -219,14 +220,24 @@ function LessonEditor({
         <div className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-4 sm:p-5">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge tone={which === "summary" ? "accent" : "primary"}>
-              {which === "summary" ? "Résumé" : "Complet"}
+              {which === "summary" ? "Résumé" : "Complet · mode livre"}
             </Badge>
             <Badge tone="neutral">{editLevel}</Badge>
           </div>
-          <h2 className="mb-4 font-display text-2xl text-ink sm:text-3xl">
-            {title || "Sans titre"}
-          </h2>
-          <MarkdownLite text={activeValue} />
+          {which === "summary" ? (
+            <>
+              <h2 className="mb-4 font-display text-2xl text-ink sm:text-3xl">
+                {title || "Sans titre"}
+              </h2>
+              <MarkdownLite text={activeValue} />
+            </>
+          ) : (
+            <BookMarkdown
+              text={activeValue}
+              paginate
+              resetKey={`${lesson.id}-preview-full`}
+            />
+          )}
         </div>
       )}
 
