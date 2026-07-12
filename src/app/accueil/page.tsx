@@ -9,6 +9,7 @@ import {
   Button,
 } from "@/components/ui";
 import { STUDY_YEAR_LABELS } from "@/lib/levels";
+import { isStaffRole } from "@/lib/roles";
 import { useAppStore, useVisibleModules } from "@/lib/store";
 
 export default function AccueilPage() {
@@ -23,7 +24,7 @@ export default function AccueilPage() {
   const visibleModules = useVisibleModules();
   if (!currentUser) return null;
 
-  const isTrainer = currentUser.role === "trainer";
+  const isStaff = isStaffRole(currentUser.role);
   const progress = getUserProgress(currentUser.id);
   const attempts = getAttemptsForUser(currentUser.id);
   const firstModule = visibleModules[0];
@@ -44,13 +45,13 @@ export default function AccueilPage() {
       <PageHeader
         title={`Bonjour, ${currentUser.displayName.split(" ")[0]}`}
         description={
-          isTrainer
+          isStaff
             ? "Gérez les comptes, les séquences, le contenu et le suivi."
             : `Continuez votre formation ${userLevel} · ${STUDY_YEAR_LABELS[userStudyYear]}.`
         }
       />
 
-      {isTrainer ? (
+      {isStaff ? (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <Panel>
             <p className="text-sm text-ink-muted">Apprentis actifs</p>

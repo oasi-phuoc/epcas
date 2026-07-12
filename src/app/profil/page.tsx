@@ -9,6 +9,7 @@ import {
   ProgressBar,
 } from "@/components/ui";
 import { getUserDiplomaLevel, STUDY_YEAR_LABELS } from "@/lib/levels";
+import { ROLE_LABELS, isStaffRole } from "@/lib/roles";
 import { countLessonsForLevel, useAppStore } from "@/lib/store";
 
 export default function ProfilPage() {
@@ -28,7 +29,7 @@ export default function ProfilPage() {
   const attempts = getAttemptsForUser(currentUser.id);
   const classroom = state.classes.find((c) => c.id === currentUser.classId);
   const level =
-    currentUser.role === "trainer"
+    isStaffRole(currentUser.role)
       ? userLevel
       : getUserDiplomaLevel(currentUser, state.classes);
   const studyYear =
@@ -56,7 +57,7 @@ export default function ProfilPage() {
           <p className="font-display text-2xl">{currentUser.displayName}</p>
           <p className="mt-2 text-sm text-ink-muted">{currentUser.email}</p>
           <p className="mt-1 text-xs uppercase tracking-wide text-ink-subtle">
-            {currentUser.role === "trainer" ? "Formateur" : "Apprenti"}
+            {ROLE_LABELS[currentUser.role]}
           </p>
           {classroom ? (
             <div className="mt-3 flex flex-wrap items-center gap-2">
@@ -101,8 +102,8 @@ export default function ProfilPage() {
         ) : (
           <Panel>
             <Alert tone="info">
-              Formateur : configurez les séquences AFP/CFC par année dans le
-              menu Séquences.
+              Compte {ROLE_LABELS[currentUser.role].toLowerCase()} : gérez les
+              comptes, séquences et contenus depuis le menu dédié.
             </Alert>
           </Panel>
         )}

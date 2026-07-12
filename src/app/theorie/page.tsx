@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { Badge, PageHeader, Panel, ProgressBar } from "@/components/ui";
 import { STUDY_YEAR_LABELS, levelsLabel } from "@/lib/levels";
+import { isStaffRole } from "@/lib/roles";
 import { useAppStore, useVisibleModules } from "@/lib/store";
 
 export default function TheorieIndexPage() {
@@ -33,7 +34,7 @@ export default function TheorieIndexPage() {
   if (!currentUser) return null;
 
   const blocks = [...state.blocks].sort((a, b) => a.order - b.order);
-  const isTrainer = currentUser.role === "trainer";
+  const isTrainer = isStaffRole(currentUser.role);
 
   const totalDone = visibleModules.reduce(
     (s, m) => s + (statsByModule.get(m.id)?.done ?? 0),

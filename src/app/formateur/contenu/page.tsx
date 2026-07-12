@@ -9,6 +9,7 @@ import {
 } from "@/components/ui";
 import { FORMATEUR_CONTENT_PAGES } from "@/lib/lesson-content";
 import { useAppStore } from "@/lib/store";
+import { isStaffRole } from "@/lib/roles";
 import {
   BookOpen,
   BookMarked,
@@ -31,8 +32,8 @@ export default function ContenuHubPage() {
   const { currentUser, state } = useAppStore();
 
   if (!currentUser) return null;
-  if (currentUser.role !== "trainer") {
-    return <EmptyState title="Accès réservé aux formateurs" />;
+  if (!isStaffRole(currentUser.role)) {
+    return <EmptyState title="Accès réservé aux formateurs et admins" />;
   }
 
   return (

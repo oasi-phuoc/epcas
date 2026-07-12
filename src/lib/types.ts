@@ -1,4 +1,4 @@
-export type Role = "trainer" | "apprentice";
+export type Role = "admin" | "trainer" | "apprentice";
 
 /** Niveau de diplôme fédéral suisse */
 export type DiplomaLevel = "AFP" | "CFC";

@@ -22,6 +22,7 @@ import {
   isAfpIdenticalToCfc,
 } from "@/lib/lesson-content";
 import { useAppStore } from "@/lib/store";
+import { isStaffRole } from "@/lib/roles";
 import { useEditorHistory } from "@/lib/use-editor-history";
 import type { DiplomaLevel, Lesson, LessonPageSlug, Module } from "@/lib/types";
 import { Eye, Pencil, Redo2, Undo2 } from "lucide-react";
@@ -338,8 +339,8 @@ export function ContenuPageEditor({ pageSlug }: { pageSlug: LessonPageSlug }) {
   );
 
   if (!currentUser) return null;
-  if (currentUser.role !== "trainer") {
-    return <EmptyState title="Accès réservé aux formateurs" />;
+  if (!isStaffRole(currentUser.role)) {
+    return <EmptyState title="Accès réservé aux formateurs et admins" />;
   }
 
   return (

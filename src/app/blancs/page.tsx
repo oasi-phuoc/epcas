@@ -9,6 +9,7 @@ import {
   Button,
 } from "@/components/ui";
 import { levelsLabel } from "@/lib/levels";
+import { isStaffRole } from "@/lib/roles";
 import { useAppStore, useVisibleAssessments } from "@/lib/store";
 import { QUESTION_TYPE_META } from "@/lib/question-templates";
 
@@ -25,7 +26,7 @@ export default function BlancsPage() {
       <PageHeader
         title="Évaluations à blanc"
         description={
-          currentUser.role === "trainer"
+          isStaffRole(currentUser.role)
             ? "Examens composés par le formateur : timer, score, questions mixtes."
             : `Blancs publiés pour le niveau ${userLevel}.`
         }
@@ -39,12 +40,12 @@ export default function BlancsPage() {
           <EmptyState
             title="Aucun blanc publié pour le moment"
             description={
-              currentUser.role === "trainer"
+              isStaffRole(currentUser.role)
                 ? "Publiez une évaluation depuis Formateur → Évaluations."
                 : "Votre formateur publiera bientôt des évaluations ici."
             }
           />
-          {currentUser.role === "trainer" ? (
+          {isStaffRole(currentUser.role) ? (
             <div className="mt-4 text-center">
               <Link href="/formateur/evaluations">
                 <Button size="sm">Créer une évaluation</Button>

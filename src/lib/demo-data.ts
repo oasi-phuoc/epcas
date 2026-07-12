@@ -45,6 +45,15 @@ export const initialState: AppState = {
   ],
   users: [
     {
+      id: "user-admin",
+      email: "admin@epcas.ch",
+      password: DEMO_PASSWORD,
+      displayName: "Admin EPCA",
+      role: "admin",
+      classId: "class-1",
+      active: true,
+    },
+    {
       id: "user-trainer",
       email: "formateur@epcas.ch",
       password: DEMO_PASSWORD,

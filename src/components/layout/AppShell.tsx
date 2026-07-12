@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { FORMATEUR_CONTENT_PAGES } from "@/lib/lesson-content";
+import { isStaffRole } from "@/lib/roles";
 import { useAppStore } from "@/lib/store";
 import { Button } from "@/components/ui";
 
@@ -25,7 +26,7 @@ const apprenticeLinks = [
   { href: "/profil", label: "Profil", icon: UserRound },
 ];
 
-const trainerLinks = [
+const staffLinks = [
   { href: "/accueil", label: "Accueil", icon: Home },
   { href: "/formateur", label: "Suivi", icon: Users },
   { href: "/formateur/contenu", label: "Contenu", icon: BookOpen },
@@ -47,10 +48,10 @@ function isActivePath(pathname: string, href: string) {
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const { currentUser, logout, state } = useAppStore();
-  const links =
-    currentUser?.role === "trainer" ? trainerLinks : apprenticeLinks;
+  const staff = isStaffRole(currentUser?.role);
+  const links = staff ? staffLinks : apprenticeLinks;
   const contenuOpen =
-    currentUser?.role === "trainer" &&
+    staff &&
     (pathname === "/formateur/contenu" ||
       pathname.startsWith("/formateur/contenu/"));
 

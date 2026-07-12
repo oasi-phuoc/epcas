@@ -10,6 +10,7 @@ import {
   type ReactNode,
 } from "react";
 import { initialState, DEMO_PASSWORD } from "./demo-data";
+import { isStaffRole } from "./roles";
 import {
   assessmentVisibleForLevel,
   buildDefaultSequences,
@@ -38,7 +39,7 @@ import type {
   UserAccount,
 } from "./types";
 
-const STORAGE_KEY = "epcas-logistique-v86";
+const STORAGE_KEY = "epcas-logistique-v87";
 
 type AppStore = {
   state: AppState;
@@ -737,7 +738,7 @@ export function useVisibleModules(): Module[] {
   const { state, currentUser, userLevel, userStudyYear } = useAppStore();
   return useMemo(() => {
     const published = state.modules.filter((m) => m.published);
-    if (!currentUser || currentUser.role === "trainer") return published;
+    if (!currentUser || isStaffRole(currentUser.role)) return published;
     return modulesForSequence(state, userLevel, userStudyYear);
   }, [state, currentUser, userLevel, userStudyYear]);
 }
@@ -747,7 +748,7 @@ export function useExercises(): Exercise[] {
   const { state, currentUser, userLevel, userStudyYear } = useAppStore();
   return useMemo(() => {
     const published = state.exercises.filter((e) => e.published);
-    if (!currentUser || currentUser.role === "trainer") return published;
+    if (!currentUser || isStaffRole(currentUser.role)) return published;
 
     const visibleModuleIds = new Set(
       modulesForSequence(state, userLevel, userStudyYear).map((m) => m.id),
@@ -770,7 +771,7 @@ export function useVisibleAssessments(): Assessment[] {
   const { state, currentUser, userLevel } = useAppStore();
   return useMemo(() => {
     const published = state.assessments.filter((a) => a.published);
-    if (!currentUser || currentUser.role === "trainer") return published;
+    if (!currentUser || isStaffRole(currentUser.role)) return published;
     return published.filter((a) => assessmentVisibleForLevel(a, userLevel));
   }, [state.assessments, currentUser, userLevel]);
 }

@@ -15,6 +15,7 @@ import {
   TextField,
 } from "@/components/ui";
 import { useAppStore } from "@/lib/store";
+import { isStaffRole } from "@/lib/roles";
 import {
   DIPLOMA_LEVELS,
   levelsLabel,
@@ -623,8 +624,8 @@ export default function EvaluationEditPage() {
   const [saved, setSaved] = useState(false);
 
   if (!currentUser) return null;
-  if (currentUser.role !== "trainer") {
-    return <EmptyState title="Accès réservé aux formateurs" />;
+  if (!isStaffRole(currentUser.role)) {
+    return <EmptyState title="Accès réservé aux formateurs et admins" />;
   }
   if (!assessment) {
     return (

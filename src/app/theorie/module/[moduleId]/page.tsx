@@ -11,6 +11,7 @@ import {
 } from "@/components/ui";
 import { getLessonBody } from "@/lib/lesson-content";
 import { levelsLabel, moduleVisibleForLevel } from "@/lib/levels";
+import { isStaffRole } from "@/lib/roles";
 import { useAppStore } from "@/lib/store";
 
 export default function ModuleDetailPage() {
@@ -23,7 +24,7 @@ export default function ModuleDetailPage() {
     return <Alert tone="danger">Module introuvable.</Alert>;
   }
 
-  const isTrainer = currentUser.role === "trainer";
+  const isTrainer = isStaffRole(currentUser.role);
   if (!isTrainer && !moduleVisibleForLevel(mod, userLevel)) {
     return (
       <Alert tone="danger">

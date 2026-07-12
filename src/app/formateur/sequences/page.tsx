@@ -19,6 +19,7 @@ import {
   unassignedModuleIds,
 } from "@/lib/levels";
 import { useAppStore } from "@/lib/store";
+import { isStaffRole } from "@/lib/roles";
 import type { DiplomaLevel, StudyYear } from "@/lib/types";
 import { ArrowDown, ArrowUp, Plus, RotateCcw, Trash2 } from "lucide-react";
 
@@ -86,8 +87,8 @@ export default function SequencesPage() {
   }, [state.sequences, level]);
 
   if (!currentUser) return null;
-  if (currentUser.role !== "trainer") {
-    return <EmptyState title="Accès réservé aux formateurs" />;
+  if (!isStaffRole(currentUser.role)) {
+    return <EmptyState title="Accès réservé aux formateurs et admins" />;
   }
 
   function commitIds(nextIds: string[], toast?: string) {

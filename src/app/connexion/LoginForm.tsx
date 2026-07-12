@@ -14,9 +14,11 @@ export default function LoginForm() {
   const presetEmail =
     demo === "formateur"
       ? "formateur@epcas.ch"
-      : demo === "afp"
-        ? "afp@epcas.ch"
-        : "apprenti@epcas.ch";
+      : demo === "admin"
+        ? "admin@epcas.ch"
+        : demo === "afp"
+          ? "afp@epcas.ch"
+          : "apprenti@epcas.ch";
 
   useEffect(() => {
     if (hydrated && currentUser) router.replace("/accueil");
@@ -99,6 +101,7 @@ function LoginFields({
           <p>CFC : apprenti@epcas.ch / {demoPassword}</p>
           <p>AFP : afp@epcas.ch / {demoPassword}</p>
           <p>Formateur : formateur@epcas.ch / {demoPassword}</p>
+          <p>Admin : admin@epcas.ch / {demoPassword}</p>
           <div className="flex flex-wrap gap-2 pt-1">
             <Link href="/connexion?demo=apprenti">
               <Button size="sm" variant="secondary">
@@ -113,6 +116,11 @@ function LoginFields({
             <Link href="/connexion?demo=formateur">
               <Button size="sm" variant="secondary">
                 Remplir formateur
+              </Button>
+            </Link>
+            <Link href="/connexion?demo=admin">
+              <Button size="sm" variant="secondary">
+                Remplir admin
               </Button>
             </Link>
           </div>

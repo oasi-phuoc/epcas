@@ -13,8 +13,15 @@ import {
 } from "@/components/ui";
 import { useAppStore } from "@/lib/store";
 import { UserCheck, UserX } from "lucide-react";
-import { DIPLOMA_LABELS, DIPLOMA_LEVELS, STUDY_YEAR_LABELS, maxStudyYear } from "@/lib/levels";
-import type { DiplomaLevel, StudyYear } from "@/lib/types";
+import {
+  DIPLOMA_LABELS,
+  DIPLOMA_LEVELS,
+  STUDY_YEAR_LABELS,
+  maxStudyYear,
+  normalizeStudyYear,
+} from "@/lib/levels";
+import { ROLE_LABELS, ROLES, isStaffRole } from "@/lib/roles";
+import type { DiplomaLevel, Role, StudyYear } from "@/lib/types";
 
 export default function ComptesPage() {
   const {
@@ -37,8 +44,13 @@ export default function ComptesPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState(demoPassword);
-  const [classId, setClassId] = useState(classes[0]?.id ?? "");
+  const [newRole, setNewRole] = useState<Role>("apprentice");
+  const [apprenticeLevel, setApprenticeLevel] = useState<DiplomaLevel>("CFC");
+  const [apprenticeYear, setApprenticeYear] = useState<StudyYear>(1);
   const [message, setMessage] = useState<string | null>(null);
+  const [messageTone, setMessageTone] = useState<"success" | "danger">(
+    "success",
+  );
   const [selected, setSelected] = useState<string[]>([]);
   const [newClassName, setNewClassName] = useState("");
   const [newClassYear, setNewClassYear] = useState("2025-2026");
@@ -51,6 +63,14 @@ export default function ComptesPage() {
     () =>
       state.users
         .filter((u) => u.role === "apprentice")
+        .sort((a, b) => a.displayName.localeCompare(b.displayName, "fr")),
+    [state.users],
+  );
+
+  const staffUsers = useMemo(
+    () =>
+      state.users
+        .filter((u) => isStaffRole(u.role))
         .sort((a, b) => a.displayName.localeCompare(b.displayName, "fr")),
     [state.users],
   );
@@ -73,6 +93,12 @@ export default function ComptesPage() {
     }));
   }, [newClassLevel]);
 
+  const apprenticeYearOptions = useMemo(() => {
+    const max = maxStudyYear(apprenticeLevel);
+    const years: StudyYear[] = max === 2 ? [1, 2] : [1, 2, 3];
+    return years;
+  }, [apprenticeLevel]);
+
   const levelFilteredClasses = useMemo(
     () =>
       filterLevel === "all"
@@ -91,8 +117,8 @@ export default function ComptesPage() {
   }, [apprentices, levelFilteredClasses, filterClassId]);
 
   if (!currentUser) return null;
-  if (currentUser.role !== "trainer") {
-    return <EmptyState title="Accès réservé aux formateurs" />;
+  if (!isStaffRole(currentUser.role)) {
+    return <EmptyState title="Accès réservé aux formateurs et admins" />;
   }
 
   const groups = levelFilteredClasses.map((c) => {
@@ -116,29 +142,63 @@ export default function ComptesPage() {
     visibleApprentices.length > 0 &&
     visibleApprentices.every((a) => selected.includes(a.id));
 
+  function flash(text: string, tone: "success" | "danger" = "success") {
+    setMessage(text);
+    setMessageTone(tone);
+  }
+
+  function resolveApprenticeClassId(level: DiplomaLevel, studyYear: StudyYear) {
+    const year = normalizeStudyYear(studyYear, level);
+    const existing = classes.find(
+      (c) => c.level === level && c.studyYear === year,
+    );
+    if (existing) return existing.id;
+    return upsertClass({
+      name: `${level} ${STUDY_YEAR_LABELS[year]} — EPCA Sion`,
+      year: "2025-2026",
+      level,
+      studyYear: year,
+    });
+  }
+
   function onCreate(e: FormEvent) {
     e.preventDefault();
-    const targetClass = classId || classes[0]?.id;
-    if (!targetClass) {
-      setMessage("Créez d'abord une classe.");
-      return;
-    }
     if (state.users.some((u) => u.email.toLowerCase() === email.toLowerCase())) {
-      setMessage("Cet email existe déjà.");
+      flash("Cet email existe déjà.", "danger");
       return;
     }
+
+    if (newRole === "admin" && currentUser?.role !== "admin") {
+      flash("Seul un admin peut créer un compte admin.", "danger");
+      return;
+    }
+
+    let targetClass = classes[0]?.id ?? "";
+    if (newRole === "apprentice") {
+      targetClass = resolveApprenticeClassId(apprenticeLevel, apprenticeYear);
+    } else if (!targetClass) {
+      flash("Créez d'abord une classe (référence pour le compte).", "danger");
+      return;
+    }
+
     upsertUser({
       email,
       password,
       displayName: name,
-      role: "apprentice",
+      role: newRole,
       classId: targetClass,
       active: true,
     });
     setName("");
     setEmail("");
     setPassword(demoPassword);
-    setMessage("Compte apprenti créé.");
+    if (newRole === "apprentice") {
+      flash(
+        `Compte apprenti créé — ${apprenticeLevel} ${STUDY_YEAR_LABELS[normalizeStudyYear(apprenticeYear, apprenticeLevel)]}.`,
+      );
+    } else {
+      flash(`Compte ${ROLE_LABELS[newRole].toLowerCase()} créé.`);
+    }
   }
 
   function onCreateClass(e: FormEvent) {
@@ -151,9 +211,8 @@ export default function ComptesPage() {
       studyYear: newClassStudyYear,
     });
     setNewClassName("");
-    setClassId(id);
     setFilterClassId(id);
-    setMessage(
+    flash(
       `Classe ${newClassLevel} ${STUDY_YEAR_LABELS[newClassStudyYear]} créée.`,
     );
   }
@@ -180,7 +239,7 @@ export default function ComptesPage() {
     if (selectedVisible.length === 0) return;
     const n = selectedVisible.length;
     setUsersActive(selectedVisible, active);
-    setMessage(
+    flash(
       active
         ? `${n} compte${n > 1 ? "s" : ""} activé${n > 1 ? "s" : ""}.`
         : `${n} compte${n > 1 ? "s" : ""} désactivé${n > 1 ? "s" : ""}.`,
@@ -192,7 +251,7 @@ export default function ComptesPage() {
     if (classMembers.length === 0) return;
     setUsersActive(classMembers, active);
     setSelected([]);
-    setMessage(
+    flash(
       active
         ? `${label} : classe activée (${classMembers.length}).`
         : `${label} : classe désactivée (${classMembers.length}).`,
@@ -202,9 +261,162 @@ export default function ComptesPage() {
   return (
     <div>
       <PageHeader
-        title="Comptes apprentis"
-        description="Chaque élève est rattaché à une classe (niveau AFP/CFC + année d'apprentissage). Cela détermine la séquence de modules visible."
+        title="Comptes"
+        description="Créez des comptes Admin, Formateur ou Apprenti. Pour les élèves : niveau AFP/CFC et année 1 / 2 / 3."
       />
+
+      <Panel className="mb-4">
+        <h2 className="font-display text-xl">Nouveau compte</h2>
+        <form onSubmit={onCreate} className="mt-4 space-y-4">
+          <div>
+            <p className="mb-2 text-sm font-medium text-ink">Rôle</p>
+            <div className="flex flex-wrap gap-2">
+              {ROLES.map((role) => {
+                const disabled =
+                  role === "admin" && currentUser.role !== "admin";
+                return (
+                  <Button
+                    key={role}
+                    type="button"
+                    size="sm"
+                    variant={newRole === role ? "primary" : "secondary"}
+                    disabled={disabled}
+                    onClick={() => setNewRole(role)}
+                  >
+                    {ROLE_LABELS[role]}
+                  </Button>
+                );
+              })}
+            </div>
+            {currentUser.role !== "admin" ? (
+              <p className="mt-1 text-xs text-ink-subtle">
+                Seul un admin peut créer un compte admin.
+              </p>
+            ) : null}
+          </div>
+
+          {newRole === "apprentice" ? (
+            <>
+              <div>
+                <p className="mb-2 text-sm font-medium text-ink">Niveau</p>
+                <div className="flex flex-wrap gap-2">
+                  {DIPLOMA_LEVELS.map((level) => (
+                    <Button
+                      key={level}
+                      type="button"
+                      size="sm"
+                      variant={
+                        apprenticeLevel === level ? "primary" : "secondary"
+                      }
+                      onClick={() => {
+                        setApprenticeLevel(level);
+                        const max = maxStudyYear(level);
+                        if (apprenticeYear > max) setApprenticeYear(max);
+                      }}
+                    >
+                      {DIPLOMA_LABELS[level]}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className="mb-2 text-sm font-medium text-ink">
+                  Année d&apos;apprentissage
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {apprenticeYearOptions.map((year) => (
+                    <Button
+                      key={year}
+                      type="button"
+                      size="sm"
+                      variant={
+                        apprenticeYear === year ? "primary" : "secondary"
+                      }
+                      onClick={() => setApprenticeYear(year)}
+                    >
+                      {year}
+                    </Button>
+                  ))}
+                </div>
+                <p className="mt-1 text-xs text-ink-subtle">
+                  L&apos;élève sera placé dans la classe{" "}
+                  {apprenticeLevel} {STUDY_YEAR_LABELS[normalizeStudyYear(apprenticeYear, apprenticeLevel)]}
+                  {" "}(créée automatiquement si besoin).
+                </p>
+              </div>
+            </>
+          ) : null}
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            <TextField
+              label="Nom affiché"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+            <TextField
+              label="Email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <TextField
+              label="Mot de passe initial"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <Button type="submit">Créer le compte</Button>
+        </form>
+        {message ? (
+          <div className="mt-3">
+            <Alert tone={messageTone}>{message}</Alert>
+          </div>
+        ) : null}
+      </Panel>
+
+      <Panel className="mb-4">
+        <h2 className="mb-3 font-display text-xl">
+          Admins &amp; formateurs ({staffUsers.length})
+        </h2>
+        {staffUsers.length === 0 ? (
+          <EmptyState title="Aucun compte staff" />
+        ) : (
+          <div className="space-y-3">
+            {staffUsers.map((u) => (
+              <Panel
+                key={u.id}
+                className="flex flex-wrap items-center justify-between gap-3"
+              >
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <p className="font-medium text-ink">{u.displayName}</p>
+                    <Badge tone={u.role === "admin" ? "warning" : "primary"}>
+                      {ROLE_LABELS[u.role]}
+                    </Badge>
+                  </div>
+                  <p className="text-sm text-ink-muted">{u.email}</p>
+                </div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <Badge tone={u.active ? "success" : "danger"}>
+                    {u.active ? "Actif" : "Inactif"}
+                  </Badge>
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    disabled={u.id === currentUser.id}
+                    onClick={() => setUserActive(u.id, !u.active)}
+                  >
+                    {u.active ? "Désactiver" : "Réactiver"}
+                  </Button>
+                </div>
+              </Panel>
+            ))}
+          </div>
+        )}
+      </Panel>
 
       <Panel className="mb-4">
         <h2 className="font-display text-xl">Nouvelle classe</h2>
@@ -251,45 +463,6 @@ export default function ComptesPage() {
             <Button type="submit">Créer</Button>
           </div>
         </form>
-      </Panel>
-
-      <Panel className="mb-4">
-        <h2 className="font-display text-xl">Nouvel apprenti</h2>
-        <form onSubmit={onCreate} className="mt-4 grid gap-3 sm:grid-cols-2">
-          <TextField
-            label="Nom affiché"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-          <TextField
-            label="Email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <TextField
-            label="Mot de passe initial"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <Select
-            label="Classe"
-            options={classOptions}
-            value={classId || classes[0]?.id || ""}
-            onChange={(e) => setClassId(e.target.value)}
-          />
-          <div className="flex items-end sm:col-span-2">
-            <Button type="submit">Créer le compte</Button>
-          </div>
-        </form>
-        {message ? (
-          <div className="mt-3">
-            <Alert tone="success">{message}</Alert>
-          </div>
-        ) : null}
       </Panel>
 
       <Panel className="mb-4">
@@ -364,6 +537,7 @@ export default function ComptesPage() {
       </Panel>
 
       <div className="space-y-6">
+        <h2 className="font-display text-2xl text-ink">Apprentis par classe</h2>
         {groups.map(({ classroom, members, active, inactive }) => {
           if (filterClassId !== "all" && filterClassId !== classroom.id) {
             return null;
@@ -373,9 +547,9 @@ export default function ComptesPage() {
               <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
-                    <h2 className="font-display text-2xl text-ink">
+                    <h3 className="font-display text-xl text-ink">
                       {classroom.name}
-                    </h2>
+                    </h3>
                     <Badge tone="primary">{classroom.level}</Badge>
                     <Badge tone="accent">
                       {STUDY_YEAR_LABELS[classroom.studyYear]}
@@ -550,9 +724,7 @@ export default function ComptesPage() {
 
         {orphanMembers.length > 0 && filterClassId === "all" ? (
           <section>
-            <h2 className="mb-3 font-display text-2xl text-ink">
-              Sans classe
-            </h2>
+            <h3 className="mb-3 font-display text-xl text-ink">Sans classe</h3>
             <div className="space-y-3">
               {orphanMembers.map((a) => (
                 <Panel

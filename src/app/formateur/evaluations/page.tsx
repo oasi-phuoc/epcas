@@ -14,6 +14,7 @@ import {
   TextField,
 } from "@/components/ui";
 import { useAppStore } from "@/lib/store";
+import { isStaffRole } from "@/lib/roles";
 import {
   DIPLOMA_LEVELS,
   levelsLabel,
@@ -40,8 +41,8 @@ export default function EvaluationsListPage() {
   const [createdId, setCreatedId] = useState<string | null>(null);
 
   if (!currentUser) return null;
-  if (currentUser.role !== "trainer") {
-    return <EmptyState title="Accès réservé aux formateurs" />;
+  if (!isStaffRole(currentUser.role)) {
+    return <EmptyState title="Accès réservé aux formateurs et admins" />;
   }
 
   function onCreate(e: FormEvent) {

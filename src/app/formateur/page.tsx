@@ -12,6 +12,7 @@ import {
 } from "@/components/ui";
 import { DIPLOMA_LABELS, STUDY_YEAR_LABELS } from "@/lib/levels";
 import { countLessonsForLevel, useAppStore } from "@/lib/store";
+import { isStaffRole } from "@/lib/roles";
 
 export default function FormateurSuiviPage() {
   const { currentUser, state, getUserProgress, getAttemptsForUser } =
@@ -32,8 +33,8 @@ export default function FormateurSuiviPage() {
   );
 
   if (!currentUser) return null;
-  if (currentUser.role !== "trainer") {
-    return <EmptyState title="Accès réservé aux formateurs" />;
+  if (!isStaffRole(currentUser.role)) {
+    return <EmptyState title="Accès réservé aux formateurs et admins" />;
   }
 
   const classOptions = [

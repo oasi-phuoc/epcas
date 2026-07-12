@@ -5,8 +5,14 @@
 create extension if not exists "pgcrypto";
 
 do $$ begin
-  create type public.user_role as enum ('trainer', 'apprentice');
+  create type public.user_role as enum ('admin', 'trainer', 'apprentice');
 exception when duplicate_object then null;
+end $$;
+
+-- Migration douce si l'enum existait sans 'admin'
+do $$ begin
+  alter type public.user_role add value if not exists 'admin';
+exception when others then null;
 end $$;
 
 do $$ begin

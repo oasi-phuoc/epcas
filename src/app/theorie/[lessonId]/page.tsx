@@ -14,6 +14,7 @@ import {
 import { MarkdownLite } from "@/components/MarkdownLite";
 import { getLessonBody } from "@/lib/lesson-content";
 import { moduleVisibleForLevel } from "@/lib/levels";
+import { isStaffRole } from "@/lib/roles";
 import { useAppStore } from "@/lib/store";
 
 export default function LessonPage() {
@@ -39,7 +40,7 @@ export default function LessonPage() {
     return <Alert tone="danger">Leçon introuvable.</Alert>;
   }
 
-  const isTrainer = currentUser.role === "trainer";
+  const isTrainer = isStaffRole(currentUser.role);
   if (
     !isTrainer &&
     mod &&
