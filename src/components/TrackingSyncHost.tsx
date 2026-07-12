@@ -6,12 +6,18 @@ import { flushTrackingOutbox } from "@/lib/offline/tracking-sync";
 import { isStaffRole } from "@/lib/roles";
 
 /**
- * Dès que le réseau revient (ou à la connexion), pousse le suivi en attente
- * et rafraîchit le hub côté formateur.
+ * Sync cloud complète + suivi hors-ligne :
+ * au montage, retour réseau, focus, et périodiquement.
  */
 export function TrackingSyncHost() {
-  const { currentUser, hydrated, syncTrackingNow, refreshTrackingFromHub } =
-    useAppStore();
+  const {
+    currentUser,
+    hydrated,
+    syncTrackingNow,
+    refreshTrackingFromHub,
+    syncCloudNow,
+    cloudSyncConfigured,
+  } = useAppStore();
   const syncing = useRef(false);
 
   useEffect(() => {
@@ -22,12 +28,15 @@ export function TrackingSyncHost() {
       if (!navigator.onLine) return;
       syncing.current = true;
       try {
+        if (cloudSyncConfigured) {
+          await syncCloudNow();
+        }
         await syncTrackingNow();
         if (currentUser && isStaffRole(currentUser.role)) {
           await refreshTrackingFromHub();
         }
         if (process.env.NODE_ENV === "development") {
-          console.info("[EPCAS] tracking sync", reason);
+          console.info("[EPCAS] sync", reason);
         }
       } finally {
         syncing.current = false;
@@ -52,9 +61,10 @@ export function TrackingSyncHost() {
     document.addEventListener("visibilitychange", onVis);
     window.addEventListener("epcas-tracking-hub", onHub);
 
-    // Flush périodique léger si online
     const timer = window.setInterval(() => {
-      if (navigator.onLine) void flushTrackingOutbox();
+      if (!navigator.onLine) return;
+      if (cloudSyncConfigured) void syncCloudNow();
+      void flushTrackingOutbox();
     }, 60_000);
 
     return () => {
@@ -69,6 +79,8 @@ export function TrackingSyncHost() {
     currentUser,
     syncTrackingNow,
     refreshTrackingFromHub,
+    syncCloudNow,
+    cloudSyncConfigured,
   ]);
 
   return null;

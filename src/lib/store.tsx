@@ -4,7 +4,9 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
+  useRef,
   useSyncExternalStore,
   useState,
   type ReactNode,
@@ -34,6 +36,18 @@ import {
   pullTrackingFromSupabase,
   readTrackingHub,
 } from "./offline/tracking-sync";
+import {
+  applyPullMeta,
+  applyPushMeta,
+  applySyncError,
+  pullAppState,
+  pushAppState,
+} from "./sync/app-state-sync";
+import {
+  isClientSupabaseConfigured,
+  readSyncMeta,
+  type SyncMeta,
+} from "./sync/types";
 import type {
   AppState,
   Assessment,
@@ -51,7 +65,12 @@ import type {
   UserAccount,
 } from "./types";
 
-const STORAGE_KEY = "epcas-logistique-v89";
+const STORAGE_KEY = "epcas-logistique-v100";
+const LEGACY_STORAGE_KEYS = [
+  "epcas-logistique-v89",
+  "epcas-logistique-v88",
+  "epcas-logistique-v87",
+];
 
 /** Ancien placeholder OneNote : à remplacer par le curriculum dès qu'il est rempli. */
 function isPlaceholderLessonContent(text: string | undefined | null): boolean {
@@ -132,6 +151,15 @@ type AppStore = {
   }>;
   /** Formateur : tire le hub suivi (local + Supabase si dispo). */
   refreshTrackingFromHub: () => Promise<void>;
+  /** Sync cloud complète (pull puis push si besoin). */
+  syncCloudNow: () => Promise<{
+    ok: boolean;
+    configured: boolean;
+    action: "skipped" | "pulled" | "pushed" | "synced";
+    error?: string;
+  }>;
+  cloudSyncConfigured: boolean;
+  cloudSyncMeta: SyncMeta;
 };
 
 const AppStoreContext = createContext<AppStore | null>(null);
@@ -259,7 +287,17 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
 
 function readStorage(): AppState {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    let raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) {
+      for (const key of LEGACY_STORAGE_KEYS) {
+        const legacy = localStorage.getItem(key);
+        if (legacy) {
+          raw = legacy;
+          localStorage.setItem(STORAGE_KEY, legacy);
+          break;
+        }
+      }
+    }
     if (!raw) return initialState;
     return normalizeState(JSON.parse(raw) as Partial<AppState>);
   } catch {
@@ -282,7 +320,16 @@ function subscribe(onStoreChange: () => void) {
 }
 
 function getSnapshot(): string {
-  return localStorage.getItem(STORAGE_KEY) ?? "";
+  const current = localStorage.getItem(STORAGE_KEY);
+  if (current != null) return current;
+  for (const key of LEGACY_STORAGE_KEYS) {
+    const legacy = localStorage.getItem(key);
+    if (legacy) {
+      localStorage.setItem(STORAGE_KEY, legacy);
+      return legacy;
+    }
+  }
+  return "";
 }
 
 function getServerSnapshot(): string {
@@ -308,14 +355,138 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
 
   const [memoryState, setMemoryState] = useState<AppState | null>(null);
   const state = memoryState ?? storedState;
+  const stateRef = useRef(state);
+  stateRef.current = state;
+  const [cloudSyncMeta, setCloudSyncMeta] = useState<SyncMeta>(() =>
+    typeof window === "undefined"
+      ? { revision: 0, updatedAt: null, lastPulledAt: null, lastPushedAt: null }
+      : readSyncMeta(),
+  );
+  const pushTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const syncingCloud = useRef(false);
+  const cloudBootstrapped = useRef(false);
+  const cloudSyncConfigured = isClientSupabaseConfigured();
 
-  const commit = useCallback((updater: (s: AppState) => AppState) => {
-    setMemoryState((prev) => {
-      const base = prev ?? readStorage();
-      const next = updater(base);
-      writeStorage(next);
-      return next;
-    });
+  const scheduleCloudPush = useCallback((next: AppState) => {
+    if (!isClientSupabaseConfigured()) return;
+    if (typeof navigator !== "undefined" && !navigator.onLine) return;
+    if (pushTimer.current) clearTimeout(pushTimer.current);
+    pushTimer.current = setTimeout(() => {
+      void (async () => {
+        if (syncingCloud.current) return;
+        syncingCloud.current = true;
+        try {
+          const result = await pushAppState(next);
+          if (result.ok && result.configured) {
+            setCloudSyncMeta(applyPushMeta(result));
+          } else if (!result.ok) {
+            setCloudSyncMeta(applySyncError(result.error));
+          }
+        } finally {
+          syncingCloud.current = false;
+        }
+      })();
+    }, 1200);
+  }, []);
+
+  const commit = useCallback(
+    (updater: (s: AppState) => AppState) => {
+      setMemoryState((prev) => {
+        const base = prev ?? readStorage();
+        const next = updater(base);
+        writeStorage(next);
+        scheduleCloudPush(next);
+        return next;
+      });
+    },
+    [scheduleCloudPush],
+  );
+
+  const syncCloudNow = useCallback(async () => {
+    if (!isClientSupabaseConfigured()) {
+      return { ok: true, configured: false, action: "skipped" as const };
+    }
+    if (typeof navigator !== "undefined" && !navigator.onLine) {
+      return {
+        ok: false,
+        configured: true,
+        action: "skipped" as const,
+        error: "Hors ligne",
+      };
+    }
+    if (syncingCloud.current) {
+      return { ok: true, configured: true, action: "skipped" as const };
+    }
+    syncingCloud.current = true;
+    try {
+      const pull = await pullAppState();
+      if (!pull.ok) {
+        setCloudSyncMeta(applySyncError(pull.error));
+        return {
+          ok: false,
+          configured: pull.configured,
+          action: "skipped" as const,
+          error: pull.error,
+        };
+      }
+      if (!pull.configured) {
+        return { ok: true, configured: false, action: "skipped" as const };
+      }
+
+      const local = stateRef.current;
+      const meta = readSyncMeta();
+
+      if (!pull.empty && pull.payload) {
+        const remoteRev = pull.revision;
+        const shouldPull = remoteRev > meta.revision;
+
+        if (shouldPull) {
+          const merged = normalizeState({
+            ...pull.payload,
+            currentUserId: local.currentUserId,
+          });
+          writeStorage(merged);
+          setMemoryState(merged);
+          setCloudSyncMeta(applyPullMeta(pull));
+          return { ok: true, configured: true, action: "pulled" as const };
+        }
+      }
+
+      const push = await pushAppState(local);
+      if (!push.ok) {
+        setCloudSyncMeta(applySyncError(push.error));
+        return {
+          ok: false,
+          configured: push.configured,
+          action: "skipped" as const,
+          error: push.error,
+        };
+      }
+      if (push.configured) {
+        setCloudSyncMeta(applyPushMeta(push));
+      }
+      return {
+        ok: true,
+        configured: true,
+        action: pull.empty ? ("pushed" as const) : ("synced" as const),
+      };
+    } finally {
+      syncingCloud.current = false;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!hydrated || !cloudSyncConfigured || cloudBootstrapped.current) return;
+    cloudBootstrapped.current = true;
+    void syncCloudNow();
+  }, [hydrated, cloudSyncConfigured, syncCloudNow]);
+
+  useEffect(() => {
+    function onMeta() {
+      setCloudSyncMeta(readSyncMeta());
+    }
+    window.addEventListener("epcas-sync-meta", onMeta);
+    return () => window.removeEventListener("epcas-sync-meta", onMeta);
   }, []);
 
   const currentUser = useMemo(
@@ -927,6 +1098,9 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     getAssessmentQuestions,
     syncTrackingNow,
     refreshTrackingFromHub,
+    syncCloudNow,
+    cloudSyncConfigured,
+    cloudSyncMeta,
   };
 
   return (
