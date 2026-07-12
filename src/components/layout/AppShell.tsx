@@ -13,7 +13,10 @@ import {
   Users,
 } from "lucide-react";
 import { cn } from "@/lib/cn";
-import { FORMATEUR_CONTENT_PAGES } from "@/lib/lesson-content";
+import {
+  FORMATEUR_EXERCISE_PAGES,
+  FORMATEUR_THEORY_PAGES,
+} from "@/lib/lesson-content";
 import { isStaffRole } from "@/lib/roles";
 import { useAppStore } from "@/lib/store";
 import { Button } from "@/components/ui";
@@ -29,7 +32,8 @@ const apprenticeLinks = [
 const staffLinks = [
   { href: "/accueil", label: "Accueil", icon: Home },
   { href: "/formateur", label: "Suivi", icon: Users },
-  { href: "/formateur/contenu", label: "Contenu", icon: BookOpen },
+  { href: "/formateur/contenu", label: "Théorie", icon: BookOpen },
+  { href: "/formateur/exercices", label: "Exercices", icon: PencilLine },
   { href: "/formateur/sequences", label: "Séquences", icon: ListOrdered },
   { href: "/formateur/evaluations", label: "Évaluations", icon: ClipboardCheck },
   { href: "/formateur/comptes", label: "Comptes", icon: UserRound },
@@ -39,7 +43,7 @@ const staffLinks = [
 function isActivePath(pathname: string, href: string) {
   if (href === "/accueil") return pathname === "/accueil";
   if (href === "/formateur") return pathname === "/formateur";
-  if (href === "/formateur/contenu") {
+  if (href === "/formateur/contenu" || href === "/formateur/exercices") {
     return pathname === href || pathname.startsWith(`${href}/`);
   }
   return pathname === href || pathname.startsWith(`${href}/`);
@@ -50,10 +54,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const { currentUser, logout, state } = useAppStore();
   const staff = isStaffRole(currentUser?.role);
   const links = staff ? staffLinks : apprenticeLinks;
-  const contenuOpen =
+  const theoryOpen =
     staff &&
     (pathname === "/formateur/contenu" ||
       pathname.startsWith("/formateur/contenu/"));
+  const exercicesOpen =
+    staff &&
+    (pathname === "/formateur/exercices" ||
+      pathname.startsWith("/formateur/exercices/"));
 
   return (
     <div className="min-h-dvh lg:flex">
@@ -68,6 +76,18 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <nav className="flex flex-1 flex-col gap-1 overflow-y-auto p-3">
           {links.map(({ href, label, icon: Icon }) => {
             const active = isActivePath(pathname, href);
+            const subPages =
+              href === "/formateur/contenu"
+                ? FORMATEUR_THEORY_PAGES
+                : href === "/formateur/exercices"
+                  ? FORMATEUR_EXERCISE_PAGES
+                  : null;
+            const subOpen =
+              href === "/formateur/contenu"
+                ? theoryOpen
+                : href === "/formateur/exercices"
+                  ? exercicesOpen
+                  : false;
             return (
               <div key={href}>
                 <Link
@@ -82,9 +102,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                   <Icon className="h-4 w-4" />
                   {label}
                 </Link>
-                {href === "/formateur/contenu" && contenuOpen ? (
+                {subPages && subOpen ? (
                   <ul className="mt-1 ml-4 space-y-0.5 border-l border-border pl-3">
-                    {FORMATEUR_CONTENT_PAGES.map((page) => {
+                    {subPages.map((page) => {
                       const subActive = pathname === page.href;
                       return (
                         <li key={page.slug}>

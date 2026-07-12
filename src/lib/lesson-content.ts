@@ -1,7 +1,30 @@
 import type { DiplomaLevel, Lesson, LessonPageSlug } from "./types";
 
-/** Sous-menu Contenu formateur (hors Objectifs / Aperçu). */
-export const FORMATEUR_CONTENT_PAGES: {
+/** Pages du parcours Théorie (apprenti). */
+export const THEORY_PAGE_SLUGS: LessonPageSlug[] = [
+  "objectifs",
+  "apercu",
+  "theorie",
+  "glossaire",
+];
+
+/** Pages du parcours Exercices (apprenti) — contenu EnterSite. */
+export const EXERCISE_PAGE_SLUGS: LessonPageSlug[] = [
+  "situation",
+  "maths",
+  "verification",
+];
+
+export function isTheoryPageSlug(slug: LessonPageSlug): boolean {
+  return THEORY_PAGE_SLUGS.includes(slug);
+}
+
+export function isExercisePageSlug(slug: LessonPageSlug): boolean {
+  return EXERCISE_PAGE_SLUGS.includes(slug);
+}
+
+/** Sous-menu Contenu formateur — pages théorie. */
+export const FORMATEUR_THEORY_PAGES: {
   slug: LessonPageSlug;
   title: string;
   description: string;
@@ -19,30 +42,51 @@ export const FORMATEUR_CONTENT_PAGES: {
     description: "Termes et définitions",
     href: "/formateur/contenu/glossaire",
   },
+];
+
+/** Sous-menu Exercices formateur — situations, maths, vérifications. */
+export const FORMATEUR_EXERCISE_PAGES: {
+  slug: LessonPageSlug;
+  title: string;
+  description: string;
+  href: string;
+}[] = [
   {
     slug: "situation",
     title: "Mise en situation",
     description: "Cas pratiques EnterSite",
-    href: "/formateur/contenu/situation",
+    href: "/formateur/exercices/situation",
   },
   {
     slug: "maths",
     title: "Mathématiques",
     description: "Calculs et applications numériques",
-    href: "/formateur/contenu/maths",
+    href: "/formateur/exercices/maths",
   },
   {
     slug: "verification",
     title: "Vérification des acquis",
     description: "Contrôle des connaissances",
-    href: "/formateur/contenu/verification",
+    href: "/formateur/exercices/verification",
   },
+];
+
+/** @deprecated Utiliser FORMATEUR_THEORY_PAGES + FORMATEUR_EXERCISE_PAGES */
+export const FORMATEUR_CONTENT_PAGES = [
+  ...FORMATEUR_THEORY_PAGES,
+  ...FORMATEUR_EXERCISE_PAGES,
 ];
 
 export function isFormateurContentSlug(
   slug: string,
 ): slug is LessonPageSlug {
   return FORMATEUR_CONTENT_PAGES.some((p) => p.slug === slug);
+}
+
+export function isFormateurExerciseSlug(
+  slug: string,
+): slug is LessonPageSlug {
+  return FORMATEUR_EXERCISE_PAGES.some((p) => p.slug === slug);
 }
 
 export function pageSlugFromLessonId(id: string): LessonPageSlug | null {

@@ -15,7 +15,8 @@ import {
 import { MarkdownLite } from "@/components/MarkdownLite";
 import { MarkdownToolbar } from "@/components/MarkdownToolbar";
 import {
-  FORMATEUR_CONTENT_PAGES,
+  FORMATEUR_EXERCISE_PAGES,
+  FORMATEUR_THEORY_PAGES,
   applyLevelContent,
   getLessonBody,
   isAfpIdenticalToCfc,
@@ -286,9 +287,20 @@ function LessonEditor({
   );
 }
 
-export function ContenuPageEditor({ pageSlug }: { pageSlug: LessonPageSlug }) {
+export function ContenuPageEditor({
+  pageSlug,
+  section = "theorie",
+}: {
+  pageSlug: LessonPageSlug;
+  section?: "theorie" | "exercices";
+}) {
   const { currentUser, state, updateLesson } = useAppStore();
-  const pageMeta = FORMATEUR_CONTENT_PAGES.find((p) => p.slug === pageSlug);
+  const sectionPages =
+    section === "exercices" ? FORMATEUR_EXERCISE_PAGES : FORMATEUR_THEORY_PAGES;
+  const hubHref =
+    section === "exercices" ? "/formateur/exercices" : "/formateur/contenu";
+  const hubLabel = section === "exercices" ? "← Exercices" : "← Contenu";
+  const pageMeta = sectionPages.find((p) => p.slug === pageSlug);
 
   const modulesSorted = useMemo(
     () =>
@@ -342,16 +354,16 @@ export function ContenuPageEditor({ pageSlug }: { pageSlug: LessonPageSlug }) {
           "Éditez la page pour le module et le niveau choisis."
         }
         actions={
-          <Link href="/formateur/contenu">
+          <Link href={hubHref}>
             <Button variant="ghost" size="sm">
-              ← Contenu
+              {hubLabel}
             </Button>
           </Link>
         }
       />
 
       <nav className="mb-4 flex flex-wrap gap-2">
-        {FORMATEUR_CONTENT_PAGES.map((p) => (
+        {sectionPages.map((p) => (
           <Link key={p.slug} href={p.href}>
             <Badge tone={p.slug === pageSlug ? "primary" : "neutral"}>
               {p.title}

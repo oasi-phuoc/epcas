@@ -7,19 +7,25 @@ import {
   PageHeader,
   Panel,
 } from "@/components/ui";
-import { FORMATEUR_THEORY_PAGES } from "@/lib/lesson-content";
+import { FORMATEUR_EXERCISE_PAGES } from "@/lib/lesson-content";
 import { useAppStore } from "@/lib/store";
 import { isStaffRole } from "@/lib/roles";
-import { BookMarked, BookOpen } from "lucide-react";
+import {
+  Calculator,
+  ClipboardCheck,
+  Lightbulb,
+  PencilLine,
+} from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { LessonPageSlug } from "@/lib/types";
 
 const ICONS: Record<string, LucideIcon> = {
-  theorie: BookOpen,
-  glossaire: BookMarked,
+  situation: Lightbulb,
+  maths: Calculator,
+  verification: ClipboardCheck,
 };
 
-export default function ContenuHubPage() {
+export default function FormateurExercicesHubPage() {
   const { currentUser, state } = useAppStore();
 
   if (!currentUser) return null;
@@ -30,13 +36,13 @@ export default function ContenuHubPage() {
   return (
     <div>
       <PageHeader
-        title="Contenu · Théorie"
-        description="Éditez les pages théoriques EnterSite (théorie, glossaire) — variantes AFP / CFC."
+        title="Contenu · Exercices"
+        description="Mise en situation, mathématiques et vérification des acquis — variantes AFP / CFC."
       />
 
       <div className="grid gap-3 sm:grid-cols-2">
-        {FORMATEUR_THEORY_PAGES.map((page) => {
-          const Icon = ICONS[page.slug] ?? BookOpen;
+        {FORMATEUR_EXERCISE_PAGES.map((page) => {
+          const Icon = ICONS[page.slug] ?? PencilLine;
           const count = state.lessons.filter(
             (l) => l.pageSlug === (page.slug as LessonPageSlug),
           ).length;
