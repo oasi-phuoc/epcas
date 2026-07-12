@@ -310,19 +310,42 @@ export function ContenuPageEditor({
     [state.modules],
   );
 
+  const blocksWithModules = useMemo(() => {
+    const blocks = [...state.blocks].sort((a, b) => a.order - b.order);
+    return blocks
+      .map((block) => ({
+        block,
+        modules: modulesSorted.filter((m) => m.blockId === block.id),
+      }))
+      .filter((entry) => entry.modules.length > 0);
+  }, [state.blocks, modulesSorted]);
+
   const [moduleQuery, setModuleQuery] = useState("");
+  const [blockId, setBlockId] = useState(
+    () => blocksWithModules[0]?.block.id ?? "",
+  );
   const [moduleId, setModuleId] = useState(modulesSorted[0]?.id ?? "");
   const [editLevel, setEditLevel] = useState<DiplomaLevel>("CFC");
 
+  const effectiveBlockId = useMemo(() => {
+    if (blocksWithModules.some((b) => b.block.id === blockId)) return blockId;
+    return blocksWithModules[0]?.block.id ?? "";
+  }, [blocksWithModules, blockId]);
+
+  const modulesInBlock = useMemo(
+    () => modulesSorted.filter((m) => m.blockId === effectiveBlockId),
+    [modulesSorted, effectiveBlockId],
+  );
+
   const filteredModules = useMemo(() => {
     const q = moduleQuery.trim().toLowerCase();
-    if (!q) return modulesSorted;
-    return modulesSorted.filter(
+    if (!q) return modulesInBlock;
+    return modulesInBlock.filter(
       (m) =>
         m.code.toLowerCase().includes(q) ||
         m.title.toLowerCase().includes(q),
     );
-  }, [modulesSorted, moduleQuery]);
+  }, [modulesInBlock, moduleQuery]);
 
   const effectiveModuleId = useMemo(() => {
     if (filteredModules.some((m) => m.id === moduleId)) return moduleId;
@@ -332,6 +355,10 @@ export function ContenuPageEditor({
   const currentModule: Module | undefined = state.modules.find(
     (m) => m.id === effectiveModuleId,
   );
+
+  const currentBlock = blocksWithModules.find(
+    (b) => b.block.id === effectiveBlockId,
+  )?.block;
 
   const lesson = useMemo(() => {
     if (!effectiveModuleId) return undefined;
@@ -373,12 +400,51 @@ export function ContenuPageEditor({
       </nav>
 
       <Panel className="mb-4">
-        <TextField
-          label="Rechercher un module"
-          value={moduleQuery}
-          onChange={(e) => setModuleQuery(e.target.value)}
-          placeholder="Ex. 101, histoire, stockage…"
-        />
+        <div>
+          <p className="mb-2 text-sm font-medium text-ink">Bloc</p>
+          <div
+            className="flex flex-wrap gap-1.5"
+            role="tablist"
+            aria-label="Blocs de modules"
+          >
+            {blocksWithModules.map(({ block, modules }) => {
+              const selected = block.id === effectiveBlockId;
+              return (
+                <Button
+                  key={block.id}
+                  type="button"
+                  size="sm"
+                  role="tab"
+                  aria-selected={selected}
+                  variant={selected ? "primary" : "secondary"}
+                  onClick={() => {
+                    setBlockId(block.id);
+                    setModuleQuery("");
+                    setModuleId(modules[0]?.id ?? "");
+                  }}
+                >
+                  {block.code}
+                </Button>
+              );
+            })}
+          </div>
+          {currentBlock ? (
+            <p className="mt-2 text-xs text-ink-subtle">
+              Bloc {currentBlock.code} — {currentBlock.title} (
+              {modulesInBlock.length} module
+              {modulesInBlock.length > 1 ? "s" : ""})
+            </p>
+          ) : null}
+        </div>
+
+        <div className="mt-4">
+          <TextField
+            label="Rechercher dans ce bloc"
+            value={moduleQuery}
+            onChange={(e) => setModuleQuery(e.target.value)}
+            placeholder="Ex. 101, histoire, stockage…"
+          />
+        </div>
 
         {currentModule ? (
           <div className="mt-3 rounded-[var(--radius-md)] border border-primary bg-primary-soft/40 px-3 py-2">
@@ -402,7 +468,9 @@ export function ContenuPageEditor({
           </p>
           {filteredModules.length === 0 ? (
             <p className="rounded-[var(--radius-md)] border border-dashed border-border px-3 py-4 text-center text-sm text-ink-subtle">
-              Aucun module pour « {moduleQuery} »
+              {moduleQuery.trim()
+                ? `Aucun module pour « ${moduleQuery} » dans ce bloc`
+                : "Aucun module dans ce bloc"}
             </p>
           ) : (
             <ul
@@ -441,7 +509,7 @@ export function ContenuPageEditor({
             </ul>
           )}
           <p className="mt-2 text-xs text-ink-subtle">
-            Tapez pour filtrer, puis touchez un module dans la liste.
+            Choisissez un bloc, puis un module dans la liste.
           </p>
         </div>
 
