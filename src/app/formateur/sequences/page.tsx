@@ -14,14 +14,22 @@ import {
   DIPLOMA_LEVELS,
   DIPLOMA_LABELS,
   STUDY_YEAR_LABELS,
+  STUDY_YEARS,
   getSequence,
   maxStudyYear,
+  moduleVisibleForLevel,
   unassignedModuleIds,
 } from "@/lib/levels";
 import { useAppStore } from "@/lib/store";
 import { isStaffRole } from "@/lib/roles";
-import type { DiplomaLevel, StudyYear } from "@/lib/types";
+import type { DiplomaLevel, Module, StudyYear } from "@/lib/types";
 import { ArrowDown, ArrowUp, Plus, RotateCcw, Trash2 } from "lucide-react";
+
+function shortYearLabel(year: StudyYear): string {
+  if (year === 1) return "1ʳᵉ an.";
+  if (year === 2) return "2ᵉ an.";
+  return "3ᵉ an.";
+}
 
 export default function SequencesPage() {
   const {
@@ -69,6 +77,31 @@ export default function SequencesPage() {
         .filter((m): m is NonNullable<typeof m> => Boolean(m)),
     [availableIds, moduleById],
   );
+
+  /** moduleId → année où il est placé (pour ce niveau), hors année courante. */
+  const assignedOtherYear = useMemo(() => {
+    const map = new Map<string, StudyYear>();
+    const years = STUDY_YEARS.filter((y) => y <= maxStudyYear(level));
+    for (const y of years) {
+      if (y === effectiveYear) continue;
+      const seq = getSequence(state.sequences, level, y);
+      for (const id of seq?.moduleIds ?? []) {
+        map.set(id, y);
+      }
+    }
+    return map;
+  }, [state.sequences, level, effectiveYear]);
+
+  /** Modules du niveau placés dans une autre année (visibles avec pastille). */
+  const placedElsewhere = useMemo(() => {
+    const list: { module: Module; year: StudyYear }[] = [];
+    for (const [id, year] of assignedOtherYear) {
+      const mod = moduleById.get(id);
+      if (!mod || !moduleVisibleForLevel(mod, level)) continue;
+      list.push({ module: mod, year });
+    }
+    return list.sort((a, b) => a.module.code.localeCompare(b.module.code));
+  }, [assignedOtherYear, moduleById, level]);
 
   const yearOptions = useMemo(() => {
     const years: StudyYear[] = level === "AFP" ? [1, 2] : [1, 2, 3];
@@ -306,16 +339,16 @@ export default function SequencesPage() {
             <Badge tone="neutral">{availableModules.length}</Badge>
           </div>
           <p className="mb-3 text-sm text-ink-muted">
-            Modules {level} non encore placés dans une année. Un module ne peut
-            être que dans une seule année.
+            Modules {level} non encore placés. Un module ne peut être que dans
+            une seule année.
           </p>
           {availableModules.length === 0 ? (
             <EmptyState
-              title="Tous les modules sont assignés"
-              description="Retirez un module d'une année pour le réattribuer."
+              title="Aucun module libre"
+              description="Tous les modules sont déjà dans une année. Voir la liste ci-dessous."
             />
           ) : (
-            <ul className="max-h-[32rem] space-y-2 overflow-y-auto pr-1">
+            <ul className="mb-5 max-h-64 space-y-2 overflow-y-auto pr-1">
               {availableModules.map((mod) => (
                 <li
                   key={mod.id}
@@ -327,6 +360,7 @@ export default function SequencesPage() {
                     </p>
                     <p className="truncate text-sm text-ink">{mod.title}</p>
                   </div>
+                  <Badge tone="success">Libre</Badge>
                   <Button
                     size="sm"
                     variant="secondary"
@@ -335,6 +369,46 @@ export default function SequencesPage() {
                     <Plus className="h-4 w-4" />
                     Ajouter
                   </Button>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <div className="mb-3 flex flex-wrap items-center gap-2 border-t border-border pt-4">
+            <h3 className="font-display text-lg text-ink">
+              Déjà dans une autre année
+            </h3>
+            <Badge tone="accent">{placedElsewhere.length}</Badge>
+          </div>
+          <p className="mb-3 text-sm text-ink-muted">
+            Pastille = année où le module est déjà affecté pour {level}. Cliquez
+            la pastille pour ouvrir cette année.
+          </p>
+          {placedElsewhere.length === 0 ? (
+            <p className="text-sm text-ink-subtle">
+              Aucun module placé dans les autres années.
+            </p>
+          ) : (
+            <ul className="max-h-[28rem] space-y-2 overflow-y-auto pr-1">
+              {placedElsewhere.map(({ module: mod, year }) => (
+                <li
+                  key={mod.id}
+                  className="flex items-center gap-2 rounded-[var(--radius-md)] border border-border bg-surface-muted/30 px-3 py-2"
+                >
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs font-medium text-primary-strong">
+                      Module {mod.code}
+                    </p>
+                    <p className="truncate text-sm text-ink">{mod.title}</p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setStudyYear(year)}
+                    title={`Voir la séquence ${STUDY_YEAR_LABELS[year]}`}
+                    className="shrink-0"
+                  >
+                    <Badge tone="warning">{shortYearLabel(year)}</Badge>
+                  </button>
                 </li>
               ))}
             </ul>
