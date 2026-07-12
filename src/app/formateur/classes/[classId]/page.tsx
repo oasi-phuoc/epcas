@@ -405,45 +405,83 @@ export default function ClassDetailPage() {
       ) : null}
 
       {tab === "suivi" ? (
-        <div className="space-y-3">
+        <Panel className="overflow-x-auto p-0">
+          <div className="border-b border-border px-4 py-3">
+            <h2 className="font-display text-lg text-ink">Suivi de la classe</h2>
+            <p className="mt-1 text-sm text-ink-muted">
+              Progression théorie et scores exercices par élève.
+            </p>
+          </div>
           {members.length === 0 ? (
-            <EmptyState title="Aucun élève à suivre" />
+            <div className="p-5">
+              <EmptyState title="Aucun élève à suivre" />
+            </div>
           ) : (
-            members.map((m) => {
-              const progress = getUserProgress(m.id);
-              const done = progress.filter((p) => p.status === "done").length;
-              const pct =
-                lessonTotal === 0 ? 0 : (done / lessonTotal) * 100;
-              const attempts = getAttemptsForUser(m.id);
-              const avg =
-                attempts.length === 0
-                  ? 0
-                  : (attempts.reduce((s, a) => s + a.score / a.maxScore, 0) /
-                      attempts.length) *
-                    100;
-              return (
-                <Panel key={m.id}>
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <div>
-                      <p className="font-display text-xl">{m.displayName}</p>
-                      <p className="text-sm text-ink-muted">{m.email}</p>
-                    </div>
-                    <Badge tone={m.active ? "success" : "danger"}>
-                      {m.active ? "Actif" : "Inactif"}
-                    </Badge>
-                  </div>
-                  <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                    <ProgressBar value={pct} label="Théorie / pages" />
-                    <ProgressBar value={avg} label="Score exercices" />
-                  </div>
-                  <p className="mt-2 text-xs text-ink-subtle">
-                    {done}/{lessonTotal} pages · {attempts.length} tentative(s)
-                  </p>
-                </Panel>
-              );
-            })
+            <table className="w-full min-w-[40rem] text-left text-sm">
+              <thead className="bg-surface-muted/60 text-xs uppercase tracking-wide text-ink-subtle">
+                <tr>
+                  <th className="px-3 py-2 font-medium">Nom</th>
+                  <th className="px-3 py-2 font-medium">Email</th>
+                  <th className="px-3 py-2 font-medium">Statut</th>
+                  <th className="px-3 py-2 font-medium">Théorie</th>
+                  <th className="px-3 py-2 font-medium">Exercices</th>
+                  <th className="px-3 py-2 font-medium">Détail</th>
+                </tr>
+              </thead>
+              <tbody>
+                {members.map((m) => {
+                  const progress = getUserProgress(m.id);
+                  const done = progress.filter((p) => p.status === "done").length;
+                  const pct =
+                    lessonTotal === 0 ? 0 : (done / lessonTotal) * 100;
+                  const attempts = getAttemptsForUser(m.id);
+                  const avg =
+                    attempts.length === 0
+                      ? 0
+                      : (attempts.reduce((s, a) => s + a.score / a.maxScore, 0) /
+                          attempts.length) *
+                        100;
+                  return (
+                    <tr
+                      key={m.id}
+                      className="border-t border-border/70 hover:bg-primary-soft/20"
+                    >
+                      <td className="px-3 py-2 font-medium text-ink">
+                        {m.displayName}
+                      </td>
+                      <td className="px-3 py-2 text-ink-muted">{m.email}</td>
+                      <td className="px-3 py-2">
+                        <Badge tone={m.active ? "success" : "danger"}>
+                          {m.active ? "Actif" : "Inactif"}
+                        </Badge>
+                      </td>
+                      <td className="px-3 py-2">
+                        <div className="w-28">
+                          <ProgressBar value={pct} />
+                        </div>
+                        <span className="text-[10px] text-ink-subtle">
+                          {done}/{lessonTotal} · {Math.round(pct)}%
+                        </span>
+                      </td>
+                      <td className="px-3 py-2">
+                        <div className="w-28">
+                          <ProgressBar value={avg} />
+                        </div>
+                        <span className="text-[10px] text-ink-subtle">
+                          {Math.round(avg)}%
+                        </span>
+                      </td>
+                      <td className="px-3 py-2 text-xs text-ink-subtle">
+                        {attempts.length} tentative
+                        {attempts.length !== 1 ? "s" : ""}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           )}
-        </div>
+        </Panel>
       ) : null}
 
       {tab === "taches" ? (
