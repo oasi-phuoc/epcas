@@ -11,7 +11,6 @@ import {
   NumberField,
   PageHeader,
   Panel,
-  Select,
   TextArea,
   TextField,
 } from "@/components/ui";
@@ -38,14 +37,30 @@ import type {
   QuestionType,
   TrueFalsePayload,
 } from "@/lib/types";
-import { Plus, Trash2 } from "lucide-react";
+import {
+  AlignLeft,
+  ArrowLeftRight,
+  Calculator,
+  CheckSquare,
+  CircleDot,
+  ListOrdered,
+  Plus,
+  TextCursorInput,
+  ToggleLeft,
+  Trash2,
+  type LucideIcon,
+} from "lucide-react";
 
-const TYPE_OPTIONS = (
-  Object.keys(QUESTION_TYPE_META) as QuestionType[]
-).map((type) => ({
-  value: type,
-  label: QUESTION_TYPE_META[type].label,
-}));
+const QUESTION_TYPE_ICONS: Record<QuestionType, LucideIcon> = {
+  qcm: CircleDot,
+  multi: CheckSquare,
+  true_false: ToggleLeft,
+  math: Calculator,
+  open: AlignLeft,
+  matching: ArrowLeftRight,
+  ordering: ListOrdered,
+  fill_blank: TextCursorInput,
+};
 
 function QuestionEditor({
   question,
@@ -726,44 +741,49 @@ export default function EvaluationEditPage() {
 
       <Panel className="mb-4">
         <h2 className="mb-2 font-display text-xl">Ajouter une question</h2>
-        <p className="mb-3 text-sm text-ink-muted">
+        <p className="mb-4 text-sm text-ink-muted">
           Choisissez un modèle : le formulaire se préremplit, vous n&apos;avez
           plus qu&apos;à adapter le texte.
         </p>
-        <div className="flex flex-wrap items-end gap-3">
-          <div className="min-w-[14rem] flex-1">
-            <Select
-              label="Type de question"
-              options={TYPE_OPTIONS}
-              value={templateType}
-              onChange={(e) => setTemplateType(e.target.value as QuestionType)}
-            />
-          </div>
+
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {(Object.keys(QUESTION_TYPE_META) as QuestionType[]).map((type) => {
+            const meta = QUESTION_TYPE_META[type];
+            const Icon = QUESTION_TYPE_ICONS[type];
+            const selected = templateType === type;
+            return (
+              <div key={type} className="flex flex-col items-center text-center">
+                <button
+                  type="button"
+                  onClick={() => setTemplateType(type)}
+                  title={meta.label}
+                  aria-label={meta.label}
+                  aria-pressed={selected}
+                  className={`inline-flex h-14 w-14 items-center justify-center rounded-[var(--radius-md)] border transition ${
+                    selected
+                      ? "border-primary bg-primary-soft text-primary-strong shadow-[var(--shadow-sm)]"
+                      : "border-border bg-surface text-ink-muted hover:border-primary/50 hover:bg-surface-muted hover:text-ink"
+                  }`}
+                >
+                  <Icon className="h-6 w-6" strokeWidth={1.75} />
+                </button>
+                <p className="mt-2 text-xs font-medium text-ink">{meta.short}</p>
+                <p className="mt-0.5 text-[11px] leading-snug text-ink-subtle">
+                  {meta.description}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-4 flex flex-wrap items-center gap-3">
           <Button type="button" onClick={addFromTemplate}>
             <Plus className="h-4 w-4" />
-            Ajouter le modèle
+            Ajouter — {QUESTION_TYPE_META[templateType].label}
           </Button>
-        </div>
-        <div className="mt-3 grid gap-2 sm:grid-cols-2">
-          {(Object.keys(QUESTION_TYPE_META) as QuestionType[]).map((type) => (
-            <button
-              key={type}
-              type="button"
-              onClick={() => setTemplateType(type)}
-              className={`rounded-[var(--radius-md)] border px-3 py-2 text-left text-sm transition ${
-                templateType === type
-                  ? "border-primary bg-primary-soft"
-                  : "border-border hover:bg-surface-muted"
-              }`}
-            >
-              <span className="font-medium text-ink">
-                {QUESTION_TYPE_META[type].label}
-              </span>
-              <span className="mt-0.5 block text-xs text-ink-subtle">
-                {QUESTION_TYPE_META[type].description}
-              </span>
-            </button>
-          ))}
+          <p className="text-xs text-ink-subtle">
+            Modèle sélectionné : {QUESTION_TYPE_META[templateType].description}
+          </p>
         </div>
       </Panel>
 
