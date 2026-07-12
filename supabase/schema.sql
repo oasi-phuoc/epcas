@@ -1,20 +1,32 @@
 -- EPCAS Logistique — schéma Phase 1 (à exécuter dans Supabase SQL Editor)
 -- Région recommandée : EU (Frankfurt ou proche)
+-- Idempotent : peut être relancé sans erreur si objets déjà présents
 
 create extension if not exists "pgcrypto";
 
-create type public.user_role as enum ('trainer', 'apprentice');
-create type public.lesson_status as enum ('unread', 'reading', 'done');
-create type public.exercise_type as enum ('qcm', 'math', 'open');
+do $$ begin
+  create type public.user_role as enum ('trainer', 'apprentice');
+exception when duplicate_object then null;
+end $$;
 
-create table public.classes (
+do $$ begin
+  create type public.lesson_status as enum ('unread', 'reading', 'done');
+exception when duplicate_object then null;
+end $$;
+
+do $$ begin
+  create type public.exercise_type as enum ('qcm', 'math', 'open');
+exception when duplicate_object then null;
+end $$;
+
+create table if not exists public.classes (
   id uuid primary key default gen_random_uuid(),
   name text not null,
   year text not null,
   created_at timestamptz not null default now()
 );
 
-create table public.profiles (
+create table if not exists public.profiles (
   id uuid primary key references auth.users (id) on delete cascade,
   role public.user_role not null default 'apprentice',
   class_id uuid references public.classes (id),
@@ -23,7 +35,7 @@ create table public.profiles (
   created_at timestamptz not null default now()
 );
 
-create table public.blocks (
+create table if not exists public.blocks (
   id uuid primary key default gen_random_uuid(),
   code text not null unique,
   title text not null,
@@ -31,7 +43,7 @@ create table public.blocks (
   created_at timestamptz not null default now()
 );
 
-create table public.modules (
+create table if not exists public.modules (
   id uuid primary key default gen_random_uuid(),
   block_id uuid not null references public.blocks (id) on delete cascade,
   code text not null unique,
@@ -41,7 +53,7 @@ create table public.modules (
   created_at timestamptz not null default now()
 );
 
-create table public.lessons (
+create table if not exists public.lessons (
   id uuid primary key default gen_random_uuid(),
   module_id uuid not null references public.modules (id) on delete cascade,
   title text not null,
@@ -52,7 +64,7 @@ create table public.lessons (
   created_at timestamptz not null default now()
 );
 
-create table public.exercises (
+create table if not exists public.exercises (
   id uuid primary key default gen_random_uuid(),
   lesson_id uuid references public.lessons (id) on delete set null,
   title text not null,
@@ -63,7 +75,7 @@ create table public.exercises (
   created_at timestamptz not null default now()
 );
 
-create table public.lesson_progress (
+create table if not exists public.lesson_progress (
   user_id uuid not null references public.profiles (id) on delete cascade,
   lesson_id uuid not null references public.lessons (id) on delete cascade,
   status public.lesson_status not null default 'unread',
@@ -72,7 +84,7 @@ create table public.lesson_progress (
   primary key (user_id, lesson_id)
 );
 
-create table public.attempts (
+create table if not exists public.attempts (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references public.profiles (id) on delete cascade,
   exercise_id uuid not null references public.exercises (id) on delete cascade,
@@ -104,7 +116,22 @@ as $$
   );
 $$;
 
--- Profiles
+-- Policies (drop + recreate pour rester idempotent)
+drop policy if exists "profiles_select_own_or_trainer" on public.profiles;
+drop policy if exists "profiles_update_own" on public.profiles;
+drop policy if exists "blocks_read" on public.blocks;
+drop policy if exists "blocks_write" on public.blocks;
+drop policy if exists "modules_read" on public.modules;
+drop policy if exists "modules_write" on public.modules;
+drop policy if exists "lessons_read" on public.lessons;
+drop policy if exists "lessons_write" on public.lessons;
+drop policy if exists "exercises_read" on public.exercises;
+drop policy if exists "exercises_write" on public.exercises;
+drop policy if exists "progress_own" on public.lesson_progress;
+drop policy if exists "attempts_own" on public.attempts;
+drop policy if exists "classes_read" on public.classes;
+drop policy if exists "classes_write" on public.classes;
+
 create policy "profiles_select_own_or_trainer"
   on public.profiles for select
   using (id = auth.uid() or public.is_trainer());
@@ -113,7 +140,6 @@ create policy "profiles_update_own"
   on public.profiles for update
   using (id = auth.uid() or public.is_trainer());
 
--- Contenu publié lisible par tous les authentifiés ; formateur tout gère
 create policy "blocks_read" on public.blocks for select to authenticated
   using (true);
 create policy "blocks_write" on public.blocks for all to authenticated
