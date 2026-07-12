@@ -125,7 +125,7 @@ alter table public.exercises enable row level security;
 alter table public.lesson_progress enable row level security;
 alter table public.attempts enable row level security;
 
-create or replace function public.is_trainer()
+create or replace function public.is_staff()
 returns boolean
 language sql
 stable
@@ -134,8 +134,20 @@ set search_path = public
 as $$
   select exists (
     select 1 from public.profiles p
-    where p.id = auth.uid() and p.role = 'trainer' and p.active
+    where p.id = auth.uid()
+      and p.role::text in ('admin', 'trainer')
+      and p.active
   );
+$$;
+
+create or replace function public.is_trainer()
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select public.is_staff();
 $$;
 
 -- Policies (drop + recreate pour rester idempotent)

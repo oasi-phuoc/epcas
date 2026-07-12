@@ -14,6 +14,8 @@ exception when duplicate_object then null;
 end $$;
 
 do $$ begin
+  -- Ajout éventuel de 'admin' : DOIT être commité avant usage (voir migration 00).
+  -- Ici on ignore l'erreur si la valeur existe déjà ou si non commitée.
   alter type public.user_role add value if not exists 'admin';
 exception when others then null;
 end $$;
@@ -163,10 +165,13 @@ stable
 security definer
 set search_path = public
 as $$
+  -- Comparer via ::text pour éviter l'erreur 55P04
+  -- (« unsafe use of new value "admin" ») dans la même transaction
+  -- que ALTER TYPE … ADD VALUE 'admin'.
   select exists (
     select 1 from public.profiles p
     where p.id = auth.uid()
-      and p.role in ('admin', 'trainer')
+      and p.role::text in ('admin', 'trainer')
       and p.active
   );
 $$;
