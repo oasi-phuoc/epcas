@@ -1,14 +1,37 @@
 import type { ReactNode } from "react";
 
 function formatInline(text: string): ReactNode[] {
-  // Gras **…** · liens [label](url) · code `…`
-  const parts = text.split(/(\*\*[^*]+\*\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g);
+  // Gras · surlignage · italique · code · liens
+  const parts = text.split(
+    /(\*\*[^*]+\*\*|==[^=]+==|\*[^*]+\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g,
+  );
   return parts.map((part, i) => {
     if (part.startsWith("**") && part.endsWith("**")) {
       return (
         <strong key={i} className="font-semibold text-ink">
           {part.slice(2, -2)}
         </strong>
+      );
+    }
+    if (part.startsWith("==") && part.endsWith("==")) {
+      return (
+        <mark
+          key={i}
+          className="rounded bg-warning-soft px-0.5 text-ink"
+        >
+          {part.slice(2, -2)}
+        </mark>
+      );
+    }
+    if (
+      part.startsWith("*") &&
+      part.endsWith("*") &&
+      !part.startsWith("**")
+    ) {
+      return (
+        <em key={i} className="italic text-ink-muted">
+          {part.slice(1, -1)}
+        </em>
       );
     }
     if (part.startsWith("`") && part.endsWith("`")) {
@@ -49,7 +72,6 @@ function parseTableBlock(lines: string[], start: number) {
       .replace(/\|$/, "")
       .split("|")
       .map((c) => c.trim());
-    // Ignore separator row | --- |
     if (!cells.every((c) => /^:?-+:?$/.test(c))) {
       rows.push(cells);
     }
@@ -65,6 +87,14 @@ export function MarkdownLite({ text }: { text: string }) {
 
   while (i < lines.length) {
     const line = lines[i];
+
+    if (/^---+$/.test(line.trim())) {
+      nodes.push(
+        <hr key={i} className="my-5 border-0 border-t border-border" />,
+      );
+      i += 1;
+      continue;
+    }
 
     if (line.trim().startsWith("|")) {
       const { rows, nextIndex } = parseTableBlock(lines, i);
@@ -89,7 +119,10 @@ export function MarkdownLite({ text }: { text: string }) {
                 {body.map((row, ri) => (
                   <tr key={ri} className="border-b border-border/70">
                     {row.map((cell, ci) => (
-                      <td key={ci} className="px-3 py-2 text-ink-muted">
+                      <td
+                        key={ci}
+                        className="px-3 py-2 text-justify text-ink-muted"
+                      >
                         {formatInline(cell)}
                       </td>
                     ))}
@@ -108,7 +141,7 @@ export function MarkdownLite({ text }: { text: string }) {
       nodes.push(
         <blockquote
           key={i}
-          className="my-3 border-l-4 border-primary/40 bg-primary-soft/40 px-4 py-2 text-ink-muted italic"
+          className="my-3 border-l-4 border-primary/40 bg-primary-soft/40 px-4 py-2 text-justify text-ink-muted italic"
         >
           {formatInline(line.slice(2))}
         </blockquote>,
@@ -140,13 +173,13 @@ export function MarkdownLite({ text }: { text: string }) {
       );
     } else if (line.startsWith("- ") || line.startsWith("* ")) {
       nodes.push(
-        <li key={i} className="ml-5 list-disc text-ink-muted">
+        <li key={i} className="ml-5 list-disc text-justify text-ink-muted">
           {formatInline(line.slice(2))}
         </li>,
       );
     } else if (/^\d+\.\s/.test(line)) {
       nodes.push(
-        <li key={i} className="ml-5 list-decimal text-ink-muted">
+        <li key={i} className="ml-5 list-decimal text-justify text-ink-muted">
           {formatInline(line.replace(/^\d+\.\s/, ""))}
         </li>,
       );
@@ -154,7 +187,7 @@ export function MarkdownLite({ text }: { text: string }) {
       nodes.push(<div key={i} className="h-2" />);
     } else {
       nodes.push(
-        <p key={i} className="text-ink-muted leading-relaxed">
+        <p key={i} className="text-justify text-ink-muted leading-relaxed">
           {formatInline(line)}
         </p>,
       );

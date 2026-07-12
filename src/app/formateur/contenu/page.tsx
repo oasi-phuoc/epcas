@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useMemo, useRef, useState } from "react";
 import {
   Alert,
   Badge,
@@ -13,6 +13,7 @@ import {
   TextField,
 } from "@/components/ui";
 import { MarkdownLite } from "@/components/MarkdownLite";
+import { MarkdownToolbar } from "@/components/MarkdownToolbar";
 import { useAppStore } from "@/lib/store";
 import type { Lesson } from "@/lib/types";
 import { Eye, Pencil } from "lucide-react";
@@ -29,7 +30,11 @@ function LessonEditor({
   const [summary, setSummary] = useState(lesson.contentSummary);
   const [saved, setSaved] = useState(false);
   const [mode, setMode] = useState<"edit" | "preview">("edit");
-  const [previewWhich, setPreviewWhich] = useState<"full" | "summary">("full");
+  const [which, setWhich] = useState<"full" | "summary">("full");
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const activeValue = which === "full" ? full : summary;
+  const setActiveValue = which === "full" ? setFull : setSummary;
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -64,77 +69,88 @@ function LessonEditor({
           <Eye className="h-4 w-4" />
           Preview
         </Button>
-        {mode === "preview" ? (
-          <div className="ml-auto flex flex-wrap gap-2">
-            <Button
-              type="button"
-              size="sm"
-              variant={previewWhich === "full" ? "primary" : "ghost"}
-              onClick={() => setPreviewWhich("full")}
-            >
-              Complet
-            </Button>
-            <Button
-              type="button"
-              size="sm"
-              variant={previewWhich === "summary" ? "primary" : "ghost"}
-              onClick={() => setPreviewWhich("summary")}
-            >
-              Résumé
-            </Button>
-          </div>
-        ) : null}
+        <div className="ml-auto flex flex-wrap gap-2">
+          <Button
+            type="button"
+            size="sm"
+            variant={which === "full" ? "primary" : "ghost"}
+            onClick={() => setWhich("full")}
+          >
+            Complet
+          </Button>
+          <Button
+            type="button"
+            size="sm"
+            variant={which === "summary" ? "primary" : "ghost"}
+            onClick={() => setWhich("summary")}
+          >
+            Résumé
+          </Button>
+        </div>
       </div>
+
+      <TextField
+        label="Titre de la page"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        required
+      />
 
       {mode === "edit" ? (
         <>
-          <TextField
-            label="Titre de la page"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
+          <MarkdownToolbar
+            textareaRef={textareaRef}
+            value={activeValue}
+            onChange={setActiveValue}
           />
           <TextArea
-            label="Contenu complet"
-            className="min-h-48 font-mono text-sm"
-            value={full}
-            onChange={(e) => setFull(e.target.value)}
-            hint="Markdown : ## titres, - listes, **gras**, tableaux |"
-            required
-          />
-          <TextArea
-            label="Contenu résumé"
-            className="min-h-32 font-mono text-sm"
-            value={summary}
-            onChange={(e) => setSummary(e.target.value)}
-            hint="Points clés uniquement"
+            ref={textareaRef}
+            label={
+              which === "full"
+                ? "Contenu complet"
+                : "Contenu résumé"
+            }
+            className="min-h-72 text-justify text-sm leading-relaxed"
+            value={activeValue}
+            onChange={(e) => setActiveValue(e.target.value)}
+            hint="Sélectionnez du texte puis utilisez les boutons ci-dessus (comme Word)."
             required
           />
         </>
       ) : (
         <div className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-4 sm:p-5">
           <div className="mb-4 flex flex-wrap items-center gap-2">
-            <Badge tone={previewWhich === "summary" ? "accent" : "primary"}>
-              {previewWhich === "summary" ? "Résumé" : "Complet"}
+            <Badge tone={which === "summary" ? "accent" : "primary"}>
+              {which === "summary" ? "Résumé" : "Complet"}
             </Badge>
             <Badge tone="neutral">Preview formateur</Badge>
           </div>
           <h2 className="mb-4 font-display text-2xl text-ink sm:text-3xl">
             {title || "Sans titre"}
           </h2>
-          <MarkdownLite
-            text={previewWhich === "summary" ? summary : full}
-          />
+          <MarkdownLite text={activeValue} />
         </div>
       )}
 
       <div className="flex flex-wrap gap-2">
         <Button type="submit">Enregistrer</Button>
         {mode === "edit" ? (
-          <Button type="button" variant="secondary" onClick={() => setMode("preview")}>
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={() => setMode("preview")}
+          >
             Voir le Preview
           </Button>
-        ) : null}
+        ) : (
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={() => setMode("edit")}
+          >
+            Revenir à l&apos;édition
+          </Button>
+        )}
       </div>
       {saved ? (
         <Alert tone="success">Page enregistrée (stockage local démo).</Alert>
@@ -255,14 +271,13 @@ export default function ContenuPage() {
     <div>
       <PageHeader
         title="Contenu théorique"
-        description={`Sélectionnez un bloc EnterSite, puis un module (${modulesSorted.length} modules). Utilisez Preview pour voir la mise en forme.`}
+        description={`Éditez avec la barre de formatage (style Word), puis Preview. ${modulesSorted.length} modules.`}
       />
       <Panel>
         <div className="mb-4">
           <Alert tone="info">
-            Choisissez le <strong>Bloc</strong>, le <strong>Module</strong>,
-            puis <strong>Preview</strong> pour prévisualiser Complet / Résumé
-            comme l&apos;apprenti.
+            Sélectionnez du texte, puis cliquez sur un bouton (Titre, Gras,
+            Puces…). Complet / Résumé basculent la partie éditée ou prévisualisée.
           </Alert>
         </div>
         <div className="mb-4 grid gap-3 sm:grid-cols-3">
