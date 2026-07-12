@@ -33,13 +33,13 @@ export default function AccueilPage() {
         title={`Bonjour, ${currentUser.displayName.split(" ")[0]}`}
         description={
           isTrainer
-            ? "Gérez les comptes, le contenu et le suivi de la classe."
+            ? "Gérez les comptes, le contenu, les évaluations et le suivi de la classe."
             : "Continuez votre formation CFC Logisticien·ne."
         }
       />
 
       {isTrainer ? (
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <Panel>
             <p className="text-sm text-ink-muted">Apprentis actifs</p>
             <p className="mt-2 font-display text-3xl">
@@ -60,6 +60,17 @@ export default function AccueilPage() {
             <Link href="/formateur/contenu" className="mt-4 inline-block">
               <Button size="sm" variant="secondary">
                 Éditer le contenu
+              </Button>
+            </Link>
+          </Panel>
+          <Panel>
+            <p className="text-sm text-ink-muted">Évaluations</p>
+            <p className="mt-2 font-display text-3xl">
+              {state.assessments.length}
+            </p>
+            <Link href="/formateur/evaluations" className="mt-4 inline-block">
+              <Button size="sm" variant="secondary">
+                Créer / éditer
               </Button>
             </Link>
           </Panel>

@@ -12,6 +12,8 @@ import {
 import { initialState, DEMO_PASSWORD } from "./demo-data";
 import type {
   AppState,
+  Assessment,
+  AssessmentQuestion,
   AttemptRecord,
   Exercise,
   Lesson,
@@ -19,7 +21,7 @@ import type {
   UserAccount,
 } from "./types";
 
-const STORAGE_KEY = "epcas-logistique-v81";
+const STORAGE_KEY = "epcas-logistique-v82";
 
 type AppStore = {
   state: AppState;
@@ -38,6 +40,16 @@ type AppStore = {
   addAttempt: (attempt: Omit<AttemptRecord, "id" | "createdAt">) => void;
   getUserProgress: (userId: string) => LessonProgress[];
   getAttemptsForUser: (userId: string) => AttemptRecord[];
+  upsertAssessment: (
+    assessment: Omit<Assessment, "id" | "createdAt" | "updatedAt"> & {
+      id?: string;
+    },
+  ) => string;
+  deleteAssessment: (id: string) => void;
+  setAssessmentPublished: (id: string, published: boolean) => void;
+  upsertAssessmentQuestion: (question: AssessmentQuestion) => void;
+  deleteAssessmentQuestion: (id: string) => void;
+  getAssessmentQuestions: (assessmentId: string) => AssessmentQuestion[];
   resetDemo: () => void;
   demoPassword: string;
 };
@@ -59,6 +71,8 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
       users: parsed.users ?? initialState.users,
       progress: parsed.progress ?? {},
       attempts: parsed.attempts ?? [],
+      assessments: parsed.assessments ?? [],
+      assessmentQuestions: parsed.assessmentQuestions ?? [],
       currentUserId: parsed.currentUserId ?? null,
     };
   }
@@ -77,6 +91,8 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
     users: parsed.users ?? initialState.users,
     progress: parsed.progress ?? {},
     attempts: parsed.attempts ?? [],
+    assessments: parsed.assessments ?? [],
+    assessmentQuestions: parsed.assessmentQuestions ?? [],
     currentUserId: parsed.currentUserId ?? null,
   };
 }
@@ -147,20 +163,23 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     [state.users, state.currentUserId],
   );
 
-  const login = useCallback((email: string, password: string) => {
-    const base = memoryState ?? readStorage();
-    const user = base.users.find(
-      (u) =>
-        u.email.toLowerCase() === email.trim().toLowerCase() &&
-        u.password === password &&
-        u.active,
-    );
-    if (!user) {
-      return { ok: false, error: "Email ou mot de passe incorrect." };
-    }
-    commit((s) => ({ ...s, currentUserId: user.id }));
-    return { ok: true };
-  }, [commit, memoryState]);
+  const login = useCallback(
+    (email: string, password: string) => {
+      const base = memoryState ?? readStorage();
+      const user = base.users.find(
+        (u) =>
+          u.email.toLowerCase() === email.trim().toLowerCase() &&
+          u.password === password &&
+          u.active,
+      );
+      if (!user) {
+        return { ok: false, error: "Email ou mot de passe incorrect." };
+      }
+      commit((s) => ({ ...s, currentUserId: user.id }));
+      return { ok: true };
+    },
+    [commit, memoryState],
+  );
 
   const logout = useCallback(() => {
     commit((s) => ({ ...s, currentUserId: null }));
@@ -257,6 +276,114 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     [state.attempts],
   );
 
+  const upsertAssessment = useCallback(
+    (
+      assessment: Omit<Assessment, "id" | "createdAt" | "updatedAt"> & {
+        id?: string;
+      },
+    ) => {
+      const now = new Date().toISOString();
+      const id = assessment.id ?? `asmt-${crypto.randomUUID().slice(0, 8)}`;
+      commit((s) => {
+        if (assessment.id) {
+          return {
+            ...s,
+            assessments: s.assessments.map((a) =>
+              a.id === assessment.id
+                ? {
+                    ...a,
+                    ...assessment,
+                    id: assessment.id,
+                    updatedAt: now,
+                  }
+                : a,
+            ),
+          };
+        }
+        const created: Assessment = {
+          id,
+          title: assessment.title,
+          description: assessment.description,
+          durationMin: assessment.durationMin,
+          maxAttempts: assessment.maxAttempts,
+          published: assessment.published,
+          createdAt: now,
+          updatedAt: now,
+        };
+        return { ...s, assessments: [created, ...s.assessments] };
+      });
+      return id;
+    },
+    [commit],
+  );
+
+  const deleteAssessment = useCallback(
+    (id: string) => {
+      commit((s) => ({
+        ...s,
+        assessments: s.assessments.filter((a) => a.id !== id),
+        assessmentQuestions: s.assessmentQuestions.filter(
+          (q) => q.assessmentId !== id,
+        ),
+      }));
+    },
+    [commit],
+  );
+
+  const setAssessmentPublished = useCallback(
+    (id: string, published: boolean) => {
+      commit((s) => ({
+        ...s,
+        assessments: s.assessments.map((a) =>
+          a.id === id
+            ? { ...a, published, updatedAt: new Date().toISOString() }
+            : a,
+        ),
+      }));
+    },
+    [commit],
+  );
+
+  const upsertAssessmentQuestion = useCallback(
+    (question: AssessmentQuestion) => {
+      commit((s) => {
+        const exists = s.assessmentQuestions.some((q) => q.id === question.id);
+        return {
+          ...s,
+          assessmentQuestions: exists
+            ? s.assessmentQuestions.map((q) =>
+                q.id === question.id ? question : q,
+              )
+            : [...s.assessmentQuestions, question],
+          assessments: s.assessments.map((a) =>
+            a.id === question.assessmentId
+              ? { ...a, updatedAt: new Date().toISOString() }
+              : a,
+          ),
+        };
+      });
+    },
+    [commit],
+  );
+
+  const deleteAssessmentQuestion = useCallback(
+    (id: string) => {
+      commit((s) => ({
+        ...s,
+        assessmentQuestions: s.assessmentQuestions.filter((q) => q.id !== id),
+      }));
+    },
+    [commit],
+  );
+
+  const getAssessmentQuestions = useCallback(
+    (assessmentId: string) =>
+      state.assessmentQuestions
+        .filter((q) => q.assessmentId === assessmentId)
+        .sort((a, b) => a.order - b.order),
+    [state.assessmentQuestions],
+  );
+
   const resetDemo = useCallback(() => {
     writeStorage(initialState);
     setMemoryState(initialState);
@@ -275,6 +402,12 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     addAttempt,
     getUserProgress,
     getAttemptsForUser,
+    upsertAssessment,
+    deleteAssessment,
+    setAssessmentPublished,
+    upsertAssessmentQuestion,
+    deleteAssessmentQuestion,
+    getAssessmentQuestions,
     resetDemo,
     demoPassword: DEMO_PASSWORD,
   };

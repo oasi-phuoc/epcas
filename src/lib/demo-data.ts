@@ -110,5 +110,7 @@ export const initialState: AppState = {
     ],
   },
   attempts: [],
+  assessments: [],
+  assessmentQuestions: [],
   currentUserId: null,
 };

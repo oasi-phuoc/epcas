@@ -27,6 +27,7 @@ const trainerLinks = [
   { href: "/accueil", label: "Accueil", icon: Home },
   { href: "/formateur", label: "Suivi", icon: Users },
   { href: "/formateur/contenu", label: "Contenu", icon: BookOpen },
+  { href: "/formateur/evaluations", label: "Évaluations", icon: ClipboardCheck },
   { href: "/formateur/comptes", label: "Comptes", icon: UserRound },
   { href: "/profil", label: "Profil", icon: UserRound },
 ];
@@ -94,8 +95,13 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </main>
 
         <nav className="fixed inset-x-0 bottom-0 z-20 border-t border-border bg-surface/90 backdrop-blur-md lg:hidden">
-          <ul className="mx-auto grid max-w-lg grid-cols-5 gap-1 px-2 py-2">
-            {links.slice(0, 5).map(({ href, label, icon: Icon }) => {
+          <ul
+            className="mx-auto grid max-w-lg gap-1 px-1 py-2"
+            style={{
+              gridTemplateColumns: `repeat(${Math.min(links.length, 6)}, minmax(0, 1fr))`,
+            }}
+          >
+            {links.slice(0, 6).map(({ href, label, icon: Icon }) => {
               const active =
                 pathname === href ||
                 (href !== "/accueil" && pathname.startsWith(href));

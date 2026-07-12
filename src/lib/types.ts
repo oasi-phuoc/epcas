@@ -4,6 +4,17 @@ export type LessonStatus = "unread" | "reading" | "done";
 
 export type ExerciseType = "qcm" | "math" | "open";
 
+/** Types de questions pour les évaluations / blancs */
+export type QuestionType =
+  | "qcm"
+  | "multi"
+  | "true_false"
+  | "math"
+  | "open"
+  | "matching"
+  | "ordering"
+  | "fill_blank";
+
 export interface ClassRoom {
   id: string;
   name: string;
@@ -53,6 +64,19 @@ export interface QcmPayload {
   explanation: string;
 }
 
+export interface MultiPayload {
+  question: string;
+  choices: string[];
+  correctIndexes: number[];
+  explanation: string;
+}
+
+export interface TrueFalsePayload {
+  question: string;
+  correct: boolean;
+  explanation: string;
+}
+
 export interface MathPayload {
   question: string;
   unit?: string;
@@ -69,6 +93,35 @@ export interface OpenPayload {
   explanation: string;
 }
 
+export interface MatchingPayload {
+  question: string;
+  pairs: { left: string; right: string }[];
+  explanation: string;
+}
+
+export interface OrderingPayload {
+  question: string;
+  items: string[];
+  explanation: string;
+}
+
+export interface FillBlankPayload {
+  question: string;
+  answers: string[];
+  caseSensitive?: boolean;
+  explanation: string;
+}
+
+export type QuestionPayload =
+  | QcmPayload
+  | MultiPayload
+  | TrueFalsePayload
+  | MathPayload
+  | OpenPayload
+  | MatchingPayload
+  | OrderingPayload
+  | FillBlankPayload;
+
 export interface Exercise {
   id: string;
   lessonId?: string;
@@ -77,6 +130,27 @@ export interface Exercise {
   difficulty: "facile" | "moyen" | "difficile";
   payload: QcmPayload | MathPayload | OpenPayload;
   published: boolean;
+}
+
+export interface Assessment {
+  id: string;
+  title: string;
+  description: string;
+  durationMin: number;
+  maxAttempts: number;
+  published: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface AssessmentQuestion {
+  id: string;
+  assessmentId: string;
+  type: QuestionType;
+  title: string;
+  points: number;
+  order: number;
+  payload: QuestionPayload;
 }
 
 export interface LessonProgress {
@@ -101,6 +175,8 @@ export interface AppState {
   modules: Module[];
   lessons: Lesson[];
   exercises: Exercise[];
+  assessments: Assessment[];
+  assessmentQuestions: AssessmentQuestion[];
   progress: Record<string, LessonProgress[]>;
   attempts: AttemptRecord[];
   currentUserId: string | null;
