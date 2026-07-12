@@ -3,6 +3,7 @@
 import { FormEvent, useMemo, useState } from "react";
 import {
   Alert,
+  Badge,
   Button,
   EmptyState,
   PageHeader,
@@ -11,8 +12,10 @@ import {
   TextArea,
   TextField,
 } from "@/components/ui";
+import { MarkdownLite } from "@/components/MarkdownLite";
 import { useAppStore } from "@/lib/store";
 import type { Lesson } from "@/lib/types";
+import { Eye, Pencil } from "lucide-react";
 
 function LessonEditor({
   lesson,
@@ -25,6 +28,8 @@ function LessonEditor({
   const [full, setFull] = useState(lesson.contentFull);
   const [summary, setSummary] = useState(lesson.contentSummary);
   const [saved, setSaved] = useState(false);
+  const [mode, setMode] = useState<"edit" | "preview">("edit");
+  const [previewWhich, setPreviewWhich] = useState<"full" | "summary">("full");
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -40,29 +45,97 @@ function LessonEditor({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <TextField
-        label="Titre de la page"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        required
-      />
-      <TextArea
-        label="Contenu complet"
-        className="min-h-48"
-        value={full}
-        onChange={(e) => setFull(e.target.value)}
-        hint="Markdown simple : ## titres, - listes, **gras**"
-        required
-      />
-      <TextArea
-        label="Contenu résumé"
-        className="min-h-32"
-        value={summary}
-        onChange={(e) => setSummary(e.target.value)}
-        hint="Points clés uniquement"
-        required
-      />
-      <Button type="submit">Enregistrer</Button>
+      <div className="flex flex-wrap items-center gap-2">
+        <Button
+          type="button"
+          size="sm"
+          variant={mode === "edit" ? "primary" : "secondary"}
+          onClick={() => setMode("edit")}
+        >
+          <Pencil className="h-4 w-4" />
+          Édition
+        </Button>
+        <Button
+          type="button"
+          size="sm"
+          variant={mode === "preview" ? "primary" : "secondary"}
+          onClick={() => setMode("preview")}
+        >
+          <Eye className="h-4 w-4" />
+          Preview
+        </Button>
+        {mode === "preview" ? (
+          <div className="ml-auto flex flex-wrap gap-2">
+            <Button
+              type="button"
+              size="sm"
+              variant={previewWhich === "full" ? "primary" : "ghost"}
+              onClick={() => setPreviewWhich("full")}
+            >
+              Complet
+            </Button>
+            <Button
+              type="button"
+              size="sm"
+              variant={previewWhich === "summary" ? "primary" : "ghost"}
+              onClick={() => setPreviewWhich("summary")}
+            >
+              Résumé
+            </Button>
+          </div>
+        ) : null}
+      </div>
+
+      {mode === "edit" ? (
+        <>
+          <TextField
+            label="Titre de la page"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          />
+          <TextArea
+            label="Contenu complet"
+            className="min-h-48 font-mono text-sm"
+            value={full}
+            onChange={(e) => setFull(e.target.value)}
+            hint="Markdown : ## titres, - listes, **gras**, tableaux |"
+            required
+          />
+          <TextArea
+            label="Contenu résumé"
+            className="min-h-32 font-mono text-sm"
+            value={summary}
+            onChange={(e) => setSummary(e.target.value)}
+            hint="Points clés uniquement"
+            required
+          />
+        </>
+      ) : (
+        <div className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-4 sm:p-5">
+          <div className="mb-4 flex flex-wrap items-center gap-2">
+            <Badge tone={previewWhich === "summary" ? "accent" : "primary"}>
+              {previewWhich === "summary" ? "Résumé" : "Complet"}
+            </Badge>
+            <Badge tone="neutral">Preview formateur</Badge>
+          </div>
+          <h2 className="mb-4 font-display text-2xl text-ink sm:text-3xl">
+            {title || "Sans titre"}
+          </h2>
+          <MarkdownLite
+            text={previewWhich === "summary" ? summary : full}
+          />
+        </div>
+      )}
+
+      <div className="flex flex-wrap gap-2">
+        <Button type="submit">Enregistrer</Button>
+        {mode === "edit" ? (
+          <Button type="button" variant="secondary" onClick={() => setMode("preview")}>
+            Voir le Preview
+          </Button>
+        ) : null}
+      </div>
       {saved ? (
         <Alert tone="success">Page enregistrée (stockage local démo).</Alert>
       ) : null}
@@ -182,14 +255,14 @@ export default function ContenuPage() {
     <div>
       <PageHeader
         title="Contenu théorique"
-        description={`Sélectionnez un bloc EnterSite, puis un module (${modulesSorted.length} modules) et éditez Complet / Résumé.`}
+        description={`Sélectionnez un bloc EnterSite, puis un module (${modulesSorted.length} modules). Utilisez Preview pour voir la mise en forme.`}
       />
       <Panel>
         <div className="mb-4">
           <Alert tone="info">
-            Choisissez d&apos;abord le <strong>Bloc</strong> (100, 200…), puis le{" "}
-            <strong>Module</strong>. Si la liste est incomplète : Profil → Reset
-            démo.
+            Choisissez le <strong>Bloc</strong>, le <strong>Module</strong>,
+            puis <strong>Preview</strong> pour prévisualiser Complet / Résumé
+            comme l&apos;apprenti.
           </Alert>
         </div>
         <div className="mb-4 grid gap-3 sm:grid-cols-3">
