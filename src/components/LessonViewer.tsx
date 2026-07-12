@@ -10,6 +10,7 @@ import {
   Panel,
   Switch,
 } from "@/components/ui";
+import { AnnotatedMarkdown } from "@/components/AnnotatedMarkdown";
 import { MarkdownLite } from "@/components/MarkdownLite";
 import {
   getLessonBody,
@@ -24,8 +25,16 @@ type LessonViewerProps = {
 };
 
 export function LessonViewer({ lessonId }: LessonViewerProps) {
-  const { state, currentUser, getUserProgress, setLessonProgress, userLevel } =
-    useAppStore();
+  const {
+    state,
+    currentUser,
+    getUserProgress,
+    setLessonProgress,
+    userLevel,
+    getLessonAnnotations,
+    addTextAnnotation,
+    deleteTextAnnotations,
+  } = useAppStore();
 
   const lesson = state.lessons.find((l) => l.id === lessonId);
   const mod = lesson
@@ -65,12 +74,20 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
   const backLabel = "← Module";
 
   const summaryMode = progress?.modePref === "summary";
+  const displayMode = summaryMode ? "summary" : "full";
   const body = getLessonBody(
     lesson,
     isTrainer ? "CFC" : userLevel,
-    summaryMode ? "summary" : "full",
+    displayMode,
   );
   const isPlaceholder = body.includes("Contenu à importer");
+
+  /** Annotations personnelles : apprentis sur la théorie uniquement */
+  const canAnnotate =
+    !isTrainer && !exercisePage && currentUser.role === "apprentice";
+  const annotations = canAnnotate
+    ? getLessonAnnotations(currentUser.id, lessonId, displayMode)
+    : [];
 
   function toggleMode(checked: boolean) {
     setLessonProgress(currentUser!.id, lesson!.id, {
@@ -129,7 +146,20 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
             <Badge tone="success">Lu</Badge>
           ) : null}
         </div>
-        <MarkdownLite text={body} />
+        {canAnnotate ? (
+          <AnnotatedMarkdown
+            text={body}
+            annotations={annotations}
+            canAnnotate
+            userId={currentUser.id}
+            lessonId={lessonId}
+            mode={displayMode}
+            onAdd={addTextAnnotation}
+            onDelete={deleteTextAnnotations}
+          />
+        ) : (
+          <MarkdownLite text={body} />
+        )}
         <div className="mt-8 flex flex-wrap gap-2 border-t border-border pt-4">
           <Button onClick={markDone}>Marquer comme lu</Button>
           {!exercisePage ? (

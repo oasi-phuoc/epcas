@@ -48,10 +48,11 @@ import type {
   LessonProgress,
   Module,
   StudyYear,
+  TextAnnotation,
   UserAccount,
 } from "./types";
 
-const STORAGE_KEY = "epcas-logistique-v89";
+const STORAGE_KEY = "epcas-logistique-v90";
 
 /** Ancien placeholder OneNote : à remplacer par le curriculum dès qu'il est rempli. */
 function isPlaceholderLessonContent(text: string | undefined | null): boolean {
@@ -123,6 +124,15 @@ type AppStore = {
   upsertAssessmentQuestion: (question: AssessmentQuestion) => void;
   deleteAssessmentQuestion: (id: string) => void;
   getAssessmentQuestions: (assessmentId: string) => AssessmentQuestion[];
+  getLessonAnnotations: (
+    userId: string,
+    lessonId: string,
+    mode: "full" | "summary",
+  ) => TextAnnotation[];
+  addTextAnnotation: (
+    input: Omit<TextAnnotation, "id" | "createdAt">,
+  ) => string;
+  deleteTextAnnotations: (ids: string[]) => void;
   resetDemo: () => void;
   /** Envoie le suivi en attente (hors-ligne → online). */
   syncTrackingNow: () => Promise<{
@@ -206,6 +216,9 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
       assessments: normalizeAssessments(parsed.assessments),
       assessmentQuestions: parsed.assessmentQuestions ?? [],
       classTasks: parsed.classTasks ?? initialState.classTasks,
+      textAnnotations: Array.isArray(parsed.textAnnotations)
+        ? parsed.textAnnotations
+        : [],
       sequences: normalizeSequences(parsed.sequences, initialState.modules),
       currentUserId: parsed.currentUserId ?? null,
     };
@@ -255,6 +268,9 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
     classTasks: Array.isArray(parsed.classTasks)
       ? parsed.classTasks
       : initialState.classTasks,
+    textAnnotations: Array.isArray(parsed.textAnnotations)
+      ? parsed.textAnnotations
+      : [],
     currentUserId: parsed.currentUserId ?? null,
   };
 }
@@ -869,6 +885,44 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     [state.assessmentQuestions],
   );
 
+  const getLessonAnnotations = useCallback(
+    (userId: string, lessonId: string, mode: "full" | "summary") =>
+      (state.textAnnotations ?? []).filter(
+        (a) =>
+          a.userId === userId && a.lessonId === lessonId && a.mode === mode,
+      ),
+    [state.textAnnotations],
+  );
+
+  const addTextAnnotation = useCallback(
+    (input: Omit<TextAnnotation, "id" | "createdAt">) => {
+      const id = `anno-${crypto.randomUUID().slice(0, 8)}`;
+      const created: TextAnnotation = {
+        ...input,
+        id,
+        createdAt: new Date().toISOString(),
+      };
+      commit((s) => ({
+        ...s,
+        textAnnotations: [...(s.textAnnotations ?? []), created],
+      }));
+      return id;
+    },
+    [commit],
+  );
+
+  const deleteTextAnnotations = useCallback(
+    (ids: string[]) => {
+      if (ids.length === 0) return;
+      const set = new Set(ids);
+      commit((s) => ({
+        ...s,
+        textAnnotations: (s.textAnnotations ?? []).filter((a) => !set.has(a.id)),
+      }));
+    },
+    [commit],
+  );
+
   const resetDemo = useCallback(() => {
     writeStorage(initialState);
     setMemoryState(initialState);
@@ -932,6 +986,9 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     upsertAssessmentQuestion,
     deleteAssessmentQuestion,
     getAssessmentQuestions,
+    getLessonAnnotations,
+    addTextAnnotation,
+    deleteTextAnnotations,
     resetDemo,
     syncTrackingNow,
     refreshTrackingFromHub,
