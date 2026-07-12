@@ -32,7 +32,7 @@ export function TextField({
         <input
           id={fieldId}
           className={cn(
-            "h-11 w-full rounded-[var(--radius-md)] border border-border bg-surface px-3 text-ink placeholder:text-ink-subtle shadow-[var(--shadow-sm)] transition focus:border-primary focus:ring-2 focus:ring-primary/25",
+            "h-11 w-full rounded-[var(--radius-md)] border border-border bg-surface px-3 text-base text-ink shadow-[var(--shadow-sm)] transition placeholder:text-ink-subtle focus:border-primary focus:ring-2 focus:ring-primary/25 sm:text-sm",
             leftIcon && "pl-10",
             error && "border-danger focus:ring-danger/25",
             className,

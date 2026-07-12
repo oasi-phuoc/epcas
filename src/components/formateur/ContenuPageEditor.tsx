@@ -9,7 +9,6 @@ import {
   EmptyState,
   PageHeader,
   Panel,
-  Select,
   TextArea,
   TextField,
 } from "@/components/ui";
@@ -329,15 +328,6 @@ export function ContenuPageEditor({ pageSlug }: { pageSlug: LessonPageSlug }) {
     );
   }, [state.lessons, effectiveModuleId, pageSlug]);
 
-  const moduleOptions = useMemo(
-    () =>
-      filteredModules.map((m) => ({
-        value: m.id,
-        label: `${m.code} — ${m.title}`,
-      })),
-    [filteredModules],
-  );
-
   if (!currentUser) return null;
   if (!isStaffRole(currentUser.role)) {
     return <EmptyState title="Accès réservé aux formateurs et admins" />;
@@ -371,34 +361,77 @@ export function ContenuPageEditor({ pageSlug }: { pageSlug: LessonPageSlug }) {
       </nav>
 
       <Panel className="mb-4">
-        <div className="grid gap-3 sm:grid-cols-[1fr_minmax(14rem,1fr)]">
-          <TextField
-            label="Rechercher un module"
-            value={moduleQuery}
-            onChange={(e) => setModuleQuery(e.target.value)}
-            placeholder="Ex. 101, histoire, stockage…"
-          />
-          <Select
-            label={`Module (${moduleOptions.length})`}
-            options={
-              moduleOptions.length > 0
-                ? moduleOptions
-                : [{ value: "", label: "Aucun module trouvé" }]
-            }
-            value={effectiveModuleId}
-            onChange={(e) => setModuleId(e.target.value)}
-          />
-        </div>
+        <TextField
+          label="Rechercher un module"
+          value={moduleQuery}
+          onChange={(e) => setModuleQuery(e.target.value)}
+          placeholder="Ex. 101, histoire, stockage…"
+        />
 
         {currentModule ? (
-          <div className="mt-3 flex flex-wrap items-center gap-2">
-            <Badge>Module {currentModule.code}</Badge>
-            <span className="text-sm text-ink-muted">{currentModule.title}</span>
-            <Badge tone="accent">
-              {currentModule.levels.join(" + ")}
-            </Badge>
+          <div className="mt-3 rounded-[var(--radius-md)] border border-primary bg-primary-soft/40 px-3 py-2">
+            <p className="text-xs font-medium text-primary-strong">
+              Module sélectionné
+            </p>
+            <p className="text-sm font-medium text-ink">
+              {currentModule.code} — {currentModule.title}
+            </p>
+            <div className="mt-1 flex flex-wrap gap-2">
+              <Badge tone="accent">
+                {currentModule.levels.join(" + ")}
+              </Badge>
+            </div>
           </div>
         ) : null}
+
+        <div className="mt-3">
+          <p className="mb-2 text-sm font-medium text-ink">
+            Choisir un module ({filteredModules.length})
+          </p>
+          {filteredModules.length === 0 ? (
+            <p className="rounded-[var(--radius-md)] border border-dashed border-border px-3 py-4 text-center text-sm text-ink-subtle">
+              Aucun module pour « {moduleQuery} »
+            </p>
+          ) : (
+            <ul
+              className="max-h-56 touch-pan-y space-y-1.5 overflow-y-auto overscroll-contain rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-2 sm:max-h-72"
+              role="listbox"
+              aria-label="Modules"
+            >
+              {filteredModules.map((m) => {
+                const selected = m.id === effectiveModuleId;
+                return (
+                  <li key={m.id}>
+                    <button
+                      type="button"
+                      role="option"
+                      aria-selected={selected}
+                      onClick={() => {
+                        setModuleId(m.id);
+                        setModuleQuery("");
+                      }}
+                      className={`flex min-h-12 w-full items-start gap-2 rounded-[var(--radius-md)] border px-3 py-2.5 text-left transition active:scale-[0.99] ${
+                        selected
+                          ? "border-primary bg-primary-soft text-ink shadow-[var(--shadow-sm)]"
+                          : "border-transparent bg-surface text-ink hover:border-border hover:bg-surface"
+                      }`}
+                    >
+                      <span className="shrink-0 text-xs font-semibold text-primary-strong">
+                        {m.code}
+                      </span>
+                      <span className="min-w-0 flex-1 text-sm leading-snug">
+                        {m.title}
+                      </span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+          <p className="mt-2 text-xs text-ink-subtle">
+            Tapez pour filtrer, puis touchez un module dans la liste.
+          </p>
+        </div>
 
         <div className="mt-4">
           <p className="mb-2 text-sm font-medium text-ink">

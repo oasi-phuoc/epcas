@@ -28,7 +28,7 @@ export function Select({
       <select
         id={fieldId}
         className={cn(
-          "h-11 w-full appearance-none rounded-[var(--radius-md)] border border-border bg-surface bg-[length:1rem] bg-[right_0.75rem_center] bg-no-repeat px-3 pr-10 text-ink shadow-[var(--shadow-sm)] transition focus:border-primary focus:ring-2 focus:ring-primary/25",
+          "h-11 w-full appearance-none rounded-[var(--radius-md)] border border-border bg-surface bg-[length:1rem] bg-[right_0.75rem_center] bg-no-repeat px-3 pr-10 text-base text-ink shadow-[var(--shadow-sm)] transition focus:border-primary focus:ring-2 focus:ring-primary/25 sm:text-sm",
           "bg-[url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 24 24%27 stroke=%27%23555%27%3E%3Cpath stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27M19 9l-7 7-7-7%27/%3E%3C/svg%3E')]",
           error && "border-danger focus:ring-danger/25",
           className,
