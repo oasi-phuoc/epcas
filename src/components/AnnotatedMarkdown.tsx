@@ -8,12 +8,17 @@ import {
   useState,
   type MouseEvent,
 } from "react";
+import { HighlightColorPicker } from "@/components/HighlightColorPicker";
 import { MarkdownLite } from "@/components/MarkdownLite";
 import {
   applyAnnotationsToContainer,
   overlappingAnnotationIds,
   selectionOffsetsIn,
 } from "@/lib/annotation-dom";
+import {
+  DEFAULT_HIGHLIGHT_COLOR,
+  type HighlightColor,
+} from "@/lib/highlight-colors";
 import type { AnnotationStyle, TextAnnotation } from "@/lib/types";
 
 type ToolbarPos = { top: number; left: number };
@@ -30,13 +35,15 @@ type Props = {
   onDelete: (ids: string[]) => void;
 };
 
-const STYLE_BUTTONS: { style: AnnotationStyle; label: string; title: string }[] =
-  [
-    { style: "highlight", label: "Surlig.", title: "Surligner" },
-    { style: "underline", label: "Soulign.", title: "Souligner" },
-    { style: "italic", label: "Italique", title: "Italique" },
-    { style: "bold", label: "Gras", title: "Gras" },
-  ];
+const STYLE_BUTTONS: {
+  style: Exclude<AnnotationStyle, "highlight" | "note">;
+  label: string;
+  title: string;
+}[] = [
+  { style: "underline", label: "Soulign.", title: "Souligner" },
+  { style: "italic", label: "Italique", title: "Italique" },
+  { style: "bold", label: "Gras", title: "Gras" },
+];
 
 export function AnnotatedMarkdown({
   text,
@@ -55,6 +62,9 @@ export function AnnotatedMarkdown({
     null,
   );
   const [noteDraft, setNoteDraft] = useState<string | null>(null);
+  const [highlightColor, setHighlightColor] = useState<HighlightColor>(
+    DEFAULT_HIGHLIGHT_COLOR,
+  );
   const [openNote, setOpenNote] = useState<{
     id: string;
     note: string;
@@ -96,7 +106,7 @@ export function AnnotatedMarkdown({
     setNoteDraft(null);
     setOpenNote(null);
     setToolbar({
-      top: rect.top - wrapRect.top - 44,
+      top: rect.top - wrapRect.top - 52,
       left: Math.max(
         8,
         Math.min(
@@ -110,7 +120,6 @@ export function AnnotatedMarkdown({
   useEffect(() => {
     if (!canAnnotate) return;
     const onSel = () => {
-      // Laisse le temps au clic toolbar (mousedown preventDefault)
       requestAnimationFrame(() => {
         const sel = window.getSelection();
         if (!sel || sel.isCollapsed) return;
@@ -125,7 +134,10 @@ export function AnnotatedMarkdown({
     };
   }, [canAnnotate, captureSelection]);
 
-  function applyStyle(style: AnnotationStyle, note?: string) {
+  function applyStyle(
+    style: AnnotationStyle,
+    opts?: { note?: string; color?: HighlightColor },
+  ) {
     if (!pending || pending.end <= pending.start) return;
     onAdd({
       userId,
@@ -134,7 +146,11 @@ export function AnnotatedMarkdown({
       start: pending.start,
       end: pending.end,
       style,
-      note: note?.trim() || undefined,
+      color:
+        style === "highlight"
+          ? opts?.color ?? highlightColor
+          : undefined,
+      note: opts?.note?.trim() || undefined,
     });
     window.getSelection()?.removeAllRanges();
     hideToolbar();
@@ -181,9 +197,9 @@ export function AnnotatedMarkdown({
     <div ref={wrapRef} className="relative">
       {canAnnotate ? (
         <p className="mb-3 text-sm text-ink-muted">
-          Sélectionnez un passage pour surligner, souligner, mettre en gras /
-          italique ou ajouter une annotation. Le texte d’origine ne peut pas
-          être modifié.
+          Sélectionnez un passage pour surligner (couleurs), souligner, gras /
+          italique ou ajouter une note. Le texte d’origine ne peut pas être
+          modifié.
         </p>
       ) : null}
 
@@ -197,7 +213,7 @@ export function AnnotatedMarkdown({
 
       {toolbar && pending && canAnnotate ? (
         <div
-          className="absolute z-20 -translate-x-1/2 rounded-lg border border-border bg-surface px-1.5 py-1 shadow-md"
+          className="absolute z-20 -translate-x-1/2 rounded-lg border border-border bg-surface px-1.5 py-1.5 shadow-md"
           style={{ top: Math.max(0, toolbar.top), left: toolbar.left }}
           onMouseDown={(e) => e.preventDefault()}
           role="toolbar"
@@ -216,7 +232,7 @@ export function AnnotatedMarkdown({
                 <button
                   type="button"
                   className="rounded bg-primary px-2 py-1 text-xs font-medium text-white"
-                  onClick={() => applyStyle("note", noteDraft)}
+                  onClick={() => applyStyle("note", { note: noteDraft })}
                 >
                   Enregistrer
                 </button>
@@ -230,35 +246,50 @@ export function AnnotatedMarkdown({
               </div>
             </div>
           ) : (
-            <div className="flex flex-wrap items-center gap-0.5">
-              {STYLE_BUTTONS.map((b) => (
+            <div className="flex flex-col gap-1.5">
+              <div className="flex flex-wrap items-center gap-1 px-0.5">
+                <span className="text-[10px] font-medium text-ink-subtle">
+                  Surlig.
+                </span>
+                <HighlightColorPicker
+                  value={highlightColor}
+                  onChange={setHighlightColor}
+                  onPick={(color) => {
+                    setHighlightColor(color);
+                    applyStyle("highlight", { color });
+                  }}
+                />
+              </div>
+              <div className="flex flex-wrap items-center gap-0.5">
+                {STYLE_BUTTONS.map((b) => (
+                  <button
+                    key={b.style}
+                    type="button"
+                    title={b.title}
+                    className="rounded px-2 py-1 text-xs font-medium text-ink hover:bg-surface-muted"
+                    onClick={() => applyStyle(b.style)}
+                  >
+                    {b.label}
+                  </button>
+                ))}
                 <button
-                  key={b.style}
                   type="button"
-                  title={b.title}
+                  title="Ajouter une annotation"
                   className="rounded px-2 py-1 text-xs font-medium text-ink hover:bg-surface-muted"
-                  onClick={() => applyStyle(b.style)}
+                  onClick={() => setNoteDraft("")}
                 >
-                  {b.label}
+                  Note
                 </button>
-              ))}
-              <button
-                type="button"
-                title="Ajouter une annotation"
-                className="rounded px-2 py-1 text-xs font-medium text-ink hover:bg-surface-muted"
-                onClick={() => setNoteDraft("")}
-              >
-                Note
-              </button>
-              <span className="mx-0.5 h-4 w-px bg-border" aria-hidden />
-              <button
-                type="button"
-                title="Effacer les annotations sur la sélection"
-                className="rounded px-2 py-1 text-xs font-medium text-danger hover:bg-danger-soft"
-                onClick={eraseOverlapping}
-              >
-                Effacer
-              </button>
+                <span className="mx-0.5 h-4 w-px bg-border" aria-hidden />
+                <button
+                  type="button"
+                  title="Effacer les annotations sur la sélection"
+                  className="rounded px-2 py-1 text-xs font-medium text-danger hover:bg-danger-soft"
+                  onClick={eraseOverlapping}
+                >
+                  Effacer
+                </button>
+              </div>
             </div>
           )}
         </div>
@@ -271,7 +302,9 @@ export function AnnotatedMarkdown({
           role="dialog"
           aria-label="Annotation"
         >
-          <p className="mb-2 whitespace-pre-wrap text-ink-muted">{openNote.note}</p>
+          <p className="mb-2 whitespace-pre-wrap text-ink-muted">
+            {openNote.note}
+          </p>
           {canAnnotate ? (
             <button
               type="button"

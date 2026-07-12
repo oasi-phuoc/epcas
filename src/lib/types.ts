@@ -241,6 +241,15 @@ export type AnnotationStyle =
   | "italic"
   | "note";
 
+/** Couleur de surlignage (markdown formateur + annotations élèves) */
+export type HighlightColorId =
+  | "yellow"
+  | "green"
+  | "blue"
+  | "pink"
+  | "orange"
+  | "violet";
+
 /** Annotation personnelle sur une leçon — calquée sur le texte affiché, pas sur le markdown source */
 export interface TextAnnotation {
   id: string;
@@ -251,6 +260,8 @@ export interface TextAnnotation {
   start: number;
   end: number;
   style: AnnotationStyle;
+  /** Couleur du surlignage (défaut : jaune) */
+  color?: HighlightColorId;
   /** Texte libre pour le style "note" */
   note?: string;
   createdAt: string;

@@ -1,5 +1,11 @@
 /** Helpers DOM pour annotations en lecture seule (offsets sur texte plat). */
 
+import {
+  highlightClassName,
+  normalizeHighlightColor,
+  type HighlightColor,
+} from "@/lib/highlight-colors";
+
 export const ANNOTATION_CLASS = "epcas-anno";
 
 export function getPlainText(root: Node): string {
@@ -15,7 +21,7 @@ export function getPlainText(root: Node): string {
 
 export function findTextPosition(
   root: Node,
-  targetOffset: number
+  targetOffset: number,
 ): { node: Text; offset: number } | null {
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
   let remaining = targetOffset;
@@ -34,7 +40,7 @@ export function findTextPosition(
 /** Offsets absolus d’une sélection dans `root` (texte plat). */
 export function selectionOffsetsIn(
   root: HTMLElement,
-  selection: Selection
+  selection: Selection,
 ): { start: number; end: number } | null {
   if (selection.rangeCount === 0 || selection.isCollapsed) return null;
   const range = selection.getRangeAt(0);
@@ -59,10 +65,10 @@ export function clearAnnotationMarks(root: HTMLElement): void {
   root.normalize();
 }
 
-function styleClasses(style: string): string {
+function styleClasses(style: string, color?: HighlightColor | string): string {
   switch (style) {
     case "highlight":
-      return "epcas-anno-highlight";
+      return `epcas-anno-highlight ${highlightClassName(normalizeHighlightColor(color))}`;
     case "underline":
       return "epcas-anno-underline";
     case "italic":
@@ -72,16 +78,21 @@ function styleClasses(style: string): string {
     case "note":
       return "epcas-anno-note";
     default:
-      return "epcas-anno-highlight";
+      return `epcas-anno-highlight ${highlightClassName(normalizeHighlightColor(color))}`;
   }
 }
 
 export function wrapRangeWithMark(
   range: Range,
-  opts: { id: string; style: string; hasNote: boolean }
+  opts: {
+    id: string;
+    style: string;
+    hasNote: boolean;
+    color?: HighlightColor | string;
+  },
 ): HTMLElement | null {
   const mark = document.createElement("mark");
-  mark.className = `${ANNOTATION_CLASS} ${styleClasses(opts.style)}`;
+  mark.className = `${ANNOTATION_CLASS} ${styleClasses(opts.style, opts.color)}`;
   mark.dataset.annotationId = opts.id;
   if (opts.hasNote) mark.dataset.hasNote = "1";
   mark.title = opts.hasNote ? "Annotation — cliquer pour voir" : "";
@@ -107,12 +118,13 @@ export function applyAnnotationsToContainer(
     start: number;
     end: number;
     style: string;
+    color?: string;
     note?: string;
-  }>
+  }>,
 ): void {
   clearAnnotationMarks(root);
   const sorted = [...annotations].sort(
-    (a, b) => b.start - a.start || b.end - a.end
+    (a, b) => b.start - a.start || b.end - a.end,
   );
 
   for (const ann of sorted) {
@@ -127,6 +139,7 @@ export function applyAnnotationsToContainer(
       wrapRangeWithMark(range, {
         id: ann.id,
         style: ann.style,
+        color: ann.color,
         hasNote: Boolean(ann.note?.trim()),
       });
     } catch {
@@ -139,7 +152,7 @@ export function applyAnnotationsToContainer(
 export function overlappingAnnotationIds(
   annotations: Array<{ id: string; start: number; end: number }>,
   start: number,
-  end: number
+  end: number,
 ): string[] {
   return annotations
     .filter((a) => a.start < end && a.end > start)

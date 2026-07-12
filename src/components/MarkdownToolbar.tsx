@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode, RefObject } from "react";
+import { useState, type ReactNode, type RefObject } from "react";
 import {
   Bold,
   Heading1,
@@ -16,7 +16,13 @@ import {
   RemoveFormatting,
   Table2,
 } from "lucide-react";
+import { HighlightColorPicker } from "@/components/HighlightColorPicker";
 import { cn } from "@/lib/cn";
+import {
+  DEFAULT_HIGHLIGHT_COLOR,
+  type HighlightColor,
+  wrapHighlightMarkdown,
+} from "@/lib/highlight-colors";
 
 type Props = {
   textareaRef: RefObject<HTMLTextAreaElement | null>;
@@ -62,7 +68,8 @@ function applyInline(
 ) {
   const selected = value.slice(start, end);
   const inner = selected || placeholder;
-  const next = value.slice(0, start) + before + inner + after + value.slice(end);
+  const next =
+    value.slice(0, start) + before + inner + after + value.slice(end);
   const selStart = start + before.length;
   const selEnd = selStart + inner.length;
   return { next, selStart, selEnd };
@@ -98,6 +105,10 @@ function applyLinePrefix(
 }
 
 export function MarkdownToolbar({ textareaRef, value, onChange }: Props) {
+  const [highlightColor, setHighlightColor] = useState<HighlightColor>(
+    DEFAULT_HIGHLIGHT_COLOR,
+  );
+
   function focusAndSelect(selStart: number, selEnd: number) {
     requestAnimationFrame(() => {
       const el = textareaRef.current;
@@ -122,188 +133,221 @@ export function MarkdownToolbar({ textareaRef, value, onChange }: Props) {
     focusAndSelect(selStart, selEnd);
   }
 
+  function applyHighlight(color: HighlightColor = highlightColor) {
+    withSelection((v, s, e) => {
+      const selected = v.slice(s, e) || "texte important";
+      const wrapped = wrapHighlightMarkdown(selected, color);
+      const next = v.slice(0, s) + wrapped + v.slice(e);
+      const prefixLen = wrapped.indexOf(selected);
+      const selStart = s + (prefixLen >= 0 ? prefixLen : 2);
+      return { next, selStart, selEnd: selStart + selected.length };
+    });
+  }
+
   return (
-    <div className="flex flex-wrap gap-1.5 rounded-[var(--radius-md)] border border-border bg-surface-muted/50 p-2">
-      <ToolBtn
-        label="Titre"
-        title="Titre (##)"
-        onClick={() =>
-          withSelection((v, s, e) =>
-            applyLinePrefix(v, s, e, (line) => `## ${line || "Titre"}`),
-          )
-        }
-      >
-        <Heading1 className="h-4 w-4" />
-      </ToolBtn>
-      <ToolBtn
-        label="Sous-titre"
-        title="Sous-titre (###)"
-        onClick={() =>
-          withSelection((v, s, e) =>
-            applyLinePrefix(v, s, e, (line) => `### ${line || "Sous-titre"}`),
-          )
-        }
-      >
-        <Heading2 className="h-4 w-4" />
-      </ToolBtn>
-      <ToolBtn
-        label="Petit titre"
-        title="Petit titre (####)"
-        onClick={() =>
-          withSelection((v, s, e) =>
-            applyLinePrefix(v, s, e, (line) => `#### ${line || "Petit titre"}`),
-          )
-        }
-      >
-        <Heading3 className="h-4 w-4" />
-      </ToolBtn>
+    <div className="space-y-2 rounded-[var(--radius-md)] border border-border bg-surface-muted/50 p-2">
+      <div className="flex flex-wrap gap-1.5">
+        <ToolBtn
+          label="Titre"
+          title="Titre (##)"
+          onClick={() =>
+            withSelection((v, s, e) =>
+              applyLinePrefix(v, s, e, (line) => `## ${line || "Titre"}`),
+            )
+          }
+        >
+          <Heading1 className="h-4 w-4" />
+        </ToolBtn>
+        <ToolBtn
+          label="Sous-titre"
+          title="Sous-titre (###)"
+          onClick={() =>
+            withSelection((v, s, e) =>
+              applyLinePrefix(v, s, e, (line) => `### ${line || "Sous-titre"}`),
+            )
+          }
+        >
+          <Heading2 className="h-4 w-4" />
+        </ToolBtn>
+        <ToolBtn
+          label="Petit titre"
+          title="Petit titre (####)"
+          onClick={() =>
+            withSelection((v, s, e) =>
+              applyLinePrefix(
+                v,
+                s,
+                e,
+                (line) => `#### ${line || "Petit titre"}`,
+              ),
+            )
+          }
+        >
+          <Heading3 className="h-4 w-4" />
+        </ToolBtn>
 
-      <span className="mx-0.5 hidden h-9 w-px bg-border sm:block" />
+        <span className="mx-0.5 hidden h-9 w-px bg-border sm:block" />
 
-      <ToolBtn
-        label="Gras"
-        title="Mise en évidence / gras"
-        onClick={() =>
-          withSelection((v, s, e) => applyInline(v, s, e, "**", "**", "texte"))
-        }
-      >
-        <Bold className="h-4 w-4" />
-      </ToolBtn>
-      <ToolBtn
-        label="Italique"
-        title="Italique"
-        onClick={() =>
-          withSelection((v, s, e) => applyInline(v, s, e, "*", "*", "texte"))
-        }
-      >
-        <Italic className="h-4 w-4" />
-      </ToolBtn>
-      <ToolBtn
-        label="Surligner"
-        title="Surlignage (mise en évidence)"
-        onClick={() =>
-          withSelection((v, s, e) =>
-            applyInline(v, s, e, "==", "==", "texte important"),
-          )
-        }
-      >
-        <Highlighter className="h-4 w-4" />
-      </ToolBtn>
+        <ToolBtn
+          label="Gras"
+          title="Mise en évidence / gras"
+          onClick={() =>
+            withSelection((v, s, e) =>
+              applyInline(v, s, e, "**", "**", "texte"),
+            )
+          }
+        >
+          <Bold className="h-4 w-4" />
+        </ToolBtn>
+        <ToolBtn
+          label="Italique"
+          title="Italique"
+          onClick={() =>
+            withSelection((v, s, e) => applyInline(v, s, e, "*", "*", "texte"))
+          }
+        >
+          <Italic className="h-4 w-4" />
+        </ToolBtn>
+        <ToolBtn
+          label="Surligner"
+          title="Surlignage (couleur sélectionnée)"
+          onClick={() => applyHighlight()}
+        >
+          <Highlighter className="h-4 w-4" />
+        </ToolBtn>
 
-      <span className="mx-0.5 hidden h-9 w-px bg-border sm:block" />
+        <span className="mx-0.5 hidden h-9 w-px bg-border sm:block" />
 
-      <ToolBtn
-        label="Puces"
-        title="Liste à puces"
-        onClick={() =>
-          withSelection((v, s, e) =>
-            applyLinePrefix(v, s, e, (line) => `- ${line || "Élément"}`),
-          )
-        }
-      >
-        <List className="h-4 w-4" />
-      </ToolBtn>
-      <ToolBtn
-        label="Numéros"
-        title="Liste numérotée"
-        onClick={() =>
-          withSelection((v, s, e) =>
-            applyLinePrefix(
-              v,
-              s,
-              e,
-              (line, i) => `${i + 1}. ${line || "Élément"}`,
-            ),
-          )
-        }
-      >
-        <ListOrdered className="h-4 w-4" />
-      </ToolBtn>
-      <ToolBtn
-        label="Citation"
-        title="Citation / remarque"
-        onClick={() =>
-          withSelection((v, s, e) =>
-            applyLinePrefix(v, s, e, (line) => `> ${line || "Remarque"}`),
-          )
-        }
-      >
-        <Quote className="h-4 w-4" />
-      </ToolBtn>
+        <ToolBtn
+          label="Puces"
+          title="Liste à puces"
+          onClick={() =>
+            withSelection((v, s, e) =>
+              applyLinePrefix(v, s, e, (line) => `- ${line || "Élément"}`),
+            )
+          }
+        >
+          <List className="h-4 w-4" />
+        </ToolBtn>
+        <ToolBtn
+          label="Numéros"
+          title="Liste numérotée"
+          onClick={() =>
+            withSelection((v, s, e) =>
+              applyLinePrefix(
+                v,
+                s,
+                e,
+                (line, i) => `${i + 1}. ${line || "Élément"}`,
+              ),
+            )
+          }
+        >
+          <ListOrdered className="h-4 w-4" />
+        </ToolBtn>
+        <ToolBtn
+          label="Citation"
+          title="Citation / remarque"
+          onClick={() =>
+            withSelection((v, s, e) =>
+              applyLinePrefix(v, s, e, (line) => `> ${line || "Remarque"}`),
+            )
+          }
+        >
+          <Quote className="h-4 w-4" />
+        </ToolBtn>
 
-      <span className="mx-0.5 hidden h-9 w-px bg-border sm:block" />
+        <span className="mx-0.5 hidden h-9 w-px bg-border sm:block" />
 
-      <ToolBtn
-        label="Lien"
-        title="Insérer un lien"
-        onClick={() =>
-          withSelection((v, s, e) => {
-            const selected = v.slice(s, e) || "texte du lien";
-            const insert = `[${selected}](https://)`;
-            const next = v.slice(0, s) + insert + v.slice(e);
-            // sélectionner l'URL
-            const urlStart = s + selected.length + 3;
-            return { next, selStart: urlStart, selEnd: urlStart + 8 };
-          })
-        }
-      >
-        <Link2 className="h-4 w-4" />
-      </ToolBtn>
-      <ToolBtn
-        label="Tableau"
-        title="Insérer un tableau"
-        onClick={() =>
-          withSelection((v, s, e) => {
-            const table =
-              "| Colonne 1 | Colonne 2 |\n| --- | --- |\n| Valeur | Valeur |";
-            const before = s > 0 && v[s - 1] !== "\n" ? "\n\n" : "";
-            const after = "\n\n";
-            const insert = before + table + after;
-            const next = v.slice(0, s) + insert + v.slice(e);
-            const selStart = s + before.length;
-            return { next, selStart, selEnd: selStart + table.length };
-          })
-        }
-      >
-        <Table2 className="h-4 w-4" />
-      </ToolBtn>
-      <ToolBtn
-        label="Ligne"
-        title="Ligne de séparation"
-        onClick={() =>
-          withSelection((v, s) => {
-            const before = s > 0 && v[s - 1] !== "\n" ? "\n\n" : "\n";
-            const insert = `${before}---\n\n`;
-            const next = v.slice(0, s) + insert + v.slice(s);
-            const pos = s + insert.length;
-            return { next, selStart: pos, selEnd: pos };
-          })
-        }
-      >
-        <Minus className="h-4 w-4" />
-      </ToolBtn>
-      <ToolBtn
-        label="Nettoyer"
-        title="Retirer le formatage de la sélection"
-        onClick={() =>
-          withSelection((v, s, e) => {
-            const selected = v.slice(s, e);
-            const cleaned = selected
-              .replace(/\*\*/g, "")
-              .replace(/==/g, "")
-              .replace(/(^|[^*])\*([^*]+)\*(?!\*)/g, "$1$2")
-              .replace(/^#{1,6}\s+/gm, "")
-              .replace(/^>\s+/gm, "")
-              .replace(/^[-*]\s+/gm, "")
-              .replace(/^\d+\.\s+/gm, "")
-              .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
-            const next = v.slice(0, s) + cleaned + v.slice(e);
-            return { next, selStart: s, selEnd: s + cleaned.length };
-          })
-        }
-      >
-        <RemoveFormatting className="h-4 w-4" />
-      </ToolBtn>
+        <ToolBtn
+          label="Lien"
+          title="Insérer un lien"
+          onClick={() =>
+            withSelection((v, s, e) => {
+              const selected = v.slice(s, e) || "texte du lien";
+              const insert = `[${selected}](https://)`;
+              const next = v.slice(0, s) + insert + v.slice(e);
+              const urlStart = s + selected.length + 3;
+              return { next, selStart: urlStart, selEnd: urlStart + 8 };
+            })
+          }
+        >
+          <Link2 className="h-4 w-4" />
+        </ToolBtn>
+        <ToolBtn
+          label="Tableau"
+          title="Insérer un tableau"
+          onClick={() =>
+            withSelection((v, s, e) => {
+              const table =
+                "| Colonne 1 | Colonne 2 |\n| --- | --- |\n| Valeur | Valeur |";
+              const before = s > 0 && v[s - 1] !== "\n" ? "\n\n" : "";
+              const after = "\n\n";
+              const insert = before + table + after;
+              const next = v.slice(0, s) + insert + v.slice(e);
+              const selStart = s + before.length;
+              return { next, selStart, selEnd: selStart + table.length };
+            })
+          }
+        >
+          <Table2 className="h-4 w-4" />
+        </ToolBtn>
+        <ToolBtn
+          label="Ligne"
+          title="Ligne de séparation"
+          onClick={() =>
+            withSelection((v, s) => {
+              const before = s > 0 && v[s - 1] !== "\n" ? "\n\n" : "\n";
+              const insert = `${before}---\n\n`;
+              const next = v.slice(0, s) + insert + v.slice(s);
+              const pos = s + insert.length;
+              return { next, selStart: pos, selEnd: pos };
+            })
+          }
+        >
+          <Minus className="h-4 w-4" />
+        </ToolBtn>
+        <ToolBtn
+          label="Nettoyer"
+          title="Retirer le formatage de la sélection"
+          onClick={() =>
+            withSelection((v, s, e) => {
+              const selected = v.slice(s, e);
+              const cleaned = selected
+                .replace(/\*\*/g, "")
+                .replace(/==\[\w+\]/g, "")
+                .replace(/==/g, "")
+                .replace(/(^|[^*])\*([^*]+)\*(?!\*)/g, "$1$2")
+                .replace(/^#{1,6}\s+/gm, "")
+                .replace(/^>\s+/gm, "")
+                .replace(/^[-*]\s+/gm, "")
+                .replace(/^\d+\.\s+/gm, "")
+                .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+              const next = v.slice(0, s) + cleaned + v.slice(e);
+              return { next, selStart: s, selEnd: s + cleaned.length };
+            })
+          }
+        >
+          <RemoveFormatting className="h-4 w-4" />
+        </ToolBtn>
+      </div>
+
+      <div className="flex flex-wrap items-center gap-2 border-t border-border/70 pt-2">
+        <span className="text-xs font-medium text-ink-muted">
+          Couleur surlignage
+        </span>
+        <HighlightColorPicker
+          value={highlightColor}
+          onChange={setHighlightColor}
+          onPick={(color) => {
+            setHighlightColor(color);
+            applyHighlight(color);
+          }}
+        />
+        <span className="text-[11px] text-ink-subtle">
+          Défaut : jaune — cliquez une pastille pour appliquer
+        </span>
+      </div>
     </div>
   );
 }
