@@ -33,11 +33,6 @@ export default function HomePage() {
             <Link href="/connexion">
               <Button size="lg">Se connecter</Button>
             </Link>
-            <Link href="/connexion?demo=apprenti">
-              <Button size="lg" variant="secondary">
-                Démo apprenti
-              </Button>
-            </Link>
           </div>
         </div>
 

@@ -21,7 +21,6 @@ export default function ParametresPage() {
   const {
     currentUser,
     logout,
-    resetDemo,
     getUserProgress,
     getAttemptsForUser,
     state,
@@ -103,16 +102,6 @@ export default function ParametresPage() {
               <Button variant="secondary" onClick={logout}>
                 Déconnexion
               </Button>
-              <Button
-                variant="ghost"
-                onClick={() => {
-                  if (confirm("Réinitialiser les données démo locales ?")) {
-                    resetDemo();
-                  }
-                }}
-              >
-                Reset démo
-              </Button>
             </div>
           </Panel>
           {currentUser.role === "apprentice" ? (
@@ -135,7 +124,8 @@ export default function ParametresPage() {
               <Alert tone="info">
                 Compte {ROLE_LABELS[currentUser.role].toLowerCase()} : gérez les
                 comptes, séquences et contenus depuis le menu dédié. L’onglet
-                Hors-ligne permet de précharger le catalogue pour les démos.
+                Hors-ligne permet de précharger le catalogue pour une utilisation
+                sans connexion.
               </Alert>
             </Panel>
           )}

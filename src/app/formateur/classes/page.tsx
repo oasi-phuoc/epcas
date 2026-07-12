@@ -36,7 +36,6 @@ export default function ClassesHubPage() {
     upsertClass,
     setClassActive,
     upsertUser,
-    demoPassword,
     getUserProgress,
     getAttemptsForUser,
   } = useAppStore();
@@ -49,7 +48,7 @@ export default function ClassesHubPage() {
 
   const [stuName, setStuName] = useState("");
   const [stuEmail, setStuEmail] = useState("");
-  const [stuPassword, setStuPassword] = useState(demoPassword);
+  const [stuPassword, setStuPassword] = useState("");
   const [stuRole, setStuRole] = useState<Role>("apprentice");
   const [stuLevel, setStuLevel] = useState<DiplomaLevel>("CFC");
   const [stuYear, setStuYear] = useState<StudyYear>(1);
@@ -130,10 +129,14 @@ export default function ClassesHubPage() {
       }
     }
     if (!classId) return;
+    if (!stuPassword.trim()) {
+      setMessage("Indiquez un mot de passe pour le compte.");
+      return;
+    }
 
     upsertUser({
       email: stuEmail.trim().toLowerCase(),
-      password: stuPassword || demoPassword,
+      password: stuPassword.trim(),
       displayName: stuName.trim(),
       role: stuRole,
       classId,
@@ -141,7 +144,7 @@ export default function ClassesHubPage() {
     });
     setStuName("");
     setStuEmail("");
-    setStuPassword(demoPassword);
+    setStuPassword("");
     setMessage("Compte créé.");
   }
 

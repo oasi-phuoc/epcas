@@ -13,14 +13,7 @@ npm run dev
 
 Ouvrir [http://localhost:3000](http://localhost:3000).
 
-### Comptes démo (stockage local Phase 1)
-
-| Rôle | Email | Mot de passe |
-|------|-------|--------------|
-| Apprenti | `apprenti@epcas.ch` | `epcas2026` |
-| Formateur | `formateur@epcas.ch` | `epcas2026` |
-
-Sans variables Supabase, l’app tourne en **mode démo** (localStorage).
+Sans variables Supabase, les données sont stockées localement dans le navigateur (localStorage).
 
 ### Supabase (optionnel)
 

@@ -9,7 +9,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { initialState, DEMO_PASSWORD } from "./demo-data";
+import { initialState } from "./demo-data";
 import { isStaffRole } from "./roles";
 import {
   assessmentVisibleForLevel,
@@ -123,7 +123,6 @@ type AppStore = {
   upsertAssessmentQuestion: (question: AssessmentQuestion) => void;
   deleteAssessmentQuestion: (id: string) => void;
   getAssessmentQuestions: (assessmentId: string) => AssessmentQuestion[];
-  resetDemo: () => void;
   /** Envoie le suivi en attente (hors-ligne → online). */
   syncTrackingNow: () => Promise<{
     ok: boolean;
@@ -133,7 +132,6 @@ type AppStore = {
   }>;
   /** Formateur : tire le hub suivi (local + Supabase si dispo). */
   refreshTrackingFromHub: () => Promise<void>;
-  demoPassword: string;
 };
 
 const AppStoreContext = createContext<AppStore | null>(null);
@@ -869,11 +867,6 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     [state.assessmentQuestions],
   );
 
-  const resetDemo = useCallback(() => {
-    writeStorage(initialState);
-    setMemoryState(initialState);
-  }, []);
-
   const syncTrackingNow = useCallback(async () => {
     const result = await flushTrackingOutbox();
     return {
@@ -932,10 +925,8 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     upsertAssessmentQuestion,
     deleteAssessmentQuestion,
     getAssessmentQuestions,
-    resetDemo,
     syncTrackingNow,
     refreshTrackingFromHub,
-    demoPassword: DEMO_PASSWORD,
   };
 
   return (

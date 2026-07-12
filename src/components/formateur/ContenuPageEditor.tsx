@@ -281,7 +281,7 @@ function LessonEditor({
         )}
       </div>
       {saved ? (
-        <Alert tone="success">Page enregistrée (stockage local démo).</Alert>
+        <Alert tone="success">Page enregistrée.</Alert>
       ) : null}
     </form>
   );
@@ -472,7 +472,7 @@ export function ContenuPageEditor({
       {!lesson ? (
         <EmptyState
           title="Page introuvable pour ce module"
-          description="Choisissez un autre module ou réinitialisez la démo."
+          description="Choisissez un autre module."
         />
       ) : (
         <Panel>
