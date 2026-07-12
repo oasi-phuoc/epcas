@@ -1,5 +1,6 @@
 import type {
   AssessmentQuestion,
+  LessonQuestion,
   QuestionPayload,
   QuestionType,
 } from "./types";
@@ -130,4 +131,38 @@ export function createTemplateQuestion(
     order,
     payload: createTemplatePayload(type),
   };
+}
+
+/** Question rattachée à une leçon (situation / maths / vérification). */
+export function createLessonTemplateQuestion(
+  lessonId: string,
+  type: QuestionType,
+  order: number,
+): LessonQuestion {
+  const meta = QUESTION_TYPE_META[type];
+  return {
+    id: `lq-${crypto.randomUUID().slice(0, 8)}`,
+    lessonId,
+    type,
+    title: `Question ${meta.short}`,
+    points: type === "open" || type === "matching" ? 2 : 1,
+    order,
+    payload: createTemplatePayload(type),
+  };
+}
+
+/** Change de type en conservant énoncé / explication si possible. */
+export function retargetPayload(
+  current: QuestionPayload,
+  toType: QuestionType,
+): QuestionPayload {
+  const next = createTemplatePayload(toType);
+  const cur = current as { question?: string; explanation?: string };
+  if ("question" in next && typeof cur.question === "string") {
+    (next as { question: string }).question = cur.question;
+  }
+  if ("explanation" in next && typeof cur.explanation === "string") {
+    (next as { explanation: string }).explanation = cur.explanation;
+  }
+  return next;
 }

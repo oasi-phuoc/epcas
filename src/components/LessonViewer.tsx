@@ -16,6 +16,7 @@ import {
   isExercisePageSlug,
 } from "@/lib/lesson-content";
 import { moduleVisibleForLevel } from "@/lib/levels";
+import { QUESTION_TYPE_META } from "@/lib/question-templates";
 import { isStaffRole } from "@/lib/roles";
 import { useAppStore } from "@/lib/store";
 
@@ -24,8 +25,14 @@ type LessonViewerProps = {
 };
 
 export function LessonViewer({ lessonId }: LessonViewerProps) {
-  const { state, currentUser, getUserProgress, setLessonProgress, userLevel } =
-    useAppStore();
+  const {
+    state,
+    currentUser,
+    getUserProgress,
+    setLessonProgress,
+    userLevel,
+    getLessonQuestions,
+  } = useAppStore();
 
   const lesson = state.lessons.find((l) => l.id === lessonId);
   const mod = lesson
@@ -38,6 +45,11 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
       null
     );
   }, [currentUser, getUserProgress, lessonId]);
+
+  const lessonQuestions = useMemo(
+    () => getLessonQuestions(lessonId),
+    [getLessonQuestions, lessonId],
+  );
 
   if (!currentUser) return null;
   if (!lesson) {
@@ -130,6 +142,33 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
           ) : null}
         </div>
         <MarkdownLite text={body} />
+        {exercisePage && lessonQuestions.length > 0 ? (
+          <div className="mt-8 space-y-4 border-t border-border pt-6">
+            <h2 className="font-display text-xl text-ink">
+              Questions ({lessonQuestions.length})
+            </h2>
+            {lessonQuestions.map((q, index) => {
+              const payload = q.payload as { question?: string };
+              return (
+                <div
+                  key={q.id}
+                  className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-4"
+                >
+                  <div className="mb-2 flex flex-wrap items-center gap-2">
+                    <Badge tone="neutral">
+                      {index + 1}. {QUESTION_TYPE_META[q.type].short}
+                    </Badge>
+                    <Badge tone="accent">{q.points} pt</Badge>
+                  </div>
+                  <p className="mb-2 text-sm font-medium text-ink">{q.title}</p>
+                  {payload.question ? (
+                    <MarkdownLite text={payload.question} />
+                  ) : null}
+                </div>
+              );
+            })}
+          </div>
+        ) : null}
         <div className="mt-8 flex flex-wrap gap-2 border-t border-border pt-4">
           <Button onClick={markDone}>Marquer comme lu</Button>
           {!exercisePage ? (

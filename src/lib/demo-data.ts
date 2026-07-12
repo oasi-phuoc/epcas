@@ -198,6 +198,7 @@ export const initialState: AppState = {
   attempts: [],
   assessments: [],
   assessmentQuestions: [],
+  lessonQuestions: [],
   classTasks: [
     {
       id: "task-demo-1",

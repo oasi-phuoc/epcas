@@ -14,6 +14,7 @@ import {
 } from "@/components/ui";
 import { MarkdownLite } from "@/components/MarkdownLite";
 import { MarkdownToolbar } from "@/components/MarkdownToolbar";
+import { QuestionsManager } from "@/components/formateur/QuestionsManager";
 import {
   FORMATEUR_EXERCISE_PAGES,
   FORMATEUR_THEORY_PAGES,
@@ -24,7 +25,16 @@ import {
 import { useAppStore } from "@/lib/store";
 import { isStaffRole } from "@/lib/roles";
 import { useEditorHistory } from "@/lib/use-editor-history";
-import type { DiplomaLevel, Lesson, LessonPageSlug, Module } from "@/lib/types";
+import {
+  createLessonTemplateQuestion,
+} from "@/lib/question-templates";
+import type {
+  DiplomaLevel,
+  Lesson,
+  LessonPageSlug,
+  Module,
+  QuestionType,
+} from "@/lib/types";
 import { Eye, Pencil, Redo2, Undo2 } from "lucide-react";
 
 function LessonEditor({
@@ -294,7 +304,14 @@ export function ContenuPageEditor({
   pageSlug: LessonPageSlug;
   section?: "theorie" | "exercices";
 }) {
-  const { currentUser, state, updateLesson } = useAppStore();
+  const {
+    currentUser,
+    state,
+    updateLesson,
+    getLessonQuestions,
+    upsertLessonQuestion,
+    deleteLessonQuestion,
+  } = useAppStore();
   const sectionPages =
     section === "exercices" ? FORMATEUR_EXERCISE_PAGES : FORMATEUR_THEORY_PAGES;
   const hubHref =
@@ -340,9 +357,21 @@ export function ContenuPageEditor({
     );
   }, [state.lessons, effectiveModuleId, pageSlug]);
 
+  const lessonQuestions = useMemo(
+    () => (lesson ? getLessonQuestions(lesson.id) : []),
+    [lesson, getLessonQuestions],
+  );
+
   if (!currentUser) return null;
   if (!isStaffRole(currentUser.role)) {
     return <EmptyState title="Accès réservé aux formateurs et admins" />;
+  }
+
+  function addLessonQuestion(type: QuestionType) {
+    if (!lesson) return;
+    upsertLessonQuestion(
+      createLessonTemplateQuestion(lesson.id, type, lessonQuestions.length + 1),
+    );
   }
 
   return (
@@ -350,8 +379,10 @@ export function ContenuPageEditor({
       <PageHeader
         title={pageMeta?.title ?? "Contenu"}
         description={
-          pageMeta?.description ??
-          "Éditez la page pour le module et le niveau choisis."
+          section === "exercices"
+            ? "Consignes mises en forme + questions (comme les évaluations)."
+            : (pageMeta?.description ??
+              "Éditez la page pour le module et le niveau choisis.")
         }
         actions={
           <Link href={hubHref}>
@@ -475,14 +506,31 @@ export function ContenuPageEditor({
           description="Choisissez un autre module ou réinitialisez la démo."
         />
       ) : (
-        <Panel>
-          <LessonEditor
-            key={`${lesson.id}-${editLevel}`}
-            lesson={lesson}
-            editLevel={editLevel}
-            onSave={updateLesson}
-          />
-        </Panel>
+        <div className="space-y-4">
+          <Panel>
+            <h2 className="mb-3 font-display text-xl">
+              {section === "exercices"
+                ? "Consignes / mise en situation"
+                : "Contenu"}
+            </h2>
+            <LessonEditor
+              key={`${lesson.id}-${editLevel}`}
+              lesson={lesson}
+              editLevel={editLevel}
+              onSave={updateLesson}
+            />
+          </Panel>
+
+          {section === "exercices" ? (
+            <QuestionsManager
+              questions={lessonQuestions}
+              onAdd={addLessonQuestion}
+              onChange={upsertLessonQuestion}
+              onDelete={deleteLessonQuestion}
+              addLabel="Ajouter"
+            />
+          ) : null}
+        </div>
       )}
     </div>
   );

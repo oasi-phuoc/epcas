@@ -46,12 +46,13 @@ import type {
   Exercise,
   Lesson,
   LessonProgress,
+  LessonQuestion,
   Module,
   StudyYear,
   UserAccount,
 } from "./types";
 
-const STORAGE_KEY = "epcas-logistique-v89";
+const STORAGE_KEY = "epcas-logistique-v91";
 
 /** Ancien placeholder OneNote : à remplacer par le curriculum dès qu'il est rempli. */
 function isPlaceholderLessonContent(text: string | undefined | null): boolean {
@@ -123,6 +124,9 @@ type AppStore = {
   upsertAssessmentQuestion: (question: AssessmentQuestion) => void;
   deleteAssessmentQuestion: (id: string) => void;
   getAssessmentQuestions: (assessmentId: string) => AssessmentQuestion[];
+  getLessonQuestions: (lessonId: string) => LessonQuestion[];
+  upsertLessonQuestion: (question: LessonQuestion) => void;
+  deleteLessonQuestion: (id: string) => void;
   resetDemo: () => void;
   /** Envoie le suivi en attente (hors-ligne → online). */
   syncTrackingNow: () => Promise<{
@@ -206,6 +210,9 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
       assessments: normalizeAssessments(parsed.assessments),
       assessmentQuestions: parsed.assessmentQuestions ?? [],
       classTasks: parsed.classTasks ?? initialState.classTasks,
+      lessonQuestions: Array.isArray(parsed.lessonQuestions)
+        ? parsed.lessonQuestions
+        : [],
       sequences: normalizeSequences(parsed.sequences, initialState.modules),
       currentUserId: parsed.currentUserId ?? null,
     };
@@ -255,6 +262,9 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
     classTasks: Array.isArray(parsed.classTasks)
       ? parsed.classTasks
       : initialState.classTasks,
+    lessonQuestions: Array.isArray(parsed.lessonQuestions)
+      ? parsed.lessonQuestions
+      : [],
     currentUserId: parsed.currentUserId ?? null,
   };
 }
@@ -869,6 +879,40 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     [state.assessmentQuestions],
   );
 
+  const getLessonQuestions = useCallback(
+    (lessonId: string) =>
+      (state.lessonQuestions ?? [])
+        .filter((q) => q.lessonId === lessonId)
+        .sort((a, b) => a.order - b.order),
+    [state.lessonQuestions],
+  );
+
+  const upsertLessonQuestion = useCallback(
+    (question: LessonQuestion) => {
+      commit((s) => {
+        const list = s.lessonQuestions ?? [];
+        const exists = list.some((q) => q.id === question.id);
+        return {
+          ...s,
+          lessonQuestions: exists
+            ? list.map((q) => (q.id === question.id ? question : q))
+            : [...list, question],
+        };
+      });
+    },
+    [commit],
+  );
+
+  const deleteLessonQuestion = useCallback(
+    (id: string) => {
+      commit((s) => ({
+        ...s,
+        lessonQuestions: (s.lessonQuestions ?? []).filter((q) => q.id !== id),
+      }));
+    },
+    [commit],
+  );
+
   const resetDemo = useCallback(() => {
     writeStorage(initialState);
     setMemoryState(initialState);
@@ -932,6 +976,9 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     upsertAssessmentQuestion,
     deleteAssessmentQuestion,
     getAssessmentQuestions,
+    getLessonQuestions,
+    upsertLessonQuestion,
+    deleteLessonQuestion,
     resetDemo,
     syncTrackingNow,
     refreshTrackingFromHub,
