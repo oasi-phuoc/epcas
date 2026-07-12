@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useRef, useState } from "react";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import {
   Alert,
   Badge,
@@ -20,8 +20,9 @@ import {
   toggleLevel,
 } from "@/lib/levels";
 import { useAppStore } from "@/lib/store";
+import { useEditorHistory } from "@/lib/use-editor-history";
 import type { DiplomaLevel, Lesson } from "@/lib/types";
-import { Eye, Pencil } from "lucide-react";
+import { Eye, Pencil, Redo2, Undo2 } from "lucide-react";
 
 function LessonEditor({
   lesson,
@@ -30,16 +31,41 @@ function LessonEditor({
   lesson: Lesson;
   onSave: (next: Lesson) => void;
 }) {
-  const [title, setTitle] = useState(lesson.title);
-  const [full, setFull] = useState(lesson.contentFull);
-  const [summary, setSummary] = useState(lesson.contentSummary);
+  const {
+    present,
+    setPresent,
+    undo,
+    redo,
+    canUndo,
+    canRedo,
+    historyDepth,
+    historyLimit,
+  } = useEditorHistory({
+    title: lesson.title,
+    full: lesson.contentFull,
+    summary: lesson.contentSummary,
+  });
+
+  const { title, full, summary } = present;
   const [saved, setSaved] = useState(false);
   const [mode, setMode] = useState<"edit" | "preview">("edit");
   const [which, setWhich] = useState<"full" | "summary">("full");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const activeValue = which === "full" ? full : summary;
-  const setActiveValue = which === "full" ? setFull : setSummary;
+
+  function setActiveValue(
+    next: string,
+    history: "debounce" | "immediate" = "debounce",
+  ) {
+    setPresent(
+      (prev) =>
+        which === "full"
+          ? { ...prev, full: next }
+          : { ...prev, summary: next },
+      { history },
+    );
+  }
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -52,6 +78,23 @@ function LessonEditor({
     setSaved(true);
     setTimeout(() => setSaved(false), 2500);
   }
+
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      const mod = e.metaKey || e.ctrlKey;
+      if (!mod) return;
+      const key = e.key.toLowerCase();
+      if (key === "z" && !e.shiftKey) {
+        e.preventDefault();
+        undo();
+      } else if (key === "y" || (key === "z" && e.shiftKey)) {
+        e.preventDefault();
+        redo();
+      }
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [undo, redo]);
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -74,6 +117,35 @@ function LessonEditor({
           <Eye className="h-4 w-4" />
           Preview
         </Button>
+
+        <div className="flex flex-wrap items-center gap-1 border-l border-border pl-2">
+          <Button
+            type="button"
+            size="sm"
+            variant="ghost"
+            disabled={!canUndo}
+            onClick={undo}
+            title="Annuler (Ctrl+Z)"
+          >
+            <Undo2 className="h-4 w-4" />
+            Précédent
+          </Button>
+          <Button
+            type="button"
+            size="sm"
+            variant="ghost"
+            disabled={!canRedo}
+            onClick={redo}
+            title="Rétablir (Ctrl+Y)"
+          >
+            <Redo2 className="h-4 w-4" />
+            Suivant
+          </Button>
+          <span className="px-1 text-xs text-ink-subtle">
+            {historyDepth}/{historyLimit}
+          </span>
+        </div>
+
         <div className="ml-auto flex flex-wrap gap-2">
           <Button
             type="button"
@@ -97,7 +169,11 @@ function LessonEditor({
       <TextField
         label="Titre de la page"
         value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={(e) =>
+          setPresent((prev) => ({ ...prev, title: e.target.value }), {
+            history: "debounce",
+          })
+        }
         required
       />
 
@@ -106,7 +182,7 @@ function LessonEditor({
           <MarkdownToolbar
             textareaRef={textareaRef}
             value={activeValue}
-            onChange={setActiveValue}
+            onChange={(next) => setActiveValue(next, "immediate")}
           />
           <TextArea
             ref={textareaRef}
@@ -117,8 +193,8 @@ function LessonEditor({
             }
             className="min-h-72 text-justify text-sm leading-relaxed"
             value={activeValue}
-            onChange={(e) => setActiveValue(e.target.value)}
-            hint="Sélectionnez du texte puis utilisez les boutons ci-dessus (comme Word)."
+            onChange={(e) => setActiveValue(e.target.value, "debounce")}
+            hint="Précédent / Suivant pour annuler ou rétablir (Ctrl+Z / Ctrl+Y). Jusqu'à 40 étapes."
             required
           />
         </>
@@ -288,7 +364,9 @@ export default function ContenuPage() {
         <div className="mb-4">
           <Alert tone="info">
             Sélectionnez du texte, puis cliquez sur un bouton (Titre, Gras,
-            Puces…). Assignez chaque module à AFP, CFC ou les deux.
+            Puces…). Utilisez Précédent / Suivant (Ctrl+Z / Ctrl+Y) pour annuler
+            jusqu&apos;à 40 modifications. Assignez chaque module à AFP, CFC ou
+            les deux.
           </Alert>
         </div>
         <div className="mb-4">
