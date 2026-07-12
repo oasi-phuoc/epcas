@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import {
@@ -41,6 +41,13 @@ import {
 
 type Tab = "effectifs" | "suivi" | "taches" | "reglages";
 
+const TABS: Tab[] = ["effectifs", "suivi", "taches", "reglages"];
+
+function parseTab(value: string | null): Tab {
+  if (value && TABS.includes(value as Tab)) return value as Tab;
+  return "effectifs";
+}
+
 const TASK_STATUS_LABEL: Record<ClassTaskStatus, string> = {
   todo: "À faire",
   doing: "En cours",
@@ -70,6 +77,11 @@ export default function ClassDetailPage() {
   } = useAppStore();
 
   const [tab, setTab] = useState<Tab>("effectifs");
+
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("tab");
+    setTab(parseTab(q));
+  }, [classId]);
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [message, setMessage] = useState<string | null>(null);
   const [moveTo, setMoveTo] = useState("");
