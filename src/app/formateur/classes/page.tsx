@@ -33,17 +33,13 @@ export default function ClassesHubPage() {
   const {
     currentUser,
     state,
-    upsertClass,
     setClassActive,
     upsertUser,
+    upsertClass,
     getUserProgress,
     getAttemptsForUser,
   } = useAppStore();
 
-  const [name, setName] = useState("");
-  const [year, setYear] = useState("2025-2026");
-  const [level, setLevel] = useState<DiplomaLevel>("CFC");
-  const [studyYear, setStudyYear] = useState<StudyYear>(1);
   const [message, setMessage] = useState<string | null>(null);
 
   const [stuName, setStuName] = useState("");
@@ -85,21 +81,6 @@ export default function ClassesHubPage() {
     value: c.id,
     label: `${c.name}${c.active ? "" : " (désactivée)"}`,
   }));
-
-  function createClass(e: FormEvent) {
-    e.preventDefault();
-    if (!name.trim()) return;
-    const id = upsertClass({
-      name: name.trim(),
-      year: year.trim() || "2025-2026",
-      level,
-      studyYear: normalizeStudyYear(studyYear, level),
-      active: true,
-    });
-    setName("");
-    setMessage(`Classe créée.`);
-    setStuClassId(id);
-  }
 
   function createAccount(e: FormEvent) {
     e.preventDefault();
@@ -162,6 +143,12 @@ export default function ClassesHubPage() {
       ) : null}
 
       <div className="mb-4 flex flex-wrap gap-2">
+        <Link href="/formateur/classes/nouvelle">
+          <Button size="sm">
+            <Plus className="h-4 w-4" />
+            Nouvelle classe
+          </Button>
+        </Link>
         <Link href="/formateur/classes/eleves">
           <Button variant="secondary" size="sm">
             <Users className="h-4 w-4" />
@@ -221,8 +208,9 @@ export default function ClassesHubPage() {
                     <p className="mt-2 text-xs text-ink-subtle">
                       {c.year} · {members.length} élève
                       {members.length !== 1 ? "s" : ""} ({activeMembers} actif
-                      {activeMembers !== 1 ? "s" : ""}) · suivi ~{Math.round(avgPct)}
-                      % · {tasks} tâche{tasks !== 1 ? "s" : ""} ouverte
+                      {activeMembers !== 1 ? "s" : ""}) · suivi ~
+                      {Math.round(avgPct)}% · {tasks} tâche
+                      {tasks !== 1 ? "s" : ""} ouverte
                       {tasks !== 1 ? "s" : ""}
                     </p>
                   </Link>
@@ -242,57 +230,6 @@ export default function ClassesHubPage() {
         </Panel>
 
         <div className="space-y-4">
-          <Panel>
-            <h2 className="font-display text-xl text-ink">Nouvelle classe</h2>
-            <form className="mt-3 space-y-3" onSubmit={createClass}>
-              <TextField
-                label="Nom"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="CFC 1ʳᵉ année — EPCA Sion"
-                required
-              />
-              <TextField
-                label="Année scolaire"
-                value={year}
-                onChange={(e) => setYear(e.target.value)}
-              />
-              <div className="grid gap-3 sm:grid-cols-2">
-                <Select
-                  label="Niveau"
-                  options={DIPLOMA_LEVELS.map((l) => ({
-                    value: l,
-                    label: DIPLOMA_LABELS[l],
-                  }))}
-                  value={level}
-                  onChange={(e) => {
-                    const next = e.target.value as DiplomaLevel;
-                    setLevel(next);
-                    setStudyYear(normalizeStudyYear(studyYear, next));
-                  }}
-                />
-                <Select
-                  label="Année d'apprentissage"
-                  options={Array.from(
-                    { length: maxStudyYear(level) },
-                    (_, i) => {
-                      const y = (i + 1) as StudyYear;
-                      return { value: String(y), label: STUDY_YEAR_LABELS[y] };
-                    },
-                  )}
-                  value={String(studyYear)}
-                  onChange={(e) =>
-                    setStudyYear(Number(e.target.value) as StudyYear)
-                  }
-                />
-              </div>
-              <Button type="submit">
-                <Plus className="h-4 w-4" />
-                Créer la classe
-              </Button>
-            </form>
-          </Panel>
-
           <Panel>
             <h2 className="font-display text-xl text-ink">Nouveau compte</h2>
             <form className="mt-3 space-y-3" onSubmit={createAccount}>
