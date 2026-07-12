@@ -1,5 +1,5 @@
 import { defaultLevelsForModule } from "./levels";
-import type { Block, Lesson, Module } from "./types";
+import type { Block, Lesson, LessonPageSlug, Module } from "./types";
 
 /** Arborescence EnterSite — EPCA Sion (OneNote Prof 2025-26), répartie AFP / CFC */
 
@@ -238,7 +238,7 @@ const moduleSeeds: ModuleSeed[] = [
 ];
 
 /** Pages types OneNote → leçons EPCAS */
-export const lessonPageTemplates: { slug: string; title: string }[] = [
+export const lessonPageTemplates: { slug: LessonPageSlug; title: string }[] = [
   { slug: "objectifs", title: "Objectifs" },
   { slug: "apercu", title: "Aperçu" },
   { slug: "theorie", title: "Connaissance théorique" },
@@ -12692,6 +12692,7 @@ export function buildCurriculumLessons(): Lesson[] {
         moduleId: `mod-${m.code}`,
         title: page.title,
         order: pageIndex + 1,
+        pageSlug: page.slug,
         published: true,
         contentFull: filled?.full ?? PLACEHOLDER_FULL,
         contentSummary: filled?.summary ?? PLACEHOLDER_SUMMARY,

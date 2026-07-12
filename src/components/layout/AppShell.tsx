@@ -13,6 +13,7 @@ import {
   Users,
 } from "lucide-react";
 import { cn } from "@/lib/cn";
+import { FORMATEUR_CONTENT_PAGES } from "@/lib/lesson-content";
 import { useAppStore } from "@/lib/store";
 import { Button } from "@/components/ui";
 
@@ -37,6 +38,9 @@ const trainerLinks = [
 function isActivePath(pathname: string, href: string) {
   if (href === "/accueil") return pathname === "/accueil";
   if (href === "/formateur") return pathname === "/formateur";
+  if (href === "/formateur/contenu") {
+    return pathname === href || pathname.startsWith(`${href}/`);
+  }
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
@@ -45,6 +49,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const { currentUser, logout, state } = useAppStore();
   const links =
     currentUser?.role === "trainer" ? trainerLinks : apprenticeLinks;
+  const contenuOpen =
+    currentUser?.role === "trainer" &&
+    (pathname === "/formateur/contenu" ||
+      pathname.startsWith("/formateur/contenu/"));
 
   return (
     <div className="min-h-dvh lg:flex">
@@ -60,19 +68,42 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           {links.map(({ href, label, icon: Icon }) => {
             const active = isActivePath(pathname, href);
             return (
-              <Link
-                key={href}
-                href={href}
-                className={cn(
-                  "flex items-center gap-3 rounded-[var(--radius-md)] px-3 py-2.5 text-sm font-medium transition",
-                  active
-                    ? "bg-primary-soft text-primary-strong"
-                    : "text-ink-muted hover:bg-surface-muted hover:text-ink",
-                )}
-              >
-                <Icon className="h-4 w-4" />
-                {label}
-              </Link>
+              <div key={href}>
+                <Link
+                  href={href}
+                  className={cn(
+                    "flex items-center gap-3 rounded-[var(--radius-md)] px-3 py-2.5 text-sm font-medium transition",
+                    active
+                      ? "bg-primary-soft text-primary-strong"
+                      : "text-ink-muted hover:bg-surface-muted hover:text-ink",
+                  )}
+                >
+                  <Icon className="h-4 w-4" />
+                  {label}
+                </Link>
+                {href === "/formateur/contenu" && contenuOpen ? (
+                  <ul className="mt-1 ml-4 space-y-0.5 border-l border-border pl-3">
+                    {FORMATEUR_CONTENT_PAGES.map((page) => {
+                      const subActive = pathname === page.href;
+                      return (
+                        <li key={page.slug}>
+                          <Link
+                            href={page.href}
+                            className={cn(
+                              "block rounded-[var(--radius-sm)] px-2 py-1.5 text-xs font-medium transition",
+                              subActive
+                                ? "bg-primary-soft/70 text-primary-strong"
+                                : "text-ink-subtle hover:bg-surface-muted hover:text-ink",
+                            )}
+                          >
+                            {page.title}
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                ) : null}
+              </div>
             );
           })}
         </nav>

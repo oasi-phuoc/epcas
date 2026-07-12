@@ -38,7 +38,7 @@ import type {
   UserAccount,
 } from "./types";
 
-const STORAGE_KEY = "epcas-logistique-v85";
+const STORAGE_KEY = "epcas-logistique-v86";
 
 type AppStore = {
   state: AppState;
@@ -164,7 +164,24 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
   const lessonMap = new Map(
     (parsed.lessons ?? []).map((l) => [l.id, l] as const),
   );
-  const lessons = initialState.lessons.map((l) => lessonMap.get(l.id) ?? l);
+  const lessons = initialState.lessons.map((base) => {
+    const saved = lessonMap.get(base.id);
+    if (!saved) return base;
+    return {
+      ...base,
+      ...saved,
+      id: base.id,
+      moduleId: base.moduleId,
+      pageSlug: base.pageSlug,
+      order: base.order,
+      title: saved.title || base.title,
+      contentFull: saved.contentFull ?? base.contentFull,
+      contentSummary: saved.contentSummary ?? base.contentSummary,
+      contentFullAfp: saved.contentFullAfp,
+      contentSummaryAfp: saved.contentSummaryAfp,
+      published: saved.published ?? base.published,
+    };
+  });
   const modules = normalizeModules(parsed.modules);
 
   return {

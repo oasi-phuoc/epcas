@@ -57,13 +57,37 @@ export interface UserAccount {
   active: boolean;
 }
 
+/** Pages types EnterSite / Contenu formateur */
+export type LessonPageSlug =
+  | "objectifs"
+  | "apercu"
+  | "theorie"
+  | "glossaire"
+  | "situation"
+  | "maths"
+  | "verification";
+
 export interface Lesson {
   id: string;
   moduleId: string;
   title: string;
   order: number;
+  /** Type de page EnterSite (theorie, glossaire, …) */
+  pageSlug: LessonPageSlug;
+  /** Contenu CFC (référence) — complet */
   contentFull: string;
+  /** Contenu CFC — résumé */
   contentSummary: string;
+  /**
+   * Contenu AFP — complet.
+   * Absent / undefined = identique au CFC.
+   */
+  contentFullAfp?: string;
+  /**
+   * Contenu AFP — résumé.
+   * Absent / undefined = identique au CFC.
+   */
+  contentSummaryAfp?: string;
   published: boolean;
 }
 

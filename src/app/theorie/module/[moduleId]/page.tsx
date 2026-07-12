@@ -9,6 +9,7 @@ import {
   PageHeader,
   Panel,
 } from "@/components/ui";
+import { getLessonBody } from "@/lib/lesson-content";
 import { levelsLabel, moduleVisibleForLevel } from "@/lib/levels";
 import { useAppStore } from "@/lib/store";
 
@@ -65,8 +66,12 @@ export default function ModuleDetailPage() {
         <ul className="space-y-2">
           {lessons.map((lesson) => {
             const p = progress.find((x) => x.lessonId === lesson.id);
-            const isPlaceholder =
-              lesson.contentFull.includes("Contenu à importer");
+            const body = getLessonBody(
+              lesson,
+              isTrainer ? "CFC" : userLevel,
+              "full",
+            );
+            const isPlaceholder = body.includes("Contenu à importer");
             return (
               <li key={lesson.id}>
                 <Link

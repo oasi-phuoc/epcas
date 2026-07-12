@@ -12,6 +12,7 @@ import {
   Switch,
 } from "@/components/ui";
 import { MarkdownLite } from "@/components/MarkdownLite";
+import { getLessonBody } from "@/lib/lesson-content";
 import { moduleVisibleForLevel } from "@/lib/levels";
 import { useAppStore } from "@/lib/store";
 
@@ -53,7 +54,12 @@ export default function LessonPage() {
   }
 
   const summaryMode = progress?.modePref === "summary";
-  const isPlaceholder = lesson.contentFull.includes("Contenu à importer");
+  const body = getLessonBody(
+    lesson,
+    isTrainer ? "CFC" : userLevel,
+    summaryMode ? "summary" : "full",
+  );
+  const isPlaceholder = body.includes("Contenu à importer");
 
   function toggleMode(checked: boolean) {
     setLessonProgress(currentUser!.id, lesson!.id, {
@@ -112,9 +118,7 @@ export default function LessonPage() {
             <Badge tone="success">Lu</Badge>
           ) : null}
         </div>
-        <MarkdownLite
-          text={summaryMode ? lesson.contentSummary : lesson.contentFull}
-        />
+        <MarkdownLite text={body} />
         <div className="mt-8 flex flex-wrap gap-2 border-t border-border pt-4">
           <Button onClick={markDone}>Marquer comme lu</Button>
           <Link href="/exercices">
