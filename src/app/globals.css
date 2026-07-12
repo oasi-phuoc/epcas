@@ -154,3 +154,40 @@ h3,
     radial-gradient(700px 380px at 80% 10%, rgb(232 166 122 / 0.16), transparent 55%),
     linear-gradient(160deg, #eaf6f2, #f8f1ea);
 }
+
+/* Annotations élèves (overlay — le markdown source reste intact) */
+mark.epcas-anno {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0.15em;
+  cursor: inherit;
+}
+mark.epcas-anno-highlight {
+  background: rgb(250 204 21 / 0.45);
+}
+mark.epcas-anno-underline {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgb(14 116 144);
+}
+mark.epcas-anno-italic {
+  font-style: italic;
+}
+mark.epcas-anno-bold {
+  font-weight: 700;
+  color: var(--ink, #1a2b28);
+}
+mark.epcas-anno-note {
+  background: rgb(125 211 252 / 0.35);
+  border-bottom: 2px dashed rgb(2 132 199);
+  cursor: pointer;
+}
+mark.epcas-anno[data-has-note="1"]::after {
+  content: "✎";
+  font-size: 0.7em;
+  margin-left: 0.15em;
+  opacity: 0.75;
+  vertical-align: super;
+}
