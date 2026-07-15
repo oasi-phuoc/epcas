@@ -1,7 +1,23 @@
 import type {
   InformatiqueApp,
   InformatiqueExercise,
+  InformatiqueYear,
 } from "./types";
+import {
+  GENERATED_INFORMATIQUE_EXERCISES,
+  INFORMATIQUE_CATALOG_VERSION,
+} from "./informatique-exercises.generated";
+
+export { INFORMATIQUE_CATALOG_VERSION };
+
+/** Années proposées dans l'UI (aucune 2e année Informatique). */
+export const INFORMATIQUE_YEARS: {
+  id: InformatiqueYear;
+  label: string;
+}[] = [
+  { id: 1, label: "1re année" },
+  { id: 3, label: "3e année" },
+];
 
 export const INFORMATIQUE_APPS: {
   id: InformatiqueApp;
@@ -29,138 +45,121 @@ export function informatiqueAppLabel(app: InformatiqueApp): string {
   return INFORMATIQUE_APPS.find((a) => a.id === app)?.label ?? app;
 }
 
-/** Exercices démo — documents / vidéos en URLs placeholder. */
-export const SEED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
-  {
-    id: "inf-word-1",
-    app: "word",
-    title: "Mettre en forme une lettre commerciale",
-    description:
-      "Ouvrir le modèle fourni, appliquer les styles Titre 1 / Normal, puis générer une table des matières sur une page.",
-    instructions: `## Consignes
+export function informatiqueYearLabel(year: InformatiqueYear): string {
+  return INFORMATIQUE_YEARS.find((y) => y.id === year)?.label ?? `Année ${year}`;
+}
 
-1. Téléchargez le document **lettre-modele.docx**.
-2. Appliquez le style **Titre 1** au titre principal.
-3. Mettez le corps du texte en style **Normal**, police Century Gothic 11.
-4. Insérez une **table des matières** en début de document.
-5. Enregistrez sous le nom \`lettre-NOM-PRENOM.docx\`.
+/**
+ * Mappe l'année d'apprentissage élève vers une année Informatique (1 ou 3).
+ * Il n'y a pas de cours Informatique en 2e année.
+ */
+export function resolveInformatiqueYear(
+  studyYear: number | null | undefined,
+): InformatiqueYear {
+  return studyYear === 3 ? 3 : 1;
+}
 
-**Durée indicative :** 30 minutes.`,
-    order: 1,
-    published: true,
-    documents: [
-      {
-        id: "inf-word-1-doc-1",
-        name: "lettre-modele.docx",
-        url: "/assets/informatique/placeholders/lettre-modele.docx",
-        kind: "document",
-      },
-    ],
-    corrections: [
-      {
-        id: "inf-word-1-vid-1",
-        name: "Correction — styles et table des matières",
-        url: "",
-        kind: "video",
-      },
-    ],
-  },
-  {
-    id: "inf-word-2",
-    app: "word",
-    title: "Publipostage simple",
-    description:
-      "Créer un publipostage à partir d'une liste Excel fournie.",
-    instructions: `## Consignes
+/** Catalogue dérivé de public/assets/informatique/{1,3}/… */
+export const SEED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] =
+  GENERATED_INFORMATIQUE_EXERCISES;
 
-1. Ouvrez le document Word et le fichier Excel destinataires.
-2. Lancez **Publipostage → Lettres**.
-3. Reliez la source de données Excel.
-4. Insérez les champs Nom, Prénom, Adresse.
-5. Prévisualisez puis terminez la fusion.
+export function isCatalogInformatiqueExercise(id: string): boolean {
+  return id.startsWith("inf-y1-") || id.startsWith("inf-y3-");
+}
 
-**Durée indicative :** 40 minutes.`,
-    order: 2,
-    published: true,
-    documents: [
-      {
-        id: "inf-word-2-doc-1",
-        name: "modele-publipostage.docx",
-        url: "/assets/informatique/placeholders/modele-publipostage.docx",
-        kind: "document",
-      },
-      {
-        id: "inf-word-2-doc-2",
-        name: "destinataires.xlsx",
-        url: "/assets/informatique/placeholders/destinataires.xlsx",
-        kind: "document",
-      },
-    ],
-    corrections: [],
-  },
-  {
-    id: "inf-excel-1",
-    app: "excel",
-    title: "Calculer un taux de remplissage",
-    description:
-      "Compléter un tableau de stocks et calculer les taux de remplissage.",
-    instructions: `## Consignes
+export function isLegacyPlaceholderInformatique(
+  exercises: InformatiqueExercise[] | undefined,
+): boolean {
+  if (!exercises || exercises.length === 0) return true;
+  const hasCatalog = exercises.some((e) => isCatalogInformatiqueExercise(e.id));
+  if (hasCatalog) return false;
+  return exercises.some(
+    (e) =>
+      e.id.startsWith("inf-word-") ||
+      e.id.startsWith("inf-excel-") ||
+      e.id.startsWith("inf-ppt-") ||
+      e.documents.some((d) => d.url.includes("/placeholders/")) ||
+      // Ancien seed sans champ year
+      (e as { year?: number }).year == null,
+  );
+}
 
-1. Téléchargez le classeur **stocks-exercice.xlsx**.
-2. Complétez la colonne **Taux** avec la formule \`=occupé/capacité\`.
-3. Formatez en pourcentage avec 1 décimale.
-4. Ajoutez une mise en forme conditionnelle (rouge si < 50 %).
+/**
+ * Fusionne le catalogue FS avec les exercices personnalisés formateur.
+ * Les ids catalogue sont toujours rafraîchis depuis le seed (URLs / fichiers).
+ * Les overrides formateur (titre, consignes, publié) sont conservés.
+ */
+export function mergeInformatiqueExercises(
+  saved: InformatiqueExercise[] | undefined,
+  seed: InformatiqueExercise[] = SEED_INFORMATIQUE_EXERCISES,
+): InformatiqueExercise[] {
+  if (!saved || saved.length === 0 || isLegacyPlaceholderInformatique(saved)) {
+    return seed;
+  }
 
-**Durée indicative :** 25 minutes.`,
-    order: 1,
-    published: true,
-    documents: [
-      {
-        id: "inf-excel-1-doc-1",
-        name: "stocks-exercice.xlsx",
-        url: "/assets/informatique/placeholders/stocks-exercice.xlsx",
-        kind: "document",
-      },
-    ],
-    corrections: [
-      {
-        id: "inf-excel-1-vid-1",
-        name: "Correction — formules et mise en forme",
-        url: "",
-        kind: "video",
-      },
-    ],
-  },
-  {
-    id: "inf-ppt-1",
-    app: "powerpoint",
-    title: "Présentation 5 diapositives",
-    description:
-      "Créer une courte présentation sur un outil ICT du cours.",
-    instructions: `## Consignes
+  const seedById = new Map(seed.map((e) => [e.id, e]));
+  const overrides = new Map(
+    saved.filter((e) => seedById.has(e.id)).map((e) => [e.id, e]),
+  );
+  const custom = saved.filter(
+    (e) => !seedById.has(e.id) && !isLegacyPlaceholderExercise(e),
+  );
 
-1. Créez une présentation de **5 diapositives** maximum.
-2. Structure : titre · contexte · 2 points clés · conclusion.
-3. Utilisez un thème cohérent (pas de texte trop petit).
-4. Exportez en PDF pour le rendu.
+  const mergedSeed = seed.map((base) => {
+    const o = overrides.get(base.id);
+    if (!o) return base;
+    return {
+      ...base,
+      title: o.title || base.title,
+      description: o.description || base.description,
+      instructions: o.instructions || base.instructions,
+      published: o.published,
+      // Garder docs/corrections du catalogue FS ; fusionner ajouts manuels
+      documents: mergeAssets(base.documents, o.documents),
+      corrections: mergeAssets(base.corrections, o.corrections),
+    };
+  });
 
-**Durée indicative :** 35 minutes.`,
-    order: 1,
-    published: true,
-    documents: [
-      {
-        id: "inf-ppt-1-doc-1",
-        name: "grille-evaluation.pdf",
-        url: "/assets/informatique/placeholders/grille-evaluation.pdf",
-        kind: "document",
-      },
-    ],
-    corrections: [],
-  },
-];
+  return [...mergedSeed, ...custom];
+}
+
+function isLegacyPlaceholderExercise(e: InformatiqueExercise): boolean {
+  return (
+    e.id.startsWith("inf-word-") ||
+    e.id.startsWith("inf-excel-") ||
+    e.id.startsWith("inf-ppt-") ||
+    e.documents.some((d) => d.url.includes("/placeholders/"))
+  );
+}
+
+function mergeAssets<T extends { id: string; url: string }>(
+  fromCatalog: T[],
+  fromSaved: T[],
+): T[] {
+  const catalogUrls = new Set(fromCatalog.map((a) => a.url));
+  const catalogIds = new Set(fromCatalog.map((a) => a.id));
+  const extras = fromSaved.filter(
+    (a) =>
+      !catalogIds.has(a.id) &&
+      !catalogUrls.has(a.url) &&
+      a.url &&
+      !a.url.includes("/placeholders/"),
+  );
+  return [...fromCatalog, ...extras];
+}
 
 export function newInformatiqueId(prefix: string): string {
   return `${prefix}-${Date.now().toString(36)}-${Math.random()
     .toString(36)
     .slice(2, 7)}`;
+}
+
+export function appsAvailableForYear(
+  exercises: InformatiqueExercise[],
+  year: InformatiqueYear,
+): InformatiqueApp[] {
+  const present = new Set(
+    exercises.filter((e) => e.year === year).map((e) => e.app),
+  );
+  return INFORMATIQUE_APPS.map((a) => a.id).filter((id) => present.has(id));
 }

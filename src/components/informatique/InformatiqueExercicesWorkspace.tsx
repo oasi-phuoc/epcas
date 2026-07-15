@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useRef, useState } from "react";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import {
   Alert,
@@ -16,8 +16,12 @@ import { MarkdownLite } from "@/components/MarkdownLite";
 import { MarkdownToolbar } from "@/components/MarkdownToolbar";
 import {
   INFORMATIQUE_APPS,
+  INFORMATIQUE_YEARS,
+  appsAvailableForYear,
   informatiqueAppLabel,
+  informatiqueYearLabel,
   newInformatiqueId,
+  resolveInformatiqueYear,
 } from "@/lib/informatique-exercises";
 import { useAppStore } from "@/lib/store";
 import { isStaffRole } from "@/lib/roles";
@@ -25,6 +29,7 @@ import type {
   InformatiqueApp,
   InformatiqueAsset,
   InformatiqueExercise,
+  InformatiqueYear,
 } from "@/lib/types";
 import {
   Download,
@@ -38,6 +43,12 @@ import {
 } from "lucide-react";
 
 const MAX_EMBED_BYTES = 1_500_000;
+
+function isVideoAsset(asset: InformatiqueAsset): boolean {
+  if (asset.kind === "video") return true;
+  const lower = (asset.name || asset.url || "").toLowerCase();
+  return /\.(mp4|webm|mov|m4v)(\?|$)/i.test(lower);
+}
 
 async function fileToAsset(
   file: File,
@@ -71,7 +82,8 @@ function AssetList({
   onAddFile,
   onAddUrl,
   accept,
-  kind,
+  /** Mode d'affichage par défaut si l'asset n'indique pas clairement vidéo/doc. */
+  defaultMode,
 }: {
   assets: InformatiqueAsset[];
   emptyLabel: string;
@@ -79,9 +91,9 @@ function AssetList({
   editable: boolean;
   onRemove?: (id: string) => void;
   onAddFile?: (file: File) => void;
-  onAddUrl?: (name: string, url: string) => void;
+  onAddUrl?: (name: string, url: string, kind: "document" | "video") => void;
   accept?: string;
-  kind: "document" | "video";
+  defaultMode: "document" | "video" | "mixed";
 }) {
   const fileRef = useRef<HTMLInputElement>(null);
   const [urlName, setUrlName] = useState("");
@@ -95,78 +107,94 @@ function AssetList({
         </p>
       ) : (
         <ul className="space-y-2">
-          {assets.map((asset) => (
-            <li
-              key={asset.id}
-              className="space-y-2 rounded-[var(--radius-md)] border border-border bg-surface-muted/40 px-3 py-2.5"
-            >
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="flex min-w-0 items-center gap-2 text-sm text-ink">
-                  {kind === "video" ? (
-                    <Video className="h-4 w-4 shrink-0 text-primary-strong" />
-                  ) : (
-                    <FileText className="h-4 w-4 shrink-0 text-primary-strong" />
-                  )}
-                  <span className="min-w-0 truncate font-medium">
-                    {asset.name}
+          {assets.map((asset) => {
+            const asVideo =
+              defaultMode === "document" ? false : isVideoAsset(asset);
+            return (
+              <li
+                key={asset.id}
+                className="space-y-2 rounded-[var(--radius-md)] border border-border bg-surface-muted/40 px-3 py-2.5"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <span className="flex min-w-0 items-center gap-2 text-sm text-ink">
+                    {asVideo ? (
+                      <Video className="h-4 w-4 shrink-0 text-primary-strong" />
+                    ) : (
+                      <FileText className="h-4 w-4 shrink-0 text-primary-strong" />
+                    )}
+                    <span className="min-w-0 truncate font-medium">
+                      {asset.name}
+                    </span>
                   </span>
-                </span>
-                <span className="flex flex-wrap gap-2">
-                  {kind === "video" && asset.url ? (
-                    <a
-                      href={asset.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex"
-                    >
-                      <Button type="button" size="sm" variant="secondary">
-                        <Eye className="h-4 w-4" />
-                        Voir
+                  <span className="flex flex-wrap gap-2">
+                    {asVideo && asset.url ? (
+                      <a
+                        href={asset.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex"
+                      >
+                        <Button type="button" size="sm" variant="secondary">
+                          <Eye className="h-4 w-4" />
+                          Voir
+                        </Button>
+                      </a>
+                    ) : null}
+                    {!asVideo && asset.url ? (
+                      <a
+                        href={asset.url}
+                        download={asset.name}
+                        className="inline-flex"
+                      >
+                        <Button type="button" size="sm" variant="secondary">
+                          <Download className="h-4 w-4" />
+                          {downloadLabel}
+                        </Button>
+                      </a>
+                    ) : null}
+                    {asVideo && asset.url ? (
+                      <a
+                        href={asset.url}
+                        download={asset.name}
+                        className="inline-flex"
+                      >
+                        <Button type="button" size="sm" variant="ghost">
+                          <Download className="h-4 w-4" />
+                          Télécharger
+                        </Button>
+                      </a>
+                    ) : null}
+                    {!asset.url ? (
+                      <Badge tone="warning">Pas encore disponible</Badge>
+                    ) : null}
+                    {editable && onRemove ? (
+                      <Button
+                        type="button"
+                        size="sm"
+                        variant="ghost"
+                        onClick={() => onRemove(asset.id)}
+                        title="Supprimer"
+                      >
+                        <Trash2 className="h-4 w-4" />
                       </Button>
-                    </a>
-                  ) : null}
-                  {kind === "document" && asset.url ? (
-                    <a
-                      href={asset.url}
-                      download={asset.name}
-                      className="inline-flex"
-                    >
-                      <Button type="button" size="sm" variant="secondary">
-                        <Download className="h-4 w-4" />
-                        {downloadLabel}
-                      </Button>
-                    </a>
-                  ) : null}
-                  {!asset.url ? (
-                    <Badge tone="warning">Pas encore disponible</Badge>
-                  ) : null}
-                  {editable && onRemove ? (
-                    <Button
-                      type="button"
-                      size="sm"
-                      variant="ghost"
-                      onClick={() => onRemove(asset.id)}
-                      title="Supprimer"
-                    >
-                      <Trash2 className="h-4 w-4" />
-                    </Button>
-                  ) : null}
-                </span>
-              </div>
-              {kind === "video" && asset.url ? (
-                <div className="overflow-hidden rounded-[var(--radius-md)] border border-border bg-ink/5">
-                  <video
-                    className="max-h-64 w-full"
-                    controls
-                    preload="metadata"
-                    src={asset.url}
-                  >
-                    Votre navigateur ne prend pas en charge la vidéo.
-                  </video>
+                    ) : null}
+                  </span>
                 </div>
-              ) : null}
-            </li>
-          ))}
+                {asVideo && asset.url ? (
+                  <div className="overflow-hidden rounded-[var(--radius-md)] border border-border bg-ink/5">
+                    <video
+                      className="max-h-64 w-full"
+                      controls
+                      preload="metadata"
+                      src={asset.url}
+                    >
+                      Votre navigateur ne prend pas en charge la vidéo.
+                    </video>
+                  </div>
+                ) : null}
+              </li>
+            );
+          })}
         </ul>
       )}
 
@@ -191,7 +219,9 @@ function AssetList({
               onClick={() => fileRef.current?.click()}
             >
               <Plus className="h-4 w-4" />
-              {kind === "video" ? "Ajouter une vidéo" : "Ajouter un document"}
+              {defaultMode === "document"
+                ? "Ajouter un document"
+                : "Ajouter un fichier"}
             </Button>
           </div>
           {onAddUrl ? (
@@ -201,7 +231,9 @@ function AssetList({
                 value={urlName}
                 onChange={(e) => setUrlName(e.target.value)}
                 placeholder={
-                  kind === "video" ? "Correction — titre" : "fichier.docx"
+                  defaultMode === "document"
+                    ? "fichier.docx"
+                    : "Correction — titre"
                 }
                 className="sm:max-w-[12rem]"
               />
@@ -218,7 +250,14 @@ function AssetList({
                 variant="secondary"
                 disabled={!urlName.trim()}
                 onClick={() => {
-                  onAddUrl(urlName.trim(), urlValue.trim());
+                  const kind =
+                    defaultMode === "document"
+                      ? "document"
+                      : /\.(mp4|webm|mov|m4v)(\?|$)/i.test(urlValue) ||
+                          defaultMode === "video"
+                        ? "video"
+                        : "document";
+                  onAddUrl(urlName.trim(), urlValue.trim(), kind);
                   setUrlName("");
                   setUrlValue("");
                 }}
@@ -229,7 +268,8 @@ function AssetList({
           ) : null}
           <p className="text-xs text-ink-subtle">
             Fichiers légers (&lt; 1,5 Mo) sont enregistrés localement. Pour les
-            vidéos lourdes, préférez un lien URL.
+            vidéos lourdes, préférez un lien URL vers{" "}
+            <code className="text-[0.7rem]">/assets/…</code>.
           </p>
         </div>
       ) : null}
@@ -246,6 +286,7 @@ function ExercisePreview({
     <div className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-4 sm:p-5">
       <div className="mb-4 flex flex-wrap items-center gap-2">
         <Badge tone="accent">Preview</Badge>
+        <Badge tone="neutral">{informatiqueYearLabel(exercise.year)}</Badge>
         <Badge tone="neutral">{informatiqueAppLabel(exercise.app)}</Badge>
       </div>
       <h2 className="mb-3 font-display text-2xl text-ink sm:text-3xl">
@@ -286,7 +327,9 @@ function ExerciseEditorForm({
   }
 
   async function addCorrection(file: File) {
-    const asset = await fileToAsset(file, "video");
+    const isVid = /\.(mp4|webm|mov|m4v)$/i.test(file.name) ||
+      file.type.startsWith("video/");
+    const asset = await fileToAsset(file, isVid ? "video" : "document");
     setDraft((d) => ({ ...d, corrections: [...d.corrections, asset] }));
   }
 
@@ -367,15 +410,17 @@ function ExerciseEditorForm({
           Les documents à utiliser
         </h3>
         <p className="mb-3 text-sm text-ink-muted">
-          Fichiers remis aux apprentis pour réaliser l&apos;exercice.
+          Fichiers remis aux apprentis pour réaliser l&apos;exercice (
+          <code className="text-xs">_base</code>,{" "}
+          <code className="text-xs">_donnees</code>, images…).
         </p>
         <AssetList
-          kind="document"
+          defaultMode="document"
           assets={draft.documents}
           emptyLabel="Aucun document pour le moment."
           downloadLabel="Télécharger"
           editable
-          accept=".doc,.docx,.xls,.xlsx,.ppt,.pptx,.pdf,.zip,.txt"
+          accept=".doc,.docx,.xls,.xlsx,.xlsm,.ppt,.pptx,.pdf,.zip,.txt,.jpg,.jpeg,.png,.gif,.webp"
           onRemove={(id) =>
             setDraft((d) => ({
               ...d,
@@ -383,7 +428,7 @@ function ExerciseEditorForm({
             }))
           }
           onAddFile={(file) => void addDocument(file)}
-          onAddUrl={(name, url) =>
+          onAddUrl={(name, url, kind) =>
             setDraft((d) => ({
               ...d,
               documents: [
@@ -392,7 +437,7 @@ function ExerciseEditorForm({
                   id: newInformatiqueId("doc"),
                   name,
                   url,
-                  kind: "document",
+                  kind,
                 },
               ],
             }))
@@ -403,15 +448,16 @@ function ExerciseEditorForm({
       <Panel className="bg-surface-muted/20">
         <h3 className="mb-1 font-display text-lg text-ink">Les corrections</h3>
         <p className="mb-3 text-sm text-ink-muted">
-          Vidéos de correction uploadées par les formateurs.
+          Vidéos ou documents de correction (
+          <code className="text-xs">_correction</code>, résultat attendu…).
         </p>
         <AssetList
-          kind="video"
+          defaultMode="mixed"
           assets={draft.corrections}
-          emptyLabel="Aucune vidéo de correction pour le moment."
+          emptyLabel="Aucune correction pour le moment."
           downloadLabel="Télécharger"
           editable
-          accept="video/*,.mp4,.webm,.mov"
+          accept="video/*,.mp4,.webm,.mov,.doc,.docx,.xls,.xlsx,.xlsm,.pdf,.png,.jpg"
           onRemove={(id) =>
             setDraft((d) => ({
               ...d,
@@ -419,16 +465,16 @@ function ExerciseEditorForm({
             }))
           }
           onAddFile={(file) => void addCorrection(file)}
-          onAddUrl={(name, url) =>
+          onAddUrl={(name, url, kind) =>
             setDraft((d) => ({
               ...d,
               corrections: [
                 ...d.corrections,
                 {
-                  id: newInformatiqueId("vid"),
+                  id: newInformatiqueId(kind === "video" ? "vid" : "doc"),
                   name,
                   url,
-                  kind: "video",
+                  kind,
                 },
               ],
             }))
@@ -471,7 +517,7 @@ function StudentExerciseDetail({
           Téléchargez les fichiers nécessaires pour réaliser l&apos;exercice.
         </p>
         <AssetList
-          kind="document"
+          defaultMode="document"
           assets={exercise.documents}
           emptyLabel="Aucun document pour cet exercice."
           downloadLabel="Télécharger"
@@ -482,12 +528,12 @@ function StudentExerciseDetail({
       <Panel>
         <h3 className="mb-1 font-display text-lg text-ink">Corrections</h3>
         <p className="mb-3 text-sm text-ink-muted">
-          Vidéos de correction mises à disposition par les formateurs.
+          Vidéos à visionner ou fichiers de correction / résultat attendu.
         </p>
         <AssetList
-          kind="video"
+          defaultMode="mixed"
           assets={exercise.corrections}
-          emptyLabel="Aucune correction vidéo disponible pour le moment."
+          emptyLabel="Aucune correction disponible pour le moment."
           downloadLabel="Télécharger"
           editable={false}
         />
@@ -503,23 +549,48 @@ export function InformatiqueExercicesWorkspace({
 }) {
   const {
     currentUser,
+    userStudyYear,
     state,
     upsertInformatiqueExercise,
     deleteInformatiqueExercise,
   } = useAppStore();
+  const [selectedYear, setSelectedYear] = useState<InformatiqueYear>(() =>
+    resolveInformatiqueYear(userStudyYear),
+  );
   const [selectedApp, setSelectedApp] = useState<InformatiqueApp>("word");
   const [selectedId, setSelectedId] = useState<string>("");
   const [exerciseQuery, setExerciseQuery] = useState("");
 
   const isEdit = mode === "edit";
 
+  useEffect(() => {
+    if (!isEdit) {
+      setSelectedYear(resolveInformatiqueYear(userStudyYear));
+    }
+  }, [userStudyYear, isEdit]);
+
+  const availableApps = useMemo(
+    () =>
+      appsAvailableForYear(state.informatiqueExercises ?? [], selectedYear),
+    [state.informatiqueExercises, selectedYear],
+  );
+
+  useEffect(() => {
+    if (availableApps.length === 0) return;
+    if (!availableApps.includes(selectedApp)) {
+      setSelectedApp(availableApps[0]);
+      setSelectedId("");
+    }
+  }, [availableApps, selectedApp]);
+
   const exercises = useMemo(() => {
     const list = state.informatiqueExercises ?? [];
     return list
+      .filter((e) => e.year === selectedYear)
       .filter((e) => e.app === selectedApp)
       .filter((e) => (isEdit ? true : e.published))
-      .sort((a, b) => a.order - b.order || a.title.localeCompare(b.title));
-  }, [state.informatiqueExercises, selectedApp, isEdit]);
+      .sort((a, b) => a.order - b.order || a.title.localeCompare(b.title, "fr"));
+  }, [state.informatiqueExercises, selectedYear, selectedApp, isEdit]);
 
   const filtered = useMemo(() => {
     const q = exerciseQuery.trim().toLowerCase();
@@ -546,14 +617,18 @@ export function InformatiqueExercicesWorkspace({
   const hubHref = isEdit ? "/formateur/exercices" : "/exercices";
   const hubLabel = isEdit ? "← Exercices" : "← Exercices";
 
+  const appsToShow = INFORMATIQUE_APPS.filter(
+    (app) => isEdit || availableApps.includes(app.id),
+  );
+
   return (
     <div>
       <PageHeader
         title="Informatique"
         description={
           isEdit
-            ? "Gérez les exercices Word, Excel et PowerPoint — documents et corrections vidéo."
-            : "Choisissez une application, puis un exercice pour voir les consignes, documents et corrections."
+            ? "Gérez les exercices Word et Excel (1re et 3e année) — documents et corrections."
+            : "Choisissez l'année, l'application, puis un exercice pour voir consignes, documents et corrections."
         }
         actions={
           <Link href={hubHref}>
@@ -580,31 +655,66 @@ export function InformatiqueExercicesWorkspace({
       ) : null}
 
       <Panel className="mb-4">
-        <p className="mb-2 text-sm font-medium text-ink">Application</p>
+        <p className="mb-2 text-sm font-medium text-ink">Année</p>
+        <div
+          className="flex flex-wrap gap-2"
+          role="group"
+          aria-label="Choisir une année"
+        >
+          {INFORMATIQUE_YEARS.map((y) => (
+            <Button
+              key={y.id}
+              type="button"
+              size="sm"
+              variant={selectedYear === y.id ? "primary" : "secondary"}
+              onClick={() => {
+                setSelectedYear(y.id);
+                setSelectedId("");
+                setExerciseQuery("");
+              }}
+            >
+              {y.label}
+            </Button>
+          ))}
+        </div>
+        <p className="mt-2 text-xs text-ink-subtle">
+          Pas de cours Informatique en 2e année — seuls 1re et 3e sont proposés.
+        </p>
+
+        <p className="mb-2 mt-4 text-sm font-medium text-ink">Application</p>
         <div
           className="flex flex-wrap gap-2"
           role="group"
           aria-label="Choisir une application"
         >
-          {INFORMATIQUE_APPS.map((app) => (
-            <Button
-              key={app.id}
-              type="button"
-              size="sm"
-              variant={selectedApp === app.id ? "primary" : "secondary"}
-              onClick={() => {
-                setSelectedApp(app.id);
-                setSelectedId("");
-                setExerciseQuery("");
-              }}
-            >
-              <Monitor className="h-4 w-4" />
-              {app.label}
-            </Button>
-          ))}
+          {appsToShow.map((app) => {
+            const disabled = !availableApps.includes(app.id) && !isEdit;
+            return (
+              <Button
+                key={app.id}
+                type="button"
+                size="sm"
+                variant={selectedApp === app.id ? "primary" : "secondary"}
+                disabled={disabled}
+                onClick={() => {
+                  setSelectedApp(app.id);
+                  setSelectedId("");
+                  setExerciseQuery("");
+                }}
+              >
+                <Monitor className="h-4 w-4" />
+                {app.label}
+              </Button>
+            );
+          })}
         </div>
         <p className="mt-2 text-xs text-ink-subtle">
           {INFORMATIQUE_APPS.find((a) => a.id === selectedApp)?.description}
+          {availableApps.length === 0
+            ? " — Aucun exercice pour cette année / application."
+            : !availableApps.includes("powerpoint")
+              ? " — PowerPoint non proposé (pas de ressources)."
+              : null}
         </p>
 
         <div className="mt-4">
@@ -612,7 +722,7 @@ export function InformatiqueExercicesWorkspace({
             label="Rechercher un exercice"
             value={exerciseQuery}
             onChange={(e) => setExerciseQuery(e.target.value)}
-            placeholder="Ex. publipostage, taux…"
+            placeholder="Ex. mise en forme, styles…"
           />
         </div>
 
@@ -626,7 +736,7 @@ export function InformatiqueExercicesWorkspace({
                 ? `Aucun exercice pour « ${exerciseQuery} »`
                 : isEdit
                   ? "Aucun exercice dans cette application — créez-en un ci-dessous."
-                  : "Aucun exercice publié pour cette application."}
+                  : "Aucun exercice publié pour cette année / application."}
             </p>
           ) : (
             <ul
@@ -682,8 +792,9 @@ export function InformatiqueExercicesWorkspace({
               onClick={() => {
                 const id = upsertInformatiqueExercise({
                   app: selectedApp,
+                  year: selectedYear,
                   title: `Nouvel exercice ${informatiqueAppLabel(selectedApp)}`,
-                  description: "",
+                  description: `Année ${selectedYear}`,
                   instructions: `## Consignes\n\nDécrivez ici l'exercice.\n`,
                   published: false,
                   documents: [],
@@ -693,7 +804,8 @@ export function InformatiqueExercicesWorkspace({
               }}
             >
               <Plus className="h-4 w-4" />
-              Nouvel exercice {informatiqueAppLabel(selectedApp)}
+              Nouvel exercice {informatiqueAppLabel(selectedApp)} (
+              {informatiqueYearLabel(selectedYear)})
             </Button>
           </div>
         ) : null}
@@ -705,7 +817,7 @@ export function InformatiqueExercicesWorkspace({
           description={
             isEdit
               ? "Créez un exercice ou choisissez-en un dans la liste."
-              : "Choisissez une application puis un exercice."
+              : "Choisissez une année, une application puis un exercice."
           }
         />
       ) : isEdit ? (

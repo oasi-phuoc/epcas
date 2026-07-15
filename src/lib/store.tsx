@@ -34,7 +34,10 @@ import {
   pullTrackingFromSupabase,
   readTrackingHub,
 } from "./offline/tracking-sync";
-import { SEED_INFORMATIQUE_EXERCISES } from "./informatique-exercises";
+import {
+  SEED_INFORMATIQUE_EXERCISES,
+  mergeInformatiqueExercises,
+} from "./informatique-exercises";
 import type {
   AppState,
   Assessment,
@@ -214,11 +217,10 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
       assessmentQuestions: parsed.assessmentQuestions ?? [],
       classTasks: parsed.classTasks ?? initialState.classTasks,
       sequences: normalizeSequences(parsed.sequences, initialState.modules),
-      informatiqueExercises:
-        Array.isArray(parsed.informatiqueExercises) &&
-        parsed.informatiqueExercises.length > 0
-          ? parsed.informatiqueExercises
-          : initialState.informatiqueExercises,
+      informatiqueExercises: mergeInformatiqueExercises(
+        parsed.informatiqueExercises,
+        initialState.informatiqueExercises ?? SEED_INFORMATIQUE_EXERCISES,
+      ),
       currentUserId: parsed.currentUserId ?? null,
     };
   }
@@ -251,11 +253,10 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
   });
   const modules = normalizeModules(parsed.modules);
 
-  const informatiqueExercises =
-    Array.isArray(parsed.informatiqueExercises) &&
-    parsed.informatiqueExercises.length > 0
-      ? parsed.informatiqueExercises
-      : initialState.informatiqueExercises ?? SEED_INFORMATIQUE_EXERCISES;
+  const informatiqueExercises = mergeInformatiqueExercises(
+    parsed.informatiqueExercises,
+    initialState.informatiqueExercises ?? SEED_INFORMATIQUE_EXERCISES,
+  );
 
   return {
     ...initialState,
@@ -667,7 +668,11 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
             ),
           };
         }
-        const siblings = list.filter((e) => e.app === exercise.app);
+        const siblings = list.filter(
+          (e) =>
+            e.app === exercise.app &&
+            (exercise.year == null || e.year === exercise.year),
+        );
         const order =
           exercise.order ??
           (siblings.length > 0

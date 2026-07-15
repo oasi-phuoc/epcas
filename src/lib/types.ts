@@ -212,6 +212,9 @@ export interface InformatiqueAsset {
   mimeType?: string;
 }
 
+/** Années de cours Informatique (pas de 2e année). */
+export type InformatiqueYear = 1 | 3;
+
 /**
  * Exercice Informatique (Word / Excel / PowerPoint),
  * indépendant des modules curriculum 100–900.
@@ -219,6 +222,8 @@ export interface InformatiqueAsset {
 export interface InformatiqueExercise {
   id: string;
   app: InformatiqueApp;
+  /** Année du parcours Informatique (1 ou 3 uniquement). */
+  year: InformatiqueYear;
   title: string;
   /** Court descriptif affiché dans la liste. */
   description: string;
@@ -227,7 +232,7 @@ export interface InformatiqueExercise {
   order: number;
   published: boolean;
   documents: InformatiqueAsset[];
-  /** Corrections vidéo uploadées par les formateurs. */
+  /** Corrections (vidéos et/ou documents) — `_correction*` / `_resultat*`. */
   corrections: InformatiqueAsset[];
 }
 
