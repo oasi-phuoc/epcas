@@ -9144,6 +9144,446 @@ const DEMO_301_OBJECTIFS_SUMMARY = `## Objectifs
 - Make or Buy · outsourcing
 - Quantités & timing`;
 
+/** Glossaire Module 301 */
+const DEMO_301_GLOSSAIRE_FULL = `## Glossaire — Module 301
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Acheteur | | Spécialiste de l'approvisionnement qui recherche, négocie et procure les marchandises (et services) au meilleur rapport **qualité / prix**, avec les conditions de livraison adaptées. |
+| Outsourcing | Externalisation | Transfert (total ou partiel) d'activités jusqu'alors réalisées en interne vers un **partenaire externe**, sur la base de **contrats** (durée, prestations). Ex. : nettoyage, IT, distribution, comptabilité. |
+| Make or Buy | Faire ou acheter | Décision stratégique : **fabriquer soi-même** (*make*) ou **acheter / sous-traiter** (*buy*), selon le **prix**, la **qualité** et le **temps**. Principe : ne faire que ce que l'on sait faire **mieux** que les autres (compétences clés). |
+| Opérationnel | | Niveau d'exécution quotidienne de l'approvisionnement : passation de commande, contrôle des délais et de la livraison — souvent réalisé par des acheteurs juniors. |
+| Stratégique | | Niveau de **planification** long terme : négociation des conditions, développement produit, know-how, optimisation des processus, sécurisation des sources d'approvisionnement — souvent mené par les cadres. |
+| Capital | | Ressources financières que l'entreprise se procure (ex. crédit bancaire) pour financer son activité ; à rémunérer (intérêts) sur la durée. |
+| Licences | | Droits d'utilisation d'un savoir-faire, d'une technologie ou d'une marque (souvent liés à un brevet) que l'entreprise achète ou obtient pour produire / commercialiser. |
+| Biens de consommation | | Biens consommés dans l'activité (dont matériaux de production : matières premières, auxiliaires, consommables) nécessaires au fonctionnement courant. |
+| Biens d'investissement | Biens d'équipement | Biens durables servant à la production ou à l'exploitation : machines, équipements de bureau, halles de production et de stockage. |
+| Prestations de services | | Services acquis auprès de tiers : nettoyage, gardiennage, formation, support informatique, etc. |
+| Procédure du point de commande - quantités fixes | | Commande déclenchée lorsque le stock atteint le **point de commande** ; la quantité commandée est toujours la même (**q** fixe). Simple, adaptée à forte rotation ; risque de surstock si la demande baisse. |
+| Procédure du point de commande - quantités variables | | Commande déclenchée au **point de commande** ; la quantité vise à remonter le stock au **maximum**. Suit mieux les ventes ; calcul à chaque commande. |
+| Procédure de rythme de commande - quantités fixes | | Commande à date / rythme **fixe** avec une quantité **fixe** (**q**). Adaptée aux ventes stables ; automatisable si les paramètres sont bons. |
+| Procédure de rythme de commande - quantités variables | | Commande à date / rythme **fixe** ; la quantité remonte jusqu'au **max**. Livraisons régulières contractuelles ; risque de dépasser le max si les ventes baissent. |`;
+
+const DEMO_301_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Acheteur** : négocie et procure au meilleur rapport qualité/prix
+- **Outsourcing** : externalisation contractuelle vers un partenaire
+- **Make or Buy** : fabriquer ou acheter (prix · qualité · temps)
+- **Opérationnel** vs **stratégique** : exécution vs planification
+- **Capital · licences · biens** (consommation / investissement) · **services**
+- **4 procédures de commande** : point de commande / rythme × qté fixe / variable`;
+
+/** Mises en situation Module 301 */
+const DEMO_301_SITUATION_FULL = `## Mises en situation — Module 301
+
+Contexte : tu travailles chez **EnterSite AG** (département *Procurement Management*). Les missions portent sur la **logistique d'approvisionnement** (achat vs approvisionnement, Make or Buy, outsourcing). Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / exemples proposés.
+
+### Vue d'ensemble des missions
+1. Clarifier les différences dans la logistique d'approvisionnement
+2. Activités dans le domaine des marchés publics
+3. Évaluer la fabrication interne ou externe
+4. Make or Buy lors de l'achat d'appareils
+5. Outsourcing – un facteur de compétitivité ?
+6. Discussion de la mise en situation
+
+---
+
+## Mission 1 — Clarifier les différences dans la logistique d'approvisionnement
+
+Aujourd'hui, c'est ton premier jour dans le département Procurement Management d'EnterSite AG. Lors de la visite d'introduction, tu entends souvent les termes « **approvisionnement** » et « **achat** ». Sur la base de ce que tu as appris jusqu'à présent, explique les différences possibles entre ces deux termes.
+
+:::reponse
+**Approvisionnement :**
+L'approvisionnement comprend plus que le simple « achat ». Les tâches **stratégiques** telles que les produits et le **choix des fournisseurs** en font partie.
+
+**Achat :**
+Le terme « achat » désigne une activité **répétitive et quotidienne** consistant à acheter des marchandises. Il s'agit donc de **processus de commande** exécutés de manière répétitive.
+:::
+
+### Mission 1.1
+
+Comme mentionné dans la théorie, l'objectif de l'approvisionnement peut être très différent. Décris en deux phrases ce que tu entends par les biens dont l'entreprise doit s'approvisionner, en te référant à **EnterSite AG**.
+
+:::reponse
+**Matériel :**
+EnterSite achète entre autres des marchandises telles que des ordinateurs portables, des imprimantes 3D, des photocopieuses.
+
+**Informations :**
+La technologie de l'impression 3D n'est pas encore achevée. Il est possible que des informations sur le processus de fabrication de l'impression 3D soient achetées.
+
+**Prestations de services :**
+EnterSite dispose d'un support pour les biens vendus, qui est proposé en tant que service.
+
+**Capital :**
+EnterSite AG s'est éventuellement procuré du capital auprès de la banque. Un crédit qui doit être rémunéré au cours des prochaines années.
+
+**Main-d'œuvre :**
+Les jours/mois de forte vente, EnterSite AG embauche de la main-d'œuvre. La main-d'œuvre est « achetée » par un bureau temporaire.
+
+**Licences, brevets :**
+EnterSite AG n'identifie pas clairement les tâches qui nécessitent des licences ou des brevets. S'il y en a, ils se trouvent dans l'impression 3D. Il est possible qu'à l'avenir, les implants / articulations etc. soient fabriqués par impression 3D et que ce processus de fabrication nécessite une licence / un brevet.
+:::
+
+### Mission 1.2
+
+Y a-t-il des différences entre EnterSite AG et ton entreprise formatrice en ce qui concerne la mission 1.1 ?
+
+:::reponse
+**Réponse individuelle** — selon ton entreprise formatrice (pas de solution unique).
+:::
+
+---
+
+## Mission 2 — Activités dans le domaine des marchés publics
+
+Après une brève introduction au service, tu reçois une première mission de la part de la responsable du service, **Agnes Zimmermann**. Les collaborateurs de l'administration doivent travailler davantage en home office. Pour ce faire, des ordinateurs portables performants doivent être mis à leur disposition. Fais des propositions sur les sources d'information que tu pourrais utiliser pour trouver des fournisseurs appropriés pour les ordinateurs portables.
+
+:::reponse
+**Sources d'information :**
+- Internet
+- Journaux / revues spécialisées
+- Collègues / collaborateurs
+- Partenaires commerciaux
+:::
+
+### Mission 2.1
+
+Lors de tes recherches, tu découvres différentes offres intéressantes. Comment procéderais-tu ? Essaie de diviser la démarche en mission **stratégique** et **opérationnelle**.
+
+:::reponse
+**Stratégiquement**
+- Première sélection de fournisseurs potentiels
+- Obtention d'une offre (disponibilité, prix, etc.)
+- Éventuellement, négociations supplémentaires après réception de l'offre
+- Sélection du fournisseur
+
+**Opérationnel**
+- Déclencher la commande
+- Surveiller le processus de commande
+- Contrôle de la livraison reçue
+:::
+
+---
+
+## Mission 3 — Évaluer la fabrication interne ou externe
+
+Comme EnterSite AG possède un grand savoir-faire dans le domaine des ordinateurs portables, certains souhaitent assembler eux-mêmes les appareils en intégrant différents composants. Madame Zimmermann te demande de rédiger une prise de position sur les avantages et les inconvénients possibles d'une fabrication interne ou externe.
+
+1. Échangez en groupes de 4 personnes max (5 min).
+2. Élabore individuellement d'autres avantages / inconvénients (20 min).
+3. Mettez vos résultats en commun (10 min).
+
+👉 Respecte le temps imparti !
+
+:::reponse
+**Arguments en faveur d'une production interne :**
+- J'ai la qualité entre mes mains
+- Je peux réaliser moi-même la composition souhaitée
+- Flexibilité en cas de modifications
+
+**Arguments contre la production interne :**
+- J'ai besoin de mes propres ressources / collaborateurs·trices
+- Temps
+- Coûts ?
+
+**Arguments en faveur de la sous-traitance :**
+- Je peux déléguer la commande, le travail
+- Économiser des ressources
+
+**Arguments contre la sous-traitance :**
+- Qualité ?
+- Possibilité de tenir compte de mes souhaits ?
+- Flexibilité en cas de modifications ?
+:::
+
+### Mission 3.1
+
+Les recherches peuvent faciliter la prise de décision en matière de fabrication. Lis les rapports suivants. Justifie la fabrication que tu privilégierais sur la base des rapports.
+
+#### Investissement asiatique dans Beamer&Beamer ?
+
+On spécule que l'entreprise taïwanaise **ElectroParts** pourrait entrer dans le capital de **Beamer&Beamer** afin de gagner des parts de marché supplémentaires sur le marché européen. Le comité d'entreprise et les collaborateurs de Beamer&Beamer craignent que la production ne soit délocalisée en conséquence à Taiwan. De plus, ElectroParts est plutôt représentée dans le segment de qualité moyenne, ce qui fait craindre une baisse de la qualité des produits.
+
+:::reponse
+**Fabrication interne**
+
+**Justification :** la reprise pourrait entraîner des retards, des incertitudes et des pertes de qualité.
+:::
+
+#### Camions — Les chauffeurs italiens en grève
+
+Une grève nationale des chauffeurs de camion dure maintenant depuis **14 jours**. Les entreprises en Suisse doivent en partie interrompre la production. La fin de la grève n'est pas en vue.
+
+:::reponse
+**Fabrication externe**
+
+**Justification :** il faut vérifier quels sites de production disposent de quelles ressources. Le fait qu'il y ait des problèmes d'approvisionnement en matières premières en Suisse montre qu'il faut au moins examiner la possibilité d'une production externe.
+:::
+
+#### La durée d'utilisation des produits électriques diminue
+
+L'institut d'études de marché « Markt2021 » a constaté que les consommateurs abandonnent de plus en plus souvent et rapidement les produits qu'ils utilisent pour acheter des produits et des technologies nouvellement sortis. C'est une grande opportunité pour les entreprises, mais la durée de vie des produits diminue et les entreprises doivent pouvoir réagir rapidement sur le marché.
+
+:::reponse
+**Fabrication interne**
+
+**Justification :** dans cette situation de marché, il est essentiel de pouvoir réagir rapidement aux nouvelles circonstances. Si de nouvelles technologies ou de nouveaux souhaits de clients apparaissent, je dois pouvoir adapter ma production le plus rapidement possible.
+:::
+
+---
+
+## Mission 4 — Make or Buy lors de l'achat d'appareils
+
+Lors de l'achat d'appareils pour le bureau à domicile, on s'est mis d'accord au sein d'EnterSite AG pour comparer les coûts. Madame Zimmermann te demande de faire la compilation et de donner ensuite ton avis à la direction.
+
+**Coûts de production interne :**
+- Frais de personnel : **3'000 CHF/mois**
+- Infrastructure : **65'000 CHF/an** (frais annexes inclus) → **5'416.65 CHF/mois**
+- Coût unitaire des appareils fabriqués en interne : **800 CHF**/pièce
+
+**Meilleure offre externe :** **820 CHF**/pièce
+
+Crée le tableau suivant (Excel) et calcule à partir de quel nombre de pièces une fabrication en interne serait rentable.
+
+| Nombre de pièces | Coût fixe mensuel | Coût unitaire mensuel | Coût total mensuel | Coût à la pce (interne) | Achat externe (coût unitaire) |
+| --- | --- | --- | --- | --- | --- |
+| 50 | 3'000.00 CHF | 5'416.65 CHF | 8'416.65 CHF | **968.33 CHF** | 820.00 CHF |
+| 100 | 3'000.00 CHF | 5'416.65 CHF | 8'416.65 CHF | **884.17 CHF** | 820.00 CHF |
+| 150 | 3'000.00 CHF | 5'416.65 CHF | 8'416.65 CHF | **856.11 CHF** | 820.00 CHF |
+| 200 | 3'000.00 CHF | 5'416.65 CHF | 8'416.65 CHF | **842.08 CHF** | 820.00 CHF |
+
+> **Note :** le « coût unitaire mensuel » ci-dessus correspond à la part d'infrastructure mensuelle (65'000 / 12). Le coût à la pièce interne = (3'000 + 5'416.65) / n + 800.
+
+:::reponse
+Voir le tableau ci-dessus. Même à **200 pces**, le coût interne à la pièce (**842.08 CHF**) reste supérieur à l'achat externe (**820 CHF**).
+:::
+
+### Mission 4.1
+
+Fais part de tes appréciations à la direction dans une lettre écrite.
+
+:::reponse
+Il faudrait une quantité **supérieure à 200 pces** pour être rentable avec une production à l'interne. En produisant 200 pces, on remarque que ça nous coûte **22.08 CHF** de plus par pièce que si on les achète à l'externe.
+:::
+
+---
+
+## Mission 5 — Outsourcing – un facteur de compétitivité ?
+
+Lis attentivement le texte ci-dessous.
+
+> **Qu'est-ce que l'outsourcing ?**
+> Le terme « outsourcing » est composé des mots anglais *outside*, *resources* et du suffixe *-ing*. Outsourcing signifie donc : « utilisation de ressources externes ». En gestion d'entreprise, l'externalisation désigne le transfert à des entreprises externes de prestations jusqu'alors fournies par l'entreprise elle-même. L'externalisation est surtout pratiquée dans la production industrielle (secteur automobile) et dans les technologies de l'information. Depuis quelques années, le transfert de fonctions commerciales telles que la comptabilité, les ressources humaines et les achats vers des prestataires de services externes a particulièrement augmenté.
+
+Décris avec tes propres mots ce que l'on entend par « outsourcing ».
+
+:::reponse
+Par externalisation, j'entends la **sous-traitance d'activités**. Mon examen « Make or Buy » me permet de décider si je produis moi-même ou si j'achète des produits / services. Si j'achète les produits / services, j'externalise les activités. Cette externalisation des activités correspond à la notion d'**outsourcing**.
+:::
+
+### Mission 5.1
+
+Quel pourrait être le sens et le but de l'externalisation par EnterSite AG ? Quels risques pourraient y être liés pour EnterSite AG ?
+
+:::reponse
+**Sens et but :**
+Le but est d'acheter des produits ou des services qui peuvent être mieux fabriqués et moins chers par d'autres. Cela me permet de me concentrer sur ce que je peux faire mieux que la concurrence.
+
+**Risques :**
+Le risque est de ne pas avoir de contrôle sur la production des produits. Que se passe-t-il si je veux changer quelque chose à court terme ? Cette flexibilité est-elle fournie ? Que se passe-t-il si la qualité attendue ne peut pas être atteinte ? Le risque de **dépendance** doit être reconsidéré.
+:::
+
+### Mission 5.2
+
+Fais part de tes appréciations à la direction dans une lettre écrite.
+
+:::reponse
+Ma direction doit prendre la décision de « faire ou acheter ». Si le volume de vente de l'article de la mission 4 est suffisamment élevé, il est toujours recommandé de fabriquer les produits soi-même. Si nous avons une offre d'un fournisseur qui atteint la qualité souhaitée et que les coûts d'achat ne sont pas plus élevés que la fabrication propre, ce fournisseur doit être pris en considération. Il convient d'observer quelle variante « faire ou acheter » comporte le plus de risques.
+:::
+
+### Mission 5.3
+
+En ce qui concerne la production interne, externe ou l'outsourcing, on parle toujours de la notion de « **compétence clé** ». Comment décrirais-tu la compétence clé d'EnterSite AG ?
+
+:::reponse
+La compétence clé correspond à l'activité que je peux exercer **mieux que les autres**. Ce sont les **points forts** de mon entreprise.
+:::
+
+### Mission 5.4
+
+Qu'en est-il des compétences clés dans ton entreprise formatrice ?
+
+:::reponse
+**Réponse individuelle** — selon ton entreprise formatrice (pas de solution unique).
+:::
+
+---
+
+## Mission 6 — Discussion de la mise en situation
+
+Discute de la situation de travail et d'apprentissage en plénière avec la classe et l'enseignant·e. Notez les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_301_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : approvisionnement (stratégique) ≠ achat (opérationnel quotidien)
+- **M1.1** : matériel · infos · services · capital · main-d'œuvre · licences
+- **M2** : sources fournisseurs · stratégique vs opérationnel
+- **M3** : pour / contre make vs buy · cas Beamer&Beamer, grève, marché rapide
+- **M4** : > 200 pces pour rentabiliser le make · à 200 : +22.08 CHF/pce vs buy
+- **M5** : outsourcing · but (focus compétences) · risques (qualité, flexibilité, dépendance)
+- **M6** : discussion STA`;
+
+/** Exercices de maths Module 301 */
+const DEMO_301_MATHS_FULL = `## Exercices de mathématiques — Module 301
+
+Thème : **Make or Buy** — composant « extrudeur » pour imprimantes 3D EnterSite AG.
+
+EnterSite AG a besoin du composant **extrudeur** pour ses imprimantes 3D. L'entreprise doit décider si elle veut fabriquer elle-même ce composant ou l'acheter (*make or buy*). Besoin : **200 pièces**.
+
+**Achat en Inde :**
+- Prix : **1'961.32 INR**/pièce
+- Transport et taxes de douane pour 200 pièces : **560 CHF**
+- Taux de change : **100 INR = 1,22 CHF**
+
+**Fabrication interne (par pièce) :**
+| Poste | Montant |
+| --- | --- |
+| Frais de matériel | 9 CHF |
+| Coûts salariaux | 13.60 CHF |
+| Coût des consommables | 7.30 CHF |
+| Coût de l'infrastructure | 8 CHF |
+
+L'entreprise doit-elle acheter les extrudeurs en Inde ?
+
+### Exercice 1 — Prix de fabrication interne
+
+Calcule le prix si le composant est produit en interne par EnterSite AG.
+
+:::solution
+**Total pour un composant :** 9 + 13.60 + 7.30 + 8 = **37.90 CHF**
+:::
+
+### Exercice 2 — Prix d'achat depuis l'Inde
+
+Calcule le prix si le composant est acheté en Inde.
+
+:::solution
+**En CHF :** 1'961.32 × 1.22 / 100 = **23.92 CHF**
+
+**Transport et taxes de douane pour 1 pce :** 560 / 200 = **2.80 CHF**
+
+**Total :** 23.92 + 2.80 = **26.72 CHF**
+:::
+
+### Exercice 3 — Différence make vs buy
+
+Calcule la différence entre le prix « make » et le prix « buy » en CHF et en pourcent.
+
+:::solution
+**Différence :** 37.90 − 26.72 = **11.18 CHF**
+
+**En % :** 11.18 × 100 / 37.90 ≈ **29.50 %** (29.4987 %)
+:::
+
+### Exercice 4 — Augmentation de 25 % du prix indien
+
+Les producteurs indiens augmentent de **25 %** le prix unitaire. EnterSite AG achète-t-elle encore en Inde, ou une production en interne est-elle désormais plus avantageuse ?
+
+Calcule le nouveau prix unitaire à l'achat depuis l'Inde.
+
+:::solution
+23.92 CHF = 100 %  
+X CHF = 125 %
+
+**Nouveau prix unitaire :** 23.92 × 125 / 100 = **29.90 CHF**
+
+**Total à l'achat :** 29.90 + 2.80 = **32.70 CHF**
+
+→ L'achat reste plus avantageux que le make (**37.90 CHF**), même après hausse de 25 %.
+:::
+
+> **Contrôle rapide (ordre du corrigé) :** 11,18 + 29,49 | 37,90 | 32,70 | 26,72`;
+
+const DEMO_301_MATHS_SUMMARY = `## Maths — Solutions
+1. Make : **37.90 CHF**/pce
+2. Buy Inde : **26.72 CHF**/pce (23.92 + 2.80)
+3. Écart : **11.18 CHF** ≈ **29.50 %**
+4. Après +25 % : buy **32.70 CHF** (toujours < make 37.90)`;
+
+/** Vérification des acquis Module 301 */
+const DEMO_301_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **La logistique d'approvisionnement**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Explique ce que l'on entend par **missions stratégiques** dans l'approvisionnement.
+
+:::reponse
+- Négociation concernant les conditions de prix et de livraison
+- Collaboration lors du développement du produit
+- Garantie du savoir-faire (*know-how*)
+- Optimisation (amélioration) des processus d'approvisionnement
+- Garantie à long terme des sources d'approvisionnement
+:::
+
+### Question 2
+
+**Make or Buy** est très présent dans le domaine de l'approvisionnement. Qu'est-ce que cela signifie ? Explique et complète ton explication par un exemple.
+
+:::reponse
+« Make or Buy » signifie « **faire ou acheter** ». Dans la vie quotidienne, on est souvent confronté à cette question : Je le fais ou je l'achète ? Exemple : est-ce que je fais mon pain moi-même ou est-ce que je l'achète ? La décision est influencée par les facteurs **prix**, **qualité** et **temps**.
+
+Les entreprises se demandent : où est-ce que je génère le plus de profit — si je fabrique le produit moi-même ou si je l'achète ? La décision doit être ancrée dans la **stratégie**. Principe :
+
+> Nous ne faisons que ce que nous savons faire **mieux** que les autres.
+
+- **Make :** l'entreprise croit être la mieux placée → **compétences clés**.
+- **Buy :** les acheteurs cherchent le producteur qui peut le mieux fabriquer et livrer.
+:::
+
+### Question 3
+
+Si la décision est un « buy », les activités sont souvent externalisées. Le terme technique est le suivant :
+
+:::reponse
+**Outsourcing** (externalisation)
+:::
+
+### Question 4
+
+L'acheteur se procure différents biens. Ces biens sont répartis en **trois catégories principales**. Quelles sont-elles ?
+
+:::reponse
+1. **Biens de consommation**
+2. **Biens d'investissement**
+3. **Prestations de services**
+:::
+
+### Question 5
+
+Cite **deux exemples** pour chacune des trois catégories principales mentionnées.
+
+:::reponse
+**Biens de consommation :**
+matériel de production comme les matières premières, les matières auxiliaires ou les consommables
+
+**Biens d'investissement :**
+machines de fabrication, équipement de bureau, halls de production et de stockage
+
+**Prestations de services :**
+nettoyage, entretien ménager, formation, support informatique
+:::`;
+
+const DEMO_301_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Stratégique : négociation, développement, know-how, processus, sources long terme
+2. Make or Buy = faire ou acheter (prix · qualité · temps) · compétences clés
+3. **Outsourcing** (externalisation)
+4. Biens de consommation · biens d'investissement · prestations de services
+5. Ex. : MP/auxiliaires · machines/halles · nettoyage/formation/IT`;
+
 /** Contenu Module 302 — Approvisionnement / achat de marchandises */
 const DEMO_302_THEORIE_FULL = `## 2. L'approvisionnement de marchandises
 
@@ -9323,6 +9763,334 @@ const DEMO_302_OBJECTIFS_SUMMARY = `## Objectifs
 - Offre / demande
 - Processus commande + documents`;
 
+
+/** Glossaire Module 302 */
+const DEMO_302_GLOSSAIRE_FULL = `## Glossaire — Module 302
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Fournisseur | [EnterSite](#entersite-placeholder) | Entreprise ou personne qui **livre** des marchandises ou des prestations à une autre entreprise (l'acheteur). Dans l'approvisionnement, on compare plusieurs fournisseurs (prix, qualité, délais, etc.). |
+| Créancier | [EnterSite](#entersite-placeholder) | Partie envers laquelle une **dette** est due : elle a une **créance** (droit d'exiger un paiement ou une prestation). Ex. : un fournisseur qui a livré et attend le règlement de la facture. |
+| Débiteur | [EnterSite](#entersite-placeholder) | Partie qui **doit** quelque chose (argent ou prestation) à un créancier. Ex. : l'entreprise acheteuse tant que la facture n'est pas payée. |
+| TVA | [EnterSite](#entersite-placeholder) | **Taxe sur la valeur ajoutée** (impôt indirect suisse, *MwSt*). Elle s'ajoute généralement au prix net : prix **brut** = prix net + TVA. Le taux applicable figure sur l'offre / la facture. |`;
+
+const DEMO_302_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Fournisseur** : livre marchandises / prestations à l'acheteur
+- **Créancier** : celui à qui l'on doit (a une créance)
+- **Débiteur** : celui qui doit (a une dette)
+- **TVA** : taxe sur la valeur ajoutée (net → brut)`;
+
+/** Mises en situation Module 302 */
+const DEMO_302_SITUATION_FULL = `## Mises en situation — Module 302
+
+Contexte : tu travailles chez **EnterSite AG** (département *Procurement Management*). Les missions portent sur **l'achat de marchandises** (toners compatibles OKI). Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / exemples proposés.
+
+### Vue d'ensemble des missions
+1. Créer un processus pour l'acquisition
+2. Demander des offres
+3. Comparaison quantitative des offres (résolution sous Mathématiques)
+4. Comparaison qualitative des offres
+5. Présenter et justifier le choix du fournisseur lors d'une réunion du département
+6. Discussion de la situation de travail et d'apprentissage
+
+---
+
+## Mission 1 — Créer un processus pour l'acquisition
+
+EnterSite AG a récemment élargi son assortiment avec l'imprimante de la marque **OKI**. Grâce à ses caractéristiques, l'**OKI MC883dn** est devenue un succès de vente. Mais ces derniers temps, de nombreux clients s'annoncent irrités par le prix élevé des toners d'impression **originaux OKI** et souhaitent des toners **compatibles** pour ce modèle. Les clients argumentent d'une part sur le **prix** et d'autre part sur le fait que les toners compatibles permettent de contribuer à la **protection de l'environnement**.
+
+Certains clients menacent déjà de prendre en considération d'autres entreprises. C'est pourquoi le temps presse et il est urgent pour EnterSite AG d'agir. Selon **Madame Zimmermann**, il n'est toutefois pas possible de produire les toners en interne dans l'urgence.
+
+En tant que collaborateur/trice du service Procurement Management, tu réfléchis à la possibilité et à la manière de réagir à cette situation. Établis un plan de déroulement pour une éventuelle procédure d'approvisionnement.
+
+:::reponse
+**Processus d'approvisionnement :**
+- Besoin connu
+- Propres produits déjà disponibles ? Si non, est-ce que les produits sont disponibles ?
+- Production interne possible / souhaitée ? Si non, il faut le faire
+- Chercher des fournisseurs potentiels
+- Demander des offres, clarifier les prix et la qualité
+- Déterminer le fournisseur
+- Envoyer la commande
+- Suivre la commande
+- Réception et contrôle des marchandises
+- Mise en stock
+:::
+
+---
+
+## Mission 2 — Demander des offres
+
+L'étape suivante consiste à rechercher des fournisseurs et à demander des offres éventuelles. Pour ce faire, ouvre le fichier **Demande** (voir ci-dessous) et formule une demande au fournisseur **13225**. Le produit, numéro d'article **45862840**.
+
+Si l'enseignant·e est satisfait·e de ta demande, tu peux la classer dans le champ des solutions.
+
+**Fichier :** \`Demande offre.docx\`
+
+**Dépôt de fichiers / solution :** \`Demande d'offre_solution.docx\`
+
+:::reponse
+**Réponse individuelle** — demande d'offre au fournisseur 13225 pour l'article 45862840 (fichier \`Demande offre.docx\` → classer \`Demande d'offre_solution.docx\` après validation).
+:::
+
+---
+
+## Mission 3 — Comparaison quantitative des offres
+
+Suite aux demandes que tu as écrites, différentes offres sont arrivées. Il s'agit maintenant de comparer les offres entre elles afin de faire un choix de fournisseur approprié.
+
+Pour cela, va sur la page **Mathématiques** et détermine, à l'aide du schéma de calcul préparé, les prix des différentes offres pour une commande de **200 pièces**. Tu peux ensuite copier le schéma de calcul dans le champ de solution.
+
+> **Vers le site EnterSite** : suis la visite virtuelle de la salle **14 V2**. Madame Zimmermann a épinglé les offres qui sont arrivées sur le tableau d'affichage. Cherche pour cela l'image et modifie les offres. Lien : [Vers EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+**PDF (offres) :**
+- \`Offre-PeachPatronen.pdf\`
+- \`Offre-Inkolor.pdf\`
+- \`Offre-TonerPartner.pdf\`
+
+**Dépôt de fichiers :** \`Comparaison des offres_solution.xlsx\`
+
+:::reponse
+**Schéma de calcul** — à compléter / copier depuis Mathématiques (commande de **200 pièces**) → \`Comparaison des offres_solution.xlsx\`.
+:::
+
+---
+
+## Mission 4 — Comparaison qualitative des offres
+
+Le service des achats reçoit une communication de la direction. Mme Zimmermann demande donc une réunion du département.
+
+**Communication de la direction :**
+
+Le service des ventes signale une augmentation de la demande de cartouches d'impression compatibles. La commande doit donc être effectuée dans les plus brefs délais. Veuillez fournir une réponse concernant le choix d'un fournisseur d'ici demain. Lors du choix du fournisseur, ne compare **pas seulement les prix**.
+
+Étant donné que l'offre la moins chère n'est pas toujours la meilleure, des critères de **qualité** devraient également être pris en compte. Madame Zimmermann vous fournit les critères suivants pour l'analyse : **prix d'achat**, **délai de livraison**, **conscience environnementale**, **respect des délais**, **comportement en cas de réclamation**, **qualité**.
+
+Consulte une nouvelle fois, premièrement, les comparaisons d'offres et, deuxièmement, le fichier joint contenant des informations supplémentaires sur les fournisseurs et remplis ainsi le tableau de critères suivant.
+
+**Fichier :** \`Informations sur les fournisseurs.pdf\`
+
+:::reponse
+| Critères | TonerPartner | PeachPatronen | Inkolor |
+| --- | --- | --- | --- |
+| Prix | Rang 2 | Rang 3 | Rang 1 |
+| Délai de livraison | Rang 3 | Rang 2 | Rang 1 |
+| Aspects environnementaux | Rang 1 | Rang 3 | Rang 2 |
+| Respect des délais | Rang 3 | Rang 2 | Rang 1 |
+| Réclamations | Rang 1 | Rang 1 | Rang 2 |
+| Qualité | Rang 2 | Rang 1 | Rang 2 |
+:::
+
+### Mission 4.1 — Analyse de l'utilité
+
+Tu inscris maintenant les critères dans l'analyse de la valeur qui suit.
+
+Pondère les six critères de sélection des fournisseurs. Répartis un total de **100 points** entre les différents critères, le critère le plus important pour toi recevant le plus de points.
+
+Passe maintenant en revue chaque critère et attribue une note à chaque fournisseur. Attribue des points d'évaluation de **1 à 5** (5 = remplit très bien le critère).
+
+Ensuite, multiplie la pondération des critères par les points d'évaluation et additionne les valeurs partielles. Le fournisseur avec le **total le plus élevé** est ton favori.
+
+👉 Conseil : tu peux aussi créer l'analyse de la valeur utile dans Excel et la copier dans le champ de solution.
+
+**Points d'évaluation :** 1 = très mauvais · 5 = très bon
+
+:::reponse
+| Critères | Pondération | TonerPartner Éval. | Valeur part. | PeachPatronen Éval. | Valeur part. | Inkolor Éval. | Valeur part. |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Prix | 20 | 3 | 60 | 1 | 20 | 5 | 100 |
+| Délai de livraison | 10 | 3 | 30 | 1 | 10 | 5 | 50 |
+| Aspects environnementaux | 30 | 5 | 150 | 1 | 30 | 3 | 90 |
+| Respect des délais | 15 | 1 | 15 | 3 | 45 | 5 | 75 |
+| Réclamations | 5 | 5 | 25 | 5 | 25 | 3 | 15 |
+| Qualité | 20 | 3 | 60 | 5 | 100 | 3 | 60 |
+| **Valeur totale** | **100** | | **340** | | **230** | | **390** |
+
+**Favori : Inkolor (390)**
+:::
+
+---
+
+## Mission 5 — Présenter et justifier le choix du fournisseur
+
+Lors de la prochaine réunion du département, tu dois maintenant présenter et justifier ton choix de fournisseur. Note tes arguments.
+
+:::reponse
+**Ma sélection de fournisseurs : Inkolor**
+
+**Arguments en faveur de mon fournisseur :**
+En tenant compte des aspects écologiques et économiques, Inkolor peut offrir le meilleur paquet global.
+
+**Arguments contre les autres fournisseurs :**
+Le manque de qualité ou des facteurs de pollution de l'environnement parlent contre les autres fournisseurs.
+:::
+
+### Mission 5.1 — Réunion du département
+
+Il est maintenant temps de passer à la réunion du département. Lors de la réunion dirigée par la direction du département, assieds-toi avec les autres et présente ton résultat en exposant ton argumentation.
+
+Les autres collègues suivent attentivement la réunion du service et notent les différents arguments en faveur des choix des fournisseurs.
+
+:::reponse
+**Argument 1 :** Réponse individuelle
+
+**Argument 2 :** Réponse individuelle
+
+**Argument 3 :** Réponse individuelle
+
+**Argument 4 :** Réponse individuelle
+:::
+
+---
+
+## Mission 6 — Discussion STA
+
+Discute de la situation de travail et d'apprentissage en plénière avec la classe et l'enseignant·e. Notez les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_302_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : processus d'approvisionnement (toners OKI compatibles)
+- **M2** : demande d'offre (fournisseur 13225 · art. 45862840)
+- **M3** : comparaison quantitative · Maths · EnterSite salle **14 V2**
+- **M4** : critères + analyse utilité → **Inkolor 390**
+- **M5** : justifier Inkolor · **M5.1** arguments individuels
+- **M6** : discussion STA`;
+
+/** Exercices de maths Module 302 */
+const DEMO_302_MATHS_FULL = `## Exercices de mathématiques — Module 302
+
+Calcule les tâches suivantes sur le sujet : **l'achat de marchandises**. Vérifie ensuite avec le bouton solution.
+
+### Exercice 1 — Schéma de comparaison des offres
+
+À l'aide du schéma de calcul préparé, détermine les prix des différentes offres pour une commande de **200 pièces**. Tu peux ensuite copier le schéma de calcul dans le champ de solution ci-dessous ainsi que dans le champ de solution de la situation de travail et d'apprentissage.
+
+**Fichiers :**
+- \`Comparaison des offres.xlsx\`
+- \`Comparaison des offres_Réponse.xlsx\`
+- \`Comparaison des offres_solution.xlsx\`
+
+:::solution
+Schéma de calcul (commande 200 pces) — valeurs repères / solutions :
+**27,35 | 180.504 | 3,43 | 27,20 | 26,40 | 27 | 418.56**
+
+(Copier le schéma depuis \`Comparaison des offres_solution.xlsx\`.)
+:::
+
+### Exercice 2 — Écart en % entre fournisseurs
+
+De combien de % le prix du fournisseur le moins cher est-il inférieur à celui du fournisseur dont le prix unitaire est le plus élevé ?
+
+:::solution
+26.41 × 100 / 27.35 = **96.56 %**
+
+Inférieur de : 100 − 96.56 = **3.44 %** (repère solutions : **3,43**)
+:::
+
+### Exercice 3 — Fournisseurs sporadiques
+
+Le répertoire des fournisseurs comprend **360** entreprises chez EnterSite AG. **70 %** des entreprises livrent régulièrement des marchandises, **30 %** seulement de manière sporadique. Parmi les entreprises qui ne livrent que sporadiquement, **25 %** ne livrent que trois fois par an environ.
+
+Combien de fournisseurs ne livrent que trois fois ?
+
+:::solution
+Fournisseurs qui livrent sporadiquement : 360 × 30 / 100 = **108** fournisseurs
+
+Fournisseurs qui livrent 3× par an : 108 × 25 / 100 = **27** fournisseurs
+:::
+
+### Exercice 4 — TVA et rabais
+
+Un fournisseur d'EnterSite AG indique sur son offre une TVA de **218 francs**.
+
+a. Quelle est la valeur nette de la marchandise avec une TVA de **8 %** ?
+
+b. Quel est le prix brut si tu bénéficies en plus d'un rabais de **10 %** sur celui-ci ?
+
+:::solution
+**a.** Valeur nette de la marchandise : 218 / 8 × 100 = **2'725 CHF**
+
+**b.** Valeur brute : 2725 / 100 × 110 = **2'997.5 CHF**
+:::
+
+**Solutions (ligne de contrôle) :** 27,35 | 180.504 | 3,43 | 27,20 | 26,40 | 27 | 418.56`;
+
+const DEMO_302_MATHS_SUMMARY = `## Maths — Solutions
+1. Schéma offres 200 pces (xlsx) · 27,35 | 180.504 | …
+2. **3.44 %** moins cher (repère 3,43)
+3. **27** fournisseurs
+4. Net **2'725 CHF** · brut **2'997.5 CHF**`;
+
+/** Vérification des acquis Module 302 */
+const DEMO_302_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+**Module 302_L'achat de marchandises**
+
+Thème : **l'achat de marchandises**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+En matière d'achat de biens, on parle souvent de la « **loi de l'offre et de la demande** ».
+
+Explique en quoi cette loi influence la fixation des prix.
+
+:::reponse
+Quand la demande est supérieure à l'offre, cela fait monter les prix. Mais cela ne dure qu'un temps. Les fabricants, pour répondre aux demandes des vendeurs, vont augmenter leur production, faisant alors baisser le prix qui va progressivement revenir vers son niveau d'équilibre.
+
+Quand l'offre est supérieure à la demande, cela donne une baisse des prix.
+:::
+
+### Question 2
+
+Comment se déroule généralement le **processus administratif de commande** ? Décris les différents points dans l'ordre.
+
+:::reponse
+1. Demande
+2. Offre
+3. Commande
+4. Confirmation de commande
+5. Facture
+:::
+
+### Question 3
+
+Dans quel but des offres sont-elles demandées à différents fournisseurs ?
+
+:::reponse
+En recevant des offres de différents fournisseurs, je peux les comparer et choisir celle qui me convient le mieux.
+:::
+
+### Question 4
+
+Quelles sont les informations **minimales** que doit contenir une commande ?
+
+:::reponse
+- L'article souhaité (n° d'article et description)
+- La quantité
+- La date de livraison
+- L'adresse de livraison
+- Le prix
+:::
+
+### Question 5
+
+Quels sont les **droits de l'acheteur** d'un bien ?
+
+:::reponse
+- Obtenir la chose vendue et en devenir propriétaire
+- En cas de défaut : livraison de remplacement, réduction ou rédhibition
+:::`;
+
+const DEMO_302_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Offre/demande → hausses ou baisses de prix vers l'équilibre
+2. Demande → Offre → Commande → Confirmation → Facture
+3. Comparer les offres et choisir la meilleure
+4. Article · quantité · date · adresse · prix
+5. Propriété de la chose · défaut → remplacement / réduction / rédhibition`;
+
 /** Contenu Module 303 — Réception des marchandises */
 const DEMO_303_THEORIE_FULL = `## 3. Processus de réception des marchandises
 
@@ -9456,6 +10224,272 @@ const DEMO_303_OBJECTIFS_SUMMARY = `## Objectifs
 - Bases CO réception
 - Comptant / facture
 - Planifiée vs non planifiée + ERP`;
+
+/** Glossaire Module 303 */
+const DEMO_303_GLOSSAIRE_FULL = `## Glossaire — Module 303
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Code des obligations | | Loi suisse (CO) qui régit notamment la **vente**, le **transport** et le **dépôt**. À la réception de marchandises, elle fixe les droits et obligations selon que l'on agit comme acheteur (art. 184–215), transporteur (art. 440–457) ou dépositaire (art. 472–491). |
+| Réception planifiée | | Réception dont la **date**, l'**heure** et la **quantité** à livrer sont connues à l'avance. Permet de réserver quai, espace, documents, moyens auxiliaires, personnel et emplacement → réception plus rapide et moins coûteuse. |
+| Réception non planifiée | | Réception pour laquelle **ni la date ni la quantité** ne sont connues (pas de créneau convenu, ou information non parvenue). À éviter en entrepôt : souvent liée à un défaut de communication entre achats et logistique. |
+| Donnant donnant | | Principe (CO art. 184) : sauf accord contraire, vendeur et acheteur exécutent leurs prestations **en même temps** (remise de la chose ↔ paiement du prix). Exemple courant : achat au comptant en magasin. |`;
+
+const DEMO_303_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Code des obligations** : vente, transport, dépôt (bases juridiques de la réception)
+- **Réception planifiée** : date / heure / quantité connues → préparation possible
+- **Réception non planifiée** : date et quantité inconnues → à éviter en entrepôt
+- **Donnant donnant** : prestations simultanées (remise ↔ paiement)`;
+
+/** Mises en situation Module 303 */
+const DEMO_303_SITUATION_FULL = `## Mises en situation — Module 303
+
+Contexte : tu travailles chez **EnterSite AG**. Les missions portent sur la **réception des marchandises** (bases juridiques CO, influence sur les départements, procédures). Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / exemples proposés.
+
+### Vue d'ensemble des missions
+1. Clarifier la base juridique
+1.1 Autres situations juridiques (partenaires)
+2. Évaluer la base juridique
+2.1 EnterSite — puzzle réception planifiée / non planifiée (salle 14 V3)
+3. Influence sur les départements
+4. Instructions de procédure (entreprise de formation)
+5. Discussion de la mise en situation
+
+---
+
+## Mission 1 — Clarifier la base juridique
+
+Les toners compatibles de la mise en situation du module **302** ont été commandés par EnterSite AG. La base juridique prévoit différents types d'hypothèses. Quelle est la situation juridique qui s'applique à la commande et à la réception des toners d'imprimante compatibles pour EnterSite AG ? Justifie ta réponse.
+
+Il s'agit d'une acceptation en tant que….
+
+:::reponse
+**Acceptation en tant qu'acheteur d'un bien mobilier.**
+
+**Justification :** je ne suis pas un transporteur et je ne garde pas de biens. Ma mission est d'**acheter** des biens.
+:::
+
+---
+
+## Mission 1.1 — Autres situations juridiques
+
+Existe-t-il d'autres situations juridiques pour les partenaires impliqués dans la livraison ?
+
+Acceptation en tant que….
+
+:::reponse
+**En tant que transporteur de marchandises.** Les marchandises sont livrées par ce dernier.
+:::
+
+---
+
+## Mission 2 — Évaluer la base juridique
+
+Les toners commandés devraient être livrés demain par camion sur des palettes. L'offre que tu as acceptée en commandant les toners contient le texte suivant :
+
+> Le prix s'entend frais d'emballage inclus. Nous accordons une remise de **15 %** pour tout achat de **50 pièces** ou plus. Payable dans les **10 jours** sous déduction d'un escompte de **2 %**. Pour l'expédition, nous facturons un forfait de **Fr. 10.-** pour une commande de 50 pièces ou plus. La livraison a lieu au plus tard **5 jours** après réception de la commande.
+
+Aujourd'hui, tu reçois un e-mail du fournisseur avec le texte suivant :
+
+> Mesdames et Messieurs  
+> Comme convenu, vous recevrez demain les produits que vous avez commandés chez nous. Malheureusement, nous devons vous informer qu'en raison de problèmes de liquidités, nous ne pouvons accorder la remise qu'à partir de **250 pièces** (200 pièces commandées) et que nous attendons votre paiement (facture jointe), déduction faite de l'escompte de 2 %, **directement après réception** de la marchandise.  
+> Salutations amicales — Ventes internes
+
+Comment juges-tu la situation décrite sur la base de la législation ? Pour ce faire, recherche les articles de loi correspondants dans le **CO** et explique tes conclusions.
+
+:::reponse
+Cette adaptation **n'est pas correcte**. L'offre envoyée a une validité selon la date indiquée sur l'offre. Si j'ai **accepté** l'offre dans ce délai, la vente doit être exécutée **conformément** à celle-ci. Selon le CO, j'ai le droit de recevoir le **rabais convenu**.
+:::
+
+---
+
+## Mission 2.1 — EnterSite (réception planifiée / non planifiée)
+
+> **Astuce EnterSite** : suis la visite virtuelle de la salle **14 V3**. Traite la réception planifiée et non planifiée des marchandises dans un **puzzle**. Cherche l'image sur la droite. Lien : [Vers EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+:::reponse
+**Réponse individuelle** — selon le puzzle EnterSite (salle 14 V3).
+:::
+
+---
+
+## Mission 3 — Influence sur les départements
+
+La réception des marchandises entrantes se déroule à la réception des marchandises. Cependant, la réception des biens influence également d'autres départements. Explique quelles sont les influences de la réception des marchandises par rapport à EnterSite AG et ses différents départements.
+
+:::reponse
+La réception des marchandises a pour conséquence que le stock reçu doit être **stocké**. L'entrée des marchandises doit donc garantir une grande collaboration avec le **stockage**. Le stock enregistré n'est pas seulement reconnaissable physiquement : cette mutation est également visible dans le **système**. Le stock dans le système permet au service des **ventes** de voir le stock actuel et de pouvoir proposer la bonne offre lors du conseil au client. Les **finances** voient le nouveau stock comptable et peuvent ainsi valider le paiement de la facture reçue.
+
+Il est donc important que la réception des marchandises soit effectuée **sans erreur**.
+:::
+
+---
+
+## Mission 4 — Créer des instructions de procédure
+
+Pense maintenant à ta propre entreprise de formation. Établis une **liste de contrôle** et/ou une procédure pour tes activités à la réception des marchandises.
+
+**Remarque pour l'élaboration de la liste de contrôle :**
+- Il ne suffit pas d'écrire : « Vérifier l'adresse ».
+- Indique également **comment**, **où**, **avec quoi**, etc. tu fais ceci ou cela.
+- Essaie également de visualiser les différents points de la liste avec des images, des photos, des croquis, etc.
+
+Tu crées la check-list ou les instructions de procédure dans un **document séparé** et tu le places dans le champ de solution.
+
+:::reponse
+**Réponse individuelle** — dépôt de fichier (liste de contrôle / procédure selon ton entreprise de formation).
+:::
+
+---
+
+## Mission 5 — Discussion de la mise en situation
+
+Discute de la mise en situation en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion (pas de solution unique).
+:::`;
+
+const DEMO_303_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : EnterSite = acheteur d'un bien mobilier (pas transporteur / dépositaire)
+- **M1.1** : le partenaire livreur agit comme **transporteur**
+- **M2** : changement de remise après acceptation de l'offre → **pas valable** (CO)
+- **M2.1** : EnterSite salle **14 V3** (puzzle planifiée / non planifiée)
+- **M3** : impacts stock / ventes / finances → réception sans erreur
+- **M4** : checklist individuelle (fichier)
+- **M5** : discussion plénière`;
+
+/** Exercices de maths Module 303 */
+const DEMO_303_MATHS_FULL = `## Exercices de mathématiques — Module 303
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Durée moyenne d'une réception
+
+En moyenne, une personne peut effectuer **25,5** réceptions de marchandises par jour.
+
+Combien de temps dure en moyenne une réception de marchandises chez EnterSite AG pour un temps de travail hebdomadaire de **42,5 heures** ?
+
+:::solution
+**20 min**
+
+Calcul :
+- Nombre de réceptions par semaine : 5 × 25,5 = **127,5** réceptions
+- Durée d'une réception : 42,5 / 127,5 = **0,33 h** → 0,33 × 60 = **20 min**
+:::
+
+### Exercice 2 — Coûts salariaux d'une réception
+
+Quels sont donc les coûts salariaux d'une réception moyenne de marchandises pour **4,333** semaines par mois et un salaire mensuel de **4'450 francs** par mois ?
+
+:::solution
+**8,05 CHF**
+
+Calcul :
+- Salaire à la semaine : 4'450 / 4,333 ≈ **1'027,0020 CHF**
+- Coûts salariaux pour une réception : 1'027,0020 / 127,5 ≈ **8,054 CHF** → **8,05 CHF**
+:::
+
+### Exercice 3 — Erreurs de processus
+
+L'année dernière, un total de **7'800** réceptions de marchandises a été enregistré par EnterSite AG. Des erreurs ont été constatées dans **3 %** des réceptions de marchandises. Il s'est avéré par la suite qu'il s'agissait à nouveau d'erreurs de processus dans **3 %** des cas.
+
+Combien de réceptions de marchandises sont donc des erreurs de processus ?
+
+:::solution
+**7,02**
+
+Calcul :
+- Erreurs constatées : 7'800 × 3 / 100 = **234** erreurs
+- Erreurs de processus : 234 × 3 / 100 = **7,02** réceptions
+:::
+
+### Exercice 4 — Pourcentage d'erreurs de processus
+
+Quel est le pourcentage d'erreurs de processus sur la totalité des réceptions de marchandises **acceptées** ?
+
+:::solution
+**0,09 %**
+
+Calcul :
+- Nombre de réceptions acceptées : 7'800 − 234 = **7'566** réceptions
+- % d'erreurs de processus : 7,02 × 100 / 7'566 ≈ **0,0928 %** → **0,09 %**
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 7,02 · 0,09 · 8,05 · 20`;
+
+const DEMO_303_MATHS_SUMMARY = `## Maths — Solutions
+1. **20 min** (42,5 h / 127,5 réceptions)
+2. **8,05 CHF** (salaire hebdo / 127,5)
+3. **7,02** (7'800 × 3 % × 3 %)
+4. **0,09 %** (7,02 / 7'566 × 100)`;
+
+/** Vérification des acquis Module 303 */
+const DEMO_303_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **La réception des marchandises**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quelles sont les trois situations de départ régies par la loi dans le domaine de la logistique lors de la réception de marchandises ?
+
+:::reponse
+1. Réception en tant qu'**acheteur**
+2. Réception en tant que **transporteur**
+3. Réception pour le **dépôt**
+:::
+
+### Question 2
+
+Expliquez la notion « **donnant donnant** » lors de l'achat de marchandises.
+
+:::reponse
+« **Donnant donnant** » signifie que chaque partie remplit successivement sa part du marché.
+
+Dans le magasin, je prends l'objet souhaité dans le rayon. À la caisse, avant de quitter le magasin, je **paie** l'équivalent en argent.
+:::
+
+### Question 3
+
+Inscris dans les encadrés le déroulement d'un **achat sur facture**.
+
+:::reponse
+1. Un contrat de vente est négocié et signé.
+2. Le vendeur livre la marchandise dont il a été convenu.
+3. L'acheteur accuse réception de la marchandise. La marchandise est considérée comme réceptionnée et est désormais sous la **garde** de l'acheteur, mais pas encore en sa **possession** (au sens du paiement).
+4. Le vendeur établit une facture.
+5. L'acheteur vire le montant dans le délai de paiement prévu. Désormais, les marchandises **appartiennent** à l'acheteur.
+:::
+
+### Question 4
+
+Quand parle-t-on d'une réception de marchandises **non planifiée** ?
+
+:::reponse
+Nous parlons d'une réception de marchandises non planifiée lorsque **ni la date ni la quantité** qui arrivera ne sont connues.
+:::
+
+### Question 5
+
+Décris les caractéristiques d'une réception **planifiée** et ses avantages pour l'entreprise.
+
+:::reponse
+Dans le cas d'une réception planifiée, contrairement à une réception non planifiée, la **date**, l'**heure** et la **quantité** à livrer sont connues.
+
+La possibilité de planifier permet de :
+- réserver les **quais** de chargement
+- réserver l'**espace** nécessaire
+- mettre à disposition les **documents** nécessaires
+- mettre à disposition les **moyens auxiliaires**
+- mettre à disposition du **personnel**
+:::`;
+
+const DEMO_303_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Acheteur · transporteur · dépôt
+2. Donnant donnant = prestations successives / simultanées (ex. comptant en magasin)
+3. Contrat → livraison → réception (garde) → facture → paiement → propriété
+4. Non planifiée : date et quantité inconnues
+5. Planifiée : date/heure/qté connues → quai, espace, docs, moyens, personnel`;
 
 /** Contenu Module 304 — Identification de la livraison */
 const DEMO_304_THEORIE_FULL = `## 4. Identification de la livraison
@@ -10033,6 +11067,314 @@ const DEMO_306_OBJECTIFS_SUMMARY = `## Objectifs
 - Contenants / palettes
 - Critères d'échange EPAL
 - Pools · supports spéciaux`;
+
+/** Glossaire Module 306 */
+const DEMO_306_GLOSSAIRE_FULL = `## Glossaire — Module 306
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| CHEP | [EnterSite](#entersite-placeholder) | *Commonwealth Handling Equipment Pool* : pool **fermé** de supports de charge (souvent palettes **bleues**). Les entreprises **louent** les engins ; pas d'échange pièce à pièce — on informe CHEP (nombre, type, destinataire) et on ramène les vides à un point de collecte. |
+| EPP | [EnterSite](#entersite-placeholder) | **Pool européen de palettes** (*Europäischer Paletten-Pool*) : système d'échange de palettes (et cadres / couvercles) Euro entre pays participants. Initié par les chemins de fer (CFF 1952, Allemagne 1962) pour simplifier le transport. |
+| EPAL | [EnterSite](#entersite-placeholder) | *European Pallet Association* : organisation faîtière des fabricants / réparateurs de supports EPAL. Plus grand pool **ouvert** ; assure la qualité (fabrication et réparation sous marque EPAL) et les critères d'échange. |
+| Compte courant pour engins échangeables | | Registre (papier, Excel ou portail) des **entrées et sorties** d'engins échangeables entre partenaires. Le **solde** indique qui doit des palettes à qui (solde négatif = droit aux engins). |
+| Pool ouvert | | Système où les participants sont **propriétaires** de leurs engins. Remise ↔ remplacement de même valeur selon un règlement. Trois modes : pièce contre pièce, bon d'échange, compte courant. |
+| Fiche d'information sur les critères d'échange | Image | Document / support visuel rappelant les **critères EPAL** (défauts non échangeables : planches, plots, marques…) et le sort des palettes non conformes (refus d'échange, réparation, élimination). |
+| Pool fermé | | Système où les engins appartiennent à **une** entreprise propriétaire (ex. **CHEP**, LPR) qui les **loue**. Pas d'échange pièce à pièce ; location + collecte / réparation incluses. |`;
+
+const DEMO_306_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **CHEP** : pool fermé (location, palettes bleues)
+- **EPP** : pool européen d'échange Euro
+- **EPAL** : qualité / critères du pool ouvert
+- **Compte courant** : solde entrées / sorties entre partenaires
+- **Pool ouvert** vs **fermé** : propriété + échange vs location
+- **Fiche critères d'échange** : rappel des défauts non échangeables`;
+
+/** Mises en situation Module 306 */
+const DEMO_306_SITUATION_FULL = `## Mises en situation — Module 306
+
+Contexte : tu travailles à la **réception des marchandises** chez **EnterSite AG**. Tu contrôles les **supports de charge** livrés et gères les **échanges**. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / exemples proposés.
+
+### Vue d'ensemble des missions
+1. Définir la notion de support de charge
+1.1 Supports possibles chez EnterSite
+2. Critères d'échange (palette défectueuse)
+2.1 Fiche d'information (modèle)
+3. Bon d'échange (Word)
+3.1 Compte courant Planzer (EnterSite salle 3 V1)
+4. Tableau des supports de charge
+5. Discussion de la mise en situation
+
+---
+
+## Mission 1 — Définir la notion de support de charge
+
+Actuellement, tu es responsable de la réception des marchandises chez EnterSite AG, et tu es chargé de vérifier les supports de charge livrés et, si nécessaire, de les remplacer. Explique en tes propres termes ce que tu comprends par « **support de charge** ».
+
+:::reponse
+Pour le stockage ou le transport, les marchandises sont empilées sur des **supports de charge**. Dans cette optique, la **palette** s'est imposée dans le monde entier. Il n'existe toutefois **pas** de dimensions uniformes pour la palette à l'échelle mondiale.
+:::
+
+---
+
+## Mission 1.1 — Supports livrés à EnterSite
+
+Sur la base de tes expériences passées, note les supports de charge sur lesquels les marchandises pourraient être livrées à EnterSite AG. Justifie ton choix.
+
+:::reponse
+- **Europalette** — standard le plus courant en Suisse / Europe ; échangeable dans le pool
+- **Palette à usage unique** — livraisons ponctuelles ou marchandises légères ; pas d'échange pool
+- **Palette CHEP** — palette bleue du pool fermé ; fréquente chez certains fournisseurs
+:::
+
+---
+
+## Mission 2 — Critères pour l'échange d'engin
+
+Des marchandises ont été livrées à la réception sur la palette suivante. Le transporteur souhaiterait les échanger. Quelle est ton opinion à ce sujet ? Justifie ta décision.
+
+:::reponse
+**Non** — il manque **deux planches**. En conséquence, la palette **n'est pas échangeable**.
+:::
+
+---
+
+## Mission 2.1 — Fiche d'information (modèle)
+
+Sur la base de la palette livrée ci-dessus, tu décides d'établir une **fiche d'information** sur laquelle sont consignés les critères d'échange de palettes. Sur cette fiche, tu indiques également ce qu'il advient des palettes qui ne remplissent pas les critères d'échange. Utilise pour cela le modèle.
+
+> **Dépôt de fichiers** : modèle de fiche (Word) + version solution.
+
+:::reponse
+**Réponse individuelle** — dépôt de fichier (fiche critères d'échange selon le modèle ; palettes non conformes → refus d'échange / réparation / élimination).
+:::
+
+---
+
+## Mission 3 — Bon d'échange (Word)
+
+Un camion de la société **Galliker** se trouve sur le quai. Galliker te livre des marchandises avec les supports de charge suivants :
+
+- 3 palettes EUR type **1**
+- 3 cadres échangeables
+- 2 couvercles échangeables
+- 2 palettes EUR type **6**
+- 4 palettes en matière synthétique
+
+Comme tu dois actuellement être un peu économe en engins échangeables, tu décides d'émettre un **bon**. Malheureusement, hier, la dernière copie du bon a été retirée du casier. Comme personne ne peut te dire où trouver le modèle, tu crées toi-même un bon d'échange dans **Word**.
+
+> **Dépôt de fichiers** : bon d'échange palettes (Word).
+
+:::reponse
+**Réponse individuelle** — dépôt de fichier (bon d'échange signé : type + nombre d'engins dus ; les palettes synthétiques ne sont en principe **pas** dans le pool Euro).
+:::
+
+---
+
+## Mission 3.1 — Compte courant Planzer (EnterSite)
+
+Comme le mois touche à sa fin, ton supérieur hiérarchique te demande de finaliser le relevé des palettes avec la société **Planzer**. Le collègue qui s'est occupé de l'échange des supports de charge au cours des trois dernières semaines n'a pas de compétences en informatique, il a donc tout inscrit sur du papier.
+
+> **Astuce EnterSite** : suis la visite virtuelle dans la salle **3 V1**. Reprends les notes qui ont été déposées pour toi. Cherche l'image sur la droite. Lien : [Vers EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+Traite le **compte courant** (modèle Excel) conformément aux notes et informe ton supérieur de la situation du **solde**.
+
+> **Dépôt de fichiers** : modèle Excel + notes PDF + version solution.
+
+:::reponse
+**Réponse individuelle** — compte courant mis à jour d'après les notes EnterSite (salle 3 V1) + information du supérieur sur le solde (qui doit des engins à qui).
+:::
+
+---
+
+## Mission 4 — Tableau des supports de charge
+
+Ton supérieur a encore une fois besoin de ton aide. Il souhaite que tu établisses un **tableau** des différents supports de charge et moyens auxiliaires utilisés chez EnterSite AG. Pour ce faire, cherche des images et décris-les sur la base des termes du tableau.
+
+| Nr. | Type / moyens auxiliaires | Matériau | Usage unique / réutilisable | Spécificité | Possibilités d'utilisation |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Palette en tôle d'acier | Acier | Réutilisable | Poids de charge élevé | Construction |
+| 2 | Palettes en plastique | Plastique | Réutilisable | Lavable | Alimentation |
+| 3 | Palettes empilables | Bois | Réutilisable | Empilable | Logistique générale |
+| 4 | Palette à fûts | Acier | Réutilisable | Peut contenir des fûts | Liquides |
+| 5 | Pal-Box | Carton | Unique | En carton | Produits légers |
+| 6 | Caisse / cadre à claire-voie | Métal | Réutilisable | Avec grille à emboîter | Compactage / fruits-légumes |
+| 7 | Boîte métallique | Métal | Réutilisable | Murs fermés | Gravier / vrac |
+| 8 | Boîte en bois | Bois | Réutilisable | Pour les aliments | Pommes de terre |
+| 9 | Palettes-citernes | Plastique | Réutilisable | Pour les liquides | Liquides |
+
+:::reponse
+Voir le tableau ci-dessus (compléter avec images selon consigne).
+:::
+
+---
+
+## Mission 5 — Discussion de la mise en situation
+
+Discute de la mise en situation en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion (pas de solution unique).
+:::`;
+
+const DEMO_306_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : support de charge = base d'empilage / transport (ex. palette) ; dims non mondiales
+- **M1.1** : Euro · usage unique · CHEP (exemples EnterSite)
+- **M2** : planches manquantes → **non échangeable**
+- **M2.1** : fiche critères d'échange (fichier modèle)
+- **M3** : bon d'échange Word (Galliker)
+- **M3.1** : compte courant Planzer · EnterSite salle **3 V1**
+- **M4** : tableau 9 supports (acier, plastique, INKA, fûts, Pal-Box…)
+- **M5** : discussion plénière`;
+
+/** Exercices de maths Module 306 */
+const DEMO_306_MATHS_FULL = `## Exercices de mathématiques — Module 306
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Économie sur les palettes
+
+Grâce à un contrôle optimisé à la réception des marchandises d'EnterSite AG, la quantité de palettes échangeables à éliminer et à racheter a diminué de **0,42 %**. L'entreprise échange en moyenne **855** palettes par mois. Avant l'optimisation, **2,2 %** des palettes n'étaient plus échangeables.
+
+Combien peut-on économiser **par trimestre** s'il faut payer **23 CHF** pour l'achat d'une nouvelle palette et **0,20 CHF/kg** pour l'élimination ?
+
+*(Masse d'une palette pour l'élimination : **25 kg**.)*
+
+:::solution
+**1'008 CHF**
+
+Calcul :
+- Trimestre : 855 × 3 = **2'565** palettes
+- Avant optimisation : 2'565 × 2,2 / 100 ≈ **56** palettes
+- Après optimisation : 2'565 × 1,78 / 100 ≈ **44** palettes (2,2 − 0,42 = 1,78)
+- Réduction : 56 − 44 = **12** palettes
+- Économie achat : 12 × 3 × 23 = **828 CHF**
+- Économie élimination : 0,20 × 25 × 12 × 3 = **180 CHF**
+- **Total : 828 + 180 = 1'008 CHF**
+:::
+
+### Exercice 2 — Monte-charge
+
+Le monte-charge a une capacité de charge de **2'300 kg** et peut être utilisé par un chariot à timon. Il peut transporter 3 palettes Euro. Mathis (**80 kg**) a déjà placé **2** palettes de **330 kg** chacune sur le monte-charge. Il doit monter au 3ᵉ étage et charge la dernière palette de **298 kg** et le chariot à timon de **990 kg**.
+
+Peut-il utiliser le monte-charge ?
+
+:::solution
+**Oui**
+
+Calcul :
+- Charge totale : (2 × 330) + 80 + 298 + 990 = **2'028 kg**
+- Capacité : **2'300 kg** → 2'028 < 2'300 → **Oui**, il peut utiliser le monte-charge.
+:::
+
+### Exercice 3 — Surfaces de contrôle
+
+Votre fournisseur livre **30** palettes EUR Type **II**. Pour le contrôle complet, vous avez besoin de **50 cm** d'espace libre de chaque côté de la palette et vous faites **3** rangées.
+
+Quelle surface optimale doit être disponible pour que toutes les palettes puissent être contrôlées sans déplacement ultérieur ?
+
+*(EUR Type II = **1 200 × 1 000 mm**.)*
+
+:::solution
+**86,8 m²** (orientation transversale) · **87,5 m²** (orientation longitudinale)
+
+Calcul (30 palettes = 10 × 3) :
+
+**Palettes en transversal** (côté 1,2 m sur la largeur) :
+- Largeur : 0,5 + 1,2 + 0,5 + 1,2 + 0,5 + 1,2 + 0,5 = **5,6 m**
+- Longueur : (10 × 1) + (0,5 × 11) = **15,5 m**
+- Surface : 15,5 × 5,6 = **86,8 m²**
+
+**Palettes en longitudinal** (côté 1,0 m sur la largeur) :
+- Largeur : 0,5 + 1 + 0,5 + 1 + 0,5 + 1 + 0,5 = **5 m**
+- Longueur : (10 × 1,2) + (0,5 × 11) = **17,5 m**
+- Surface : 5 × 17,5 = **87,5 m²**
+:::
+
+### Exercice 4 — Gain de surface
+
+Nous avons signé un accord avec notre fournisseur pour que les contrôles complets soient faits chez lui avant de nous livrer. Quand les **30** palettes EUR Type II arrivent dans notre entreprise, elles sont stockées **en blocs** en attendant de leur attribuer une place dans l'entrepôt.
+
+Combien de m² gagne-t-on sur la surface d'entreposage en n'ayant plus de contrôle complet à faire ?
+
+:::solution
+**50,8 m²**
+
+Calcul :
+- Bloc : 3 lignes × 10 palettes → Long. 10 × 1 = **10 m** · Larg. 3 × 1,2 = **3,6 m**
+- Surface du bloc : 10 × 3,6 = **36 m²**
+- Gain : 86,8 − 36 = **50,8 m²**
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 86,8 · 1'008 · Oui · 50,8`;
+
+const DEMO_306_MATHS_SUMMARY = `## Maths — Solutions
+1. **1'008 CHF** (économies achat + élimination / trimestre)
+2. **Oui** (2'028 kg < 2'300 kg)
+3. **86,8 m²** / **87,5 m²** (transversal / longitudinal)
+4. **50,8 m²** (86,8 − 36)`;
+
+/** Vérification des acquis Module 306 */
+const DEMO_306_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 306 — Contrôle des supports de charge**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Note les dimensions (L × l × h) en mm et le poids de la palette EURO de type **I**.
+
+:::reponse
+Longueur **1 200 mm**, largeur **800 mm**, hauteur **144 mm**, poids **22 kg**.
+:::
+
+### Question 2
+
+Nomme ce support de charge et décris son domaine d'utilisation.
+
+:::reponse
+**Conteneur à roues (rollcontainers)** — domaine : **approvisionnement des filiales** (petits lots, courts trajets).
+:::
+
+### Question 3
+
+Quelles sont les normes de qualité applicables aux palettes échangeables ? Notez les **huit** normes connues.
+
+:::reponse
+1. Marque **EPAL**
+2. Marquage d'un **réseau ferré européen**
+3. Marque **EUR** (ou pool EPAL)
+4. **Plan de cloutage** standardisé
+5. Planches de rive **chanfreinées**
+6. Pas de traces de **moisissures**
+7. **Agrafe** de contrôle de la qualité avec marque EPAL
+8. Après réparation : **clou de réparation** avec marque EPAL
+:::
+
+### Question 4
+
+Explique la différence entre un pool **ouvert** et un pool **fermé** et citez un exemple de produit pour chacun.
+
+:::reponse
+**Pool ouvert** : les membres sont **propriétaires** de leurs palettes. Chaque membre qui transmet un engin échangeable reçoit en contrepartie quelque chose d'**équivalent**. Ex. : palette **Euro / EPAL**.
+
+**Pool fermé** : les entreprises membres **ne sont pas** propriétaires des supports de charge. Elles les **louent**. Une entreprise (**CHEP**, LPR…) achète les équipements et les met à disposition contre rémunération. Ex. : palette **bleue CHEP**.
+:::
+
+### Question 5
+
+Quelles sont les **trois** possibilités d'échange de palettes ? Décris en quelques phrases la fonction de chaque type d'échange.
+
+:::reponse
+1. **Échange standard (pièce contre pièce)** : si je reçois trois palettes en bon état, je rends trois palettes au chauffeur.
+2. **Échange contre bon** : si je ne dispose pas d'assez de palettes vides, je rédige un bon indiquant le type et le nombre d'engins dus. La **signature** d'un collaborateur rend le bon valable.
+3. **Compte courant pour engins échangeables** : registre (souvent électronique) des entrées et sorties d'engins entre un fournisseur et un client ; le **solde** indique qui doit des palettes à qui.
+:::`;
+
+const DEMO_306_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Euro I : **1200 × 800 × 144 mm**, **22 kg**
+2. **Rollcontainers** — approvisionnement des filiales
+3. 8 normes EPAL (marques, cloutage, chanfreins, moisissure, agrafe, clou réparation)
+4. Ouvert = propriété + échange (Euro) · Fermé = location (CHEP)
+5. Pièce/pièce · bon signé · compte courant`;
 
 /** Contenu Module 307 — Contrôle sommaire et traitement des dommages */
 const DEMO_307_THEORIE_FULL = `## 7. Contrôle sommaire et traitement des dommages
@@ -18135,6 +19477,22 @@ const filledByModule: Record<string, FilledPages> = {
       full: DEMO_301_THEORIE_FULL,
       summary: DEMO_301_THEORIE_SUMMARY,
     },
+    glossaire: {
+      full: DEMO_301_GLOSSAIRE_FULL,
+      summary: DEMO_301_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_301_SITUATION_FULL,
+      summary: DEMO_301_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_301_MATHS_FULL,
+      summary: DEMO_301_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_301_VERIFICATION_FULL,
+      summary: DEMO_301_VERIFICATION_SUMMARY,
+    },
   },
   "302": {
     objectifs: {
@@ -18149,6 +19507,22 @@ const filledByModule: Record<string, FilledPages> = {
       full: DEMO_302_THEORIE_FULL,
       summary: DEMO_302_THEORIE_SUMMARY,
     },
+    glossaire: {
+      full: DEMO_302_GLOSSAIRE_FULL,
+      summary: DEMO_302_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_302_SITUATION_FULL,
+      summary: DEMO_302_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_302_MATHS_FULL,
+      summary: DEMO_302_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_302_VERIFICATION_FULL,
+      summary: DEMO_302_VERIFICATION_SUMMARY,
+    },
   },
   "303": {
     objectifs: {
@@ -18162,6 +19536,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_303_THEORIE_FULL,
       summary: DEMO_303_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_303_GLOSSAIRE_FULL,
+      summary: DEMO_303_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_303_SITUATION_FULL,
+      summary: DEMO_303_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_303_MATHS_FULL,
+      summary: DEMO_303_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_303_VERIFICATION_FULL,
+      summary: DEMO_303_VERIFICATION_SUMMARY,
     },
   },
   "304": {
@@ -18204,6 +19594,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_306_THEORIE_FULL,
       summary: DEMO_306_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_306_GLOSSAIRE_FULL,
+      summary: DEMO_306_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_306_SITUATION_FULL,
+      summary: DEMO_306_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_306_MATHS_FULL,
+      summary: DEMO_306_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_306_VERIFICATION_FULL,
+      summary: DEMO_306_VERIFICATION_SUMMARY,
     },
   },
   "307": {
