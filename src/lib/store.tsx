@@ -34,6 +34,7 @@ import {
   pullTrackingFromSupabase,
   readTrackingHub,
 } from "./offline/tracking-sync";
+import { SEED_INFORMATIQUE_EXERCISES } from "./informatique-exercises";
 import type {
   AppState,
   Assessment,
@@ -44,6 +45,7 @@ import type {
   ClassTaskStatus,
   DiplomaLevel,
   Exercise,
+  InformatiqueExercise,
   Lesson,
   LessonProgress,
   Module,
@@ -98,6 +100,13 @@ type AppStore = {
   deleteClassTask: (taskId: string) => void;
   setClassTaskStatus: (taskId: string, status: ClassTaskStatus) => void;
   updateLesson: (lesson: Lesson) => void;
+  upsertInformatiqueExercise: (
+    exercise: Omit<InformatiqueExercise, "id" | "order"> & {
+      id?: string;
+      order?: number;
+    },
+  ) => string;
+  deleteInformatiqueExercise: (id: string) => void;
   updateModule: (module: Module) => void;
   setSequenceModuleIds: (
     level: DiplomaLevel,
@@ -205,6 +214,11 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
       assessmentQuestions: parsed.assessmentQuestions ?? [],
       classTasks: parsed.classTasks ?? initialState.classTasks,
       sequences: normalizeSequences(parsed.sequences, initialState.modules),
+      informatiqueExercises:
+        Array.isArray(parsed.informatiqueExercises) &&
+        parsed.informatiqueExercises.length > 0
+          ? parsed.informatiqueExercises
+          : initialState.informatiqueExercises,
       currentUserId: parsed.currentUserId ?? null,
     };
   }
@@ -237,6 +251,12 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
   });
   const modules = normalizeModules(parsed.modules);
 
+  const informatiqueExercises =
+    Array.isArray(parsed.informatiqueExercises) &&
+    parsed.informatiqueExercises.length > 0
+      ? parsed.informatiqueExercises
+      : initialState.informatiqueExercises ?? SEED_INFORMATIQUE_EXERCISES;
+
   return {
     ...initialState,
     ...parsed,
@@ -244,6 +264,7 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
     blocks: initialState.blocks,
     modules,
     lessons,
+    informatiqueExercises,
     sequences: normalizeSequences(parsed.sequences, modules),
     users: parsed.users ?? initialState.users,
     progress: parsed.progress ?? {},
@@ -616,6 +637,67 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     [commit],
   );
 
+  const upsertInformatiqueExercise = useCallback(
+    (
+      exercise: Omit<InformatiqueExercise, "id" | "order"> & {
+        id?: string;
+        order?: number;
+      },
+    ) => {
+      const id =
+        exercise.id ??
+        `inf-${exercise.app}-${Date.now().toString(36)}-${Math.random()
+          .toString(36)
+          .slice(2, 7)}`;
+      commit((s) => {
+        const list = s.informatiqueExercises ?? [];
+        const existing = list.find((e) => e.id === id);
+        if (existing) {
+          return {
+            ...s,
+            informatiqueExercises: list.map((e) =>
+              e.id === id
+                ? {
+                    ...existing,
+                    ...exercise,
+                    id,
+                    order: exercise.order ?? existing.order,
+                  }
+                : e,
+            ),
+          };
+        }
+        const siblings = list.filter((e) => e.app === exercise.app);
+        const order =
+          exercise.order ??
+          (siblings.length > 0
+            ? Math.max(...siblings.map((e) => e.order)) + 1
+            : 1);
+        return {
+          ...s,
+          informatiqueExercises: [
+            ...list,
+            { ...exercise, id, order } as InformatiqueExercise,
+          ],
+        };
+      });
+      return id;
+    },
+    [commit],
+  );
+
+  const deleteInformatiqueExercise = useCallback(
+    (id: string) => {
+      commit((s) => ({
+        ...s,
+        informatiqueExercises: (s.informatiqueExercises ?? []).filter(
+          (e) => e.id !== id,
+        ),
+      }));
+    },
+    [commit],
+  );
+
   const updateModule = useCallback(
     (module: Module) => {
       commit((s) => ({
@@ -912,6 +994,8 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     deleteClassTask,
     setClassTaskStatus,
     updateLesson,
+    upsertInformatiqueExercise,
+    deleteInformatiqueExercise,
     updateModule,
     setSequenceModuleIds,
     resetSequences,

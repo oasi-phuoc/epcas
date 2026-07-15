@@ -4,6 +4,7 @@ import {
   buildCurriculumModules,
   curriculumBlocks,
 } from "./curriculum";
+import { SEED_INFORMATIQUE_EXERCISES } from "./informatique-exercises";
 import { buildDefaultSequences } from "./levels";
 
 export const DEMO_PASSWORD = "epcas2026";
@@ -125,6 +126,7 @@ export const initialState: AppState = {
   modules,
   lessons,
   sequences,
+  informatiqueExercises: SEED_INFORMATIQUE_EXERCISES,
   exercises: [
     {
       id: "ex-qcm-1",

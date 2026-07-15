@@ -1,0 +1,728 @@
+"use client";
+
+import { FormEvent, useMemo, useRef, useState } from "react";
+import Link from "next/link";
+import {
+  Alert,
+  Badge,
+  Button,
+  EmptyState,
+  PageHeader,
+  Panel,
+  TextArea,
+  TextField,
+} from "@/components/ui";
+import { MarkdownLite } from "@/components/MarkdownLite";
+import { MarkdownToolbar } from "@/components/MarkdownToolbar";
+import {
+  INFORMATIQUE_APPS,
+  informatiqueAppLabel,
+  newInformatiqueId,
+} from "@/lib/informatique-exercises";
+import { useAppStore } from "@/lib/store";
+import { isStaffRole } from "@/lib/roles";
+import type {
+  InformatiqueApp,
+  InformatiqueAsset,
+  InformatiqueExercise,
+} from "@/lib/types";
+import {
+  Download,
+  Eye,
+  FileText,
+  Monitor,
+  Pencil,
+  Plus,
+  Trash2,
+  Video,
+} from "lucide-react";
+
+const MAX_EMBED_BYTES = 1_500_000;
+
+async function fileToAsset(
+  file: File,
+  kind: "document" | "video",
+): Promise<InformatiqueAsset> {
+  const tooLarge = file.size > MAX_EMBED_BYTES;
+  let url = "";
+  if (!tooLarge) {
+    url = await new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result ?? ""));
+      reader.onerror = () => reject(reader.error);
+      reader.readAsDataURL(file);
+    });
+  }
+  return {
+    id: newInformatiqueId(kind === "video" ? "vid" : "doc"),
+    name: file.name,
+    url,
+    kind,
+    mimeType: file.type || undefined,
+  };
+}
+
+function AssetList({
+  assets,
+  emptyLabel,
+  downloadLabel,
+  editable,
+  onRemove,
+  onAddFile,
+  onAddUrl,
+  accept,
+  kind,
+}: {
+  assets: InformatiqueAsset[];
+  emptyLabel: string;
+  downloadLabel: string;
+  editable: boolean;
+  onRemove?: (id: string) => void;
+  onAddFile?: (file: File) => void;
+  onAddUrl?: (name: string, url: string) => void;
+  accept?: string;
+  kind: "document" | "video";
+}) {
+  const fileRef = useRef<HTMLInputElement>(null);
+  const [urlName, setUrlName] = useState("");
+  const [urlValue, setUrlValue] = useState("");
+
+  return (
+    <div className="space-y-3">
+      {assets.length === 0 ? (
+        <p className="rounded-[var(--radius-md)] border border-dashed border-border px-3 py-4 text-center text-sm text-ink-subtle">
+          {emptyLabel}
+        </p>
+      ) : (
+        <ul className="space-y-2">
+          {assets.map((asset) => (
+            <li
+              key={asset.id}
+              className="space-y-2 rounded-[var(--radius-md)] border border-border bg-surface-muted/40 px-3 py-2.5"
+            >
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="flex min-w-0 items-center gap-2 text-sm text-ink">
+                  {kind === "video" ? (
+                    <Video className="h-4 w-4 shrink-0 text-primary-strong" />
+                  ) : (
+                    <FileText className="h-4 w-4 shrink-0 text-primary-strong" />
+                  )}
+                  <span className="min-w-0 truncate font-medium">
+                    {asset.name}
+                  </span>
+                </span>
+                <span className="flex flex-wrap gap-2">
+                  {kind === "video" && asset.url ? (
+                    <a
+                      href={asset.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex"
+                    >
+                      <Button type="button" size="sm" variant="secondary">
+                        <Eye className="h-4 w-4" />
+                        Voir
+                      </Button>
+                    </a>
+                  ) : null}
+                  {kind === "document" && asset.url ? (
+                    <a
+                      href={asset.url}
+                      download={asset.name}
+                      className="inline-flex"
+                    >
+                      <Button type="button" size="sm" variant="secondary">
+                        <Download className="h-4 w-4" />
+                        {downloadLabel}
+                      </Button>
+                    </a>
+                  ) : null}
+                  {!asset.url ? (
+                    <Badge tone="warning">Pas encore disponible</Badge>
+                  ) : null}
+                  {editable && onRemove ? (
+                    <Button
+                      type="button"
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => onRemove(asset.id)}
+                      title="Supprimer"
+                    >
+                      <Trash2 className="h-4 w-4" />
+                    </Button>
+                  ) : null}
+                </span>
+              </div>
+              {kind === "video" && asset.url ? (
+                <div className="overflow-hidden rounded-[var(--radius-md)] border border-border bg-ink/5">
+                  <video
+                    className="max-h-64 w-full"
+                    controls
+                    preload="metadata"
+                    src={asset.url}
+                  >
+                    Votre navigateur ne prend pas en charge la vidéo.
+                  </video>
+                </div>
+              ) : null}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {editable ? (
+        <div className="space-y-2 border-t border-border pt-3">
+          <input
+            ref={fileRef}
+            type="file"
+            accept={accept}
+            className="hidden"
+            onChange={(e) => {
+              const file = e.target.files?.[0];
+              if (file && onAddFile) onAddFile(file);
+              e.target.value = "";
+            }}
+          />
+          <div className="flex flex-wrap gap-2">
+            <Button
+              type="button"
+              size="sm"
+              variant="secondary"
+              onClick={() => fileRef.current?.click()}
+            >
+              <Plus className="h-4 w-4" />
+              {kind === "video" ? "Ajouter une vidéo" : "Ajouter un document"}
+            </Button>
+          </div>
+          {onAddUrl ? (
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-end">
+              <TextField
+                label="Nom"
+                value={urlName}
+                onChange={(e) => setUrlName(e.target.value)}
+                placeholder={
+                  kind === "video" ? "Correction — titre" : "fichier.docx"
+                }
+                className="sm:max-w-[12rem]"
+              />
+              <TextField
+                label="URL (lien ou /chemin)"
+                value={urlValue}
+                onChange={(e) => setUrlValue(e.target.value)}
+                placeholder="https://… ou /assets/…"
+                className="min-w-0 flex-1"
+              />
+              <Button
+                type="button"
+                size="sm"
+                variant="secondary"
+                disabled={!urlName.trim()}
+                onClick={() => {
+                  onAddUrl(urlName.trim(), urlValue.trim());
+                  setUrlName("");
+                  setUrlValue("");
+                }}
+              >
+                Ajouter le lien
+              </Button>
+            </div>
+          ) : null}
+          <p className="text-xs text-ink-subtle">
+            Fichiers légers (&lt; 1,5 Mo) sont enregistrés localement. Pour les
+            vidéos lourdes, préférez un lien URL.
+          </p>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function ExercisePreview({
+  exercise,
+}: {
+  exercise: InformatiqueExercise;
+}) {
+  return (
+    <div className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-4 sm:p-5">
+      <div className="mb-4 flex flex-wrap items-center gap-2">
+        <Badge tone="accent">Preview</Badge>
+        <Badge tone="neutral">{informatiqueAppLabel(exercise.app)}</Badge>
+      </div>
+      <h2 className="mb-3 font-display text-2xl text-ink sm:text-3xl">
+        {exercise.title || "Sans titre"}
+      </h2>
+      {exercise.description ? (
+        <p className="mb-4 text-sm text-ink-muted">{exercise.description}</p>
+      ) : null}
+      <MarkdownLite text={exercise.instructions || "_Aucune consigne._"} />
+    </div>
+  );
+}
+
+function ExerciseEditorForm({
+  exercise,
+  onSave,
+  onDelete,
+}: {
+  exercise: InformatiqueExercise;
+  onSave: (next: InformatiqueExercise) => void;
+  onDelete: () => void;
+}) {
+  const [draft, setDraft] = useState(exercise);
+  const [saved, setSaved] = useState(false);
+  const [mode, setMode] = useState<"edit" | "preview">("edit");
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    onSave(draft);
+    setSaved(true);
+    setTimeout(() => setSaved(false), 2500);
+  }
+
+  async function addDocument(file: File) {
+    const asset = await fileToAsset(file, "document");
+    setDraft((d) => ({ ...d, documents: [...d.documents, asset] }));
+  }
+
+  async function addCorrection(file: File) {
+    const asset = await fileToAsset(file, "video");
+    setDraft((d) => ({ ...d, corrections: [...d.corrections, asset] }));
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="flex flex-wrap items-center gap-2">
+        <Button
+          type="button"
+          size="sm"
+          variant={mode === "preview" ? "primary" : "secondary"}
+          onClick={() => setMode("preview")}
+        >
+          <Eye className="h-4 w-4" />
+          Preview
+        </Button>
+        <Button
+          type="button"
+          size="sm"
+          variant={mode === "edit" ? "primary" : "secondary"}
+          onClick={() => setMode("edit")}
+        >
+          <Pencil className="h-4 w-4" />
+          Édition
+        </Button>
+        <label className="ml-auto flex items-center gap-2 text-sm text-ink">
+          <input
+            type="checkbox"
+            checked={draft.published}
+            onChange={(e) =>
+              setDraft((d) => ({ ...d, published: e.target.checked }))
+            }
+          />
+          Publié
+        </label>
+      </div>
+
+      {mode === "edit" ? (
+        <>
+          <TextField
+            label="Titre de l'exercice"
+            value={draft.title}
+            onChange={(e) =>
+              setDraft((d) => ({ ...d, title: e.target.value }))
+            }
+            required
+          />
+          <TextField
+            label="Description courte"
+            value={draft.description}
+            onChange={(e) =>
+              setDraft((d) => ({ ...d, description: e.target.value }))
+            }
+          />
+          <MarkdownToolbar
+            textareaRef={textareaRef}
+            value={draft.instructions}
+            onChange={(next) =>
+              setDraft((d) => ({ ...d, instructions: next }))
+            }
+          />
+          <TextArea
+            ref={textareaRef}
+            label="Consignes (markdown)"
+            className="min-h-56 text-sm leading-relaxed"
+            value={draft.instructions}
+            onChange={(e) =>
+              setDraft((d) => ({ ...d, instructions: e.target.value }))
+            }
+            required
+          />
+        </>
+      ) : (
+        <ExercisePreview exercise={draft} />
+      )}
+
+      <Panel className="bg-surface-muted/20">
+        <h3 className="mb-1 font-display text-lg text-ink">
+          Les documents à utiliser
+        </h3>
+        <p className="mb-3 text-sm text-ink-muted">
+          Fichiers remis aux apprentis pour réaliser l&apos;exercice.
+        </p>
+        <AssetList
+          kind="document"
+          assets={draft.documents}
+          emptyLabel="Aucun document pour le moment."
+          downloadLabel="Télécharger"
+          editable
+          accept=".doc,.docx,.xls,.xlsx,.ppt,.pptx,.pdf,.zip,.txt"
+          onRemove={(id) =>
+            setDraft((d) => ({
+              ...d,
+              documents: d.documents.filter((a) => a.id !== id),
+            }))
+          }
+          onAddFile={(file) => void addDocument(file)}
+          onAddUrl={(name, url) =>
+            setDraft((d) => ({
+              ...d,
+              documents: [
+                ...d.documents,
+                {
+                  id: newInformatiqueId("doc"),
+                  name,
+                  url,
+                  kind: "document",
+                },
+              ],
+            }))
+          }
+        />
+      </Panel>
+
+      <Panel className="bg-surface-muted/20">
+        <h3 className="mb-1 font-display text-lg text-ink">Les corrections</h3>
+        <p className="mb-3 text-sm text-ink-muted">
+          Vidéos de correction uploadées par les formateurs.
+        </p>
+        <AssetList
+          kind="video"
+          assets={draft.corrections}
+          emptyLabel="Aucune vidéo de correction pour le moment."
+          downloadLabel="Télécharger"
+          editable
+          accept="video/*,.mp4,.webm,.mov"
+          onRemove={(id) =>
+            setDraft((d) => ({
+              ...d,
+              corrections: d.corrections.filter((a) => a.id !== id),
+            }))
+          }
+          onAddFile={(file) => void addCorrection(file)}
+          onAddUrl={(name, url) =>
+            setDraft((d) => ({
+              ...d,
+              corrections: [
+                ...d.corrections,
+                {
+                  id: newInformatiqueId("vid"),
+                  name,
+                  url,
+                  kind: "video",
+                },
+              ],
+            }))
+          }
+        />
+      </Panel>
+
+      <div className="flex flex-wrap gap-2">
+        <Button type="submit">Enregistrer</Button>
+        <Button
+          type="button"
+          variant="danger"
+          onClick={() => {
+            if (confirm("Supprimer cet exercice ?")) onDelete();
+          }}
+        >
+          <Trash2 className="h-4 w-4" />
+          Supprimer
+        </Button>
+      </div>
+      {saved ? <Alert tone="success">Exercice enregistré.</Alert> : null}
+    </form>
+  );
+}
+
+function StudentExerciseDetail({
+  exercise,
+}: {
+  exercise: InformatiqueExercise;
+}) {
+  return (
+    <div className="space-y-4">
+      <ExercisePreview exercise={exercise} />
+
+      <Panel>
+        <h3 className="mb-1 font-display text-lg text-ink">
+          Documents à utiliser / à télécharger
+        </h3>
+        <p className="mb-3 text-sm text-ink-muted">
+          Téléchargez les fichiers nécessaires pour réaliser l&apos;exercice.
+        </p>
+        <AssetList
+          kind="document"
+          assets={exercise.documents}
+          emptyLabel="Aucun document pour cet exercice."
+          downloadLabel="Télécharger"
+          editable={false}
+        />
+      </Panel>
+
+      <Panel>
+        <h3 className="mb-1 font-display text-lg text-ink">Corrections</h3>
+        <p className="mb-3 text-sm text-ink-muted">
+          Vidéos de correction mises à disposition par les formateurs.
+        </p>
+        <AssetList
+          kind="video"
+          assets={exercise.corrections}
+          emptyLabel="Aucune correction vidéo disponible pour le moment."
+          downloadLabel="Télécharger"
+          editable={false}
+        />
+      </Panel>
+    </div>
+  );
+}
+
+export function InformatiqueExercicesWorkspace({
+  mode,
+}: {
+  mode: "edit" | "view";
+}) {
+  const {
+    currentUser,
+    state,
+    upsertInformatiqueExercise,
+    deleteInformatiqueExercise,
+  } = useAppStore();
+  const [selectedApp, setSelectedApp] = useState<InformatiqueApp>("word");
+  const [selectedId, setSelectedId] = useState<string>("");
+  const [exerciseQuery, setExerciseQuery] = useState("");
+
+  const isEdit = mode === "edit";
+
+  const exercises = useMemo(() => {
+    const list = state.informatiqueExercises ?? [];
+    return list
+      .filter((e) => e.app === selectedApp)
+      .filter((e) => (isEdit ? true : e.published))
+      .sort((a, b) => a.order - b.order || a.title.localeCompare(b.title));
+  }, [state.informatiqueExercises, selectedApp, isEdit]);
+
+  const filtered = useMemo(() => {
+    const q = exerciseQuery.trim().toLowerCase();
+    if (!q) return exercises;
+    return exercises.filter(
+      (e) =>
+        e.title.toLowerCase().includes(q) ||
+        e.description.toLowerCase().includes(q),
+    );
+  }, [exercises, exerciseQuery]);
+
+  const effectiveId = useMemo(() => {
+    if (filtered.some((e) => e.id === selectedId)) return selectedId;
+    return filtered[0]?.id ?? "";
+  }, [filtered, selectedId]);
+
+  const selected = filtered.find((e) => e.id === effectiveId);
+
+  if (!currentUser) return null;
+  if (isEdit && !isStaffRole(currentUser.role)) {
+    return <EmptyState title="Accès réservé aux formateurs et admins" />;
+  }
+
+  const hubHref = isEdit ? "/formateur/exercices" : "/exercices";
+  const hubLabel = isEdit ? "← Exercices" : "← Exercices";
+
+  return (
+    <div>
+      <PageHeader
+        title="Informatique"
+        description={
+          isEdit
+            ? "Gérez les exercices Word, Excel et PowerPoint — documents et corrections vidéo."
+            : "Choisissez une application, puis un exercice pour voir les consignes, documents et corrections."
+        }
+        actions={
+          <Link href={hubHref}>
+            <Button variant="ghost" size="sm">
+              {hubLabel}
+            </Button>
+          </Link>
+        }
+      />
+
+      {isEdit ? (
+        <nav className="mb-4 flex flex-wrap gap-2">
+          <Link href="/formateur/exercices/situation">
+            <Badge tone="neutral">Mise en situation</Badge>
+          </Link>
+          <Link href="/formateur/exercices/maths">
+            <Badge tone="neutral">Mathématiques</Badge>
+          </Link>
+          <Link href="/formateur/exercices/verification">
+            <Badge tone="neutral">Vérification des acquis</Badge>
+          </Link>
+          <Badge tone="primary">Informatique</Badge>
+        </nav>
+      ) : null}
+
+      <Panel className="mb-4">
+        <p className="mb-2 text-sm font-medium text-ink">Application</p>
+        <div
+          className="flex flex-wrap gap-2"
+          role="group"
+          aria-label="Choisir une application"
+        >
+          {INFORMATIQUE_APPS.map((app) => (
+            <Button
+              key={app.id}
+              type="button"
+              size="sm"
+              variant={selectedApp === app.id ? "primary" : "secondary"}
+              onClick={() => {
+                setSelectedApp(app.id);
+                setSelectedId("");
+                setExerciseQuery("");
+              }}
+            >
+              <Monitor className="h-4 w-4" />
+              {app.label}
+            </Button>
+          ))}
+        </div>
+        <p className="mt-2 text-xs text-ink-subtle">
+          {INFORMATIQUE_APPS.find((a) => a.id === selectedApp)?.description}
+        </p>
+
+        <div className="mt-4">
+          <TextField
+            label="Rechercher un exercice"
+            value={exerciseQuery}
+            onChange={(e) => setExerciseQuery(e.target.value)}
+            placeholder="Ex. publipostage, taux…"
+          />
+        </div>
+
+        <div className="mt-3">
+          <p className="mb-2 text-sm font-medium text-ink">
+            Choisir un exercice ({filtered.length})
+          </p>
+          {filtered.length === 0 ? (
+            <p className="rounded-[var(--radius-md)] border border-dashed border-border px-3 py-4 text-center text-sm text-ink-subtle">
+              {exerciseQuery.trim()
+                ? `Aucun exercice pour « ${exerciseQuery} »`
+                : isEdit
+                  ? "Aucun exercice dans cette application — créez-en un ci-dessous."
+                  : "Aucun exercice publié pour cette application."}
+            </p>
+          ) : (
+            <ul
+              className="max-h-56 touch-pan-y space-y-1.5 overflow-y-auto overscroll-contain rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-2 sm:max-h-72"
+              role="listbox"
+              aria-label="Exercices"
+            >
+              {filtered.map((ex) => {
+                const selectedRow = ex.id === effectiveId;
+                return (
+                  <li key={ex.id}>
+                    <button
+                      type="button"
+                      role="option"
+                      aria-selected={selectedRow}
+                      onClick={() => {
+                        setSelectedId(ex.id);
+                        setExerciseQuery("");
+                      }}
+                      className={`flex min-h-12 w-full items-start gap-2 rounded-[var(--radius-md)] border px-3 py-2.5 text-left transition active:scale-[0.99] ${
+                        selectedRow
+                          ? "border-primary bg-primary-soft text-ink shadow-[var(--shadow-sm)]"
+                          : "border-transparent bg-surface text-ink hover:border-border hover:bg-surface"
+                      }`}
+                    >
+                      <span className="min-w-0 flex-1">
+                        <span className="block text-sm font-medium leading-snug">
+                          {ex.title}
+                        </span>
+                        {ex.description ? (
+                          <span className="mt-0.5 block text-xs text-ink-subtle">
+                            {ex.description}
+                          </span>
+                        ) : null}
+                      </span>
+                      {isEdit && !ex.published ? (
+                        <Badge tone="warning">Brouillon</Badge>
+                      ) : null}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </div>
+
+        {isEdit ? (
+          <div className="mt-3">
+            <Button
+              type="button"
+              size="sm"
+              variant="secondary"
+              onClick={() => {
+                const id = upsertInformatiqueExercise({
+                  app: selectedApp,
+                  title: `Nouvel exercice ${informatiqueAppLabel(selectedApp)}`,
+                  description: "",
+                  instructions: `## Consignes\n\nDécrivez ici l'exercice.\n`,
+                  published: false,
+                  documents: [],
+                  corrections: [],
+                });
+                setSelectedId(id);
+              }}
+            >
+              <Plus className="h-4 w-4" />
+              Nouvel exercice {informatiqueAppLabel(selectedApp)}
+            </Button>
+          </div>
+        ) : null}
+      </Panel>
+
+      {!selected ? (
+        <EmptyState
+          title="Aucun exercice sélectionné"
+          description={
+            isEdit
+              ? "Créez un exercice ou choisissez-en un dans la liste."
+              : "Choisissez une application puis un exercice."
+          }
+        />
+      ) : isEdit ? (
+        <Panel>
+          <ExerciseEditorForm
+            key={selected.id}
+            exercise={selected}
+            onSave={(next) => upsertInformatiqueExercise(next)}
+            onDelete={() => {
+              deleteInformatiqueExercise(selected.id);
+              setSelectedId("");
+            }}
+          />
+        </Panel>
+      ) : (
+        <StudentExerciseDetail key={selected.id} exercise={selected} />
+      )}
+    </div>
+  );
+}

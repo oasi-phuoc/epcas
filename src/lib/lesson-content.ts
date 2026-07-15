@@ -8,11 +8,17 @@ export const THEORY_PAGE_SLUGS: LessonPageSlug[] = [
   "glossaire",
 ];
 
-/** Pages du parcours Exercices (apprenti) — contenu EnterSite. */
-export const EXERCISE_PAGE_SLUGS: LessonPageSlug[] = [
+/** Pages Exercices liées aux modules curriculum (hors Informatique Office). */
+export const MODULE_EXERCISE_PAGE_SLUGS: LessonPageSlug[] = [
   "situation",
   "maths",
   "verification",
+];
+
+/** Pages du parcours Exercices (apprenti) — contenu EnterSite. */
+export const EXERCISE_PAGE_SLUGS: LessonPageSlug[] = [
+  ...MODULE_EXERCISE_PAGE_SLUGS,
+  "informatique",
 ];
 
 export function isTheoryPageSlug(slug: LessonPageSlug): boolean {
@@ -44,7 +50,7 @@ export const FORMATEUR_THEORY_PAGES: {
   },
 ];
 
-/** Sous-menu Exercices formateur — situations, maths, vérifications. */
+/** Sous-menu Exercices formateur — situations, maths, vérifications, informatique. */
 export const FORMATEUR_EXERCISE_PAGES: {
   slug: LessonPageSlug;
   title: string;
@@ -68,6 +74,12 @@ export const FORMATEUR_EXERCISE_PAGES: {
     title: "Vérification des acquis",
     description: "Contrôle des connaissances",
     href: "/formateur/exercices/verification",
+  },
+  {
+    slug: "informatique",
+    title: "Informatique",
+    description: "Word, Excel, PowerPoint — documents et corrections vidéo",
+    href: "/formateur/exercices/informatique",
   },
 ];
 
@@ -101,6 +113,7 @@ export function pageSlugFromLessonId(id: string): LessonPageSlug | null {
     "situation",
     "maths",
     "verification",
+    "informatique",
   ];
   return known.includes(slug as LessonPageSlug)
     ? (slug as LessonPageSlug)

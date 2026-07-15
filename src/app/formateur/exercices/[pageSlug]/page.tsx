@@ -3,6 +3,7 @@
 import { useParams, useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { ContenuPageEditor } from "@/components/formateur/ContenuPageEditor";
+import { InformatiqueExercicesWorkspace } from "@/components/informatique/InformatiqueExercicesWorkspace";
 import {
   FORMATEUR_EXERCISE_PAGES,
   isFormateurExerciseSlug,
@@ -31,6 +32,10 @@ export default function FormateurExerciceSlugPage() {
 
   const meta = FORMATEUR_EXERCISE_PAGES.find((p) => p.slug === slug);
   if (!meta) return null;
+
+  if (slug === "informatique") {
+    return <InformatiqueExercicesWorkspace mode="edit" />;
+  }
 
   return <ContenuPageEditor pageSlug={slug} section="exercices" />;
 }

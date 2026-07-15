@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { AnswerReveal } from "@/components/AnswerReveal";
 
 function formatInline(text: string): ReactNode[] {
   // Gras · surlignage · italique · code · liens
@@ -80,19 +81,56 @@ function parseTableBlock(lines: string[], start: number) {
   return { rows, nextIndex: i };
 }
 
-export function MarkdownLite({ text }: { text: string }) {
-  const lines = text.split("\n");
+const REVEAL_OPEN = /^:::(reponse|réponse|solution)(?:\s+(.*))?$/i;
+const REVEAL_CLOSE = /^:::\s*$/;
+
+function parseRevealBlock(lines: string[], start: number) {
+  const open = lines[start].trim().match(REVEAL_OPEN);
+  if (!open) return null;
+  const kind = open[1].toLowerCase();
+  const hint = (open[2] ?? "").trim().toLowerCase();
+  const label =
+    kind.startsWith("solution") ||
+    hint === "solution" ||
+    hint === "solutions" ||
+    hint.includes("solution")
+      ? "la solution"
+      : "les réponses";
+
+  const body: string[] = [];
+  let i = start + 1;
+  while (i < lines.length && !REVEAL_CLOSE.test(lines[i].trim())) {
+    body.push(lines[i]);
+    i += 1;
+  }
+  if (i < lines.length) i += 1; // skip closing :::
+  return { body: body.join("\n"), nextIndex: i, label };
+}
+
+function renderBlock(lines: string[], startKey: number): ReactNode[] {
   const nodes: ReactNode[] = [];
   let i = 0;
 
   while (i < lines.length) {
     const line = lines[i];
+    const key = `${startKey}-${i}`;
 
     if (/^---+$/.test(line.trim())) {
       nodes.push(
-        <hr key={i} className="my-5 border-0 border-t border-border" />,
+        <hr key={key} className="my-5 border-0 border-t border-border" />,
       );
       i += 1;
+      continue;
+    }
+
+    const reveal = parseRevealBlock(lines, i);
+    if (reveal) {
+      nodes.push(
+        <AnswerReveal key={`r-${key}`} label={reveal.label}>
+          <MarkdownLite text={reveal.body} />
+        </AnswerReveal>,
+      );
+      i = reveal.nextIndex;
       continue;
     }
 
@@ -101,7 +139,7 @@ export function MarkdownLite({ text }: { text: string }) {
       if (rows.length > 0) {
         const [header, ...body] = rows;
         nodes.push(
-          <div key={`t-${i}`} className="my-4 overflow-x-auto">
+          <div key={`t-${key}`} className="my-4 overflow-x-auto">
             <table className="w-full min-w-[20rem] border-collapse text-sm">
               <thead>
                 <tr className="border-b border-border bg-surface-muted/70">
@@ -140,7 +178,7 @@ export function MarkdownLite({ text }: { text: string }) {
     if (line.startsWith("> ")) {
       nodes.push(
         <blockquote
-          key={i}
+          key={key}
           className="my-3 border-l-4 border-primary/40 bg-primary-soft/40 px-4 py-2 text-justify text-ink-muted italic"
         >
           {formatInline(line.slice(2))}
@@ -150,22 +188,43 @@ export function MarkdownLite({ text }: { text: string }) {
       continue;
     }
 
+    const image = line.trim().match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+    if (image) {
+      nodes.push(
+        <figure key={key} className="my-4">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={image[2]}
+            alt={image[1]}
+            className="mx-auto max-h-[28rem] w-auto max-w-full rounded-lg border border-border object-contain shadow-sm"
+          />
+          {image[1] ? (
+            <figcaption className="mt-2 text-center text-sm text-ink-muted">
+              {image[1]}
+            </figcaption>
+          ) : null}
+        </figure>,
+      );
+      i += 1;
+      continue;
+    }
+
     if (line.startsWith("#### ")) {
       nodes.push(
-        <h4 key={i} className="mt-4 text-base font-semibold text-ink">
+        <h4 key={key} className="mt-4 text-base font-semibold text-ink">
           {formatInline(line.replace("#### ", ""))}
         </h4>,
       );
     } else if (line.startsWith("### ")) {
       nodes.push(
-        <h3 key={i} className="mt-5 font-display text-xl text-ink">
+        <h3 key={key} className="mt-5 font-display text-xl text-ink">
           {formatInline(line.replace("### ", ""))}
         </h3>,
       );
     } else if (line.startsWith("## ")) {
       nodes.push(
         <h2
-          key={i}
+          key={key}
           className="mt-6 font-display text-2xl text-ink first:mt-0"
         >
           {formatInline(line.replace("## ", ""))}
@@ -173,21 +232,21 @@ export function MarkdownLite({ text }: { text: string }) {
       );
     } else if (line.startsWith("- ") || line.startsWith("* ")) {
       nodes.push(
-        <li key={i} className="ml-5 list-disc text-justify text-ink-muted">
+        <li key={key} className="ml-5 list-disc text-justify text-ink-muted">
           {formatInline(line.slice(2))}
         </li>,
       );
     } else if (/^\d+\.\s/.test(line)) {
       nodes.push(
-        <li key={i} className="ml-5 list-decimal text-justify text-ink-muted">
+        <li key={key} className="ml-5 list-decimal text-justify text-ink-muted">
           {formatInline(line.replace(/^\d+\.\s/, ""))}
         </li>,
       );
     } else if (!line.trim()) {
-      nodes.push(<div key={i} className="h-2" />);
+      nodes.push(<div key={key} className="h-2" />);
     } else {
       nodes.push(
-        <p key={i} className="text-justify text-ink-muted leading-relaxed">
+        <p key={key} className="text-justify text-ink-muted leading-relaxed">
           {formatInline(line)}
         </p>,
       );
@@ -195,5 +254,10 @@ export function MarkdownLite({ text }: { text: string }) {
     i += 1;
   }
 
-  return <div className="space-y-1">{nodes}</div>;
+  return nodes;
+}
+
+export function MarkdownLite({ text }: { text: string }) {
+  const lines = text.split("\n");
+  return <div className="space-y-1">{renderBlock(lines, 0)}</div>;
 }

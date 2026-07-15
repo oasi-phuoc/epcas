@@ -14,6 +14,7 @@ import {
   Calculator,
   ClipboardCheck,
   Lightbulb,
+  Monitor,
   PencilLine,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -23,6 +24,7 @@ const ICONS: Record<string, LucideIcon> = {
   situation: Lightbulb,
   maths: Calculator,
   verification: ClipboardCheck,
+  informatique: Monitor,
 };
 
 export default function FormateurExercicesHubPage() {
@@ -37,15 +39,18 @@ export default function FormateurExercicesHubPage() {
     <div>
       <PageHeader
         title="Contenu · Exercices"
-        description="Mise en situation, mathématiques et vérification des acquis — variantes AFP / CFC."
+        description="Mise en situation, mathématiques, vérification des acquis et informatique — variantes AFP / CFC."
       />
 
       <div className="grid gap-3 sm:grid-cols-2">
         {FORMATEUR_EXERCISE_PAGES.map((page) => {
           const Icon = ICONS[page.slug] ?? PencilLine;
-          const count = state.lessons.filter(
-            (l) => l.pageSlug === (page.slug as LessonPageSlug),
-          ).length;
+          const count =
+            page.slug === "informatique"
+              ? state.informatiqueExercises?.length ?? 0
+              : state.lessons.filter(
+                  (l) => l.pageSlug === (page.slug as LessonPageSlug),
+                ).length;
           return (
             <Link key={page.slug} href={page.href}>
               <Panel className="h-full transition hover:border-primary hover:bg-primary-soft/30">

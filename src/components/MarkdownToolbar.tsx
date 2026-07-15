@@ -3,6 +3,7 @@
 import type { ReactNode, RefObject } from "react";
 import {
   Bold,
+  Eye,
   Heading1,
   Heading2,
   Heading3,
@@ -266,6 +267,27 @@ export function MarkdownToolbar({ textareaRef, value, onChange }: Props) {
         }
       >
         <Table2 className="h-4 w-4" />
+      </ToolBtn>
+      <ToolBtn
+        label="Réponse"
+        title="Bloc réponse masquable (Afficher / Masquer)"
+        onClick={() =>
+          withSelection((v, s, e) => {
+            const selected = v.slice(s, e) || "Texte de la réponse…";
+            const before = s > 0 && v[s - 1] !== "\n" ? "\n\n" : "";
+            const block = `:::reponse\n${selected}\n:::`;
+            const insert = before + block + "\n\n";
+            const next = v.slice(0, s) + insert + v.slice(e);
+            const selStart = s + before.length + ":::reponse\n".length;
+            return {
+              next,
+              selStart,
+              selEnd: selStart + selected.length,
+            };
+          })
+        }
+      >
+        <Eye className="h-4 w-4" />
       </ToolBtn>
       <ToolBtn
         label="Ligne"

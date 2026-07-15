@@ -246,6 +246,7 @@ export const lessonPageTemplates: { slug: LessonPageSlug; title: string }[] = [
   { slug: "situation", title: "Mise en situation" },
   { slug: "maths", title: "Mathématiques" },
   { slug: "verification", title: "Vérification des acquis" },
+  { slug: "informatique", title: "Informatique" },
 ];
 
 const PLACEHOLDER_FULL = `## Contenu à importer
@@ -387,6 +388,224 @@ const DEMO_101_OBJECTIFS_SUMMARY = `## Objectifs
 - Relier logistique ancienne et moderne
 - Maîtriser Approvisionnement → Production → Distribution
 - Connaître exemples historiques + jalons clés + rôle de l'informatique`;
+
+/** Glossaire Module 101 */
+const DEMO_101_GLOSSAIRE_FULL = `## Glossaire — Module 101
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Route de l'Ambre | | Voie commerciale historique reliant la mer Baltique (zone de collecte de l'ambre) aux ports de la Méditerranée. Elle a longtemps été l'une des principales liaisons nord-sud d'Europe et a favorisé les échanges de biens et de cultures. |
+| Route de la soie | | Réseau de voies commerciales eurasiatiques reliant notamment la Chine à l'Asie centrale et à la Méditerranée. La soie en était le produit phare ; d'autres marchandises (thé, sel, épices, porcelaine…) y circulaient aussi. |
+| Informatique | | Mot formé par la contraction d'« information » et d'« automatisme » (ou automatique). Désigne le traitement automatique de l'information ; depuis les années 1960, ce domaine transforme en profondeur la logistique. |`;
+
+const DEMO_101_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Route de l'Ambre** : Baltique → Méditerranée (ambre, échanges nord-sud)
+- **Route de la soie** : Chine → Méditerranée (soie et autres marchandises)
+- **Informatique** : information + automatisme`;
+
+/** Mises en situation Module 101 */
+const DEMO_101_SITUATION_FULL = `## Mises en situation — Module 101
+
+Contexte : tu travailles chez **EnterSite AG**. Les missions ci-dessous portent sur l'histoire de la logistique. Pour chaque mission, rédige d'abord ta propre réponse, puis compare éventuellement avec un·e camarade. Utilise le bouton pour afficher ou masquer les solutions proposées.
+
+---
+
+## Mission 1 — L'origine de la logistique
+
+Décris, en **5 à 10 phrases**, les origines de la logistique (activités anciennes, exemples historiques).
+
+:::reponse
+Les activités connues de la logistique actuelle sont présentes dans tous les livres d'histoire. Chasser (se procurer de la nourriture) des animaux, les conserver pour une utilisation ultérieure et les préparer pour la consommation sont des activités logistiques classiques. De plus, des événements comme la construction des pyramides sont des preuves impressionnantes que la logistique de « l'époque » était déjà d'un niveau élevé. Les histoires de guerre montrent également que le processus logistique était reconnu comme étant au cœur de la guerre. C'est ainsi que des chefs de guerre connus ont commencé à empêcher de plus en plus le ravitaillement afin de pouvoir gagner des batailles.
+:::
+
+### 1.1 Comparaison avec un·e camarade
+
+Complément de discussion : **réponse individuelle** (pas de solution unique). Note les points communs et les différences avec ton·ta camarade.
+
+### 1.2 Dates clés — 1944, 1955, 1960
+
+Associe chaque date au jalon correspondant.
+
+:::reponse
+- **1944** : Premières palettes en bois et chariots élévateurs au débarquement en Normandie
+- **1955** : Première fois aux USA que des activités économiques sont subordonnées au terme « logistique »
+- **1960** : Le terme « logistique » arrive en Europe (espace germanophone / européen)
+:::
+
+---
+
+## Mission 2 — Routes commerciales et produits commerciaux
+
+Cite des **routes commerciales** historiques importantes et des **produits** qui y circulaient.
+
+:::reponse
+- **Routes** : Route de l'ambre et Route de la soie
+- **Produits** : par ex. épices, soie, pierres précieuses (aussi thé, sel, porcelaine…)
+:::
+
+### 2.1 Comparaison avec un·e camarade
+
+Réponse individuelle — pas de solution unique.
+
+> **Astuce EnterSite** : suis la visite virtuelle dans la salle **15 V2**. Astuce : Hide Thumbnail Menu. Lien : [Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+### 2.2 Les routes commerciales sont-elles encore d'actualité ?
+
+:::reponse
+Oui, la nouvelle route de la soie est un grand thème du commerce mondial actuel. Depuis l'Asie, tout est mis en œuvre pour obtenir un meilleur accès aux autres continents grâce à cette voie commerciale.
+:::
+
+---
+
+## Mission 3 — Les grandes étapes de la logistique en Suisse
+
+Cite **trois** événements majeurs de la logistique suisse.
+
+:::reponse
+1. Les **NLFA** (Nouvelle ligne ferroviaire à travers les Alpes)
+2. Le **tunnel du Gothard**
+3. L'**aéroport de Zurich / Kloten**
+:::
+
+### 3.1 Comparaison avec un·e camarade
+
+Réponse individuelle. Champs « camarade » : à remplir en classe.
+
+> **EnterSite** : consulte la frise chronologique dans la salle **15 V2** (lien EnterSite à compléter).
+
+---
+
+## Mission 4 — Les grandes étapes de la logistique mondiale
+
+Cite **trois** événements / inventions majeurs de la logistique mondiale (mots-clés).
+
+:::reponse
+1. Origine d'**Internet**
+2. **Code-barres** / codes **2D**
+3. **RFID** / **GPS**
+:::
+
+### 4.1 Comparaison avec un·e camarade
+
+Réponse individuelle — pas de solution unique.
+
+---
+
+## Mission 5 — Discussion de la situation de travail et d'apprentissage (STA)
+
+Discute de ta STA avec la classe et le·la formateur·trice. Notes supplémentaires : **réponse ouverte** (pas de solution unique).`;
+
+const DEMO_101_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : origines (chasse, pyramides, guerre / ravitaillement) · 1944 palettes · 1955 USA · 1960 Europe
+- **M2** : Ambre + Soie · épices, soie… · nouvelle route de la soie actuelle
+- **M3 (CH)** : NLFA · Gothard · aéroport Zurich/Kloten
+- **M4 (monde)** : Internet · codes-barres/2D · RFID/GPS
+- **M5** : discussion STA (ouverte)`;
+
+/** Exercices de maths Module 101 */
+const DEMO_101_MATHS_FULL = `## Exercices de mathématiques — Module 101
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Frais d'expédition
+
+Une console de jeux coûte **500 CHF**. Les frais d'expédition représentent **9 %** du prix. Quel est le montant des frais d'expédition ?
+
+:::solution
+**45,00 CHF**
+
+Calcul : 500 × 9 / 100 = **45**
+:::
+
+### Exercice 2 — Port de Hambourg
+
+En **2019**, le port de Hambourg a traité **93,9 Mt** de marchandises, soit **+3 %** par rapport à 2018. Quel était le tonnage en **2018** ?
+
+:::solution
+**91,083 Mt**
+
+Calcul : 93,9 × 97 / 100 = **91,083**
+:::
+
+### Exercice 3 — Prestations CFF
+
+Les CFF ont parcouru **147,5 millions de km** en **2018**. En 2019, la hausse est de **+2,4 %**. Quelle est la distance en **2019** ?
+
+:::solution
+**151,04 millions de km**
+
+Calcul : 147,5 × 1,024 = **151,04**
+:::
+
+### Exercice 4 — Aéroport de Zurich
+
+L'aéroport de Zurich accueille en moyenne **86 322** personnes par jour. Suite à une baisse de **32 %**, combien de personnes restent-elles en moyenne par jour ?
+
+:::solution
+**58 698,96 personnes**
+
+Calcul : 86 322 × (1 − 0,32) = 86 322 × 0,68 = **58 698,96**
+:::
+
+> **Contrôle rapide (footer corrigé)** : 151,04 · 91,083 · 45,00 · 58 698,96`;
+
+const DEMO_101_MATHS_SUMMARY = `## Maths — Solutions
+1. **45,00 CHF** (500 × 9 %)
+2. **91,083 Mt** (93,9 × 97/100)
+3. **151,04 M km** (147,5 × 1,024)
+4. **58 698,96** personnes (86 322 × 0,68)`;
+
+/** Vérification des acquis Module 101 */
+const DEMO_101_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Que s'est-il passé en **1944** concernant la logistique en Europe (Seconde Guerre mondiale / débarquement) ?
+
+:::reponse
+Arrivée des **palettes en bois** et des **chariots élévateurs** (débarquement en Normandie).
+:::
+
+### Question 2
+
+Cite **deux** routes commerciales médiévales / historiques célèbres.
+
+:::reponse
+La **Route de l'ambre** et la **Route de la soie**.
+:::
+
+### Question 3
+
+Cite **quatre** produits commerciaux du Moyen Âge (ou circulant sur ces routes).
+
+:::reponse
+Par ex. : **épices**, **soie**, **thé**, **sel** (aussi pierres précieuses, porcelaine, sucre…).
+:::
+
+### Question 4
+
+De quels mots se compose le terme **« informatique »** ?
+
+:::reponse
+**Information** et **automatisme** (ou automatique).
+:::
+
+### Question 5
+
+Quel jalon majeur de la logistique suisse date de **1980** ?
+
+:::reponse
+Ouverture du **tunnel routier du Gothard**.
+:::`;
+
+const DEMO_101_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. **1944** : palettes en bois + chariots élévateurs
+2. Route de l'ambre + Route de la soie
+3. Épices, soie, thé, sel…
+4. Information + automatisme
+5. **1980** : tunnel routier du Gothard`;
 
 /** Contenu Module 102 — Structure de la logistique */
 const DEMO_102_THEORIE_FULL = `## 2. Structure de la logistique
@@ -587,6 +806,269 @@ const DEMO_102_OBJECTIFS_SUMMARY = `## Objectifs
 - Interfaces / partenaires
 - SCM ≠ seulement logistique`;
 
+/** Glossaire Module 102 */
+const DEMO_102_GLOSSAIRE_FULL = `## Glossaire — Module 102
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Logistique | | Ensemble de la chaîne de processus qui couvre l'**approvisionnement**, la **production**, la **distribution** et l'**élimination**, ainsi que les processus **TTS** (transport, transbordement et stockage). Elle vise un flux optimal des marchandises (et des données associées). |
+| Supply Chain Management | | Gestion de la chaîne d'approvisionnement : englobe la **logistique** et les activités **avant** l'approvisionnement et **après** la livraison (négociations fournisseurs, facturation, réclamations…). Elle intègre les flux de **marchandises**, d'**informations** et de **valeurs**. |
+| Chaîne de processus | | Enchaînement des **quatre domaines** de la logistique (approvisionnement, production, distribution, élimination) et des processus **TTS** (transport, transbordement, stockage) qui les relient. |`;
+
+const DEMO_102_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Logistique** : 4 domaines + TTS
+- **SCM** : logistique + avant/après + flux marchandises / infos / valeurs
+- **Chaîne de processus** : Approvisionnement → Production → Distribution → Élimination (+ TTS)`;
+
+/** Mises en situation Module 102 */
+const DEMO_102_SITUATION_FULL = `## Mises en situation — Module 102
+
+Contexte : tu travailles chez **EnterSite AG**. Les missions ci-dessous portent sur la structure de la logistique (chaîne de processus, SCM, mondialisation). Pour chaque mission, rédige d'abord ta propre réponse, puis compare éventuellement avec un·e camarade. Utilise le bouton pour afficher ou masquer les solutions proposées.
+
+---
+
+## Mission 1 — Définition de la logistique
+
+Recherche une définition de la logistique (env. **10 minutes**). Compare ensuite avec la solution proposée.
+
+:::reponse
+La logistique comprend toute la **chaîne de processus** : **approvisionnement**, **production**, **distribution** et **élimination**. Elle inclut aussi les processus **TTS** : **transport**, **transbordement** et **stockage**.
+:::
+
+### 1.1 Plenum — Réponse individuelle
+
+Note tes idées pour le débat en plénière. **Réponse individuelle** (pas de solution unique).
+
+---
+
+## Mission 2 — La chaîne de processus
+
+Décris la chaîne de processus pour un article de ton entreprise formatrice et réalise un **schéma**.
+
+:::reponse
+**Description :** Approvisionnement, production, distribution et élimination, avec les processus TTS (transport, transbordement, stockage).
+
+**Schéma (structure type) :**
+
+| | Approvisionnement | Production | Distribution | Élimination |
+| --- | --- | --- | --- | --- |
+| **Nous** | … | … | … | … |
+| **Partenaires** | … | … | … | … |
+| **La Poste Suisse** | | | … | |
+| **Le client** | | | … | … |
+
+Adapte les acteurs et les cases au produit choisi dans ton entreprise formatrice.
+:::
+
+### 2.1 Échange — Réponse individuelle
+
+Échange avec un·e camarade. **Réponse individuelle** — pas de solution unique.
+
+> **Astuce EnterSite** : salle **15 V3** — Modifier la chaîne de processus. Lien : [Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+---
+
+## Mission 3 — Supply Chain Management
+
+Formule une définition du **Supply Chain Management (SCM)**.
+
+:::reponse
+Le **SCM** englobe la **logistique** (les quatre domaines + TTS) et va **au-delà** : activités **avant** l'approvisionnement (ex. sélection / négociation fournisseurs) et **après** la livraison (facture, réclamations, service clientèle). Il couvre les flux de marchandises, d'informations et de valeurs.
+:::
+
+### 3.1 Compléter / élargir le schéma
+
+Élargis ton schéma de la chaîne de processus vers un schéma SCM :
+
+**Service clientèle → Approvisionnement → Production → Distribution → Élimination → Service clientèle**
+
+Acteurs possibles : **Nous** / **Partenaires** / **La Poste Suisse** / **Le client**.
+
+:::reponse
+Le SCM « boucle » souvent avec le **service clientèle** en amont et en aval de la chaîne. Exemple de ligne d'acteurs : Nous / Partenaires / Poste / Client selon chaque étape (approvisionnement → élimination) et les interfaces client (facture, réclamations, SAV).
+:::
+
+---
+
+## Mission 4 — Chaîne de processus vs. Supply Chain Management
+
+Explique la différence entre **chaîne de processus (logistique)** et **SCM**.
+
+:::reponse
+- **Logistique / chaîne de processus** : viser un **flux de marchandises** optimal sur les **quatre domaines** + **TTS**.
+- **SCM** : en plus, les flux d'**informations** et de **valeurs**, la communication client, la maîtrise des **coûts** et la coordination des partenaires sur toute la chaîne de création de valeur.
+:::
+
+### 4.1 Entreprise formatrice : chaîne ou SCM ?
+
+Dans ton entreprise formatrice, parles-tu plutôt de **chaîne de processus** ou de **SCM** ? Justifie. **Réponse individuelle**.
+
+---
+
+## Mission 5 — Mondialisation
+
+Réponds aux questions suivantes.
+
+### 5.1 Définition
+
+:::reponse
+**Mondialisation** : mise en **réseau** du monde. Les informations sont disponibles **simultanément** à l'échelle mondiale.
+:::
+
+### 5.2 Exemple privé
+
+:::reponse
+Exemple : **PlayStation 5** / pouvoir **jouer avec le monde** (réseau international, contenu et joueurs partout).
+:::
+
+### 5.3 EnterSite — clients et fournisseurs
+
+:::reponse
+Clients et fournisseurs en **Europe**, en **Asie** et en **Amérique**.
+:::
+
+### 5.4 Effets au quotidien
+
+:::reponse
+Accès aux informations et produits en **temps réel** ; risque aussi d'être **dépassé** si l'on ne suit pas le rythme.
+:::
+
+### 5.5 Effets pour EnterSite
+
+:::reponse
+Des **clients internationaux**, mais aussi une **concurrence locale** accrue.
+:::
+
+### 5.6 Impact sur la logistique
+
+:::reponse
+**Croissance** des volumes, accélération du **rythme**, importance croissante de la **numérisation**.
+:::
+
+---
+
+## Mission 6 — Discussion STA
+
+Discussion en **plénière** de la situation de travail et d'apprentissage (STA). Notes supplémentaires : **réponse ouverte** (pas de solution unique).`;
+
+const DEMO_102_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : logistique = 4 domaines + TTS
+- **M2** : chaîne + schéma (Nous / Partenaires / Poste / Client) · EnterSite 15 V3
+- **M3** : SCM = logistique + avant/après + service clientèle
+- **M4** : marchandises (logistique) vs marchandises + infos + valeurs (SCM)
+- **M5** : mondialisation (réseau, PS5, EnterSite, impacts)
+- **M6** : discussion STA (ouverte)`;
+
+/** Exercices de maths Module 102 */
+const DEMO_102_MATHS_FULL = `## Exercices de mathématiques — Module 102
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Taux d'erreurs
+
+Sur **182'500** envois, le taux d'erreurs est de **1,8 %**. Combien d'envois sont erronés ?
+
+:::solution
+**3'285** envois
+
+Calcul : 182'500 × 1,8 / 100 = **3'285**
+:::
+
+### Exercice 2 — Objectif qualité
+
+L'objectif est un taux d'erreurs de **1,6 %** sur les mêmes **182'500** envois. Quel est le nombre **maximal** d'erreurs admissible ?
+
+:::solution
+**2'920** erreurs
+
+Calcul : 182'500 × 1,6 / 100 = **2'920**
+:::
+
+### Exercice 3 — Conversion HKD → CHF
+
+Un montant de **80'978 HKD** est converti avec le taux **1 HKD = 0,11 CHF**. Quel est le montant en CHF ?
+
+:::solution
+**8'907,58 CHF**
+
+Calcul : 80'978 × 0,11 = **8'907,58**
+:::
+
+### Exercice 4 — Kilomètres → miles
+
+Convertis **979 km** en miles. (1 mile ≈ **1,60934 km** ; on peut aussi approximer avec **1,61**.)
+
+:::solution
+**≈ 608,32 miles** (avec 1,60934)
+
+Calcul : 979 / 1,60934 ≈ **608,32**
+
+Approximation : 979 / 1,61 ≈ **608,07**
+:::
+
+> **Contrôle rapide** : 3'285 · 2'920 · 8'907,58 · ≈ 608,32`;
+
+const DEMO_102_MATHS_SUMMARY = `## Maths — Solutions
+1. **3'285** (182'500 × 1,8 %)
+2. **2'920** (182'500 × 1,6 %)
+3. **8'907,58 CHF** (80'978 × 0,11)
+4. **≈ 608,32 miles** (979 / 1,60934)`;
+
+/** Vérification des acquis Module 102 */
+const DEMO_102_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+*Module 102 — Structure de la logistique*
+
+### Question 1
+
+Quel est l'**objectif** de la logistique ?
+
+:::reponse
+Assurer le **meilleur flux** possible des **marchandises** et des **données**.
+:::
+
+### Question 2
+
+Qu'est-ce que l'**intralogistique** ?
+
+:::reponse
+La logistique des **processus internes** / au sein de l'**entreprise** (flux de matériel sur un site donné).
+:::
+
+### Question 3
+
+Quelle est la différence entre **chaîne de processus** et **Supply Chain Management** ?
+
+:::reponse
+- **Chaîne de processus** : flux de **marchandises** et d'**informations**.
+- **SCM** : flux de **marchandises**, d'**informations** et de **valeurs**.
+:::
+
+### Question 4
+
+Quels sont les **critères** de choix d'un mode de transport ?
+
+:::reponse
+**Prix**, **sécurité**, **rapidité** et **efficacité**.
+:::
+
+### Question 5
+
+Que signifie **TTS** ?
+
+:::reponse
+**Transport**, **Transbordement** (manutention) et **Stockage**.
+:::`;
+
+const DEMO_102_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Meilleur flux marchandises + données
+2. Intralogistique = processus internes / entreprise
+3. Chaîne = marchandises + infos · SCM = + valeurs
+4. Prix, sécurité, rapidité, efficacité
+5. TTS = Transport, Transbordement, Stockage`;
+
 /** Contenu Module 103 — Tâches et objectifs */
 const DEMO_103_THEORIE_FULL = `## 3. Tâches et objectifs de la logistique
 
@@ -712,6 +1194,261 @@ const DEMO_103_OBJECTIFS_SUMMARY = `## Objectifs
 - Efficacité ≠ efficience
 - Objectif = meilleur flux marchandises + données
 - Maîtriser les 6B / 7B / 8B`;
+
+/** Glossaire Module 103 */
+const DEMO_103_GLOSSAIRE_FULL = `## Glossaire — Module 103
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Règle des 6 B | | Règle formulée par le professeur **Jünemann** : pour réussir une tâche logistique, il faut fournir la **bonne marchandise**, en **bonne quantité**, de **bonne qualité**, au **bon moment**, au **bon endroit** et au **bon coût** (prix). L'évolution a abouti aux **7B** / **8B** en ajoutant la **bonne information** et le **bon client**. |
+| Disponibilité | | Capacité à livrer les commandes clients à partir du stock (grande disponibilité de livraison). Elle s'équilibre avec les exigences de capital (investir le moins possible dans le stock) et la minimisation des coûts logistiques. |
+| Flux de marchandise | | Circulation des biens le long de la chaîne logistique (approvisionnement, TTS, production, distribution, élimination), accompagnée du flux de données. L'objectif est d'assurer le **meilleur flux possible** de marchandises et de données. |
+| Ressources | | Moyens (matériels, humains, financiers, informationnels) mobilisés pour atteindre les objectifs. Une entreprise vise l'**efficience** : atteindre ses buts **sans gaspiller** les ressources. |`;
+
+const DEMO_103_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **6 B (Jünemann)** : marchandise, quantité, qualité, moment, endroit, coût (+ info / client → 8B)
+- **Disponibilité** : livrer depuis le stock, en équilibre avec capital et coûts
+- **Flux de marchandise** : meilleur flux marchandises + données
+- **Ressources** : moyens à optimiser (efficience)`;
+
+/** Mises en situation Module 103 */
+const DEMO_103_SITUATION_FULL = `## Mises en situation — Module 103
+
+### Aperçu des missions
+1. Expérience personnelle
+2. Analyse
+3. Évaluation
+4. Comparaison
+5. Discussion de la situation de travail et d'apprentissage (STA)
+
+> **Vers le site EnterSite** : suis la visite virtuelle dans la salle **15 V2**. Visite l'école professionnelle virtuelle à l'intérieur d'EnterSite. Cherche l'image à droite et résous la **grille de mots**. Lien : [Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+---
+
+## Mission 1 — Expérience personnelle
+
+Chaque personne a des besoins. Pour les satisfaire, il faut les identifier et se procurer le produit au bon endroit. Un client choisit le produit qui répond à son besoin actuel.
+
+Quel est ton besoin actuel ? (console de jeu, vélo, télévision, ordinateur portable…)
+
+Cherche le produit sur Internet et note :
+
+- le **n° d'article** : réponse individuelle
+- la **description** de l'article : réponse individuelle
+
+### 1.1 Comparaison sur toppreise.ch
+
+Visite le portail de comparaison [www.toppreise.ch](https://www.toppreise.ch). Trouve le produit (ou des fournisseurs qui le vendent) et établis un classement :
+
+| Rang | Fournisseur | Prix | Disponibilité |
+| --- | --- | --- | --- |
+| 1er | Réponse individuelle | Réponse individuelle | Réponse individuelle |
+| 2e | Réponse individuelle | Réponse individuelle | Réponse individuelle |
+| 3e | Réponse individuelle | Réponse individuelle | Réponse individuelle |
+
+### 1.2 Conclusion du classement
+
+Note les raisons pour lesquelles tu as placé les fournisseurs en 1re, 2e ou 3e position. Quelle est ta conclusion ?
+
+**Conclusion :** réponse individuelle — pas de solution unique.
+
+---
+
+## Mission 2 — Analyse
+
+De retour sur **EnterSite AG**. Cherche dans la liste d'articles :
+
+- **CE255XC**
+- **CF410X**
+- **1954525**
+
+Complète / vérifie le tableau :
+
+| N° d'article | Stock minimum | Stock maximum | Délai de livraison | Vente par jour |
+| --- | --- | --- | --- | --- |
+| CE255XC | 0 | 0 | 6 | 2 |
+| CF410X | 0 | 0 | 3 | 0.5 |
+| 1954525 | 2 | 5 | 17 | 2 |
+
+### 2.1 Objectifs de la logistique — explications
+
+Pour rappel, l'objectif de la logistique se décline aussi en trois axes. Explique le plus précisément possible la signification de…
+
+:::reponse
+- **Grande disponibilité de livraison** : nous voulons pouvoir livrer **toutes** les commandes de nos clients à partir de notre stock.
+- **Faibles exigences de capital** : nous voulons investir **le moins d'argent possible** dans notre stock.
+- **Minimisation des coûts** : la logistique doit consommer **le moins d'argent possible**.
+:::
+
+---
+
+## Mission 3 — Évaluation
+
+Dans la mission 2, tu as examiné la situation réelle d'EnterSite AG et dans la mission 2.1, tu as décrit la théorie. Compare maintenant tes connaissances théoriques avec les données pratiques.
+
+**Qu'est-ce que tu peux voir ?**
+
+:::reponse
+Pour les articles **CE255XC** et **CF410X**, aucune commande de client ne peut être livrée car le stock est trop faible.
+:::
+
+**Quelles modifications dans le sens des objectifs proposerais-tu à M. Stierndli, responsable Logistique ?**
+
+:::reponse
+Dans le cadre de l'objectif « **Haute disponibilité de livraison** », les stocks devraient être corrigés au moins pour les articles **1 et 2** (CE255XC et CF410X).
+:::
+
+---
+
+## Mission 4 — Comparaison
+
+Présente tes données pour les tâches 1 à 3 à ton voisin de pupitre et compare vos solutions. Les données et les conclusions sont-elles identiques ? Y a-t-il des différences ?
+
+**Conclusions :** réponse individuelle — pas de solution unique.
+
+> **Vers le site EnterSite** : suis la visite virtuelle dans la salle **16 V2**. Visite la salle de travail de l'école professionnelle virtuelle. Cherche l'image à droite et résous le **LearningApp**. Lien : [Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+---
+
+## Mission 5 — Discussion STA
+
+Discute de la situation de travail et d'apprentissage en plénière avec la classe et l'enseignant·e. Note les informations supplémentaires : **réponse ouverte** (pas de solution unique).`;
+
+const DEMO_103_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : besoin perso · n° article · toppreise.ch (classement 1–3) · conclusion individuelle
+- **M2** : stocks CE255XC / CF410X / 1954525 · triad disponibilité / capital / coûts
+- **M3** : CE255XC & CF410X non livrables · corriger stocks articles 1–2 (Stierndli)
+- **M4** : comparaison camarade · LearningApp salle **16 V2**
+- **M5** : discussion STA (ouverte)`;
+
+/** Exercices de maths Module 103 */
+const DEMO_103_MATHS_FULL = `## Exercices de mathématiques — Module 103
+
+Calculez les tâches suivantes sur le sujet du transport outre-mer. Distances : **Shanghai → Rotterdam = 19'535 km** (utiliser cette valeur, même si une ligne de calcul erronée indique 19'935).
+
+### Exercice 1 — Durée du trajet
+
+Vous commandez un conteneur outre-mer depuis Shanghai. Le porte-conteneurs navigue à **15 nœuds/heure = 28 km/h**.
+
+Combien de temps faut-il pour parcourir cette distance ? (en jours et en heures)
+
+:::solution
+**29 jours et 1 h 40 min**
+
+Calcul : 19'535 / 28 = **697,6786 h**  
+Jours : 697,6786 / 24 = **29,0699** → **29 jours**  
+Heures : 0,0699 × 24 = **1,6776** → **1 h**  
+Minutes : 0,6776 × 60 ≈ **40,66** → **40 min**
+:::
+
+### Exercice 2 — Consommation de carburant
+
+Un porte-conteneurs consomme **13,5 tonnes** de carburant par heure.
+
+Combien de tonnes de carburant sont nécessaires pour aller de Shanghai à Rotterdam ?
+
+:::solution
+**9'418,6611 tonnes** (arrondi contrôle : **9'418,66 t**)
+
+Calcul : 697,6786 × 13,5 = **9'418,6611**
+:::
+
+### Exercice 3 — Coût du carburant
+
+Le prix du carburant pour les bateaux s'élève à **1,04 € = 1,10 CHF/kg**.
+
+À combien s'élèvent les frais de carburant pour le capitaine de Shanghai à Rotterdam ?
+
+:::solution
+**10'360'527,21 CHF** (arrondi contrôle : **10'360'527 CHF**)
+
+Calcul : 9'418,6611 × 1,10 × 1'000 = **10'360'527,21**
+:::
+
+### Exercice 4 — Date d'arrivée
+
+La marchandise commandée à Shanghai sera expédiée le **1er février**. Quand pouvez-vous espérer recevoir la marchandise à Rotterdam au plus tôt ?
+
+:::solution
+**1er mars (01.03)**
+
+Calcul : 1er février + **29 jours** = **1er mars**
+:::
+
+> **SOLUTIONS** : 29 jours 1 h 40 min · 9'418,66 · 10'360'527 · 01.03`;
+
+const DEMO_103_MATHS_SUMMARY = `## Maths — Solutions
+1. **29 j + 1 h 40 min** (19'535 / 28)
+2. **9'418,66 t** (× 13,5)
+3. **10'360'527 CHF** (× 1,10 × 1000)
+4. **01.03** (1er fév. + 29 j)`;
+
+/** Vérification des acquis Module 103 */
+const DEMO_103_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Module 103 — **Tâches et objectifs de la logistique**
+
+Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quel est l'objectif de la logistique ? (triade des objectifs opérationnels)
+
+:::reponse
+- **Grande disponibilité de livraison**
+- **Faibles exigences de capital**
+- **Minimisation des coûts**
+:::
+
+### Question 2
+
+Pour atteindre les prestations de haute qualité et les objectifs ambitieux de la logistique, il faut appliquer la règle des **6 B**. Cite les six tâches.
+
+:::reponse
+Définition des 6B selon le professeur **Jünemann** :
+
+- Bonne marchandise
+- Bonne quantité
+- Bonne qualité
+- Bon moment
+- Bon endroit
+- Bon coût
+:::
+
+### Question 3
+
+Deux autres tâches « B » sont venues s'ajouter aux six susmentionnées. Desquelles s'agit-il ?
+
+:::reponse
+- **Bonne information**
+- **Bon client**
+:::
+
+### Question 4
+
+Quels sont les deux principes qui permettent à une entreprise de réaliser des bénéfices ?
+
+:::reponse
+Lorsqu'elle fonctionne de manière **efficace** et **efficiente**.
+
+- **L'efficacité** est la capacité d'une institution à atteindre les objectifs fixés dans les délais impartis.
+- **L'efficience** est la réalisation des objectifs sans gaspillage de ressources.
+:::
+
+### Question 5
+
+Quels sont les objectifs de la logistique ? Écrivez la définition exacte.
+
+:::reponse
+L'objectif de la logistique est d'assurer le **meilleur flux possible de marchandises et de données**.
+:::`;
+
+const DEMO_103_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Disponibilité · faibles exigences de capital · minimisation des coûts
+2. 6B Jünemann : marchandise, quantité, qualité, moment, endroit, coût
+3. Bonne information · Bon client
+4. Efficace + efficiente (définitions)
+5. Meilleur flux possible de marchandises et de données`;
 
 /** Contenu Module 104 — Flux des marchandises */
 const DEMO_104_THEORIE_FULL = `## 4. Flux des marchandises
@@ -859,6 +1596,227 @@ const DEMO_104_OBJECTIFS_SUMMARY = `## Objectifs
 - TTS
 - Prestataire ≠ producteur
 - Micro / méta / macro`;
+
+/** Glossaire Module 104 */
+const DEMO_104_GLOSSAIRE_FULL = `## Glossaire — Module 104
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Flux de marchandises | | Chemin suivi par les biens le long de la chaîne logistique, de l'approvisionnement à l'élimination, en passant par la production et la distribution. Un flux optimal vise le bon produit, au bon endroit, au bon moment, avec le soutien des fonctions TTS. |
+| Micrologistique | | Logistique de petite échelle, concentrée sur les flux **internes** d'une entreprise (entrée → sortie des marchandises). Souvent assimilée à l'intralogistique. |
+| Intralogistique | | Synonyme courant de micrologistique : organisation et optimisation des flux de matériaux et d'informations **à l'intérieur** d'un site ou d'une entreprise (entre autres manutention, stockage interne). |
+| Métalogistique | | Logistique **interentreprises** : coopération et coordination des flux entre au moins deux partenaires (fournisseurs, prestataires, clients). |
+| Macrologistique | | Logistique à grande échelle : mouvements de marchandises **internationaux** ou **intercontinentaux** entre entreprises. |
+| Processus TTS | | Fonctions de **soutien** de la chaîne de processus : **T**ransport, **T**ransbordement (manutention) et **S**tockage. Elles agissent dans et entre les domaines (approvisionnement, production, distribution, élimination). |
+| Prestataire logistique | | Entreprise spécialisée qui organise tout ou partie du flux de marchandises pour le compte d'autrui (achat, stockage en conservant la valeur, transport, livraison). Contrairement au producteur, elle **n'altère** en général pas le produit. |
+| EDI (Échange de données informatisées) | | Transmission structurée et automatisée de documents commerciaux entre systèmes informatiques (commandes, bons de livraison, factures, etc.), sans ressaisie manuelle, pour accélérer et sécuriser les échanges entre partenaires. |`;
+
+const DEMO_104_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Flux de marchandises** : chemin des biens (Appro → Prod → Distrib → Élimination) + TTS
+- **Micro / intralogistique** : flux internes entreprise
+- **Méta** : interentreprises · **Macro** : international / intercontinental
+- **TTS** : Transport, Transbordement, Stockage
+- **Prestataire** : achète / stocke / livre (sans transformer) · **EDI** : échange de données informatisées`;
+
+/** Mises en situation Module 104 */
+const DEMO_104_SITUATION_FULL = `## Mises en situation — Module 104
+
+Contexte : tu travailles chez **EnterSite AG**. Les missions portent sur le **flux de marchandises** et la chaîne de processus. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.
+
+---
+
+## Mission 1 — Décrire, schématiser et présenter le flux de marchandises
+
+### Chemin du produit
+
+Décris le chemin d'un produit dans le flux de marchandises (de l'approvisionnement jusqu'à l'élimination éventuelle).
+
+**Réponse individuelle** (pas de solution unique) — appuie-toi sur Approvisionnement → Production → Distribution → Élimination, avec les fonctions TTS.
+
+### 1.1 Photo / flipchart
+
+Documente (photo, schéma flipchart ou croquis) le flux que tu as décrit.
+
+**Réponse individuelle** — pas de solution unique.
+
+### 1.2 Différences de flux
+
+Compare le flux d'un **prestataire de services** et celui d'un **producteur**. Qu'est-ce qui change ?
+
+:::reponse
+- **Prestataire** : achète les biens, les stocke en conservant leur valeur, puis les revend / livre — **sans** transformer le produit.
+- **Producteur** : **modifie** le produit (matière première ou semi-fini à l'entrée → semi-fini ou fini à la sortie) ; l'assemblage / la production font partie du flux.
+:::
+
+---
+
+## Mission 2 — Tâches dans la chaîne de processus
+
+Pour chaque domaine / processus indiqué, note une description claire de la tâche.
+
+:::reponse
+| Domaine / processus | Description |
+| --- | --- |
+| Approvisionnement | Acheter des biens aux meilleures conditions (qualité / prix), négocier contrats et livraisons avec les fournisseurs, et garantir la disponibilité des biens adéquats. |
+| Production | Modifier les biens : transformer une matière première ou un produit semi-fini en produit semi-fini ou fini, avec une planification précise des quantités et des machines. |
+| Distribution | Acheminer les biens vers le client final ou vers les points de vente (détail), selon le canal (colis, retail, etc.). |
+| Transport | Transmettre / acheminer la marchandise via le **bon mode** (route, rail, eau, air) selon le temps, la sécurité, les coûts (et l'écologie). |
+:::
+
+> **Astuce EnterSite** : suis la visite virtuelle dans la salle **15 V3** — vidéo explicative. Lien : [Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+---
+
+## Mission 3 — Analyser la chaîne de processus
+
+Repère les **points forts** et les **points faibles** de la chaîne de processus (entreprise formatrice ou exemple EnterSite).
+
+**Réponse individuelle** — pas de solution unique.
+
+---
+
+## Mission 4 — Optimiser la chaîne de processus
+
+Propose des **mesures d'optimisation** pour réduire les points faibles identifiés en mission 3.
+
+**Réponse individuelle** — pas de solution unique.
+
+---
+
+## Mission 5 — Discussion de la situation de travail et d'apprentissage (STA)
+
+Discute de ta STA avec la classe et le·la formateur·trice. Notes supplémentaires : **réponse ouverte** (pas de solution unique).`;
+
+const DEMO_104_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : chemin du produit · prestataire (sans transformer) ≠ producteur (transforme)
+- **M2** : Approvisionnement · Production · Distribution · Transport (TTS) · EnterSite salle **15 V3**
+- **M3–M4** : points forts/faibles + mesures d'optimisation (ouvert)
+- **M5** : discussion STA (ouverte)`;
+
+/** Exercices de maths Module 104 */
+const DEMO_104_MATHS_FULL = `## Exercices de mathématiques — Module 104
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Remise sur commande groupée
+
+Tu peux acheter **1 000** pièces à **1,00 CHF** pièce, soit **1 000 CHF**.  
+Ou bien **1 100** pièces avec une **remise de 10 %** sur le montant correspondant à 1 100 × 1,00 CHF.
+
+Quel montant payes-tu avec la remise ? Quelle option est la plus avantageuse ?
+
+:::solution
+Sans remise (1 000 pcs) : **1 000 CHF**.
+
+Avec 1 100 pcs et 10 % de remise :  
+1 100 − (1 100 × 10 %) = 1 100 − **110** = **990 CHF**.
+
+→ Il est plus avantageux d'acheter **1 100** pièces (990 CHF < 1 000 CHF).
+:::
+
+### Exercice 2 — Temps de production supplémentaire
+
+On ajoute **100** pièces à produire. Chaque pièce nécessite **15 secondes**. Combien de secondes de production supplémentaires cela représente-t-il ?
+
+:::solution
+**1 500 secondes**
+
+Calcul : 100 × 15 = **1 500**
+:::
+
+### Exercice 3 — Durée de trajet
+
+Un camion doit parcourir **275 km** à une vitesse moyenne de **55 km/h**. Combien d'heures dure le trajet ?
+
+:::solution
+**5 h**
+
+Calcul : 275 ÷ 55 = **5**
+:::
+
+### Exercice 4 — Masse à éliminer (emballage)
+
+Un produit emballé pèse **1 155 g**. Une fois l'emballage retiré (ou recyclé), il reste **912 g** de produit. Quelle masse d'emballage part en élimination / recyclage ?
+
+:::solution
+**243 g**
+
+Calcul : 1 155 − 912 = **243**
+:::
+
+> **Contrôle rapide** : 990 CHF (acheter 1 100) · 1 500 s · 5 h · 243 g`;
+
+const DEMO_104_MATHS_SUMMARY = `## Maths — Solutions
+1. **990 CHF** → acheter **1 100** (vs 1 000 CHF sans remise)
+2. **1 500 s** (100 × 15)
+3. **5 h** (275 ÷ 55)
+4. **243 g** (1 155 − 912)`;
+
+/** Vérification des acquis Module 104 */
+const DEMO_104_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Flux de marchandises**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Schématise (ou décris) la **chaîne de processus** du flux de marchandises (domaines + TTS).
+
+:::reponse
+**Domaines (ordre) :**
+
+**Approvisionnement → Production → Distribution → Élimination**
+
+**Processus TTS** (soutien **dans** et **entre** les domaines) :
+
+**T**ransport · **T**ransbordement (manutention) · **S**tockage
+
+Schéma-type :
+
+\`Approvisionnement\` — TTS — \`Production\` — TTS — \`Distribution\` — TTS — \`Élimination\`
+:::
+
+### Question 2
+
+Dans le domaine de l'approvisionnement / groupe d'achats, qui est chargé d'acheter les biens aux meilleures conditions ?
+
+:::reponse
+L'**acheteur** (les acheteurs).
+:::
+
+### Question 3
+
+Comment s'appelle l'acheminement des biens du **producteur** jusqu'au **client final** (ou vers les points de vente) ?
+
+:::reponse
+La **distribution**.
+:::
+
+### Question 4
+
+Que signifient les processus **TTS** ? Donne une brève description de chaque lettre.
+
+:::reponse
+- **T — Transport** : acheminer les marchandises (route, rail, eau, air) selon prix, sécurité, vitesse, efficacité, écologie.
+- **T — Transbordement** : décharger, stocker temporairement, recharger (changement de moyen de transport / réception).
+- **S — Stockage** : entreposer professionnellement selon le type de marchandise et la durée.
+:::
+
+### Question 5
+
+Cite les **trois tailles** de la logistique et explique-les brièvement.
+
+:::reponse
+- **Micrologistique** (= **intralogistique**) : flux **interne** à l'entreprise (entrée → sortie des marchandises).
+- **Métalogistique** : logistique **interentreprises** / coopération entre partenaires.
+- **Macrologistique** : mouvements **internationaux** ou **intercontinentaux**.
+:::`;
+
+const DEMO_104_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Appro → Prod → Distrib → Élimination + TTS
+2. **Acheteur**
+3. **Distribution**
+4. Transport · Transbordement · Stockage (avec rôles)
+5. Micro/intra (interne) · Méta (interentreprises) · Macro (international)`;
 
 /** Contenu Module 105 — Marchandises */
 const DEMO_105_THEORIE_FULL = `## 5. Marchandises
@@ -1148,6 +2106,245 @@ const DEMO_105_OBJECTIFS_SUMMARY = `## Objectifs
 - Stockage / périssabilité / conservation
 - Dangerosité + types de manutention`;
 
+/** Glossaire Module 105 */
+const DEMO_105_GLOSSAIRE_FULL = `## Glossaire — Module 105
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Manutention des marchandises | | Ensemble des opérations de prise en charge, de déplacement, de stockage et de manipulation des biens (levage, transport interne, empilage, etc.), adaptées aux propriétés de chaque marchandise. |
+| Densité | | Rapport entre la masse et le volume d'une marchandise (poids spécifique). Elle influence le choix des moyens de manutention, l'empilabilité et les contraintes de stockage / transport. |
+| Méthode de conservation | | Procédé visant à prolonger la durée de conservation d'une marchandise et à limiter sa détérioration (séchage, salage, fumage, pasteurisation, stérilisation, réfrigération, congélation, sous-vide, atmosphère protectrice, CA, ULO, etc.). |
+| Matières premières | | Marchandises **non transformées**. **Primaires** : issues directement de la nature (minerai de fer, pétrole, charbon, bois, sable, eau…). **Secondaires** : récupérées à partir de déchets (recyclage). |
+| Produits semi-finis | | Matières premières suffisamment transformées pour être réutilisées dans une étape ultérieure (ex. acier, planches de bois, farine, composants électroniques). |
+| Produits finis | | Produits qui ne nécessitent **aucune** transformation supplémentaire pour servir le consommateur final (ex. pain, pizza surgelée, appareil assemblé). |
+| ESD | Electro Static Discharge | Décharge électrostatique : transfert soudain de charge électrique pouvant endommager ou détruire des composants électroniques (microprocesseurs, semi-conducteurs). Protection : mise à la terre, emballages antistatiques ; ne sortir les pièces de leur emballage que si nécessaire. |
+| Hygroscopique | | Qui absorbe l'humidité de l'air. Une hygrométrie trop élevée peut faire gonfler le papier, agglutiner les poudres (ex. sucre) ; des sachets dessiccateurs limitent ce risque. |
+| Micro-organismes | | Organismes microscopiques (bactéries, champignons, spores…) qui se multiplient avec chaleur et humidité et décomposent les matières organiques. La réfrigération freine leur prolifération ; en dessous de **-18 °C**, elle s'arrête (hibernation). |
+| Brûlure de congélation | | Dommage causé par une exposition (même brève) à des températures négatives non adaptées : tissus gelés (fruits, légumes, fleurs…) rendant le produit inutilisable. |`;
+
+const DEMO_105_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Manutention** · **Densité** · **Conservation**
+- **MP** (primaires / secondaires) → **semi-finis** → **finis**
+- **ESD** : Electro Static Discharge (risque électronique)
+- **Hygroscopique** · **Micro-organismes** · **Brûlure de congélation**`;
+
+/** Mises en situation Module 105 */
+const DEMO_105_SITUATION_FULL = `## Mises en situation — Module 105
+
+Contexte : tu travailles chez **EnterSite AG**. Les missions portent sur les **marchandises** (propriétés, manipulation, présentation). Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les aides / checklists proposées.
+
+> **Astuce EnterSite** : suis la visite virtuelle dans la salle **16 V2**. Visite la salle de travail de l'école professionnelle virtuelle ; cherche l'image à droite et **évalue le degré de traitement**. Lien : [Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+---
+
+## Mission 1 — Choisir et préparer les marchandises
+
+Chaque entreprise a des biens aux propriétés très différentes. Ces caractéristiques influencent la manière dont on manipule l'objet.
+
+1. Choisis un objet de ton **entreprise formatrice** dont la **manipulation présente de grands défis**.
+2. Prépare une présentation pour la classe (discute avec l'enseignant : **PowerPoint** et/ou **apporter l'objet**).
+3. **Protection des données** : valide ce travail avec l'entreprise formatrice **avant** la présentation.
+
+Inclus les facteurs suivants :
+
+- Degré de transformation
+- Propriétés des marchandises
+- Critères / possibilité de conservation
+- Dangerosité
+- Périssabilité
+- Manipulation
+- N° d'article
+- Désignation
+- Prix de revient
+- Pays d'origine
+- Mode de transport
+- Itinéraire de transport
+
+:::reponse
+**Réponse ouverte** — pas de solution unique (présentation individuelle).
+
+**Checklist de présentation (exemple / aide-mémoire) :**
+
+| Facteur | Notes (à compléter) |
+| --- | --- |
+| Degré de transformation | MP / semi-fini / fini (selon point de vue) |
+| Propriétés | dimension/volume, densité, état, fragilité, empilabilité… |
+| Conservation | critères + méthodes possibles |
+| Dangerosité | symboles SGH / mesures |
+| Périssabilité | influences spontanées / longues |
+| Manipulation | facile / encombrant / haute valeur |
+| N° article · Désignation | |
+| Prix de revient | |
+| Pays d'origine | |
+| Mode + itinéraire de transport | |
+
+*Exemple :* [objet de ton entreprise — à documenter ici].
+:::
+
+---
+
+## Mission 2 — Présenter les marchandises
+
+Présente ton article à la classe.
+
+**Tes notes :** réponse individuelle (pas de solution unique).
+
+> **Astuce EnterSite** : suis la visite virtuelle dans la salle **16 V2** — cherche l'image à droite et résous le **LearningApp**. Lien : [Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+---
+
+## Mission 3 — Discussion de la situation de travail et d'apprentissage (STA)
+
+Discute de la STA en plénière avec la classe et le·la formateur·trice. Notes complémentaires : **réponse ouverte** (pas de solution unique).`;
+
+const DEMO_105_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **EnterSite** salle **16 V2** : degré de traitement · LearningApp
+- **M1** : objet challenging + checklist présentation (ouvert / protection données)
+- **M2** : présentation en classe (individuelle)
+- **M3** : discussion STA (ouverte)`;
+
+/** Exercices de maths Module 105 */
+const DEMO_105_MATHS_FULL = `## Exercices de mathématiques — Module 105
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Périmètre d'un pneu
+
+Un pneu de tracteur a un diamètre de **2,32 m**. Quel est le périmètre de ce pneu (en mètres) ?
+
+Formule indiquée dans le support : 2 × r × π — ici le calcul utilise directement **diamètre × π**.
+
+:::solution
+**7,2848 m**
+
+Calcul : 2,32 × 3,14 = **7,2848 m**
+:::
+
+### Exercice 2 — Surface des planches
+
+Dans un tronc d'arbre, on découpe **20** planches : longueur **5 m**, largeur **30 cm**, hauteur **19 mm**. Quelle surface peut-on couvrir avec ces planches ?
+
+:::solution
+**30 m²**
+
+Largeur : 0,3 m  
+Surface d'une planche : 5 × 0,3 = **1,5 m²**  
+Surface totale : 20 × 1,5 = **30 m²**  
+(équivalent : 20 × 5 × 0,3 = **30 m²**)
+:::
+
+### Exercice 3 — Volume des planches
+
+Même jeu de **20** planches (5 m × 30 cm × 19 mm). Quel est le volume des planches sciées ?
+
+:::solution
+**0,57 m³**
+
+Hauteur : 0,019 m  
+Volume : surface × hauteur = 30 × 0,019 = **0,57 m³**
+:::
+
+### Exercice 4 — Bénéfice de vente
+
+**1 m²** des planches de l'exercice 2 se vend **40 CHF/m²**. Quel bénéfice peut-on envisager avec la vente de ces **20** planches ?
+
+:::solution
+**1'200 CHF**
+
+Calcul : 30 × 40 = **1'200 CHF**
+:::
+
+> **Contrôle rapide (footer corrigé)** : 7,2848 · 30 · 0,57 · 1'200`;
+
+const DEMO_105_MATHS_SUMMARY = `## Maths — Solutions
+1. **7,2848 m** (2,32 × 3,14)
+2. **30 m²** (20 × 5 × 0,3)
+3. **0,57 m³** (30 × 0,019)
+4. **1'200 CHF** (30 × 40)`;
+
+/** Vérification des acquis Module 105 */
+const DEMO_105_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Marchandises**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quelles sont les caractéristiques des marchandises dont il faut tenir compte lors du choix des moyens auxiliaires ? Nomme les **sept** propriétés connues.
+
+:::reponse
+1. **Dimension / volume**
+2. **Densité** (poids spécifique)
+3. **État d'agrégation** (gazeux, liquide, solide)
+4. **Périssabilité**
+5. **Fragilité**
+6. **Empilabilité**
+7. **Valeur** (stockage antivol)
+:::
+
+### Question 2
+
+Les marchandises sont classées en **trois** degrés de transformation. Nomme-les et décris-les.
+
+:::reponse
+**1. Matières premières**  
+Biens non transformés. **Primaires** : issues de la nature (minerai de fer, pétrole, charbon, bois, sable, eau…). **Secondaires** : récupérées à partir de déchets (recyclage).
+
+**2. Produits semi-finis**  
+Matières premières suffisamment transformées pour être réutilisées (ex. acier, planches de bois, farine à partir de céréales).
+
+**3. Produits finis**  
+Produits qui ne nécessitent pas d'étape de transformation supplémentaire pour le consommateur final.
+:::
+
+### Question 3
+
+La fragilité des marchandises est la base d'un stockage sans dommage. Quelles **sept** influences peuvent malgré tout endommager les marchandises ?
+
+:::reponse
+1. **Pression d'empilage**
+2. **Température de stockage incorrecte**
+3. **Humidité de l'air inadaptée** (trop humide ou trop sèche)
+4. **Influence de la lumière** (UV)
+5. **Vieillissement**
+6. **Parasites** (nuisibles)
+7. **Influence réciproque** des produits stockés
+:::
+
+### Question 4
+
+Nomme les symboles **SGH** ci-dessous avec le terme technique correct et donne pour chacun un exemple de produit.
+
+:::reponse
+| Symbole SGH | Terme technique | Exemples |
+| --- | --- | --- |
+| Attention / Dangereux | Irritation, allergies, somnolence, intox. unique… | Pastilles lave-vaisselle, produits de nettoyage, eau de Javel |
+| Extrêmement inflammable | Feu / étincelles / frottements… | Allume-feu, huiles de lampe, aérosols, solvants |
+| Comburant | Active / favorise un incendie (dégage O₂) | Eau de Javel, peroxyde d'hydrogène |
+| Explosif | Explosion sous influence ou mauvais stockage | Explosifs, nitroglycérine |
+| Gaz sous pression | Gaz comprimés / liquéfiés / dissous | Propane/butane, bouteilles de CO₂ |
+| Dangereux pour l'environnement | Milieux aquatiques notamment | Dissolvant moisissures, sprays insectes, huiles moteur, chimie piscine |
+| Corrosif | Brûlures peau / yeux | Nettoyant four, détartrant, détergents puissants, déboucheurs |
+| Nocif | Organes, cancer, génétique, fertilité… | Essence, peintures, allume-feu, huiles de lampe, certaines huiles essentielles |
+| Très toxique | Intoxications graves / mort en très petites quantités | Poison pour souris / rats |
+:::
+
+### Question 5
+
+Quels sont les **trois** principaux critères à prendre en compte dans le choix du lieu de stockage ?
+
+:::reponse
+1. **Périssabilité**
+2. **Dangerosité**
+3. **Manipulation**
+:::`;
+
+const DEMO_105_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Dimension/volume · Densité · État d'agrégation · Périssabilité · Fragilité · Empilabilité · Valeur
+2. MP (primaires/secondaires) · Semi-finis · Finis
+3. Pression empilage · T° · Humidité · Lumière UV · Vieillissement · Parasites · Influence réciproque
+4. 9 symboles SGH + exemples (Attention → Très toxique)
+5. Périssabilité · Dangerosité · Manipulation`;
+
 /** Contenu Module 106 — Élimination des déchets CH */
 const DEMO_106_THEORIE_FULL = `## 6. L'élimination des déchets CH
 
@@ -1369,6 +2566,376 @@ const DEMO_106_OBJECTIFS_SUMMARY = `## Objectifs
 - 3 voies CH (décharge / UIOM / recyclage)
 - A–E, 2030, littering`;
 
+/** Glossaire Module 106 */
+const DEMO_106_GLOSSAIRE_FULL = `## Glossaire — Module 106
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Décharge | | Installation autorisée où l’on stocke **définitivement** des résidus d’incinération ou des déchets non valorisables, après traitement si nécessaire (types **A → E**, danger croissant). |
+| UIOM | Usine d’incinération des ordures ménagères | Installation qui incinère les déchets inflammables non recyclables ; réduit volume et poids, limite les émissions polluantes et produit de l’énergie / du chauffage urbain. |
+| Recyclage | | Collecte, tri, traitement et **valorisation** des matières en circuit (quasi) fermé, pour obtenir des matières premières **secondaires**. |
+| Biologique | | Relatif aux matières **organiques** d’origine vivante (restes alimentaires, déchets verts, etc.), valorisées par compostage ou fermentation (biogaz). |
+| Inorganique | | Relatif aux matières **minérales / métalliques** (verre, métaux, minéraux…) qui se recyclent surtout par procédés physiques ou chimiques, sans compostage. |
+| Immissions | *(orth. courante FR ; parfois écrit « Immisions »)* | Polluants **reçus / ressentis** sur un lieu (air, sol, eau, bruit…) — effet « côté récepteur », distinct des émissions à la source. |
+| Émissions | | Polluants **rejetés à la source** (cheminée, échappement, process…) vers l’environnement. |
+| Redistribution | | Lors des livraisons (ex. vers filiales), récupération en retour d’emballages, retours et flux à recycler (PET, verre, piles, appareils…). |
+| Upcycling | | Valorisation d’un déchet ou d’un produit usagé en un bien de **valeur égale ou supérieure** (réemploi créatif), au-delà du simple recyclage matière. |`;
+
+const DEMO_106_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Décharge** A→E · **UIOM** · **Recyclage** (MP secondaires)
+- **Biologique** vs **Inorganique**
+- **Émissions** (source) ≠ **Immissions** (récepteur)
+- **Redistribution** · **Upcycling**`;
+
+/** Mises en situation Module 106 */
+const DEMO_106_SITUATION_FULL = `## Mises en situation — Module 106
+
+Contexte : tu travailles chez **EnterSite AG**. Les missions portent sur l’**élimination des déchets en Suisse** (littering, circuits de recyclage, cycles naturels). Rédige d’abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les aides / solutions proposées.
+
+### Vue d’ensemble des missions
+1. Tous des déchets ou quoi ?
+2. Où vont tes déchets ?
+3. Comprendre les circuits
+4. Discussion STA
+
+---
+
+## Mission 1 — Tous des déchets ou quoi ?
+
+**Littering + recyclage** — crée une **carte heuristique** (mind map) / cluster sur ces thèmes.
+
+Outils possibles (ouverts) :
+- [mind-map-online.de](https://www.mind-map-online.de)
+- [wortwolken.com](https://www.wortwolken.com)
+
+**Ta carte heuristique** : travail **ouvert / individuel** (image ou schéma à produire). Pas de solution unique.
+
+---
+
+## Mission 2 — Où vont tes déchets ?
+
+Réponds aux questions suivantes. Compare ensuite avec les exemples proposés (lorsque disponibles).
+
+**Quels matériaux recyclables connais-tu ?**
+
+:::reponse
+Exemples : verre, plastiques, emballages, métaux, organiques, carton, papier, bois, déchets de construction, encombrants…
+:::
+
+**Quels produits recyclés connais-tu ?**
+
+:::reponse
+Exemples : emballages de bains de bouche, déodorants à bille, nettoyants ménagers, et d’autres emballages issus de matières recyclées…
+:::
+
+**Y a-t-il un produit non recyclable que tu voudrais pouvoir recycler ?**
+
+**Réponse individuelle** — pas de solution unique.
+
+### 2.1 Comportement personnel face aux déchets
+
+Évalue ton comportement (échelle type : **Très bien → Bien → Moyen → Mal**). Checklist personnelle — **réponse individuelle**.
+
+### 2.2–2.3 Travail de groupe — 10 matériaux recyclables (45–60 min)
+
+En groupe, étudie **10** filières de recyclage (voir sous-missions ci-dessous), puis **présente** vos résultats à la classe.
+
+> **Astuce EnterSite** : suis la visite virtuelle dans la salle **15 V3** — LearningApp. Lien : [Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+---
+
+### Sous-mission 1 — Verre
+
+À partir des données **Vetroswiss 2022** : quantités vendues / recyclées, schéma éventuel, et explication du **tri couleur**.
+
+:::reponse
+**Chiffres Vetroswiss 2022 :**
+- **316 331 t** de verre d’emballage vendues
+- **305 290 t** recyclées ≈ **97 %**
+
+**Tri couleur :** le verre est trié par couleur (blanc, brun, vert) pour produire à nouveau du verre d’emballage de qualité. Sans tri correct, on oriente plutôt vers des usages comme le **verre cellulaire** ou la **laine de verre** (isolation), qui ne remettent pas le verre dans le même circuit « bouteille → bouteille ».
+:::
+
+---
+
+### Sous-mission 2 — Papier
+
+Chiffres 2005, produits issus du recyclage, et contrôle à l’école (ouvert).
+
+:::reponse
+**2005 :** **1 243 816 t** de vieux papier récupérées → **74,4 %** · **167 kg/habitant**.
+
+**Produits recyclés (exemples) :** papier journal, cartons d’emballage, papier hygiénique / essuie-tout, papier à usage graphique recyclé, etc.
+
+**Contrôle à l’école :** observation ouverte — où et comment le papier est collecté dans ton établissement ? (réponse individuelle / de groupe)
+:::
+
+---
+
+### Sous-mission 3 — Vêtements
+
+Quantités, consignes de collectes, répartition Texaid (et assimilés).
+
+:::reponse
+- **6,7 kg/habitant** · **~60 400 t** de textiles collectés
+- Consignes : vêtements **propres**, **secs**, dans des sacs **fermés**
+- Répartition typique (Texaid etc.) : **65 %** seconde main · **15 %** chiffons · **15 %** isolants · **5 %** détruits
+:::
+
+---
+
+### Sous-mission 4 — PET
+
+Définition, pétrole évité, points de collecte, taux 2023.
+
+:::reponse
+**PET** = polyéthylène téréphtalate (plastique des bouteilles de boissons).
+
+- En Suisse, le recyclage PET évite l’équivalent d’environ **47 millions de litres** de pétrole
+- **Plus de 58 000** points de collecte
+- **2023 :** **42 562 t** vendues · **35 635 t** recyclées = **84 %**
+:::
+
+---
+
+### Sous-mission 5 — Déchets verts
+
+Que mettre / ne pas mettre ; biogaz ; kg/hab.
+
+:::reponse
+**Oui (ex.) :** tontes, feuilles, branchages, restes de jardin, souvent aussi déchets de cuisine selon consignes locales.  
+**Non (ex.) :** plastique, verre, métaux, sacs non compostables, déchets spéciaux, certaines plantes malades selon directives.
+
+- **2020 :** ~**79 000** ménages alimentés via le **biogaz** issu de la fermentation
+- **~156,1 kg/an/habitant** de déchets verts / organiques (ordre de grandeur CH)
+:::
+
+---
+
+### Sous-mission 6 — Aluminium
+
+Énergie, recyclage, point de collecte (exemple).
+
+:::reponse
+- Jusqu’à **~95 %** d’économie d’énergie par rapport à la production primaire (bauxite)
+- Recyclage **quasi infini** sans perte majeure de qualité
+- Exemple de point : collecte / conteneur type **Jumbo Bulle** (ou point local IGORA / commune — à vérifier chez toi)
+:::
+
+---
+
+### Sous-mission 7 — Luminaires
+
+Quoi collecter, où rendre, volume.
+
+:::reponse
+- Collecter : **LED**, **néons**, lampes **basse consommation** (économie)
+- Restitution : **magasin / point de vente** ou **déchetterie** (réseaux type SLRS / SENS selon catégorie)
+- Volume CH précis : **introuvable** dans le support — noter « à rechercher / non indiqué »
+:::
+
+---
+
+### Sous-mission 8 — Piles
+
+Appareils, risques, taux de retour.
+
+:::reponse
+**Appareils (ex.) :** télécommandes, jouets, montres, lampes de poche, souris, détecteurs de fumée…
+
+**Risques :** métaux lourds, pollution, **risque d’incendie** (surtout lithium).
+
+**Taux de retour (ex.) :** **82,1 %** piles non-lithium · **19,5 %** piles **lithium**.
+:::
+
+---
+
+### Sous-mission 9 — Fer blanc / tôle
+
+Consommation, containers, composition.
+
+:::reponse
+- ~**40 boîtes / habitant / an**
+- **~86 %** collectées via ~**4 000** conteneurs
+- **Fer-blanc** = acier (fer) recouvert d’une fine couche d’**étain** (protection anticorrosion)
+:::
+
+---
+
+### Sous-mission 10 — Électrique / électronique
+
+Swico / SENS, kg/hab, inventaire personnel.
+
+:::reponse
+- Organisations : **Swico** / **SENS** (appareils électriques et électroniques, matériaux)
+- **~14,7 kg/habitant**
+- **Compte personnel :** liste ouverte — combien d’appareils chez toi ? (souvent **100+** dans un ménage équipé)
+:::
+
+---
+
+## Mission 3 — Comprendre les circuits
+
+Support PDF : **« 106_Comprendre les cycles »** — questions et découvertes **ouvertes** (notes personnelles).
+
+### 3.1 Choisir un cycle à lire
+
+Choisis **l’un** des deux textes ci-dessous (cycle de l’eau **ou** cycle de la matière biologique), lis-le attentivement, puis réponds aux questions du PDF / de l’enseignant·e.
+
+#### Texte A — Cycle de l’eau
+
+L’eau circule en permanence entre atmosphère, continents et océans. Le soleil évapore l’eau des mers, des lacs et du sol ; la vapeur forme des nuages, puis retombe en précipitations. Une part s’infiltre (eaux souterraines), une part ruisselle vers les cours d’eau, une part est utilisée par les êtres vivants, puis retourne à l’atmosphère (transpiration, respiration) ou aux milieux aquatiques.
+
+Pour la gestion des déchets et de l’environnement, ce cycle rappelle que **ce que l’on rejette dans l’eau** (émissions) peut redevenir une **immission** pour d’autres usagers en aval. Les stations d’épuration et le traitement des boues d’épuration (parfois valorisées comme combustible en UIOM) font partie de la « boucle » humaine autour de ce cycle naturel.
+
+#### Texte B — Cycle de la matière biologique
+
+Dans la nature, les matières organiques (feuilles, restes végétaux, déjections…) sont décomposées par des micro-organismes. Les éléments nutritifs retournent au sol et nourrissent à nouveau les plantes : c’est un **cycle fermé**.
+
+Les déchets verts et alimentaires peuvent rejoindre ce cycle via le **compostage** ou la **fermentation** (biogaz). Lorsqu’ils sont jetés avec les ordures mixtes et incinérés, on casse en partie ce circuit : on produit de l’énergie, mais on perd une partie du retour direct au sol. L’objectif de la pyramide des déchets (**éviter > réduire > valoriser**) est de rapprocher nos pratiques de ces cycles naturels.
+
+### 3.2 Visualiser le cycle
+
+Représente graphiquement le cycle choisi (schéma, dessin, numérique). **Réponse individuelle** — pas de solution unique.
+
+---
+
+## Mission 4 — Discussion de la situation de travail et d’apprentissage (STA)
+
+Discute de la STA en plénière avec la classe et le·la formateur·trice. Notes : **réponse ouverte** (pas de solution unique).`;
+
+const DEMO_106_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : mind map littering / recyclage (ouvert)
+- **M2** : où vont tes déchets + **10 filières** (verre → électronique) · EnterSite **15 V3**
+- **M3** : PDF cycles (eau **ou** matière bio) + schéma individuel
+- **M4** : discussion STA (ouverte)`;
+
+/** Exercices de maths Module 106 */
+const DEMO_106_MATHS_FULL = `## Exercices de mathématiques — Module 106
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Déchets totaux par personne
+
+La Suisse produit environ **90 millions de tonnes** de déchets par an pour **8,637 millions** d’habitants. Quelle masse cela représente-t-il **par personne** (en kg) ?
+
+:::solution
+**10'420 kg/personne**
+
+Calcul : 90 000 000 t ÷ 8,637 M hab = **10,420 t/hab** = **10'420 kg/personne**.
+:::
+
+### Exercice 2 — Déchets urbains totaux (kg)
+
+Avec **8,637 millions** d’habitants et **716 kg** de déchets urbains par personne et par an, quelle est la masse totale de déchets urbains (en kg) ?
+
+:::solution
+**6'184'092'000 kg**
+
+Calcul : 8,637 M × 716 = **6 184,092** (millions de kg) → **6'184'092'000 kg**.
+:::
+
+### Exercice 3 — Part recyclée
+
+Sur **716 kg** de déchets urbains par personne, **53 %** sont recyclés. Quelle masse est recyclée (en kg) ?
+
+:::solution
+**379,48 kg**
+
+Calcul : 716 × 0,53 = **379,48 kg**.
+:::
+
+### Exercice 4 — Coût des sacs poubelle
+
+Si **716 kg** correspondent à environ un volume de sacs de **15 kg** chacun, et qu’un sac coûte **2 CHF**, quel est le coût annuel approximatif ?
+
+:::solution
+**95,46 CHF**
+
+Nombre de sacs : 716 ÷ 15 = **47,733…** ≈ **47,73** sacs  
+Coût : 47,73 × 2 = **95,46 CHF**.
+:::
+
+> **Contrôle rapide (footer corrigé)** : 95,46 · 10'420 · 6'184'092'000 · 379,48`;
+
+const DEMO_106_MATHS_SUMMARY = `## Maths — Solutions
+1. **10'420 kg/pers** (90 Mt ÷ 8,637 M)
+2. **6'184'092'000 kg** (8,637 M × 716)
+3. **379,48 kg** (716 × 53 %)
+4. **95,46 CHF** (716÷15 × 2)`;
+
+/** Vérification des acquis Module 106 */
+const DEMO_106_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Élimination des déchets CH**. Réponds d’abord sans regarder les solutions, puis révèle-les pour t’autocorriger.
+
+### Question 1
+
+Pourquoi l’élimination des déchets a-t-elle pris beaucoup d’importance ? Cite les raisons (enjeux + implications pour la logistique d’élimination d’une entreprise).
+
+:::reponse
+**Cinq enjeux principaux :**
+1. Conscience écologique croissante
+2. Pression pour des produits favorables à l’environnement
+3. Protection de l’environnement comme facteur concurrentiel
+4. Augmentation des coûts d’élimination
+5. Renforcement de la réglementation
+
+**Trois implications pour la logistique d’élimination :**
+1. Développer une attitude positive et orientée vers l’avenir
+2. Rechercher des solutions économiques
+3. Présenter les plans et les résultats atteints
+:::
+
+### Question 2
+
+Présente le tableau des types de décharges **A à E** (désignation / placement et exemples).
+
+:::reponse
+| Type | Placement / désignation | Exemples |
+| --- | --- | --- |
+| **A** | Excavation / déblais non pollués | Gravier, terre, sable |
+| **B** | Matériaux inertes | Briques, tuiles, béton |
+| **C** | Déchets inorganiques (souvent après traitement) | Terre polluée, balayures |
+| **D** | Résidus d’incinération | Mâchefers / scories UIOM |
+| **E** | Réacteur (fort potentiel de danger) | Isolation, amiante, asphalte |
+:::
+
+### Question 3
+
+Quels sont les **trois** objectifs de l’incinération (UIOM) ?
+
+:::reponse
+1. **Réduction du volume (~90 %) et du poids (~75 %)**
+2. **Réduction des émissions polluantes** (filtres, lavage des fumées, DeNOx…)
+3. **Production d’énergie / chauffage urbain**
+:::
+
+### Question 4
+
+Quelle est la « **voie royale** » de l’élimination des déchets ? Définis-la.
+
+:::reponse
+La **voie royale** = le **recyclage** : collecte, tri, traitement et valorisation des matières en circuit (quasi) fermé, pour obtenir des matières premières **secondaires**.
+:::
+
+### Question 5
+
+Selon l’OFEV, quels sont les **trois** impacts du littering ? Quel ordre de grandeur économique cite-t-on ?
+
+:::reponse
+1. Impact **esthétique**
+2. Impact **écologique**
+3. Impact **économique** — nettoyage ≈ **200 millions CHF/an**
+:::`;
+
+const DEMO_106_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. 5 enjeux + 3 implications logistique d’élimination
+2. Décharges **A→E** (désignation + exemples)
+3. Volume/poids · émissions · énergie/chaleur urbaine
+4. Voie royale = **recyclage** (MP secondaires)
+5. Littering : esthétique · écologique · économique (~200 MCHF)`;
+
 /** Contenu Module 107 — Catégories de déchets CH */
 const DEMO_107_THEORIE_FULL = `## 7. Les catégories de déchets CH
 
@@ -1563,6 +3130,279 @@ const DEMO_107_OBJECTIFS_SUMMARY = `## Objectifs
 - LPE / OTD / OMoD / OREA
 - Spéciaux : danger, précautions, autorisation`;
 
+/** Glossaire Module 107 */
+const DEMO_107_GLOSSAIRE_FULL = `## Glossaire — Module 107
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Déchets urbains | | Déchets des **ménages** et déchets de composition comparable provenant d'entreprises, d'administrations, etc. Incluent ordures mixtes, encombrants et fractions destinées au tri (verre, papier, métaux, compostables…). Leur collecte et élimination sont en grande partie gérées par les **services publics** (communes / associations intercommunales). |
+| Déchets spéciaux | | Déchets qui, par leurs propriétés chimiques ou physiques, sont **nocifs** pour l'environnement ou l'homme et exigent un **traitement particulier** (pas avec les urbains). Contrôlés via l'**OMoD** ; exemples : peintures, colles, solvants, piles, acides, huiles, sols pollués… Remise uniquement à un **repreneur autorisé**. |
+| Boues d'épuration | | Matières solides (minérales et organiques) issues de l'**assainissement des eaux usées**. Teneur en eau typique **90 à 99 %**. Contiennent des éléments fertilisants mais aussi métaux lourds / pathogènes ; **épandage agricole interdit depuis 2003** en Suisse. |`;
+
+const DEMO_107_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Déchets urbains** : ménages + comparables · services publics
+- **Déchets spéciaux** : nocifs · OMoD · repreneur autorisé
+- **Boues d'épuration** : 90–99 % eau · plus d'épandage (2003)`;
+
+/** Mises en situation Module 107 */
+const DEMO_107_SITUATION_FULL = `## Mises en situation — Module 107
+
+Contexte : tu travailles chez **EnterSite AG**. Les missions portent sur les **catégories de déchets CH** et surtout les **déchets spéciaux**. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / aides proposées.
+
+### Vue d'ensemble des missions
+1. Définition des déchets spéciaux
+2. Quotidien privé / professionnel
+3. Responsabilités
+4. Statistiques
+5. Discussion STA
+
+> **Astuce EnterSite** : commence la visite virtuelle dans la salle **16 V2** — LearningApp. Plus tard : salle **11** (LearningApp). Lien : [Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+---
+
+## Mission 1 — Définition des déchets spéciaux
+
+Qu'est-ce qu'un **déchet spécial** ? Quelles **caractéristiques / propriétés** le distinguent d'un déchet de la filière normale ?
+
+:::reponse
+**Un déchet spécial** est un déchet qui, en raison de ses propriétés chimiques ou physiques, est **nocif** pour l'environnement ou pour l'homme et **ne peut pas** être éliminé via la filière normale (urbains / ordures ménagères). Il exige un **traitement particulier**.
+
+**Caractéristiques / propriétés typiques :**
+- **explosives**
+- **inflammables**
+- **corrosives**
+- **toxiques**
+- (aussi : comburantes, écotoxiques, contaminées, etc.)
+
+Exemples : peintures, colles, solvants, acides, piles, huiles, sols pollués…
+:::
+
+---
+
+## Mission 2 — Quotidien privé / professionnel
+
+Quels **déchets spéciaux** rencontres-tu dans le quotidien (ménage ou entreprise) ?
+
+:::reponse
+Exemples courants : **piles**, **solvants**, **colles**, **médicaments**, **peintures**, ainsi que huiles moteur, batteries, produits de nettoyage agressifs, aérosols, etc.
+:::
+
+### 2.1 Privé vs professionnel
+
+Compare tes déchets spéciaux **à la maison** et **au travail** (types, quantités, filières de reprise). **Réponse individuelle** — pas de solution unique.
+
+---
+
+## Mission 3 — Responsabilités
+
+Qui est **responsable** de l'élimination correcte des déchets spéciaux (particulier, entreprise, remettant, repreneur) ? Note tes réflexions.
+
+**Réponse individuelle** — pas de solution unique. (Rappel théorie : le remettant ne remet qu'à un **repreneur autorisé** et doit **vérifier** l'autorisation.)
+
+### 3.1 Convention de Bâle
+
+Que règle la **Convention de Bâle** ? Pourquoi est-elle importante pour les déchets spéciaux ?
+
+:::reponse
+La **Convention de Bâle** (1989) est un accord international sur le **contrôle des mouvements transfrontières** de déchets dangereux et de leur élimination.
+
+Elle vise notamment à :
+- **réduire** la production de déchets dangereux
+- traiter / éliminer les déchets **aussi près que possible** du lieu de production
+- **empêcher** les transferts incontrôlés (notamment vers des pays moins équipés)
+- exiger un **consentement préalable** (notification) avant exportation / importation
+
+Elle complète le cadre national (OMoD, etc.) pour les flux **internationaux** de déchets spéciaux.
+:::
+
+### 3.2 Cas de ton entreprise
+
+Comment ton entreprise formatrice organise-t-elle la reprise / l'élimination des déchets spéciaux ? **Réponse individuelle**.
+
+---
+
+## Mission 4 — Statistiques (déchets spéciaux)
+
+Travaille sur les séries statistiques (quantités, parts Suisse / étranger, pays de destination). Calcule et interprète.
+
+### 4.1 Quantités 2000 vs 2020
+
+Compare les totaux et les parts **traitées en Suisse / à l'étranger**. Quelle évolution observes-tu ?
+
+:::reponse
+| Année | Quantité totale | Part CH | Part étranger |
+| --- | --- | --- | --- |
+| **2000** | **1'125'600 t** | **87,89 %** | **12,11 %** |
+| **2020** | **1'847'200 t** | **77,85 %** | **22,15 %** |
+
+**Évolution :** la quantité totale **augmente** fortement (≈ +64 %). La part traitée **à l'étranger** croît (≈ 12 % → 22 %) : signe de **mondialisation** des filières d'élimination / de recyclage des déchets spéciaux.
+:::
+
+### 4.2 Évolution 2007–2016 et groupe 2020
+
+Décris la courbe et le principal groupe de déchets spéciaux en 2020.
+
+:::reponse
+- **2007–2016 :** **hausse** marquée des quantités, puis **légère baisse** ensuite.
+- **Groupe dominant 2020 :** **résidus de traitement des boues** (sous-produits / résidus liés au traitement des boues d'épuration et assimilés).
+:::
+
+### 4.3 Exportations par pays (+330,99 %)
+
+Interprète l'évolution des destinations (+330,99 %) et le tableau pays.
+
+:::reponse
+**Évolution globale des exports :** **+330,99 %** (forte internationalisation).
+
+| Pays | Tendance |
+| --- | --- |
+| **NL** (Pays-Bas) | **↑** en hausse |
+| **DE** (Allemagne) | **↓** en baisse |
+| **FR / IT / BE / ES** | **stables** |
+| **AT** (Autriche) | **↑** en hausse |
+
+Interprétation : concentration / redistribution des flux vers certains hubs européens (NL, AT…), tandis que d'autres destinations (DE) reculent.
+:::
+
+---
+
+## Mission 5 — Discussion de la situation de travail et d'apprentissage (STA)
+
+Discute de la STA en plénière avec la classe et le·la formateur·trice. Notes : **réponse ouverte** (pas de solution unique).`;
+
+const DEMO_107_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **EnterSite** : salle **16 V2** puis **11** (LearningApp)
+- **M1** : déchet spécial = hors filière normale (explosif / inflammable / corrosif / toxique…)
+- **M2** : piles, solvants, colles, médicaments, peintures… · 2.1 individuel
+- **M3** : responsabilités · **Convention de Bâle** · cas entreprise
+- **M4** : 2000/2020 · mondialisation · résidus boues · exports pays
+- **M5** : discussion STA (ouverte)`;
+
+/** Exercices de maths Module 107 */
+const DEMO_107_MATHS_FULL = `## Exercices de mathématiques — Module 107
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Recyclage de l'aluminium (énergie)
+
+La production d'**1 kg** d'aluminium à partir de bauxite consomme environ **16 kWh**. Le recyclage permet d'économiser **95 %** de cette énergie. Quelle consommation reste-t-il pour **1 kg** d'aluminium recyclé (en kWh) ?
+
+:::solution
+**0,8 kWh**
+
+Calcul : 16 × 0,05 = **0,8 kWh**  
+(95 % économisés → il reste 5 % de 16 kWh.)
+:::
+
+### Exercice 2 — Valeur de reprise (aluminium)
+
+Tu remets **16 000 kg** d'aluminium à un repreneur à **21,2 centimes/kg**. Quel montant total obtiens-tu (en CHF) ?
+
+:::solution
+**3'392 CHF**
+
+Calcul : 16 000 × 0,212 = **3'392 CHF**.
+:::
+
+### Exercice 3 — Bénéfice net
+
+La vente de ces **16 000 kg** rapporte en réalité **7 000 CHF** (autre canal / prix marché). Si les coûts / équivalent reprise de référence valent **3'392 CHF**, quel est le **bénéfice** ?
+
+:::solution
+**3'608 CHF**
+
+Calcul : 7 000 − 3'392 = **3'608 CHF**.
+:::
+
+### Exercice 4 — Taux de collecte PET
+
+Sur **44 479 t** de bouteilles PET mises sur le marché, **35 339 t** sont collectées. Quel est le **taux de collecte** (en %, arrondi à 2 décimales) ?
+
+:::solution
+**79,45 %**
+
+Calcul : 35 339 ÷ 44 479 ≈ **0,7945** → **79,45 %**.
+:::
+
+> **Contrôle rapide (footer corrigé)** : 0,8 · 3'608 · 3'392 · 79,45`;
+
+const DEMO_107_MATHS_SUMMARY = `## Maths — Solutions
+1. **0,8 kWh** (16 × 0,05)
+2. **3'392 CHF** (16 000 × 0,212)
+3. **3'608 CHF** (7 000 − 3'392)
+4. **79,45 %** (35 339 ÷ 44 479)`;
+
+/** Vérification des acquis Module 107 */
+const DEMO_107_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Enlèvement / catégories de déchets CH**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quelles sont les **quatre catégories** de déchets selon l'**OFEV** (hors matériaux d'excavation/déblais dans certaines stats) ?
+
+:::reponse
+1. **Déchets de construction / chantier**
+2. **Déchets urbains**
+3. **Déchets spéciaux**
+4. **Boues d'épuration**
+:::
+
+### Question 2
+
+Quelle norme de rang supérieur ancre la protection de l'environnement (base des lois et ordonnances sur les déchets) ?
+
+:::reponse
+La **Constitution fédérale** — notamment l'**art. 74 Cst.** : la Confédération légifère sur la protection de l'être humain et de son environnement naturel contre les atteintes nuisibles ou incommodantes.
+
+Hiérarchie : **Constitution → lois → ordonnances**.
+:::
+
+### Question 3
+
+Cite les **quatre** grands points de la **LPE** relatifs aux déchets.
+
+:::reponse
+1. **Limitation** et **élimination** des déchets
+2. **Planification** et **obligation** d'éliminer
+3. **Financement**
+4. **Assainissement** des sites pollués
+:::
+
+### Question 4
+
+Quelles dispositions principales portent l'**OTD** et l'**OMoD** ?
+
+:::reponse
+**OTD** (ordonnance sur le traitement des déchets) : réduction / traitement des déchets, **décharges**, dépôts provisoires, **UIOM**, compostage, etc.
+
+**OMoD** (ordonnance sur les mouvements de déchets) : mouvements **internes** (remise, réception, transport de spéciaux) et **transfrontaliers**, exécution. Concerne les déchets **spéciaux** et les déchets **soumis à contrôle**.
+:::
+
+### Question 5
+
+Quelles sont les **sept mesures de précaution** pour les déchets spéciaux (manutention 1–3, stockage 4–7) ?
+
+:::reponse
+**Manutention**
+1. Ne **pas ouvrir** le contenant
+2. **Précaution maximale** (ne pas renverser, éviter casse / poussière)
+3. Pas à **mains nues** ; gants si contact ; se laver les mains ; lunettes si projections
+
+**Stockage**
+4. **Accès contrôlé** (verrouillable)
+5. Ne **pas mélanger** de substances inconnues
+6. À l'**abri des intempéries**
+7. Contenants **étanches** / **bacs de rétention**
+:::`;
+
+const DEMO_107_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Chantier · Urbains · Spéciaux · Boues
+2. **Constitution fédérale** (art. 74 Cst.)
+3. LPE : limitation/élimination · planification/obligation · financement · assainissement
+4. **OTD** (traitement / décharges / UIOM…) · **OMoD** (mouvements spéciaux / contrôle)
+5. 7 précautions : manutention 1–3 · stockage 4–7`;
+
 /** Contenu Module 108 — Élimination des déchets global */
 const DEMO_108_THEORIE_FULL = `## 8. L'élimination des déchets global
 
@@ -1732,6 +3572,223 @@ const DEMO_108_OBJECTIFS_SUMMARY = `## Objectifs
 - 8 problèmes mondiaux
 - Agenda 2030 / 17 ODD`;
 
+/** Glossaire Module 108 */
+const DEMO_108_GLOSSAIRE_FULL = `## Glossaire — Module 108
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Système de management environnementale (SME) | SME | Partie du système de management d’une entreprise orientée environnement : intègre objectifs, structures et processus pour améliorer en permanence la performance environnementale (OFEV : clé du développement économique durable). |
+| Norme ISO | International Organization for Standardization | Référentiel international définissant des critères communs. En environnement, **ISO 14001** (depuis 1996) certifie les SME ; **ISO 20121** cible le développement durable des grandes manifestations. |`;
+
+const DEMO_108_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **SME** : Système de management environnementale (orth. source) — management orienté environnement
+- **Norme ISO** : notamment **ISO 14001** (SME) · **ISO 20121** (événements)`;
+
+/** Mises en situation Module 108 */
+const DEMO_108_SITUATION_FULL = `## Mises en situation — Module 108
+
+Contexte : tu travailles chez **EnterSite AG**. Les missions portent sur l’**environnement global** (actualité écologique, situations concrètes, présentation, STA). Rédige d’abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les aides proposées.
+
+### Vue d’ensemble des missions
+1. Recherche actualité écologie
+2. Décrire situation
+3. Présentation
+4. Discussion STA
+
+> **Astuce EnterSite** : suis la visite virtuelle dans la salle **9 V2** — nettoyage des océans. Plus loin : salle **5** — jeu CIE. Lien : [Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+---
+
+## Mission 1 — Recherche actualité écologie
+
+Cherche une **actualité** récente liée à l’écologie / à l’environnement (presse, radio, web, entreprise…). Prépare un document Word (**Century Gothic**, **1 page A4**) et une courte présentation orale (**3 à 5 min**).
+
+Consignes de forme (rappel EnterSite) :
+- Police **Century Gothic**
+- **1 page A4** maximum
+- Présentation **3–5 minutes**
+
+:::reponse
+**Réponse individuelle** — pas de solution unique.
+
+**Aide-mémoire structure Word (1 page A4) :**
+1. Titre + source / date de l’actualité
+2. Faits essentiels (quoi, où, quand, qui)
+3. Lien avec l’environnement / la logistique / les déchets
+4. Ton avis / question ouverte pour la classe
+:::
+
+---
+
+## Mission 2 — Décrire situation
+
+Décris une **situation concrète** (entreprise formatrice, quotidien, actualité) illustrant un enjeu environnemental mondial (climat, eau, air, sols, biodiversité, plastique, etc.).
+
+Même format : Word **Century Gothic**, **1 page A4**, présentation **3–5 min**.
+
+:::reponse
+**Réponse individuelle** — pas de solution unique.
+
+**Pistes :** impact observé · acteurs concernés · mesures possibles · lien éventuel avec un SME / ODD.
+:::
+
+---
+
+## Mission 3 — Présentation
+
+Présente ton travail (Mission 1 et/ou 2) à la classe selon les consignes du·de la formateur·trice (**3–5 min**). Notes de présentation : **réponse individuelle**.
+
+:::reponse
+**Réponse individuelle** — pas de solution unique.
+
+Checklist orale : intro claire · 2–3 faits · lien module 108 · conclusion / question.
+:::
+
+---
+
+## Mission 4 — Discussion de la situation de travail et d’apprentissage (STA)
+
+Discute de la STA en plénière avec la classe et le·la formateur·trice. Notes ouvertes autorisées.
+
+:::reponse
+**Réponse ouverte** — notes individuelles / de classe (pas de solution unique).
+:::`;
+
+const DEMO_108_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **EnterSite** : salle **9 V2** (nettoyage océans) · salle **5** (jeu CIE)
+- **M1–M3** : Word Century Gothic · 1 page A4 · oral 3–5 min (ouvert / individuel)
+- **M4** : discussion STA (notes ouvertes)`;
+
+/** Exercices de maths Module 108 — Festival Interlaken */
+const DEMO_108_MATHS_FULL = `## Exercices de mathématiques — Module 108
+
+Contexte : **Festival Interlaken** — **88 t** de déchets pour **25 000** personnes. Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Déchets par personne
+
+Combien de **kg de déchets par personne** produit le festival ?
+
+:::solution
+**3,52 kg/personne**
+
+88 t = **88 000 kg**  
+88 000 ÷ 25 000 = **3,52 kg/personne**
+:::
+
+### Exercice 2 — Mégots
+
+Les **mégots** représentent **0,8 %** des 88 t. Quelle masse de mégots (en kg) ?
+
+:::solution
+**704 kg**
+
+88 000 × 0,8 % = 88 000 × 0,008 = **704 kg**
+:::
+
+### Exercice 3 — Plastique
+
+Le **plastique** représente **11,6 %** des 88 t. Quelle masse (en kg) ?
+
+:::solution
+**10'208 kg**
+
+88 000 × 11,6 % = 88 000 × 0,116 = **10'208 kg**
+:::
+
+### Exercice 4 — Part recyclée
+
+**43 %** des 88 t sont **recyclés**. Quelle masse recyclée (en kg) ?
+
+:::solution
+**37'840 kg**
+
+88 000 × 43 % = 88 000 × 0,43 = **37'840 kg**
+:::
+
+> **Contrôle rapide (footer corrigé)** : 3,52 · 704 · 10'208 · 37'840`;
+
+const DEMO_108_MATHS_SUMMARY = `## Maths — Solutions (Festival Interlaken, 88 t / 25 000 pers.)
+1. **3,52 kg/personne**
+2. **704 kg** mégots (0,8 %)
+3. **10'208 kg** plastique (11,6 %)
+4. **37'840 kg** recyclés (43 %)`;
+
+/** Vérification des acquis Module 108 */
+const DEMO_108_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Environnement global**. Réponds d’abord sans regarder les solutions, puis révèle-les pour t’autocorriger.
+
+### Question 1
+
+Quelles sont les **six** exigences d’une entreprise qui met en place un **SME** ?
+
+:::reponse
+1. S’**identifier** par rapport aux différentes atteintes à l’environnement
+2. S’engager à **respecter en permanence** les directives environnementales
+3. Définir ses propres **objectifs et programmes** environnementaux
+4. Déterminer la **structure organisationnelle** et les **moyens** pour atteindre ses objectifs
+5. Procéder régulièrement à des **audits environnementaux**
+6. Publier un **rapport** sur l’environnement et rendre compte de la performance réalisée
+:::
+
+### Question 2
+
+Qu’est-ce que la norme **ISO 14001** ? Depuis quand existe-t-elle et à quoi sert-elle ?
+
+:::reponse
+Depuis **1996**, **ISO 14001** permet de **certifier** les systèmes de management environnemental (SME). Elle définit des **critères mondiaux** et prouve l’intégration d’un comportement écologique dans les processus (confiance clients, fournisseurs, collaborateurs, autorités, investisseurs, société).
+:::
+
+### Question 3
+
+Nomme les **huit** grands problèmes environnementaux mondiaux et donne pour chacun une brève description.
+
+:::reponse
+1. **Changement climatique** — surtout réchauffement ; CO₂ (déforestation, fossiles), méthane, mobilité → chaleur, tempêtes, inondations
+2. **Pénurie d’eau** — ~1 % d’eau douce utilisable ; modes de vie + pollution
+3. **Pollution de l’air** — industrie, voitures, avions ; ~8 millions de décès (OMS 2012)
+4. **Érosion des sols** — sols plus stériles ; ~1 % des sols perdus/an
+5. **Surpopulation** — pression sur ressources (biens, énergie, eau, terres)
+6. **Déforestation** — ~30 millions d’hectares/an ; climat, espèces, érosion
+7. **Extinction des espèces** — habitat réduit / chasse ; ~25 800 espèces menacées (UICN)
+8. **Déchets plastiques** — ~8 Mt/an en mer ; non dégradables → microplastiques ; vortex océaniques
+:::
+
+### Question 4
+
+Cite les **cinq** grands vortex (gyres) de déchets océaniques. (Si tu ne peux pas dessiner la carte, décris-les en texte.)
+
+:::reponse
+Les cinq principaux gyres / vortex de déchets marins :
+1. **Pacifique Nord** (dont le « Great Pacific Garbage Patch »)
+2. **Pacifique Sud**
+3. **Atlantique Nord**
+4. **Atlantique Sud**
+5. **Océan Indien**
+
+Ils concentrent plastiques et débris entraînés par les courants ; le Pacifique Nord est le plus souvent cité (étendues estimées très variables, de centaines de milliers à plusieurs millions de km²).
+:::
+
+### Question 5
+
+Parmi les **17** Objectifs de développement durable (Agenda 2030), cite **quatre** objectifs (pauvreté, faim, santé, éducation) avec une courte description.
+
+:::reponse
+1. **Éliminer la pauvreté** — éradiquer la pauvreté sous toutes ses formes partout
+2. **Éliminer la faim** — sécurité alimentaire et agriculture durable
+3. **Vie saine et bien-être** — santé et bien-être pour tous à tous les âges
+4. **Éducation de qualité** — éducation inclusive, équitable et de qualité ; opportunités d’apprentissage tout au long de la vie
+
+*(Agenda 2030 adopté le 25 septembre 2015 par l’ONU : 17 ODD et 169 cibles.)*
+:::`;
+
+const DEMO_108_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. 6 exigences SME (impacts · conformité · objectifs · organisation · audits · rapport)
+2. **ISO 14001** depuis 1996 — certification SME mondiale
+3. 8 problèmes : climat · eau · air · sols · surpopulation · déforestation · espèces · plastique
+4. 5 vortex : Pacifique N/S · Atlantique N/S · Indien
+5. ODD 1–4 : pauvreté · faim · santé · éducation`;
+
 /** Contenu Module 109 — Accès et protection des données */
 const DEMO_109_THEORIE_FULL = `## 9. Accès et protection des données
 
@@ -1864,6 +3921,340 @@ const DEMO_109_OBJECTIFS_SUMMARY = `## Objectifs
 - Clés/badges
 - CP 179 / 321ter + CO 321a
 - Courrier & mots de passe`;
+
+/** Glossaire Module 109 */
+const DEMO_109_GLOSSAIRE_FULL = `## Glossaire — Module 109
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Autorisation d'accès | | Droit, défini par l'employeur selon la fonction, d'entrer dans certains locaux ou systèmes (clés, badges, comptes informatiques). Chaque droit implique une **responsabilité** : ne pas confier, laisser, déposer ou perdre le moyen d'accès sans signalement immédiat. |
+| Secret postal | Art. 321ter CP | Protection élargie des relations postales / télécoms : non seulement le **contenu** des envois, mais aussi l'**expéditeur** et le **destinataire** (qui reçoit quoi, de qui, à quelle fréquence). Violation passible d'amende ou de peine privative de liberté (jusqu'à 3 ans). |
+| Secret épistolaire | Art. 179 CP | Interdiction d'ouvrir, sans droit, un pli ou colis fermé pour en connaître le contenu, ou de divulguer / tirer profit d'infos ainsi obtenues. **Délit sur plainte** (amende). Mentions « personnel » / « confidentiel » → ne jamais ouvrir. |
+| Secret professionnel | Art. 321a al. 4 CO | Devoir de l'employé de ne pas utiliser ni divulguer les faits confidentiels (secrets de fabrication et d'affaires) de l'employeur ; peut **subsister après** la fin du contrat tant que l'exigent les intérêts légitimes de l'employeur. |`;
+
+const DEMO_109_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Autorisation d'accès** : droit + responsabilité (clés / badges / login)
+- **Secret épistolaire** (CP 179) : ne pas ouvrir le courrier d'autrui
+- **Secret postal** (CP 321ter) : contenu + expéditeur/destinataire
+- **Secret professionnel** (CO 321a) : ne pas divulguer infos internes`;
+
+/** Mises en situation Module 109 */
+const DEMO_109_SITUATION_FULL = `## Mises en situation — Module 109
+
+Contexte : tu travailles chez **EnterSite AG**. Les missions portent sur la **protection des données**, la **vidéosurveillance** et l'évaluation de situations sensibles. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les aides / exemples proposés.
+
+### Vue d'ensemble des missions
+1. Protection des données — Qu'est-ce que je révèle ?
+2. Vidéosurveillance — Qu'est-ce qui est justifié ?
+3. Évaluer correctement les situations (cartes d'action)
+4. Évaluer la situation (comparaison PDF)
+5. Travail de fin d'études Foundation (EnterSite)
+6. Discussion STA
+
+---
+
+## Mission 1 — Protection des données — Qu'est-ce que je révèle ?
+
+Nous sommes tous d'accord : il y a des données **privées** et des données que l'on partage avec le **public**. Mais sommes-nous tous d'accord sur le classement ? Qu'est-ce que tu révèles de toi ?
+
+Coche dans le tableau à qui tu communiquerais quelles données :
+- **(+)** oui
+- **(−)** non
+- **(?)** pas sûr(e)
+
+:::reponse
+**Exemple de remplissage (solution-type / comparaison)** — tes choix peuvent différer ; discutes-en en 1.1.
+
+| Donnée | Famille | Collègues | Amis | Enseignant | Inconnu rue | Inconnu chat |
+| --- | --- | --- | --- | --- | --- | --- |
+| âge, sexe | + | + | + | + | + | + |
+| Groupe sanguin | + | + | + | − | − | − |
+| Infos frères/sœurs, famille | + | + | + | + | − | − |
+| Salaire, emploi | + | − | + | − | − | − |
+| Photos de mon ami(e) et de moi | + | + | + | − | − | − |
+| Contacts professionnels | − | − | − | − | − | − |
+| Liste de contacts du téléphone | + | − | + | − | − | − |
+| Mon n° de téléphone portable | + | + | + | + | − | − |
+| Mon adresse e-mail | + | + | + | + | − | − |
+| Adresse du domicile | + | + | + | + | − | − |
+| Code PIN téléphone / PC | + | − | + | − | − | − |
+| Photo de mon visage | + | + | + | + | − | − |
+| Photo du corps (vêtu) | + | + | + | − | − | − |
+| Solde de mon compte | + | − | + | − | − | − |
+| Emploi du temps | + | + | + | + | − | − |
+| Infos perso apprises d'un(e) ami(e) | − | − | − | − | − | − |
+| Mot de passe réseau social | − | − | − | − | − | − |
+| Orientation sexuelle | + | − | + | − | − | − |
+:::
+
+### Mission 1.1 — Différences
+
+Discute des résultats avec ton voisin ou ta voisine. Où trouvez-vous des différences et comment les expliquer ?
+
+:::reponse
+**Réponse individuelle** — pas de solution unique (comparer sensibilité, confiance, culture, contexte professionnel / scolaire).
+:::
+
+---
+
+## Mission 2 — Vidéosurveillance — Qu'est-ce qui est justifié ?
+
+Écoute le podcast *« Caméras de surveillance dans les immeubles locatifs »* (D_150 — Vidéosurveillance ABE). Discute ensuite des questions ci-dessous.
+
+**Questions ouvertes (notes personnelles) :**
+- Quels sont les avantages et les inconvénients de la vidéosurveillance d'immeubles privés ?
+- … pour les personnes surveillées (invités, visiteurs) ?
+- … pour le propriétaire de l'immeuble ?
+- En tant que juge, quelle serait ta décision si un voisin se plaignait de la vidéosurveillance ?
+- À ton avis, où la vidéosurveillance a-t-elle un sens ? Où ne le serait-elle pas ?
+
+:::reponse
+**Réponse ouverte** — podcast + discussion (pas de solution unique). Notes avantage/inconvénient selon parties prenantes, proportionnalité, vie privée vs sécurité.
+:::
+
+### Mission 2.1 — Six scénarios
+
+Pour chaque situation : **justifié** ou **non justifié**, avec justification.
+
+**1.** Après plusieurs actes de vandalisme, les transports publics surveillent l'intérieur des bus et des trams.
+
+:::reponse
+**Réponse individuelle** — justifié / non justifié + justification (ex. intérêt public / prévention vandalisme vs vie privée des usagers).
+:::
+
+**2.** Après des tags répétés, la commune scolaire installe une caméra qui surveille l'**extérieur** du bâtiment scolaire.
+
+:::reponse
+**Réponse individuelle** — justifié / non justifié + justification.
+:::
+
+**3.** M. M. soupçonne sa voisine de voler des fruits ; il installe une caméra surveillant son jardin et la clôture mitoyenne.
+
+:::reponse
+**Réponse individuelle** — justifié / non justifié + justification (attention à filmer aussi la propriété voisine).
+:::
+
+**4.** Un commerçant installe une caméra **devant les cabines d'essayage** pour voir qui entre/sort avec combien de vêtements.
+
+:::reponse
+**Réponse individuelle** — justifié / non justifié + justification (sphère très privée ; risque d'intrusion disproportionnée).
+:::
+
+**5.** Une commune interdit la circulation de nuit ; des caméras sont installées pour confondre les automobilistes fautifs.
+
+:::reponse
+**Réponse individuelle** — justifié / non justifié + justification.
+:::
+
+**6.** Un propriétaire de club filme le dancefloor et le bar et **diffuse les images en direct** sur Internet pour faire de la pub.
+
+:::reponse
+**Réponse individuelle** — justifié / non justifié + justification (consentement, droit à l'image, publicité).
+:::
+
+### Mission 2.2 — Différences
+
+Discute des résultats avec ton voisin ou ta voisine. Où trouvez-vous des différences et comment les expliquer ?
+
+:::reponse
+**Réponse individuelle** — pas de solution unique.
+:::
+
+---
+
+## Mission 3 — Évaluer correctement les situations
+
+Formez des groupes de **4 personnes** et évaluez des situations à conséquences critiques. Sous le groupe « Situation de travail et d'apprentissage », le groupe **« Cartes d'action »** est exceptionnellement inséré (🔎 Carte d'action).
+
+**Attribution :**
+| Personne | Cartes |
+| --- | --- |
+| Personne 1 | 1, 5, 9, 13 |
+| Personne 2 | 2, 6, 10, 14 |
+| Personne 3 | 3, 7, 11, 15 |
+| Personne 4 | 4, 8, 12, 16 |
+
+Chaque personne traite ses cartes de façon autonome (**5 min** / carte). Après **20 min**, présentation au groupe + bref feedback des collègues.
+
+:::reponse
+**Notes ouvertes** — pas de solution unique ici (les propositions se trouvent au Mission 4 / PDF).
+:::
+
+---
+
+## Mission 4 — Évaluer la situation
+
+Va sur 🔎 **Matériel supplémentaire** du module 109. Ouvre le PDF *« Propositions de solutions pour les cartes d'action »* et compare tes solutions avec celles proposées.
+
+:::reponse
+**Réponse individuelle** — comparaison avec le PDF (pas de solution unique à recopier ici).
+:::
+
+---
+
+## Mission 5 — Travail de fin d'études Foundation
+
+> **Astuce EnterSite** : suis la visite virtuelle dans la salle **16 V2**. Visite la salle de travail de l'école professionnelle virtuelle ; cherche l'image à droite et résous le **travail de fin d'études sur la Fondation**. Lien : [Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+:::reponse
+**Réponse ouverte** — activité EnterSite / Foundation (pas de solution unique dans ce support).
+:::
+
+---
+
+## Mission 6 — Discussion STA
+
+Discute de la situation de travail et d'apprentissage en plénière avec la classe et l'enseignant. Note les informations supplémentaires au bon endroit.
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_109_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : tableau vie privée (+/−/?) + différences (1.1)
+- **M2** : podcast vidéosurveillance + 6 scénarios justifié/non
+- **M3–M4** : cartes d'action → comparaison PDF
+- **M5** : EnterSite salle **16 V2** (Foundation)
+- **M6** : discussion STA`;
+
+/** Exercices de maths Module 109 */
+const DEMO_109_MATHS_FULL = `## Exercices de mathématiques — Module 109
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Part de l'art. 122 CP
+
+En 2020, **46'781** infractions ont été recensées en Suisse. **669** d'entre elles relevaient de l'art. **122 CP** (lésions corporelles graves).
+
+Quel est le **pourcentage** des infractions visées à l'art. 122 CP ?
+
+:::solution
+**1,43 %**
+
+Calcul : 669 × 100 / 46'781 = **1,43 %**
+:::
+
+### Exercice 2 — Jeunes mis en cause en 2009
+
+En 2014, **2'466** prévenus (violence des jeunes) ont été enregistrés — soit une **baisse de 44 %** par rapport à 2009 (donc **56 %** du niveau 2009).
+
+Quel était le nombre de jeunes mis en cause en **2009** ?
+
+:::solution
+**4'403 prévenus**
+
+Calcul : 2'466 × 100 / 56 = 4'403,57 ≈ **4'403** prévenus
+:::
+
+### Exercice 3 — Homicides au Mexique (2018)
+
+En 2018 : **29,07** homicides pour **100'000** habitants. Population : **128,9 millions**.
+
+Combien d'homicides le pays a-t-il enregistrés ?
+
+:::solution
+**37'471 homicides**
+
+Calcul : 29,07 × 128'900'000 / 100'000 = 37'471,23 ≈ **37'471**
+:::
+
+### Exercice 4 — Augmentation Mexique 2008 → 2018
+
+En 2008 : **12,64** homicides / 100'000 hab. En 2018 : **29,07**.
+
+Quel a été le **pourcentage** d'augmentation (niveau 2018 par rapport à 2008) ?
+
+:::solution
+**229,98 %**
+
+Calcul : 29,07 × 100 / 12,64 = **229,98 %**
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 4'403 · 229,98 · 1,43 · 37'471`;
+
+const DEMO_109_MATHS_SUMMARY = `## Maths — Solutions
+1. **1,43 %** (669 / 46'781)
+2. **4'403** prévenus (2'466 = 56 % de 2009)
+3. **37'471** homicides (29,07 × 128,9 M / 100k)
+4. **229,98 %** (12,64 → 29,07)`;
+
+/** Vérification des acquis Module 109 */
+const DEMO_109_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Protection des données et droits d'accès**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+L'entreprise formatrice te remet une clé donnant accès à tous les locaux. Avec la prise en charge vient la responsabilité. Que **ne feras-tu jamais** avec cette clé ? Note **cinq** choses.
+
+:::reponse
+1. **Écrire** (mention / inscription liant la clé à l'entreprise)
+2. **Copier**
+3. **Transmettre** (prêter / confier sans contrôle)
+4. **Déposer** (porte, paillasson, boîte aux lettres…)
+5. **Avoir sur soi à titre privé** (usage non professionnel)
+:::
+
+### Question 2
+
+Dans le cadre du **secret épistolaire**, marque les adresses que tu peux ouvrir **sans crainte** :
+
+**A.** EnterSite AG — Rigistrasse 2 — 5102 Rupperswil *(sans nom)*
+
+**B.** EnterSite AG — Z.H. Reto Gugger — Rigistrasse 2 — 5102 Rupperswil
+
+**C.** Herr Reto Gugger — EnterSite AG — Rigistrasse 2 — 5102 Rupperswil
+
+**D.** Personnel/confidentiel — Herr Reto Gugger — EnterSite AG — Rigistrasse 2 — 5102 Rupperswil
+
+:::reponse
+| Adresse | Ouvrir ? |
+| --- | --- |
+| **A** EnterSite AG (sans nom) | ✅ **Oui** — courrier entreprise |
+| **B** Z.H. Reto Gugger | ⚠️ En principe **non** sans instruction claire / avis contraire |
+| **C** Herr Reto Gugger + EnterSite | ❌ **Non** — sauf mandat exprès de M. Gugger |
+| **D** Personnel/confidentiel | ❌ **Ne jamais ouvrir** |
+
+→ Seule l'adresse **A** (entreprise seule, sans nom personnel) est clairement ouvrable « sans crainte ».
+:::
+
+### Question 3
+
+Note un mot de passe qui répond à tous les critères (longueur, majuscules, minuscules, chiffres, caractères spéciaux).
+
+:::reponse
+Exemple valide : 8fZW2*_Gho2?
+:::
+
+### Question 4
+
+Toutes les données d'une entreprise font déjà partie du « secret professionnel ». Qu'entends-tu par là ?
+
+:::reponse
+Les travailleurs **ne doivent pas divulguer** d'informations internes à des tiers. Les données de production ou financières portées à leur connaissance **ne sont pas diffusées** à l'extérieur.
+:::
+
+### Question 5
+
+Dans la distribution, on parle aussi de **secret postal**. Qu'est-ce que quelqu'un devrait faire de « faux » pour être confronté au secret postal ? Cite **trois** délits / actes fautifs.
+
+:::reponse
+Le secret postal protège non seulement le **contenu**, mais aussi l'**expéditeur** et le **destinataire**. Les infos sur les envois ne sont pas communiquées à d'autres personnes.
+
+**Trois actes fautifs (exemples) :**
+1. Révéler **qui** reçoit du courrier
+2. Révéler **de qui** vient le courrier
+3. Révéler **à quelle fréquence** quelqu'un reçoit du courrier
+
+(Le facteur n'a pas le droit de dire ces infos à un tiers.)
+:::`;
+
+const DEMO_109_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Ne jamais : écrire · copier · transmettre · déposer · avoir à titre privé
+2. Ouvrir sans crainte : **EnterSite AG seule** (sans nom) ; perso / confidentiel = non
+3. Ex. 8fZW2*_Gho2?
+4. Ne pas divulguer infos internes (production / finance…)
+5. Secret postal : contenu + qui / de qui / fréquence`;
 
 /** Contenu Module 110 — Définition de la gestion des marchandises */
 const DEMO_110_THEORIE_FULL = `## 10. Définition de la gestion des marchandises
@@ -2055,6 +4446,581 @@ const DEMO_110_OBJECTIFS_SUMMARY = `## Objectifs
 - Master / Transaction data
 - Besoins, picking, KPI`;
 
+/** Glossaire Module 110 */
+const DEMO_110_GLOSSAIRE_FULL = `## Glossaire — Module 110
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Flux de marchandises | | Déplacements de biens et de données associés au sein de l'entreprise (approvisionnement, stockage, intralogistique, production, distribution). La gestion des marchandises vise un flux **économique** et **disponible** à temps. |
+| Intralogistique | | Ensemble des activités logistiques **internes** : préparation des commandes (picking) et transports internes pour la production ou la création de services. |
+| Distribution | | Livraison des produits prêts à vendre vers le marché / les clients (emballage de transport, make or buy, transporteurs, canaux de vente). |
+| Taux de service | Degré de disponibilité | Indicateur = commandes clients honorées (ou livrées à temps) ÷ commandes reçues × 100. Mesure la capacité à livrer depuis le stock / dans les délais. |
+| Capital immobilisé | | Capital lié dans les stocks (et autres actifs) ; des stocks élevés augmentent les frais de stockage et réduisent souvent la rentabilité (ex. ROI). |
+| Fidélisation de la clientèle | | Capacité à fidéliser les clients grâce notamment à une disponibilité de livraison fiable, une qualité et un service cohérents — le client satisfait revient. |
+| Optimisation des bénéfices | Marges | But ultime de la gestion des matières : optimiser les **marges** / bénéfices en conciliant coûts, disponibilité et objectifs formels / matériels / sociaux. |`;
+
+const DEMO_110_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Flux de marchandises** : biens + données en interne
+- **Intralogistique** : picking + transports internes
+- **Distribution** : livraison au marché
+- **Taux de service** : commandes honorées / reçues × 100
+- **Capital immobilisé** : argent lié dans les stocks
+- **Fidélisation** · **Optimisation des bénéfices** (marges)`;
+
+/** Mises en situation Module 110 — 3 STA */
+const DEMO_110_SITUATION_FULL = `## Mises en situation — Module 110
+
+Contexte : tu travailles chez **EnterSite AG**. Ce module comporte **trois** situations de travail et d'apprentissage (STA). Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les aides / solutions proposées.
+
+### Vue d'ensemble
+**STA A — Gestion du matériel** · Missions 1–5  
+**STA B — Retour sur investissement (ROI)** · Missions 1–7  
+**STA C — KPI de l'entreprise formatrice** · Missions 1–5
+
+---
+
+# STA A — Gestion du matériel
+
+### Missions
+1. Tâches de la gestion du matériel  
+2. Données de base / données de mouvement  
+3. Données de base orientées logistique  
+4. Diagramme de Sankey et KPI  
+5. Discussion STA
+
+---
+
+## Mission 1 — Tâches de la gestion du matériel
+
+Comment perçois-tu la gestion du matériel dans ton entreprise formatrice ? Selon que tu travailles dans une entreprise de production, de commerce ou de services, la gestion du matériel revêt différentes formes. Quelles sont les **tâches** de la gestion du matériel dans ton entreprise formatrice ?
+
+:::reponse
+**Réponse individuelle** — pas de solution unique.
+
+**Pistes :** inventaire · réception · stockage · picking · transport interne · planification des besoins · élimination…
+:::
+
+### 1.1 Départements et responsabilités
+
+Quels sont les **départements** qui organisent la gestion du matériel dans ton entreprise formatrice ? Qui est responsable ?
+
+:::reponse
+**Réponse individuelle** — pas de solution unique.
+:::
+
+### 1.2 Responsable des achats
+
+Qui est responsable du **processus d'achat** dans ton entreprise formatrice ?
+
+:::reponse
+**Réponse individuelle** — pas de solution unique.
+:::
+
+---
+
+## Mission 2 — Structure, importance et utilité des données de base
+
+Décris la **structure**, l'**importance** et l'**utilité** des données de base.
+
+:::reponse
+**Structure :** numéro d'article, désignation, unité de mesure (p. ex. pièce, kg, litre, mètre), emplacement (principe de l'emplacement fixe), fournisseur, poids et volume.
+
+**Importance :** des données de base **et** de mouvement fiables sont décisives pour une gestion des articles réussie.
+
+**Utilité :** sans données de base, aucune gestion de stock n'est possible. Achat, préparation de commandes et vente de marchandises reposent sur des données de base **uniques**.
+:::
+
+### 2.1 Différence mouvement vs base
+
+Explique les différences entre les **données de mouvement** et les **données de base**.
+
+:::reponse
+**Données de mouvement :** dynamiques — elles changent constamment.
+
+**Données de base :** stables sur une période plus longue.
+
+Les données de mouvement s'appuient sur les données de base.
+:::
+
+### 2.2 Responsabilité et modifications
+
+Qui est responsable de la **saisie** des données de base dans ton entreprise formatrice ? Comment sont organisées les **modifications** (ex. pour un article) ?
+
+:::reponse
+**Compétence :** réponse individuelle.
+
+**Gestion des modifications :** réponse individuelle.
+:::
+
+---
+
+## Mission 3 — Stockage vs transport
+
+Tu calcules les bases du stockage et du transport à l'aide des données de base. Quelles données sont importantes pour le **stockage** d'un article ? Pour le **transport** ?
+
+:::reponse
+**Stockage :**
+- Numéro d'article
+- Désignation de l'article
+- Unité de mesure (p. ex. pièce, kg, litre, mètre)
+- Emplacement de stockage (principe de l'emplacement fixe)
+
+**Transport :**
+- Numéro d'article
+- Désignation de l'article
+- Unité de mesure (p. ex. pièce, kg, litre, mètre)
+- Poids
+- Volume
+:::
+
+### 3.1 Base vs mouvement pour la livraison
+
+Pour la disponibilité / livraison d'un article, de quelles **données de base** et de **mouvement** s'agit-il ?
+
+:::reponse
+**Données de base :**
+- Numéro d'article
+- Désignation de l'article
+- Unité de mesure (p. ex. pièce, kg, litre, mètre)
+- Fournisseur
+
+**Données de mouvement :**
+- Stock
+- Consommation
+- Commandes
+- Commandes *(doublon tel que dans la source EnterSite)*
+:::
+
+---
+
+## Mission 4 — Diagramme de Sankey
+
+Décris un **diagramme de Sankey**. Quelle est son utilité du point de vue de la gestion du matériel ?
+
+:::reponse
+Un diagramme Sankey représente clairement les **quantités**, par exemple d'un flux de matériel interne. On voit **entre quels départements** et **combien** de marchandises circulent (ex. tonnes/an). Plus la flèche est **épaisse**, plus la quantité est importante.
+
+Pour optimiser le flux, cette représentation aide à **identifier les principaux flux** et à **fixer des priorités**.
+:::
+
+### 4.1 KPI — décrire les résultats
+
+Décris le résultat des KPI suivants.
+
+:::reponse
+**Intensité matières** — part (%) des achats par rapport au chiffre d'affaires :
+
+Intensité matières = Achats × 100 / Chiffre d'affaires  
+Exemple : 82 Mio × 100 / 154 Mio = **53,25 %**  
+→ l'entreprise consacre **53,25 %** de son CA à l'achat de marchandises.
+
+**Disponibilité de livraison** — % de commandes clients reçues qui peuvent être livrées directement.
+
+**Durée de stockage** — combien de temps l'article reste en moyenne en stock avant d'être retiré.
+
+**Rotation des stocks** — facteur indiquant combien de fois le stock moyen est renouvelé sur une période (souvent / an).
+:::
+
+---
+
+## Mission 5 — Discussion STA (gestion du matériel)
+
+Discute de la STA en plénière avec la classe et le·la formateur·trice. Note des informations supplémentaires.
+
+:::reponse
+**Réponse ouverte** — notes individuelles / de classe (pas de solution unique).
+:::
+
+---
+
+# STA B — Retour sur investissement (ROI)
+
+Liens et conséquences d'un simple mandat : relier le **ratio des coûts de stockage** au **ROI**.
+
+> **Remarque :** toute médaille a deux faces. Un changement d'un côté a toujours des effets de l'autre.
+
+### Missions
+1. Calculer le taux de service  
+2. Augmenter le stock minimum  
+3. Un système d'indicateurs  
+4. ROI — situation de départ  
+5. ROI après ajustement des stocks  
+6. Conclusion (rapport à Stierndli)  
+7. Discussion
+
+---
+
+## Mission 1 (ROI) — Taux de service
+
+Ton supérieur, le responsable logistique **Reto Stierndli**, souhaite le taux de service du 1er semestre :
+
+- Commandes clients reçues : **262**
+- Commandes clients livrées dans les délais : **237**
+
+:::reponse
+Taux de service = Quantité livrée / Quantité commandée × 100  
+
+237 / 262 × 100 = **90,46 %**
+:::
+
+---
+
+## Mission 2 (ROI) — Augmenter le stock minimum
+
+Stierndli propose d'augmenter de **20 %** le stock minimum des articles non livrés à temps. D'après le tableau (fichier EnterSite *Augmentation_du_stock_minimum.xlsx*), de combien % le stock augmente-t-il ?
+
+:::reponse
+Niveau de stock après ajustement :
+- **Avant :** 1'283 pcs
+- **Après :** 1'540 pcs
+- **Augmentation :** **20,03 %**
+:::
+
+---
+
+## Mission 3 (ROI) — Utilité d'un système d'indicateurs
+
+Explique l'utilité d'un **système de ratios** (article du module 110 + recherches).
+
+:::reponse
+Un système d'indicateurs permet de **mesurer et d'évaluer** les performances de différents secteurs. Le ROI évalue la **rentabilité** d'un investissement ou de l'entreprise.
+
+Les indicateurs aident aussi à identifier et évaluer les **risques**, à réagir de façon proactive et à décider stratégiquement.
+
+Dans le cas de +20 % de stocks minimaux, un système d'indicateurs permet d'évaluer l'impact sur le **ROI** (et d'autres KPI) pour décider en connaissance de cause : améliorer la disponibilité **sans** négliger la rentabilité globale.
+:::
+
+---
+
+## Mission 4 (ROI) — Saisie du tableau
+
+Dans le tableau ROI (*EnterSite_ROI_calcul.xlsx*), inscris les données fournies par **Besim Vuloltevic** (FICO) dans les cellules vertes.
+
+| Poste | Valeur (unités × 1'000) |
+| --- | --- |
+| Coûts de structure | 560 |
+| Actifs immobilisés | 30 |
+| Coûts des produits | 1'375 |
+| Stocks | 379 (exactement 378'527.16 Fr de la liste d'articles) |
+| Créances | 50 |
+| Liquidités | 70 |
+| Produit brut | 2'000 |
+
+> **Remarque :** le tableau calcule en unités de **1'000** (ex. liquidités « 70 » = 70'000 Fr).
+
+:::reponse
+**Saisie dans l'Excel EnterSite** — vérifier les cellules vertes avec les valeurs ci-dessus (unités × 1'000).
+:::
+
+---
+
+## Mission 5 (ROI) — Après ajustement des stocks
+
+Inscris le résultat de la Mission 2 (arrondi, sans décimale) dans la cellule jaune « Variations des stocks ». Que se passe-t-il pour le ROI ? De combien change-t-il ?
+
+:::reponse
+**a.** Le retour sur investissement **diminue**.
+
+**b.** Le ROI diminue de **1,6 %**, passant de **12,3 %** à **10,7 %**.
+:::
+
+---
+
+## Mission 6 (ROI) — Rapport à Reto Stierndli
+
+Réponds et justifie :
+
+a. Que rapportes-tu à Stierndli ?  
+b. Proposes-tu d'adapter les stocks minimaux ?  
+c. Discutes-tu avec d'autres départements ? Lesquels ?  
+d. Autres solutions pour améliorer les livraisons ?
+
+:::reponse
+**a.** Informer que l'impact des changements n'est **pas uniquement positif**. Un changement à un niveau (ex. disponibilité) a des répercussions ailleurs. Il faut une **perspective globale** (dont le ROI) pour juger l'impact à long terme.
+
+**b.** Avant une recommandation nette : demander une **analyse complète** (ROI et autres ratios). Examiner une adaptation **modérée** des articles A et des principaux B, coordonnée avec une stratégie à long terme.
+
+**c.** Oui — notamment **Procurement Management**, **Logistics**, **Production** et **FICO** (fournisseurs, stockage, finances, production).
+
+**d.** **Réponse individuelle** — autres solutions possibles (prévisions, délais fournisseurs, ABC, safety stock ciblé, etc.).
+:::
+
+---
+
+## Mission 7 (ROI) — Discussion
+
+Discute de la STA en plénière. Note les informations supplémentaires.
+
+:::reponse
+**Réponse ouverte** — notes individuelles / de classe (pas de solution unique).
+:::
+
+---
+
+# STA C — KPI de l'entreprise formatrice
+
+Rassemble les données dans ton **entreprise formatrice**. Demande **au préalable** l'autorisation à ton·ta formateur·trice.
+
+Objectif : appliquer la théorie et évaluer les chiffres clés réels.
+
+### Missions
+1. Rotation des stocks  
+2. Durée de stockage  
+3. Disponibilité de livraison  
+4. Intensité de matière  
+5. Discussion
+
+---
+
+## Mission 1 (KPI) — Rotation des stocks
+
+Choisis **six** articles. Documente-les (éventuellement photo) : fabriqués ou achetés ? Spécialités (saisonniers…) ? Calcule la rotation (6 mois ou 1 an) via l'ERP et donne ton appréciation.
+
+:::reponse
+**Réponse individuelle** (a–d).
+
+Formule : Rotation = Besoin annuel (Fr. ou pcs) / Stock moyen (Fr. ou pcs)
+
+Comment calcules-tu le stock moyen ? → réponse individuelle.
+:::
+
+---
+
+## Mission 2 (KPI) — Durée de stockage
+
+Avec les rotations de la Mission 1, calcule la durée moyenne (année bancaire **360** j).
+
+:::reponse
+**Réponse individuelle** (a–c).
+
+Formule : Durée de stockage = 360 / Rotation
+:::
+
+---
+
+## Mission 3 (KPI) — Disponibilité de livraison
+
+Obtiens les infos nécessaires auprès du·de la formateur·trice pour six articles. Note résultats et réflexions.
+
+:::reponse
+**Réponse individuelle** (a–b).
+
+Formule : Disponibilité = Commandes clients satisfaites / Commandes clients totales × 100
+:::
+
+---
+
+## Mission 4 (KPI) — Intensité de matière
+
+Si l'accès aux chiffres est autorisé, calcule l'intensité de matière et évalue-la. Sinon, ce n'est pas un problème.
+
+:::reponse
+**Réponse individuelle** (a–c).
+
+Formule : Intensité de matière = Achats de marchandises × 100 / Chiffre d'affaires
+:::
+
+---
+
+## Mission 5 (KPI) — Discussion
+
+Discute des résultats en plénière. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes individuelles / de classe (pas de solution unique).
+:::`;
+
+const DEMO_110_SITUATION_SUMMARY = `## Mises en situation — À retenir
+
+### STA A — Gestion du matériel
+- **M1** : tâches / départements / achats → individuel
+- **M2** : structure (n°, désignation, UM, emplacement, fournisseur, poids/volume) · importance · utilité
+- **M2.1** : mouvement = dynamique · base = stable
+- **M3** : stockage vs transport (poids/volume pour transport)
+- **M4** : Sankey = volumes / priorités · KPI (intensité ex. **53,25 %**)
+- **M5** : discussion ouverte
+
+### STA B — ROI
+- Taux de service **90,46 %** · stock +**20,03 %** · ROI **12,3 % → 10,7 %** (−1,6)
+- Tableau ROI en unités × **1'000** · rapport multi-départements
+
+### STA C — KPI entreprise
+- Rotation · durée (360/rot.) · disponibilité · intensité → **réponses individuelles**`;
+
+/** Exercices de maths Module 110 */
+const DEMO_110_MATHS_FULL = `## Exercices de mathématiques — Module 110
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Disponibilité de livraison
+
+L'an dernier, **750** exemplaires de l'article « 2481144 Moniteur » ont été vendus. Parmi eux, **670** ont été livrés à temps (les autres en retard).
+
+Calcule le **degré de disponibilité** des moniteurs.
+
+:::solution
+**89,33 %**
+
+750 pcs → 100 %  
+670 pcs → X  
+
+Calcul : 670 × 100 / 750 = **89,33 %**
+:::
+
+### Exercice 2 — Rotation et durée de stockage
+
+Article « 2690517 ACER Notebook » (coût 549 Fr) : vendu **450** fois ; stock moyen **40** pcs.
+
+Calcule la **rotation** et la **durée moyenne de stockage**.
+
+:::solution
+**Rotation :** 450 / 40 = **11,25**
+
+**Durée moyenne :** 360 / 11,25 = **32** jours
+:::
+
+### Exercice 3 — Taux de rebuts
+
+Production de **350** pcs « GT30_CB400A Cartridge Toner Black » : **27** mises au rebut.
+
+Calcule le **pourcentage de rebuts**.
+
+:::solution
+**7,71 %**
+
+350 pcs → 100 %  
+27 pcs → X %  
+
+Calcul : 100 × 27 / 350 = **7,71 %**
+:::
+
+### Exercice 4 — Intensité matières
+
+Besim Vuloltevic (FICO) communique :
+- Achats de marchandises : **154,7** Mio Fr
+- CA annuel : **228** Mio Fr
+
+Calcule la part (%) des achats par rapport au CA.
+
+:::solution
+**67,85 %**
+
+228 Mio → 100 %  
+154,7 Mio → X  
+
+Calcul : 154,7 × 100 / 228 = **67,85 %**
+:::
+
+### Exercice 5 — Besoins nets
+
+Article « GT30-CE410XD SwissEnterSite Cartridge HP CE410 Black » (approvisionnement déterministe). Commande client : **450** pcs. Données :
+- Stock : **78** pcs
+- Déjà commandés, pas encore livrés : **120** pcs
+
+Calcule les **besoins nets**.
+
+:::solution
+**252 pcs**
+
+Besoins nets = 450 − 78 − 120 = **252** pcs
+:::
+
+> **Contrôle rapide (footer corrigé)** : 67,85 · 11,25 · 89,33 · 252 · 7,71 · 32`;
+
+const DEMO_110_MATHS_SUMMARY = `## Maths — Solutions
+1. Disponibilité **89,33 %** (670/750)
+2. Rotation **11,25** · durée **32** j (360/11,25)
+3. Rebuts **7,71 %** (27/350)
+4. Intensité **67,85 %** (154,7/228)
+5. Besoins nets **252** pcs (450−78−120)`;
+
+/** Vérification des acquis Module 110 */
+const DEMO_110_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Stockage / Définition de la gestion des marchandises**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Dans la liste d'articles d'EnterSite AG, classe chaque donnée en **données de base** ou **données de mouvement**.
+
+| Nom | Données de base | Données de mouvement | Remarque |
+| --- | --- | --- | --- |
+| N° d'article | | | |
+| Description | | | |
+| Unité de base | | | |
+| Prix d'achat CHF | | | |
+| Prix catalogue PA+25 % | | | |
+| Stock | | | |
+| Stock maxi | | | |
+| Stock mini | | | |
+| Délai de livraison (j) | | | |
+| Vente moyenne / jour | | | |
+| Fournisseur principal | | | |
+
+:::reponse
+| Nom | Base | Mouvement | Remarque |
+| --- | --- | --- | --- |
+| N° d'article | **x** | | Ne change pas |
+| Description | **x** | | Désignation constante |
+| Unité de base | **x** | | pce, kg, m, L… stable |
+| Prix d'achat | **x** | | Peut évoluer mais reste en principe constant |
+| Prix catalogue | | **x** | Analogue au prix d'achat *(classement source)* |
+| Stock | | **x** | Change à chaque entrée / sortie |
+| Stock mini | **x** | | Stock de sécurité ; stable sauf gros changements de ventes |
+| Stock maxi | | **x** | Analogue au stock minimum *(classement source)* |
+| Délai de livraison | | **x** | En principe toujours le même *(classement source)* |
+| Vente moyenne / jour | | **x** | Dépend des sorties actuelles |
+| Fournisseur principal | | **x** | Fournisseur constant *(classement source)* |
+
+> Classement selon le corrigé EnterSite (même si certaines cases semblent contre-intuitives).
+:::
+
+### Question 2
+
+Quelles sont les activités opérationnelles de l'**intralogistique** ?
+
+:::reponse
+L'intralogistique comprend la **préparation des commandes** et les **transports internes** à l'entreprise pour la production ou la création de services.
+:::
+
+### Question 3
+
+Dans quels **trois groupes** classer les objectifs de la gestion des matériaux ? Décris-les brièvement.
+
+:::reponse
+1. **Objectifs formels** — plutôt long terme, caractère économique (argent)
+2. **Objectifs matériels** — assurer les marchandises nécessaires à l'entreprise
+3. **Objectifs sociaux** — comportement écologique dans la gestion des matériaux
+:::
+
+### Question 4
+
+Les objectifs « stocks les plus petits possibles » et « disponibilité de livraison la plus grande possible » sont en **contradiction**. Explique.
+
+:::reponse
+Les stocks entraînent des coûts élevés (**capital immobilisé**) : on veut les garder raisonnablement bas. Or une **grande disponibilité** exige d'avoir en stock les articles à vendre. Ces deux objectifs s'opposent donc.
+:::
+
+### Question 5
+
+Les objectifs matériels garantissent les marchandises nécessaires. Comment le professeur **Jünemann** a-t-il formulé ces objectifs (**6B**) ?
+
+:::reponse
+1. Le **bon moment**
+2. La **bonne marchandise**
+3. La **bonne quantité**
+4. La **bonne qualité**
+5. Le **bon endroit**
+6. Le **bon prix**
+:::`;
+
+const DEMO_110_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Tableau base/mouvement (suivre corrigé EnterSite, y compris cases inhabituelles)
+2. Intralogistique = **picking** + **transports internes**
+3. Objectifs **formels** · **matériels** · **sociaux**
+4. Contradiction stock bas ↔ haute disponibilité (capital immobilisé)
+5. **6B** Jünemann : moment · marchandise · quantité · qualité · endroit · prix`;
+
 /** Contenu Module 201 — Le client */
 const DEMO_201_THEORIE_FULL = `## 1. Le client
 
@@ -2157,6 +5123,263 @@ const DEMO_201_OBJECTIFS_SUMMARY = `## Objectifs
 - Définir le client
 - Lien commande → CA → salaire
 - Relation / fidélité / marketing`;
+
+/** Glossaire Module 201 */
+const DEMO_201_GLOSSAIRE_FULL = `## Glossaire — Module 201
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Client | | Personne, entreprise ou organisation qui conclut une transaction avec une contrepartie en tant que demandeur (en anglais *customer* / *client*). |
+| Acheteur | | Personne, groupe ou institution qui accepte ce qui a été livré ou produit par un autre en échange d'une contrepartie ; acheteur d'une prestation / offre (produit ou service). |
+| Chiffre d'affaires | | Valeur des biens et services vendus au cours d'une période (vente, location, affermage). On distingue le CA en **valeur** et le CA en **quantité**. |
+| Salaire mensuel | | Salaire au temps : ce qui compte, c'est le temps de travail effectué (pas la quantité). Versé régulièrement en fin de mois, généralement en montants égaux. |
+| Salaire annuel | | Ensemble des revenus d'un travail non indépendant sur une année civile, y compris bonus, gratifications, 13ᵉ mois, etc. |
+| Client fidèle | | Client (souvent appelé « client régulier ») qui achète **régulièrement** des biens ou services auprès d'un même fournisseur. |
+| Base de données clients | | Inventaire structuré (fichier / système) des informations sur les clients (coordonnées, historique d'achats, préférences) servant au suivi commercial et au marketing. |
+| Débiteur | | Personne physique ou morale (ex. un client) qui doit une somme après utilisation de produits / services et réception d'une facture. Face aux débiteurs (avoirs) : les **créanciers** (fournisseurs). |`;
+
+const DEMO_201_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Client** / **Acheteur** : demandeur / destinataire d'une prestation contre contrepartie
+- **CA** : valeur (ou qty) des ventes sur une période
+- **Salaire mensuel** vs **annuel** (+ bonus, 13ᵉ…)
+- **Client fidèle** : achats réguliers
+- **BDD clients** : suivi / marketing
+- **Débiteur** : client facturé (vs créancier)`;
+
+/** Mises en situation Module 201 */
+const DEMO_201_SITUATION_FULL = `## Mises en situation — Module 201
+
+Contexte : tu travailles chez **EnterSite AG**. Les missions portent sur le **client**, les termes associés et le proverbe « le client est roi ». Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / exemples proposés.
+
+### Vue d'ensemble des missions
+1. Pourquoi perdons-nous des clients ?
+2. Explication des termes
+3. Le client est roi — Oui
+4. Le client est roi — Non
+5. Jeu de rôle « Prononcer dans l'arène » (+ 5.1 notes)
+6. Discussion STA
+
+---
+
+## Mission 1 — Pourquoi perdons-nous des clients ?
+
+> **Astuce EnterSite** : suis la visite virtuelle jusqu'à la salle **13 V1**. Rends-toi au premier poste de travail du département **Customer Service**. Cherche l'image à droite, traite la commande et note la solution correspondante. Lien : [Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+Quelles mesures mettrais-tu en œuvre dans le rôle de **M. Gugger**, sur la base des résultats ?
+
+:::reponse
+Je ferais des **formations** de mes collaborateurs pour **mettre le client au centre**.
+:::
+
+---
+
+## Mission 2 — Explication des termes
+
+Nous avons tous entendu et lu le mot « client » à de nombreuses reprises. D'autres termes dans ce contexte sont également toujours présents. Mais sont-ils compréhensibles ? Décris les termes suivants en **une phrase** (formulation personnelle) :
+
+:::reponse
+- **Client :** personne, entreprise ou organisation qui conclut une transaction avec une contrepartie en tant que demandeur (*customer* / *client*).
+- **Acheteur :** personne, groupe ou institution qui accepte ce qui a été livré ou produit par un autre en échange d'une contrepartie (produit ou service).
+- **Chiffre d'affaires :** valeur des biens et services vendus sur une période (vente, location, affermage) ; distinguer CA en valeur et CA en quantité.
+- **Salaire mensuel :** salaire au temps — déterminant = temps de travail effectué ; versé régulièrement en fin de mois, souvent en montants égaux.
+- **Salaire annuel :** tous les revenus d'un travail non indépendant sur une année civile (y compris bonus, gratifications, 13ᵉ mois).
+- **Client privé :** client qui achète des biens ou services pour son **usage personnel**.
+- **Client professionnel :** client qui achète des biens ou services pour le compte d'un **employeur**.
+- **Client fidèle :** client qui achète **régulièrement** / souvent auprès d'un même fournisseur.
+- **Nouveau client :** client qui achète pour la **première fois** auprès de ce fournisseur.
+- **Débiteur :** personne (ex. client) qui doit une somme après utilisation de produits / services et réception d'une facture ; face aux débiteurs : les créanciers (fournisseurs).
+:::
+
+---
+
+## Mission 3 — Le client est roi — Oui
+
+Le CEO d'EnterSite AG, **Monsieur Reto Gugger**, aimerait que le proverbe « Le client est roi » soit encore plus appliqué dans le département Service clientèle. Les collaboratrices et collaborateurs doivent orienter leur attitude en fonction de ce proverbe. La directrice de la division, **Silvia Renggli**, et la responsable du service, **Sarah Nydegger**, ont invité l'équipe à une discussion.
+
+Fais une recherche sur le proverbe et cherche les meilleurs arguments pour expliquer pourquoi « le client est roi » est exactement ce qu'il faut. Explique aussi pourquoi M. Gugger souhaite cette attitude chez EnterSite AG.
+
+:::reponse
+**L'attitude est juste, car** le client apporte l'argent à l'entreprise, qui me le verse à la fin du mois comme **salaire mensuel**.
+:::
+
+---
+
+## Mission 4 — Le client est roi — Non
+
+Fais une recherche sur le proverbe et trouve les meilleurs arguments pour expliquer pourquoi « le client est roi » **ne** correspond **pas** à la bonne attitude. Cherche des arguments pour expliquer pourquoi tu ne souhaites pas adopter cette attitude.
+
+:::reponse
+**L'attitude est fausse, car** le client est un **partenaire**. Je ne dois traiter personne en « roi ».
+:::
+
+---
+
+## Mission 5 — Jeu de rôle « Prononcer dans l'arène »
+
+En route pour le débat ! L'enseignant·e joue maintenant le rôle de **M. Gugger**. Un·e apprenant·e de la classe joue le rôle de **Mme Renggli** et un·e autre celui de **Mme Nydegger**. Pour ce faire, les deux apprenant·e·s peuvent inviter chacun·e une personne de la classe à les aider.
+
+- L'apprenant·e jouant **Mme Renggli** adopte l'attitude de la **mission 3** (Oui).
+- L'apprenant·e jouant **Mme Nydegger** adopte l'attitude de la **mission 4** (Non).
+
+Tous les autres apprenant·e·s font office de spectateurs et peuvent influencer l'arène en posant des questions annoncées mais « provocatrices ».
+
+Durée : **15–20 minutes**, sous la supervision de M. Gugger (modérateur / enseignant·e).
+
+:::reponse
+**Réponse individuelle** — notes de débat (pas de solution unique).
+:::
+
+### Mission 5.1 — Notes individuelles
+
+Dans l'espoir que le débat ait vraiment « fait mouche », chacun dispose de **5 minutes** pour décrire la discussion pour soi-même. Note :
+
+- Quels arguments sont appropriés ?
+- Quels sont ceux qui ne le sont pas ?
+- Quelle conclusion en tirer ?
+
+:::reponse
+**Réponse individuelle** — notes personnelles (pas de solution unique).
+:::
+
+---
+
+## Mission 6 — Discussion STA
+
+Discute de la situation de travail et d'apprentissage en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_201_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : EnterSite salle **13 V1** (Customer Service) · formations centrées client (Gugger)
+- **M2** : définitions (client, acheteur, CA, salaires, privé/pro, fidèle, nouveau, débiteur)
+- **M3 / M4** : « client est roi » — Oui (salaire) vs Non (partenaire)
+- **M5 (+5.1)** : débat « arène » + notes individuelles
+- **M6** : discussion STA`;
+
+/** Exercices de maths Module 201 */
+const DEMO_201_MATHS_FULL = `## Exercices de mathématiques — Module 201
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Conversion de devises
+
+La clientèle d'EnterSite AG est répartie dans le monde entier. Les offres et factures doivent parfois être établies en **euros** et en **yuan** (Chine).
+
+Calcule le montant de **1'875 CHF** avec les cours suivants :
+- **1 CHF = 1,05 EUR**
+- **1 CHF = 8,19 Yuan**
+
+:::solution
+**1'968,75 EUR** · **15'356,25 Yuan**
+
+Calculs :
+- Euros : 1,05 × 1'875 = **1'968,75 EUR**
+- Yuan : 8,19 × 1'875 = **15'356,25 Yuan**
+:::
+
+### Exercice 2 — Croissance de la clientèle
+
+En 2021, EnterSite AG comptait **850** clients. En 2022, la base de clients a augmenté de **14 %**.
+
+Quelle était la taille de la clientèle en **2022** ?
+
+:::solution
+**969 clients**
+
+Calcul : 850 × 114 / 100 = 850 × 1,14 = **969**
+:::
+
+### Exercice 3 — Nouveaux clients : Internet, prix, qualité
+
+Sur les **14 %** de nouveaux clients, **29 %** ont été acquis par Internet. EnterSite AG a convaincu **2/3** par son prix avantageux ; le reste (**1/3**) par la **qualité**.
+
+Combien de clients ont été gagnés grâce au **prix** ? Combien grâce à la **qualité** ?
+
+:::solution
+**56 clients** (prix) · **28 clients** (qualité)
+
+Étapes :
+1. Nouveaux clients : 969 − 850 = **119**
+2. Via Internet : 119 × 29 / 100 ≈ 34,51 → **34** clients
+3. Reste : 119 − 34 = **85** clients
+4. 1/3 : 85 / 3 ≈ 28,33 → **28** ; donc 2/3 = 28 × 2 = **56**
+:::
+
+### Exercice 4 — Bonus sur salaire net
+
+Après une déduction de **11 %** sur le salaire brut (**4'600 CHF**/mois), un bonus de **10 %** a été versé sur le salaire **net**.
+
+Quel est le montant du **bonus** en francs ?
+
+:::solution
+**409,40 CHF**
+
+Calculs :
+- Salaire net : 4'600 × 0,89 = **4'094 CHF**
+- Bonus : 4'094 × 10 / 100 = **409,40 CHF**
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 15'356,25 / 1'968,75 · 409,40 · 56 / 28 · 969`;
+
+const DEMO_201_MATHS_SUMMARY = `## Maths — Solutions
+1. **1'968,75 EUR** · **15'356,25 Yuan** (1'875 × 1,05 / 8,19)
+2. **969** clients (850 × 1,14)
+3. **56** (prix) · **28** (qualité) — après 119 nouveaux dont 34 via Internet
+4. **409,40 CHF** (net 4'094 × 10 %)`;
+
+/** Vérification des acquis Module 201 */
+const DEMO_201_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Le client**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Le client a un rôle essentiel à jouer. Explique pourquoi il en est ainsi.
+
+:::reponse
+Par ses achats, le client génère un **chiffre d'affaires** dans l'entreprise. Le CA comprend entre autres l'élément qui génère mon **salaire mensuel**.
+:::
+
+### Question 2
+
+Décris la différence entre les **clients** et les **clients réguliers** avec tes propres mots.
+
+:::reponse
+Le **client** est un particulier ou une entreprise qui achète des biens ou des services à mon entreprise contre paiement. Le **client régulier** (fidèle) est un client qui le fait **régulièrement**.
+:::
+
+### Question 3
+
+Le client régulier peut nous fournir de nombreuses informations passionnantes dans le cadre d'une relation commerciale qui fonctionne. Quelles informations pouvons-nous obtenir d'un client régulier ?
+
+:::reponse
+Grâce à l'achat récurrent, nous construisons une relation. Avec un contact « proche », on reçoit des infos précieuses (ex. produits dont le client pourrait encore avoir besoin) → améliorer les services et en proposer de nouveaux.
+:::
+
+### Question 4
+
+Qu'entendons-nous par « **client interne** » ? Explique.
+
+:::reponse
+Un client interne travaille dans la **même entreprise** que moi. Ex. : le département de la production a besoin de biens de la logistique → le service de production est mon **client interne**.
+:::
+
+### Question 5
+
+Quelles valeurs pourraient être attribuées à une relation commerciale qui fonctionne ?
+
+:::reponse
+**Honnêteté** · **Ouverture d'esprit** · **Respect** · **Confiance**
+:::`;
+
+const DEMO_201_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Achats → **CA** → salaire
+2. Client vs client **régulier** (fidèle)
+3. Relation → besoins / amélioration de l'offre
+4. **Client interne** = collègue / autre service de la même entreprise
+5. Honnêteté · Ouverture · Respect · Confiance`;
 
 /** Contenu Module 202 — L'attitude personnelle / apparence */
 const DEMO_202_THEORIE_FULL = `## 2. L'attitude personnelle
@@ -2310,6 +5533,295 @@ const DEMO_202_OBJECTIFS_SUMMARY = `## Objectifs
 - Valeurs + com + tenue
 - Hygiène
 - Charte entreprise`;
+
+/** Glossaire Module 202 */
+const DEMO_202_GLOSSAIRE_FULL = `## Glossaire — Module 202
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Hygiène | | Étude de la prévention des maladies et du maintien, de la promotion et de la consolidation de la santé. Elle vise à maintenir ou améliorer les performances et le bien-être des individus et de la société. |
+| Micro-organisme | | Organisme vivant microscopique (bactéries, virus, champignons, etc.) capable de se multiplier et d'influencer la santé, les denrées ou l'environnement. |
+| Nuisibles | | Organismes (insectes, rongeurs, parasites…) qui portent atteinte à la santé, aux marchandises, aux locaux ou à l'hygiène générale. |
+| Moisissure | | Champignons microscopiques qui se développent sur des matières organiques en présence d'humidité ; elles détériorent les produits et peuvent présenter un risque sanitaire. |
+| Corporate Identity | Identité d'entreprise | Ensemble des principes, valeurs et signes (visuels, culturels) par lesquels une entreprise se définit et se montre à l'interne comme à l'externe. |
+| Vision | | Image du futur souhaité : ce que l'entreprise veut représenter et devenir à long terme. |
+| Mission | | Ce que l'entreprise veut accomplir au quotidien : sa raison d'être et le but de ses activités. |
+| Partie prenante | Stakeholder | Personne ou organisation concernée par les décisions et le succès de l'entreprise (collaborateurs, clients, fournisseurs, investisseurs, autorités, public…). |
+| Rendement | | Rapport entre le résultat obtenu (ex. bénéfice) et les moyens engagés ; mesure de rentabilité attendue pour assurer la viabilité de l'entreprise. |
+| Structures du bilan | | Composition et équilibre du bilan (actif / passif) : façon dont le patrimoine et son financement sont organisés pour garder l'entreprise financièrement saine. |
+| Participation | | Mode de management associant les collaborateur·trice·s aux décisions et à la responsabilité, selon la situation. |
+| Management by Objectives (MbO) | Management par objectifs | Style de direction fondé sur des objectifs convenus : les résultats attendus sont fixés et suivis ; chacun sait ce qu'il doit atteindre. |
+| Management by Exception (MbE) | Management par exception | Style de direction où l'on n'intervient (ou ne signale) que les **écarts** importants par rapport aux objectifs / normes convenus. |
+| Loyauté | | Fidélité et fiabilité dans les relations (entreprise, institutions, partenaires) : agir de façon honnête et engagée, dans le respect des engagements. |`;
+
+const DEMO_202_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Hygiène** · **Micro-organisme** · **Nuisibles** · **Moisissure**
+- **Corporate Identity** · **Vision** · **Mission** · **Partie prenante**
+- **Rendement** · **Structures du bilan** · **Participation**
+- **MbO** (objectifs) · **MbE** (écarts) · **Loyauté**`;
+
+/** Mises en situation Module 202 */
+const DEMO_202_SITUATION_FULL = `## Mises en situation — Module 202
+
+Contexte : tu travailles chez **EnterSite AG**. Les missions portent sur l'**hygiène**, l'**apparence** et les attentes professionnelles. Pour chaque mission, rédige d'abord ta propre réponse, puis compare éventuellement avec la solution proposée.
+
+---
+
+## Mission 1 — L'histoire de l'hygiène
+
+La notion d'hygiène joue un rôle important dans l'histoire de l'humanité. Aujourd'hui encore, un nombre non négligeable de personnes perdent la vie en raison d'un manque d'hygiène.
+
+Élabore une **définition personnelle** du terme « hygiène ».
+
+:::reponse
+L'hygiène est l'étude de la prévention des maladies et du maintien, de la promotion et de la consolidation de la santé. Elle a pour but de maintenir ou d'améliorer les performances et le bien-être des individus et de la société.
+:::
+
+### 1.1 Termes et événements liés à l'hygiène
+
+Recherche et explique, en quelques phrases, les termes / événements suivants.
+
+**Hygieia :** **réponse ouverte** (recherche individuelle — pas de solution unique dans le cours).
+
+**1348 — Première vague de peste**
+
+:::reponse
+En 1348, les épidémies de peste sont déjà connues, mais cette vague frappe comme jamais auparavant. Près de **100 millions** de personnes sont touchées en Europe, en Afrique du Nord et au Proche-Orient. Environ **un tiers** de la population ne survit pas. L'épidémie est localisée en **Asie centrale**.
+:::
+
+**1892 — Épidémie de choléra à Hambourg**
+
+:::reponse
+Vague de chaleur et **Elbe** basse / chaude (~22 °C) : conditions idéales pour bactéries et virus. Premier cas le **15 août** ; sous-estimation initiale par les responsables. ~**17 000** infectés à Hambourg, la moitié ne survit pas. D'autres localités sont aussi touchées.
+:::
+
+**1918 — Grippe espagnole**
+
+:::reponse
+Dernière année de la 1re Guerre mondiale : propagation mondiale en quelques mois. Vers **1920**, plus de morts que pendant toute la guerre (~**17 millions**). Malgré le nom, l'origine n'est **pas** en Espagne (souvent citée : première infection avérée au **Kansas**, USA).
+:::
+
+**1920 — Tuberculose**
+
+:::reponse
+Détectée / mise en avant en **1920**, mais la maladie sévit déjà depuis longtemps. Apogée **1870–1885** en Autriche (Vienne : **909**/100 000). Propagation liée notamment à l'**industrialisation**.
+:::
+
+**1981 — SIDA**
+
+:::reponse
+Apparition dans le monde occidental au début des années 1980 : transmission sexuelle, **incurable**. Suisse : ~**16 700** personnes vivant avec le virus (données du cours) ; campagnes d'info ; **Aide Suisse contre le Sida** fondée en **1985**.
+:::
+
+**2020 — Covid-19**
+
+:::reponse
+Première contamination officiellement confirmée signalée à l'OMS le **31.12.2019** à **Wuhan**. Virus nommé ensuite **Covid-19** / **SARS-CoV-2**. Le **30.01.2020**, l'OMS qualifie la situation d'**urgence de santé publique de portée internationale** (niveau d'alerte le plus élevé).
+:::
+
+---
+
+## Mission 2 — Que signifie l'hygiène personnelle ?
+
+Que signifie pour toi l'hygiène personnelle ? Décris ce que tu entends par là et ce que tu fais pour qu'elle réponde à tes exigences.
+
+- **Je comprends cela :** **réponse individuelle**
+- **Je fais des efforts pour ça :** **réponse individuelle**
+
+---
+
+## Mission 3 — Qu'attend-on d'EnterSite AG ?
+
+Tu as été engagé·e récemment comme apprenti·e logisticien·ne chez **EnterSite AG** (département Service clientèle et marketing). Même si les attentes d'hygiène ne sont pas toujours explicites, elles existent. Explique les attentes de la direction (**M. Reto Gugger**).
+
+:::reponse
+**Activités internes à l'entreprise :**
+- Vêtements propres
+- Se laver les cheveux régulièrement
+
+**Contact physique avec le client :**
+- Se laver les cheveux régulièrement
+- Garder les ongles soignés
+- Tenue professionnelle propre
+- Dents brossées
+:::
+
+---
+
+## Mission 4 — Perception de l'extérieur (collaborateurs et clients)
+
+Mets-toi à la place de tes collègues ou de M. Gugger. Comment ces personnes te décriraient-elles en termes d'hygiène personnelle ?
+
+**Perception de l'extérieur :** **réponse individuelle**
+
+### 4.1 Préparation au contact clientèle
+
+Au cours des prochaines semaines, tu seras en contact direct avec des clients. Comment te prépares-tu ?
+
+:::reponse
+Checklist de préparation :
+- Quels travaux vais-je effectuer ?
+- De quel type de clients s'agira-t-il ?
+- Quelle tenue vestimentaire est souhaitée par l'employeur ?
+- Respecter l'hygiène personnelle
+- Cheveux soignés et coiffés
+:::
+
+---
+
+## Mission 5 — Check-list de la communication (EnterSite)
+
+> **Astuce EnterSite** : suis la visite virtuelle dans la salle **13 V2**. Traite la liste de contrôle sur la **communication**. Cherche l'image de droite : ta propre perception est-elle correcte ? Lien : [Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+Mission pratique EnterSite — **pas de solution unique** (à traiter dans la visite virtuelle).
+
+---
+
+## Mission 6 — Discussion de la situation de travail et d'apprentissage (STA)
+
+Discute de ta STA en plénière avec la classe et l'enseignant·e. Note les informations complémentaires : **réponse ouverte** (pas de solution unique).`;
+
+const DEMO_202_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : définition hygiène · jalons 1348→2020 (Hygieia = ouverte)
+- **M2** : hygiène personnelle (individuelle)
+- **M3** : attentes EnterSite (interne + client)
+- **M4** : perception ext. (individuelle) · **4.1** checklist clientèle
+- **M5** : salle **13 V2** check-list communication
+- **M6** : discussion STA`;
+
+/** Exercices de maths Module 202 */
+const DEMO_202_MATHS_FULL = `## Exercices de mathématiques — Module 202
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Pourcentage de guérisons Covid (25.01.2021)
+
+| | Cas | Guéris |
+| --- | --- | --- |
+| **Suisse** | 509'279 | 317'600 |
+| **Monde** | 99'275'637 | 54'833'616 |
+
+Calcule le pourcentage de personnes guéries en Suisse et dans le monde. Où le pourcentage est-il le plus élevé ?
+
+:::solution
+**Suisse : 62,36 %** · **Monde : 55,23 %**
+
+Calcul CH : 317'600 × 100 / 509'279 = **62,36 %**  
+Calcul monde : 54'833'616 × 100 / 99'275'637 = **55,23 %**
+
+→ Pourcentage de guérisons **plus élevé en Suisse**.
+:::
+
+### Exercice 2 — Moyenne des nouvelles infections (17–23 janvier 2021)
+
+| Date | Cas |
+| --- | --- |
+| 17.1 (lun.) | 1'561 |
+| 18.1 (mar.) | 1'562 |
+| 19.1 (mer.) | 1'562 |
+| 20.1 (jeu.) | 2'249 |
+| 21.1 (ven.) | 2'717 |
+| 22.1 (sam.) | 2'192 |
+| 23.1 (dim.) | 2'145 |
+
+Calcule la moyenne des nouvelles infections du 17 au 23 janvier 2021.
+
+:::solution
+**1'998 cas**
+
+Total : 1'561 + 1'562 + 1'562 + 2'249 + 2'717 + 2'192 + 2'145 = **13'988**  
+Moyenne : 13'988 / 7 = 1'998,28 ≈ **1'998 cas**
+:::
+
+### Exercice 3 — Augmentation de l'espérance de vie (CH)
+
+En **1960** : **71,64** ans · En **2017** : **83,6** ans. Quel est le pourcentage d'augmentation ?
+
+:::solution
+**+16,69 %**
+
+83,6 × 100 / 71,64 = **116,69 %**  
+Augmentation : 116,69 − 100 = **16,69 %**
+:::
+
+### Exercice 4 — Écart USA vs Suisse (2017)
+
+Espérance de vie USA **2017** : **78,54** ans · Suisse : **83,6** ans (base). Quel est l'écart en pourcentage ? Quelles raisons possibles ?
+
+:::solution
+**Écart : 6,05 %**
+
+78,54 × 100 / 83,6 ≈ **93,95 %**  
+Écart : 100 − 93,95 = **6,05 %**
+
+Raisons possibles : **mode de vie** et **nutrition** (façon de se nourrir).
+:::
+
+> **Contrôle rapide (footer corrigé)** : 16,69 · 62,36 | 1'998 | 6,05`;
+
+const DEMO_202_MATHS_SUMMARY = `## Maths — Solutions
+1. CH **62,36 %** > monde **55,23 %**
+2. Moyenne **1'998** cas
+3. Espérance de vie **+16,69 %**
+4. Écart US/CH **6,05 %** (mode de vie / nutrition)`;
+
+/** Vérification des acquis Module 202 — Mon apparence */
+const DEMO_202_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+*Module 202 — Mon apparence*
+
+Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Lorsque l'on est en contact avec des clients, il faut choisir des vêtements **discrets**. Qu'est-ce que cela signifie ? Explique.
+
+:::reponse
+**Décent** signifie : adapté ou discret. Les vêtements sont correctement choisis en fonction de la situation.
+:::
+
+### Question 2
+
+Dans la littérature, on parle souvent d'« **attitude** ». Explique ce que tu entends par « attitude » et note un exemple.
+
+:::reponse
+L'attitude correspond à mes **valeurs**. Qu'est-ce qui est important pour moi ? Qu'est-ce que je veux donner mais aussi exiger ? Exemple : mes parents m'ont transmis la valeur de la **ponctualité** — je veux être à l'heure parce que c'est important pour moi.
+:::
+
+### Question 3
+
+Quelles mesures permettent de prévenir d'éventuelles pandémies ou transmissions de maladies infectieuses ?
+
+:::reponse
+1. Éviter de rester en groupe
+2. Se tenir délibérément à distance de son interlocuteur
+3. Ne jamais tousser ou éternuer en direction de son entourage
+4. N'utiliser qu'une seule fois des mouchoirs en papier
+5. Se laver régulièrement les mains
+:::
+
+### Question 4
+
+L'humanité a déjà dû faire face à de nombreuses maladies et épidémies. Cite **trois** maladies ou épidémies connues dans l'histoire de l'humanité.
+
+:::reponse
+La **grippe espagnole**, le **sida**, la **peste**, etc.
+:::
+
+### Question 5
+
+Définis le terme « **épidémie** ».
+
+:::reponse
+Une épidémie (également appelée maladie épidémique) est une maladie dont l'apparition est **limitée dans le temps et dans l'espace** par une **multiplication des cas**.
+:::`;
+
+const DEMO_202_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Vêtements discrets = adaptés / décents selon la situation
+2. Attitude = valeurs (ex. ponctualité)
+3. 5 mesures : groupes, distance, toux, mouchoir unique, mains
+4. Grippe espagnole, sida, peste…
+5. Épidémie = multiplication des cas, limitée temps / espace`;
 
 /** Contenu Module 203 — Gestion de soi */
 const DEMO_203_THEORIE_FULL = `## 3. Gestion de soi
@@ -2466,6 +5978,279 @@ const DEMO_203_OBJECTIFS_SUMMARY = `## Objectifs
 - Leadership / conflits / stress
 - EPI et ergonomie`;
 
+/** Glossaire Module 203 */
+const DEMO_203_GLOSSAIRE_FULL = `## Glossaire — Module 203
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Motivation intrinsèque | | Motivation qui vient de l'intérieur : on agit par intérêt, plaisir ou sens personnel pour la tâche elle-même (pas seulement pour une récompense externe). |
+| Motivation extrinsèque | | Motivation provenant de l'extérieur : on agit pour obtenir une récompense (salaire, prime, reconnaissance) ou éviter une sanction. |
+| Incitations monétaires | | Stimuli financiers (augmentation, bonus, prime…) destinés à encourager un comportement ou une performance souhaités. |
+| Unité de doctrine | | Alignement partagé des principes, méthodes et objectifs dans l'entreprise ; sans elle, chacun « bricole » à sa façon (risque typique du laissez-faire). |
+| Évolution | | Changement progressif au fil du temps (comportement, satisfaction, point aveugle…) ; aussi cadre biologique (ex. réaction combat / fuite héritée de l'évolution). |
+| Aiguë | | Qui survient soudainement et avec intensité (ex. danger ou blessure **aigu(ë)** : accident immédiat). |
+| Cartilage | | Tissu souple entre les os (ex. disques intervertébraux) qui amortit les chocs ; fragile en cas de mauvaises postures / charges. |
+| Chronique | | Qui dure longtemps ou revient régulièrement (ex. trouble **chronique** lié à une mauvaise posture, pas un accident unique). |
+| Diable | | Engin de manutention manuel (chariot à deux roues / diable de manutention) pour déplacer des charges sans trop se pencher — aide ergonomique. |`;
+
+const DEMO_203_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Motivation** intrinsèque (intérieur) vs extrinsèque (extérieur) · **incitations monétaires**
+- **Unité de doctrine** · **Évolution**
+- **Aiguë** vs **chronique** · **Cartilage** · **Diable** (manutention)`;
+
+/** Mises en situation Module 203 */
+const DEMO_203_SITUATION_FULL = `## Mises en situation — Module 203
+
+Contexte : tu travailles chez **EnterSite AG**. Les missions portent sur la **fenêtre de Johari**, le feedback et les **défis physiques** au travail. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / exemples proposés.
+
+### Vue d'ensemble des missions
+1. Johari — auto-évaluation
+2. Évaluation par des tiers
+3. Compléter Johari avec le feedback externe
+4. Évolution du point aveugle
+5. Défis corporels (+ 5.1 ergonomie · 5.2 EnterSite checklist)
+6. Discussion STA
+
+---
+
+## Mission 1 — Auto-évaluation (fenêtre de Johari)
+
+La **fenêtre de Johari** compare perception de soi et perception des autres. Elle représente, dans un rectangle à quatre parties, les caractéristiques conscientes et inconscientes du comportement et de la personnalité. Une équipe peut s'en servir pour analyser comportements et dynamiques de groupe. Les instruments **feedback** et **révélation de soi** rendent le comportement plus transparent et élargissent la marge de manœuvre.
+
+| | Connu de moi | Inconnu de moi |
+| --- | --- | --- |
+| **Connu des autres** | Personne publique | Point aveugle |
+| **Inconnu des autres** | Mon secret | Inconnu |
+
+**Auto-évaluation :** choisis dans la liste ci-dessous **au maximum six adjectifs** qui te décrivent le mieux. Donne aussi des **secrets** sur toi-même (zone « Mon secret »).
+
+acceptant · stupide · tendu · adaptable · attentif · modeste · déterminé · énergique · détendu · extraverti · capable · amical · attentionné · patient · habile · génial · heureux · généreux · serein · utile · idéaliste · intelligent · introverti · compétent · complexe · audacieux · affectueux · logique · puissant · compatissant · pensif · nerveux · gentil · organisé · réactif · mature · religieux · calme · timide · confiant · sûr de soi · sentimental · spontané · silencieux · fier · cherchant · courageux · indépendant · fiable · raisonnable · digne de confiance · chaleureux · sage · drôle · digne
+
+:::reponse
+**Réponse individuelle** — jusqu'à 6 adjectifs + secrets (pas de solution unique).
+:::
+
+---
+
+## Mission 2 — Évaluation par un tiers
+
+Choisis dans la **même liste d'adjectifs** (mission 1) **au maximum six adjectifs** qui décrivent le mieux ton collègue de travail, ton camarade de classe ou ton camarade d'école.
+
+:::reponse
+**Réponse individuelle** — jusqu'à 6 adjectifs pour un tiers (pas de solution unique).
+:::
+
+---
+
+## Mission 3 — Récapitulation et tour de feedback
+
+Rassemble toutes les évaluations externes. Complète ta **fenêtre de Johari** avec les retours de tes collègues / camarades (notamment la zone **Point aveugle**).
+
+:::reponse
+**Réponse individuelle** — grille Johari complétée avec le feedback externe (pas de solution unique).
+:::
+
+---
+
+## Mission 4 — Évolution du point aveugle
+
+Compare ton auto-évaluation avec les évaluations externes. **Comment ton « point aveugle » évolue-t-il ?**
+
+:::reponse
+**Réponse individuelle** — comparaison auto / tiers et évolution du point aveugle (pas de solution unique).
+:::
+
+---
+
+## Mission 5 — Les défis corporels du monde du travail
+
+Se connaître et s'utiliser correctement est important. Il est tout aussi important de comprendre et de respecter les **défis physiques** au travail : voir les sources de danger et agir correctement.
+
+> **Astuce EnterSite** : suis la visite virtuelle de la **logistique**, salle **3 V4**. Cherche l'image à droite et modifie le **texte à trous** correspondant. Lien : [Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+:::reponse
+**Réponse individuelle** — texte à trous EnterSite salle **3 V4** (pas de solution unique dans le cours papier).
+:::
+
+### Mission 5.1 — Ergonomie
+
+Un terme très présent dans ce contexte : **ergonomie**. Décris-le le plus précisément possible avec tes propres mots.
+
+:::reponse
+**Réponse individuelle** — ex. aménager postes et équipements pour limiter fatigue et problèmes de santé, adaptés à la tâche et au physique (cf. théorie 3.6).
+:::
+
+### Mission 5.2 — Liste de contrôle EnterSite
+
+Tu es prêt·e pour le test final.
+
+> **Astuce EnterSite** : suis la visite virtuelle dans la salle **13 V2**. Traite la **liste de contrôle** sur la communication. Cherche l'image à droite : ta propre perception est-elle correcte ? Lien : [Vers le site EnterSite](#entersite-placeholder).
+
+:::reponse
+**Réponse individuelle** — checklist EnterSite salle **13 V2** (même salle que module 202 — consignes du cours).
+:::
+
+---
+
+## Mission 6 — Discussion STA
+
+Discute de la situation de travail et d'apprentissage en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_203_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1–M4** : Johari (auto / tiers / feedback / point aveugle) — individuelles
+- **M5** : EnterSite logistique salle **3 V4** (texte à trous)
+- **M5.1** : ergonomie · **M5.2** : salle **13 V2** checklist
+- **M6** : discussion STA`;
+
+/** Exercices de maths Module 203 */
+const DEMO_203_MATHS_FULL = `## Exercices de mathématiques — Module 203
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Augmentation de salaire
+
+Tu n'es plus satisfait de ton salaire. Entretien avec **M. Gugger** : tu gagnes actuellement **13 mois** à **4'300 CHF**/mois. Il t'accorde **+200 CHF**/mois.
+
+De combien de **pourcent** ton salaire a-t-il augmenté ?
+
+:::solution
+**4,65 %**
+
+Nouveau salaire : 4'300 + 200 = **4'500 CHF**  
+Calcul : 200 / 4'300 × 100 = **4,65 %**  
+(ou 4'500 × 100 / 4'300 = 104,65 % → 104,65 − 100 = **4,65 %**)
+:::
+
+### Exercice 2 — Commandes supplémentaires
+
+Après l'augmentation, tu prépares **125** commandes/jour, soit **10** de plus qu'avant.
+
+Ces 10 commandes supplémentaires représentent combien de **pourcent** ?
+
+:::solution
+**8,69 %**
+
+Avant : 125 − 10 = **115** commandes  
+Calcul : 125 / 115 × 100 = 108,69 % → augmentation **8,69 %**
+:::
+
+### Exercice 3 — Abonnement fitness
+
+Avec l'augmentation, tu t'offres un abonnement fitness à **398 CHF**/an. Quel **pourcentage** de ton salaire annuel cela représente-t-il ?
+
+:::solution
+**0,68 %**
+
+Salaire annuel : 4'500 × 13 = **58'500 CHF**  
+Calcul : 398 × 100 / 58'500 = **0,68 %**
+:::
+
+### Exercice 4 — Satisfaction des collaborateurs
+
+M. Gugger mène une enquête de satisfaction chez EnterSite AG. Comment la satisfaction a-t-elle évolué ?
+
+:::solution
+**2020 : 4,90** · **2021 : 4,94** → évolution **positive**
+
+- Enquête 2020 : 44,1 / 9 = **4,90**
+- Enquête 2021 : 44,5 / 9 = **4,94**
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 4,65 / 8,69 / 0,68 / 4,90 / 4,94`;
+
+const DEMO_203_MATHS_SUMMARY = `## Maths — Solutions
+1. **4,65 %** (4'300 → 4'500)
+2. **8,69 %** (115 → 125 commandes)
+3. **0,68 %** (398 / 58'500)
+4. Satisfaction **4,90** → **4,94** (positif)`;
+
+/** Vérification des acquis Module 203 */
+const DEMO_203_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Gestion de soi**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Complète la fenêtre de Johari (zones **A–D**) et décris les quatre domaines avec tes propres mots.
+
+| | Connu de moi | Inconnu de moi |
+| --- | --- | --- |
+| **Connu des autres** | **A** Personne publique | **B** Zone aveugle |
+| **Inconnu des autres** | **C** Mon secret | **D** Inconnu |
+
+:::reponse
+- **A — Personne publique :** activité libre / faits publics ; comportement et motivation perceptibles pour **moi et les autres**.
+- **B — Zone aveugle :** visible pour les **autres**, inconscient pour moi (habitudes, refoulé, préconscient).
+- **C — Mon secret :** connu de **moi**, caché aux autres.
+- **D — Inconnu :** inconnu de moi **et** des autres (inconscient) ; rarement abordé en groupe d'entraînement.
+:::
+
+### Question 2
+
+Complète les **cinq piliers** de l'identité (termes techniques).
+
+:::reponse
+1. **Corps** (corporalité)
+2. **Relations sociales**
+3. **Travail et performance**
+4. **Sécurité matérielle**
+5. **Valeurs et idéaux**
+:::
+
+### Question 3
+
+Cite les styles de direction connus et indique pour chacun un avantage et un inconvénient.
+
+:::reponse
+**Autoritaire**  
++ Résolution rapide, bons résultats court terme, tâches/responsabilités claires, orienté action  
+− Tensions (peu de consensus), peu de flexibilité, surcharge du supérieur
+
+**Laissez-faire**  
++ Potentiel / idées des collaborateurs, innovation, soulagement du supérieur  
+− Incertitude, responsabilités floues, tâches désagréables non faites, **pas d'unité de doctrine**
+
+**Coopératif**  
++ Résultats long terme, collaborateurs satisfaits, flexibilité, appartenance  
+− Décisions lentes, résultats court terme parfois moins bons, exigences élevées en leadership psychologique
+
+**Caritatif**  
++ Climat humain, soutien aux inquiets, questions critiques possibles  
+− Sollicitude = contrôle ressenti, manque de défi / motivation, erreurs et doublons faute d'alignement objectifs
+:::
+
+### Question 4
+
+Quel comportement les parties en conflit doivent-elles adopter pour une situation **gagnant-gagnant** ?
+
+:::reponse
+Le comportement **coopératif** conduit à une situation gagnant / gagnant pour les deux parties.
+:::
+
+### Question 5
+
+Complète les **six étapes** de la résolution des conflits.
+
+:::reponse
+1. Ce qui me dérange…
+2. Mon but…
+3. Ton but…
+4. Nos points communs…
+5. Recherche de solutions…
+6. Accord…
+:::`;
+
+const DEMO_203_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Johari A–D : public · aveugle · secret · inconnu
+2. Corps · Relations · Travail · Sécurité matérielle · Valeurs
+3. Autoritaire · Laissez-faire · Coopératif · Caritatif (+/−)
+4. Comportement **coopératif** = win-win
+5. Six étapes : dérange → mon but → ton but → communs → solutions → accord`;
+
 /** Contenu Module 204 — Le marché */
 const DEMO_204_THEORIE_FULL = `## 4. Le marché
 
@@ -2578,6 +6363,9 @@ Ce module présente le **marché** : origines, besoins, étude de marché, types
 3. Types (objet, fonction, accès) et formes (monopole, oligopole…)
 4. Tailles géographiques
 
+### Lien
+[Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
 ### Source
 EnterSite — Logistics by ASFL / SVBL`;
 
@@ -2600,6 +6388,302 @@ const DEMO_204_OBJECTIFS_SUMMARY = `## Objectifs
 - Besoin → marché
 - Étude de marché
 - Types / formes / tailles`;
+
+/** Glossaire Module 204 */
+const DEMO_204_GLOSSAIRE_FULL = `## Glossaire — Module 204
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Gestion d'entreprise | | Ensemble des activités visant à **diriger, organiser et piloter** une entreprise (stratégie, finances, ressources humaines, production, commercial…) afin d'atteindre ses objectifs. |
+| Biens de substitution | | Biens ou services susceptibles de **remplacer** un autre produit pour satisfaire un besoin comparable (ex. tablette vs ordinateur portable) — ils accentuent la concurrence et poussent à l'innovation. |
+| Monopole | | Forme de marché où il n'existe **qu'un seul offreur** face à de nombreux demandeurs (ex. certains réseaux / infrastructures). |
+| Oligopole | | Forme de marché où **peu d'offreurs** se partagent le marché face à de nombreux demandeurs (ex. téléphonie, pétrole, cartouches toner). |
+| Marché concurrentiel | | Marché où **beaucoup d'offreurs et de demandeurs** se rencontrent librement ; la concurrence et la loi de l'offre et de la demande déterminent les prix (proche du **polypôle** / concurrence libre). |
+| Monopsone | | Forme de marché où il n'existe **qu'un seul demandeur** face à de nombreux offreurs. |
+| Formes de marché (monopole, oligopole, polypôle) | | Classification selon le **nombre** d'offreurs / demandeurs : **monopole** (1 offreur), **oligopole** (peu d'offreurs), **polypôle** (beaucoup d'offreurs et de demandeurs — concurrence). |`;
+
+const DEMO_204_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Gestion d'entreprise** : diriger / organiser / piloter
+- **Biens de substitution** : produits interchangeables
+- **Monopole** (1 offreur) · **Oligopole** (peu) · **Polypôle** / marché concurrentiel (beaucoup)
+- **Monopsone** : 1 demandeur`;
+
+/** Mises en situation Module 204 */
+const DEMO_204_SITUATION_FULL = `## Mises en situation — Module 204
+
+Contexte : tu travailles chez **EnterSite AG**. Les missions portent sur le **marché**, l'offre et la demande, les types / tailles de marchés et l'étude de marché. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.
+
+### Vue d'ensemble des missions
+1. Le marché (loi de l'offre et de la demande) — + 1.1 à 1.4
+2. Types de marchés — + 2.1 marché factuel
+3. Taille du marché et possibilités d'accès — + 3.1
+4. Découverte et étude de marché
+5. Discussion STA
+
+---
+
+## Mission 1 — Le marché (loi de l'offre et de la demande)
+
+On parle beaucoup du « marché ». Mais qu'entendons-nous par-là ? Cherche une définition appropriée à ce terme.
+
+:::reponse
+Le terme **« marché »** désigne un « lieu » où des marchandises sont **commercialisées de manière régulière**.
+:::
+
+### Mission 1.1 — Offre et demande
+
+Dans de nombreuses définitions du terme « marché », on se heurte à la loi de l'offre et de la demande. Note, sans utiliser d'outils, ce que tu entends par les termes suivants :
+
+:::reponse
+- **Offre :** le produit / service proposé par un fournisseur sur le marché.
+- **Demande :** le besoin d'un client — client intéressé par le produit / service proposé.
+:::
+
+### Mission 1.2 — Loi de l'offre et de la demande
+
+Résume ce que tu entends par « loi de l'offre et de la demande ».
+
+:::reponse
+Si j'ai une offre qui trouve un client sur le marché, je peux vendre le produit. Si la **demande est élevée**, mon produit / service **prend de la valeur**. Si la demande est **faible ou inexistante**, mon produit **perd de la valeur**.
+:::
+
+### Mission 1.3 — EnterSite 3D : position sur le marché
+
+EnterSite AG s'occupe de la technologie d'impression **3D**. Cette technologie est encore relativement nouvelle et peu de fournisseurs peuvent l'utiliser. Quelle position EnterSite AG peut-elle adopter face à la loi de l'offre et de la demande ? Quelle position EnterSite AG peut-elle occuper sur le marché ?
+
+> **Vers le site EnterSite** : suis la visite virtuelle dans la production, salle **9 V1**. Pour comprendre ce que la technologie 3D peut faire, regarde la **vidéo** d'EnterSite. Cherche l'image de droite et utilise le lien. Lien : [Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+:::reponse
+EnterSite pourrait avoir une offre pour laquelle il n'y a **pas encore de marché**. Si le produit attire des clients, il peut y avoir une demande satisfaite par nous. Il est possible qu'EnterSite occupe une position de **monopole**, au moins jusqu'à ce que d'autres producteurs proposent des produits alternatifs.
+:::
+
+### Mission 1.4 — Toner C9720AR : position sur le marché
+
+EnterSite AG propose aussi des produits classiques. L'article **C9720AR** (cartouche de toner pour copieur laser, reconditionnée) connaît une forte concurrence en Suisse et à l'étranger. Quelle position EnterSite AG peut-elle ou doit-elle prendre sur le marché ?
+
+:::reponse
+La loi de l'offre et de la demande fait que pour EnterSite, c'est un produit **sans perspective d'avenir** : concurrence (offre) et évolutions numériques vont modifier la demande → situation d'**oligopole**.
+:::
+
+---
+
+## Mission 2 — Types de marchés
+
+Un marché peut avoir de nombreux « visages ». Deux des marchés les plus connus : le **marché des biens** et le **marché factuel**.
+
+Le marché des biens connaît **quatre** marchés différents. Décris chaque marché en une phrase et note un exemple. **Marque en jaune** le marché sur lequel EnterSite AG est active.
+
+:::reponse
+- **Marché des biens et des services de consommation** *(jaune — EnterSite)* : commerce de biens destinés au consommateur final (livres, alimentaires, vêtements, électronique…).
+- **Marché des services** : conseil juridique, soins, divertissement…
+- **Marché des biens d'investissement** : machines, installations techniques, équipements.
+- **Marché immobilier** : terrains et bâtiments.
+:::
+
+### Mission 2.1 — Marché factuel
+
+Le marché factuel se divise aussi en quatre marchés. Décris chaque marché et donne un exemple.
+
+:::reponse
+- **Marché du travail :** la force de travail humaine est offerte et demandée.
+- **Marché des capitaux :** crédits à long terme et placements de capitaux.
+- **Marché monétaire :** mise à disposition de crédits à **court terme** par les banques.
+- **Marché des devises :** échanges de devises étrangères.
+:::
+
+---
+
+## Mission 3 — Taille du marché
+
+Pour évaluer la taille d'une entreprise, on parle souvent de marchés **régionaux**, **nationaux** et **internationaux**. Cherche des entreprises sur chaque échelle. Note le lien et décris-les en une phrase. **Marque en jaune** la taille du marché dans lequel évolue EnterSite AG.
+
+:::reponse
+- **Régional** — Lien : [https://www.dimab.ch/fr](https://www.dimab.ch/fr)  
+  Garage (succursales en Suisse romande) : BMW, Mini, Alpina.
+- **National** — Lien : [https://www.coop.ch/fr/](https://www.coop.ch/fr/)  
+  Magasin alimentaire · CA ≈ **31 milliards CHF**.
+- **International** *(jaune — EnterSite)* — Lien : [https://www.nike.com/ch/fr/](https://www.nike.com/ch/fr/)  
+  Magasin de sport · siège à Beaverton (USA). EnterSite AG opère sur un marché **international**.
+:::
+
+### Mission 3.1 — Possibilités d'accès
+
+Tous les marchés ne sont pas accessibles à tous. Explique les termes, donne des exemples, et **marque en jaune** le marché correspondant à EnterSite AG.
+
+:::reponse
+- **Marché fermé :** réduit à un seul fournisseur possible (monopole d'accès). Ex. : La Poste suisse pour les lettres de moins de 50 g.
+- **Marché ouvert** *(jaune — EnterSite)* : tous ceux qui ont quelque chose à vendre peuvent proposer leurs produits ; offre / demande influencent le marché. Ex. : vente de T-shirts.
+- **Marché limité :** autorisation, certificat ou attestation nécessaire. Ex. : taxis, médecins, pharmacie, vente d'armes…
+:::
+
+---
+
+## Mission 4 — Prospection vs étude de marché
+
+Pour fonctionner sur un marché et identifier les besoins, l'entreprise doit le connaître. Le marché peut être **exploré** (prospecté) ou **étudié**.
+
+Formez une équipe de deux. Une personne définit « **prospection / exploration du marché** », l'autre « **étude de marché** ». Recherche (10 min), puis échangez vos résultats.
+
+:::reponse
+- **Prospection de marché :** collecte **occasionnelle et non systématique** d'informations, dont certaines obtenues au sein de l'entreprise.
+- **Étude de marché :** analyse **systématique et situationnelle** du marché selon des méthodes **scientifiques**, pour obtenir des informations comme base de la **planification marketing**.
+:::
+
+---
+
+## Mission 5 — Discussion STA
+
+Discute de la situation de travail et d'apprentissage en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_204_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : marché = lieu de commercialisation régulière · offre / demande · loi O/D · 3D → monopole (9 V1) · toner C9720AR → oligopole
+- **M2** : 4 marchés des biens (EnterSite = **consommation**, jaune) · factuel : travail, capitaux, monétaire, devises
+- **M3** : régional dimab · national coop · international nike (**EnterSite = international**) · accès : fermé / **ouvert** (EnterSite) / limité
+- **M4** : prospection (occasionnelle) ≠ étude (scientifique / systématique)
+- **M5** : discussion STA`;
+
+/** Exercices de maths Module 204 */
+const DEMO_204_MATHS_FULL = `## Exercices de mathématiques — Module 204
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Prix des masques (offre / demande)
+
+L'offre et la demande influencent les prix. Pendant la pandémie de Corona, le coût des masques de protection a fortement augmenté. Les masques en tissu, vendus **7 CHF** pièce avant la pandémie, ont vu leur prix monter de **30 %**.
+
+Combien les masques ont-ils coûté après la hausse ?
+
+:::solution
+**9,10 CHF**
+
+Calcul : 7 × 130 / 100 = **9,10 CHF**
+:::
+
+### Exercice 2 — Enquête en ligne
+
+Étudier le marché, c'est aussi évaluer des données. Lors de la dernière enquête en ligne d'EnterSite AG, **12'000** réponses ont été reçues, soit un taux de **37 %**.
+
+Quel aurait été le nombre maximal de réponses possibles ?
+
+:::solution
+**32'432 réponses**
+
+Calcul : 12'000 × 100 / 37 ≈ 32'432,43 → **32'432** réponses
+:::
+
+### Exercice 3 — Marché 3D
+
+EnterSite AG s'intéresse au développement du marché de la 3D. Le chiffre d'affaires actuel en Suisse est estimé à **3'000'000 CHF**. Les chercheurs estiment qu'il sera de **400 %** dans cinq ans (par rapport à aujourd'hui).
+
+Quel sera le chiffre d'affaires dans cinq ans ?
+
+:::solution
+**12'000'000 CHF**
+
+Calcul : 3'000'000 × 400 / 100 = **12'000'000 CHF**
+:::
+
+### Exercice 4 — Surface d'un modèle
+
+Calcule la surface totale du modèle (grand rectangle + petit rectangle).
+
+:::solution
+**40,375 m²**
+
+Calculs :
+- Surface grand rectangle : 8,5 × 3,5 = **29,75 m²**
+- Longueur des petits rectangles : 8,50 / 2 = **4,25 m**
+- Surface petit rectangle : 4,25 × 2,50 = **10,625 m²**
+- Surface totale : 29,75 + 10,625 = **40,375 m²**
+:::
+
+> **Contrôle rapide (footer corrigé)** : 9,10 · 32'432 · 12'000'000 · 40,375`;
+
+const DEMO_204_MATHS_SUMMARY = `## Maths — Solutions
+1. **9,10 CHF** (7 × 1,30)
+2. **32'432** réponses (12'000 / 0,37)
+3. **12'000'000 CHF** (3M × 400 %)
+4. **40,375 m²**`;
+
+/** Vérification des acquis Module 204 */
+const DEMO_204_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Le marché**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quelles sont les conséquences d'un **excédent d'offre** d'un produit (lorsque la demande est inférieure à l'offre) ?
+
+a) pour le producteur  
+b) pour le commerçant  
+c) pour le client
+
+:::reponse
+- **a) Producteur :** reste assis sur ses produits · marchandise qui peut se détériorer · mauvais prix de vente · coûts de production non couverts · peu ou pas de bénéfice · frais de stockage supplémentaires.
+- **b) Commerçant :** peut acheter moins cher · reste aussi assis sur la marchandise · emplacements de stockage occupés plus longtemps · mauvaise rotation des stocks (ratio).
+- **c) Client :** peut acheter moins cher, éventuellement faire encore baisser le prix.
+:::
+
+### Question 2
+
+Quelle est la principale caractéristique d'un **marché ouvert** ?
+
+:::reponse
+Sur un marché ouvert, la **concurrence est libre**. Tout le monde peut proposer ses produits ou acheter des marchandises. Le marché dépend de l'**offre** et de la **demande**.
+:::
+
+### Question 3
+
+Quelles restrictions peuvent exister sur un **marché restreint (limité)** ? Coche les conditions qui s'appliquent :
+
+| Condition | S'applique ? |
+| --- | --- |
+| Concession nécessaire | |
+| Ordinateur nécessaire | |
+| Licence nécessaire | |
+| Attestation de formation nécessaire | |
+| Capital minimum nécessaire | |
+| Ne pas avoir plus de 40 ans | |
+
+:::reponse
+| Condition | S'applique ? |
+| --- | --- |
+| Concession nécessaire | **Oui** |
+| Ordinateur nécessaire | Non |
+| Licence nécessaire | **Oui** |
+| Attestation de formation nécessaire | **Oui** |
+| Capital minimum nécessaire | **Oui** |
+| Ne pas avoir plus de 40 ans | Non |
+:::
+
+### Question 4
+
+Que se passe-t-il sur un **marché fermé** où un seul fournisseur est actif ?
+
+:::reponse
+Dans un marché fermé, il y a un **monopole**.
+:::
+
+### Question 5
+
+Quel mot français pouvons-nous utiliser pour le terme **« pronostic »** ? Illustre par des exemples.
+
+:::reponse
+**Prévision** de développements, d'états ou d'événements futurs.
+
+Exemples : prévisions électorales, démographiques, de l'évolution du marché du travail, météorologiques.
+:::`;
+
+const DEMO_204_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Excédent d'offre : producteur (stock / prix / coûts) · commerçant (achat bas mais rotation) · client (prix bas)
+2. Marché ouvert = **concurrence libre** (offre / demande)
+3. Restrictions : Concession · Licence · Attestation formation · Capital min. (**pas** ordinateur, **pas** max 40 ans)
+4. Marché fermé = **monopole**
+5. Pronostic = **prévision** (+ exemples)`;
 
 /** Contenu Module 205 — Marketing */
 const DEMO_205_THEORIE_FULL = `## 5. Marketing
@@ -2799,6 +6883,271 @@ const DEMO_205_OBJECTIFS_SUMMARY = `## Objectifs
 - Offre / demande → prix
 - 4P, AIDA, info vs suggestive
 - Formats pub online`;
+
+/** Glossaire Module 205 */
+const DEMO_205_GLOSSAIRE_FULL = `## Glossaire — Module 205
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Marketing | | Ensemble des méthodes et activités visant à **promouvoir la vente** de produits et services, à préserver ou augmenter la **part de marché**, améliorer la **notoriété** et ancrer une **image positive** sur le marché. |
+| Offre et demande | | Principe économique fondamental : l'équilibre entre la quantité de biens disponibles (**offre**) et la quantité désirée par les acheteurs (**demande**) détermine le **prix de marché**. |
+| Marketing-Mix | | Combinaison des instruments du marketing pour définir une stratégie de vente. Décrit classiquement par les **4 P** : Product (produit), Price (prix), Place (lieu / distribution), Promotion (publicité / communication). |
+| Publicité | | Actions de **communication** destinées à attirer l'attention sur un produit ou service et à favoriser l'achat. Peut être **informative** (faits) ou **suggestive** (émotions) ; souvent structurée selon le schéma **AIDA**. |`;
+
+const DEMO_205_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Marketing** : promouvoir ventes · part de marché · notoriété · image
+- **Offre et demande** : équilibre → prix de marché
+- **Marketing-Mix** : 4P (Product, Price, Place, Promotion)
+- **Publicité** : communication · informative / suggestive · AIDA`;
+
+/** Mises en situation Module 205 */
+const DEMO_205_SITUATION_FULL = `## Mises en situation — Module 205
+
+Contexte : tu travailles chez **EnterSite AG**. Les missions portent sur l'**analyse publicitaire**, les types de publicité et une commande EnterSite. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / exemples proposés.
+
+### Vue d'ensemble des missions
+1. Préparation pour l'analyse de la publicité
+2. Partie principale pour l'analyse de l'annonce publicitaire
+3. Fin de l'annonce publicitaire
+4. Réalisez des affiches en groupe
+5. Crée ton entreprise
+6. Discussion STA
+
+> **Référence** : [https://levrai.de](https://levrai.de)
+
+---
+
+## Mission 1 — Préparation pour l'analyse de la publicité
+
+Examine attentivement l'annonce publicitaire et réponds aux questions suivantes :
+
+:::reponse
+- **Qu'est-ce qui attire l'attention dans l'annonce publicitaire ?** Le « faux f ».
+- **Qu'est-ce qui attire l'attention dans le texte ?** Le bouton vert, le slogan, l'espace.
+- **Nom du produit :** Ovomaltine
+- **Nom du fabricant :** Wander AG
+- **Groupe cible :** les enfants et les adolescents
+- **Où a-t-elle été publiée ?** Site internet, réseaux sociaux
+- **Pensées / classement :** la mauvaise orthographe génère de l'attention
+:::
+
+---
+
+## Mission 2 — Partie principale pour l'analyse de l'annonce publicitaire
+
+### 2.1 Analyse d'images
+
+Analyse l'image de l'annonce publicitaire en répondant aux questions suivantes :
+
+:::reponse
+- **Accroche :** couleurs voyantes
+- **Taille de l'accroche :** pas si grand que ça
+- **Parties de l'image :** bouton vert · produit · arrière-plan
+- **Couleurs principales :** orange et jaune avec écriture bleue
+- **Éléments de texte :** annonce, slogan
+- **Effet recherché :** le désir de posséder le produit naît
+:::
+
+### 2.2 Analyse de texte
+
+Analyse le texte de l'annonce publicitaire :
+
+:::reponse
+- **Attention au plan du langage :** faute d'orthographe consciente
+- **Headline :** « Nouveau »
+- **Particularités du texte principal :** conçu avec des ombres
+- **Slogan :** « Nous ne nous améliorons pas avec Ovomaltine »
+- **Polices / tailles :** oui, plusieurs types sont utilisés
+- **Texte factuel ou émotionnel :** axé sur les sentiments
+:::
+
+---
+
+## Mission 3 — Fin de l'annonce publicitaire
+
+Écris ton opinion sur l'annonce publicitaire et justifie-la.
+
+:::reponse
+- **L'annonce est-elle réussie ?** Réponse individuelle
+- **Le groupe cible est-il atteint ?** Réponse individuelle
+- **Le concept AIDA est-il appliqué ?** Oui
+:::
+
+---
+
+## Mission 4 — Réalisez des affiches en groupe
+
+En groupe, créez des affiches avec…
+
+:::reponse
+- **…une publicité informative** — réponse individuelle
+- **…de la publicité suggestive** — réponse individuelle
+:::
+
+---
+
+## Mission 5 — Crée ton entreprise
+
+> **Astuce EnterSite** : suis la visite virtuelle jusqu'au département **Customer Service**, salle **13 V2**. **Madame Nydegger** attend et a déjà décrit la commande dans le carnet de notes. Cherche le carnet de notes, trouve l'image de droite et utilise le lien pour accéder à la mission. Lien : [Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+Le cadre de la mission est communiqué par l'enseignant·e.
+
+**Dépôt de fichiers :**
+- Travail écrit
+- Présentation
+- Visuels possibles
+
+:::reponse
+**Réponse individuelle** — dépôt écrit / présentation / visuels selon le cadre donné en classe (pas de solution unique).
+:::
+
+---
+
+## Mission 6 — Discussion STA
+
+Discute de la situation de travail et d'apprentissage en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_205_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : analyse prep Ovomaltine / Wander (« faux f », jeunes, réseaux)
+- **M2** : image (couleurs, bouton vert…) + texte (faute, slogan, émotions)
+- **M3** : opinion individuelle · **AIDA = Oui**
+- **M4** : affiches informative / suggestive (individuelle)
+- **M5** : EnterSite salle **13 V2** · Nydegger · dépôt fichiers
+- **M6** : discussion STA`;
+
+/** Exercices de maths Module 205 */
+const DEMO_205_MATHS_FULL = `## Exercices de mathématiques — Module 205
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Coûts publicitaires des concurrents (Santé SA)
+
+Le département marketing de l'entreprise **Santé SA** souhaite élaborer un concept publicitaire pour un nouveau produit dans le domaine des **compléments alimentaires**. Afin de déterminer le budget publicitaire, les coûts publicitaires des concurrents sont calculés et comparés.
+
+Calcule :
+- la **part des coûts publicitaires par unité** (CHF/pièce) ;
+- le **chiffre d'affaires** et le **chiffre d'affaires publicitaire** des concurrents.
+
+Formules :
+- CHF/pièce = prix unitaire × (part % / 100)
+- CA = nombre de pièces × prix unitaire
+- CA publicitaire = CA × (part % / 100)
+
+> **Classeurs Excel de référence** (non fournis dans le dépôt) : \`Module A4 Santé SA.xlsm\` · \`Module A4 Santé SA_Solution.xlsm\`
+
+| Fabricant | Produit | Pièces | Prix (CHF) | Part pub. % | CHF/pce | CA (CHF) | CA pub. (CHF) |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Health AG | Ultrastrong | 1'462 | 45.50 | 3.50 | ? | ? | ? |
+| Strong GmbH | Power Plus | 2'651 | 34.80 | 2.40 | ? | ? | ? |
+| Jung AG | Vitaliti (à partir de 50 ans) | 7'692 | 42.90 | 2.65 | ? | ? | ? |
+| Vitalis | Flexi ultra | 5'890 | 44.80 | 3.25 | ? | ? | ? |
+| Beauté & Co. | Beauty Skin | 3'480 | 50.20 | 2.90 | ? | ? | ? |
+| Visilon AG | Fortifiant+ | 6'256 | 36.90 | 3.60 | ? | ? | ? |
+| Ultrasport | Vitamine extra | 4'236 | 37.50 | 4.20 | ? | ? | ? |
+
+:::solution
+| Fabricant | Produit | Pièces | Prix | % | CHF/pce | CA | CA pub. |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Health AG | Ultrastrong | 1'462 | 45.50 | 3.50 | **1.59** | **66'521.00** | **2'328.24** |
+| Strong GmbH | Power Plus | 2'651 | 34.80 | 2.40 | **0.84** | **92'254.80** | **2'214.12** |
+| Jung AG | Vitaliti | 7'692 | 42.90 | 2.65 | **1.14** | **329'986.80** | **8'744.65** |
+| Vitalis | Flexi ultra | 5'890 | 44.80 | 3.25 | **1.46** | **263'872.00** | **8'575.84** |
+| Beauté & Co. | Beauty Skin | 3'480 | 50.20 | 2.90 | **1.46** | **174'696.00** | **5'066.18** |
+| Visilon AG | Fortifiant+ | 6'256 | 36.90 | 3.60 | **1.33** | **230'846.40** | **8'310.47** |
+| Ultrasport | Vitamine extra | 4'236 | 37.50 | 4.20 | **1.58** | **158'850.00** | **6'671.70** |
+:::
+
+### Exercice 2 — Budget annuel publicitaire (Santé SA)
+
+Établis un **budget annuel publicitaire** possible pour Santé SA. Pour la part des frais publicitaires en %, on prend la **moyenne des concurrents**.
+
+:::solution
+**5'987.31 sFr** (CHF)
+
+Budget annuel publicitaire possible = moyenne des CA publicitaires des concurrents ≈ **5'987.31 CHF**.
+:::`;
+
+const DEMO_205_MATHS_SUMMARY = `## Maths — Solutions
+1. Tableau concurrents : CHF/pce · CA · CA pub. (Health 1.59 / 66'521 / 2'328.24 … Ultrasport 1.58 / 158'850 / 6'671.70)
+2. Budget annuel moyen : **5'987.31 sFr**
+- Classeurs réf. : \`Module A4 Santé SA.xlsm\` / \`…_Solution.xlsm\``;
+
+/** Vérification des acquis Module 205 */
+const DEMO_205_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Le marketing**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quels sont les termes du marketing mix qui se cachent derrière les **quatre P** ?
+
+:::reponse
+- **Product** (Produit)
+- **Price** (Prix)
+- **Place** (Lieu)
+- **Promotion** (Publicité)
+:::
+
+### Question 2
+
+Afin de réaliser un maximum de bénéfices, EnterSite AG vise différents objectifs par le biais du marketing. Cite-en **trois**.
+
+:::reponse
+- La préservation, respectivement l'**augmentation de la part de marché**
+- L'augmentation du **degré de notoriété**
+- L'ancrage d'une **image positive** sur le marché
+:::
+
+### Question 3
+
+Quels sont les départements d'EnterSite AG qui participent au marketing ? Cite tous les services que tu connais.
+
+:::reponse
+- La **direction**
+- Le **service des ventes** (commercial / marketing)
+- Les collaborateurs de la **production**
+- Les collaborateurs de l'**administration** et des services
+:::
+
+### Question 4
+
+Décris la **loi de l'offre**.
+
+:::reponse
+- Si le prix d'un bien **augmente**, l'offre de ce bien **augmente** également.
+- Si le prix d'un bien **diminue**, l'offre de ce bien **diminue** également.
+:::
+
+### Question 5
+
+Décris la **loi de la demande**.
+
+:::reponse
+- Si le prix d'un bien **augmente**, la demande pour ce bien **diminue**.
+- Si le prix d'un bien **diminue**, la demande de ce bien **augmente**.
+:::
+
+### Question 6
+
+Nomme le **point n° 5** avec le terme technique correct.
+
+*(Point d'intersection offre / demande sur le graphique du marché — si l'image est absente, il s'agit de l'équilibre entre offre et demande.)*
+
+:::reponse
+**Équilibre du marché**
+:::`;
+
+const DEMO_205_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. **4P** : Product · Price · Place · Promotion
+2. Part de marché · notoriété · image positive
+3. Direction · ventes · production · admin/services
+4. Prix ↑ → offre ↑ · Prix ↓ → offre ↓
+5. Prix ↑ → demande ↓ · Prix ↓ → demande ↑
+6. **Équilibre du marché**`;
 
 /** Contenu Module 206 — Communication */
 const DEMO_206_THEORIE_FULL = `## 6. Communication
@@ -3085,6 +7434,349 @@ const DEMO_206_OBJECTIFS_SUMMARY = `## Objectifs
 - Questions fermées / ouvertes
 - Moteurs, obstacles, clôture`;
 
+/** Glossaire Module 206 */
+const DEMO_206_GLOSSAIRE_FULL = `## Glossaire — Module 206
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Verbale | | Communication qui passe par les **mots** (langue parlée ou écrite). Le contenu factuel est transmis verbalement ; le ton et le non-verbal l'accompagnent. |
+| Non verbale | | Ensemble des **signaux corporels** et vocaux (mimique, gestes, posture, regard, volume, vitesse, intonation) qui accompagnent ou remplacent le message verbal. Souvent inconsciente ; ~2/3 de la communication. |
+| Interpréter | Interpreter | Décoder / donner un sens au message reçu (mots **et** signaux non verbaux). L'interprétation peut être fausse → risque de malentendu ; d'où l'importance du **feedback**. |
+| Feedback | | **Retour d'information** du récepteur vers l'émetteur (verbal et/ou non verbal). Indique si le message a été reçu et compris ; permet d'ajuster la suite de l'échange. |
+| Appel | | Niveau d'un message (avec factuel, révélation de soi, relation) : ce que l'émetteur **veut obtenir** / déclencher chez le récepteur (ex. « livre enfin », « respecte l'accord »). |`;
+
+const DEMO_206_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Verbale** : mots · **Non verbale** : corps / voix (~2/3)
+- **Interpréter** : décoder (risque de malentendu)
+- **Feedback** : retour récepteur → émetteur
+- **Appel** : ce que le message veut faire faire / obtenir`;
+
+/** Mises en situation Module 206 */
+const DEMO_206_SITUATION_FULL = `## Mises en situation — Module 206
+
+Contexte : tu travailles chez **EnterSite AG**. Les missions portent sur la **communication** (éléments, questions, réclamation écrite, note téléphonique). Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / exemples proposés.
+
+### Vue d'ensemble des missions
+1. Éléments de la communication
+2. Questions ouvertes / fermées
+3. Réclamation écrite (toner cyan)
+4. Note téléphonique Müller / Cellwar
+5. Discussion STA
+
+---
+
+## Mission 1 — Éléments de la communication
+
+Selon **Lorenz**, un message ne doit pas seulement être **entendu**, mais aussi **compris**. Analyse les éléments de la communication et complète les parties demandées.
+
+### 1.1 Principe de Lorenz
+
+:::reponse
+Le message n'est réussi que s'il est **compris** (pas seulement entendu). Sinon, émetteur et récepteur ne partagent pas le même code → malentendu. Le **feedback** permet de vérifier la compréhension.
+:::
+
+### 1.2 Les 7 points de l'écoute active
+
+:::reponse
+1. Être là pour l'autre pendant un certain temps
+2. S'intéresser réellement à l'autre
+3. Savoir se taire (laisser l'autre s'exprimer)
+4. S'adapter ; être attentif
+5. Accepter l'autre tel qu'il/elle est
+6. Rester soi-même ; ne pas prendre en charge les problèmes de l'autre
+7. Se mettre à la place de l'autre
+:::
+
+### 1.3 Quatre éléments du langage d'expression (niveaux d'un message)
+
+:::reponse
+| Niveau | Signification |
+| --- | --- |
+| **Contenu factuel** | Information / faits transmis |
+| **Révélation de soi** | Ce que l'émetteur révèle de son état / sentiment |
+| **Relation** | Comment l'émetteur se positionne face au récepteur |
+| **Appel** | Ce que l'émetteur veut obtenir / faire faire |
+:::
+
+### 1.4 Tableau non verbal (signaux → signification)
+
+:::reponse
+| Signal | Signification |
+| --- | --- |
+| Posture décontractée | Détente, confiance en soi |
+| Bras croisés sur la poitrine | Défense |
+| Se détourner | Désintérêt |
+| Posture rigide | Tension |
+| Se balancer / gestes des mains | Impatience |
+| Soutenir la tête | Réflexion ou ennui |
+| Regard ouvert, visage amical | Intérêt, volonté de dialogue |
+| Acquiescer de la tête | Compréhension ou accord |
+| Froncer les sourcils | Incompréhension, mécontentement, scepticisme |
+| Coins de la bouche vers le bas | Insatisfaction, scepticisme |
+| Baisser la tête / regarder le sol | Incertitude ou défi |
+| Passer devant (couper) l'interlocuteur | Manque d'intérêt ou insécurité |
+:::
+
+### 1.5 Schéma de la communication
+
+Dessine / décris le schéma de la communication (émetteur → message / canal → récepteur + feedback).
+
+:::reponse
+**Réponse individuelle** — schéma ou description (émetteur, message, canal, récepteur, feedback / interférences). Pas de solution unique.
+:::
+
+### 1.6 Passages « texte » — attention
+
+Repère dans le texte fourni les passages qui attirent l'attention (formulation, ton, non-verbal décrit, etc.) et justifie.
+
+:::reponse
+**Réponse individuelle** — passages soulignés / justifications personnelles (pas de solution unique).
+:::
+
+---
+
+## Mission 2 — Questions ouvertes / fermées
+
+Classe chaque question : **fermée (F)** ou **ouverte (O)**.
+
+| # | Question | Type |
+| --- | --- | --- |
+| 1 | As-tu préparé la commande client ? | ? |
+| 2 | Quel est le problème exactement ? | ? |
+| 3 | Est-ce que le chargement du camion est terminé ? | ? |
+| 4 | Comment se manifeste le dysfonctionnement ? | ? |
+| 5 | Le prix est-il un critère pour vous ? | ? |
+| 6 | Pourquoi avez-vous choisi cette solution ? | ? |
+| 7 | Quand la marchandise devait-elle arriver ? | ? |
+| 8 | Pouvez-vous me décrire le déroulement des faits ? | ? |
+
+:::reponse
+| # | Question | Type |
+| --- | --- | :---: |
+| 1 | As-tu préparé la commande client ? | **F** |
+| 2 | Quel est le problème exactement ? | **O** |
+| 3 | Est-ce que le chargement du camion est terminé ? | **F** |
+| 4 | Comment se manifeste le dysfonctionnement ? | **O** |
+| 5 | Le prix est-il un critère pour vous ? | **F** |
+| 6 | Pourquoi avez-vous choisi cette solution ? | **O** |
+| 7 | Quand la marchandise devait-elle arriver ? | **O** |
+| 8 | Pouvez-vous me décrire le déroulement des faits ? | **O** (ouverte malgré verbe — invite à développer) |
+:::
+
+---
+
+## Mission 3 — Réclamation écrite (toner cyan)
+
+Un client signale une **différence de quantité** sur une livraison de **toner cyan**. Rédige une lettre / e-mail de réponse professionnelle (accusé de réception, excuses, clarification des faits, proposition de solution, suite).
+
+> **Astuce EnterSite** : suis la visite virtuelle jusqu'à la salle **13 V1** (Customer Service). Cherche les **modèles** de lettres / notes à droite et traite la commande. Lien : [Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+:::reponse
+**Modèle de lettre / e-mail (proposition) :**
+
+\`\`\`
+EnterSite AG — Service clientèle
+[Adresse]
+
+[Lieu], le [date]
+
+Objet : Votre réclamation — différence de quantité toner cyan — [n° commande / livraison]
+
+Madame, Monsieur,
+
+Nous accusons réception de votre réclamation concernant une **différence de quantité** sur la livraison de **toner cyan**.
+
+Nous vous présentons nos excuses pour le désagrément occasionné. Après vérification de votre dossier (commande n° … / livraison n° …), nous constatons / clarifions la situation comme suit : [écart constaté].
+
+**Solution proposée :**
+- envoi immédiat des pièces manquantes **ou**
+- avoir / avoir-facture selon votre préférence
+
+Nous vous tiendrons informé(e) dès confirmation de l'expédition. Pour toute question : [tél. / e-mail].
+
+Avec nos meilleures salutations,
+[Nom] — EnterSite AG, Service clientèle
+\`\`\`
+:::
+
+---
+
+## Mission 4 — Note téléphonique Müller / Cellwar
+
+Tu reçois un appel de **M. Müller** (entreprise **Cellwar**). Rédige la **note téléphonique** pour le/la destinataire absent(e).
+
+:::reponse
+**Note téléphonique (modèle) :**
+
+| Champ | Contenu |
+| --- | --- |
+| Date / heure | [jj.mm.aaaa — hh:mm] |
+| Appelant | M. Müller |
+| Entreprise | Cellwar |
+| Destinataire | [Nom du collègue / service] |
+| Motif / message | [Raison de l'appel — rappel demandé / info à transmettre] |
+| N° de rappel | [téléphone] |
+| Urgence | ☐ normal · ☐ urgent |
+| Pris par | [Ton nom] |
+:::
+
+---
+
+## Mission 5 — Discussion STA
+
+Discute de la situation de travail et d'apprentissage en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_206_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : Lorenz (entendu ≠ compris) · 7 points écoute active · 4 niveaux · tableau non verbal · schéma / texte = individuel
+- **M2** : questions F/O (verbe → souvent F ; QQOQCP → O)
+- **M3** : réclamation toner cyan · EnterSite **13 V1** · modèle de lettre
+- **M4** : note tél. Müller / Cellwar
+- **M5** : discussion STA`;
+
+/** Exercices de maths Module 206 */
+const DEMO_206_MATHS_FULL = `## Exercices de mathématiques — Module 206
+
+Contexte : analyses de **taux d'engagement Instagram** (likes / vues). Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Taux de likes d'une publication
+
+Une publication a obtenu **37** likes pour **564** vues.
+
+Calcule le taux de likes en **%** (arrondi à 2 décimales).
+
+:::solution
+**6,56 %**
+
+Calcul : 37 / 564 × 100 = 6,560… ≈ **6,56 %**
+:::
+
+### Exercice 2 — Tableau de 10 publications + moyenne
+
+Complète le **% de likes** pour chaque publication, puis calcule la **moyenne**.
+
+| Post | Likes | Vues | % likes |
+| --- | ---: | ---: | ---: |
+| 1 | 33 | 503 | ? |
+| 2 | 29 | 500 | ? |
+| 3 | 36 | 500 | ? |
+| 4 | 49 | 1'000 | ? |
+| 5 | 61 | 1'000 | ? |
+| 6 | 55 | 1'000 | ? |
+| 7 | 40 | 500 | ? |
+| 8 | 63 | 1'000 | ? |
+| 9 | 47 | 1'000 | ? |
+| 10 | 87 | 1'401 | ? |
+| | | **Moyenne** | **?** |
+
+:::solution
+| Post | Likes | Vues | % likes |
+| --- | ---: | ---: | ---: |
+| 1 | 33 | 503 | **6,56** |
+| 2 | 29 | 500 | **5,80** |
+| 3 | 36 | 500 | **7,20** |
+| 4 | 49 | 1'000 | **4,90** |
+| 5 | 61 | 1'000 | **6,10** |
+| 6 | 55 | 1'000 | **5,50** |
+| 7 | 40 | 500 | **8,00** |
+| 8 | 63 | 1'000 | **6,30** |
+| 9 | 47 | 1'000 | **4,70** |
+| 10 | 87 | 1'401 | **6,21** |
+| | | **Moyenne** | **6,127 %** |
+
+Moyenne détaillée : (6,56 + 5,80 + 7,20 + 4,90 + 6,10 + 5,50 + 8,00 + 6,30 + 4,70 + 6,21) / 10 = **6,127 %**
+
+Selon l'arrondi du corrigé papier : **Moyenne ≈ 6,11 %**.
+:::
+
+### Exercice 3 — Tendance
+
+Sur la période observée, la tendance du taux d'engagement est-elle **croissante**, **décroissante** ou **stable** ?
+
+:::solution
+**Croissant** (tendance ascendante)
+:::
+
+> **Contrôle rapide (ligne SOLUTION)** : **6,56** | Moyenne = **6,11** (détail **6,127 %**) | **Croissant**`;
+
+const DEMO_206_MATHS_SUMMARY = `## Maths — Solutions
+1. **6,56 %** (37 / 564 × 100)
+2. Moyenne détaillée **6,127 %** · corrigé ≈ **6,11 %**
+3. Tendance **Croissant**
+- Ligne SOLUTION : 6,56 | Moyenne = 6,11 | Croissant`;
+
+/** Vérification des acquis Module 206 */
+const DEMO_206_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **La communication**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Qu'est-ce qu'une **question fermée** ? Donne **deux exemples**.
+
+:::reponse
+Une question fermée vise une réponse **courte et précise** (souvent **oui** / **non**). Elle commence généralement par un **verbe**.
+
+Exemples :
+- « As-tu préparé la commande client ? »
+- « Est-ce que le chargement du camion est terminé ? »
+:::
+
+### Question 2
+
+Décris le **schéma de fonctionnement** de la communication (si l'image manque).
+
+:::reponse
+Schéma typique :
+1. **Émetteur** — code le message
+2. **Message** — contenu transmis
+3. **Canal** — voie de transmission (directe ou indirecte)
+4. **Récepteur** — décode / interprète
+5. **Feedback** — retour du récepteur vers l'émetteur (vérifie la compréhension)
+Des **interférences** peuvent perturber chaque étape.
+:::
+
+### Question 3
+
+Pourquoi faut-il **éviter les tueurs de conversation** (obstacles) ?
+
+:::reponse
+Ils freinent ou **bloquent** l'échange (désintérêt, interrogatoire, mépris, parler de soi, avis trop tôt…). En service clientèle, ils blessent le client et nuisent à la relation. Mieux : moteurs d'écoute active, ou dire honnêtement qu'on n'a plus le temps.
+:::
+
+### Question 4
+
+Cite **trois** formules polies pour conclure avec un client **bavard**.
+
+:::reponse
+1. « J'aimerais vous écouter plus longtemps, mais malheureusement, mes fonctions m'obligent à poursuivre mon travail. »
+2. « Il faut absolument que nous continuions à parler une autre fois. Malheureusement, je ne peux pas faire attendre les autres clients plus longtemps. »
+3. « Il y aurait encore beaucoup de choses intéressantes à dire à ce sujet. Peut-être aurons-nous le temps d'échanger à nouveau quelques mots demain ? »
+:::
+
+### Question 5
+
+Un client demande ton **supérieur**, qui est aux **toilettes**. Comment répondre poliment ? Que fais-tu pour la **note téléphonique** ?
+
+:::reponse
+**Réponses polies (sans détail intime) :**
+- « Il / elle n'est pas disponible pour le moment. Puis-je prendre un message ? »
+- « Je vais vérifier s'il / si elle est libre. Puis-je noter votre nom et un numéro de rappel ? »
+- Éviter : « Il est aux toilettes. »
+
+**Note téléphonique :** date/heure · nom de l'appelant · entreprise · destinataire · motif · n° de rappel · urgence · pris par (toi).
+:::`;
+
+const DEMO_206_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Question fermée = oui/non / courte · 2 exemples (verbe)
+2. Émetteur → message / canal → récepteur + feedback (+ interférences)
+3. Éviter les obstacles : ils bloquent / blessent la relation
+4. Trois formules de clôture polie (charge de travail / autre rendez-vous)
+5. Disponible plus tard + message · note tél. complète · pas de détail « toilettes »`;
+
 /** Contenu Module 207 — Pre-Sale-Service */
 const DEMO_207_THEORIE_FULL = `## 7. Pre-Sale-Service (service à la prévente)
 
@@ -3192,6 +7884,254 @@ const DEMO_207_OBJECTIFS_SUMMARY = `## Objectifs
 - Besoin + pyramide
 - Vente / motifs d'achat
 - Scoring fournisseurs`;
+
+/** Glossaire Module 207 */
+const DEMO_207_GLOSSAIRE_FULL = `## Glossaire — Module 207
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Coût total de possession | TCO (*Total Cost of Ownership*) | Somme de **tous** les coûts liés à un produit ou service : prix d'achat, possession, utilisation, maintenance et mise hors service — pas seulement le prix d'achat. |
+| Compétences de livraison | | Capacité d'un fournisseur à livrer selon la **quantité**, le **délai**, les **informations** et la **flexibilité** attendues. |
+| Fondation | Foundation | Dans la formation CFC : travail / examen de fin d'études (**Foundation**). Plus largement : organisme à but déterminé doté d'un patrimoine propre (utilité publique). |`;
+
+const DEMO_207_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **TCO** : tous les coûts (achat → élimination), pas seulement le prix
+- **Compétences de livraison** : quantité, délai, infos, flexibilité
+- **Fondation** : examen Foundation / organisme patrimonial`;
+
+/** Mises en situation Module 207 */
+const DEMO_207_SITUATION_FULL = `## Mises en situation — Module 207
+
+Contexte : tu travailles chez **EnterSite AG** (département des ventes). Les missions portent sur la **pyramide des besoins**, la gamme de produits, les **motifs d'achat** et l'**évaluation des fournisseurs**. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions.
+
+### Vue d'ensemble des missions
+1. Pyramide des besoins
+2. Gamme de produits
+3. Motifs d'achat
+4. Évaluation des fournisseurs
+5. Discussion STA
+
+---
+
+## Mission 1 — Pyramide des besoins
+
+Pendant ton apprentissage, tu peux soutenir le département des ventes pendant trois mois. La responsable de la division, **Madame Silvia Renggli**, te fait remarquer que les produits d'EnterSite AG ne font pas partie des besoins fondamentaux selon **Maslow**, et qu'on ne peut donc pas simplement partir du principe que nos produits peuvent être vendus sans marketing ni publicité.
+
+Que veut dire Madame Renggli lorsqu'elle parle de Maslow ? Nomme les **cinq niveaux** de la pyramide de Maslow.
+
+:::reponse
+| Niveau | Nom |
+| --- | --- |
+| 5 | **Réalisation de soi** |
+| 4 | **Reconnaissance** |
+| 3 | **Besoins sociaux** |
+| 2 | **Sécurité** |
+| 1 | **Besoins fondamentaux** |
+:::
+
+---
+
+## Mission 2 — Gamme de produits
+
+Réfléchis au portefeuille de produits d'EnterSite AG : à quel niveau de la pyramide de Maslow se situent les produits proposés par EnterSite AG ?
+
+:::reponse
+**Sécurité (travail)**
+:::
+
+---
+
+## Mission 3 — Motifs d'achat
+
+Comme l'a mentionné Mme Renggli, nos produits ne font pas partie des besoins fondamentaux selon Maslow. Quels sont les motifs d'achat qui nous contraignent ou quelle satisfaction ressentons-nous lorsque nous achetons des produits d'EnterSite ?
+
+:::reponse
+- Le **développement technique**
+- La **productivité**
+- Les **besoins sociaux**
+:::
+
+---
+
+## Mission 4 — Évaluation des fournisseurs
+
+Madame Renggli te demande d'établir une évaluation de trois fournisseurs (**A / B / C**) et de la lui présenter. Elle te met dans les mains une feuille avec trois évaluations (diagramme à colonnes). Tu dois présenter ce diagramme dans le style d'une évaluation de fournisseur selon le modèle d'un article spécialisé, y compris la **pondération**. Quel fournisseur obtient la meilleure évaluation ?
+
+:::reponse
+**Fournisseur B** gagne avec **292 points**.
+
+| Critère | A | B | C |
+| --- | --- | --- | --- |
+| Qualité | 9×10 → **90** | 8×10 → **80** | 8×10 → **80** |
+| Respect du délai de livraison | 6×8 → **48** | 10×8 → **80** | 8×9 → **72** |
+| Délai de livraison | 4×7 → **28** | 6×7 → **42** | 7×7 → **49** |
+| Prix | 7×7 → **49** | 6×7 → **42** | 7×7 → **49** |
+| Service | 10×6 → **60** | 8×6 → **48** | 5×6 → **30** |
+| **Total** | **275** | **292** | **280** |
+
+Détail : A = 90 + 48 + 28 + 49 + 60 = **275** · B = 80 + 80 + 42 + 42 + 48 = **292** · C = 80 + 72 + 49 + 49 + 30 = **280**
+:::
+
+---
+
+## Mission 5 — Discussion STA
+
+Discute de la situation de travail et d'apprentissage en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_207_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : Maslow — réalisation de soi → reconnaissance → sociaux → sécurité → fondamentaux
+- **M2** : produits EnterSite au niveau **Sécurité (travail)**
+- **M3** : motifs — développement technique, productivité, besoins sociaux
+- **M4** : scoring A/B/C → **B = 292** (A 275, C 280)
+- **M5** : discussion STA`;
+
+/** Exercices de maths Module 207 — Portes ouvertes / publicité */
+const DEMO_207_MATHS_FULL = `## Exercices de mathématiques — Module 207
+
+Calcule chaque résultat, puis vérifie avec le bouton solution. Thème : publicité en ligne et **journée portes ouvertes**.
+
+### Exercice 1 — Influence de la publicité en ligne
+
+La publicité en ligne attire de plus en plus l'attention. On suppose que **80 %** des internautes regardent la publicité de manière superficielle et que **20 %** la regardent de plus près. Chez **5 %** des utilisateurs qui regardent la publicité de plus près, celle-ci influence la décision d'achat.
+
+Chez combien d'utilisateurs une publicité en ligne avec **15'000** clics influence-t-elle la décision d'achat ?
+
+:::solution
+**150 utilisateurs**
+
+Calcul :
+1. Regardent de plus près : 15'000 × 20 / 100 = **3'000**
+2. Influencés à l'achat : 3'000 × 5 / 100 = **150**
+:::
+
+### Exercice 2 — Tickets de parking
+
+Vous organisez une journée portes ouvertes dans votre entreprise formatrice. En guise d'incitation, vous envoyez aux **1'000** meilleurs clients des tickets de parking gratuits (**5 CHF** le ticket) pour cette journée.
+
+Votre chef veut savoir à combien s'élèveraient les frais de parking si **tous** les clients utilisent cette offre ce jour-là.
+
+:::solution
+**5'000 CHF**
+
+Calcul : 5 × 1'000 = **5'000 CHF**
+:::
+
+### Exercice 3 — Stand barbecue
+
+Lors de la journée portes ouvertes, des saucisses à griller et des cervelas sont proposés au prix de **6 CHF** chacun. **500** clients profitent de cette offre. Vous avez acheté les saucisses chez le boucher pour **1 CHF** chacune.
+
+1. Quel est ton **chiffre d'affaires** au barbecue ?
+2. Peux-tu **compenser** la perte sur les tickets de parking de l'exercice 2 avec cette recette ?
+
+:::solution
+**CA barbecue : 3'000 CHF** · **Non**, on ne peut pas compenser entièrement.
+
+Calculs :
+- CA : 500 × 6 = **3'000 CHF**
+- Coût des saucisses : 500 × 1 = **500 CHF**
+- Bénéfice des saucisses : 3'000 − 500 = **2'500 CHF**
+- Perte parking restante : 5'000 − 2'500 = **2'500 CHF** → **Non** (manque 2'500 CHF)
+:::
+
+### Exercice 4 — Coûts de personnel et coût total
+
+Pour organiser la journée portes ouvertes, il vous a fallu **5** jours de **8,25 h**. Votre salaire s'élève à **25 CHF**/heure.
+
+1. À combien s'élèvent vos **coûts de personnel** pour l'organisation ?
+2. À combien s'élèvent les **frais totaux** pour cette journée (coûts salariaux, tickets de parking et stand de grillades) ?
+
+:::solution
+**Personnel : 1'031,25 CHF** · **Coût total de l'événement : 3'531,25 CHF**
+
+Calculs :
+1. Heures : 5 × 8,25 = **41,25 h** · Coût : 41,25 × 25 = **1'031,25 CHF**
+2. Bénéfice saucisses : 3'000 − 500 = **2'500 CHF**
+3. Total dépense : parking + salaire − bénéfice = 5'000 + 1'031,25 − 2'500 = **3'531,25 CHF**
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 150 / 5'000 / 3'000 / Non / 1'031,25 / 3'531,25`;
+
+const DEMO_207_MATHS_SUMMARY = `## Maths — Solutions
+1. **150** utilisateurs influencés (15'000 × 20 % × 5 %)
+2. Parking **5'000 CHF**
+3. CA BBQ **3'000 CHF** · **Non** (bénéfice 2'500 → manque 2'500)
+4. Personnel **1'031,25 CHF** · total événement **3'531,25 CHF**`;
+
+/** Vérification des acquis Module 207 — PreSales service */
+const DEMO_207_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+*Module 207 — PreSales service*
+
+Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Définis les **services avant-vente** (Pre-Sale-Service) et cite **deux** exemples pratiques.
+
+:::reponse
+**Définition :** services proposés au client **avant** l'achat afin d'aider le vendeur à obtenir des commandes client.
+
+**Exemples :**
+1. Parking gratuit
+2. Heures d'ouverture prolongées
+:::
+
+### Question 2
+
+Pour vendre quelque chose, il faut connaître les besoins des clients potentiels. Nomme les **5 niveaux** de la pyramide de Maslow.
+
+:::reponse
+1. **Besoins fondamentaux**
+2. **Sécurité**
+3. **Besoins sociaux**
+4. **Reconnaissance**
+5. **Réalisation de soi**
+:::
+
+### Question 3
+
+Deux caractéristiques innées chez l'homme influencent considérablement son comportement d'achat et sont utilisées par la psychologie de la vente : son **instinct de chasse** et son **instinct de cueillette**. Décris ces deux notions avec tes propres mots.
+
+:::reponse
+**Instinct de chasse :** les spécialistes du marketing l'utilisent avec les **soldes**. La « chasse aux bonnes affaires » sert surtout à satisfaire l'envie d'acheter et de chasser, plus que les besoins fondamentaux.
+
+**Instinct de cueillette :** exploité avec des **bons de réduction**, des **points** et des **coupons**.
+:::
+
+### Question 4
+
+Quels sont les **quatre motifs d'achat** ?
+
+:::reponse
+1. **Curiosité** — un produit interpelle, envie d'essayer du nouveau
+2. **Augmentation de l'estime de soi** — symboles de statut social
+3. **Engouement / passion** — ex. vieilles voitures, objets d'art
+4. **Envie d'acheter** — objets dont on n'a pas vraiment besoin
+:::
+
+### Question 5
+
+Selon quels **six points** une évaluation des fournisseurs est-elle établie ?
+
+:::reponse
+1. **Qualité** — fonction, propriétés / caractéristiques des produits, prestations et services complémentaires
+2. **Compétences de livraison** — quantité, date de livraison, flexibilité
+3. **Prix** des produits et services achetés, ainsi que le **coût total de possession** associé
+4. **Risque de défaillance** du fournisseur
+5. **Confiance et fiabilité** dans la collaboration
+6. **Dépendance** de l'acheteur vis-à-vis du fournisseur
+:::`;
+
+const DEMO_207_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Services avant-vente · ex. parking gratuit, heures prolongées
+2. Maslow : fondamentaux → sécurité → sociaux → reconnaissance → réalisation de soi
+3. Instincts **chasse** (soldes) / **cueillette** (bons, points, coupons)
+4. Quatre motifs : curiosité, estime, passion, envie d'acheter
+5. Six points : qualité, livraison, prix/TCO, risque, confiance, dépendance`;
 
 /** Contenu Module 208 — At-Sale-Service */
 const DEMO_208_THEORIE_FULL = `## 8. At-Sales-Service (Service à la vente)
@@ -3444,6 +8384,223 @@ const DEMO_208_OBJECTIFS_SUMMARY = `## Objectifs
 - Promotions + cross-selling
 - Contrat + CGV`;
 
+/** Glossaire Module 208 */
+const DEMO_208_GLOSSAIRE_FULL = `## Glossaire — Module 208
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Forcer la main | | Exercer une pression commerciale pour pousser le client à accepter une offre ou une conclusion (ex. cadeau, prix promo) alors qu'il n'est pas pleinement convaincu ; risque d'attentes accrues ou d'effet négatif sur la relation. |
+| Coupons | | Bons / titres permettant d'obtenir une **réduction**, un cadeau ou un avantage lors d'un achat. Souvent liés à la **fidélisation** (collecte de points, tickets, cartes) — traditionnelle (collage) ou numérique. |
+| Imagerie par résonance magnétique (IRM) | IRM | Technique d'imagerie médicale utilisée aussi en recherche marketing pour visualiser les **réactions du cerveau** face à des produits, emballages ou publicités, afin d'affiner les stratégies de vente. |
+| Neuromarketing | | Application des neurosciences au marketing : étude des réactions cérébrales / émotionnelles des consommateurs (ex. via IRM) pour mieux comprendre le comportement d'achat et optimiser présentation, emballage et messages. |`;
+
+const DEMO_208_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Forcer la main** : pression commerciale / risque relationnel
+- **Coupons** : bons fidélité / réductions (manuel ou numérique)
+- **IRM** : images des réactions cérébrales
+- **Neuromarketing** : neurosciences au service du marketing`;
+
+/** Mises en situation Module 208 */
+const DEMO_208_SITUATION_FULL = `## Mises en situation — Module 208
+
+Contexte : tu soutiens le département des **ventes** chez **EnterSite AG**. Les missions portent sur les situations de vente, l'entretien et la promotion. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / exemples proposés.
+
+### Vue d'ensemble des missions
+1. Situations de vente
+2. Entretien de vente
+3. Entretien de vente avec des arguments stimulants
+4. Promotion des ventes
+5. Discussion STA
+
+---
+
+## Mission 1 — Situations de vente
+
+Pendant ton apprentissage, tu peux soutenir le département des ventes pendant trois mois. La directrice de la division, **Madame Silvia Renggli**, te fait remarquer que les produits d'EnterSite AG font partie des besoins quotidiens des entreprises et que nous devons mener l'entretien de vente avec un **minimum d'efforts** pour nous-mêmes et pour nos clients. Que veut dire Madame Renggli par cette déclaration ?
+
+:::reponse
+Madame Renggli souhaite faire savoir qu'EnterSite relève d'un **« achat de tous les jours »** (besoins courants). **Aucun conseil** n'est nécessaire : les produits sont achetés et vendus le plus **rapidement** et le plus **simplement** possible.
+:::
+
+---
+
+## Mission 2 — Entretien de vente
+
+Pour la première fois, tu peux servir personnellement un client au guichet d'accueil avec Madame Renggli. Elle attend de toi que tu te prépares bien à l'entretien de vente à venir afin de pouvoir représenter EnterSite AG de manière compétente. Quels sont les **cinq points** sur lesquels tu dois te baser pour mener l'entretien de vente ?
+
+:::reponse
+1. **Évaluer correctement** le motif d'achat du client
+2. **S'adresser personnellement** au client (« vous » et pas « on »)
+3. Orienter la conversation pour **mettre toujours l'objet de la vente au centre**
+4. Être en mesure d'indiquer au client l'**utilité** du produit ou du service
+5. Être capable de vendre au client le **bon produit** ou la **prestation appropriée**
+:::
+
+---
+
+## Mission 3 — Entretien de vente avec des arguments stimulants
+
+Pendant l'entretien de vente, tu remarques que le client veut te faire sortir de tes gonds et tente de te provoquer en te donnant des informations sur la concurrence. Quelles règles de comportement devrais-tu appliquer pour calmer ton client (lui « couper l'herbe sous le pied ») ?
+
+:::reponse
+- Rester **calme**
+- **Écouter activement**
+- Laisser le client **s'exprimer**
+- Garder une **intonation neutre**
+- Ne pas chercher à convaincre le client **à n'importe quel prix**
+:::
+
+---
+
+## Mission 4 — Promotion des ventes
+
+Madame Renggli a suivi ton entretien de vente et te donne encore quelques conseils pour la prochaine fois. Si le client commence à provoquer pendant l'entretien, tu peux lui soumettre un **prix promotionnel** ou lui remettre un **échantillon publicitaire** (ex. un tapis de souris) en guise de cadeau. Quels avantages Mme Renggli voit-elle dans les deux promotions de vente ?
+
+:::reponse
+Madame Renggli voit la possibilité de **satisfaire le client** avec un « cadeau ». Elle craint peut-être que le client ne se tourne vers la **concurrence** dans le cas contraire.
+
+**Effets négatifs possibles à considérer :**
+- Quelles seront les **prochaines exigences** du client (habitude d'être « forcé la main » / d'obtenir toujours un avantage) ?
+- Que penseront les **autres clients** si on leur propose un prix promotionnel (équité, image de marque) ?
+:::
+
+---
+
+## Mission 5 — Discussion STA
+
+Discute de la situation de travail et d'apprentissage en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_208_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : achat quotidien → rapidité / simplicité, peu de conseil
+- **M2** : 5 points d'entretien (motif, « vous », objet, utilité, bon produit)
+- **M3** : calme · écoute · expression · ton neutre · pas à tout prix
+- **M4** : cadeau / promo pour satisfaire — mais risques (exigences ↑, équité)
+- **M5** : discussion STA`;
+
+/** Exercices de maths Module 208 */
+const DEMO_208_MATHS_FULL = `## Exercices de mathématiques — Module 208
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Supplément par point (mixeur)
+
+Lors de tes achats, tu reçois un point pour chaque franc dépensé. Avec **150 points**, un mixeur d'une valeur de **18 francs** t'est offert.
+
+Quel est le **supplément par point** qui a été pris en compte pour pouvoir distribuer gratuitement le mixeur ?
+
+:::solution
+\\( 18 / 150 = 0{,}12 \\) CHF = **12 centimes** par point
+:::
+
+### Exercice 2 — Montant publicitaire (bons Migros)
+
+Chaque semaine, **1'500'000** Suisses reçoivent de la publicité de Migros. Dans le journal publicitaire se trouve un bon d'une valeur de **10 francs**. **45 %** des clientes et clients profitent de l'occasion et utilisent le bon lors de leur prochain achat.
+
+Quel montant de publicité doit être supporté par le marketing ?
+
+:::solution
+\\( 1\\,500\\,000 \\times 0{,}45 \\times 10 = \\mathbf{6\\,750\\,000} \\) CHF
+:::
+
+### Exercice 3 — Dégustation fromage (clients par magasin)
+
+Samedi, un nouveau fromage est proposé à la dégustation dans les **600** magasins Migros. Chaque client qui passe devant peut déguster un cube de **2 grammes**. Le lundi suivant, le décompte quantitatif de tous les magasins (**1'200 kg**) est envoyé au service marketing.
+
+Combien de clients **par magasin** ont dégusté le nouveau fromage samedi ?
+
+:::solution
+\\( 1\\,200 / (600 \\times 0{,}002) = \\mathbf{1\\,000} \\) clients par magasin
+
+*(0,002 kg = 2 g)*
+:::
+
+### Exercice 4 — Clients en heures de pointe (boulangerie)
+
+Dans une boulangerie, il faut en moyenne **2 minutes** à une vendeuse pour servir et encaisser le client.
+
+Quel est le nombre **maximal** de clients que la vendeuse peut servir pendant les heures de pointe, de **6h00 à 8h00** ?
+
+:::solution
+Durée : \\( 2 \\times 60 = 120 \\) min  
+\\( 120 / 2 = \\mathbf{60} \\) clients
+:::`;
+
+const DEMO_208_MATHS_SUMMARY = `## Maths — Solutions
+1. **12** centimes / point
+2. **6'750'000** CHF
+3. **1'000** clients / magasin
+4. **60** clients`;
+
+/** Vérification des acquis Module 208 */
+const DEMO_208_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **At-Sales-Service (service à la vente)**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quelles sont tes attentes lorsque tu achètes un produit courant pour lequel tu n'as pas besoin de conseils ? Donne **quatre** exemples.
+
+:::reponse
+1. Un **service rapide**
+2. Un **traitement simple** de la transaction
+3. Un **bon service** (orienté client)
+4. Un **bon prix** (bonne qualité à un prix raisonnable)
+:::
+
+### Question 2
+
+Comment réagis-tu à la question d'un client à laquelle tu ne peux pas répondre ? Décris **quatre** exemples pratiques.
+
+:::reponse
+1. **Admettre** que je ne sais pas quelque chose
+2. Proposer au client d'**aller chercher** l'information
+3. **Collecter** des informations (fournisseur, chef·fe, etc.)
+4. **Transmettre** la réponse au client dans un délai raisonnable (téléphone ou e-mail)
+:::
+
+### Question 3
+
+Qu'entend-on par « **promotion des ventes** » ?
+
+:::reponse
+Par promotion des ventes, on entend **toutes les mesures** qu'une organisation de vente peut prendre pour **améliorer les ventes** de produits et de services.
+:::
+
+### Question 4
+
+Quelles **mesures** de promotion des ventes peut-on citer ? Donne plusieurs exemples.
+
+:::reponse
+- Offrir des **réductions** ou des promotions temporaires
+- Proposer des **échantillons gratuits** pour faire découvrir un produit
+- Mettre en place des **programmes de fidélité** avec des récompenses
+- Organiser des **événements promotionnels** en magasin ou en ligne
+- Utiliser des stratégies de **publicité ciblées**
+:::
+
+### Question 5
+
+Quels sont les **cinq comportements** indiqués lorsque les clients n'argumentent pas de manière objective, mais de façon **provocatrice** ?
+
+:::reponse
+1. Rester **calme**
+2. **Écouter activement**
+3. Laisser le client **s'exprimer**
+4. Garder un **ton neutre et objectif**
+5. Ne pas chercher à convaincre le client **à tout prix**
+:::`;
+
+const DEMO_208_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Rapidité · simplicité · bon service · bon prix
+2. Admettre · chercher · collecter · transmettre (délai)
+3. Toutes les mesures pour améliorer les ventes
+4. Réductions · échantillons · fidélité · événements · pub ciblée
+5. Calme · écoute · expression · ton neutre · pas à tout prix`;
+
 /** Contenu Module 209 — After-Sales-Service */
 const DEMO_209_THEORIE_FULL = `## 9. After-Sales-Service (service après-vente / SAV)
 
@@ -3603,6 +8760,237 @@ const DEMO_209_OBJECTIFS_SUMMARY = `## Objectifs
 - Réclamation vs plainte
 - Enquêtes + concours
 - Geste commercial · garanties`;
+
+/** Glossaire Module 209 */
+const DEMO_209_GLOSSAIRE_FULL = `## Glossaire — Module 209
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Support | | Assistance apportée au client **après** l'achat (technique et/ou commerciale) : formation, maintenance, réparation, conseils d'utilisation, etc. Fait partie du SAV pour accompagner et fidéliser. |
+| Réclamation | | Demande du client portant sur un **produit ou service précis** qui présente un **défaut matériel** déjà présent avant la remise (non-conformité au contrat). Ouvre le **droit légal à la garantie** (réparation ou échange). Délai légal : **2 ans**. |
+| Piège de l'abonnement | | Pratique trompeuse (souvent via faux avis de gain / jeux-concours) visant à pousser le consommateur à conclure un **abonnement** ou un contrat payant (frais, numéros surtaxés, marchandises chères de mauvaise qualité). |
+| Commercial | | Relatif à la **vente** et à la relation client. Un **geste commercial** (bonne volonté / complaisance) est une concession **unilatérale et volontaire** : l'entreprise n'y est pas légalement tenue (≠ garantie). |
+| Stratégie | | Plan d'action à moyen / long terme (ex. marketing, vente, fidélisation). Les enquêtes clients servent notamment à fonder les **stratégies** marketing et de vente des années suivantes. |`;
+
+const DEMO_209_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Support** : assistance après achat (formation, maintenance…)
+- **Réclamation** : défaut matériel → garantie (2 ans)
+- **Piège de l'abonnement** : arnaque via faux concours / contrat forcé
+- **Commercial** : vente · geste commercial = volontaire (≠ garantie)
+- **Stratégie** : plan marketing / vente (souvent via enquêtes)`;
+
+/** Mises en situation Module 209 */
+const DEMO_209_SITUATION_FULL = `## Mises en situation — Module 209
+
+Contexte : tu travailles chez **EnterSite AG**. Les missions portent sur le **service après-vente** (fidélisation, réclamations, geste commercial). Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / exemples proposés.
+
+### Vue d'ensemble des missions
+1. Fidéliser la clientèle
+2. Réclamation (cartouche d'encre)
+3. Plainte ou réclamation
+4. Tolérance / geste commercial
+5. Travail de fin d'études — service à la clientèle (EnterSite)
+6. Discussion STA
+
+---
+
+## Mission 1 — Fidéliser la clientèle
+
+Pendant ton apprentissage, tu peux soutenir le département des ventes pendant **trois mois** et y exercer différentes activités. Madame **Silvia Renggli** veut savoir de toi comment EnterSite AG peut **fidéliser ses clients plus longtemps**.
+
+:::reponse
+Les clients peuvent être fidélisés de différentes manières. Les services **techniques et/ou commerciaux après l'achat** du produit en sont un exemple : formation des opérateurs, services de **maintenance** et de **réparation**, services de **gestion**.
+:::
+
+---
+
+## Mission 2 — Réclamation
+
+Un client se présente à ton guichet avec une réclamation : sa **cartouche d'encre** n'a pas tenu **deux ans**. En tant que représentant·e de ton entreprise, comment peux-tu aider ton client à ce sujet ? Le client a-t-il droit à une réclamation ?
+
+:::reponse
+Le délai pendant lequel les réclamations peuvent être faites est fixé par la loi : il est de **deux ans**. Je peux essayer d'être aussi **conciliant·e** que possible et de proposer ainsi une aide équitable au client.
+:::
+
+---
+
+## Mission 3 — Plainte ou réclamation
+
+Ton client au guichet est confus et utilise une fois le mot « **plainte** » et une fois le mot « **réclamation** » pour sa cartouche d'encre vide. Explique à ton client ce qu'est une réclamation et ce qu'est une plainte.
+
+:::reponse
+Une **réclamation** porte sur un produit ou un service **spécifique**. Elle comprend le **droit légal à la garantie** si le produit ou le service ne correspond pas aux spécifications convenues dans le contrat de vente.
+
+Avec une **plainte**, le client exprime simplement son **insatisfaction** (mécontentement), sans forcément invoquer la garantie.
+:::
+
+---
+
+## Mission 4 — Tolérance / geste commercial
+
+Tu récupères la cartouche d'encre vide et lis la puce intégrée. Tu constates qu'elle n'a imprimé que **150 feuilles** au cours des deux dernières années. Avec cette information, tu retournes vers ton client et lui proposes une **cartouche de remplacement gratuitement**. Le client veut savoir quelle est la différence entre le **geste commercial** et la **garantie**.
+
+:::reponse
+Le **geste commercial** désigne la concession **unilatérale et volontaire** entre deux parties contractuelles. Une entreprise n'est **pas** légalement tenue d'être conciliante : elle peut l'être si elle le souhaite. Le geste commercial ne peut être accordé qu'**après** l'exécution complète d'une commande. Juridiquement, c'est une décision volontaire de **renoncer** à des droits fixés par contrat. Il se distingue de la **garantie**, qui est régie par la **loi**.
+
+En Suisse, les consommateurs ont, selon la loi, **deux ans** de garantie sur les objets achetés : le vendeur doit garantir l'absence de défaut. Cette période est **obligatoire** et ne peut pas être raccourcie. Il est toutefois permis d'**exclure totalement** une garantie dans un contrat ; dans ce cas, regarder absolument la **garantie du fabricant**.
+:::
+
+---
+
+## Mission 5 — Travail de fin d'études (service à la clientèle)
+
+> **Astuce EnterSite** : suis la visite virtuelle jusqu'à la salle **13 V1**. Visite la salle de travail de l'école professionnelle virtuelle au sein d'EnterSite. Cherche l'image de droite et résous le **travail de fin d'études** sur le service à la clientèle. Lien : [Vers le site EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+:::reponse
+**Réponse individuelle** — selon le travail de fin d'études EnterSite (pas de solution unique ici).
+:::
+
+---
+
+## Mission 6 — Discussion STA
+
+Discute de la situation de travail et d'apprentissage en plénière avec la classe et l'enseignant·e. Prends des notes supplémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_209_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : fidélisation via SAV (formation, maintenance, réparation, gestion)
+- **M2** : réclamation cartouche · délai légal **2 ans** · conciliant
+- **M3** : réclamation = garantie légale · plainte = mécontentement
+- **M4** : geste commercial (volontaire) ≠ garantie (loi, 2 ans)
+- **M5** : EnterSite salle **13 V1** (fin d'études service clientèle)
+- **M6** : discussion STA`;
+
+/** Exercices de maths Module 209 */
+const DEMO_209_MATHS_FULL = `## Exercices de mathématiques — Module 209
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Kilomètres chez les gros clients
+
+**Sarah Nydegger** rend visite à différents gros clients **deux fois par semaine**. Le trajet **aller** pour se rendre chez le client est en moyenne de **100 km**.
+
+Combien de kilomètres parcourt-elle **par an** pour EnterSite AG, si elle travaille **47 semaines** par an ?
+
+:::solution
+**18'800 km**
+
+Calcul : 47 × 2 × 100 × 2 = **18'800 km**  
+(47 semaines × 2 visites × 100 km aller × 2 pour l'aller-retour)
+:::
+
+### Exercice 2 — Provision garanties et réclamations
+
+Pour la garantie et les réclamations, on compte **1,5 %** du chiffre d'affaires par an. Ton entreprise réalise un chiffre d'affaires de **1'250'000 francs** par mois.
+
+Quel est le montant de la provision pour les garanties et réclamations ?
+
+:::solution
+**225'000 CHF**
+
+Calcul : 1'250'000 × 12 × 1,5 % = 1'250'000 × 12 × 0,015 = **225'000 CHF**
+:::
+
+### Exercice 3 — Budget jeu-concours
+
+Pour la journée portes ouvertes, tu organises un jeu-concours. Ton patron te libère **0,25 ‰** du chiffre d'affaires annuel.
+
+Combien d'argent recevras-tu pour cette journée (mêmes valeurs que l'exercice 2) ?
+
+:::solution
+**3'750 CHF**
+
+Calcul : 1'250'000 × 12 × 0,25 / 1'000 = **3'750 CHF**
+:::
+
+### Exercice 4 — Coût d'une enquête client
+
+Tu engages un spécialiste des enquêtes qui doit réaliser pour toi une enquête auprès des clients via les médias sociaux. Il te demande **1'650 francs** pour ce service.
+
+Quel est le **pourcentage** du chiffre d'affaires annuel (mêmes valeurs que l'exercice 2) ?
+
+:::solution
+**0,011 %**
+
+Calcul : 1'650 / (1'250'000 × 12) × 100 = **0,011 %**
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 18'800 · 225'000 · 3'750 · 0,011`;
+
+const DEMO_209_MATHS_SUMMARY = `## Maths — Solutions
+1. **18'800 km** (47 × 2 × 100 × 2)
+2. **225'000 CHF** (1'250'000 × 12 × 1,5 %)
+3. **3'750 CHF** (CA annuel × 0,25 ‰)
+4. **0,011 %** (1'650 / CA annuel × 100)`;
+
+/** Vérification des acquis Module 209 */
+const DEMO_209_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Le service après-vente**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Définis le **service après-vente** et formule **deux** exemples pratiques.
+
+:::reponse
+**Définition :** le service après-vente décrit l'ensemble des **mesures marketing** prises par une entreprise pour **fidéliser à long terme** le client concerné après la vente réussie d'un produit.
+
+**Exemples :**
+1. Formation du personnel de service / des opérateurs
+2. Services de maintenance et de réparation
+:::
+
+### Question 2
+
+Tu achètes un nouveau produit. Selon la loi, combien de temps le fournisseur doit-il t'accorder la **garantie** ?
+
+:::reponse
+**2 ans**
+:::
+
+### Question 3
+
+Pourquoi les entreprises organisent-elles des **jeux-concours** ? Donne **deux** exemples.
+
+:::reponse
+1. Faire de la **publicité** et obtenir des **données personnelles** de consommateurs potentiels pour le commerce d'adresses (marketing direct).
+2. Attirer l'attention sur les **réseaux sociaux**.
+:::
+
+### Question 4
+
+Quels sont les objectifs de l'entreprise lorsqu'elle mène une **enquête** auprès de ses clients ? Cite au moins **quatre** objectifs.
+
+:::reponse
+Parmi les objectifs (citer au moins quatre) :
+- Déterminer les **besoins**, souhaits, attitudes et attentes des clients
+- Percevoir à temps les évolutions négatives (**alerte précoce**)
+- Obtenir des infos sur les **forces et faiblesses** de l'entreprise
+- Créer une base pour les **stratégies** marketing et de vente
+- **Prévenir** les départs de clients
+- Montrer que l'entreprise se **soucie** de ses clients
+- Augmenter la **fidélisation** (**Satisfied → Loyal → Advocate** : satisfait → fidèle → ambassadeur)
+:::
+
+### Question 5
+
+Quelle est la différence entre la **bonne volonté** (tolérance / geste commercial) et la **garantie** ?
+
+:::reponse
+**Bonne volonté / tolérance :** peut être accordée, mais ce n'est **pas** une obligation légale.
+
+**Garantie :** en Suisse, les consommateurs ont, selon la loi, **deux ans** de garantie sur les objets achetés — le vendeur doit garantir l'absence de défaut.
+:::`;
+
+const DEMO_209_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. SAV = mesures marketing post-vente pour fidéliser · ex. formation, maintenance/réparation
+2. Garantie légale : **2 ans**
+3. Concours : pub + données · attraction réseaux sociaux
+4. Enquête : besoins, alerte précoce, forces/faiblesses, stratégies, prévenir départs, image, fidélisation (Satisfied → Loyal → Advocate)…
+5. Bonne volonté = volontaire · garantie = obligation légale (2 ans)`;
 
 /** Contenu Module 301 — Logistique d'approvisionnement */
 const DEMO_301_THEORIE_FULL = `## 1. La logistique d'approvisionnement
@@ -10693,6 +16081,256 @@ const DEMO_803_OBJECTIFS_SUMMARY = `## Objectifs
 /** Contenu Module 804 — Fondation Microsoft 365 / Bases & droit d'auteur */
 const DEMO_804_THEORIE_FULL = `## 4. Bases de l'informatique et droit d'auteur
 
+### 0.1 Utilisation — ENT VS Se connecter
+
+Première connexion à l'environnement numérique de travail Valais ([edu.vs.ch](https://edu.vs.ch)).
+
+#### Connexion
+
+1. Ouvrir [https://edu.vs.ch](https://edu.vs.ch)
+2. Cliquer sur **Connexion**
+
+![Page d'accueil edu.vs.ch — Connexion](/assets/curriculum/804/ent-vs-accueil.png)
+
+3. Optionnel : changer la langue via **FR**
+4. Saisir le nom d'utilisateur et le mot de passe reçus en classe
+5. Cliquer sur **Connexion**
+
+![Formulaire de connexion ICT-VS](/assets/curriculum/804/ent-vs-connexion.png)
+
+#### Première connexion
+
+Lors de la première connexion, le système demande de changer le mot de passe.
+
+5. Saisir à nouveau le mot de passe reçu en classe (**mot de passe actuel**)
+6. Saisir un **nouveau mot de passe** en respectant les règles :
+
+- Entre 10 et 50 caractères
+- Majuscule, minuscule, chiffre et caractère spécial
+- Ne doit pas contenir le prénom / nom
+- Doit être différent des 10 derniers mots de passe
+
+7. Confirmer le nouveau mot de passe
+8. Cliquer sur **Modifier mon mot de passe**
+
+![Changer le mot de passe](/assets/curriculum/804/ent-vs-mot-de-passe.png)
+
+> Vous êtes maintenant connecté sur votre environnement numérique de travail.
+
+![Tableau de bord ENT VS](/assets/curriculum/804/ent-vs-tableau-de-bord.png)
+
+### 0.2 Utilisation — TEAMS
+
+#### Lancer TEAMS depuis l'ENT
+
+1. Cliquer sur **Accès** (carte Teams)
+2. Saisir l'identifiant Teams — id ENT (\`prenom.nom@edu.vs.ch\`)
+3. Cliquer sur **Suivant**
+4. Cliquer sur **Utilisez l'application Web à la place**
+
+![Mes services — Accès Teams](/assets/curriculum/804/teams-acces.png)
+
+![Connexion Microsoft — identifiant](/assets/curriculum/804/teams-identifiant.png)
+
+![Choisir l'application Web Teams](/assets/curriculum/804/teams-web.png)
+
+> Vous pouvez aussi installer le client de bureau ; l'application Web suffit pour démarrer.
+
+#### La barre latérale
+
+- **Activité** — notifications
+
+![Activité](/assets/curriculum/804/teams-icone-activite.png)
+
+- **Conversation** — conversations
+
+![Conversation](/assets/curriculum/804/teams-icone-conversation.png)
+
+- **Équipes** — classe
+
+![Équipes](/assets/curriculum/804/teams-icone-equipes.png)
+
+- **Affectations** — devoirs
+
+![Affectations](/assets/curriculum/804/teams-icone-affectations.png)
+
+- **Calendrier** — calendrier
+
+![Calendrier](/assets/curriculum/804/teams-icone-calendrier.png)
+
+#### Les conversations et messages
+
+1. Chercher un élève ou un professeur
+2. Taper le message
+
+![Nouvelle conversation Teams](/assets/curriculum/804/teams-conversations.png)
+
+#### Votre classe
+
+1. Sélectionner votre classe
+
+![Sélection de la classe](/assets/curriculum/804/teams-classe.png)
+
+#### Les canaux (branches)
+
+1. Consulter les branches / canaux disponibles
+2. Pour un canal masqué : **…** → **Afficher**
+
+![Canaux de la classe](/assets/curriculum/804/teams-canaux.png)
+
+![Afficher un canal masqué](/assets/curriculum/804/teams-canaux-masques.png)
+
+#### Les ressources disponibles
+
+1. Ouvrir un canal → onglet **Fichiers** → naviguer dans les dossiers
+
+![Fichiers du canal](/assets/curriculum/804/teams-fichiers.png)
+
+#### Téléchargements
+
+1. Sur un document → **…** → **Télécharger**
+
+![Menu — Télécharger un fichier](/assets/curriculum/804/teams-telecharger.png)
+
+#### Les devoirs
+
+1. Ouvrir **Affectations**
+2. Voir les échéances
+3. Sélectionner un devoir
+4. Télécharger les documents de référence / faire le travail
+5. **Joindre** (PC ou OneDrive)
+6. **Ouvrir** le fichier choisi
+7. Cliquer sur **Remettre**
+
+![Liste des affectations](/assets/curriculum/804/teams-affectations.png)
+
+![Détail du devoir — documents et Remettre](/assets/curriculum/804/teams-devoir.png)
+
+![Joindre un fichier](/assets/curriculum/804/teams-joindre.png)
+
+![Boîte de dialogue Ouvrir](/assets/curriculum/804/teams-remettre.png)
+
+### 0.3 Utilisation — Installation d'Office 365
+
+1. Aller dans votre espace ENT
+2. Sélectionner l'application **Office 365** → **Accès**
+3. Cliquer sur **Installer Office**
+4. Le téléchargement commence dans le navigateur (\`OfficeSetup.exe\`)
+5. Ouvrir le dossier du fichier téléchargé (par défaut **Téléchargements**)
+6. Accepter et lancer l'installation
+7. Attendre la fin de l'installation
+8. Lancer Office 365 depuis le bureau (recherche Windows : « 365 »)
+
+![ENT — Accès Office 365](/assets/curriculum/804/office-acces.png)
+
+![Installer Office](/assets/curriculum/804/office-installer.png)
+
+![Téléchargement OfficeSetup.exe](/assets/curriculum/804/office-telechargement.png)
+
+![Dossier Téléchargements](/assets/curriculum/804/office-dossier-telechargements.png)
+
+![Progression de l'installation](/assets/curriculum/804/office-progression.png)
+
+![Tout est prêt !](/assets/curriculum/804/office-pret.png)
+
+![Recherche Windows — 365](/assets/curriculum/804/office-recherche-windows.png)
+
+![Portail Microsoft 365 — Installer des applications](/assets/curriculum/804/office-portail.png)
+
+### 0.4 Utilisation — OneDrive
+
+#### Se connecter à OneDrive
+
+1. Aller dans l'espace ENT
+2. Sélectionner **OneDrive** → **Accès**
+3. Saisir l'adresse e-mail complète (\`prenom.nom@edu.vs.ch\`)
+4. Cliquer sur **Suivant**
+5. Fenêtre **Rester connecté ?** — sur un PC partagé, mieux vaut **ne pas** rester connecté
+
+![ENT — Accès OneDrive](/assets/curriculum/804/onedrive-acces.png)
+
+![Connexion Microsoft — e-mail](/assets/curriculum/804/onedrive-connexion.png)
+
+![Rester connecté ?](/assets/curriculum/804/onedrive-rester-connecte.png)
+
+![OneDrive — Mes fichiers](/assets/curriculum/804/onedrive-mes-fichiers.png)
+
+#### Créer un nouveau dossier
+
+1. **+ Nouveau**
+2. **Dossier**
+3. Saisir le nom
+4. **Créer**
+5. Trois points verticaux → menu d'actions
+
+![Menu + Nouveau — Dossier](/assets/curriculum/804/onedrive-nouveau-dossier.png)
+
+![Créer un dossier](/assets/curriculum/804/onedrive-creer-dossier.png)
+
+![Dossier créé — Afficher les actions](/assets/curriculum/804/onedrive-actions.png)
+
+#### Insérer un fichier
+
+1. **Charger**
+2. **Fichiers** (ou glisser-déposer)
+3. Sélectionner le fichier
+4. **Ouvrir** (Ctrl pour une sélection multiple)
+
+![Charger → Fichiers](/assets/curriculum/804/onedrive-charger.png)
+
+![Boîte de dialogue Ouvrir](/assets/curriculum/804/onedrive-ouvrir.png)
+
+#### Restaurer un fichier
+
+Les éléments supprimés vont dans la **Corbeille** ; on peut les restaurer.
+
+1. Ouvrir **Corbeille**
+2. Sélectionner l'élément
+3. Cliquer sur **Restaurer**
+
+![Corbeille — Restaurer](/assets/curriculum/804/onedrive-corbeille.png)
+
+### 0.5 Utilisation — Outlook
+
+#### Connexion à Outlook
+
+1. Aller dans l'espace ENT
+2. Sélectionner **Outlook** → **Accès**
+3. Saisir l'adresse \`prenom.nom@edu.vs.ch\`
+4. Cliquer sur **Suivant**
+
+![ENT — Accès Outlook](/assets/curriculum/804/outlook-acces.png)
+
+![Connexion Outlook — e-mail](/assets/curriculum/804/outlook-connexion.png)
+
+#### Réception de nouveaux messages
+
+Vous êtes sur la page d'accueil de la boîte aux lettres. Les nouveaux messages arrivent automatiquement et restent dans **Boîte de réception**.
+
+![Boîte de réception Outlook](/assets/curriculum/804/outlook-boite.png)
+
+#### Répondre à un message
+
+1. Cliquer sur le résumé du message
+2. Le message complet s'affiche à droite
+3. Cinq symboles en haut à droite
+4. Flèche gauche = répondre à l'expéditeur
+5. Double flèche gauche = répondre à tous
+6. Flèche droite = transférer
+
+![Icônes Répondre / Répondre à tous / Transférer](/assets/curriculum/804/outlook-repondre.png)
+
+#### Écrire un courriel
+
+1. Les champs **De** et **À** sont à remplir dans l'en-tête
+2. Rédiger le message dans l'éditeur
+3. Cliquer sur **Envoyer**
+4. Vérifier l'envoi via **Éléments envoyés**
+
+![Rédaction d'un courriel — Envoyer](/assets/curriculum/804/outlook-ecrire.png)
+
+![Éléments envoyés](/assets/curriculum/804/outlook-envoyes.png)
+
 ### 4.1 Démarrage et arrêt de l'ordinateur
 
 Après mise sous tension : **booting** (microprogramme) → vérif. périphériques → chargement du système d'exploitation en mémoire → fenêtre de connexion / bureau.
@@ -10794,6 +16432,13 @@ Vol de propriété intellectuelle · punissable. Poursuites difficiles (Internet
 
 const DEMO_804_THEORIE_SUMMARY = `## À retenir — Module 804
 
+### Utilisation ENT / M365
+ENT VS : edu.vs.ch → Connexion → 1ʳᵉ fois changer MDP  
+Teams : Accès → Web · barre latérale · canaux · devoirs  
+Office 365 : Installer Office · OfficeSetup · recherche « 365 »  
+OneDrive : Accès · dossier · charger · corbeille  
+Outlook : Accès · boîte · répondre · envoyer
+
 ### Windows
 Boot → connexion domaine · bureau · corbeille · raccourcis  
 Explorateur · dossiers perso · sessions · veille / arrêt  
@@ -10806,18 +16451,20 @@ Plagiat = infraction · CH : situation nuancée`;
 
 const DEMO_804_APERCU_FULL = `## Aperçu du module 804
 
-Ce module pose les **bases Windows** (bureau, fichiers, sessions) et introduit le **droit d'auteur** / licences logicielles — fondation avant Word, Excel, etc.
+Ce module pose les **bases Windows** (bureau, fichiers, sessions), guide l'**utilisation ENT / Microsoft 365** (Teams, Office, OneDrive, Outlook) et introduit le **droit d'auteur** / licences — fondation avant Word, Excel, etc.
 
 ### Vous allez découvrir
-1. Démarrage, connexion et interface du bureau Windows 11
-2. Fichiers, dossiers, sessions, arrêt / veille, Gestionnaire des tâches
-3. Formats régionaux et outils de la barre des tâches
-4. Licences, copyright suisse, partage de fichiers et plagiat
+1. Connexion ENT VS, Teams, installation Office 365, OneDrive et Outlook
+2. Démarrage, connexion et interface du bureau Windows 11
+3. Fichiers, dossiers, sessions, arrêt / veille, Gestionnaire des tâches
+4. Formats régionaux et outils de la barre des tâches
+5. Licences, copyright suisse, partage de fichiers et plagiat
 
 ### Source
 EnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT`;
 
 const DEMO_804_APERCU_SUMMARY = `## Aperçu — Module 804
+- ENT · Teams · Office · OneDrive · Outlook
 - Bureau Windows · fichiers · sessions
 - Arrêt / veille · panne
 - Licences · copyright · plagiat`;
@@ -10826,12 +16473,14 @@ const DEMO_804_OBJECTIFS_FULL = `## Objectifs du module 804
 
 À l'issue de ce module, l'apprenti·e est capable de :
 
+- Se connecter à l'**ENT VS** et utiliser **Teams**, **OneDrive**, **Outlook** et installer **Office 365**
 - Démarrer / se connecter / utiliser le **bureau** Windows (corbeille, raccourcis, explorateur)
 - Créer des dossiers, gérer les **sessions**, arrêter / mettre en veille et quitter une app bloquée
 - Paramétrer formats régionaux et outils de la barre des tâches
 - Distinguer types de licences / logiciels et appliquer les règles de base du **droit d'auteur** (CH)`;
 
 const DEMO_804_OBJECTIFS_SUMMARY = `## Objectifs
+- ENT · Teams · Office · OneDrive · Outlook
 - Bureau · fichiers · sessions
 - Veille / panne
 - Licences · copyright`;
@@ -10920,7 +16569,296 @@ Insertion → Numéro de page → Haut / Bas de page · styles prédéfinis.
 
 ### 5.11 Imprimer
 
-**Fichier → Imprimer** : aperçu à droite · choisir imprimante et paramètres · quitter via la flèche haut gauche.`;
+**Fichier → Imprimer** : aperçu à droite · choisir imprimante et paramètres · quitter via la flèche haut gauche.
+
+### 5.12 Tableaux
+
+Un **tableau** organise les informations en **grille** (lignes et colonnes). Utile pour comparer des données, un planning, un formulaire, un devis, etc.
+
+#### 5.12.1 Création d'un tableau
+1. Onglet **Insertion**
+2. Cliquer **Tableau**
+3. Sélectionner la taille (ex. **4×4**) ou **Insérer un tableau…**
+
+![Insertion → Tableau 4×4](/assets/curriculum/805/tableau-insertion.png)
+
+#### 5.12.2 Modification du tableau
+Sélectionner le tableau ou placer le curseur dans une cellule → les onglets **Création** et **Disposition** apparaissent à droite du ruban.
+
+![Onglets Création et Disposition](/assets/curriculum/805/tableau-creation-disposition.png)
+
+#### 5.12.3 Changer la taille
+1. Sélectionner une colonne, puis glisser les marques sur la **règle**
+2. Ou utiliser l'onglet **Disposition**
+3. Modifier hauteur / largeur dans **Taille de la cellule**
+
+![Marques de colonnes sur la règle](/assets/curriculum/805/tableau-regle-colonnes.png)
+
+![Disposition — Taille de la cellule](/assets/curriculum/805/tableau-taille-cellule.png)
+
+#### 5.12.4 Ajouter ou supprimer des lignes / colonnes
+1. Sélectionner la ligne ou la colonne
+2. **Disposition** → **Supprimer**
+3. Ou **Insérer** une ligne / colonne (au-dessus, en dessous, à gauche, à droite)
+
+![Lignes et colonnes — Insérer / Supprimer](/assets/curriculum/805/tableau-lignes-colonnes.png)
+
+#### 5.12.5 Aligner le texte dans le tableau
+1. Sélectionner la ou les cellule(s)
+2. **Disposition** → l'alignement désiré (**9** positions : coin supérieur gauche … coin inférieur droit)
+
+![Neuf icônes d'alignement](/assets/curriculum/805/tableau-alignement-icones.png)
+
+![Exemple d'alignements dans un tableau 3×3](/assets/curriculum/805/tableau-alignement-exemple.png)
+
+#### 5.12.6 Fusionner et fractionner des cellules
+1. Sélectionner les cellules (ou lignes / colonnes)
+2. **Disposition** → **Fusionner**
+3. Ou **Fractionner** pour découper une cellule
+
+![Fusionner / Fractionner](/assets/curriculum/805/tableau-fusionner-fractionner.png)
+
+#### 5.12.7 Encadrer des cellules
+1. Sélectionner les lignes / colonnes (ou cellules)
+2. Onglet **Création**
+3. Groupe **Bordures** pour ajouter ou enlever des traits
+
+![Création — groupe Bordures](/assets/curriculum/805/tableau-bordures.png)
+
+### 5.13 Styles
+
+#### 5.13.1 Un style, c'est quoi ?
+Un **style** est un ensemble de mises en forme enregistrées — typiquement une **police**, une **taille** et un **alignement** de paragraphe. À l'ouverture de Word, le modèle **Normal** est sélectionné par défaut. Ce modèle contient des styles de **titres** et plusieurs autres styles prêts à l'emploi.
+
+**Types de styles :**
+- **a.** Style de **caractère** — mise en forme d'un mot ou d'une sélection (police, gras, couleur…)
+- **b.** Style de **paragraphe** — mise en forme de tout le paragraphe (alignement, interligne, retraits…)
+- **c.** Style **lié** — combine caractère et paragraphe
+- **d.** Style de **liste** — puces / numérotation
+- **e.** Style de **tableau** — apparence globale d'un tableau
+
+#### 5.13.2 Utilité des styles
+En **modifiant un style**, **toutes les occurrences** de ce style dans le document sont mises à jour automatiquement. Gain de temps, cohérence visuelle, et base indispensable pour une **table des matières**.
+
+#### 5.13.3 Appliquer un style
+1. Sélectionner le texte (ou placer le curseur dans le paragraphe)
+2. Onglet **Accueil** → groupe **Styles**
+3. Cliquer le style voulu dans la **galerie** (aperçu au survol)
+
+![Galerie Styles — Accueil](/assets/curriculum/805/styles-galerie.png)
+
+#### 5.13.4 Exemple
+
+![Label Exemple](/assets/curriculum/805/styles-label-exemple.png)
+
+Document annoté (**Le Petit Rapporteur**) : styles marqués en rouge — **Titre 1**, **Titre 2**, **Normal**, **Numéros**.
+
+![Exemple annoté — Titre 1 / Titre 2 / Normal / Numéros](/assets/curriculum/805/styles-exemple-annote.png)
+
+#### 5.13.5 Créer un style
+1. **a.** Mettre en forme le texte modèle (police, taille, alignement…)
+2. **b.** Ouvrir le menu de la galerie **Styles** (flèche vers le bas) → **Créer un style**
+
+![Menu — Créer un style](/assets/curriculum/805/styles-menu-creer.png)
+
+3. **c.** Dans le dialogue **Créer un style à partir de la mise en forme**, saisir un **Nom** (ex. **EXEMPLE**) → éventuellement **Modifier…**
+
+![Dialogue — Nom du style](/assets/curriculum/805/styles-dialogue-creer-nom.png)
+
+4. **d.** Sous **Propriétés**, vérifier notamment :
+   - **Type de style** : **Paragraphe**
+   - **Style basé sur** / **Style du paragraphe suivant**
+
+![Propriétés — type Paragraphe](/assets/curriculum/805/styles-proprietes-paragraphe.png)
+
+5. **e.** Sous **Mise en forme**, ajuster police, taille, gras/italique, alignement, interligne… Consulter l'**aperçu**.
+
+![Mise en forme du style](/assets/curriculum/805/styles-mise-en-forme.png)
+
+6. **f.** Bouton **Format** pour les options avancées (Police, Paragraphe, Tabulations, Bordure, Numérotation…)
+
+![Menu Format](/assets/curriculum/805/styles-menu-format.png)
+
+7. **g.** Cocher **Ajouter à la galerie de styles** si besoin → **OK**
+
+#### 5.13.6 Modifier un style
+
+**Méthode 1 — Mettre à jour pour correspondre à la sélection**
+1. Modifier la mise en forme d'un texte déjà stylé
+2. Clic droit sur le style dans la galerie → **Mettre à jour … pour correspondre à la sélection**
+
+**Méthode 2 — Modifier… via Format**
+1. Clic droit sur le style → **Modifier…**
+2. Ajuster les options ou ouvrir **Format** (Police, Paragraphe…) → **OK**
+
+![Clic droit — Mettre à jour / Modifier](/assets/curriculum/805/styles-clic-droit-modifier.png)
+
+### 5.14 Table des matières
+
+#### 5.14.1 Créer une table des matières
+Pour créer une table des matières, vous devez appliquer des styles de « Titres »
+- **a.** Par exemple : **Titre 1**, **Titre 2**, **Titre 3**, etc. au texte que vous souhaitez inclure dans la table des matières.
+
+![Galerie Styles — Titre 1 sélectionné](/assets/curriculum/805/tdm-styles-titre1.png)
+
+Microsoft Word recherche ces titres, puis insère la table des matières dans votre document.
+Lorsque vous créez une table des matières de cette façon, vous pouvez la mettre rapidement à jour lorsque vous apportez des modifications à votre document.
+
+#### 5.14.2 Créer une table des matières à partir de la galerie
+Une fois les entrées marquées avec les « Titres 1, Titre 2, etc. », vous pouvez générer la table des matières :
+- **a.** Cliquer à l'endroit où vous souhaitez insérer la table des matières (en général au début du document)
+- **b.** Sous l'onglet **Références**
+- **c.** Cliquer sur **Table des matières**
+- **d.** Puis sur le style de table des matières souhaité
+
+![Références — galerie Table des matières](/assets/curriculum/805/tdm-galerie.png)
+
+- **e.** Cliquer sur **Table des matières personnalisée**, si vous souhaitez spécifier davantage d'options (par exemple le nombre de niveaux de titres à afficher)
+
+#### 5.14.3 Créer une table des matières personnalisée
+
+![Dialogue — Table des matières personnalisée](/assets/curriculum/805/tdm-personnalisee.png)
+
+Dans la boîte de dialogue **Table des matières**, vous pouvez effectuer l'une des opérations suivantes :
+- **a.** Saisir le nombre de niveaux dans **Afficher les niveaux**.
+- **b.** Choisir l'apparence globale dans le **Format**.
+- **c.** Choisir le type de ligne affichée entre le texte d'entrée et le numéro de page, dans **Caractères de suite**.
+- **d.** Les zones **Aperçu avant impression** et **Aperçu Web** vous donnent une idée de ce à quoi ressemblera votre table des matières.
+
+#### 5.14.4 Mettre à jour la table des matières
+Si vous avez ajouté ou supprimé des titres ou d'autres entrées de table des matières dans votre document, vous pouvez mettre à jour la table des matières rapidement.
+- **a.** Cliquer sur **Mettre à jour la table**, dans l'onglet **Références**
+
+![Groupe Table des matières — Mettre à jour la table](/assets/curriculum/805/tdm-mettre-a-jour.png)
+
+- **b.** Cliquer sur **Mettre à jour les numéros de page uniquement** ou **Mettre à jour toute la table**.
+
+![Dialogue — Mettre à jour la table des matières](/assets/curriculum/805/tdm-dialogue-mise-a-jour.png)
+
+#### 5.14.5 Supprimer une table des matières
+- **a.** Cliquez sur **Table des matières**, puis sur **Supprimer la table des matières**.
+
+![Menu — Supprimer la table des matières](/assets/curriculum/805/tdm-supprimer.png)
+
+### 5.15 Référencements — Référencer c'est quoi ?
+
+Quand on écrit un document, on peut avoir besoin de citer des sources, d'ajouter des explications ou d'insérer des images avec des légendes. Pour faire ça proprement, on utilise les outils de **références** dans Word.
+
+Voici les principaux outils et à quoi ils servent :
+- **a.** Notes de bas de page ou de fin
+- **b.** Bibliographie et citations
+- **c.** Légendes et table des illustrations
+
+Les fonctionnalités se trouvent dans l'onglet **Références**.
+
+![Onglet Références — notes, citations, légendes](/assets/curriculum/805/references-onglet.png)
+
+#### 5.15.1 Note de bas de page
+
+Une **note de bas de page** permet d'ajouter une petite explication ou une source en bas de la page. Par exemple, quand on parle d'un mot compliqué, on peut l'expliquer dans une note de bas de page.
+
+**Comment faire ?**
+- **a.** Cliquer à l'endroit du texte où on veut mettre la note
+- **b.** Aller dans l'onglet **Références**
+- **c.** Cliquer sur **Insérer une note de bas de page**
+
+![Groupe Notes de bas de page](/assets/curriculum/805/note-bas-page-ruban.png)
+
+- **d.** Word ajoute un petit chiffre (appel de note) à côté du texte
+- **e.** Écrire ensuite l'explication en bas de la page
+
+![Exemple de note de bas de page](/assets/curriculum/805/note-bas-page-texte.png)
+
+La **note de fin** est comme une note de bas de page, mais elle s'affiche à la **toute fin** du document. Elle est utile si on veut regrouper toutes les notes au même endroit.
+
+#### 5.15.2 Bibliographie et citations
+
+La **bibliographie** est une liste de tous les livres, sites web ou documents que tu as utilisés pour le travail. Elle se met souvent à la fin.
+
+##### Insérer des sources
+
+Avant d'insérer la bibliographie, il faut ajouter tes sources.
+
+**Comment faire ?**
+- **a.** Aller dans l'onglet **Références**
+- **b.** Cliquer sur **Gérer les sources**
+
+![Citations et bibliographie — Gérer les sources](/assets/curriculum/805/citations-bibliographie-ruban.png)
+
+- **c.** Cliquer sur **Nouveau…**
+
+![Gestionnaire de source — Nouveau](/assets/curriculum/805/references-gestionnaire-sources.png)
+
+- **d.** Remplir les informations (titre, auteur, année, etc.) → **OK**
+
+![Créer une source — livre exemple](/assets/curriculum/805/bibliographie-creer-source.png)
+
+##### Insérer une citation
+
+Ensuite, on peut insérer une **citation** dans le texte pour montrer d'où vient une idée ou une phrase.
+
+**Comment faire ?**
+- **a.** Cliquer dans le texte où on veut mettre la citation
+- **b.** Aller dans **Références**
+- **c.** Cliquer sur **Insérer une citation**
+- **d.** Choisir une source à ajouter
+
+![Menu Insérer une citation](/assets/curriculum/805/citation-menu-insertion.png)
+
+- **e.** Word ajoute la source à la fin du paragraphe (ex. style auteur–année)
+
+Exemple : *L'entreprise de logistique a connu une croissance exponentielle au cours des deux dernières années.* **(Van, 2000)**
+
+##### Insérer une bibliographie
+
+Enfin, on peut insérer la bibliographie avec toutes les sources saisies dans le document.
+
+**Comment faire ?**
+- **a.** Cliquer dans le texte où tu veux mettre la bibliographie
+- **b.** Aller dans **Références**
+- **c.** Cliquer sur **Bibliographie** et choisir un modèle
+
+![Galerie Bibliographie — modèles prédéfinis](/assets/curriculum/805/bibliographie-modeles.png)
+
+![Exemple de bibliographie](/assets/curriculum/805/bibliographie-exemple.png)
+
+#### 5.15.3 Légendes et table des illustrations
+
+Quand tu mets une image, une photo ou un graphique, il est bien de mettre une **légende** (une petite phrase en dessous pour dire ce que c'est).
+
+**Comment faire ?**
+- **a.** Cliquer sur l'image
+- **b.** Aller dans l'onglet **Références**
+- **c.** Cliquer sur **Insérer une légende**
+
+![Groupe Légendes](/assets/curriculum/805/legendes-ruban.png)
+
+- **d.** Écrire un texte. Par exemple : « Figure 1 : Logo de l'entreprise »
+
+![Dialogue Légende](/assets/curriculum/805/legende-dialogue.png)
+
+- **e.** Word crée une zone de texte sous l'image
+
+![Exemple — logo avec légende](/assets/curriculum/805/legende-exemple-logo.png)
+
+> **Astuce :** la zone de texte de la légende garde le même **habillage** que l'image.
+
+- **f.** On peut changer l'**étiquette** de la légende (Figure, Tableau…) ou simplement **exclure** le texte de l'étiquette (options du dialogue)
+
+##### Insérer une table des illustrations
+
+Si tu as mis plusieurs images ou graphiques avec des légendes, tu peux créer une **table des illustrations** (comme une table des matières, mais pour les images).
+
+**Comment faire ?**
+- **a.** Cliquer dans le texte où tu veux mettre la table des illustrations
+- **b.** Aller dans **Références**
+- **c.** Cliquer sur **Insérer une table des illustrations** et choisir un modèle
+- **d.** Word crée une liste de toutes les images avec leur numéro de page
+
+> **Astuce :** la table des illustrations **n'a pas de titre** — c'est à vous de le rajouter.
+
+![Exemple — Table des illustrations](/assets/curriculum/805/table-illustrations-exemple.png)
+`;
 
 const DEMO_805_THEORIE_SUMMARY = `## À retenir — Module 805
 
@@ -10931,6 +16869,21 @@ Date/heure · Symboles · Annuler/Rétablir
 ### Mise en forme
 Paragraphe · tabulateurs · bordures/trames · puces / listes  
 Styles Titre → table des matières (Références)
+
+### Styles
+Définition · types (caractère / paragraphe / lié / liste / tableau)  
+Appliquer · créer · modifier (MAJ sélection ou Modifier…)
+
+### Table des matières
+Styles Titre · galerie / personnalisée · mise à jour · supprimer
+
+### Référencements
+Notes de bas / de fin · sources · citations · bibliographie  
+Légendes · table des illustrations
+
+### Tableaux
+Insertion → Tableau · Création / Disposition  
+Taille · lignes/colonnes · alignements (9) · fusionner/fractionner · bordures
 
 ### Pages
 En-tête / pied · 1re page différente · n° de page · Imprimer`;
@@ -11612,6 +17565,22 @@ const filledByModule: Record<string, FilledPages> = {
       full: DEMO_101_THEORIE_FULL,
       summary: DEMO_101_THEORIE_SUMMARY,
     },
+    glossaire: {
+      full: DEMO_101_GLOSSAIRE_FULL,
+      summary: DEMO_101_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_101_SITUATION_FULL,
+      summary: DEMO_101_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_101_MATHS_FULL,
+      summary: DEMO_101_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_101_VERIFICATION_FULL,
+      summary: DEMO_101_VERIFICATION_SUMMARY,
+    },
   },
   "102": {
     objectifs: {
@@ -11625,6 +17594,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_102_THEORIE_FULL,
       summary: DEMO_102_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_102_GLOSSAIRE_FULL,
+      summary: DEMO_102_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_102_SITUATION_FULL,
+      summary: DEMO_102_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_102_MATHS_FULL,
+      summary: DEMO_102_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_102_VERIFICATION_FULL,
+      summary: DEMO_102_VERIFICATION_SUMMARY,
     },
   },
   "103": {
@@ -11640,6 +17625,22 @@ const filledByModule: Record<string, FilledPages> = {
       full: DEMO_103_THEORIE_FULL,
       summary: DEMO_103_THEORIE_SUMMARY,
     },
+    glossaire: {
+      full: DEMO_103_GLOSSAIRE_FULL,
+      summary: DEMO_103_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_103_SITUATION_FULL,
+      summary: DEMO_103_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_103_MATHS_FULL,
+      summary: DEMO_103_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_103_VERIFICATION_FULL,
+      summary: DEMO_103_VERIFICATION_SUMMARY,
+    },
   },
   "104": {
     objectifs: {
@@ -11653,6 +17654,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_104_THEORIE_FULL,
       summary: DEMO_104_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_104_GLOSSAIRE_FULL,
+      summary: DEMO_104_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_104_SITUATION_FULL,
+      summary: DEMO_104_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_104_MATHS_FULL,
+      summary: DEMO_104_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_104_VERIFICATION_FULL,
+      summary: DEMO_104_VERIFICATION_SUMMARY,
     },
   },
   "105": {
@@ -11668,6 +17685,22 @@ const filledByModule: Record<string, FilledPages> = {
       full: DEMO_105_THEORIE_FULL,
       summary: DEMO_105_THEORIE_SUMMARY,
     },
+    glossaire: {
+      full: DEMO_105_GLOSSAIRE_FULL,
+      summary: DEMO_105_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_105_SITUATION_FULL,
+      summary: DEMO_105_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_105_MATHS_FULL,
+      summary: DEMO_105_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_105_VERIFICATION_FULL,
+      summary: DEMO_105_VERIFICATION_SUMMARY,
+    },
   },
   "106": {
     objectifs: {
@@ -11681,6 +17714,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_106_THEORIE_FULL,
       summary: DEMO_106_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_106_GLOSSAIRE_FULL,
+      summary: DEMO_106_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_106_SITUATION_FULL,
+      summary: DEMO_106_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_106_MATHS_FULL,
+      summary: DEMO_106_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_106_VERIFICATION_FULL,
+      summary: DEMO_106_VERIFICATION_SUMMARY,
     },
   },
   "107": {
@@ -11696,6 +17745,22 @@ const filledByModule: Record<string, FilledPages> = {
       full: DEMO_107_THEORIE_FULL,
       summary: DEMO_107_THEORIE_SUMMARY,
     },
+    glossaire: {
+      full: DEMO_107_GLOSSAIRE_FULL,
+      summary: DEMO_107_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_107_SITUATION_FULL,
+      summary: DEMO_107_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_107_MATHS_FULL,
+      summary: DEMO_107_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_107_VERIFICATION_FULL,
+      summary: DEMO_107_VERIFICATION_SUMMARY,
+    },
   },
   "108": {
     objectifs: {
@@ -11709,6 +17774,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_108_THEORIE_FULL,
       summary: DEMO_108_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_108_GLOSSAIRE_FULL,
+      summary: DEMO_108_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_108_SITUATION_FULL,
+      summary: DEMO_108_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_108_MATHS_FULL,
+      summary: DEMO_108_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_108_VERIFICATION_FULL,
+      summary: DEMO_108_VERIFICATION_SUMMARY,
     },
   },
   "109": {
@@ -11724,6 +17805,22 @@ const filledByModule: Record<string, FilledPages> = {
       full: DEMO_109_THEORIE_FULL,
       summary: DEMO_109_THEORIE_SUMMARY,
     },
+    glossaire: {
+      full: DEMO_109_GLOSSAIRE_FULL,
+      summary: DEMO_109_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_109_SITUATION_FULL,
+      summary: DEMO_109_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_109_MATHS_FULL,
+      summary: DEMO_109_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_109_VERIFICATION_FULL,
+      summary: DEMO_109_VERIFICATION_SUMMARY,
+    },
   },
   "110": {
     objectifs: {
@@ -11737,6 +17834,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_110_THEORIE_FULL,
       summary: DEMO_110_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_110_GLOSSAIRE_FULL,
+      summary: DEMO_110_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_110_SITUATION_FULL,
+      summary: DEMO_110_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_110_MATHS_FULL,
+      summary: DEMO_110_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_110_VERIFICATION_FULL,
+      summary: DEMO_110_VERIFICATION_SUMMARY,
     },
   },
   "201": {
@@ -11752,6 +17865,22 @@ const filledByModule: Record<string, FilledPages> = {
       full: DEMO_201_THEORIE_FULL,
       summary: DEMO_201_THEORIE_SUMMARY,
     },
+    glossaire: {
+      full: DEMO_201_GLOSSAIRE_FULL,
+      summary: DEMO_201_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_201_SITUATION_FULL,
+      summary: DEMO_201_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_201_MATHS_FULL,
+      summary: DEMO_201_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_201_VERIFICATION_FULL,
+      summary: DEMO_201_VERIFICATION_SUMMARY,
+    },
   },
   "202": {
     objectifs: {
@@ -11765,6 +17894,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_202_THEORIE_FULL,
       summary: DEMO_202_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_202_GLOSSAIRE_FULL,
+      summary: DEMO_202_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_202_SITUATION_FULL,
+      summary: DEMO_202_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_202_MATHS_FULL,
+      summary: DEMO_202_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_202_VERIFICATION_FULL,
+      summary: DEMO_202_VERIFICATION_SUMMARY,
     },
   },
   "203": {
@@ -11780,6 +17925,22 @@ const filledByModule: Record<string, FilledPages> = {
       full: DEMO_203_THEORIE_FULL,
       summary: DEMO_203_THEORIE_SUMMARY,
     },
+    glossaire: {
+      full: DEMO_203_GLOSSAIRE_FULL,
+      summary: DEMO_203_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_203_SITUATION_FULL,
+      summary: DEMO_203_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_203_MATHS_FULL,
+      summary: DEMO_203_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_203_VERIFICATION_FULL,
+      summary: DEMO_203_VERIFICATION_SUMMARY,
+    },
   },
   "204": {
     objectifs: {
@@ -11793,6 +17954,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_204_THEORIE_FULL,
       summary: DEMO_204_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_204_GLOSSAIRE_FULL,
+      summary: DEMO_204_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_204_SITUATION_FULL,
+      summary: DEMO_204_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_204_MATHS_FULL,
+      summary: DEMO_204_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_204_VERIFICATION_FULL,
+      summary: DEMO_204_VERIFICATION_SUMMARY,
     },
   },
   "205": {
@@ -11808,6 +17985,22 @@ const filledByModule: Record<string, FilledPages> = {
       full: DEMO_205_THEORIE_FULL,
       summary: DEMO_205_THEORIE_SUMMARY,
     },
+    glossaire: {
+      full: DEMO_205_GLOSSAIRE_FULL,
+      summary: DEMO_205_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_205_SITUATION_FULL,
+      summary: DEMO_205_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_205_MATHS_FULL,
+      summary: DEMO_205_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_205_VERIFICATION_FULL,
+      summary: DEMO_205_VERIFICATION_SUMMARY,
+    },
   },
   "206": {
     objectifs: {
@@ -11821,6 +18014,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_206_THEORIE_FULL,
       summary: DEMO_206_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_206_GLOSSAIRE_FULL,
+      summary: DEMO_206_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_206_SITUATION_FULL,
+      summary: DEMO_206_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_206_MATHS_FULL,
+      summary: DEMO_206_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_206_VERIFICATION_FULL,
+      summary: DEMO_206_VERIFICATION_SUMMARY,
     },
   },
   "207": {
@@ -11836,6 +18045,22 @@ const filledByModule: Record<string, FilledPages> = {
       full: DEMO_207_THEORIE_FULL,
       summary: DEMO_207_THEORIE_SUMMARY,
     },
+    glossaire: {
+      full: DEMO_207_GLOSSAIRE_FULL,
+      summary: DEMO_207_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_207_SITUATION_FULL,
+      summary: DEMO_207_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_207_MATHS_FULL,
+      summary: DEMO_207_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_207_VERIFICATION_FULL,
+      summary: DEMO_207_VERIFICATION_SUMMARY,
+    },
   },
   "208": {
     objectifs: {
@@ -11850,6 +18075,22 @@ const filledByModule: Record<string, FilledPages> = {
       full: DEMO_208_THEORIE_FULL,
       summary: DEMO_208_THEORIE_SUMMARY,
     },
+    glossaire: {
+      full: DEMO_208_GLOSSAIRE_FULL,
+      summary: DEMO_208_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_208_SITUATION_FULL,
+      summary: DEMO_208_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_208_MATHS_FULL,
+      summary: DEMO_208_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_208_VERIFICATION_FULL,
+      summary: DEMO_208_VERIFICATION_SUMMARY,
+    },
   },
   "209": {
     objectifs: {
@@ -11863,6 +18104,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_209_THEORIE_FULL,
       summary: DEMO_209_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_209_GLOSSAIRE_FULL,
+      summary: DEMO_209_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_209_SITUATION_FULL,
+      summary: DEMO_209_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_209_MATHS_FULL,
+      summary: DEMO_209_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_209_VERIFICATION_FULL,
+      summary: DEMO_209_VERIFICATION_SUMMARY,
     },
   },
   "301": {

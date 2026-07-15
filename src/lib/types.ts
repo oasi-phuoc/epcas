@@ -83,7 +83,8 @@ export type LessonPageSlug =
   | "glossaire"
   | "situation"
   | "maths"
-  | "verification";
+  | "verification"
+  | "informatique";
 
 export interface Lesson {
   id: string;
@@ -195,6 +196,41 @@ export interface Exercise {
   published: boolean;
 }
 
+/** Application Office cible pour les exercices Informatique. */
+export type InformatiqueApp = "word" | "excel" | "powerpoint";
+
+/** Document ou vidéo de correction rattaché à un exercice Informatique. */
+export interface InformatiqueAsset {
+  id: string;
+  name: string;
+  /**
+   * URL de téléchargement / lecture.
+   * Placeholder public, data URL (fichiers légers), ou vide si pas encore fourni.
+   */
+  url: string;
+  kind: "document" | "video";
+  mimeType?: string;
+}
+
+/**
+ * Exercice Informatique (Word / Excel / PowerPoint),
+ * indépendant des modules curriculum 100–900.
+ */
+export interface InformatiqueExercise {
+  id: string;
+  app: InformatiqueApp;
+  title: string;
+  /** Court descriptif affiché dans la liste. */
+  description: string;
+  /** Consigne / contenu (markdown) — preview élève, édition formateur. */
+  instructions: string;
+  order: number;
+  published: boolean;
+  documents: InformatiqueAsset[];
+  /** Corrections vidéo uploadées par les formateurs. */
+  corrections: InformatiqueAsset[];
+}
+
 export interface Assessment {
   id: string;
   title: string;
@@ -240,6 +276,8 @@ export interface AppState {
   modules: Module[];
   lessons: Lesson[];
   exercises: Exercise[];
+  /** Exercices Word / Excel / PowerPoint (parcours Informatique). */
+  informatiqueExercises: InformatiqueExercise[];
   assessments: Assessment[];
   assessmentQuestions: AssessmentQuestion[];
   sequences: LearningSequence[];

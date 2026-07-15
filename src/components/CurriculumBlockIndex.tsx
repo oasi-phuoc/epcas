@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { Badge, PageHeader, Panel, ProgressBar } from "@/components/ui";
@@ -18,6 +18,8 @@ type CurriculumBlockIndexProps = {
   /** Base URL module, ex. /theorie/module ou /exercices/module */
   moduleHrefBase: string;
   emptyMessage?: string;
+  /** Contenu optionnel sous le titre (ex. raccourci Informatique). */
+  preamble?: ReactNode;
 };
 
 export function CurriculumBlockIndex({
@@ -27,6 +29,7 @@ export function CurriculumBlockIndex({
   pageSlugs,
   moduleHrefBase,
   emptyMessage = "Aucun module dans votre parcours pour le moment.",
+  preamble,
 }: CurriculumBlockIndexProps) {
   const { state, currentUser, getUserProgress, userLevel, userStudyYear } =
     useAppStore();
@@ -103,6 +106,8 @@ export function CurriculumBlockIndex({
           isTrainer ? descriptionTrainer : descriptionApprentice
         }
       />
+
+      {preamble ? <div className="mb-4">{preamble}</div> : null}
 
       {!isTrainer ? (
         <div className="mb-4 space-y-3">
