@@ -33082,6 +33082,262 @@ const DEMO_804_OBJECTIFS_SUMMARY = `## Objectifs
 - Veille / panne
 - Licences · copyright`;
 
+const DEMO_804_GLOSSAIRE_FULL = `## Glossaire — Module 804
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| ENT | | *Environnement Numérique de Travail* — portail scolaire ou d'entreprise donnant accès aux services numériques (Teams, Office, OneDrive, Outlook…). Ex. : [edu.vs.ch](https://edu.vs.ch) pour le canton du Valais. |
+| Microsoft 365 | | Suite cloud de Microsoft regroupant Office (Word, Excel, PowerPoint…), Teams, OneDrive et Outlook. Les données sont souvent stockées sur **OneDrive** et accessibles depuis plusieurs appareils. |
+| Teams | | Application de **collaboration** (conversations, classes, devoirs, calendrier, fichiers partagés). Utilisée en classe pour les affectations et la communication avec les enseignants. |
+| OneDrive | | Service de **stockage cloud** personnel lié au compte Microsoft. Permet de créer des dossiers, charger des fichiers et restaurer des éléments depuis la corbeille. |
+| Outlook | | Application de **messagerie électronique** (courriels). Permet de recevoir, répondre, transférer et rédiger des messages ; les envois se vérifient dans **Éléments envoyés**. |
+| Booting | | Phase de **démarrage** de l'ordinateur : microprogramme → vérification des périphériques → chargement du système d'exploitation → écran de connexion. |
+| Domaine | | Environnement **réseau** d'entreprise ou d'école où l'utilisateur se connecte avec un compte centralisé. Les droits d'accès sont gérés par l'administrateur. |
+| CLUF / EULA | | *Contrat de Licence Utilisateur Final* — conditions d'utilisation acceptées lors de l'installation d'un logiciel. On n'achète pas le logiciel mais une **licence** d'usage. |
+| Freeware | | Logiciel **gratuit** mais toujours protégé par le **droit d'auteur**. L'utilisation est libre, mais la copie ou la modification reste encadrée par la licence. |
+| Shareware | | Logiciel en **essai gratuit** ; après la période d'essai, l'utilisateur doit payer ou certaines fonctions sont bloquées. |
+| Open source | | Logiciel dont le **code source** est publié. L'utilisateur peut copier, modifier et redistribuer selon la licence (ex. Linux). |
+| Licence logiciel | | Droit d'**utiliser** un programme selon des conditions précises (nombre d'appareils, usage commercial ou privé…). L'**ID produit** prouve l'authenticité (ex. Office : Fichier → Compte → À propos). |
+| Copyright | | *Droit d'auteur* — protection des œuvres (logiciels, textes, images…). En Suisse, les **copies privées** à usage personnel sont en principe autorisées ; l'**upload** d'œuvres protégées sans droits est interdit. |
+| Plagiat | | Vol de **propriété intellectuelle** (copier le travail d'autrui sans citation). Infraction punissable, notamment pour les devoirs et documents professionnels. |
+| Veille | | Mode de faible consommation où l'ordinateur reste allumé et les applications ouvertes ; la reprise est plus rapide qu'un arrêt complet. |
+| Explorateur de fichiers | | Outil Windows pour naviguer dans les **dossiers** et **fichiers** (Documents, Téléchargements, Bureau, OneDrive…). Chaque utilisateur possède son dossier personnel sous \`C:\\Utilisateurs\\…\`. |`;
+
+const DEMO_804_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **ENT** : portail vers Teams · Office · OneDrive · Outlook
+- **Booting** : démarrage · **Domaine** : compte réseau centralisé
+- **CLUF** : licence d'usage · **ID produit** : authenticité
+- **Freeware** : gratuit mais protégé · **Open source** : code modifiable
+- **Copyright** : copies privées OK · upload protégé interdit · **Plagiat** : vol intellectuel`;
+
+/** Mises en situation Module 804 */
+const DEMO_804_SITUATION_FULL = `## Mises en situation — Module 804
+
+Contexte : tu débutes ton apprentissage chez **EnterSite AG**. Monsieur **Lang** (service informatique) et Madame **Gugger** (RH) te chargent de mettre en place ton environnement numérique et de respecter les règles du droit d'auteur. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.
+
+---
+
+### Mission 1 — Première connexion ENT VS
+
+Tu reçois en classe ton identifiant \`prenom.nom@edu.vs.ch\` et un mot de passe temporaire. Décris les étapes pour te connecter à l'ENT et sécuriser ton compte.
+
+:::reponse
+1. Ouvrir [https://edu.vs.ch](https://edu.vs.ch) et cliquer sur **Connexion**
+2. Saisir l'identifiant et le mot de passe temporaire
+3. Lors de la première connexion, **changer le mot de passe** :
+   - 10 à 50 caractères
+   - Majuscule, minuscule, chiffre et caractère spécial
+   - Pas de prénom/nom · différent des 10 derniers mots de passe
+4. Confirmer et cliquer sur **Modifier mon mot de passe**
+5. Vérifier l'accès au **tableau de bord** ENT
+:::
+
+---
+
+### Mission 2 — Remettre un devoir sur Teams
+
+Un devoir de logistique doit être remis avant vendredi. Explique comment accéder à Teams depuis l'ENT et remettre ton fichier.
+
+:::reponse
+1. Depuis l'ENT : carte **Teams** → **Accès**
+2. Saisir l'identifiant \`prenom.nom@edu.vs.ch\` → **Suivant**
+3. Choisir **Utilisez l'application Web à la place**
+4. Ouvrir **Affectations** → sélectionner le devoir
+5. Télécharger les documents de référence si nécessaire
+6. Travailler le devoir (Word, Excel…)
+7. **Joindre** le fichier (PC ou OneDrive) → **Ouvrir** → **Remettre**
+8. Vérifier que la remise apparaît comme envoyée
+:::
+
+---
+
+### Mission 3 — Installation Office 365 sur les postes EnterSite
+
+EnterSite AG équipe **15** nouveaux postes de travail. Monsieur Lang te demande de documenter la procédure d'installation Office depuis l'ENT.
+
+:::reponse
+1. Se connecter à l'ENT → application **Office 365** → **Accès**
+2. Cliquer sur **Installer Office** (\`OfficeSetup.exe\` se télécharge)
+3. Ouvrir le dossier **Téléchargements** et lancer l'installation
+4. Attendre la fin de l'installation
+5. Lancer Office depuis le menu Démarrer (recherche « 365 »)
+6. Vérifier la licence : Fichier → Compte → À propos (**ID produit**)
+7. Répéter sur chaque poste ou déployer selon la procédure IT de l'entreprise
+:::
+
+---
+
+### Mission 4 — Droit d'auteur : logiciel sans licence
+
+Un collègue propose d'installer une version « gratuite » d'un logiciel professionnel trouvée sur un site de partage. Que lui réponds-tu en te basant sur le droit d'auteur suisse ?
+
+:::reponse
+- Il s'agit probablement d'une **copie pirate** : usage sans licence valide = violation du **copyright**
+- On n'achète pas le logiciel mais une **licence** (CLUF) ; l'**ID produit** prouve l'authenticité
+- En Suisse : **copies privées** autorisées pour usage personnel depuis sources légales
+- L'**upload** et la distribution de logiciels protégés sans droits est **interdit**
+- Pour EnterSite AG : utiliser uniquement des licences **entreprise** ou **éducation** officielles (Microsoft 365 via ENT)
+- Risques : amendes (BSA), virus, absence de mises à jour, responsabilité de l'entreprise
+:::
+
+---
+
+### Mission 5 — Discussion STA
+
+Discute avec la classe et l'enseignant·e des bonnes pratiques numériques (mots de passe, OneDrive sur PC partagé, plagiat dans les devoirs).
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_804_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : edu.vs.ch · changement mot de passe (règles sécurité)
+- **M2** : Teams Web → Affectations → Joindre → Remettre
+- **M3** : ENT → Office 365 → OfficeSetup.exe → vérifier ID produit
+- **M4** : pas de copie pirate · licence CLUF · copies privées légales seulement
+- **M5** : discussion STA`;
+
+/** Exercices de maths Module 804 */
+const DEMO_804_MATHS_FULL = `## Exercices de mathématiques — Module 804
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Données — déploiement Microsoft 365 chez EnterSite AG
+
+| Poste | Quantité | Prix / durée |
+| --- | --- | --- |
+| Licence Microsoft 365 (par utilisateur/mois) | 45 | CHF 8,80 |
+| Installation Office par poste | 15 | 30 min |
+| Espace OneDrive par utilisateur | 45 | 1 To (1'000 Go) |
+| Budget logiciels annuel prévu | 1 | CHF 4'800 |
+| Coût réel licences + formation | 1 | CHF 7'920 |
+
+---
+
+### Exercice 1 — Coût mensuel des licences
+
+Combien EnterSite AG paie-t-elle par mois pour **45** utilisateurs Microsoft 365 ?
+
+:::solution
+**Coût mensuel : 396 CHF**
+
+45 × 8,80 = **396 CHF**
+:::
+
+---
+
+### Exercice 2 — Temps d'installation total
+
+**15** postes doivent recevoir Office 365. Chaque installation prend **30 minutes**.
+
+Combien de **heures** de travail au total (arrondir à l'entier supérieur si besoin) ?
+
+:::solution
+**Temps total : 7,5 h**
+
+15 × 30 min = 450 min = **7,5 h**
+:::
+
+---
+
+### Exercice 3 — Stockage OneDrive cumulé
+
+Si chaque utilisateur dispose de **1 To** de OneDrive, quel est le stockage **théorique total** pour **45** utilisateurs (en To) ?
+
+:::solution
+**Stockage total : 45 To**
+
+45 × 1 To = **45 To**
+:::
+
+---
+
+### Exercice 4 — Dépassement du budget logiciels
+
+Le budget annuel prévu était de **4'800 CHF**, le coût réel s'élève à **7'920 CHF**.
+
+De combien de **pourcent** le budget a-t-il été dépassé ?
+
+:::solution
+**Dépassement : 65 %**
+
+(7'920 − 4'800) / 4'800 × 100 = 3'120 / 4'800 × 100 = **65 %**
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 396 · 7,5 · 45 · 65`;
+
+const DEMO_804_MATHS_SUMMARY = `## Maths — Solutions
+1. Licences mensuelles **396 CHF** (45 × 8,80)
+2. Installation **7,5 h** (15 × 30 min)
+3. Stockage OneDrive **45 To**
+4. Dépassement budget **65 %**`;
+
+/** Vérification des acquis Module 804 */
+const DEMO_804_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Fondation Microsoft 365 et droit d'auteur**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quelles règles doit respecter le **nouveau mot de passe** lors de la première connexion à l'ENT VS ?
+
+:::reponse
+- Entre **10 et 50 caractères**
+- Contenir une **majuscule**, une **minuscule**, un **chiffre** et un **caractère spécial**
+- Ne pas contenir le **prénom** ni le **nom**
+- Être **différent** des 10 derniers mots de passe
+:::
+
+### Question 2
+
+Quelle est la différence entre **freeware**, **shareware** et **open source** ?
+
+:::reponse
+- **Freeware** : gratuit mais protégé par le copyright ; usage libre selon la licence
+- **Shareware** : essai gratuit puis paiement ou fonctions limitées
+- **Open source** : code source publié ; copie, modification et redistribution possibles selon la licence (ex. Linux)
+:::
+
+### Question 3
+
+Que faire si une application est **bloquée** sur Windows ?
+
+:::reponse
+1. Appuyer sur **Ctrl+Alt+Suppr**
+2. Ouvrir le **Gestionnaire des tâches**
+3. Sélectionner l'application concernée
+4. Cliquer sur **Fin de tâche** (parfois plusieurs fois nécessaire)
+:::
+
+### Question 4
+
+Qu'est-ce que le **booting** et pourquoi faut-il attendre la fin du démarrage avant d'insérer une clé USB ?
+
+:::reponse
+Le **booting** est la phase de démarrage : microprogramme → vérification des périphériques → chargement du système d'exploitation → écran de connexion.
+
+Il faut attendre la **fin du démarrage** pour que le système reconnaisse correctement les périphériques (USB, SSD) et évite des erreurs ou des conflits.
+:::
+
+### Question 5
+
+Quelles règles de base du **droit d'auteur** en Suisse dois-tu retenir pour les logiciels et les fichiers ?
+
+:::reponse
+- On acquiert une **licence** (CLUF), pas la propriété du logiciel
+- **Copies privées** à usage personnel / proches en principe autorisées
+- **Upload** d'œuvres protégées interdit sans détenir les droits
+- Le **plagiat** (vol de propriété intellectuelle) est une infraction
+- Partage de fichiers : download et upload peuvent violer le copyright
+:::`;
+
+const DEMO_804_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Mot de passe ENT : 10–50 car. · maj/min/chiffre/spécial · pas prénom/nom
+2. Freeware = gratuit protégé · Shareware = essai · Open source = code libre
+3. **Ctrl+Alt+Suppr** → Gestionnaire des tâches → Fin de tâche
+4. **Booting** = démarrage OS · attendre avant USB
+5. Licence CLUF · copies privées OK · upload interdit · pas de plagiat`;
+
 /** Contenu Module 805 — Word Microsoft 365 */
 const DEMO_805_THEORIE_FULL = `## 5. Word Microsoft 365
 
@@ -36283,6 +36539,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_804_THEORIE_FULL,
       summary: DEMO_804_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_804_GLOSSAIRE_FULL,
+      summary: DEMO_804_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_804_SITUATION_FULL,
+      summary: DEMO_804_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_804_MATHS_FULL,
+      summary: DEMO_804_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_804_VERIFICATION_FULL,
+      summary: DEMO_804_VERIFICATION_SUMMARY,
     },
   },
   "805": {
