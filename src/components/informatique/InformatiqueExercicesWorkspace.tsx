@@ -4,7 +4,6 @@ import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import {
   Alert,
-  Badge,
   Button,
   EmptyState,
   PageHeader,
@@ -41,6 +40,15 @@ import {
   Trash2,
   Video,
 } from "lucide-react";
+import { PdfViewer } from "@/components/informatique/PdfViewer";
+import { BulkDocumentsDownloadButton } from "@/components/informatique/BulkDocumentsDownloadButton";
+import { isResultatPdf } from "@/lib/informatique-exercises";
+
+const STUDENT_INSTRUCTIONS = [
+  "Téléchargez les documents à utiliser ci-dessous.",
+  "Réalisez l'exercice en suivant le fichier de données / le texte de base.",
+  "Consultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
+];
 
 const MAX_EMBED_BYTES = 1_500_000;
 
@@ -48,6 +56,70 @@ function isVideoAsset(asset: InformatiqueAsset): boolean {
   if (asset.kind === "video") return true;
   const lower = (asset.name || asset.url || "").toLowerCase();
   return /\.(mp4|webm|mov|m4v)(\?|$)/i.test(lower);
+}
+
+function StudentCorrectionAsset({ asset }: { asset: InformatiqueAsset }) {
+  const [videoOpen, setVideoOpen] = useState(false);
+  const asVideo = isVideoAsset(asset);
+  const asPdf = isResultatPdf(asset);
+
+  if (!asset.url) {
+    return (
+      <li className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 px-3 py-2.5">
+        <span className="text-sm text-ink-muted">Pas encore disponible</span>
+      </li>
+    );
+  }
+
+  if (asPdf) {
+    return (
+      <li className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-3 sm:p-4">
+        <PdfViewer url={asset.url} />
+      </li>
+    );
+  }
+
+  if (asVideo) {
+    return (
+      <li className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-3 sm:p-4">
+        {!videoOpen ? (
+          <Button
+            type="button"
+            size="sm"
+            variant="secondary"
+            onClick={() => setVideoOpen(true)}
+          >
+            <Eye className="h-4 w-4" />
+            Visionner
+          </Button>
+        ) : (
+          <div className="overflow-hidden rounded-[var(--radius-md)] border border-border bg-ink/5">
+            <video
+              className="max-h-[min(70vh,28rem)] w-full"
+              controls
+              controlsList="nodownload noplaybackrate"
+              disablePictureInPicture
+              preload="metadata"
+              src={asset.url}
+            >
+              Votre navigateur ne prend pas en charge la vidéo.
+            </video>
+          </div>
+        )}
+      </li>
+    );
+  }
+
+  return (
+    <li className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-3 sm:p-4">
+      <a href={asset.url} target="_blank" rel="noreferrer" className="inline-flex">
+        <Button type="button" size="sm" variant="secondary">
+          <Eye className="h-4 w-4" />
+          Visionner
+        </Button>
+      </a>
+    </li>
+  );
 }
 
 async function fileToAsset(
@@ -84,6 +156,8 @@ function AssetList({
   accept,
   /** Mode d'affichage par défaut si l'asset n'indique pas clairement vidéo/doc. */
   defaultMode,
+  /** Vue apprenti : PDF résultat en visionneuse, pas de téléchargement. */
+  studentMode = false,
 }: {
   assets: InformatiqueAsset[];
   emptyLabel: string;
@@ -94,6 +168,7 @@ function AssetList({
   onAddUrl?: (name: string, url: string, kind: "document" | "video") => void;
   accept?: string;
   defaultMode: "document" | "video" | "mixed";
+  studentMode?: boolean;
 }) {
   const fileRef = useRef<HTMLInputElement>(null);
   const [urlName, setUrlName] = useState("");
@@ -108,8 +183,15 @@ function AssetList({
       ) : (
         <ul className="space-y-2">
           {assets.map((asset) => {
+            if (studentMode && !editable && defaultMode === "mixed") {
+              return <StudentCorrectionAsset key={asset.id} asset={asset} />;
+            }
+
             const asVideo =
               defaultMode === "document" ? false : isVideoAsset(asset);
+            const asResultatPdf =
+              studentMode && !editable && isResultatPdf(asset) && asset.url;
+            const allowDownload = !studentMode || !asResultatPdf;
             return (
               <li
                 key={asset.id}
@@ -140,7 +222,7 @@ function AssetList({
                         </Button>
                       </a>
                     ) : null}
-                    {!asVideo && asset.url ? (
+                    {!asVideo && asset.url && allowDownload ? (
                       <a
                         href={asset.url}
                         download={asset.name}
@@ -152,7 +234,7 @@ function AssetList({
                         </Button>
                       </a>
                     ) : null}
-                    {asVideo && asset.url ? (
+                    {asVideo && asset.url && allowDownload ? (
                       <a
                         href={asset.url}
                         download={asset.name}
@@ -165,7 +247,9 @@ function AssetList({
                       </a>
                     ) : null}
                     {!asset.url ? (
-                      <Badge tone="warning">Pas encore disponible</Badge>
+                      <span className="text-sm text-ink-muted">
+                        Pas encore disponible
+                      </span>
                     ) : null}
                     {editable && onRemove ? (
                       <Button
@@ -191,6 +275,9 @@ function AssetList({
                       Votre navigateur ne prend pas en charge la vidéo.
                     </video>
                   </div>
+                ) : null}
+                {asResultatPdf ? (
+                  <PdfViewer url={asset.url} title={asset.name} />
                 ) : null}
               </li>
             );
@@ -284,11 +371,9 @@ function ExercisePreview({
 }) {
   return (
     <div className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-4 sm:p-5">
-      <div className="mb-4 flex flex-wrap items-center gap-2">
-        <Badge tone="accent">Preview</Badge>
-        <Badge tone="neutral">{informatiqueYearLabel(exercise.year)}</Badge>
-        <Badge tone="neutral">{informatiqueAppLabel(exercise.app)}</Badge>
-      </div>
+      <p className="mb-2 text-xs text-ink-subtle">
+        {informatiqueYearLabel(exercise.year)} · {informatiqueAppLabel(exercise.app)}
+      </p>
       <h2 className="mb-3 font-display text-2xl text-ink sm:text-3xl">
         {exercise.title || "Sans titre"}
       </h2>
@@ -507,28 +592,49 @@ function StudentExerciseDetail({
 }) {
   return (
     <div className="space-y-4">
-      <ExercisePreview exercise={exercise} />
+      <Panel>
+        <h2 className="font-display text-2xl text-ink sm:text-3xl">
+          {exercise.title || "Sans titre"}
+        </h2>
+        {exercise.description ? (
+          <p className="mt-1 text-sm text-ink-muted">{exercise.description}</p>
+        ) : null}
+
+        <h3 className="mt-6 font-display text-lg text-ink">Consignes</h3>
+        <ul className="mt-2 space-y-1.5 text-sm text-ink-muted">
+          {STUDENT_INSTRUCTIONS.map((line) => (
+            <li key={line} className="ml-5 list-disc text-justify leading-relaxed">
+              {line}
+            </li>
+          ))}
+        </ul>
+      </Panel>
 
       <Panel>
-        <h3 className="mb-1 font-display text-lg text-ink">
-          Documents à utiliser / à télécharger
-        </h3>
-        <p className="mb-3 text-sm text-ink-muted">
-          Téléchargez les fichiers nécessaires pour réaliser l&apos;exercice.
-        </p>
+        <div className="mb-3 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+          <h3 className="font-display text-lg text-ink">
+            Documents à utiliser / à télécharger
+          </h3>
+          <BulkDocumentsDownloadButton
+            exercises={[exercise]}
+            archiveName={`Informatique-${exercise.title.replace(/\s+/g, "-")}`}
+            label="Télécharger cet exercice (ZIP)"
+          />
+        </div>
         <AssetList
           defaultMode="document"
           assets={exercise.documents}
           emptyLabel="Aucun document pour cet exercice."
           downloadLabel="Télécharger"
           editable={false}
+          studentMode
         />
       </Panel>
 
       <Panel>
         <h3 className="mb-1 font-display text-lg text-ink">Corrections</h3>
         <p className="mb-3 text-sm text-ink-muted">
-          Vidéos à visionner ou fichiers de correction / résultat attendu.
+          Vidéos à visionner ou résultat attendu à consulter directement.
         </p>
         <AssetList
           defaultMode="mixed"
@@ -536,6 +642,7 @@ function StudentExerciseDetail({
           emptyLabel="Aucune correction disponible pour le moment."
           downloadLabel="Télécharger"
           editable={false}
+          studentMode
         />
       </Panel>
     </div>
@@ -609,13 +716,28 @@ export function InformatiqueExercicesWorkspace({
 
   const selected = filtered.find((e) => e.id === effectiveId);
 
+  const studentYear = resolveInformatiqueYear(userStudyYear);
+  const yearForBulk = isEdit ? selectedYear : studentYear;
+
+  const bulkDownloadExercises = useMemo(() => {
+    const list = state.informatiqueExercises ?? [];
+    return list
+      .filter((e) => e.year === yearForBulk)
+      .filter((e) => (isEdit ? true : e.published))
+      .sort(
+        (a, b) =>
+          a.app.localeCompare(b.app) ||
+          a.order - b.order ||
+          a.title.localeCompare(b.title, "fr"),
+      );
+  }, [state.informatiqueExercises, yearForBulk, isEdit]);
+
   if (!currentUser) return null;
   if (isEdit && !isStaffRole(currentUser.role)) {
     return <EmptyState title="Accès réservé aux formateurs et admins" />;
   }
 
   const hubHref = isEdit ? "/formateur/exercices" : "/exercices";
-  const hubLabel = isEdit ? "← Exercices" : "← Exercices";
 
   const appsToShow = INFORMATIQUE_APPS.filter(
     (app) => isEdit || availableApps.includes(app.id),
@@ -625,61 +747,64 @@ export function InformatiqueExercicesWorkspace({
     <div>
       <PageHeader
         title="Informatique"
+        backHref={hubHref}
+        backLabel={isEdit ? "Retour aux exercices" : "Retour aux exercices"}
         description={
           isEdit
             ? "Gérez les exercices Word et Excel (1re et 3e année) — documents et corrections."
-            : "Choisissez l'année, l'application, puis un exercice pour voir consignes, documents et corrections."
-        }
-        actions={
-          <Link href={hubHref}>
-            <Button variant="ghost" size="sm">
-              {hubLabel}
-            </Button>
-          </Link>
+            : `Exercices ${informatiqueAppLabel(selectedApp)} — ${informatiqueYearLabel(studentYear)}.`
         }
       />
 
       {isEdit ? (
-        <nav className="mb-4 flex flex-wrap gap-2">
-          <Link href="/formateur/exercices/situation">
-            <Badge tone="neutral">Mise en situation</Badge>
+        <nav className="mb-4 flex flex-wrap gap-3 text-sm">
+          <Link href="/formateur/exercices/situation" className="text-ink-muted hover:text-ink">
+            Mise en situation
           </Link>
-          <Link href="/formateur/exercices/maths">
-            <Badge tone="neutral">Mathématiques</Badge>
+          <Link href="/formateur/exercices/maths" className="text-ink-muted hover:text-ink">
+            Mathématiques
           </Link>
-          <Link href="/formateur/exercices/verification">
-            <Badge tone="neutral">Vérification des acquis</Badge>
+          <Link href="/formateur/exercices/verification" className="text-ink-muted hover:text-ink">
+            Vérification des acquis
           </Link>
-          <Badge tone="primary">Informatique</Badge>
+          <span className="font-medium text-primary-strong">Informatique</span>
         </nav>
       ) : null}
 
       <Panel className="mb-4">
-        <p className="mb-2 text-sm font-medium text-ink">Année</p>
-        <div
-          className="flex flex-wrap gap-2"
-          role="group"
-          aria-label="Choisir une année"
-        >
-          {INFORMATIQUE_YEARS.map((y) => (
-            <Button
-              key={y.id}
-              type="button"
-              size="sm"
-              variant={selectedYear === y.id ? "primary" : "secondary"}
-              onClick={() => {
-                setSelectedYear(y.id);
-                setSelectedId("");
-                setExerciseQuery("");
-              }}
+        {isEdit ? (
+          <>
+            <p className="mb-2 text-sm font-medium text-ink">Année</p>
+            <div
+              className="flex flex-wrap gap-2"
+              role="group"
+              aria-label="Choisir une année"
             >
-              {y.label}
-            </Button>
-          ))}
-        </div>
-        <p className="mt-2 text-xs text-ink-subtle">
-          Pas de cours Informatique en 2e année — seuls 1re et 3e sont proposés.
-        </p>
+              {INFORMATIQUE_YEARS.map((y) => (
+                <Button
+                  key={y.id}
+                  type="button"
+                  size="sm"
+                  variant={selectedYear === y.id ? "primary" : "secondary"}
+                  onClick={() => {
+                    setSelectedYear(y.id);
+                    setSelectedId("");
+                    setExerciseQuery("");
+                  }}
+                >
+                  {y.label}
+                </Button>
+              ))}
+            </div>
+            <p className="mt-2 text-xs text-ink-subtle">
+              Pas de cours Informatique en 2e année — seuls 1re et 3e sont proposés.
+            </p>
+          </>
+        ) : (
+          <p className="text-sm text-ink-muted">
+            Parcours <strong className="text-ink">{informatiqueYearLabel(studentYear)}</strong> — seuls les exercices de votre année sont affichés.
+          </p>
+        )}
 
         <p className="mb-2 mt-4 text-sm font-medium text-ink">Application</p>
         <div
@@ -716,6 +841,18 @@ export function InformatiqueExercicesWorkspace({
               ? " — PowerPoint non proposé (pas de ressources)."
               : null}
         </p>
+
+        <div className="mt-4 rounded-[var(--radius-md)] border border-border bg-surface-muted/30 p-3 sm:p-4">
+          <p className="mb-2 text-sm font-medium text-ink">
+            Téléchargement groupé
+          </p>
+          <BulkDocumentsDownloadButton
+            exercises={bulkDownloadExercises}
+            archiveName={`Informatique-${informatiqueYearLabel(yearForBulk).replace(/\s+/g, "-")}-documents`}
+            label="Télécharger tous les documents (ZIP)"
+            variant="primary"
+          />
+        </div>
 
         <div className="mt-4">
           <TextField
@@ -773,7 +910,9 @@ export function InformatiqueExercicesWorkspace({
                         ) : null}
                       </span>
                       {isEdit && !ex.published ? (
-                        <Badge tone="warning">Brouillon</Badge>
+                        <span className="shrink-0 text-xs text-ink-muted">
+                          Brouillon
+                        </span>
                       ) : null}
                     </button>
                   </li>
@@ -817,7 +956,7 @@ export function InformatiqueExercicesWorkspace({
           description={
             isEdit
               ? "Créez un exercice ou choisissez-en un dans la liste."
-              : "Choisissez une année, une application puis un exercice."
+              : "Choisissez une application puis un exercice."
           }
         />
       ) : isEdit ? (

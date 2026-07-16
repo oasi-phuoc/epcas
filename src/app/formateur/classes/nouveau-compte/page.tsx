@@ -114,14 +114,9 @@ export default function NouveauComptePage() {
     <div>
       <PageHeader
         title="Nouveau compte"
+        backHref="/formateur/classes"
+        backLabel="Retour aux classes"
         description="Créez un compte apprenti, formateur ou admin."
-        actions={
-          <Link href="/formateur/classes">
-            <Button variant="ghost" size="sm">
-              ← Classes
-            </Button>
-          </Link>
-        }
       />
 
       <Panel className="max-w-xl">

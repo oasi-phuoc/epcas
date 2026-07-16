@@ -2,9 +2,9 @@
 
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { cn } from "@/lib/cn";
 import {
   Alert,
-  Badge,
   Button,
   EmptyState,
   PageHeader,
@@ -217,12 +217,9 @@ function LessonEditor({
         </>
       ) : (
         <div className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-4 sm:p-5">
-          <div className="mb-4 flex flex-wrap items-center gap-2">
-            <Badge tone={which === "summary" ? "accent" : "primary"}>
-              {which === "summary" ? "Résumé" : "Complet"}
-            </Badge>
-            <Badge tone="neutral">{editLevel}</Badge>
-          </div>
+          <p className="mb-2 text-xs text-ink-subtle">
+            {which === "summary" ? "Résumé" : "Complet"} · {editLevel}
+          </p>
           <h2 className="mb-4 font-display text-2xl text-ink sm:text-3xl">
             {title || "Sans titre"}
           </h2>
@@ -299,7 +296,6 @@ export function ContenuPageEditor({
     section === "exercices" ? FORMATEUR_EXERCISE_PAGES : FORMATEUR_THEORY_PAGES;
   const hubHref =
     section === "exercices" ? "/formateur/exercices" : "/formateur/contenu";
-  const hubLabel = section === "exercices" ? "← Exercices" : "← Contenu";
   const pageMeta = sectionPages.find((p) => p.slug === pageSlug);
 
   const modulesSorted = useMemo(
@@ -354,25 +350,27 @@ export function ContenuPageEditor({
     <div>
       <PageHeader
         title={pageMeta?.title ?? "Contenu"}
+        backHref={hubHref}
+        backLabel={section === "exercices" ? "Retour aux exercices" : "Retour au contenu"}
         description={
           pageMeta?.description ??
           "Éditez la page pour le module et le niveau choisis."
         }
-        actions={
-          <Link href={hubHref}>
-            <Button variant="ghost" size="sm">
-              {hubLabel}
-            </Button>
-          </Link>
-        }
       />
 
-      <nav className="mb-4 flex flex-wrap gap-2">
+      <nav className="mb-4 flex flex-wrap gap-3">
         {sectionPages.map((p) => (
-          <Link key={p.slug} href={p.href}>
-            <Badge tone={p.slug === pageSlug ? "primary" : "neutral"}>
-              {p.title}
-            </Badge>
+          <Link
+            key={p.slug}
+            href={p.href}
+            className={cn(
+              "text-sm font-medium transition",
+              p.slug === pageSlug
+                ? "text-primary-strong"
+                : "text-ink-muted hover:text-ink",
+            )}
+          >
+            {p.title}
           </Link>
         ))}
       </nav>

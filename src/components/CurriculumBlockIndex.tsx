@@ -3,8 +3,8 @@
 import { useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { ChevronDown, ChevronRight } from "lucide-react";
-import { Badge, PageHeader, Panel, ProgressBar } from "@/components/ui";
-import { STUDY_YEAR_LABELS, levelsLabel } from "@/lib/levels";
+import { PageHeader, Panel, ProgressBar } from "@/components/ui";
+import { levelsLabel } from "@/lib/levels";
 import { isStaffRole } from "@/lib/roles";
 import { useAppStore, useVisibleModules } from "@/lib/store";
 import type { LessonPageSlug } from "@/lib/types";
@@ -31,8 +31,7 @@ export function CurriculumBlockIndex({
   emptyMessage = "Aucun module dans votre parcours pour le moment.",
   preamble,
 }: CurriculumBlockIndexProps) {
-  const { state, currentUser, getUserProgress, userLevel, userStudyYear } =
-    useAppStore();
+  const { state, currentUser, getUserProgress } = useAppStore();
   const visibleModules = useVisibleModules();
   const isTrainer = currentUser ? isStaffRole(currentUser.role) : false;
   const slugSet = useMemo(() => new Set(pageSlugs), [pageSlugs]);
@@ -110,11 +109,7 @@ export function CurriculumBlockIndex({
       {preamble ? <div className="mb-4">{preamble}</div> : null}
 
       {!isTrainer ? (
-        <div className="mb-4 space-y-3">
-          <div className="flex flex-wrap gap-2">
-            <Badge tone="primary">Niveau {userLevel}</Badge>
-            <Badge tone="accent">{STUDY_YEAR_LABELS[userStudyYear]}</Badge>
-          </div>
+        <div className="mb-4">
           <Panel className="p-4">
             <ProgressBar
               value={overallPct}
@@ -156,8 +151,10 @@ export function CurriculumBlockIndex({
                   <ChevronRight className="h-5 w-5 shrink-0 text-ink-subtle" />
                 )}
                 <div className="min-w-0 flex-1">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <Badge>{block.code}</Badge>
+                  <div className="flex flex-wrap items-baseline gap-2">
+                    <span className="text-sm font-medium text-primary-strong">
+                      {block.code}
+                    </span>
                     <h2 className="font-display text-xl text-ink sm:text-2xl">
                       {block.title}
                     </h2>
@@ -205,17 +202,9 @@ export function CurriculumBlockIndex({
                               ) : null}
                             </span>
                           </span>
-                          <Badge
-                            tone={
-                              modPct === 100
-                                ? "success"
-                                : modPct > 0
-                                  ? "accent"
-                                  : "neutral"
-                            }
-                          >
+                          <span className="shrink-0 text-xs text-ink-muted">
                             {st?.done ?? 0}/{st?.total ?? 0}
-                          </Badge>
+                          </span>
                         </Link>
                       </li>
                     );

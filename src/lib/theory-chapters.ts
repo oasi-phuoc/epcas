@@ -11,10 +11,25 @@ export type TheoryChapter = {
 
 const NUMBERED_SECTION_RE = /^###\s+(\d+\.\d+)\b\s*(.*)$/;
 const H2_RE = /^##\s+(.+)$/;
+const HORIZONTAL_RULE_RE = /^-+$/;
 
 function extractH2Title(line: string): string | null {
   const m = line.match(H2_RE);
   return m ? m[1].trim() : null;
+}
+
+/** Préambule avant le premier ### N.M : uniquement un titre ## (pas de page intro). */
+function isTitleOnlyPreamble(preamble: string): boolean {
+  const lines = preamble
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0);
+
+  if (lines.length === 0) return true;
+
+  return lines.every(
+    (line) => H2_RE.test(line) || HORIZONTAL_RULE_RE.test(line),
+  );
 }
 
 function splitByNumberedSections(markdown: string): TheoryChapter[] | null {
@@ -39,7 +54,7 @@ function splitByNumberedSections(markdown: string): TheoryChapter[] | null {
 
   if (first > 0) {
     const preamble = lines.slice(0, first).join("\n").trim();
-    if (preamble) {
+    if (preamble && !isTitleOnlyPreamble(preamble)) {
       const h2Line = lines.slice(0, first).find((l) => H2_RE.test(l));
       const title = h2Line ? extractH2Title(h2Line) : null;
       chapters.push({
@@ -102,7 +117,7 @@ function splitByH2(markdown: string): TheoryChapter[] {
 
   if (indices[0] > 0) {
     const preamble = lines.slice(0, indices[0]).join("\n").trim();
-    if (preamble) {
+    if (preamble && !isTitleOnlyPreamble(preamble)) {
       chapters.push({
         id: "intro",
         number: null,

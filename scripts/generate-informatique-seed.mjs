@@ -151,14 +151,9 @@ function buildExercise({ year, app, exerciseDir, order }) {
     c.id = `${id}-cor-${i + 1}`;
   });
 
-  const docList = documents.map((d) => `- \`${d.name}\``).join("\n");
-  const instructions = `## Consignes
-
-1. Téléchargez les **documents à utiliser** ci-dessous.
-2. Réalisez l'exercice en suivant le fichier de données / le texte de base.
-3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.
-
-${docList ? `### Fichiers fournis\n\n${docList}\n` : ""}`;
+  const instructions = `Téléchargez les documents à utiliser ci-dessous.
+Réalisez l'exercice en suivant le fichier de données / le texte de base.
+Consultez la correction (vidéo ou fichier) lorsqu'elle est disponible.`;
 
   return {
     id,

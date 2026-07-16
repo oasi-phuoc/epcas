@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import {
-  Badge,
   EmptyState,
   PageHeader,
   Panel,
@@ -59,12 +58,12 @@ export default function FormateurExercicesHubPage() {
                     <Icon className="h-5 w-5" />
                   </span>
                   <div className="min-w-0">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <h2 className="font-display text-xl text-ink">
-                        {page.title}
-                      </h2>
-                      <Badge tone="neutral">{count}</Badge>
-                    </div>
+                    <h2 className="font-display text-xl text-ink">
+                      {page.title}
+                    </h2>
+                    <p className="mt-0.5 text-xs text-ink-subtle">
+                      {count} page{count !== 1 ? "s" : ""}
+                    </p>
                     <p className="mt-1 text-sm text-ink-muted">
                       {page.description}
                     </p>

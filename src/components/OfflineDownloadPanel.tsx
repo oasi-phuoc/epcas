@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   Alert,
-  Badge,
   Button,
   Panel,
   ProgressBar,
@@ -35,16 +34,6 @@ const kindLabel: Record<DiffItem["kind"], string> = {
   updated: "Mis à jour",
   removed: "Supprimé",
   unchanged: "À jour",
-};
-
-const kindTone: Record<
-  DiffItem["kind"],
-  "success" | "accent" | "warning" | "neutral"
-> = {
-  new: "success",
-  updated: "accent",
-  removed: "warning",
-  unchanged: "neutral",
 };
 
 export function OfflineDownloadPanel() {
@@ -234,16 +223,13 @@ export function OfflineDownloadPanel() {
             </p>
           </div>
         </div>
-        <div className="mt-4 flex flex-wrap gap-2">
-          <Badge tone={online ? "success" : "warning"}>
-            {online ? "En ligne" : "Hors-ligne"}
-          </Badge>
-          <Badge tone={pendingTracking > 0 ? "accent" : "neutral"}>
-            {pendingTracking > 0
-              ? `${pendingTracking} en attente`
-              : "Rien en attente"}
-          </Badge>
-        </div>
+        <p className="mt-4 text-sm text-ink-muted">
+          {online ? "En ligne" : "Hors-ligne"}
+          {" · "}
+          {pendingTracking > 0
+            ? `${pendingTracking} en attente`
+            : "Rien en attente"}
+        </p>
         <div className="mt-4">
           <Button
             size="sm"
@@ -287,26 +273,20 @@ export function OfflineDownloadPanel() {
           </div>
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-2">
-          {remote ? (
-            <Badge tone="primary">Serveur {remote.version.slice(0, 8)}</Badge>
-          ) : (
-            <Badge tone="warning">Manifeste indisponible</Badge>
-          )}
-          {catalog?.packageVersion ? (
-            <Badge tone="accent">
-              Installé {catalog.packageVersion.slice(0, 8)}
-            </Badge>
-          ) : (
-            <Badge tone="neutral">Pas encore installé</Badge>
-          )}
-          <Badge tone="neutral">{formatBytes(localBytes)} en local</Badge>
-          {remote ? (
-            <Badge tone="neutral">
-              {remote.totalEntries} fichiers · {formatBytes(remote.totalBytes)}
-            </Badge>
-          ) : null}
-        </div>
+        <p className="mt-4 text-sm text-ink-muted">
+          {remote
+            ? `Serveur ${remote.version.slice(0, 8)}`
+            : "Manifeste indisponible"}
+          {" · "}
+          {catalog?.packageVersion
+            ? `Installé ${catalog.packageVersion.slice(0, 8)}`
+            : "Pas encore installé"}
+          {" · "}
+          {formatBytes(localBytes)} en local
+          {remote
+            ? ` · ${remote.totalEntries} fichiers · ${formatBytes(remote.totalBytes)}`
+            : ""}
+        </p>
 
         {!isStaff ? (
           <div className="mt-4 flex flex-wrap gap-2">
@@ -416,11 +396,11 @@ export function OfflineDownloadPanel() {
           <h3 className="font-display text-lg text-ink">
             Changements détectés
           </h3>
-          <Badge tone={changes.length ? "accent" : "success"}>
+          <span className="text-sm text-ink-muted">
             {changes.length === 0
               ? "Aucun"
               : `${changes.length} · ${formatBytes(pendingBytes)}`}
-          </Badge>
+          </span>
         </div>
         <p className="mt-1 text-sm text-ink-muted">
           Seuls les fichiers nouveaux ou modifiés (hash différent) seront
@@ -450,9 +430,10 @@ export function OfflineDownloadPanel() {
                   <span className="mt-0.5 block text-xs text-ink-subtle">
                     {formatBytes(item.size)}
                     {item.remoteHash ? ` · ${item.remoteHash.slice(0, 8)}` : ""}
+                    {" · "}
+                    {kindLabel[item.kind]}
                   </span>
                 </span>
-                <Badge tone={kindTone[item.kind]}>{kindLabel[item.kind]}</Badge>
               </li>
             ))}
           </ul>

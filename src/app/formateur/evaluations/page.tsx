@@ -4,7 +4,6 @@ import { FormEvent, useState } from "react";
 import Link from "next/link";
 import {
   Alert,
-  Badge,
   Button,
   EmptyState,
   NumberField,
@@ -159,13 +158,10 @@ export default function EvaluationsListPage() {
               <Panel key={a.id}>
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <h3 className="font-display text-xl text-ink">{a.title}</h3>
-                      <Badge tone={a.published ? "success" : "warning"}>
-                        {a.published ? "Publiée" : "Brouillon"}
-                      </Badge>
-                      <Badge tone="accent">{levelsLabel(a.levels)}</Badge>
-                    </div>
+                    <h3 className="font-display text-xl text-ink">{a.title}</h3>
+                    <p className="mt-1 text-xs text-ink-subtle">
+                      {a.published ? "Publiée" : "Brouillon"} · {levelsLabel(a.levels)}
+                    </p>
                     {a.description ? (
                       <p className="mt-1 text-sm text-ink-muted">{a.description}</p>
                     ) : null}

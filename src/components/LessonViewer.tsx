@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import {
   Alert,
-  Badge,
   Button,
   PageHeader,
   Panel,
@@ -109,8 +108,6 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
     : mod
       ? `/theorie/module/${mod.id}`
       : "/theorie";
-  const backLabel = "← Module";
-
   const isPlaceholder = body.includes("Contenu à importer");
   const paginated = Boolean(chapters && chapters.length > 1);
   const safeIndex = paginated
@@ -144,19 +141,14 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
     <div>
       <PageHeader
         title={lesson.title}
+        backHref={backHref}
+        backLabel="Retour au module"
         description={
           mod
             ? `Module ${mod.code} — ${mod.title}`
             : isTheoryPage
               ? "Basculez en mode résumé pour réviser."
               : undefined
-        }
-        actions={
-          <Link href={backHref}>
-            <Button variant="ghost" size="sm">
-              {backLabel}
-            </Button>
-          </Link>
         }
       />
 
@@ -181,23 +173,6 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
       ) : null}
 
       <Panel className="animate-fade-up">
-        <div className="mb-4 flex flex-wrap gap-2">
-          {isTheoryPage ? (
-            <Badge tone={summaryMode ? "accent" : "primary"}>
-              {summaryMode ? "Résumé" : "Complet"}
-            </Badge>
-          ) : null}
-          {mod ? <Badge tone="neutral">{mod.code}</Badge> : null}
-          {progress?.status === "done" ? (
-            <Badge tone="success">Lu</Badge>
-          ) : null}
-          {paginated ? (
-            <Badge tone="neutral">
-              Chapitre {safeIndex + 1}/{chapters!.length}
-            </Badge>
-          ) : null}
-        </div>
-
         {paginated && chapters ? (
           <TheoryChapterNav
             chapters={chapters}

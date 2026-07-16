@@ -1,11 +1,9 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
-import Link from "next/link";
 import { useParams } from "next/navigation";
 import {
   Alert,
-  Badge,
   Button,
   EmptyState,
   NumberField,
@@ -84,8 +82,9 @@ function QuestionEditor({
   return (
     <Panel>
       <div className="mb-3 flex flex-wrap items-center gap-2">
-        <Badge>{meta.short}</Badge>
-        <Badge tone="neutral">{question.points} pt</Badge>
+        <span className="text-sm text-ink-muted">
+          {meta.short} · {question.points} pt
+        </span>
         <Button
           type="button"
           size="sm"
@@ -664,14 +663,9 @@ export default function EvaluationEditPage() {
     <div>
       <PageHeader
         title={assessment.title}
+        backHref="/formateur/evaluations"
+        backLabel="Retour à la liste"
         description="Paramètres + questions (modèles prêts à personnaliser)."
-        actions={
-          <Link href="/formateur/evaluations">
-            <Button variant="ghost" size="sm">
-              ← Liste
-            </Button>
-          </Link>
-        }
       />
 
       <Panel className="mb-4">
@@ -734,9 +728,9 @@ export default function EvaluationEditPage() {
             </Button>
           </div>
           {saved ? <Alert tone="success">Paramètres enregistrés.</Alert> : null}
-          <Badge tone={assessment.published ? "success" : "warning"}>
+          <p className="text-sm text-ink-muted">
             {assessment.published ? "Publiée" : "Brouillon"}
-          </Badge>
+          </p>
         </form>
       </Panel>
 

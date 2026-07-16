@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import {
   Alert,
-  Badge,
   Button,
   EmptyState,
   PageHeader,
@@ -31,7 +30,6 @@ import type {
   StudyYear,
 } from "@/lib/types";
 import {
-  ArrowLeft,
   Check,
   Plus,
   Trash2,
@@ -197,27 +195,10 @@ export default function ClassDetailPage() {
     <div>
       <PageHeader
         title={classroom.name}
+        backHref="/formateur/classes"
+        backLabel="Retour aux classes"
         description={`${classroom.year} · ${DIPLOMA_LABELS[classroom.level]} · ${STUDY_YEAR_LABELS[classroom.studyYear]}`}
-        actions={
-          <Link href="/formateur/classes">
-            <Button variant="ghost" size="sm">
-              <ArrowLeft className="h-4 w-4" />
-              Classes
-            </Button>
-          </Link>
-        }
       />
-
-      <div className="mb-4 flex flex-wrap gap-2">
-        <Badge tone={classroom.active ? "success" : "danger"}>
-          {classroom.active ? "Classe active" : "Classe désactivée"}
-        </Badge>
-        <Badge tone="primary">{classroom.level}</Badge>
-        <Badge tone="accent">{STUDY_YEAR_LABELS[classroom.studyYear]}</Badge>
-        <Badge tone="neutral">
-          {members.filter((m) => m.active).length}/{members.length} actifs
-        </Badge>
-      </div>
 
       {message ? (
         <div className="mb-4">
@@ -362,10 +343,8 @@ export default function ClassDetailPage() {
                           {m.displayName}
                         </td>
                         <td className="px-3 py-2 text-ink-muted">{m.email}</td>
-                        <td className="px-3 py-2">
-                          <Badge tone={m.active ? "success" : "danger"}>
-                            {m.active ? "Actif" : "Inactif"}
-                          </Badge>
+                        <td className="px-3 py-2 text-sm text-ink-muted">
+                          {m.active ? "Actif" : "Inactif"}
                         </td>
                         <td className="px-3 py-2">
                           <div className="w-28">
@@ -462,10 +441,8 @@ export default function ClassDetailPage() {
                         {m.displayName}
                       </td>
                       <td className="px-3 py-2 text-ink-muted">{m.email}</td>
-                      <td className="px-3 py-2">
-                        <Badge tone={m.active ? "success" : "danger"}>
-                          {m.active ? "Actif" : "Inactif"}
-                        </Badge>
+                      <td className="px-3 py-2 text-sm text-ink-muted">
+                        {m.active ? "Actif" : "Inactif"}
                       </td>
                       <td className="px-3 py-2">
                         <div className="w-28">
@@ -571,17 +548,9 @@ export default function ClassDetailPage() {
                             {t.dueAt ? ` · échéance ${t.dueAt}` : ""}
                           </p>
                         </div>
-                        <Badge
-                          tone={
-                            t.status === "done"
-                              ? "success"
-                              : t.status === "doing"
-                                ? "accent"
-                                : "neutral"
-                          }
-                        >
+                        <span className="shrink-0 text-xs text-ink-muted">
                           {TASK_STATUS_LABEL[t.status]}
-                        </Badge>
+                        </span>
                       </div>
                       <div className="mt-2 flex flex-wrap gap-1">
                         {(

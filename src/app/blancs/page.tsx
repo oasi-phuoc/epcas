@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import {
-  Badge,
   EmptyState,
   PageHeader,
   Panel,
@@ -34,9 +33,6 @@ export default function BlancsPage() {
 
       {published.length === 0 ? (
         <Panel>
-          <div className="mb-3">
-            <Badge tone="accent">En attente</Badge>
-          </div>
           <EmptyState
             title="Aucun blanc publié pour le moment"
             description={
@@ -61,15 +57,12 @@ export default function BlancsPage() {
             const points = questions.reduce((s, q) => s + q.points, 0);
             return (
               <Panel key={a.id}>
-                <div className="flex flex-wrap items-center gap-2">
-                  <Badge tone="success">Publié</Badge>
-                  <Badge tone="accent">{levelsLabel(a.levels)}</Badge>
-                  {types.slice(0, 4).map((t) => (
-                    <Badge key={t} tone="neutral">
-                      {QUESTION_TYPE_META[t].short}
-                    </Badge>
-                  ))}
-                </div>
+                <p className="text-xs text-ink-subtle">
+                  Publié · {levelsLabel(a.levels)}
+                  {types.length > 0
+                    ? ` · ${types.slice(0, 4).map((t) => QUESTION_TYPE_META[t].short).join(", ")}`
+                    : null}
+                </p>
                 <h2 className="mt-2 font-display text-2xl text-ink">{a.title}</h2>
                 {a.description ? (
                   <p className="mt-1 text-sm text-ink-muted">{a.description}</p>

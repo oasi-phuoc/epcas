@@ -4,13 +4,12 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import {
   Alert,
-  Badge,
   Button,
   PageHeader,
   Panel,
 } from "@/components/ui";
 import { getLessonBody } from "@/lib/lesson-content";
-import { levelsLabel, moduleVisibleForLevel } from "@/lib/levels";
+import { moduleVisibleForLevel } from "@/lib/levels";
 import { isStaffRole } from "@/lib/roles";
 import { useAppStore, useExercises } from "@/lib/store";
 import type { LessonPageSlug } from "@/lib/types";
@@ -55,7 +54,6 @@ export function CurriculumModuleDetail({
     );
   }
 
-  const block = state.blocks.find((b) => b.id === mod.blockId);
   const progress = getUserProgress(currentUser.id);
   const slugSet = new Set(pageSlugs);
   const lessons = state.lessons
@@ -79,26 +77,9 @@ export function CurriculumModuleDetail({
       <PageHeader
         title={`Module ${mod.code}`}
         description={mod.title}
-        actions={
-          <Link href={sectionHref}>
-            <Button variant="ghost" size="sm">
-              ← Blocs
-            </Button>
-          </Link>
-        }
+        backHref={sectionHref}
+        backLabel="Retour aux blocs"
       />
-
-      <div className="mb-4 flex flex-wrap gap-2">
-        {block ? (
-          <Badge>
-            {block.code} · {block.title}
-          </Badge>
-        ) : null}
-        <Badge tone="neutral">
-          {lessons.length + interactive.length} pages
-        </Badge>
-        <Badge tone="accent">{levelsLabel(mod.levels)}</Badge>
-      </div>
 
       <Panel>
         <ul className="space-y-2">
@@ -128,21 +109,13 @@ export function CurriculumModuleDetail({
                       </span>
                     )}
                   </span>
-                  <Badge
-                    tone={
-                      p?.status === "done"
-                        ? "success"
-                        : p?.status === "reading"
-                          ? "accent"
-                          : "neutral"
-                    }
-                  >
+                  <span className="shrink-0 text-xs text-ink-muted">
                     {p?.status === "done"
                       ? "Lu"
                       : p?.status === "reading"
                         ? "En cours"
                         : "À lire"}
-                  </Badge>
+                  </span>
                 </Link>
               </li>
             );
@@ -160,7 +133,7 @@ export function CurriculumModuleDetail({
                     {interactiveTypeLabel[ex.type]} · {ex.difficulty}
                   </span>
                 </span>
-                <Badge tone="accent">Interactif</Badge>
+                <span className="shrink-0 text-xs text-ink-muted">Interactif</span>
               </Link>
             </li>
           ))}

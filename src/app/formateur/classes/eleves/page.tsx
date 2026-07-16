@@ -4,7 +4,6 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import {
   Alert,
-  Badge,
   Button,
   EmptyState,
   PageHeader,
@@ -16,7 +15,6 @@ import {
 import { STUDY_YEAR_LABELS } from "@/lib/levels";
 import { isStaffRole } from "@/lib/roles";
 import { countLessonsForLevel, useAppStore } from "@/lib/store";
-import { ArrowLeft } from "lucide-react";
 
 export default function ElevesTablePage() {
   const {
@@ -75,15 +73,9 @@ export default function ElevesTablePage() {
     <div>
       <PageHeader
         title="Élèves"
+        backHref="/formateur/classes"
+        backLabel="Retour aux classes"
         description="Tableau global des apprentis — filtre, déplacement, activation."
-        actions={
-          <Link href="/formateur/classes">
-            <Button variant="ghost" size="sm">
-              <ArrowLeft className="h-4 w-4" />
-              Classes
-            </Button>
-          </Link>
-        }
       />
 
       {message ? (
@@ -216,22 +208,13 @@ export default function ElevesTablePage() {
                       "—"
                     )}
                   </td>
-                  <td className="px-3 py-2">
-                    {classroom ? (
-                      <>
-                        <Badge tone="primary">{classroom.level}</Badge>{" "}
-                        <Badge tone="accent">
-                          {STUDY_YEAR_LABELS[classroom.studyYear]}
-                        </Badge>
-                      </>
-                    ) : (
-                      "—"
-                    )}
+                  <td className="px-3 py-2 text-sm text-ink-muted">
+                    {classroom
+                      ? `${classroom.level} · ${STUDY_YEAR_LABELS[classroom.studyYear]}`
+                      : "—"}
                   </td>
-                  <td className="px-3 py-2">
-                    <Badge tone={m.active ? "success" : "danger"}>
-                      {m.active ? "Actif" : "Inactif"}
-                    </Badge>
+                  <td className="px-3 py-2 text-sm text-ink-muted">
+                    {m.active ? "Actif" : "Inactif"}
                   </td>
                   <td className="px-3 py-2">
                     <div className="w-24">

@@ -1,5 +1,8 @@
 import { cn } from "@/lib/cn";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 import type { ReactNode } from "react";
+import { Button } from "./Button";
 
 export function Panel({
   children,
@@ -24,20 +27,41 @@ export function PageHeader({
   title,
   description,
   actions,
+  backHref,
+  backLabel = "Retour",
 }: {
   title: string;
   description?: string;
   actions?: ReactNode;
+  /** Lien retour affiché à gauche du titre (icône seule). */
+  backHref?: string;
+  backLabel?: string;
 }) {
   return (
-    <header className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between animate-fade-up">
-      <div>
-        <h1 className="font-display text-3xl text-ink sm:text-4xl">{title}</h1>
-        {description ? (
-          <p className="mt-1 max-w-2xl text-ink-muted">{description}</p>
-        ) : null}
+    <header className="mb-6 animate-fade-up">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex min-w-0 items-start gap-2">
+          {backHref ? (
+            <Link href={backHref} className="mt-1.5 shrink-0">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="px-2"
+                aria-label={backLabel}
+              >
+                <ArrowLeft className="h-5 w-5" />
+              </Button>
+            </Link>
+          ) : null}
+          <div className="min-w-0">
+            <h1 className="font-display text-3xl text-ink sm:text-4xl">{title}</h1>
+            {description ? (
+              <p className="mt-1 max-w-2xl text-ink-muted">{description}</p>
+            ) : null}
+          </div>
+        </div>
+        {actions ? <div className="flex flex-wrap gap-2">{actions}</div> : null}
       </div>
-      {actions ? <div className="flex flex-wrap gap-2">{actions}</div> : null}
     </header>
   );
 }

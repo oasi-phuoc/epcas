@@ -3,7 +3,6 @@
 import { useMemo } from "react";
 import Link from "next/link";
 import {
-  Badge,
   Button,
   EmptyState,
   PageHeader,
@@ -163,18 +162,12 @@ export default function ClassesHubPage() {
                     <td className="px-3 py-2.5 font-medium text-ink">
                       {c.name}
                     </td>
-                    <td className="px-3 py-2.5">
-                      <Badge tone={c.active ? "success" : "danger"}>
-                        {c.active ? "Active" : "Désactivée"}
-                      </Badge>
+                    <td className="px-3 py-2.5 text-sm text-ink-muted">
+                      {c.active ? "Active" : "Désactivée"}
                     </td>
-                    <td className="px-3 py-2.5">
-                      <Badge tone="primary">{c.level}</Badge>
-                    </td>
-                    <td className="px-3 py-2.5">
-                      <Badge tone="accent">
-                        {STUDY_YEAR_LABELS[c.studyYear]}
-                      </Badge>
+                    <td className="px-3 py-2.5 text-ink-muted">{c.level}</td>
+                    <td className="px-3 py-2.5 text-ink-muted">
+                      {STUDY_YEAR_LABELS[c.studyYear]}
                     </td>
                     <td className="px-3 py-2.5 text-ink-muted">{c.year}</td>
                     <td className="px-3 py-2.5 text-ink-muted">
@@ -243,9 +236,9 @@ export default function ClassesHubPage() {
                 </span>
                 <span className="text-xs text-ink-subtle">{u.email}</span>
               </span>
-              <Badge tone={u.role === "admin" ? "primary" : "accent"}>
+              <span className="text-xs text-ink-subtle">
                 {ROLE_LABELS[u.role]}
-              </Badge>
+              </span>
             </li>
           ))}
         </ul>
