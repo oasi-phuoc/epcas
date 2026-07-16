@@ -21357,6 +21357,267 @@ const DEMO_504_OBJECTIFS_SUMMARY = `## Objectifs
 - Kanban · Two-Bin · JIT/JIS
 - LCA · Jidoka`;
 
+const DEMO_504_GLOSSAIRE_FULL = `## Glossaire — Module 504
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Principe du Kanban** | §4.2 | Système de **flux tiré** (orienté consommation) : réapprovisionnement déclenché quand le stock atteint un **minimum**. Carte, conteneur ou signal numérique accompagne le lot. Développé chez Toyota (1947). |
+| **Principe Two-Bin** | §4.3 | **Deux conteneurs** par article : réappro quand le 1er est **vide** et le 2e **entamé**. Le vide déclenche la commande · quantité du 2e = couverture jusqu'au retour. |
+| **Just in Sequence (JIS)** | §4.6 | « Juste à temps **et dans le bon ordre** » : livraison **séquencée** et souvent **déballée** pour le monteur (à portée de main), pas seulement JIT en emballage transport. |
+| **Automatisation à bas coût (LCA)** | §4.7 | *Low Cost Automation* / Lean Automation : automatiser à partir de l'**existant** + composants standard · réduire tâches répétitives · temps de passage ↓ sans investissement massif. |`;
+
+const DEMO_504_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Kanban** = flux tiré · seuil min. → réappro
+- **Two-Bin** = 2 bacs · vide + entamé → commande
+- **JIS** = JIT + **ordre** + déballé au poste
+- **LCA** = automatisation lean à faible coût`;
+
+/** Mises en situation Module 504 */
+const DEMO_504_SITUATION_FULL = `## Mises en situation — Module 504
+
+Contexte **EnterSite AG** : optimiser le **flux de matériel** interne/externe (Kanban, Two-Bin, JIT/JIS). Formation Kanban demandée par **Monsieur Münster**.
+
+### Vue d'ensemble des missions
+1. Flux interne vs externe
+2. Two-Bin (images) + JIT vs JIS
+3. Présentation Kanban (PPT/vidéo)
+4. Schéma flux de matériel
+5. Discussion STA
+
+---
+
+## Mission 1 — Flux interne et externe
+
+Compare et décris les deux systèmes.
+
+:::reponse
+**Flux interne** — transport des matières **au sein** de l'entreprise (réception → production → expédition).
+
+**Flux externe** — transport entre l'entreprise et les **partenaires** (fournisseurs, clients).
+
+Les deux sont essentiels pour une production et une supply chain efficaces · nécessitent **planification** et **contrôle** · choix des systèmes + **intégration TI** pour un flux fluide.
+:::
+
+---
+
+## Mission 2 — Principe Two-Bin (ordre des images)
+
+Copier les images dans l'ordre et décrire le principe.
+
+:::reponse
+**Ordre logique du cycle Two-Bin :**
+
+1. **Prélèvement** dans le conteneur 1 · le conteneur 2 est déjà livré en réserve
+2. **Avant vidage** : la logistique livre un conteneur plein au poste (réappro anticipé)
+3. **Prélèvement** dans le conteneur inférieur (2) · stock suffisant jusqu'à la livraison suivante
+4. **Conteneur 1 vide** → déposé au point de transfert → **déclenche** la commande
+5. **Prélèvement** continue depuis le conteneur 2 jusqu'à vidage → nouvelle commande
+
+**Principe** : toujours **deux bacs** par article · commande au moment **vide + entamé** · le 2e bac couvre le délai d'approvisionnement.
+:::
+
+### Mission 2.1 — JIT → JIS (GT10-TN221)
+
+Que changerait pour les collaborateurs avec **JIS** au lieu de **JIT** ?
+
+:::reponse
+- Pièces livrées **juste à temps** ET dans l'**ordre exact** de montage → aligner les étapes de travail sur la séquence
+- **Coordination** étroite supply chain ↔ production · connaître délais et séquences
+- Livraison **directe** au poste · stocks ↓ · éviter les goulots
+- Production plus **efficace** · collaborateurs concentrés sur leurs tâches sans souci d'approvisionnement
+
+*(Autres réponses possibles selon discussion.)*
+:::
+
+---
+
+## Mission 3 — Formation Kanban
+
+Présentation PowerPoint → vidéo · dépôt fichier.
+
+:::reponse
+**Qu'est-ce que le Kanban ?**  
+Système de contrôle **visuel** (cartes, conteneurs, balances) pour flux de matières en production/entrepôt.
+
+**Objectif**  
+Flux plus efficace · éviter goulots et surproduction · production allégée · stocks ↓
+
+**Types**  
+Flux **tiré** (demande) · flux **poussé** (fournisseur) · **Two-Bin** · optique/numérique
+
+**Fonctionnement**  
+Carte/signal déclenche réappro · évolution : carte → conteneur → code-barres/QR/ERP
+
+**Avantages**  
+Approvisionnement selon besoins · stocks ↓ · fiabilité ↑ · coûts stockage ↓ · collaboration services/fournisseurs
+
+**Conditions préalables**  
+Planification claire · processus définis · tous connaissent rôles et importance du flux
+
+**Flux d'infos ↔ matières**  
+Matières contrôlées par signal Kanban · infos = confirmation consommation + commande nouveaux matériaux
+
+**Dépôt individuel** — PPT/vidéo selon consignes.
+:::
+
+---
+
+## Mission 4 — Schéma flux de matériel
+
+:::reponse
+**Dépôt individuel** — schéma entreprise de production copié dans PowerPoint avec **flèches** représentant l'ensemble du flux de matériel (MP → production → distribution…).
+:::
+
+---
+
+## Mission 5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_504_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : interne = dans l'entreprise · externe = fournisseurs/clients
+- **M2** : Two-Bin = 2 bacs · vide+entamé · JIS = JIT + ordre
+- **M3** : Kanban = tiré · visuel · formation PPT
+- **M4** : schéma flux avec flèches
+- **M5** : discussion`;
+
+/** Exercices de maths Module 504 */
+const DEMO_504_MATHS_FULL = `## Exercices de mathématiques — Module 504
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Bacs sur une étagère (Two-Bin, Marly)
+
+Bacs **125 × 148 × 290 mm** · étagère **2000 × 1210 × 320 mm** · rayons **1200 × 300 × 30 mm**.
+
+Combien de **bacs** par étagère ?
+
+:::solution
+**48 bacs**
+
+\`\`\`
+Bacs/rayon (largeur) : 1'200 / 148 = 8,1 → **8**
+Étages (hauteur)     : 2'000 / (290 + 30) = 6,25 → **6**
+Total                : 8 × 6 = **48 bacs**
+\`\`\`
+:::
+
+### Exercice 2 — Surface du rayonnage (550 bacs)
+
+:::solution
+**4,64 m²**
+
+\`\`\`
+Étagères : 550 / 48 = 11,46 → **12**
+Surface  : 12 × 1,21 × 0,32 = **4,6464 m²** ≈ **4,64 m²**
+\`\`\`
+:::
+
+### Exercice 3 — Contenu d'un bac (roues dentées, Two-Bin)
+
+150 p./jour · **3** îlots · délai **5 j** · ventes **+15 %**.
+
+:::solution
+**288 pièces** par bac
+
+\`\`\`
+Base     : 150 / 3 × 5 = **250** p./bac
++15 %    : 250 × 1,15 = **287,5 → 288** p./bac
+\`\`\`
+:::
+
+### Exercice 4 — Hauteur réservoir toner (4 jours d'appro)
+
+Réservoir **Ø 1,3 m** · **550 kg/j** · densité **0,95** · délai **4 j**.
+
+:::solution
+**0,39 m** (corrigé EnterSite — calcul journalier simplifié)
+
+\`\`\`
+Surface base : π × 0,65² = **1,3267 m²**
+Volume/jour  : 550 × 0,95 = 522,5 L = 0,5225 m³  (méthode corrigé)
+Hauteur min. : 0,5225 / 1,3267 = **0,3938 m** ≈ **0,39 m**
+
+*(Pour 4 jours stricts : 550×4/0,95 L → h ≈ 1,75 m — vérifier énoncé EnterSite.)*
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 4,64 · 288 · 48 · 0,39`;
+
+const DEMO_504_MATHS_SUMMARY = `## Maths — Solutions
+1. Bacs/étagère : **48** (8 × 6)
+2. Surface 550 bacs : **4,64 m²** (12 étagères)
+3. Roues dentées/bac : **288** p. (+15 %)
+4. Hauteur réservoir : **0,39 m**`;
+
+/** Vérification des acquis Module 504 */
+const DEMO_504_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 504 — Le flux de matériel**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Explique le **principe du Kanban**.
+
+:::reponse
+Système de flux de matières orienté vers la **consommation** (flux tiré).
+
+Un **réapprovisionnement** est déclenché dès qu'une **quantité minimale** prédéfinie n'est plus atteinte.
+:::
+
+### Question 2
+
+Explique le principe **Two-Bin**.
+
+:::reponse
+**Deux conteneurs** par article en stock.
+
+Dès que le **premier** est **vide** et le **deuxième entamé**, le réappro est déclenché avec le récipient vide.
+
+Quand le 2e est à nouveau rempli, il est replacé **sous** le récipient qui vient d'être entamé.
+:::
+
+### Question 3
+
+Kanban et Two-Bin : sur quel **facteur central** s'orientent-ils ?
+
+:::reponse
+Sur la **consommation effective** de marchandises (besoin réel du poste consommateur).
+:::
+
+### Question 4
+
+Que signifie **JIT** ?
+
+:::reponse
+**Just in Time** (juste à temps) : les matériaux sont livrés au moment où ils peuvent être **traités immédiatement** au poste — idéalement **sans stockage** intermédiaire → économie de frais de stockage.
+:::
+
+### Question 5
+
+Cite **deux avantages** et **deux inconvénients** du JIT.
+
+:::reponse
+**Avantages**
+- Économie de stockage (espace, assurance, énergie…)
+- Pas d'immobilisation de capital · approvisionnement selon besoins
+- Process accéléré · moins de ruptures · personnel d'appro ↓ · temps de passage ↓
+
+**Inconvénients**
+- Forte **dépendance** du flux **externe**
+- Sensibilité aux aléas (embouteillages, grèves, météo…)
+- Risque d'**arrêt de production** (coûts + image) en cas de défaillance
+:::`;
+
+const DEMO_504_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Kanban = flux tiré · seuil min. → réappro
+2. Two-Bin = 2 bacs · vide + entamé → commande
+3. Facteur central = **consommation**
+4. JIT = juste à temps · pas de stock au poste
+5. + économie stocks · − dépendance externe / aléas`;
+
 /** Contenu Module 505 — Planification et contrôle de la production (PCP) */
 const DEMO_505_THEORIE_FULL = `## 5. Planification et contrôle de la production (PCP)
 
@@ -27307,6 +27568,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_504_THEORIE_FULL,
       summary: DEMO_504_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_504_GLOSSAIRE_FULL,
+      summary: DEMO_504_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_504_SITUATION_FULL,
+      summary: DEMO_504_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_504_MATHS_FULL,
+      summary: DEMO_504_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_504_VERIFICATION_FULL,
+      summary: DEMO_504_VERIFICATION_SUMMARY,
     },
   },
   "505": {
