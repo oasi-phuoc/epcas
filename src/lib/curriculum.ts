@@ -27989,6 +27989,514 @@ const DEMO_615_OBJECTIFS_SUMMARY = `## Objectifs
 - Préparation · supports
 - NPA · hubs`;
 
+/** Glossaire Module 615 */
+const DEMO_615_GLOSSAIRE_FULL = `## Glossaire — Module 615
+
+| Terme spécialisé | Lien | Définition |
+| --- | --- | --- |
+| **Envois spéciaux** | §15.2 | Envois à **traitement particulier** (ex. vin, encombrants, valeurs, cécogramme). |
+| **Marchandises dangereuses (MD)** | §15.3 | Substances/objets **dangereux** pour personnes et environnement, notamment au transport. |
+| **Limited Quantity (LQ)** | §15.4 | Quantités **autorisées** de MD expédiables via le canal **CEC**. |
+| **Préparation des envois** | §15.7 | Avant le centre de tri : regrouper envois similaires (ex. express dans le même RX). |
+| **Points de dépôt** | §15.7 | Lieux de dépôt : guichet CC, filiale, BA publique, automates… |
+| **Porte-charges** | §15.12 | Conteneurs de transport (rollbox, conteneurs à lettres/BB, caisses mobiles…). |
+| **Étiquette** | §15.12 | Signalétique sur le porte-charges indiquant **contenu** et **traitement**. |
+| **Récipients réutilisables** | §15.12 | Conteneurs remplissables régulièrement (plastique solide/recyclé). |
+| **Système de distribution** | §15.18 | Ensemble des **processus et installations** du fournisseur au client final. |
+| **Canal de distribution** | §15.18 | **Lien** entre fournisseurs et acheteurs finaux. |
+| **Transport combiné** | §15.23 | Transport utilisant **plusieurs modes** (route, rail, air, eau). |
+| **Modes de transport** | §15.23 | Moyens empruntant les **mêmes voies** (route, rail, air, eau). |`;
+
+const DEMO_615_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **MD** vs **LQ** (quantités limitées en CEC)
+- **BB** 15 kg · **RX** colis · étiquetage = quoi + où
+- **Hub** + **cross-docking** · NPA 4 chiffres
+- **Séparation par 7** (lettres) · presta+type (colis)`;
+
+/** Mises en situation Module 615 */
+const DEMO_615_SITUATION_FULL = `## Mises en situation — Module 615
+
+**LOGO / Poste / EnterSite** — cinq blocs : envois spéciaux, préparation lettres, porte-charges, géographie/NPA, systèmes de distribution.
+
+---
+
+## Bloc A — Envois spéciaux (stage guichet LOGO)
+
+### Exercice A1 — Peut-on expédier ? (tableau envois)
+
+:::reponse
+| Type | CEC/Courrier ? | Justification |
+| --- | --- | --- |
+| **Armes** | **Non** | Exclues du canal CEC |
+| **Feux d'artifice** | **Non** | Non autorisés (selon prestataire) |
+| **Billets** | **Oui** | Courrier autorisé |
+| **Billets de banque** | **Selon prestataire** | Poste : exclus CH · DHL : jusqu'à EUR 500 |
+| **Décolorant cheveux** | **Oui** | Jusqu'à **5 L** |
+| **Vin** | **Oui** | CC : **VinoLog** · privé : rembourrage + « Fragile » |
+| **Parfum** | **Oui** | Jusqu'à **70 % vol.** |
+| **Alcool à brûler** | **Oui** | Jusqu'à **1 L** |
+| **Machine à laver** | **Oui** | Transport marchandises · sur **palettes** |
+| **Pneu** | **Oui** | Encombrant · sans emballage si dimensions OK |
+| **Ordinateur portable** | **Oui** | Bien emballer/rembourrer |
+| **Alimentation** | **Oui** | Conteneurs adaptés (ex. caisse **isotherme**) |
+:::
+
+### Exercice A2 — L'emballage mystérieux (100×150×20 cm)
+
+:::reponse
+**Envoi spécial** — dépasse format colis régulier → **encombrant**.
+
+Contenu probable : **vélo** à assembler (pas un téléviseur malgré l'image sur le carton).
+
+Le client utilise l'image TV pour que les manipulateurs traitent le colis **avec plus de soin**.
+:::
+
+### Exercices A3.1–A3.6 — Présentations clients (extraits corrigés)
+
+:::reponse
+**3.1 Poules (Mme Rogger)** — **non** via distribution standard · transporteur **spécialisé animaux** (ex. tagsi.ch). Insectes autorisés chez certains (abeilles, vers…) · **pas** vertébrés (poules, chats, oiseaux).
+
+**3.2 Bijoux (Mme Lüthi)** — valeurs classe I/II · Poste Lettre R / Colis SI-AS · Planzer exclut bijoux · DHL jusqu'à CHF 25'000 · emballage + presta adaptée.
+
+**3.3 Œuvre d'art 200'000 CHF (M. Rüegg)** — docs douaniers · DHL max 25'000 · Poste GLS assuré 5'000 · déposer bien emballé avec lettre de voiture.
+
+**3.4 Batterie vélo électrique (M. Genoni)** — Poste : batteries ≤ **100 Wh** · emballage solide · **interdit** si défectueuse · Li = **inflammable** si endommagée.
+
+**3.5 Désinfectant éthanol 70 % (M. Ambühl)** — Poste : **1 L** max · marquage **LQ** + n° ONU · Planzer : non autorisé.
+
+**3.6 Cécogramme + colis militaire** — livres audio aveugles : **gratuits** ≤ **7 kg** · inscription « Cécogramme » · envoi militaire : adressage grade/unité/NPA · **gratuit** < **5 kg**.
+:::
+
+### Exercice A4 — MD canal courrier national
+
+:::reponse
+**Aucune MD** en courrier national — **exception** : matériel biologique de laboratoire.
+
+Sinon : transport **marchandises** / **transports spéciaux**.
+
+Colis illustré : **batteries lithium** · ONU **3480** : emballage intérieur non conducteur · anti court-circuit · extérieur robuste · pas de mouvement interne.
+:::
+
+### Exercice A5 — Mind map envois spéciaux
+
+:::reponse
+**Réponse individuelle** — cercles par type : encombrants · valeurs · vin/VinoLog · MD/LQ · animaux · cécogramme · militaire · fragile…
+:::
+
+### Exercice A6 — QCM marchandises dangereuses
+
+:::reponse
+**Colis suspect odeur/fuite + LQ** :
+- Ne **pas** jeter ni charger · **informer le responsable** · gants si nécessaire
+
+**Symbole « haut/bas » (flèches)** :
+- Charger avec flèches vers le **haut**
+
+**Liquide corrosif a contaminé d'autres colis** :
+- **Informer responsable** · colis contaminés → **clinique des colis**
+:::
+
+---
+
+## Bloc B — Préparation des envois (séparation par 7)
+
+### Exercice B1 — Séparation par 7
+
+:::reponse
+**4 critères (ordre)** :
+1. **Oblitération** (à oblitérer / déjà ok)
+2. **Offre de prestations** (A, B, B2…)
+3. **Format** (FN, GF…)
+4. **Type de traitement** (automatique / manuel)
+
+**7 sortes finales** — étiquettes sur BB selon combinaison (Courrier A FN auto, Courrier B, GF, MIX, sous-affranchis, levée BA, clinique… — voir schéma cours).
+:::
+
+### Exercice B2 — Signification des étiquettes BB
+
+:::reponse
+| Étiquette | Contenu / sens |
+| --- | --- |
+| Courrier A+B FN | Format B5 176,5×250 mm · lettres en BB · sauf affranchissement PP |
+| Levée BA | Envois/formats **mélangés** |
+| Avis de réception | Partiellement préparés · tri par format |
+| GF mécanique | 250×353 mm · Courrier A |
+| Sous-affranchis | Format/épaisseur sans importance |
+| *(Tri distribution)* | **Pas** préparation — provient du tri |
+| FN épais ≤2 cm | B5 · Courrier A |
+| FN PP/IFS | B5 · affranchissement PP ou IFS · Courrier A |
+| FN PP Courrier B | B5 · PP/IFS · Courrier B |
+| SB mixte | Petits envois + lettres · A et B |
+| Endommagés/trouvés | Tous envois endommagés · objets trouvés en BA |
+:::
+
+### Exercice B3 — Remplir les BB correctement
+
+:::reponse
+**Poids max BB** : **15 kg**
+
+**Format normal (FN)** — vertical · adresse à droite lisible · vers étiquette BB · plaque intercalaire si non plein.
+
+**Grand format (GF)** — horizontal · adresse à l'envers · ne pas dépasser hauteur max · AJ/actes de poursuite **en haut** · pas de séparation auto/manuel au dépôt.
+
+**GF adressage vertical** — horizontal, adresse à l'envers · hauteur max · AJ en haut.
+
+**Gros objets** — non enliassés · hauteur max · adresse vers étiquette si possible · toujours en BB même pour 1 objet.
+:::
+
+### Exercice B4 — Carte d'anniversaire retardée (Courrier A → B2)
+
+:::reponse
+**Retard** — mauvaise étiquette BB (**B2** au lieu de **Courrier A**) → jusqu'à **6 jours** de retard.
+
+**Poste** — remboursement si recommandé · **image** ternie · CA ↓ (clients passent à l'e-mail).
+
+**Voisin** — déçu · bouche-à-oreille négatif · excuses à sa tante.
+:::
+
+### Exercice B5 — Emballage correct (images colis)
+
+:::reponse
+**Poste** — reconditionner · **PostPac** en filiale.
+
+**DHL** — suppléments si emballage non conforme.
+
+**Planzer** — emballage résistant chute **80 cm** · autocollants « fragile » **ne libèrent pas** de l'obligation · réserve de dommage possible · responsabilité max **CHF 500**.
+
+**Bouteille** — rembourrage (bulles, journaux) · **pneu** — encombrant · étiquette sur le pneu · **vélo** — encombrant ou marchandise selon dimensions.
+:::
+
+---
+
+## Bloc C — Porte-charges et étiquettes (EnterSite)
+
+### Exercice C1 — Porte-charges par entreprise
+
+:::reponse
+| Entreprise | Porte-charges |
+| --- | --- |
+| **Poste** | Conteneurs collectifs · Rollbox · Caisses mobiles · Palettes · Conteneurs à lettres (BB) |
+| **Planzer** | Rollbox · Palettes · Caisses mobiles |
+| **DHL** | Rollbox · Palettes · Caisses mobiles · Caisses mobiles **avion** |
+:::
+
+### Exercice C2 — Identifier porte-charges (images)
+
+:::reponse
+**Planzer** — Rollbox · contenu via **scanner**
+
+**DHL** — Caisses mobiles · n° relié au code-barres · contenu dans le **système**
+
+**Poste** — Rollbox · étiquette **papier** · lire l'étiquette
+:::
+
+### Exercice C3 — Étiquettes conteneurs à lettres
+
+:::reponse
+**Réponse selon images cours** — critères : épaisseur (≤6 mm / >6 mm) · format (B5, B4…) · cécogramme · prise en charge · levée BA · SPI CN22/CN23 · Dispomail · PP B5 100 g…
+
+*(Attribuer chaque étiquette au porte-charges correspondant selon le support fourni en classe.)*
+:::
+
+### Exercice C4 — Rollbox colis
+
+:::reponse
+**RX normal** (gauche) — tous colis **sauf snowboard**
+
+**RX Encombrant** (droite) — **snowboard**
+
+*(Attribuer chaque colis image à RX normal ou encombrant selon le support cours.)*
+:::
+
+### Exercice C5 — Chargement caisse mobile + QR
+
+:::reponse
+| Mode | Avantage | Inconvénient |
+| --- | --- | --- |
+| **Vrac** | Économique · plus de colis | Plus de temps · plus de personnel |
+| **Avec RX** | Chargement/déchargement **rapide** | Moins de colis transportables |
+
+**Code QR sur RX** — scan RX + colis → traçabilité · données transmises **avant** arrivée · inconvénient : **scanner obligatoire** à chaque transbordement.
+:::
+
+---
+
+## Bloc D — Géographie suisse, NPA et centres de tri
+
+### Exercice D1 — Carte (lacs, cols, rivières, tunnels)
+
+:::reponse
+**Réponse individuelle** — placer sur carte :
+Léman · Constance · Quatre-Cantons · Zurich · Aar · Rhin · Rhône · Inn · Gothard · Julier · Grand-St-Bernard · Oberalp · Simplon · Vereina · Lötschberg · Furka…
+:::
+
+### Exercice D2 — Ferroutage
+
+:::reponse
+**Raccourcis** · moins de trafic cols · cols fermés en **hiver**.
+
+- **Lötschberg/Simplon** — axe CH–Italie · transport combiné
+- **Lötschberg VF** — Valais
+- **Furka** — Haut-Valais en hiver
+- **Vereina** — Basse-Engadine en hiver (sinon Julier/Autriche)
+:::
+
+### Exercice D3 — NPA (sans outils)
+
+:::reponse
+**Réponse selon exercice cours** — structure NPA 4 chiffres : 1er = région O→E · 2e = territoire · 3e = ancienne ligne · 4e = localité.
+:::
+
+### Exercice D4 — Centres de tri Poste
+
+:::reponse
+**Réponse individuelle** — dessiner Mülligen · Härkingen · Frauenfeld · Cadenazzo · Daillens · Pratteln… · diviser CH par **région de tri**.
+:::
+
+### Exercice D5 — Voies d'acheminement (extraits)
+
+:::reponse
+| Envoi | Trajet (extraits) |
+| --- | --- |
+| Courrier A B5 Herisau | 9100 → Mülligen → Härkingen → OD Herisau → client |
+| Colis PRI Genève | 12xx dépôt → Daillens → OD Genève → client |
+| Colis | Mülligen/Frauenfeld → Härkingen → train → Cadenazzo → client 69xx |
+| Colis SP | 6xxx → Cadenazzo → Härkingen → Rothenburg → client 88xx |
+| Courrier A Martina | 7560 → Mülligen → Härkingen → OD Le Locle → 2540 |
+| Colis PRI Berne | 3030 → CC Härkingen → CC Pratteln → client 4242 Laufon |
+:::
+
+### Exercices D6–D7 — Nouveau en Suisse / GeoGuessr
+
+:::reponse
+**D6** — sites centres colis : proximité autoroute/rail/aéroports · surfaces disponibles · accessibilité · loyer · bruit.
+
+**D7** — concours GeoGuessr cantons/rivières/montagnes (liens geoguessr.com).
+:::
+
+---
+
+## Bloc E — Systèmes de distribution et acheminement
+
+### Exercice E1 — Conséquences sans tri par tournée
+
+:::reponse
+**Conséquences** — retards massifs · secteur parcouru en tous sens · bâtiments visités **plusieurs fois** · inefficacité.
+
+**Solution** — **cross-docking** / tri préalable par **tournée** · chaque bâtiment **1×**.
+:::
+
+### Exercice E2 — Hub et cross-docking
+
+:::reponse
+**Hub** — lieu central de **transbordement** : rassemblement → traitement → réacheminement (plateforme, nœud, centre de fret…).
+
+**Cross-docking** — arrivée (fournisseur/région/type) → tri au hub → départ trié par destinataire/région.
+:::
+
+### Exercice E3 — Niveaux des systèmes de distribution
+
+:::reponse
+| Système | Déroulement | Exemple |
+| --- | --- | --- |
+| **Plusieurs niveaux** | Expéditeur → plusieurs tri → destinataire | International |
+| **Deux niveaux** | Expéditeur → centre tri → destinataire | Migros Online |
+| **Un niveau** | Expéditeur → destinataire | Coursier, repas |
+| **Trois niveaux** | Expéditeur → tri → tri → destinataire | Colis/lettres nationaux |
+:::
+
+### Exercice E4 — Modes de transport
+
+:::reponse
+**Train** — + volume, écolo · − lié au rail · réseau saturé
+
+**Camion** — + flexibilité · − embouteillages · RPLP · nuit interdite (sauf Poste)
+
+**Poste entre centres** — créneaux **rail** de nuit · grands volumes courrier/colis.
+
+**Autres** — avion · véhicule livraison · voiture · scooter · vélo · drone · bateau.
+:::
+
+### Exercice E5 — Autres modes
+
+:::reponse
+Voir liste E4 — avion (international) · véhicule livraison 3,5 t (pas interdiction nuit) · voiture coursier · scooter · vélo · drone · bateau.
+:::
+
+### Exercice E6 — Tableau combiné (extraits)
+
+:::reponse
+**Réponse selon tableau cours** — exemples :
+- Courrier A Meggen : **4 niveaux** · camion/scooter
+- Colis PRI Ascona : **2 niveaux** · Cadenazzo → Giubiasco
+- VinoLog Sierre : **3 niveaux** · Daillens → train → Härkingen → distribution
+- Pizza Berne : **1 niveau** · scooter/voiture
+- Colis DHL Athènes : **4 niveaux** · avion + camion
+- Nespresso Eco : **2 niveaux** · Avenches → Berne → Interlaken
+:::
+
+---
+
+## Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_615_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **Bloc A** : tableau envois · MD/LQ · cécogramme · militaire
+- **Bloc B** : séparation **7** · BB 15 kg · FN vertical / GF horizontal
+- **Bloc C** : BB/RX/SB · QR vs papier · vrac vs RX
+- **Bloc D** : NPA · centres tri · ferroutage
+- **Bloc E** : hub · CD · 1/2/3/multi niveaux`;
+
+/** Exercices de maths Module 615 */
+const DEMO_615_MATHS_FULL = `## Exercices de mathématiques — Module 615
+
+### Exercice 1 — Double pont vs remorque (Schaffhouse)
+
+1'713 RX/jour · remorque 24 RX (12+12) = 29,7 → **30** transports  
+713 RX · double pont 36 RX = 19,8 → **20** transports
+
+:::solution
+**10 trajets économisés** (30 − 20)
+:::
+
+### Exercice 2 — +20 % rollbox (Baar depuis Härkingen)
+
+850 + 20 % = **1'020** RX/jour · 24 RX/attelage
+
+:::solution
+**7 trajets supplémentaires**
+
+\`\`\`
+1'020 / 24 = 42,5 → 43 transports
+850 / 24 = 35,42 → 36 transports actuels
+43 − 36 = 7
+(1 course possible sans remorque)
+\`\`\`
+:::
+
+### Exercice 3 — Déchargement 2/3 remorque
+
+24 RX × 2/3 = **16 RX** · 48 s/RX + 720 s préparation
+
+:::solution
+**24 min 48 s** · coûts salariaux :
+
+\`\`\`
+16 × 48 + 720 = 1'488 s = 24,8 min
+CFC : 5'120/24/420 = 0,50 CHF/min → 0,50 × 24,8 = CHF 12,40
+Apprenti (+15 %) : 28,52 min · 912/24/420 = 0,09 CHF/min → CHF 2,56
+\`\`\`
+:::
+
+### Exercice 4 — Quantités LQ
+
+:::solution
+| Article | Quantité totale | Autorisé LQ ? |
+| --- | --- | --- |
+| Désinfectant mains | 6 × 50 ml = **0,3 L** | **Oui** (≤ 1 L) |
+| Bombes aérosol laque | 3 × 750 ml = **2,25 L** | **Non** (max 1 L) |
+| Pâte combustible | 2 × 1,2 L = **2,4 L** | **Non** (max 1 L/boîte) |
+:::
+
+> **Contrôle rapide** : 10 trajets · 7 trajets · 24,8 min · 12,40 CHF · 2,56 CHF · 0,3 L oui · 2,25 L non · 2,4 L non`;
+
+const DEMO_615_MATHS_SUMMARY = `## Maths — Solutions
+1. Double pont : **10** trajets économisés
+2. +20 % RX : **7** trajets en plus
+3. Déchargement : **24 min 48 s** · CFC **12,40 CHF** · apprenti **2,56 CHF**
+4. LQ : 0,3 L oui · 2,25 L et 2,4 L non`;
+
+/** Vérification des acquis Module 615 */
+const DEMO_615_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 615 — Préparer les envois pour le processus de tri**.
+
+### Question 1 — Colis LQ qui fuit (ONU 1266)
+
+:::reponse
+**Procédure** — ne pas toucher · informer **responsable de conduite**.
+
+**Substance** — **Parfum** · classe **matières liquides inflammables** · max **5 L** en LQ.
+:::
+
+### Question 2 — Vrai/Faux (corrections)
+
+:::reponse
+| Affirmation | Correct ? | Correction |
+| --- | --- | --- |
+| Préparation = processus de tri | **Non** | Processus de **dépôt** |
+| Cécogrammes = envois spéciaux | **Oui** | |
+| Colis préparés par presta + type traitement | **Oui** | |
+| Colis préparés avec séparation par 7 | **Non** | **Lettres** |
+| Automates/BA/offices = points de dépôt | **Non** | + **guichets CC** |
+| Souris de labo en colis | **Non** | **Insectes** autorisés |
+| Autocollant LQ = contenu interdit CEC | **Non** | Matières en **quantités limitées** autorisées |
+| Sapins de Noël via CEC | **Oui** | Encombrant |
+:::
+
+### Question 3 — Pourquoi étiqueter chaque porte-charges ?
+
+:::reponse
+Voir directement **type de produit** et **traitement** · éviter retards · efficacité au centre de tri.
+:::
+
+### Question 4 — 4 facteurs choix site centre de tri
+
+:::reponse
+Autoroutes à proximité · raccordement **rail** · loyers raisonnables · accessibilité personnel · **hors villes** (nuisances sonores) — au moins 4.
+:::
+
+### Question 5 — Colis déposé 7206 → Miglieglia
+
+:::reponse
+| Étape | Lieu |
+| --- | --- |
+| Dépôt | **7206 Landquart** |
+| Centre colis | **Frauenfeld** |
+| Centre colis | **Härkingen** |
+| Centre colis | **Cadenazzo** |
+| Distribution | **6986 Miglieglia** |
+:::
+
+### Question 6 — Texte à trous
+
+:::reponse
+Un **canal de distribution** est le lien entre fournisseur et client final.
+
+Le transport **combiné** utilise différents modes.
+
+Les **modes de transport** empruntent les mêmes voies.
+
+Un **système de distribution** comprend tous les processus et installations jusqu'au client final.
+:::
+
+### Question 7 — Niveaux systèmes de distribution
+
+:::reponse
+- Ferme bio → entrepôt régional → supermarchés → client : **2 niveaux**
+- Start-up paniers Tessin → coursier direct 3 villes : **1 niveau**
+- Cosmétiques Vevey → Yverdon → Berne/Zurich → tri → client : **plusieurs niveaux**
+:::
+
+### Question 8 — Contre-arguments fret aérien uniquement
+
+:::reponse
+**Cher** et **polluant** · inadapté aux **trajets courts** · capacité/limites aéroports · pas toujours le plus rapide porte-à-porte.
+:::`;
+
+const DEMO_615_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Parfum ONU 1266 · 5 L · informer responsable
+2. Préparation = dépôt · séparation 7 = lettres · LQ = autorisé limité
+3. Étiquette = type + traitement
+4. Autoroute · rail · loyer · bruit
+5. Landquart → Frauenfeld → Härkingen → Cadenazzo → Miglieglia
+6. Canal · combiné · modes · système
+7. 2 · 1 · multi niveaux
+8. Cher · polluant · courts trajets`;
+
 /** Contenu Module 616 — CPD — Processus dans les centres de distribution */
 const DEMO_616_THEORIE_FULL = `## 16. Processus dans les centres de tri / distribution
 
@@ -32361,6 +32869,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_615_THEORIE_FULL,
       summary: DEMO_615_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_615_GLOSSAIRE_FULL,
+      summary: DEMO_615_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_615_SITUATION_FULL,
+      summary: DEMO_615_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_615_MATHS_FULL,
+      summary: DEMO_615_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_615_VERIFICATION_FULL,
+      summary: DEMO_615_VERIFICATION_SUMMARY,
     },
   },
   "616": {
