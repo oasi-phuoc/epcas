@@ -31,6 +31,10 @@ import { LessonAttachmentsPanel } from "@/components/LessonAttachmentsPanel";
 import { useAppStore } from "@/lib/store";
 import { isStaffRole } from "@/lib/roles";
 import { useEditorHistory } from "@/lib/use-editor-history";
+import {
+  collapseImageBlocksForEditor,
+  expandImageBlocksFromEditor,
+} from "@/lib/markdown-assets";
 import type { DiplomaLevel, Lesson, LessonAttachment, LessonPageSlug } from "@/lib/types";
 import { Eye, Pencil, Redo2, Undo2 } from "lucide-react";
 
@@ -73,6 +77,10 @@ function LessonEditor({
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const activeValue = which === "full" ? full : summary;
+  const editorDisplayValue = useMemo(
+    () => collapseImageBlocksForEditor(activeValue),
+    [activeValue],
+  );
   const identical = isAfpIdenticalToCfc(lesson);
 
   function setActiveValue(
@@ -86,6 +94,17 @@ function LessonEditor({
           : { ...prev, summary: next },
       { history },
     );
+  }
+
+  function handleEditorMarkdownChange(nextEdited: string) {
+    setActiveValue(
+      expandImageBlocksFromEditor(nextEdited, activeValue),
+      "debounce",
+    );
+  }
+
+  function handleToolbarMarkdownChange(next: string) {
+    setActiveValue(next, "immediate");
   }
 
   function handleSubmit(e: FormEvent) {
@@ -226,7 +245,7 @@ function LessonEditor({
           <MarkdownToolbar
             textareaRef={textareaRef}
             value={activeValue}
-            onChange={(next) => setActiveValue(next, "immediate")}
+            onChange={handleToolbarMarkdownChange}
           />
           <TextArea
             ref={textareaRef}
@@ -236,8 +255,8 @@ function LessonEditor({
                 : `Contenu résumé (${editLevel})`
             }
             className="min-h-72 text-justify text-sm leading-relaxed"
-            value={activeValue}
-            onChange={(e) => setActiveValue(e.target.value, "debounce")}
+            value={editorDisplayValue}
+            onChange={(e) => handleEditorMarkdownChange(e.target.value)}
             hint="Précédent / Suivant (Ctrl+Z / Ctrl+Y). Jusqu'à 40 étapes."
             required
           />
