@@ -15099,6 +15099,332 @@ const DEMO_401_OBJECTIFS_SUMMARY = `## Objectifs
 - Définition + réserve
 - 5 fonctions du stockage`;
 
+/** Glossaire Module 401 */
+const DEMO_401_GLOSSAIRE_FULL = `## Glossaire — Module 401
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Fonction de sécurité | | Fonction de stockage la plus importante : constituer une **réserve** (stock de sécurité) pour surmonter les situations critiques — retards de livraison, variations de demande, livraisons incomplètes ou défectueuses. |
+| Fonction tampon | Fonction de compensation | Synonyme de la **fonction de sécurité** : le stock **tamponne** les aléas entre approvisionnement et consommation, afin de maintenir la **capacité de livraison**. |
+| Stock de spéculation | Fonction de spéculation | Achat **anticipé** de marchandises (avant une hausse de prix ou en période favorable) pour réaliser un **avantage économique** lors de la revente ou de l'utilisation ultérieure. |
+| Perfectionnement | Fonction d'affinage / maturation | Stockage permettant d'**améliorer la qualité** d'un produit jusqu'à son optimum (ex. fromage, vin, charcuterie). Locaux souvent appelés **entrepôts de maturation**. |
+| Stocks obligatoires | Réserves de la Confédération | **Réserves légales** instituées par la Confédération suisse pour garantir l'**approvisionnement en cas de crise** (comparable à la fonction de réserve historique). |
+| Fonction de transformation | | Adaptation des marchandises en entrepôt : **reconditionnement**, découpe, mélange, prémontage, **séchage**, étiquetage, constitution de **kits** — pour les mettre aux quantités ou formats souhaités. `;
+
+const DEMO_401_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Sécurité / tampon** : réserve contre aléas (retards, variations, défauts)
+- **Transformation** : reconditionner · découper · mélanger · sécher · kits
+- **Spéculation** : achat anticipé pour avantage de prix
+- **Perfectionnement** : maturation / affinage (fromage, vin…)
+- **Stocks obligatoires** : réserves fédérales en cas de crise`;
+
+/** Mises en situation Module 401 */
+const DEMO_401_SITUATION_FULL = `## Mises en situation — Module 401
+
+Contexte : tu participes au groupe de travail **« Logistique de stockage »** chez **EnterSite AG** (Reto Stierndli, département Logistics). Les missions relient le stockage du **quotidien** aux **fonctions de l'entrepôt**. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions.
+
+### Vue d'ensemble des missions
+1. Rôles du stockage à la maison
+2. Terminologie et processus de la logistique de stockage
+3. Critères d'une bonne gestion des stocks
+4. Fonctions de l'entrepôt (GT10-TN2320 Brother)
+5. Discussion de la STA
+
+---
+
+## Mission 1 — Stockage à la maison
+
+Cite **cinq biens** que tu stockes chez toi, à **différents endroits**. Où les stockes-tu ?
+
+:::reponse
+**Réponse individuelle** — ex. : denrées alimentaires (cuisine / cave) · vêtements (armoire / grenier) · produits d'entretien (buanderie) · documents (bureau) · outils (garage / cave)…
+:::
+
+### Mission 1.1 — Rôle de chaque stockage
+
+Pour chaque bien de la mission 1, décris le **rôle** du stockage en 2–3 phrases.
+
+:::reponse
+**Réponse individuelle** — ex. produit alimentaire : fonction de **sécurité** / réserve pour éviter les courses quotidiennes · produit saisonnier en cave : **spéculation** ou réserve…
+:::
+
+### Mission 1.2 — Échange en binôme
+
+Présentez vos réflexions. Notez les **questions** encore floues.
+
+:::reponse
+**Réponse individuelle** — questions ouvertes notées en binôme.
+:::
+
+---
+
+## Mission 2 — Pourquoi un entrepôt chez EnterSite ?
+
+Le chaos règne parfois dans l'entrepôt : manque de place, transferts, marchandises introuvables. Le groupe de travail doit clarifier la **logistique de stockage**.
+
+**Pourquoi EnterSite AG a-t-elle besoin d'un entrepôt ?**
+
+:::reponse
+**Stockage intermédiaire** — lieu de conservation ordonnée jusqu'à la destination finale.
+
+**Gérer les stocks** — contrôle, surveillance, actualisation et détermination des besoins en temps voulu.
+
+**Compenser les fluctuations** — réagir à la demande (stocker à l'avance ou temporairement en cas de faible demande).
+
+**Optimiser les processus** — stocker, trier et préparer plus efficacement → délais ↓, livraisons ↑.
+
+**Protéger les marchandises** — protection contre dommages, vol, influences environnementales (température, humidité…).
+
+→ Un entrepôt bien organisé permet une gestion **efficace**, optimise la logistique et contribue à la **satisfaction client**.
+:::
+
+### Mission 2.1 — Fonction principale du logisticien d'entrepôt
+
+:::reponse
+Assurer le **stockage**, la **gestion** et le **déplacement** efficaces et fluides des marchandises dans l'entrepôt.
+:::
+
+### Mission 2.2 — Sous-processus et activités
+
+Associe chaque **sous-processus** aux **activités** correspondantes.
+
+| Sous-processus | Activités |
+| --- | --- |
+| **1. Réception des marchandises** | Décharger · contrôler l'entrée · créer document d'entrée en stock · étiqueter · préparer pour l'entrée en stock |
+| **2. Stockage** | Marchandise stockée dans l'entrepôt · transférer les marchandises |
+| **3. Préparer les commandes** | Créer documents de préparation · préparation des commandes · prélèvement dans l'entrepôt |
+| **4. Mise à disposition** | Enregistrer les marchandises · préparer pour l'expédition |
+| **5. Sortie de marchandises** | Créer documents d'expédition · charger les marchandises |
+
+*(Activités à classer : déchargement · contrôle entrée · document entrée · étiqueter · préparer entrée stock · stocker · transférer · documents préparation · préparation commandes · prélèvement · enregistrer · préparer expédition · documents expédition · charger.)*
+:::
+
+---
+
+## Mission 3 — Critères d'une bonne gestion des stocks
+
+Cite au moins **quatre critères** importants.
+
+:::reponse
+Exemples (au moins quatre) :
+- **Utiliser au mieux l'espace** disponible (méthodes de stockage adaptées)
+- **Surveillance précise et continue** des stocks (inventaires, ERP) pour éviter les ruptures
+- **Organisation efficace** de l'entrepôt (disposition logique, étiquetage) → accès rapide
+- **Préparation des commandes efficace** (trajets minimisés, méthodes modernes, priorités et délais)
+:::
+
+---
+
+## Mission 4 — Fonctions du stockage
+
+L'article **GT10-TN2320** (Brother HK, Hong Kong) : en raison des **troubles politiques**, les achats maintiennent un stock suffisant. Quelle **fonction** est décrite ?
+
+:::reponse
+**Fonction de sécurité**
+
+**Justification** — éviter les goulots d'étranglement dans la **disponibilité**. Malgré les problèmes de livraison, les clients peuvent être livrés à temps → **satisfaction client** et continuité de service.
+:::
+
+### Mission 4.1 — Étiquetage SwissEnterSite
+
+Après réception, l'article reçoit la désignation **SwissEnterSite Cartridge Brother TN2320 Toner Black**. Quelle fonction ?
+
+:::reponse
+**Fonction de transformation**
+
+**Justification** — les marchandises livrées ne sont pas toujours prêtes à la vente. Outre l'**étiquetage**, la transformation comprend : découpe, mélange, **réemballage**, prémontage, préparation de commandes…
+:::
+
+### Mission 4.2 — Fonction de contrôle
+
+Cite au moins **trois tâches** de la fonction de **contrôle** dans l'entrepôt.
+
+:::reponse
+1. **Identification** des marchandises
+2. **Contrôle de la quantité et de l'état**
+3. **Surveillance des délais**
+
+*(Le tri des obsolètes/périmés fait partie de la fonction contrôle **et** tri.)*
+:::
+
+---
+
+## Mission 5 — Discussion
+
+Discute de la situation de travail et d'apprentissage en plénière. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion (pas de solution unique).
+:::`;
+
+const DEMO_401_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : stockage maison — rôles individuels (sécurité, réserve…)
+- **M2** : entrepôt = intermédiaire · gestion · fluctuations · processus · protection
+- **M2.2** : 5 sous-processus — réception · stockage · préparation · mise à dispo · sortie
+- **M3** : espace · surveillance · organisation · préparation commandes
+- **M4** : Brother HK → **sécurité** · étiquetage → **transformation** · contrôle = ID · qté/état · délais
+- **M5** : discussion STA`;
+
+/** Exercices de maths Module 401 */
+const DEMO_401_MATHS_FULL = `## Exercices de mathématiques — Module 401
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Baisse de prix Swissair
+
+Swissair baisse ses prix de fret de **2,3 %**. Un transport coûte désormais **634,40 CHF**.
+
+**a)** Quel était l'**ancien prix** ?  
+**b)** Combien de francs de **moins** coûte le transport ?
+
+:::solution
+**a) Ancien prix : 649,35 CHF**
+
+\`\`\`
+634,40 / (100 − 2,3) × 100 = 634,40 / 97,7 × 100 = **649,35 CHF**
+\`\`\`
+
+**b) Économie : 14,95 CHF**
+
+\`\`\`
+649,35 − 634,40 = **14,95 CHF**
+\`\`\`
+:::
+
+### Exercice 2 — Location de surface de stockage
+
+Pour remédier à un goulot d'étranglement, tu loues **50 m²** chez l'entreprise voisine du **1er juin au 15 septembre**. Tarif : **1'625 CHF** pour **4 semaines** (7 jours chacune).
+
+Combien coûte la location pour la période ?
+
+:::solution
+**4'468,75 CHF**
+
+Calcul :
+\`\`\`
+Durée : 11 semaines (1.06. – 15.09.)
+Tarif hebdomadaire : 1'625 / 4 = 406,25 CHF/semaine
+Coût total : 11 × 406,25 = **4'468,75 CHF**
+\`\`\`
+
+*(Variante selon décompte : 2,75 périodes de 4 semaines × 1'625 = 4'468,75 CHF.)*
+:::
+
+### Exercice 3 — Remise Epson (GT5104)
+
+Epson accorde **16 %** de réduction sur **20 cartouches laser** GT5104, soit **358,40 CHF** de remise.
+
+**A)** Prix des 20 pièces **sans** remise ?  
+**B)** Prix **payé** avec remise ?
+
+:::solution
+**A) 2'240 CHF**
+
+\`\`\`
+358,40 / 16 × 100 = **2'240 CHF**
+\`\`\`
+
+**B) 1'881,60 CHF**
+
+\`\`\`
+2'240 − 358,40 = **1'881,60 CHF**
+\`\`\`
+:::
+
+### Exercice 4 — Durée de réserve toner
+
+Le stock d'un toner suffit pour **5 semaines** de **5 jours** chacune, à **14 pièces/jour**.
+
+Si **21,42 %** de toner en plus est nécessaire, combien de **jours** dure la réserve ?
+
+:::solution
+**20,58 jours** (environ)
+
+Calcul :
+\`\`\`
+Stock : 5 × 5 × 14 = **350 pièces**
+Nouvelle conso/jour : 14 × 121,42 / 100 = 16,9988 ≈ **17 pièces**
+Durée : 350 / 17 = 20,5882 → **20,58 jours**
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 4'468,75 · 20,58 · 649,35 · 2'240 · 1'881,60 · 14,95`;
+
+const DEMO_401_MATHS_SUMMARY = `## Maths — Solutions
+1. **649,35 CHF** (ancien prix) · **14,95 CHF** (économie)
+2. **4'468,75 CHF** (location 11 semaines)
+3. **2'240 CHF** (sans remise) · **1'881,60 CHF** (avec remise)
+4. **20,58 jours** (350 pces / 17 pces·jour)`;
+
+/** Vérification des acquis Module 401 */
+const DEMO_401_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 401 — Le rôle du stockage**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Pourquoi sera-t-il toujours nécessaire de gérer des **stocks** à l'avenir ?
+
+:::reponse
+Comme il est **impossible** de se procurer toutes les marchandises **au moment voulu** et en **quantité correcte**, il faudra toujours des stocks (fonction de **réserve**).
+:::
+
+### Question 2
+
+L'**abandon de la déformation du roulement** a plusieurs raisons. Cite **quatre raisons** pour l'abandon de la déformation du roulement au profit de la **fonction de transformation**.
+
+:::reponse
+Exemples (citer quatre) :
+- **Reconditionnement** de marchandises
+- **Découpe** ou mise à longueur
+- **Mélange** (produits chimiques, peintures)
+- **Pré-assemblage** de marchandises
+- **Préparation des commandes**
+:::
+
+### Question 3
+
+Certains produits connaissent des **difficultés de livraison** récurrentes et une consommation **très variable**. Quel est le rôle de l'entrepôt ?
+
+:::reponse
+**Fonction de sécurité** (stock tampon / de compensation) — absorber les aléas de livraison et de demande pour maintenir la capacité de livraison.
+:::
+
+### Question 4
+
+La tâche de **spéculation** peut être décisive. Comment peut-elle avoir un effet **bénéfique** ?
+
+:::reponse
+L'entreprise achète **à l'avance** des marchandises au **meilleur prix** possible pour les revendre ou les utiliser plus tard à un prix plus favorable → **maximisation des bénéfices** (ex. mazout en été, anticipation de hausse de prix).
+:::
+
+### Question 5
+
+Réponds **Vrai** ou **Faux** à chaque affirmation.
+
+| Affirmation | Vrai | Faux |
+| --- | --- | --- |
+| La fonction de contrôle consiste à **trier** les marchandises dans l'entrepôt. | | |
+| La fonction d'**amélioration** permet d'augmenter la **valeur** des biens. | | |
+| Absorber une **surproduction** fait partie de la fonction de **spéculation**. | | |
+| Le **séchage** est une fonction de **transformation**. | | |
+
+:::reponse
+| Affirmation | Réponse |
+| --- | --- |
+| La fonction de contrôle consiste à trier les marchandises. | **Faux** — le contrôle = identification, qté/état, délais ; le tri des obsolètes est une tâche du contrôle **et** tri, mais pas la définition globale |
+| La fonction d'amélioration augmente la valeur des biens. | **Vrai** — fonction d'**affinage / perfectionnement** (maturation : fromage, vin…) |
+| Absorber une surproduction = spéculation. | **Faux** — relève plutôt de la fonction de **sécurité** / tampon |
+| Le séchage = transformation. | **Vrai** — cité explicitement (ex. séchage du bois) |
+:::`;
+
+const DEMO_401_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Stocks toujours nécessaires — pas tout disponible juste-à-temps
+2. Transformation : reconditionnement · découpe · mélange · pré-assemblage · préparation commandes
+3. Difficultés livraison + conso variable → **fonction de sécurité**
+4. Spéculation = achat anticipé au bon prix → bénéfices
+5. Faux · Vrai · Faux · Vrai`;
+
 /** Contenu Module 402 — Les genres de stockage */
 const DEMO_402_THEORIE_FULL = `## 2. Les genres de stockage
 
@@ -22488,6 +22814,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_401_THEORIE_FULL,
       summary: DEMO_401_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_401_GLOSSAIRE_FULL,
+      summary: DEMO_401_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_401_SITUATION_FULL,
+      summary: DEMO_401_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_401_MATHS_FULL,
+      summary: DEMO_401_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_401_VERIFICATION_FULL,
+      summary: DEMO_401_VERIFICATION_SUMMARY,
     },
   },
   "402": {
