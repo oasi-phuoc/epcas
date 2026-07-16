@@ -29316,6 +29316,346 @@ const DEMO_701_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
 4. Réel = physique · présent
 5. Entreprise au registre du commerce → bilan → inventaire stocks`;
 
+
+/** Contenu Module 702 — Les coûts de stockage */
+const DEMO_702_THEORIE_FULL = `## 2. Les coûts de stockage
+
+Gérer les stocks génère des **coûts** — fixes et variables — qu'il faut connaître pour optimiser l'entrepôt (lien modules **705** / **704**).
+
+### 2.1 Les cinq catégories de coûts (EnterSite)
+
+| Catégorie | Exemples de facteurs |
+| --- | --- |
+| **Coût de personnel** | Salaires · **gratifications** · formation |
+| **Coût de stockage des marchandises** | Détérioration · vieillissement · **immobilisation du capital** |
+| **Coûts des locaux** | **Loyer** · électricité · chauffage · nettoyage |
+| **Manutention & auxiliaires** | Chariots · **amortissement** · entretien engins |
+| **Consommables** | Papier · cartouches · **emballages** |
+
+### 2.2 Coûts fixes vs variables
+
+| Type | Définition | Exemples |
+| --- | --- | --- |
+| **Coûts fixes** | Générés **à long terme** · indépendants du volume (souvent) | Salaires · loyers · amortissements · assurances |
+| **Coûts variables** | Modifiables **à court terme** · liés à l'activité | Marchandises · transport · matières premières · énergie |
+
+**Coûts totaux = coûts fixes + coûts variables**
+
+### 2.3 Engagement de capitaux & intérêts
+
+**Immobilisation du capital** = l'argent n'est pas en liquidités mais en **stock** (ex. 1 pièce CHF 500 → 10 pièces CHF 5'000).
+
+**Valeur du stock** = Σ (quantité × prix de revient).
+
+**Intérêts** sur capital immobilisé : valeur stock × taux (ex. **2 %**/an).
+
+### 2.4 Locaux, équipements et consommables
+
+**Nouvel entrepôt** — planification · construction · assurance · financement · équipement · entretien · énergie…
+
+**Chariot neuf** — productivité ↑ · énergie/entretien ↓ · sécurité · ergonomie · TCO sur durée de vie.
+
+**Consommables** — comparer fournisseurs · commandes groupées · emballages réutilisables/recyclables.
+
+### 2.5 Amortissement linéaire
+
+Répartition du coût d'un bien sur sa durée de vie (ex. chariot **5 ans**).
+
+**Valeur résiduelle** = valeur à neuf − somme des amortissements annuels.`;
+
+const DEMO_702_THEORIE_SUMMARY = `## À retenir — Module 702
+
+### 5 catégories
+Personnel · marchandises · locaux · manutention · consommables
+
+### Fixes / variables
+Fixes = long terme (loyer, salaires) · variables = court terme (transport, MP)
+
+### Capital & intérêts
+Stock × prix revient · immobilisation · intérêts sur capital engagé`;
+
+const DEMO_702_APERCU_FULL = `## Aperçu du module 702
+
+Deuxième module du bloc **FICO** : **coûts de stockage** — structure, capital immobilisé et optimisation.
+
+### Vous allez découvrir
+1. Cinq catégories de coûts EnterSite
+2. Coûts fixes vs variables
+3. Engagement de capitaux et intérêts
+4. Locaux, manutention et consommables
+
+### Source
+EnterSite — Logistics by ASFL / SVBL · Bloc 700`;
+
+const DEMO_702_APERCU_SUMMARY = `## Aperçu — Module 702
+- 5 catégories de coûts
+- Fixes / variables
+- Capital immobilisé · intérêts`;
+
+const DEMO_702_OBJECTIFS_FULL = `## Objectifs du module 702
+
+À l'issue de ce module, l'apprenti·e est capable de :
+
+- Nommer les **5 catégories** de coûts de stockage EnterSite
+- Distinguer **coûts fixes** et **coûts variables**
+- Calculer la **valeur du stock**, les **intérêts** et les **frais fixes** par emplacement
+- Argumenter des mesures de **réduction des stocks** et le remplacement d'**équipements**`;
+
+const DEMO_702_OBJECTIFS_SUMMARY = `## Objectifs
+- 5 catégories · fixes/variables
+- Capital · intérêts · amortissement`;
+
+/** Glossaire Module 702 */
+const DEMO_702_GLOSSAIRE_FULL = `## Glossaire — Module 702
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Engagement de capitaux** | §2.3 | = **Immobilisation du capital** — argent lié au **stock** plutôt qu'en liquidités. |
+| **Intérêts** | §2.3 | Coût du **capital emprunté** ou fictif sur la valeur immobilisée en stock. |
+| **Coûts fixes** | §2.2 | Coûts **à long terme** · difficilement modifiables à court terme (loyer, salaires…). |
+| **Coûts variables** | §2.2 | Coûts modifiables **à court terme** selon l'activité (transport, matières premières…). |
+| **Gratification** | §2.1 | Prime ou bonus du personnel · fait partie des **coûts de personnel**. |
+| **Frais** | §2.1 | Dépenses d'exploitation (loyer, entretien, assurances, **frais généraux**…). |`;
+
+const DEMO_702_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Immobilisation** = stock × prix de revient
+- **Fixes** vs **variables** · totaux = fixes + variables
+- **5 catégories** EnterSite · amortissement chariot 5 ans`;
+
+/** Mise en situation Module 702 */
+const DEMO_702_SITUATION_FULL = `## Mise en situation — Module 702
+
+**EnterSite AG** — analyse des coûts de stockage et optimisation.
+
+---
+
+### Mission 1 — Valeur de stockage et intérêts
+
+:::reponse
+**Valeur du stock** (liste articles Excel) : **CHF 292'561,80** capital engagé.
+
+**Intérêts 2 %** :
+- **Par an** : 292'561,80 × 2 % = **CHF 5'851,25**
+- **Par mois** : 5'851,25 / 12 = **CHF 487,60**
+- **Par jour** : 5'851,25 / 365 = **CHF 16,05**
+:::
+
+#### Mission 1.1 — Mesures pour réduire les stocks
+
+:::reponse
+- **Prévision** de la demande plus précise
+- **Juste-à-temps** (livraisons au moment nécessaire)
+- Éliminer articles **obsolètes/endommagés**
+- Collaboration **fournisseurs** (délais ↓ · quantités flexibles)
+- Réduction des **variations** de produits
+- **Commandes groupées** avec partenaires
+:::
+
+---
+
+### Mission 2 — Coûts d'un entrepôt supplémentaire
+
+:::reponse
+Planification/autorisation · matériaux construction · main-d'œuvre · **assurances** · **financement** · équipement · **intérêts** · électricité · entretien · nettoyage… (liste non exhaustive)
+:::
+
+---
+
+### Mission 3 — Nouveau chariot élévateur
+
+:::reponse
+Arguments pour le supérieur (même sans nouvelles fonctions) :
+- **Productivité** ↑ (vitesse, charge)
+- **Énergie/entretien** ↓ · moins de pannes
+- **Sécurité** ↑ · moins d'accidents/dommages
+- **Ergonomie** · satisfaction opérateurs
+- **Flexibilité** (accessoires)
+- **Environnement** / normes émissions
+- **TCO** sur durée de vie < ancien modèle malgré investissement initial
+:::
+
+---
+
+### Mission 4 — Consommables et protection
+
+:::reponse
+**Emballages utilisés** — réponse individuelle.
+
+**Réduire coûts consommables** :
+- Comparer **offres** fournisseurs
+- Prévisions précises · **gros volumes**
+- Matériaux **recyclables/biodégradables**
+- **Formation** personnel (usage efficace)
+
+**Protéger les produits** :
+- Emballages **réutilisables** qualité
+- Rembourrages/caisses **sur mesure**
+- **Technologies** de suivi transport
+:::
+
+---
+
+### Mission 5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_702_SITUATION_SUMMARY = `## Mise en situation — À retenir
+- Stock EnterSite : **292'561,80 CHF** · intérêts 2 % = **5'851 CHF/an**
+- Réduire stocks : JIT · prévision · obsolètes
+- Nouvel entrepôt : fixes (loyer, amortissement…)
+- Chariot neuf : TCO · sécurité · productivité`;
+
+/** Exercices de maths Module 702 */
+const DEMO_702_MATHS_FULL = `## Exercices de mathématiques — Module 702
+
+### Exercice 1 — Frais fixes mensuels et par palette
+
+Stock moyen : **4'500 palettes**.
+
+| Type de coût | Montant |
+| --- | --- |
+| Loyer mensuel | 15'600 CHF |
+| Entretien installations/an | 12'000 CHF |
+| Entretien engins/an | 8'000 CHF |
+| Chauffage/an | 14'000 CHF |
+| Nettoyage/mois | 1'200 CHF |
+| Assurances/an | 1'560 CHF |
+| Frais généraux & amort./an | 16'000 CHF |
+
+:::solution
+**Frais fixes/mois** : **CHF 21'096,68**
+
+\`\`\`
+15'600 + 1'000 + 666,67 + 1'166,67 + 1'200 + 130 + 1'333,34 = 21'096,68
+\`\`\`
+
+**Total/an** : **CHF 253'160**
+
+**Par palette/mois** : 21'096,68 / 4'500 = **CHF 4,69**
+:::
+
+### Exercice 2 — Capitaux étrangers et intérêts
+
+Investissement : bâtiment 2'250'000 · installations 320'000 · manutention 75'000 · EDV 12'000 CHF · **71,5 %** crédit · taux **3,25 %**.
+
+:::solution
+**a) Capitaux étrangers** : **CHF 1'899'755**
+
+\`\`\`
+Total : 2'657'000 CHF
+2'657'000 × 71,5 % = 1'899'755
+\`\`\`
+
+**b) Intérêts annuels** : **CHF 61'742,05**
+
+\`\`\`
+1'899'755 × 3,25 % = 61'742,04
+\`\`\`
+:::
+
+### Exercice 3 — Amortissement chariot (5 ans)
+
+Achat **CHF 67'500** — 35 % · 20 % · 15 % · 15 % · 15 %.
+
+:::solution
+**Valeur résiduelle : CHF 0** (totalement amorti)
+
+\`\`\`
+23'625 + 13'500 + 10'125 + 10'125 + 10'125 = 67'500
+\`\`\`
+:::
+
+### Exercice 4 — Perte outlet (Toner Ricoh)
+
+45 paquets × CHF 55 · vente outlet **CHF 1'000**.
+
+:::solution
+**59,6 %** de perte
+
+\`\`\`
+Valeur : 45 × 55 = 2'475 CHF
+Perte : 2'475 − 1'000 = 1'475 CHF
+1'475 / 2'475 × 100 = 59,6 %
+\`\`\`
+:::
+
+> **Contrôle rapide** : 253'160 · 0 · 1'899'755 · 59,6 · 4,69 · 61'742,05`;
+
+const DEMO_702_MATHS_SUMMARY = `## Maths — Solutions
+1. Fixes/mois **21'096,68 CHF** · total/an **253'160** · **4,69 CHF**/palette/mois
+2. Emprunt **1'899'755 CHF** · intérêts **61'742 CHF/an**
+3. Amortissement → **0 CHF** résiduel
+4. Perte outlet **59,6 %**`;
+
+/** Vérification des acquis Module 702 */
+const DEMO_702_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 702 — Les coûts de stockage**.
+
+### Question 1
+
+5 catégories de coûts de stockage chez EnterSite ?
+
+:::reponse
+1. **Coût de personnel**
+2. **Coût de stockage des marchandises**
+3. **Coûts pour les locaux** de stockage
+4. **Coûts des moyens de manutention** et auxiliaires
+5. **Coûts des consommables**
+:::
+
+### Question 2
+
+Au moins 2 facteurs de coûts par catégorie ?
+
+:::reponse
+- **Personnel** : salaires · gratification
+- **Marchandises** : détérioration · vieillissement technique
+- **Locaux** : loyer · électricité
+- **Manutention** : amortissement · entretien
+- **Consommables** : papier · cartouches d'imprimante
+:::
+
+### Question 3
+
+Qu'est-ce que les **coûts variables** ? Exemples.
+
+:::reponse
+Coûts modifiables **à court terme** selon l'activité.
+
+Exemples : **frais de transport** · **matières premières**.
+:::
+
+### Question 4
+
+Qu'est-ce que les **coûts fixes** ? Exemples.
+
+:::reponse
+Coûts générés **à long terme** · difficilement modifiables rapidement.
+
+Exemples : **salaires** · **loyers**.
+:::
+
+### Question 5
+
+Qu'est-ce que l'**immobilisation du capital** ?
+
+:::reponse
+L'argent n'est pas en **liquidités** mais immobilisé sous forme de **stock**.
+
+Exemple : stock aujourd'hui 1 pièce = CHF 500 · demain 10 pièces = CHF 5'000 de capital engagé.
+:::`;
+
+const DEMO_702_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Personnel · marchandises · locaux · manutention · consommables
+2. Salaires/loyer/amortissement/papier…
+3. Variables = court terme · transport · MP
+4. Fixes = long terme · salaires · loyer
+5. Capital en stock vs liquidités`;
+
+
 /** Contenu Module 703 — Les coûts du personnel */
 const DEMO_703_THEORIE_FULL = `## 3. Coût du personnel
 
@@ -33570,6 +33910,36 @@ const filledByModule: Record<string, FilledPages> = {
     verification: {
       full: DEMO_701_VERIFICATION_FULL,
       summary: DEMO_701_VERIFICATION_SUMMARY,
+    },
+  },
+  "702": {
+    objectifs: {
+      full: DEMO_702_OBJECTIFS_FULL,
+      summary: DEMO_702_OBJECTIFS_SUMMARY,
+    },
+    apercu: {
+      full: DEMO_702_APERCU_FULL,
+      summary: DEMO_702_APERCU_SUMMARY,
+    },
+    theorie: {
+      full: DEMO_702_THEORIE_FULL,
+      summary: DEMO_702_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_702_GLOSSAIRE_FULL,
+      summary: DEMO_702_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_702_SITUATION_FULL,
+      summary: DEMO_702_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_702_MATHS_FULL,
+      summary: DEMO_702_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_702_VERIFICATION_FULL,
+      summary: DEMO_702_VERIFICATION_SUMMARY,
     },
   },
   "703": {
