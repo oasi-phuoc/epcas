@@ -278,6 +278,20 @@ export interface AssessmentQuestion {
   payload: QuestionPayload;
 }
 
+/** Questions structurées pour les pages exercices (situation / maths / vérification) */
+export interface LessonQuestion {
+  id: string;
+  lessonId: string;
+  type: QuestionType;
+  title: string;
+  points: number;
+  order: number;
+  payload: QuestionPayload;
+}
+
+/** Forme commune pour l’éditeur partagé */
+export type EditableQuestion = AssessmentQuestion | LessonQuestion;
+
 export interface LessonProgress {
   lessonId: string;
   status: LessonStatus;
@@ -327,6 +341,7 @@ export interface AppState {
   informatiqueExercises: InformatiqueExercise[];
   assessments: Assessment[];
   assessmentQuestions: AssessmentQuestion[];
+  lessonQuestions: LessonQuestion[];
   sequences: LearningSequence[];
   classTasks: ClassTask[];
   /** Annotations personnelles des apprentis (surlignage, notes…) */
