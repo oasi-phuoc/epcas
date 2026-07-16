@@ -19028,6 +19028,276 @@ const DEMO_801_OBJECTIFS_SUMMARY = `## Objectifs
 - QR · Data Matrix
 - Placement · RFID`;
 
+
+const DEMO_801_GLOSSAIRE_FULL = `## Glossaire — Module 801
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Identification | | Processus de **reconnaissance unique** d'un article, d'un emballage ou d'une unité de transport au moyen d'un code (barres, matrice 2D, RFID…). Permet la saisie automatique des données en caisse, en entrepôt ou en transport. |
+| Global Trade Item Number (GTIN) | | Numéro mondial d'identification des produits de consommation. Formats courants : **GTIN-13** (13 chiffres, standard européen) et **GTIN-8** (8 chiffres, petits emballages). Code-barres **1-D** lu à la caisse pour récupérer désignation et prix. |
+| Décodeur | | Appareil ou logiciel qui **lit** un code (barres, QR, Data Matrix…) et **convertit** les symboles en données exploitables par le système informatique (prix, référence, lot…). |
+| Alphanumérique | | Combinaison de **chiffres et de lettres** (et parfois caractères spéciaux). Ex. : le **SSCC** peut contenir jusqu'à 128 caractères alphanumériques. |
+| Agence | | Organisme officiel d'enregistrement des numéros d'identification. Ex. : **GS1 Suisse** (GTIN) · **Agence ISBN Suisse** (livres). |
+| Matrice | | Grille de points ou de modules formant un code **2D** (QR Code, Data Matrix). Permet de stocker plus d'informations qu'un code-barres 1-D et intègre une correction d'erreurs. |
+| Numéros de lot | | Identifiant attribué à un **lot de production** d'un produit. Permet la **traçabilité** et les rappels ciblés en cas de défaut (souvent combiné avec GTIN-128 ou Data Matrix). |
+| ASCII | | *American Standard Code for Information Interchange* — jeu de caractères standard pour l'échange de texte informatique. Le Data Matrix peut stocker jusqu'à environ **2'335** caractères ASCII. |
+| ISO | | *International Organization for Standardization* — organisme de normalisation internationale. Ex. : norme **ISO/IEC 16022** pour le Data Matrix. |
+| Transpondeur | | Composant **RFID** fixé sur l'objet (puce + antenne, souvent adhésif). Stocke et transmet des données au lecteur par ondes radio. Synonymes : étiquette RFID, puce RFID, radio-étiquette. |
+| Lecteur RFID | | Appareil qui **lit** (et parfois **écrit**) les données d'un transpondeur RFID sans contact visuel obligatoire. Existe en version passive ou active selon la portée et l'application. |`;
+
+const DEMO_801_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Identification** : reconnaissance unique par code
+- **GTIN** : numéro mondial produit (GTIN-13 / GTIN-8)
+- **Décodeur** : lecture et conversion des codes
+- **Alphanumérique** : chiffres + lettres (ex. SSCC)
+- **Matrice** : code 2D (QR, Data Matrix)
+- **Lot** : traçabilité production · **RFID** : transpondeur + lecteur`;
+
+/** Mises en situation Module 801 */
+const DEMO_801_SITUATION_FULL = `## Mises en situation — Module 801
+
+Contexte : lors d'une réunion d'équipe chez **EnterSite AG**, Monsieur **Gugger** te charge d'étudier la technologie **RFID** et de présenter les possibilités pour l'entreprise. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.
+
+---
+
+### Mission 1 — Notes de réunion (GTIN vs RFID)
+
+Prépare les notes sur : conditions techniques GTIN-8/GTIN-13 · conditions techniques RFID · avantages/inconvénients.
+
+:::reponse
+Les **GTIN-8** et **GTIN-13** sont des normes d'identification par codes-barres. La **RFID** (*Radio-Frequency Identification*) est une technologie sans fil d'identification d'objets.
+
+**GTIN-8, GTIN-13 — conditions techniques**
+- GTIN généralement 13 chiffres ; **GTIN-8** pour petits produits
+- Basés sur codes-barres · nécessitent un **lecteur de codes-barres**
+
+**RFID — conditions techniques**
+- Transmission sans fil entre étiquette RFID et lecteur
+- Étiquettes stockent des informations · fonctionnement **sans ligne de visée**
+- Variantes **passives** (sans batterie) ou **actives** (avec batterie)
+
+**GTIN vs RFID — avantages/inconvénients**
+
+| | GTIN-8 / GTIN-13 | RFID |
+| --- | --- | --- |
+| **Avantages** | Répandus · moins chers · faciles à créer | Saisie automatisée · rapide · temps réel · applications variées (stocks, accès, antivol…) |
+| **Inconvénients** | Saisie manuelle possible · code visible requis · qualité d'impression | Coûts initiaux élevés · protection des données · interférences électroniques |
+:::
+
+---
+
+### Mission 2 — RFID active vs passive
+
+Monsieur **Lang** (service informatique) demande quelle variante recommander pour EnterSite AG.
+
+:::reponse
+**Tags RFID passifs**
+- Moins chers · idéaux pour une solution rentable
+- Pas de source d'énergie propre · activés par le lecteur · durables
+- Portée plus courte mais suffisante pour de nombreuses applications
+
+**Tags RFID actifs**
+- Plus grande portée · localisation plus précise (grands entrepôts)
+- Source d'énergie propre · signaux continus · surveillance permanente
+
+**Recommandation EnterSite AG**
+- **Passifs** : gestion des stocks et protection antivol — bon rapport coûts/efficacité/précision
+- **Actifs** : surveillance hors entreprise (SAV, toner, entretien…) — plus coûteux mais judicieux
+:::
+
+---
+
+### Mission 3 — Aspects financiers
+
+La technologie RFID apporte-t-elle des avantages financiers par rapport au GTIN-13 ?
+
+:::reponse
+**Coûts d'investissement**
+- **RFID** : coûts initiaux plus élevés (étiquettes, lecteurs, infrastructure IT)
+- **GTIN-13** : moins coûteux · technologies codes-barres répandues et abordables
+
+**Efficacité**
+- **RFID** : saisie automatisée · économies main-d'œuvre et erreurs
+- **GTIN-13** : saisie manuelle plus lente · plus d'erreurs · coûts d'exploitation plus élevés
+
+**Précision**
+- **RFID** : suivi temps réel · réduction pertes (vol, mauvais comptage)
+- **GTIN-13** : processus manuels moins précis
+:::
+
+---
+
+### Mission 4 — Protection des données
+
+Est-il possible de lire des données RFID sans consentement ? Es-tu favorable au passage à la RFID ?
+
+:::reponse
+**Lecture sans consentement ?**
+- **Passifs** : en général seulement un ID unique · pas de données personnelles si identifiants cryptés
+- **Actifs** : peuvent stocker plus de données · risque si mesures de sécurité insuffisantes
+
+**Position favorable sous conditions**
+- Conformité aux **directives de protection des données** (stockage sécurisé, consentement, cryptage)
+- Protection contre **accès non autorisé**
+- **Information des clients** et consentement pour données personnelles
+
+La RFID offre d'énormes avantages (efficacité, stocks, expérience client) si les règles de protection des données sont respectées.
+:::
+
+---
+
+### Quiz EnterSite
+
+Forme un groupe de 3–4 joueurs et contrôle tes connaissances dans le quiz du groupe.
+
+> **Astuce EnterSite** : visite virtuelle logistique **salle 3 V1** — cherche l'image de droite. Bonne chance !
+
+:::reponse
+**Réponse individuelle / groupe** — quiz EnterSite (pas de solution unique ici).
+:::
+
+---
+
+### Mission 5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_801_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : GTIN (barres) vs RFID (sans fil) · avantages/inconvénients
+- **M2** : passif = stocks/antivol · actif = SAV/hors site
+- **M3** : RFID = invest. ↑ · efficacité et précision ↑
+- **M4** : protection données · cryptage · consentement
+- **Quiz** : EnterSite salle **3 V1**`;
+
+/** Exercices de maths Module 801 */
+const DEMO_801_MATHS_FULL = `## Exercices de mathématiques — Module 801
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+---
+
+### Exercice 1 — Gain de temps à la caisse
+
+Soulever, scanner et déposer un produit prend **0,8 sec** avec le scanner. Auparavant, une bonne caissière mettait **4,4 sec** (saisie manuelle du prix comprise).
+
+De combien de **pourcent** le système actuel est-il plus rapide ? (arrondir à l'entier)
+
+:::solution
+**82 % plus rapide**
+
+(4,4 − 0,8) / 4,4 × 100 = 3,6 / 4,4 × 100 = **81,82 %** → arrondi **82 %**
+:::
+
+---
+
+### Exercice 2 — Articles par journée (8,5 h)
+
+Combien d'articles une caissière pouvait-elle saisir auparavant ? Combien peut-elle en scanner aujourd'hui (même temps de travail) ?
+
+:::solution
+**Auparavant :** 8,5 × 3'600 / 4,4 = **6'955 articles** (arrondi)
+
+**Aujourd'hui :** 8,5 × 3'600 / 0,8 = **38'250 articles**
+:::
+
+---
+
+### Exercice 3 — Erreurs de saisie
+
+Le taux d'erreur lors de la saisie manuelle était de **0,55 %**. Combien d'articles facturés de manière erronée (base exercice 2, ancien système) ?
+
+:::solution
+**38 articles erronés**
+
+6'954 × 0,55 / 100 = **38,25** → **38 articles**
+:::
+
+---
+
+### Exercice 4 — Nombre de caissières (samedi)
+
+En moyenne **150'000** articles vendus un samedi à fort volume. Combien de caissières fallait-il autrefois ? Combien faut-il aujourd'hui ?
+
+:::solution
+**Autrefois :** 150'000 / 6'954 = **22 personnes** (arrondi supérieur)
+
+**Aujourd'hui :** 150'000 / 38'250 = **4 personnes** (arrondi supérieur)
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 82 · 6'955 · 38'250 · 38 · 22 · 4`;
+
+const DEMO_801_MATHS_SUMMARY = `## Maths — Solutions
+1. **82 %** plus rapide
+2. **6'955** / **38'250** articles par jour (8,5 h)
+3. **38** articles erronés (0,55 %)
+4. **22** / **4** caissières pour 150'000 articles`;
+
+/** Vérification des acquis Module 801 */
+const DEMO_801_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Identification des marchandises**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Que signifie l'abréviation **SSCC** ? Décris ses principales caractéristiques en une phrase.
+
+:::reponse
+**SSCC** : *Serial Shipping Container Code*
+
+Caractéristiques : structure **alphanumérique** (chiffres et lettres), jusqu'à **128** caractères — utilisé pour étiqueter les palettes et le suivi (*Track & Trace*).
+:::
+
+### Question 2
+
+Que signifie l'abréviation **GTIN** ? Décris ses principales caractéristiques en une phrase.
+
+:::reponse
+**GTIN** : *Global Trade Item Number*
+
+Caractéristiques : code **unidimensionnel (1-D)** sur les produits en magasin · numéro **unique au monde** pour identification à la caisse.
+:::
+
+### Question 3
+
+Que signifie l'abréviation **QR Code** ? Décris ses principales caractéristiques en une phrase.
+
+:::reponse
+**QR Code** : *Quick Response Code* (réponse rapide)
+
+Caractéristiques : code **2D** (matrice) avec **3 repères d'orientation** dans les coins · **correction d'erreurs** jusqu'à environ **30 %** de perte du code.
+:::
+
+### Question 4
+
+Sur combien de **côtés** d'une palette faut-il apposer une étiquette ?
+
+:::reponse
+**2 côtés** (au minimum), au-dessus du coin · symbole le plus bas à environ 45 cm du sol.
+:::
+
+### Question 5
+
+Que signifie l'abréviation **RFID** ? Décris ses principales caractéristiques en une phrase. De quels composants se compose une RFID ?
+
+:::reponse
+**RFID** : *Radio Frequency Identification* — identification par fréquence radio.
+
+Caractéristiques : identification **automatique** sans contact visuel obligatoire · le commerce utilise la RFID pour suivre palettes et cartons sur la chaîne d'approvisionnement.
+
+**Composants :**
+- **Transpondeur / étiquette RFID** (puce + antenne)
+- **Lecteur** / appareil de lecture et d'écriture
+:::`;
+
+const DEMO_801_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. **SSCC** : alphanumérique · 128 car. · palettes
+2. **GTIN** : code 1-D · identification produit mondiale
+3. **QR** : 2D · correction erreurs ~30 %
+4. Étiquette palette sur **2 côtés**
+5. **RFID** : radio · transpondeur + lecteur`;
+
 /** Contenu Module 802 — Le transport (ICT) */
 const DEMO_802_THEORIE_FULL = `## 2. Le transport
 
@@ -22158,6 +22428,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_801_THEORIE_FULL,
       summary: DEMO_801_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_801_GLOSSAIRE_FULL,
+      summary: DEMO_801_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_801_SITUATION_FULL,
+      summary: DEMO_801_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_801_MATHS_FULL,
+      summary: DEMO_801_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_801_VERIFICATION_FULL,
+      summary: DEMO_801_VERIFICATION_SUMMARY,
     },
   },
   "802": {
