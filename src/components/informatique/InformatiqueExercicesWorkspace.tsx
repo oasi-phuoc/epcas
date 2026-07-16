@@ -42,6 +42,7 @@ import {
   Video,
 } from "lucide-react";
 import { PdfViewer } from "@/components/informatique/PdfViewer";
+import { BulkDocumentsDownloadButton } from "@/components/informatique/BulkDocumentsDownloadButton";
 import { isResultatPdf } from "@/lib/informatique-exercises";
 
 const STUDENT_INSTRUCTIONS = [
@@ -614,9 +615,16 @@ function StudentExerciseDetail({
       </Panel>
 
       <Panel>
-        <h3 className="mb-1 font-display text-lg text-ink">
-          Documents à utiliser / à télécharger
-        </h3>
+        <div className="mb-3 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+          <h3 className="font-display text-lg text-ink">
+            Documents à utiliser / à télécharger
+          </h3>
+          <BulkDocumentsDownloadButton
+            exercises={[exercise]}
+            archiveName={`Informatique-${exercise.title.replace(/\s+/g, "-")}`}
+            label="Télécharger cet exercice (ZIP)"
+          />
+        </div>
         <AssetList
           defaultMode="document"
           assets={exercise.documents}
@@ -712,13 +720,28 @@ export function InformatiqueExercicesWorkspace({
 
   const selected = filtered.find((e) => e.id === effectiveId);
 
+  const studentYear = resolveInformatiqueYear(userStudyYear);
+  const yearForBulk = isEdit ? selectedYear : studentYear;
+
+  const bulkDownloadExercises = useMemo(() => {
+    const list = state.informatiqueExercises ?? [];
+    return list
+      .filter((e) => e.year === yearForBulk)
+      .filter((e) => (isEdit ? true : e.published))
+      .sort(
+        (a, b) =>
+          a.app.localeCompare(b.app) ||
+          a.order - b.order ||
+          a.title.localeCompare(b.title, "fr"),
+      );
+  }, [state.informatiqueExercises, yearForBulk, isEdit]);
+
   if (!currentUser) return null;
   if (isEdit && !isStaffRole(currentUser.role)) {
     return <EmptyState title="Accès réservé aux formateurs et admins" />;
   }
 
   const hubHref = isEdit ? "/formateur/exercices" : "/exercices";
-  const studentYear = resolveInformatiqueYear(userStudyYear);
 
   const appsToShow = INFORMATIQUE_APPS.filter(
     (app) => isEdit || availableApps.includes(app.id),
@@ -822,6 +845,18 @@ export function InformatiqueExercicesWorkspace({
               ? " — PowerPoint non proposé (pas de ressources)."
               : null}
         </p>
+
+        <div className="mt-4 rounded-[var(--radius-md)] border border-border bg-surface-muted/30 p-3 sm:p-4">
+          <p className="mb-2 text-sm font-medium text-ink">
+            Téléchargement groupé
+          </p>
+          <BulkDocumentsDownloadButton
+            exercises={bulkDownloadExercises}
+            archiveName={`Informatique-${informatiqueYearLabel(yearForBulk).replace(/\s+/g, "-")}-documents`}
+            label="Télécharger tous les documents (ZIP)"
+            variant="primary"
+          />
+        </div>
 
         <div className="mt-4">
           <TextField
