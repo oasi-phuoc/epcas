@@ -22133,6 +22133,289 @@ const DEMO_506_OBJECTIFS_SUMMARY = `## Objectifs
 - PDCA · Muda · ISO
 - Traçabilité · IP`;
 
+const DEMO_506_GLOSSAIRE_FULL = `## Glossaire — Module 506
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Système qualité** | §6.1 · ISO 9001 | Ensemble structuré (manuel qualité, processus, responsabilités) pour atteindre et maintenir la qualité dans **toute** l'entreprise — souvent formalisé selon **SN EN ISO 9001:2015**. |
+| **Certification** | §6.2.7 | Confirmation **formelle** par un organisme indépendant qu'un système de management (qualité ISO 9001, environnement ISO 14001…) respecte la norme. |
+| **Audit de qualité** | §6.2.7 | Vérification systématique du respect des directives MQ/AQ · **interne** (auditeurs formés en interne) ou **externe** (avant certification). |
+| **Kaizen** | §6.2.1 | *Kai* = changement · *zen* = pour le mieux · amélioration **progressive** et continue (Japon, ~1980) · outil clé : **PDCA**. |
+| **Total Quality Management (TQM)** | §6.1 | Management de la **qualité totale** : qualité comme objectif de **tous** les processus et collaborateurs de l'entreprise, pas seulement du produit final. |
+| **Cycle PDCA** | §6.2.2 | **Plan** – **Do** – **Check** – **Act** (Shewhart) : modèle d'amélioration continue en quatre phases. |
+| **Traçabilité** | §6.4 | Suivi documenté du produit de la MP à l'élimination (qui, quand, comment) · indispensable en cas de défaut ou rappel. |
+| **Instructions de procédure (IP)** | §6.5 | Description écrite : **quand**, dans quelle situation, **par qui** et **comment** exécuter un processus · contrôlées en audit ISO. |`;
+
+const DEMO_506_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **MQ** = structure · **AQ** = garantir les processus
+- **ISO 9001** / **14001** · audits interne/externe
+- **Kaizen** + **PDCA** + **PAC** + **Muda**
+- **Traçabilité** · **IP** = standardiser les processus`;
+
+/** Mises en situation Module 506 */
+const DEMO_506_SITUATION_FULL = `## Mises en situation — Module 506
+
+**EnterSite AG** vise le n°1 suisse en **Total Office Solutions** — qualité irréprochable, PDCA sur la ligne d'étiquetage, procédures de réception.
+
+### Vue d'ensemble des missions
+1. Notions de qualité · MQ vs AQ (V/F)
+2. Satisfaction des collaborateurs et qualité
+3. Cycle PDCA — étiqueteuse
+4. Procédure de réception marchandises
+5. EnterSite Production salle 9 V2
+6. Discussion STA
+
+---
+
+## Mission 1 — Que signifie « qualité » ?
+
+:::reponse
+**Denrées alimentaires** — normes strictes sécurité, fraîcheur, goût, fabrication · sans risque pour la santé.
+
+**Entreprise de formation** — environnement d'apprentissage optimal · formation pratique · soutien individuel.
+
+**Service** — satisfaire/dépasser attentes clients · compétence · service accueillant · processus efficaces.
+:::
+
+### Mission 1.1 — Vrai ou faux (formation qualité)
+
+:::reponse
+| Affirmation | V/F | Correction |
+| --- | --- | --- |
+| MQ et AQ recouvrent les **mêmes** domaines | **Faux** | AQ = surtout **produit/process** · MQ = **structure** de toute l'entreprise |
+| AQ et MQ sont **interdépendants** | **Vrai** | |
+| « Améliorations qualité » = **uniquement** le produit | **Faux** | Toute l'entreprise et ses **processus** |
+| Après 1er échantillonnage, fournisseur livre toujours irréprochable | **Faux** | Vérifications **régulières** nécessaires |
+:::
+
+---
+
+## Mission 2 — Satisfaction des collaborateurs
+
+:::reponse
+**Satisfaction élevée** — motivation · travail soigné · concentration → **moins de défauts** · qualité ↑
+
+**Satisfaction faible** — désintérêt · erreurs · qualité ↓
+:::
+
+---
+
+## Mission 3 — PDCA ligne d'étiquetage
+
+Problème : étiquettes pliées/de travers · nouveaux employés · bande mal mise · objectif de pièces/jour non atteint.
+
+### Phase PLAN
+
+:::reponse
+**Problème central** — étiqueteuse n'atteint pas le débit → retards · clients insatisfaits
+
+**Ressources nécessaires** — opérateurs formés · matériel (bandes, étiquettes) · temps formation
+
+**Ressources disponibles** — machine · personnel expérimenté · stock rebuts
+
+**Solution** — formation approfondie changement de ruban (éviter bourrages)
+
+**Conditions de réussite** — formation par experts · procédure uniforme · contrôles réguliers
+
+**Objectif SMART** — d'ici fin du mois prochain : tous opérateurs formés · **≥ 95 %** étiquettes correctes · retards ↓
+:::
+
+### Mission 3.1 — Phase DO
+
+Cause réelle : étiquettes touchent le **sol** chez débutants → saleté → accrochages.
+
+:::reponse
+**Contre-mesures** (priorisées) :
+1. Procédure écrite changement de bobine + formation (chef de groupe)
+2. Caillebotis devant dérouleur
+3. Nettoyage sol toutes les **2 h**
+
+**Plan d'action** — suivi sur tableau **shopfloor** jusqu'à fin mars · discussion quotidienne équipe
+:::
+
+### Mission 3.2 — Phase CHECK
+
+:::reponse
+Réunions **hebdomadaires** avec collaborateurs · suivi évolution · nouvelles mesures si besoin (ex. **arrêt machine** si étiquettes touchent le sol).
+:::
+
+### Mission 3.3 — Phase ACT (standardisation)
+
+:::reponse
+- **IP 1** : processus optimal « changement de rouleau d'étiquettes »
+- **IP 2** : formation nouveaux collaborateurs
+- **Contrôles processus quotidiens** pour détecter écarts tôt
+:::
+
+---
+
+## Mission 4 — Procédure réception marchandises
+
+:::reponse
+**Processus** (résumé) :
+1. Réception physique · identification · contrôle qté/qualité
+2. Si OK → enregistrement ERP + bon d'accompagnement
+3. Défauts → correction interne possible ? sinon retour fournisseur
+4. Stock → fiche identification / unité · contrôle **AQ**
+5. Non-stock → contrôle **destinataire**
+6. OK → mise en stock · disponible ERP
+7. Non OK → rabais acceptable ? sinon retour · **rapport fournisseur** obligatoire
+
+**Dépôt** — procédure Word/PPT/Excel avec symboles processus (début/fin, activité, décision…).
+:::
+
+---
+
+## Mission 5 — EnterSite Production salle 9 V2
+
+:::reponse
+**Réponse individuelle** — visite virtuelle EnterSite · image à droite · problème de fin de travail.
+:::
+
+---
+
+## Mission 6 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_506_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : qualité contextuelle · MQ ≠ AQ · amélioration = processus entiers
+- **M2** : satisfaction collaborateurs ↔ défauts
+- **M3** : PDCA étiqueteuse · sol/saleté · SMART 95 % · IP + contrôles
+- **M4** : procédure réception + AQ
+- **M5** : EnterSite 9 V2 · **M6** : discussion`;
+
+/** Exercices de maths Module 506 */
+const DEMO_506_MATHS_FULL = `## Exercices de mathématiques — Module 506
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Taux d'erreur toner 2019 vs 2020
+
+2019 : 24'312 toners · **0,4 %** erreurs  
+2020 : 26'250 toners · **210** toners défectueux
+
+:::solution
+**2020 : 0,8 %** · **Écart : +0,4 point** (double)
+
+\`\`\`
+2020 : 210 / 26'250 × 100 = **0,8 %**
+Différence : 0,8 − 0,4 = **0,4 %**
+\`\`\`
+:::
+
+### Exercice 2 — Poids moyen vs minimum (+1 %)
+
+Minimum **1'000 g** · 5 échantillons : 1'022 · 1'006 · 1'012 · 1'004 · 1'008 g · tolérance **+1 %**.
+
+:::solution
+**+10,4 g** au-dessus du minimum · **1,04 %** → **tolérance dépassée** sur la moyenne
+
+\`\`\`
+Moyenne : (1'022+1'006+1'012+1'004+1'008)/5 = **1'010,4 g**
+Écart   : 1'010,4 − 1'000 = **10,4 g**
+Limite +1 % : 1'010 g → moyenne = **1,04 %** > 1 % autorisé
+\`\`\`
+:::
+
+### Exercice 3 — Contrôle toners (rappel)
+
+6 collaborateurs · 1'000 toners en **7,5 h** → combien avec **8** collaborateurs en **9 h** ?
+
+:::solution
+**1'600 toners**
+
+\`\`\`
+Cadence : 1'000 / (6 × 7,5) = 22,22 toners/h/pers.
+8 × 9 × 22,22 = **1'600 toners**
+\`\`\`
+:::
+
+### Exercice 4 — Temps économisé (audit interne)
+
+Budget **2,5 h** · terminé **20 min** avant.
+
+:::solution
+**13,33 %**
+
+\`\`\`
+2,5 h = 150 min
+20 / 150 × 100 = **13,33 %**
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 13,33 · 0,4 · 10,4 · 0,8 · 1'600 · 1,04`;
+
+const DEMO_506_MATHS_SUMMARY = `## Maths — Solutions
+1. 2020 : **0,8 %** · écart **+0,4 %** vs 2019
+2. Moyenne **+10,4 g** · **1,04 %** > tolérance 1 %
+3. **1'600** toners (8 pers. × 9 h)
+4. Temps économisé : **13,33 %**`;
+
+/** Vérification des acquis Module 506 */
+const DEMO_506_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 506 — Assurance qualité dans la production**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Différence entre **gestion de la qualité (MQ)** et **assurance qualité (AQ)** ?
+
+:::reponse
+**MQ** — adapter **tous les processus** de l'entreprise pour garantir la qualité (structure, manuel qualité).
+
+**AQ** — respecter les directives MQ · **détecter et éliminer** les influences négatives sur la qualité · contrôle des **activités et processus** (pas seulement le produit fini).
+:::
+
+### Question 2
+
+Désignation ISO de la gestion de la qualité et de l'environnement ?
+
+:::reponse
+- **ISO 9001** — exigences relatives aux systèmes de management de la **qualité**
+- **ISO 14001** — système de management de l'**environnement**
+:::
+
+### Question 3
+
+Explique les étapes du cycle **PDCA**.
+
+:::reponse
+- **Plan** = Planifier (problème, ressources, solution, objectifs)
+- **Do** = Mettre en œuvre
+- **Check** = Vérifier (résultats, écarts, causes)
+- **Act** = Agir (standardiser, améliorer en continu)
+:::
+
+### Question 4
+
+Sens et but d'une **instruction de procédure (IP)** ?
+
+:::reponse
+Représente un **processus** : indique **quand**, dans quelle **situation**, **par qui** et **de quelle manière** procéder.
+
+Permet aux collaborateurs de comprendre et exécuter correctement les processus · indispensable pour **ISO 9001** · doit être **réellement appliquée**.
+:::
+
+### Question 5
+
+Pourquoi la **traçabilité** est-elle importante ?
+
+:::reponse
+En cas de défaut sur le produit final, il faut **localiser rapidement** la cause (fournisseur, lot, étape) pour limiter les dommages.
+
+La traçabilité indique **qui** a produit/livré, **comment** et **quand**, et si le composant a été utilisé dans **d'autres produits** (rappel, sécurité).
+:::`;
+
+const DEMO_506_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. MQ = structure processus · AQ = garantir/éliminer influences négatives
+2. **ISO 9001** qualité · **ISO 14001** environnement
+3. **Plan · Do · Check · Act**
+4. IP = quand/qui/comment · compréhension + ISO
+5. Traçabilité = localiser défauts · rappels · sécurité`;
+
 /** Contenu Module 601 — La préparation de commandes */
 const DEMO_601_THEORIE_FULL = `## 1. La préparation de commandes
 
@@ -27896,6 +28179,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_506_THEORIE_FULL,
       summary: DEMO_506_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_506_GLOSSAIRE_FULL,
+      summary: DEMO_506_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_506_SITUATION_FULL,
+      summary: DEMO_506_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_506_MATHS_FULL,
+      summary: DEMO_506_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_506_VERIFICATION_FULL,
+      summary: DEMO_506_VERIFICATION_SUMMARY,
     },
   },
   "601": {
