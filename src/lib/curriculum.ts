@@ -16636,6 +16636,293 @@ const DEMO_602_OBJECTIFS_SUMMARY = `## Objectifs
 - Choix & contraintes
 - Normes · durabilité`;
 
+/** Glossaire Module 602 */
+const DEMO_602_GLOSSAIRE_FULL = `## Glossaire — Module 602
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Mission / fonction de vente** | §2.1 | Rôle **information** de l'emballage : promotion des ventes, publicité, étiquette de prix · l'emballage devient un instrument de **marketing**. |
+| **Emballage de vente** | §2.2.1 | Emballage orienté **présentation en magasin** : design, image de marque, informations produit · distinct du suremballage transport. |
+| **Emballage** | §2.2 | **Moyen d'emballage** + **accessoires** (ruban, calage, colle…) · entoure la marchandise pour stockage et transport. |
+| **Unité d'emballage** | §2.2 | **Paquet** prêt à être **expédié ou stocké** · marchandise emballée dans son emballage final pour la logistique. |
+| **Marquage de l'emballage** | §2.5.2 | Symboles et pictogrammes sur l'emballage (sensibilité, manutention) selon **DIN 55402** / **ISO R 780** · centre de gravité, levage, empilage max… |
+| **Normalisation de l'emballage** | §2.5 | Dimensions **standardisées** (ISO) adaptées à l'**Europalette** (1'200 × 800 mm) · facilite empilage, transport et convoyeurs. |`;
+
+const DEMO_602_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **3 fonctions** : protection · logistique · information/vente
+- **DIN** : moyen + accessoires = emballage · paquet · **unité d'emballage**
+- **Marquage** DIN 55402 / ISO · **normalisation** = Europalette`;
+
+/** Mises en situation Module 602 */
+const DEMO_602_SITUATION_FULL = `## Mises en situation — Module 602
+
+**Support & Distribution** EnterSite AG : fonctions de l'emballage, unboxing, conception d'emballages et protection de circuits imprimés.
+
+### Vue d'ensemble des missions
+1. Tetris + visite virtuelle salle 17 (empilement composite)
+2. Unboxing PS5 — rôle de l'emballage
+3. Emballage de vente « Printer Ink »
+4. Expédition circuits imprimés (Sibérie via Dubaï)
+5. Discussion STA
+
+---
+
+## Mission 1 — Tetris & empilement composite
+
+:::reponse
+**Réponse individuelle** — jouer à Tetris 10 min · capture d'écran du score dans le dépôt de fichiers.
+
+**EnterSite** — visite virtuelle jusqu'à la **salle 17** · bureau **M. Holzer** (Support & Distribution) · image à droite · démontrer que l'**empilement composite** est possible.
+:::
+
+---
+
+## Mission 2 — Unboxing (vidéo PS5)
+
+### Pourquoi les vidéos d'unboxing sont-elles populaires ?
+
+:::reponse
+- **Excitation et anticipation** — simulent le déballage/découverte d'un nouveau produit (comme un cadeau)
+- **Informations visuelles détaillées** — qualité, état, accessoires avant achat
+- **Divertissement** — personnalités intéressantes, commentaires humoristiques
+:::
+
+### Rôle de l'emballage dans les vidéos d'unboxing ?
+
+:::reponse
+- **Première impression visuelle** — emballage attrayant → curiosité et attentes
+- **Image de marque** — logo/branding → notoriété
+- **Protection visible** — montre l'efficacité de la protection transport
+:::
+
+### Quelles sont les fonctions d'un emballage ?
+
+:::reponse
+- **Protection** — dommages physiques, humidité, poussière, influences environnementales…
+- **Identification** — nom produit, logo, code-barres…
+- **Information** — instructions, avertissements, données techniques
+- **Présentation** du produit
+- **Marketing** / promotion des ventes
+:::
+
+---
+
+## Mission 3 — Emballage de vente « Printer Ink »
+
+:::reponse
+**Réponse individuelle** — recherche magasin/Internet · dessin ou photo · justification détaillée.
+
+**Protection** — emballage robuste · intérieur rembourré ou encoches par cartouche · évite chocs/glissements.
+
+**Logistique** — empilable · manipulable · taille permettant regroupement en cartons d'expédition · économie place/frais.
+
+**Information** — nom, marque, quantité, compatibilité imprimantes · code-barres/QR pour infos complémentaires.
+:::
+
+---
+
+## Mission 4 — 50 circuits imprimés par avion (Sibérie via Dubaï)
+
+### Représentation visuelle (schéma type)
+
+:::reponse
+- Film à bulles **antistatique** (emballage individuel PCB)
+- **Carton** intérieur
+- **Sachet dessicatif** (silice)
+- **Récipient plastique étanche** extérieur
+- **Marquage** : fragile · sens dessus · ESD · humidité · destination
+:::
+
+### Justification
+
+:::reponse
+**Extérieur robuste** — contraintes mécaniques · intempéries · poussière.
+
+**Intérieur antistatique** — évite chocs/frottements et décharges électrostatiques.
+
+**Dessicants** — contrôle humidité/condensation (climat Sibérie + changements T° en vol).
+
+**Étiquetage** — manipulation correcte et protection tout au long du transport.
+:::
+
+### Mission 4.1 — Mesures par type de contrainte
+
+:::reponse
+**Forces** — matériaux amortissants (bulles, mousse) contre chocs et vibrations.
+
+**Climat** — sachets déshydratants · emballages climatiques (atmosphère contrôlée) · protection T°/humidité.
+
+**Êtres vivants** — emballages fermés/solides · étanches aux odeurs · propreté (anti-nuisibles).
+
+**Vol** — emballages discrets · anti-effraction · scellés/étiquettes de sécurité.
+:::
+
+---
+
+## Mission 5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière avec la classe et l'enseignant.
+:::`;
+
+const DEMO_602_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : Tetris + EnterSite salle 17 · empilement composite
+- **M2** : unboxing = marketing + protection + info
+- **M3** : Printer Ink — protection · logistique · information
+- **M4** : PCB = antistatique + dessicant + étanche + marquage
+- **M5** : discussion STA`;
+
+/** Exercices de maths Module 602 */
+const DEMO_602_MATHS_FULL = `## Exercices de mathématiques — Module 602
+
+Palette type **Europalette : 1'200 × 800 mm**. Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Nombre de colis sur palette
+
+:::solution
+| Cas | Colis/couche | Couches | **Total** |
+| --- | --- | --- | --- |
+| a) 600×200 mm | (1'200/600)×(800/200) = **8** | 7 | **56** |
+| b) 400×150 mm | (1'200/400)×(800/150) = **16** | 10 | **160** |
+| c) 200×200 mm | (1'200/200)×(800/200) = **24** | 16 | **384** |
+| d) 100×200 mm | (1'200/200)×(800/100) = **48** | 8 | **384** |
+:::
+
+### Exercice 2 — Nombre de couches
+
+:::solution
+| Cas | Colis/couche | Total colis | **Couches** |
+| --- | --- | --- | --- |
+| a) 400×300 mm | (1'200/300)×(800/400) = **8** | 128 | **16** |
+| b) 600×100 mm | (1'200/600)×(800/100) = **16** | 208 | **13** |
+| c) 300×100 mm | (1'200/300)×(800/100) = **32** | 96 | **3** |
+| d) 200×150 mm | (1'200/150)×(800/200) = **32** | 224 | **7** |
+:::
+
+### Exercice 3 — Hauteur de pile (palette type 1)
+
+:::solution
+| Cas | Colis/couche | Nb colis | Hauteur unitaire | **Hauteur palette** |
+| --- | --- | --- | --- | --- |
+| a) 800×300×400 | (1'200/300)×(800/800) = **4** | 12 | 400 mm | **1'200 mm** |
+| b) 400×300×400 | (1'200/300)×(800/400) = **8** | 32 | 400 mm | **1'600 mm** |
+| c) 300×200×400 | (1'200/300)×(800/200) = **16** | 32 | 400 mm | **800 mm** |
+| d) 400×200×400 | (1'200/400)×(800/200) = **12** | 48 | 400 mm | **1'600 mm** |
+
+\`\`\`
+Formule : (nb colis / colis par couche) × hauteur unitaire
+Ex. a) : 12/4 × 400 = 1'200 mm
+\`\`\`
+:::
+
+### Exercice 4 — Productivité emballage & ROI
+
+Avant : **22 paquets/h** · Après réaménagement : **1 paquet / 2 min** · Poste = **CHF 50'000** · **CHF 50/h** · **8 h/j**.
+
+:::solution
+**a) 30 paquets/h**
+
+\`\`\`
+60 / 2 = 30 paquets/h
+\`\`\`
+
+**b) Retour sur investissement : ~347 jours** (corrigé officiel)
+
+\`\`\`
+Coût journalier main-d'œuvre : 8 × 50 = CHF 400
+Coût/paquet ancien : 400 / (22 × 8) = CHF 2,27
+Coût/paquet nouveau : 400 / (30 × 8) = CHF 1,67
+Gain/jour : (2,27 − 1,67) × 30 × 8 ≈ CHF 146
+ROI : 50'000 / 146 ≈ 342–347 jours
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 347 · 1'600 · 30 · 384 · 13 · 56 · 7 · 800 · 1'200 · 16 · 3 · 1'600 · 384 · 160`;
+
+const DEMO_602_MATHS_SUMMARY = `## Maths — Solutions
+1. **56** · **160** · **384** · **384** colis
+2. **16** · **13** · **3** · **7** couches
+3. **1'200** · **1'600** · **800** · **1'600** mm
+4. **30**/h · ROI **~347 jours**`;
+
+/** Vérification des acquis Module 602 */
+const DEMO_602_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 602 — Les emballages**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quelles sont les **trois fonctions** de l'emballage ?
+
+:::reponse
+**Protection** — humidité, lumière, T°, chocs, salissures, corrosion, vol, micro-organismes… · protéger aussi l'environnement du contenu (MD).
+
+**Logistique** — regrouper · empiler · optimiser stockage/chargement · accélérer chargement/déchargement · convoyeurs = emballages **normalisés**.
+
+**Information** — étiquette prix/expédition · publicité · emballage de vente = instrument **marketing**.
+:::
+
+### Question 2
+
+Nommer et décrire les termes DIN :
+
+:::reponse
+| Terme | Description |
+| --- | --- |
+| **Marchandise à emballer** | Objet emballé = **contenu** |
+| **Moyen d'emballage** | Produit (boîte, caisse, bouteille, palette…) entourant la marchandise |
+| **Accessoires d'emballage** | Colle, ruban, ficelle, calage… avec le moyen = emballage complet |
+| **Emballage** | Moyen + accessoires |
+| **Paquet** | Marchandise emballée + emballage |
+| **Unité d'emballage** | Paquet **prêt à expédier/stocker** |
+:::
+
+### Question 3
+
+Facteurs influençant le choix d'un emballage ?
+
+:::reponse
+- Sensibilité de la marchandise
+- Mode de transport (camion, train, poste…)
+- Distance et durée du transport (Suisse, étranger, outre-mer)
+- Règles de transport particulières
+- Type de stockage
+- Souhaits du client
+- Durabilité / environnement
+- Taille des lots
+- Effet publicitaire
+- Poids et prix de l'emballage
+:::
+
+### Question 4
+
+Décrire les pictogrammes d'emballage suivants :
+
+:::reponse
+**Centre de gravité** — indique où se trouve le centre de gravité · placer près de la racine des fourches lors du transport.
+
+**Placer les chaînes de levage ici** — point d'attache chaînes/sangles pour suspension horizontale à la grue sans dommage.
+
+**Charge élevée à cet endroit** — centre de gravité très haut · attention aux forces centrifuges.
+
+**Empiler 8 couches max** — maximum **8** caisses en hauteur (moins autorisé).
+:::
+
+### Question 5
+
+Avantage d'un **empilage imbriqué** ?
+
+:::reponse
+**Meilleure stabilité** — jointures décalées entre couches (vs empilage en colonne) → pile plus stable et sûre.
+:::`;
+
+const DEMO_602_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Protection · logistique · information
+2. Marchandise · moyen · accessoires · emballage · paquet · unité
+3. Fragilité, transport, durée, écolo, client, pub, prix…
+4. Centre gravité · levage · charge haute · empiler max 8
+5. Empilage imbriqué = **stabilité**`;
+
 /** Contenu Module 603 — L'arrimage des marchandises */
 const DEMO_603_THEORIE_FULL = `## 3. L'arrimage des marchandises
 
@@ -21892,6 +22179,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_602_THEORIE_FULL,
       summary: DEMO_602_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_602_GLOSSAIRE_FULL,
+      summary: DEMO_602_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_602_SITUATION_FULL,
+      summary: DEMO_602_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_602_MATHS_FULL,
+      summary: DEMO_602_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_602_VERIFICATION_FULL,
+      summary: DEMO_602_VERIFICATION_SUMMARY,
     },
   },
   "603": {
