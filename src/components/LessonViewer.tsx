@@ -10,6 +10,7 @@ import {
   Switch,
 } from "@/components/ui";
 import { MarkdownLite } from "@/components/MarkdownLite";
+import { StudentTheoryReader } from "@/components/theory/StudentTheoryReader";
 import { TheoryChapterNav } from "@/components/TheoryChapterNav";
 import {
   getLessonBody,
@@ -227,17 +228,35 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
 
         <LessonAttachmentsPanel attachments={exerciseAttachments} />
 
-        <MarkdownLite
-          text={displayBody}
-          answerMode={
-            isInteractiveExercisePage && !isTrainer ? "input" : "reveal"
-          }
-          answerStorageKey={
-            isInteractiveExercisePage && !isTrainer && currentUser
-              ? `${currentUser.id}:${lessonId}`
-              : undefined
-          }
-        />
+        {!isTrainer && isTheoryPage ? (
+          <StudentTheoryReader
+            userId={currentUser.id}
+            lessonId={lessonId}
+            mode={summaryMode ? "summary" : "full"}
+            chapterIndex={safeIndex}
+            sourceMarkdown={displayBody}
+            answerMode={
+              isInteractiveExercisePage ? "input" : "reveal"
+            }
+            answerStorageKey={
+              isInteractiveExercisePage
+                ? `${currentUser.id}:${lessonId}`
+                : undefined
+            }
+          />
+        ) : (
+          <MarkdownLite
+            text={displayBody}
+            answerMode={
+              isInteractiveExercisePage && !isTrainer ? "input" : "reveal"
+            }
+            answerStorageKey={
+              isInteractiveExercisePage && !isTrainer && currentUser
+                ? `${currentUser.id}:${lessonId}`
+                : undefined
+            }
+          />
+        )}
 
         {paginated && chapters ? (
           <TheoryChapterNav

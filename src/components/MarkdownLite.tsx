@@ -1,6 +1,9 @@
 import type { ReactNode } from "react";
 import { AnswerReveal } from "@/components/AnswerReveal";
 import { ExerciseAnswerField } from "@/components/ExerciseAnswerField";
+import { useStudentAnnotationActions } from "@/components/theory/StudentAnnotationContext";
+import { Button } from "@/components/ui";
+import { Trash2 } from "lucide-react";
 import { cn } from "@/lib/cn";
 import {
   glossaryTableColumnIndexes,
@@ -103,6 +106,49 @@ function parseTableBlock(lines: string[], start: number) {
 const REVEAL_OPEN = /^:::(reponse|réponse|solution)(?:\s+(.*))?$/i;
 const REVEAL_CLOSE = /^:::\s*$/;
 const FIGURE_OPEN = /^:::figure\s+(\w+)/i;
+const ELEVE_NOTE_OPEN = /^:::eleve-note(?:\s+([\w-]+))?\s*$/i;
+
+function parseEleveNoteBlock(lines: string[], start: number) {
+  const open = lines[start].trim().match(ELEVE_NOTE_OPEN);
+  if (!open) return null;
+  const id = open[1] ?? `note-${start}`;
+  const body: string[] = [];
+  let i = start + 1;
+  while (i < lines.length && !REVEAL_CLOSE.test(lines[i].trim())) {
+    body.push(lines[i]);
+    i += 1;
+  }
+  if (i < lines.length) i += 1;
+  return { id, body: body.join("\n"), nextIndex: i };
+}
+
+function EleveNoteBlock({ id, body }: { id: string; body: string }) {
+  const { onDeleteComment } = useStudentAnnotationActions();
+  return (
+    <aside className="my-4 rounded-[var(--radius-md)] border-2 border-dashed border-primary/35 bg-primary-soft/30 px-4 py-3">
+      <div className="mb-2 flex items-start justify-between gap-2">
+        <p className="text-xs font-semibold uppercase tracking-wide text-primary-strong">
+          Votre commentaire
+        </p>
+        {onDeleteComment ? (
+          <Button
+            type="button"
+            size="sm"
+            variant="ghost"
+            className="h-8 min-h-8 px-2"
+            onClick={() => onDeleteComment(id)}
+            title="Supprimer ce commentaire"
+          >
+            <Trash2 className="h-4 w-4" />
+          </Button>
+        ) : null}
+      </div>
+      <div className="whitespace-pre-wrap text-sm leading-relaxed text-ink-muted">
+        {body}
+      </div>
+    </aside>
+  );
+}
 
 function parseFigureBlock(lines: string[], start: number) {
   const open = lines[start].trim().match(FIGURE_OPEN);
@@ -294,6 +340,19 @@ function renderBlock(
         <FigureBlock key={`f-${key}`} kind={figure.kind} body={figure.body} />,
       );
       i = figure.nextIndex;
+      continue;
+    }
+
+    const eleveNote = parseEleveNoteBlock(lines, i);
+    if (eleveNote) {
+      nodes.push(
+        <EleveNoteBlock
+          key={`n-${key}`}
+          id={eleveNote.id}
+          body={eleveNote.body}
+        />,
+      );
+      i = eleveNote.nextIndex;
       continue;
     }
 
