@@ -33052,18 +33052,50 @@ Interface Word : ruban (onglets Accueil, Insertion, Références…), zone de te
 
 ### 5.2 Écrire un texte
 
-#### 5.2.1 Texte courant
-- Activer **Afficher tout** (**Ctrl+Shift+8** / bouton ¶) pour voir les caractères non imprimables
-- Saisir « au kilomètre » : Word gère les retours de ligne · **Enter** = nouveau **paragraphe** · **Shift+Enter** = saut de ligne dans le même paragraphe · **Shift** = majuscule
-- **Delete** = caractère suivant · **Retour arrière** = précédent · double-clic + Delete = mot · triple-clic = paragraphe
-- **Modifier la casse** (onglet Accueil) · flèches **Annuler / Rétablir**
-- Saut de page : **Ctrl+Enter**
+#### 5.2.1 Base à connaître
 
-#### 5.2.2 Date et heure système
-Insertion → Date et heure → choisir format / langue · option **Mettre à jour automatiquement** si besoin → OK.
+| Action | Bouton | Raccourci |
+| --- | --- | --- |
+| Afficher les caractères non imprimables | ![Afficher tout](/assets/curriculum/805/word/icon-show-paragraph.svg) | **Ctrl+Shift+8** |
+| Retour à la ligne | | **Enter** |
+| Retour à la ligne dans le même paragraphe | | **Shift + Enter** |
+| Saut de page | | **Ctrl + Enter** |
+| Effacer du texte | | **Delete** ou **Backspace** |
+| Sélectionner un mot | | **Double-clic** |
+| Sélectionner un paragraphe | | **Triple-clic** |
 
-#### 5.2.3 Symboles
-Insertion → **Symbole** (ou Autres symboles). Polices utiles : Texte normal · Symbol (grec / maths) · Webdings / Wingdings (graphiques).
+#### 5.2.2 Police de texte
+
+| Action | Bouton | Raccourci | Exemple |
+| --- | --- | --- | --- |
+| Gras | ![Gras](/assets/curriculum/805/word/icon-bold.svg) | **Ctrl + G** | Mots |
+| Italique | ![Italique](/assets/curriculum/805/word/icon-italic.svg) | **Ctrl + I** | *Mots* |
+| Souligné | ![Souligné](/assets/curriculum/805/word/icon-underline.svg) | **Ctrl + U** | Mots |
+| Effacer la mise en forme | ![Effacer](/assets/curriculum/805/word/icon-clear-format.svg) | **Ctrl + Espace** | Mots |
+| Majuscule | ![Majuscules](/assets/curriculum/805/word/icon-all-caps.svg) | **Ctrl + Shift + A** | Mots |
+| Petite majuscule | ![Petites majuscules](/assets/curriculum/805/word/icon-small-caps.svg) | **Ctrl + Shift + K** | Mots |
+| Masqué | ![Masqué](/assets/curriculum/805/word/icon-hidden.svg) | **Ctrl + Shift + H** | Mots |
+| Barré | ![Barré](/assets/curriculum/805/word/icon-strikethrough.svg) | | Mots |
+| En indice | ![Indice](/assets/curriculum/805/word/icon-subscript.svg) | | Mots |
+| En exposant | ![Exposant](/assets/curriculum/805/word/icon-superscript.svg) | | Mots |
+
+#### 5.2.3 Paramètre avancés
+
+1. Étendre et réduire l'espacement des lettres
+
+![](/assets/curriculum/805/word/word-advanced-spacing.svg)
+
+2. Changer la couleur du texte et dégradé
+
+![](/assets/curriculum/805/word/word-font-color-gradient.svg)
+
+3. Effets de texte
+
+![](/assets/curriculum/805/word/word-text-effects-menu.svg)
+
+- ![Contour](/assets/curriculum/805/word/word-effect-outline.svg) **Contour**
+- ![Ombre](/assets/curriculum/805/word/word-effect-shadow.svg) **Ombre**
+- ![Reflet](/assets/curriculum/805/word/word-effect-reflection.svg) **Reflet**
 
 ### 5.3 Paragraphe
 

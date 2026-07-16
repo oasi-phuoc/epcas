@@ -28,7 +28,7 @@ export type MarkdownLiteProps = {
 function formatInline(text: string): ReactNode[] {
   // Gras · surlignage · italique · code · liens
   const parts = text.split(
-    /(\*\*[^*]+\*\*|==(?:\[\w+\])?[^=]+==|\*[^*]+\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g,
+    /(\*\*[^*]+\*\*|==(?:\[\w+\])?[^=]+==|\*[^*]+\*|`[^`]+`|\[[^\]]+\]\([^)]+\)|!\[[^\]]*\]\([^)]+\))/g,
   );
   return parts.map((part, i) => {
     if (part.startsWith("**") && part.endsWith("**")) {
@@ -85,6 +85,18 @@ function formatInline(text: string): ReactNode[] {
         >
           {link[1]}
         </a>
+      );
+    }
+    const image = part.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+    if (image) {
+      return (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          key={i}
+          src={image[2]}
+          alt={image[1] || ""}
+          className="inline-block max-h-10 w-auto align-middle"
+        />
       );
     }
     return <span key={i}>{part}</span>;
