@@ -18312,6 +18312,395 @@ const DEMO_616_OBJECTIFS_SUMMARY = `## Objectifs
 - Flux & machines
 - Sécurité · WB · MIL`;
 
+/** Glossaire Module 616 */
+const DEMO_616_GLOSSAIRE_FULL = `## Glossaire — Module 616
+
+| Terme spécialisé | Lien | Définition |
+| --- | --- | --- |
+| **Commissionnement** | §16.1 | Regrouper les articles d'un assortiment selon les **ordres clients** (bases de distribution). |
+| **Préparation des envois** | §16.1 | Préparer les envois **avant** le centre de tri (presta, format, rollbox…). |
+| **Région de desserte** | §16.1 | Secteur pour lequel un centre effectue le **tri secondaire** (tableaux d'acheminement). |
+| **Centres colis régionaux (CCR)** | §16.2 | Tri régional · **soutien** aux centres principaux · trajets/temps ↓. |
+| **Tri de dépôt** | §16.1 | **1re phase** — envoi **hors** région de desserte → tri secondaire dans **autre** centre. |
+| **Tri de distribution** | §16.1 | **2e phase** — envoi **dans** la région de desserte → tri secondaire **même** centre. |
+| **Tri séquentiel (GFS)** | §16.1 | Envois déjà triés selon la **tournée** du personnel de distribution. |
+| **Bases de distribution** | §16.1 | Offices où les facteurs **chargent** le véhicule et partent en tournée. |
+| **Clinique des colis** | §16.1 | Réparation des colis **endommagés** en centre de tri. |
+| **Rayon d'acheminement** | §16.11 | **1er chiffre** du NPA → région. |
+| **Territoire d'acheminement** | §16.11 | **2e chiffre** du NPA → localité dans la région. |
+| **Code IATA** | §16.11 | **3 lettres** identifiant un aéroport (ex. ZRH, FRA). |
+| **Numéro militaire d'acheminement (MIL)** | §16.11 | Code pour adresse **en campagne** · remise sans point de distribution connu. |
+| **Conteneur de transport** | §16.16 | Conteneur pour transport sur **longues distances** (WB, caisses mobiles…). |
+| **Caisse mobile** | §16.16 | Conteneur transportable par **train ou camion** (RX ou vrac). |
+| **Grue à portique complet** | §16.16 | Charge les caisses mobiles sur les **wagons**. |
+| **Pilotage logistique extérieure** | §16.16 | Coordination du site par le **centre de tri** (quais, véhicules, grues). |
+| **Véhicule de site** | §16.16 | Manœuvre des caisses mobiles **sur le site**. |`;
+
+const DEMO_616_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Tri dépôt** (autre centre) vs **distribution** (même centre)
+- **GFS** = ordre tournée · **CCR** = tri régional
+- **ACS / VCS / MCS** · clinique colis
+- **WB** 12 RX · double pont **36** RX · grue ~20 t`;
+
+/** Mises en situation Module 616 */
+const DEMO_616_SITUATION_FULL = `## Mises en situation — Module 616
+
+**Centres de tri Poste / LOGO** — quatre blocs : processus colis, géographie/IATA, conteneurs de transport, sécurité.
+
+---
+
+## Bloc A — Processus dans les centres de tri (colis)
+
+### Exercice A1 — Les 5 postes du flux colis
+
+:::reponse
+**Poste 1 — Entrée** — déchargement colis non triés · endommagés → **clinique** · non-colis retirés · contrôle aptitude mécanique · adresse vers le haut sur bandes · hors gabarit → tri manuel.
+
+**Poste 2 — Identification** — lecture adresse **ACS** · pesée/mesure clients CC · échec → **VCS** puis **MCS** · données clients numériques pré-chargées.
+
+**Poste 3 — Tri** — **distribution** (même centre) ou **dépôt** (autre centre) · glissières → RX ou caisses mobiles.
+
+**Poste 4 — Sortie autres centres** — RX dans caisses mobiles (ou vrac) · chargement selon volume/destination.
+
+**Poste 5 — Sortie** — RX dans caisses mobiles ou camions · véhicule de site → rail/route.
+:::
+
+#### Exercice A1.1 — 3 différences vs courrier
+
+:::reponse
+1. Courrier : tri **mécanique** plus important (formats uniformes)
+2. Courrier : parfois **entrepôt intermédiaire**
+3. Courrier : **tri séquentiel (GFS)** possible (volumes isolés plus faibles)
+:::
+
+#### Exercice A1.2 — ACS, VCS, MCS
+
+:::reponse
+- **ACS** — codage **automatique** · lecture adresse destinataire
+- **VCS** — **vidéocodage** · photo affichée · collaborateur saisit l'adresse
+- **MCS** — codage **manuel** · envoi évacué · adresse lue et codée par le personnel
+:::
+
+### Exercice A2 — Machines de tri
+
+:::reponse
+| Machine | Fonctionnement |
+| --- | --- |
+| **Unité GF** | Tri grands formats par NPA/localité |
+| **Machine tri courrier** | FN par NPA/localité · 2e tri rue/n° maison |
+| **Tambour** | Prétri par taille, type traitement, vitesse |
+| **Plateaux inclinables** | 1 colis/plateau · bascule vers glissière |
+| **Bandes transversales** | Bande tourne · rejet du colis |
+| **Convoyeurs à rouleaux** | Plans plats · rouleaux entraînés par sections |
+:::
+
+#### Exercice A2.1 — Avantages machines
+
+:::reponse
+**Plus rapide** · ménage **dos/articulations** · moins de connaissances requises.
+
+**Avenir** — robots · FTS (sans conducteur) · **exosquelettes**.
+:::
+
+### Exercice A3 — Envois illisibles
+
+:::reponse
+**Lettre illisible** — écriture rouge/verte · fond coloré · dessins · écriture peu appliquée.
+
+**Étiquette déchirée (VCS)** → **clinique colis** → ouverture · recherche expéditeur/destinataire · sinon **centrale objets trouvés** (ex. Cadenazzo) · photo · conservation **3 mois** · puis enchères/élimination.
+
+**Coûts** — auto : ~20 s manuel + 3 min machine = **50 ct** · manuel : 1 min + 5 min = **150 ct**/envoi.
+
+**Prévention** — appuyer à plat · retirer bandes liasses · largeur **main** entre envois (double lecture).
+:::
+
+### Exercice A4 — Sécurité
+
+:::reponse
+**Mesures observées** — badge obligatoire · formulaire visiteurs · clôture · vidéo · sacs **transparents** · instruction avant machines.
+
+**4.1 Personne inconnue** — s'adresser · demander motif + **autorisation** · risque de vol.
+
+**Éclairage dimanche** — sécurité anti-intrusion · LED · détection mouvement · consommation limitée.
+
+**4.2 Espèces/valeurs** — CG CC Poste §2.8 · responsabilité §3.2–3.3 · espèces **interdites** à l'étranger.
+
+**4.3 Machines autorisées** — bande transporteuse · plate-forme · rampe · transpalettes · convoyeur télescopique · timon électronique · contrepoids · tracteur · aide traction (après **formation** + passeport Suva).
+:::
+
+---
+
+## Bloc B — Géographie, IATA et voies d'acheminement
+
+### Exercice B1 — Cantons, lacs, cols, fleuves
+
+:::reponse
+**Plus grand canton (surface)** — **Grisons** · **plus petit** — **Bâle-Ville**
+
+**Plus de population** — **Zurich** · **moins** — **Appenzell Rhodes-Intérieures**
+
+**5 grands lacs** — Léman 580 km² · Constance 536 · Neuchâtel 215 · Quatre-Cantons 114 · Zurich 88
+
+**5 cols** — Gothard (Andermatt–Airolo) · Furka · Grimsel · Simplon · San Bernardino
+
+**3 fleuves** — **Rhin** 375 km CH · **Aar** 288 km · **Rhône** (glacier → Léman → Méditerranée)
+:::
+
+### Exercice B2 — Codes IATA (logistique)
+
+:::reponse
+HKG · MEM (FedEx) · PVG · ANC · SDF (UPS) · ICN · TPE · LAX · DOH · FRA · **LEJ** (DHL)
+:::
+
+### Exercice B3 — Centres de tri et secteurs
+
+:::reponse
+**Réponse selon schéma cours** — attribuer chaque NPA/destinataire au centre de tri et secteur de distribution corrects (Mülligen, Härkingen, Frauenfeld, Cadenazzo, Daillens…).
+:::
+
+---
+
+## Bloc C — Conteneurs de transport et étiquettes
+
+### Exercices C1–C2 — Applications didactiques
+
+:::reponse
+- **C1** — https://learningapps.org/view39498549 (conteneurs ↔ produits)
+- **C2** — https://learningapps.org/view40336644 (outils ↔ catégories)
+:::
+
+### Exercice C4 — Lecture étiquettes transport
+
+:::reponse
+| Illustration | Informations |
+| --- | --- |
+| **2** | Centre courrier → OD Bâle · Courrier B FN · tri préalable **manuel** |
+| **3** | Dépôt Baar → centre · Courrier A GF · tri **auto** |
+| **4** | Centre → OD Münsingen · Courrier A FN auto · **CIRC 007** |
+| **5** | Centre → OD Pratteln · Courrier A GF auto · **CIRC 113** |
+| **6** | Dépôt Härkingen → centre · Courrier A FN · tri auto |
+:::
+
+---
+
+## Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_616_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **Bloc A** : 5 postes colis · ACS/VCS/MCS · machines · clinique colis
+- **Bloc B** : 26 cantons · IATA · centres tri
+- **Bloc C** : RX/WB/double pont · étiquettes transport
+- Sécurité : badge · sac transparent · formation machines`;
+
+/** Exercices de maths Module 616 */
+const DEMO_616_MATHS_FULL = `## Exercices de mathématiques — Module 616
+
+### Exercice 1 — Volume rollbox et taux de remplissage
+
+RX intérieur : 125 × 85 × 150 cm.
+
+:::solution
+**Volume** : **1'593'750 cm³**
+
+Colis : 10×(30×20×15) = 90'000 · 15×(20×15×15) = 67'500 · 2×(50×30×45) = 135'000
+
+Total chargé : 292'500 cm³ → **18,35 %** du rollbox
+:::
+
+### Exercice 2 — 225 rollbox : double pont vs train routier
+
+55 km · CHF 3/km (double pont, 36 RX) · CHF 2/km (caisse mobile, 24 RX).
+
+:::solution
+**Double pont** : 225/36 = 6,25 → **7** camions × 55 × 3 = **CHF 1'155**
+
+**Train routier** : 225/24 = 9,375 → **10** CM × 55 × 2 = **CHF 1'100**
+
+→ **Caisse mobile légèrement moins chère** (10e transport possible sans remorque complète)
+:::
+
+### Exercice 3 — Transport 1 million de lettres
+
+Fourche 160 cm · conteneur collectif 130×40 cm · 300 lettres/conteneur · 120 m · 2,8 m/s · 20 s manœuvres.
+
+:::solution
+**28'800 lettres/transport** (4 collectifs × 24 BB × 300)
+
+**35 transports** pour 1'000'000 lettres · **73,33 minutes** total
+
+\`\`\`
+Aller-retour : 240 m / 2,8 = 85,71 s + 40 s = 125,71 s/transport
+1'000'000 / 28'800 = 34,72 → 35 transports
+35 × 125,71 / 60 = 73,33 min
+\`\`\`
+:::
+
+### Exercice 4 — Mercedes Sprinter (16 m³)
+
+120 colis 750×200×100 mm · 120 colis 300×200×200 mm · 20 colis 100×60×60 cm.
+
+:::solution
+**10,44 m³** chargés · **5,56 m³** disponibles → **oui**, place suffisante (calcul théorique — empilement réel moins optimal)
+:::
+
+### Exercice 5 — Remorque vs caisse mobile
+
+:::solution
+| | Charge utile | Volume |
+| --- | --- | --- |
+| **Remorque** | **15 t** | **41 m³** |
+| **Caisse mobile** | 13,2 t | 35,6 m³ |
+
+Différence : **+1,8 t** et **+5,4 m³** pour la remorque
+:::
+
+### Exercice 6 — Coûts mensuels chariots (Frauenfeld)
+
+2 élévateurs CHF 808 · 3 timons CHF 487 · 10 tracteurs CHF 796.
+
+:::solution
+**CHF 10'992/mois**
+
+\`\`\`
+2×808 + 3×487 + 10×796 = 10'992
+\`\`\`
+:::
+
+### Exercice 7 — Remboursement −18 % (Éclépens)
+
+Appareils >5 ans : 2 tracteurs 8 ans · 1 élévateur 6 ans · 1 timon 9 ans · 1 timon 7 ans.
+
+:::solution
+**CHF 18'372,96** remboursés
+
+\`\`\`
+Tracteurs : 6 ans × 1'719,36 = 10'316,16
+Élévateurs : 1 an × 1'745,28 = 1'745,28
+Timons : 6 ans × 1'051,92 = 6'311,52
+Total = 18'372,96
+\`\`\`
+:::
+
+### Exercice 8 — Économie timons vs élévateurs (Untervaz)
+
+Remplacer 2 élévateurs par 2 timons supplémentaires.
+
+:::solution
+**CHF 7'704 économisés** · **5,81 %**
+
+\`\`\`
+Avant : 19'392 + 17'532 + 95'520 = 132'444
+Après : 29'220 + 95'520 = 124'740
+Économie : 7'704 → 7'704×100/132'444 = 5,81 %
+\`\`\`
+:::
+
+> **Contrôle rapide** : 18,35 % · CHF 1'100 · 73,33 min · 5,56 m³ · CHF 10'992 · CHF 18'372,96 · 5,81 %`;
+
+const DEMO_616_MATHS_SUMMARY = `## Maths — Solutions
+1. Rollbox : **18,35 %** rempli
+2. 225 RX : CM **CHF 1'100** < double pont **CHF 1'155**
+3. 1 M lettres : **35** transports · **73,33 min**
+4. Sprinter : **5,56 m³** libres
+5. Remorque +1,8 t / +5,4 m³ vs CM
+6. Frauenfeld : **CHF 10'992**/mois
+7. Éclépens : **CHF 18'372,96**
+8. Untervaz : **CHF 7'704** (**5,81 %**)`;
+
+/** Vérification des acquis Module 616 */
+const DEMO_616_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 616 — Processus dans les centres de tri**.
+
+### Question 1
+
+3 étapes de processus **identiques** lettres et colis ?
+
+:::reponse
+1. **Réception** des marchandises (entrée)
+2. **Tri**
+3. **Sortie** des marchandises
+:::
+
+### Question 2
+
+Avantages des machines de tri au quotidien ?
+
+:::reponse
+- **Gain de temps**
+- Ménagent le **dos** et les **articulations**
+- Moins de **connaissances** préalables nécessaires
+:::
+
+### Question 3
+
+Mesures de sécurité pour ton propre centre de tri ?
+
+:::reponse
+Personnel à la réception · accès **badge** · **caméras** · **clôture** · éclairage permanent · sacs **transparents** · sécurité de nuit.
+:::
+
+### Question 4
+
+ACS, VCS, MCS — signification ?
+
+:::reponse
+- **ACS** — codage **automatique** · adresse reconnue automatiquement
+- **VCS** — **vidéocodage** · photo envoyée à un écran · saisie manuelle
+- **MCS** — codage **manuel** · envoi évacué · lecture et codage par le personnel
+:::
+
+### Question 5
+
+3 machines de tri différentes ?
+
+:::reponse
+Machine à **plateaux inclinables** · **bandes transversales** · **rouleaux inclinés** · unité GF · tri **séquentiel (GFS)** — au moins 3.
+:::
+
+### Question 6
+
+Tri de **distribution** vs tri de **dépôt** ?
+
+:::reponse
+**Distribution** — envoi distribué **dans** la région de desserte du centre → 2e tri **même** centre.
+
+**Dépôt** — envoi **hors** région de desserte → transport vers **autre** centre pour tri secondaire.
+:::
+
+### Question 7
+
+3 conteneurs pour transporter des rollbox + capacité ?
+
+:::reponse
+- **Caisse mobile** — **12 RX** ou vrac
+- **Semi-remorque** — **24 RX**
+- **Camion double pont** — **36 RX**
+:::
+
+### Question 8
+
+2 outils transport interne + 2 ergonomie ?
+
+:::reponse
+**Transport interne** — tracteur · transpalette · chariot timon · chariot élévateur · véhicule de site · grue portique…
+
+**Ergonomie** — point de déversement · trottinettes · convoyeur télescopique · aides traction · plate-forme élévatrice.
+:::`;
+
+const DEMO_616_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Entrée · tri · sortie
+2. Temps · dos · articulations · connaissances ↓
+3. Badge · clôture · caméras · sac transparent
+4. ACS auto · VCS vidéo · MCS manuel
+5. Plateaux · bandes · rouleaux · GF · GFS
+6. Distribution = même centre · dépôt = autre centre
+7. CM 12 · semi 24 · double pont 36 RX
+8. Tracteur/timon + déversement/trottinette`;
+
 /** Contenu Module 701 — L'inventaire */
 const DEMO_701_THEORIE_FULL = `## 1. L'inventaire
 
@@ -22088,6 +22477,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_616_THEORIE_FULL,
       summary: DEMO_616_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_616_GLOSSAIRE_FULL,
+      summary: DEMO_616_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_616_SITUATION_FULL,
+      summary: DEMO_616_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_616_MATHS_FULL,
+      summary: DEMO_616_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_616_VERIFICATION_FULL,
+      summary: DEMO_616_VERIFICATION_SUMMARY,
     },
   },
   "701": {
