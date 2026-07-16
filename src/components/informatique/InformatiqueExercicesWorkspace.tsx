@@ -24,6 +24,10 @@ import {
 } from "@/lib/informatique-exercises";
 import { useAppStore } from "@/lib/store";
 import { isStaffRole } from "@/lib/roles";
+import {
+  collapseImageBlocksForEditor,
+  expandImageBlocksFromEditor,
+} from "@/lib/markdown-assets";
 import type {
   InformatiqueApp,
   InformatiqueAsset,
@@ -399,6 +403,18 @@ function ExerciseEditorForm({
   const [mode, setMode] = useState<"edit" | "preview">("edit");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
+  const instructionsDisplay = useMemo(
+    () => collapseImageBlocksForEditor(draft.instructions),
+    [draft.instructions],
+  );
+
+  function setInstructionsFromEditor(edited: string) {
+    setDraft((d) => ({
+      ...d,
+      instructions: expandImageBlocksFromEditor(edited, d.instructions),
+    }));
+  }
+
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     onSave(draft);
@@ -479,10 +495,8 @@ function ExerciseEditorForm({
             ref={textareaRef}
             label="Consignes (markdown)"
             className="min-h-56 text-sm leading-relaxed"
-            value={draft.instructions}
-            onChange={(e) =>
-              setDraft((d) => ({ ...d, instructions: e.target.value }))
-            }
+            value={instructionsDisplay}
+            onChange={(e) => setInstructionsFromEditor(e.target.value)}
             required
           />
         </>

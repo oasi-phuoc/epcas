@@ -2,6 +2,10 @@
 
 import { useRef, useState, type ReactNode, type RefObject } from "react";
 import {
+  AlignCenter,
+  AlignJustify,
+  AlignLeft,
+  AlignRight,
   Bold,
   Eye,
   Heading1,
@@ -22,9 +26,11 @@ import {
 import { cn } from "@/lib/cn";
 import {
   MARKDOWN_IMAGE_MAX_BYTES,
-  buildImageMarkdown,
+  buildAlignedImageBlock,
   fileToDataUrl,
   isImageFile,
+  nextEmbeddedImageLabel,
+  type MarkdownImageAlign,
 } from "@/lib/markdown-assets";
 import { MARKDOWN_FIGURE_TEMPLATES } from "@/lib/markdown-figures";
 
@@ -127,7 +133,9 @@ function insertBlock(
 
 export function MarkdownToolbar({ textareaRef, value, onChange }: Props) {
   const imageInputRef = useRef<HTMLInputElement>(null);
+  const pendingImageAlignRef = useRef<MarkdownImageAlign>("center");
   const [figuresOpen, setFiguresOpen] = useState(false);
+  const [imageMenuOpen, setImageMenuOpen] = useState(false);
   const [imageError, setImageError] = useState<string | null>(null);
   function focusAndSelect(selStart: number, selEnd: number) {
     requestAnimationFrame(() => {
@@ -153,7 +161,7 @@ export function MarkdownToolbar({ textareaRef, value, onChange }: Props) {
     focusAndSelect(selStart, selEnd);
   }
 
-  async function handleImageFile(file: File) {
+  async function handleImageFile(file: File, align: MarkdownImageAlign) {
     setImageError(null);
     if (!isImageFile(file)) {
       setImageError("Choisissez une image (PNG, JPG, GIF, WebP ou SVG).");
@@ -167,12 +175,18 @@ export function MarkdownToolbar({ textareaRef, value, onChange }: Props) {
     }
     try {
       const dataUrl = await fileToDataUrl(file);
-      const alt = file.name.replace(/\.[^.]+$/, "") || "Illustration";
-      const markdown = buildImageMarkdown(alt, dataUrl);
+      const label = nextEmbeddedImageLabel(value);
+      const markdown = buildAlignedImageBlock(align, label, dataUrl);
       withSelection((v, s, e) => insertBlock(v, s, e, markdown));
+      setImageMenuOpen(false);
     } catch {
       setImageError("Impossible de lire ce fichier image.");
     }
+  }
+
+  function pickImageWithAlign(align: MarkdownImageAlign) {
+    pendingImageAlignRef.current = align;
+    imageInputRef.current?.click();
   }
 
   function insertFigureTemplate(markdown: string) {
@@ -308,13 +322,42 @@ export function MarkdownToolbar({ textareaRef, value, onChange }: Props) {
 
       <span className="mx-0.5 hidden h-9 w-px bg-border sm:block" />
 
-      <ToolBtn
-        label="Image"
-        title="Insérer une image depuis un fichier"
-        onClick={() => imageInputRef.current?.click()}
-      >
-        <ImagePlus className="h-4 w-4" />
-      </ToolBtn>
+      <div className="relative">
+        <ToolBtn
+          label="Image"
+          title="Insérer une image (alignement)"
+          onClick={() => setImageMenuOpen((open) => !open)}
+        >
+          <ImagePlus className="h-4 w-4" />
+        </ToolBtn>
+        {imageMenuOpen ? (
+          <div className="absolute left-0 top-full z-20 mt-1 w-[min(16rem,calc(100vw-2rem))] rounded-[var(--radius-md)] border border-border bg-surface p-2 shadow-[var(--shadow-md)]">
+            <p className="mb-2 px-1 text-xs text-ink-subtle">
+              Choisir l&apos;alignement puis le fichier
+            </p>
+            <div className="grid grid-cols-2 gap-1">
+              {(
+                [
+                  ["left", "Gauche", AlignLeft],
+                  ["center", "Centré", AlignCenter],
+                  ["right", "Droite", AlignRight],
+                  ["justify", "Justifié", AlignJustify],
+                ] as const
+              ).map(([align, label, Icon]) => (
+                <button
+                  key={align}
+                  type="button"
+                  className="flex items-center gap-2 rounded-[var(--radius-sm)] px-2 py-2 text-left text-sm transition hover:bg-primary-soft"
+                  onClick={() => pickImageWithAlign(align)}
+                >
+                  <Icon className="h-4 w-4 shrink-0 text-ink-muted" />
+                  <span className="font-medium text-ink">{label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        ) : null}
+      </div>
       <ToolBtn
         label="Image URL"
         title="Insérer une image par lien"
@@ -468,7 +511,7 @@ export function MarkdownToolbar({ textareaRef, value, onChange }: Props) {
       onChange={(e) => {
         const file = e.target.files?.[0];
         e.target.value = "";
-        if (file) void handleImageFile(file);
+        if (file) void handleImageFile(file, pendingImageAlignRef.current);
       }}
     />
     {imageError ? (

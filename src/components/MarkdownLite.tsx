@@ -2,6 +2,11 @@ import type { ReactNode } from "react";
 import { AnswerReveal } from "@/components/AnswerReveal";
 import { ExerciseAnswerField } from "@/components/ExerciseAnswerField";
 import { cn } from "@/lib/cn";
+import {
+  imageBlockFigureClass,
+  imageBlockImgClass,
+  parseMarkdownImageBlock,
+} from "@/lib/markdown-image-blocks";
 
 export type MarkdownLiteProps = {
   text: string;
@@ -247,6 +252,39 @@ function renderBlock(
         <FigureBlock key={`f-${key}`} kind={figure.kind} body={figure.body} />,
       );
       i = figure.nextIndex;
+      continue;
+    }
+
+    const embeddedImage = parseMarkdownImageBlock(lines, i);
+    if (embeddedImage) {
+      nodes.push(
+        <figure
+          key={key}
+          className={cn("my-4 flex flex-col", imageBlockFigureClass(embeddedImage.align))}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={embeddedImage.src}
+            alt={embeddedImage.label}
+            className={imageBlockImgClass(embeddedImage.align)}
+          />
+          {embeddedImage.label ? (
+            <figcaption
+              className={cn(
+                "mt-2 text-sm text-ink-muted",
+                embeddedImage.align === "right"
+                  ? "text-right"
+                  : embeddedImage.align === "left"
+                    ? "text-left"
+                    : "text-center",
+              )}
+            >
+              {embeddedImage.label}
+            </figcaption>
+          ) : null}
+        </figure>,
+      );
+      i = embeddedImage.nextIndex;
       continue;
     }
 

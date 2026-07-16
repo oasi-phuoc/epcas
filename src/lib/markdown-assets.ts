@@ -25,3 +25,11 @@ export function buildImageMarkdown(alt: string, url: string): string {
   const safeAlt = alt.replace(/[\[\]]/g, "");
   return `![${safeAlt}](${url})`;
 }
+
+export {
+  buildAlignedImageBlock,
+  collapseImageBlocksForEditor,
+  expandImageBlocksFromEditor,
+  nextEmbeddedImageLabel,
+  type MarkdownImageAlign,
+} from "./markdown-image-blocks";
