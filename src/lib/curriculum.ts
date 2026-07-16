@@ -18490,6 +18490,522 @@ const DEMO_408_OBJECTIFS_SUMMARY = `## Objectifs
 - Charge · Ast · taux
 - Flux & numérotation`;
 
+const DEMO_408_GLOSSAIRE_FULL = `## Glossaire — Module 408
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Largeur de l'allée de travail (**Ast**) | §8.6 | Largeur nécessaire au chariot pour **stocker** ou **déstocker** une palette. Formule : L1 (chariot jusqu'à la base des fourches) + L2 (longueur de la charge) + **20 cm**. Plus l'allée est large, moins il reste de surface de stockage. |
+| Disposition de l'entrepôt | §8.2 | **Agencement** et plan d'implantation : zones, flux, rayonnages, allées. Objectif : circulation **fluide** et trajets **courts**. Vérifier et optimiser après mise en service (simulations possibles). |
+| Formes de stockage | §8.4 | Manière d'entreposer les marchandises **au sol** sans rayonnage : stockage **plat**, en **blocs**, en **rangées/lignes** ou en **épis**. Compromis entre occupation de l'espace et accessibilité (FIFO). |
+| Charge au sol | §8.5 | Force exercée sur le sol par le stock (**statique**) et les engins (**dynamique**). Exprimée en **N/m²** ou **kg/m²** (1 kg ≈ 10 N en logistique). Ne jamais dépasser la capacité affichée. |
+| Utilisation de la surface | §8.7 | Rapport entre surface **nette** de stockage et surface **brute** (hors annexes). Taux = surface nette / surface brute × 100. |
+| Utilisation de l'espace | §8.8 | Intègre la **hauteur** : taux = volume de marchandises stockées / volume total disponible × 100. |
+| Emplacement | §8.11 | « Adresse » d'une place de stockage dans l'entrepôt (étagère · niveau · position). Permet d'identifier chaque place pour le WMS et le picking. |
+| Flux de marchandises | §8.12 | Cheminement des marchandises **à l'extérieur** (fournisseurs ↔ clients) et **à l'intérieur** (réception → stockage → picking → expédition). |
+| Image de stock | §8.13 | Représentation de l'**occupation** des emplacements (libres / occupés / réservés), **analogique** (cartes) ou **numérique** (WMS, Excel). |`;
+
+const DEMO_408_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Ast** = chariot + charge + 20 cm
+- **Surface** : globale → brute → nette · taux nette/brute
+- **Espace** = volume utilisé / volume total
+- **Charge au sol** : statique + dynamique · 1 kg ≈ 10 N
+- **Emplacement** = adresse · **flux** = E/S interne · **image de stock** = occupation`;
+
+/** Mises en situation Module 408 */
+const DEMO_408_SITUATION_FULL = `## Mises en situation — Module 408
+
+Trois contextes EnterSite AG autour de l'**organisation de l'entrepôt** : planification toner, calculs de surfaces/taux, puis conception d'un nouvel entrepôt à rayonnages.
+
+---
+
+## Partie A — Planification toner (800 palettes)
+
+EnterSite AG loue un espace voisin pour **800 palettes** de matières premières toner. Reto Stierndli te charge d'organiser la gestion des marchandises.
+
+### Mission A1 — Exigences de planification
+
+Décris les exigences à prendre en compte pour planifier un nouvel entrepôt.
+
+:::reponse
+- Comment organiser le **flux de marchandises** de manière optimale ?
+- Quelles marchandises stocker et en **quelles quantités** ?
+- **Exigences** des marchandises (périssables, vol, matières dangereuses…) ?
+- Quelles **fonctions** l'entrepôt doit-il remplir (tampon, stockage…) ?
+- **Charge au sol**, taux d'utilisation **surface** et **espace** possibles ?
+- **Rayonnages**, **TI** (LVS, ERP, interfaces) et **moyens de manutention** disponibles ou à acquérir ?
+- Système **chaotique** ou **fixe** ?
+- Degré d'**automatisation** (statique vs dynamique) ?
+- **Possibilités d'extension** de l'entrepôt ?
+:::
+
+### Mission A2 — Types d'entrepôts
+
+Complète le tableau des types d'entrepôts par fonction et caractéristiques.
+
+:::reponse
+| Type | Fonction | Caractéristiques |
+| --- | --- | --- |
+| **Intermédiaire** | Stockage temporaire entre étapes | Grande diversité · rotation **élevée** |
+| **Produits finis** | Garantir les délais de livraison régionaux | Peu de types · rotation **élevée** |
+| **Transbordement** | Réception courte (transfert autre transport) | Flux continu · rotation **extrême** |
+| **Approvisionnement** | Mise à disposition pour la **production** | Grande variété de biens |
+| **Préparation commandes** | Efficacité du **picking** | Accès direct à tous les produits |
+| **Réserve** | Compenser les **fluctuations** de besoins | Peu de types · rotation **faible** |
+:::
+
+### Mission A3 — Formes simples de stockage
+
+Décris trois formes de stockage au sol **sans installations** (avantages / inconvénients).
+
+:::reponse
+**1. Stockage au sol (plat)** — palettes posées au sol, non empilées.
+
+*+* pas de frais d'installation · organisation simple · surfaces flexibles  
+*−* peu mécanisable · mauvaise utilisation de la hauteur · faible visibilité si gros stocks
+
+**2. Stockage en blocs** — palettes empilées en blocs compacts.
+
+*+* grande quantité homogène · stockage **compact** · occupation optimale  
+*−* pas d'accès direct à chaque unité · **FIFO** impossible · pression d'empilage
+
+**3. Stockage en rangées / lignes** — palettes en rangées avec allées.
+
+*+* accès à chaque unité · visibilité · **FIFO** possible  
+*−* occupation moins bonne qu'en bloc · risque d'instabilité des piles
+:::
+
+### Mission A3.1 — Choix pour 800 palettes toner
+
+:::reponse
+**Stockage en blocs.**
+
+Pour du toner, l'accès palette par palette n'est pas prioritaire. Le stockage en blocs **optimise l'espace** disponible pour 800 palettes homogènes.
+:::
+
+### Mission A4 — Charge au sol théorique
+
+Surface **21 × 60 m** · charge max **7'500 N/m²** · palette moyenne **785 kg**.
+
+Combien de palettes pourraient être stockées ?
+
+:::reponse
+\`\`\`
+Surface        : 21 × 60 = 1'260 m²
+Charge max     : 7'500 N/m² ÷ 10 = 750 kg/m²
+Capacité totale: 1'260 × 750 = 945'000 kg
+Palettes max   : 945'000 ÷ 785 ≈ **1'203 palettes**
+\`\`\`
+:::
+
+### Mission A4.1 — Réalisme du résultat
+
+:::reponse
+**Non**, ce nombre n'est pas réaliste en pratique :
+
+- il faut réserver des **allées de circulation** et des zones pour les **engins de manutention** ;
+- la charge **dynamique** des chariots n'est pas incluse ;
+- des **marges de sécurité** et la répartition des charges ponctuelles limitent le remplissage théorique à 100 %.
+:::
+
+### Mission A5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::
+
+---
+
+## Partie B — Surfaces, taux et rayonnages
+
+### Mission B1 — Surfaces du bâtiment voisin
+
+Données (m) : bâtiment **26,25 × 18,50** · locaux annexes et allées selon plan EnterSite.
+
+:::reponse
+| Nr. | L (m) | l (m) | Surface (m²) |
+| --- | --- | --- | --- |
+| Surface bâtiment | 26,25 | 18,50 | **485,625** |
+| Locaux annexes 1 | 4,50 | 3,75 | −16,875 |
+| Locaux annexes 2 | 5,75 | 2,25 | −12,937 |
+| Locaux annexes 3 | 4,75 | 4,50 | −21,375 |
+| **Total annexes** | | | **−51,187** |
+| **Surface brute stockage** | | | **434,438** |
+| Allées 4–7 | (voir plan) | | **−149,499** |
+| **Surface nette stockage** | | | **283,939** |
+
+**Taux d'utilisation des surfaces** = 283,939 / 434,438 × 100 ≈ **65,4 %**
+:::
+
+### Mission B2 — Palettes sans empilage (allée 4 m)
+
+Allée de travail **4 m** traversant le bâtiment · palettes **0,8 × 1,2 m**.
+
+:::reponse
+**Sens longitudinal** : 385 + 497 = **882 palettes**
+
+**Sens transversal** : 360 + 470 = **830 palettes**
+
+Le sens **longitudinal** permet le plus de palettes.
+:::
+
+### Mission B2.1 — Taux d'utilisation de l'espace (800 palettes en blocs)
+
+Hall **60 × 21 m** · annexes · circulation **30 %** · hauteur **6 m** · palettes **1,6 m** empilables.
+
+:::reponse
+| Étape | Valeur |
+| --- | --- |
+| Surface bâtiment | 1'260,00 m² |
+| Locaux annexes | −180,50 m² |
+| Surface brute | 1'079,50 m² |
+| Circulation 30 % | −323,85 m² |
+| **Surface nette** | **755,65 m²** |
+| Couches | 6 ÷ 1,6 = **3** (hauteur utilisée 4,8 m) |
+| Emprise au sol | 800 ÷ 3 = **267 m²** |
+| Volume utilisé | 267 × 4,8 = **1'281,60 m³** |
+| Volume total | 755,65 × 6 = **4'533,90 m³** |
+| **Taux espace** | 1'281,60 / 4'533,90 × 100 = **28,26 %** |
+:::
+
+### Mission B2.2 — Surface pleine, 2 niveaux
+
+:::reponse
+Volume utilisé : 755,65 × 3,2 = **2'418,08 m³**  
+Taux : 2'418,08 / 4'533,90 × 100 = **53,33 %**
+:::
+
+### Mission B2.3 — 3 niveaux, 3e à 50 %
+
+:::reponse
+2 niveaux pleins : 2'418,08 m³  
+Demi-niveau : (755,65 × 1,6) / 2 = **604,52 m³**  
+Total : 2'418,08 + 604,52 = **3'022,60 m³**  
+Taux : 3'022,60 / 4'533,90 × 100 = **66,66 %**
+:::
+
+### Mission B3 — Comparaison bloc / rangée / drive-in
+
+Empilage variable **1–5,5 m** selon articles · comparer surfaces et allées pour le même nombre de palettes.
+
+:::reponse
+| Forme | Surface / allées | Commentaire |
+| --- | --- | --- |
+| **Bloc** | Surface ↑ si empilage limité | Compact mais FIFO difficile |
+| **Rangée** | Plus d'**allées** | Meilleur accès aux palettes |
+| **Drive-in** | Allées dans le rayonnage | Hauteur mieux exploitée · chariot entre dans l'allée |
+:::
+
+### Mission B3.1 — Taux d'occupation vs hauteur
+
+:::reponse
+- **Bloc** : hauteur variable selon l'article → plus de surface au sol
+- **Rangées** : plus de circulation → mauvaise utilisation de l'espace
+- **Drive-in / accumulation** : traverses → hauteur **optimale**
+:::
+
+### Mission B3.2 — Recommandation
+
+:::reponse
+Compte tenu de l'espace disponible et des hauteurs variables : **rayonnage à accumulation** (ou mobile selon budget) pour mieux exploiter la **hauteur** que le stockage en bloc sans étagères.
+:::
+
+### Mission B4 — Rayonnage à palettes (croquis et charges)
+
+Croquis d'un rayonnage avec composants (montants, traverses, entretoises…). Calcul des taux d'occupation par alvéole (charge admissible **15'000 N** par alvéole).
+
+:::reponse
+**Taux par alvéole (exemples)** : 1 → 82,67 % · 2 → 72,67 % · 3 → **115,33 %** · 4 → 98,00 % · 5 → 81,33 % · 6 → **120,67 %** · 7 → 78,00 % · 8 → 98,00 % · 9 → 112,00 %
+
+Alvéoles **3, 6 et 9** dépassent la charge admissible.
+:::
+
+### Mission B4.3 — Déstockage et charges au sol
+
+Après retrait des palettes en surcharge (alvéoles 3 et 6) :
+
+:::reponse
+| Alvéole | Charge (N) | Taux |
+| --- | --- | --- |
+| 3 | 12'500 | 83,33 % |
+| 6 | 13'600 | 90,67 % |
+| **Charge au sol 1** | **35'800** | |
+| **Charge au sol 2** | **40'500** / **38'700** | |
+| **Charge totale rayonnage** | **115'000 N** | |
+:::
+
+### Mission B4.4 — Critères de distinction des rayonnages
+
+:::reponse
+- **Hauteur** : à plat ≤ 7 m · hauteurs > 5,5 m = planification spécialisée · jusqu'à 45 m
+- **Profondeur** : 1'100 mm (longitudinal) · 750 mm (transversal)
+- **Longueur traverses** : souvent 2'700 mm (porte-à-faux → traverses plus longues)
+- **Charge admissible** : standard jusqu'à ~10 t/unité · **charges lourdes** = montants renforcés, poutres vissées
+:::
+
+### Mission B5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion.
+:::
+
+---
+
+## Partie C — Projet nouvel entrepôt (~1'100 palettes)
+
+Objectifs : **~1'100 palettes** · hauteur palette **1,65 m** · rayonnages · stockage **chaotique** · entrée/sortie = **¼** de la surface restante · largeur hall **23 m** · hauteur **7 m**.
+
+### Mission C1 — Nombre de rayonnages (+ 10 % marge)
+
+:::reponse
+\`\`\`
+Emplacements : 1'100 + 10 % = 1'210 palettes
+Couches      : 7 ÷ 1,65 = 4 niveaux
+Par niveau   : 1'210 ÷ 4 = 303 palettes
+Modules      : 303 ÷ 6 = 50,5 → **51 modules**
+\`\`\`
+:::
+
+### Mission C2 — Layout et flux
+
+:::reponse
+**Croquis** : largeur **23 m** · allées selon engins (**mât rétractable** pour stockage/réappro · préparateur pour picking à **1,8 m**).
+
+Flux visible : réception → contrôle → mise en stock → picking → expédition.
+:::
+
+### Mission C2.1 — Flux interne (schéma séparé)
+
+:::reponse
+**Schéma** : départements reliés par flux unidirectionnel court — réception, stockage, préparation, expédition (selon croquis équipe).
+:::
+
+### Mission C3 — Charge au sol maximale
+
+Palettes **600 kg** + marge rayonnage **20 %** · surface stockage **897 m²** (hors entrée/sortie, avec allées).
+
+:::reponse
+\`\`\`
+Poids palettes : 1'210 × 600 = 726'000 kg + 20 % = 871'200 kg
+Charge au sol  : 871'200 ÷ 897 ≈ 971 kg/m²
++ chariots     : ≈ **1'000 kg/m²** à prévoir
+\`\`\`
+:::
+
+### Mission C4 — Taux surface et espace
+
+:::reponse
+| Indicateur | Valeur |
+| --- | --- |
+| Surface brute (hors E/S) | 897 m² |
+| Allées | −516,52 m² |
+| **Surface nette** | **380,48 m²** |
+| **Taux surface** | 380,48 / 897 × 100 = **42,41 %** |
+| Volume utilisé | 380,48 × 6,6 = **2'511,17 m³** |
+| Volume total | 380,48 × 7 = **2'663,36 m³** |
+| **Taux espace** | 2'511,17 / 2'663,36 × 100 = **94,28 %** |
+:::
+
+### Mission C5 — Photomontage numérotation
+
+:::reponse
+**Dépôt individuel** — photomontage : disposition dans le palletier + logique de numérotation des emplacements.
+:::
+
+### Mission C6 — Présentation PP
+
+:::reponse
+**Réponse individuelle** — documentation PP (titre, sommaire, solutions) + présentation à la direction/classe.
+:::
+
+### Mission C7 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion.
+:::`;
+
+const DEMO_408_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **A** : exigences planification · types entrepôts · blocs pour toner · ~1'203 pal. théoriques (non réalistes)
+- **B** : nette 283,9 m² · taux espace 28 / 53 / 67 % · drive-in · charges alvéoles · déstockage
+- **C** : 1'210 empl. · 51 modules · ~1'000 kg/m² · taux surface 42 % · espace 94 %`;
+
+/** Exercices de maths Module 408 */
+const DEMO_408_MATHS_FULL = `## Exercices de mathématiques — Module 408
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Capacités de charge (tableau)
+
+Complète les valeurs manquantes (1 kg ≈ 10 N).
+
+| L (m) | l (m) | Surface (m²) | kg/m² | N/m² | Capacité totale (N) |
+| --- | --- | --- | --- | --- | --- |
+| 12 | 8 | **96** | 2'000 | **20'000** | **1'920'000** |
+| 15 | 15 | **225** | **500** | **5'000** | **1'125'000** |
+| **14** | 8 | **112** | 1'800 | **18'000** | **2'016'000** |
+
+:::solution
+- Ligne 1 : 12 × 8 = **96 m²** · 2'000 × 10 = **20'000 N/m²** · 96 × 20'000 = **1'920'000 N**
+- Ligne 2 : 15 × 15 = **225 m²** · 1'125'000 ÷ 225 = 5'000 N/m² = **500 kg/m²**
+- Ligne 3 : 2'016'000 ÷ 18'000 = **112 m²** · 112 ÷ 8 = **14 m** · 18'000 N/m² = **1'800 kg/m²**
+:::
+
+### Exercice 2 — Stockage en blocs autorisé ?
+
+Comparer charge admissible vs poids bloc + chariot (+ palettes si indiqué).
+
+**Cas 1** — 99 m² · 49'500 kg · bloc 54'000 kg · chariot 2 t
+
+:::solution
+**Non** — 54'000 + 2'000 = 56'000 kg > 49'500 kg capacité.
+:::
+
+**Cas 2** — 80 m² · 64'000 kg · bloc 43'200 kg · chariot 3 t
+
+:::solution
+**Oui** — 43'200 + 3'000 = 46'200 kg ≤ 64'000 kg.
+:::
+
+**Cas 3** — 108 m² · 64'800 kg · bloc 48'600 kg · chariot 2 t
+
+:::solution
+**Oui** — 48'600 + 2'000 = 50'600 kg ≤ 64'800 kg.
+:::
+
+### Exercice 3 — Loyer au m²
+
+65 palettes optimales → **63,7 m²** · loyer année dernière **4,50 CHF/m²** · cette année **3'803,10 CHF** total.
+
+Augmentation au m² ?
+
+:::solution
+**+55,20 CHF/m²**
+
+\`\`\`
+3'803,10 ÷ 63,7 − 4,50 = 59,70 − 4,50 = **55,20 CHF/m²**
+\`\`\`
+:::
+
+### Exercice 4 — Taux d'utilisation d'une étagère
+
+Étagère L **2,7 m** · l **0,8 m** · P **0,6 m** · **5** cartons 50 × 40 × 30 cm.
+
+:::solution
+**10,28 %**
+
+\`\`\`
+Volume étagère : 2,7 × 0,8 × 0,6 = 2,916 m³
+Volume cartons : 5 × 0,5 × 0,4 × 0,3 = 0,300 m³
+Taux : 0,300 / 2,916 × 100 = **10,28 %**
+\`\`\`
+:::
+
+### Exercice 5 — Surface et volume (blocs de palettes)
+
+Hall **35 × 20 × 9 m** · **10** blocs × **100** palettes · **4** couches · hauteur palette **1,2 m** · circulation **30 %** de la surface de stockage.
+
+:::solution
+**Taux surface de la pièce : 46,66 %**
+
+\`\`\`
+Surface pièce     : 35 × 20 = 700 m²
+Emprise au sol    : 1'000 ÷ 4 = 250 emplacements × ~1,31 m² ≈ 326,6 m²
+Taux surface      : 326,6 / 700 × 100 = **46,66 %**
+\`\`\`
+
+**Taux volume : 19,04 %**
+
+\`\`\`
+Volume hall       : 35 × 20 × 9 = 6'300 m³
+Volume marchandises : 10 × 100 × 1,2 × 1,0 = 1'200 m³
+Taux volume       : 1'200 / 6'300 × 100 = **19,04 %**
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 112 · 14 m · 96 · 225 · 500 · 20'000 · 18'000 · 1'920'000 · 1'125'000 · 2'016'000 · Non · Oui · Oui · 55,20 · 10,28 · 46,66 · 19,04`;
+
+const DEMO_408_MATHS_SUMMARY = `## Maths — Solutions
+1. Tableau : **96** · **225** · **14 m** · **112 m²** · **500** · **20'000** · **18'000** N/m²
+2. Blocs : **Non** (99 m²) · **Oui** (80 m²) · **Oui** (108 m²)
+3. Loyer : **+55,20 CHF/m²**
+4. Étagère : **10,28 %**
+5. Hall : surface **46,66 %** · volume **19,04 %**`;
+
+/** Vérification des acquis Module 408 */
+const DEMO_408_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 408 — Organisation de l'entrepôt**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Ton formateur te demande de planifier un nouveau magasin. Note **au moins cinq questions** auxquelles tu devras répondre au préalable.
+
+:::reponse
+Exemples (cinq suffisent) :
+1. Comment organiser le **flux de marchandises** de manière optimale ?
+2. Quelles marchandises et **quantités** ?
+3. **Exigences** de stockage (périssable, vol, danger) ?
+4. Quelles **fonctions** (tampon, stockage…) ?
+5. **Charge au sol** et taux d'**occupation** surface/espace ?
+6. **Rayonnages**, **TI** (LVS, ERP) et **engins** ?
+7. Stockage **chaotique** ou **fixe** ?
+8. **Automatisation** (statique / dynamique) ?
+9. **Extensions** possibles ?
+:::
+
+### Question 2
+
+Cite **trois fonctions** du stockage de marchandises et explique-les avec tes mots.
+
+:::reponse
+Exemples :
+- **Intermédiaire** — tampon entre étapes du processus
+- **Produits finis** — réduire le délai de livraison avant expédition
+- **Transbordement** — court séjour, tri et transfert sans stock long
+- **Approvisionnement / MP** — garantir la production
+- **Préparation commandes** — accès rapide, efficacité picking
+- **Réserve** — compenser les fluctuations de demande
+:::
+
+### Question 3
+
+Le stockage au sol est la forme la plus simple.
+
+**a.** Qu'entends-tu par stockage au sol ?  
+**b.** Avantages et inconvénients ?
+
+:::reponse
+**a.** Marchandises entreposées **directement sur le sol**, sans moyens auxiliaires (étagères), emballées ou non.
+
+**b.**  
+*Avantages* : pas de coûts d'installation · organisation simple · surfaces flexibles  
+*Inconvénients* : peu mécanisable · mauvaise utilisation de la hauteur · faible vue d'ensemble si gros stocks
+:::
+
+### Question 4
+
+En matière de charge au sol, comment et pourquoi parle-t-on de **force de pesanteur** ?
+
+:::reponse
+Le **poids** (masse × g) produit une **force de pesanteur** exprimée en **newtons (N)**. En logistique on utilise souvent le facteur **10** (au lieu de 9,81) : 1 kg ≈ 10 N. C'est cette force qui détermine la charge exercée sur le sol.
+:::
+
+### Question 5
+
+Décris les différentes **charges partielles** d'un rayonnage à palettes.
+
+:::reponse
+- **Charge par alvéole** — charge totale stockée dans **une** alvéole (une travée entre deux montants)
+- **Charge au sol** — somme des charges des alvéoles sur une **même ligne de montants** (charge sur le sol sous le rayonnage)
+- **Charge totale** — somme des charges de **tous les alvéoles** d'une **allée** de rayonnage
+:::`;
+
+const DEMO_408_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Flux · quantités · exigences · fonctions · charge/taux · TI/engins · chaotique/fixe · auto · extension
+2. Trois fonctions parmi : intermédiaire · finis · transbordement · MP · picking · réserve
+3. Sol = sans étagère · + simple/flexible · − hauteur/mécanisation
+4. Poids × g → force en N · facteur 10
+5. Alvéole · au sol · totale (allée)`;
+
 /** Contenu Module 409 — Les engins de manutention */
 const DEMO_409_THEORIE_FULL = `## 9. Les engins de manutention
 
@@ -25128,6 +25644,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_408_THEORIE_FULL,
       summary: DEMO_408_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_408_GLOSSAIRE_FULL,
+      summary: DEMO_408_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_408_SITUATION_FULL,
+      summary: DEMO_408_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_408_MATHS_FULL,
+      summary: DEMO_408_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_408_VERIFICATION_FULL,
+      summary: DEMO_408_VERIFICATION_SUMMARY,
     },
   },
   "409": {
