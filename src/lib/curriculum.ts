@@ -20180,6 +20180,263 @@ const DEMO_501_OBJECTIFS_SUMMARY = `## Objectifs
 - Idée → produit
 - Structure multi-vues`;
 
+const DEMO_501_GLOSSAIRE_FULL = `## Glossaire — Module 501
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Production** | §1.1 | Fabrication de **biens matériels**, d'**énergies** ou de **services**. Désigne aussi le **déroulement** (processus) par lequel des facteurs d'entrée deviennent des produits finis. |
+| **Processus** | §1.1–1.3 | Enchaînement d'**activités** et d'**étapes** menant d'une idée ou d'inputs à un produit vendable (ex. dessins → modèle fonctionnel → série → commercialisation). |
+| **Valeur ajoutée** | §1.1 | **Processus de création de valeur** : combinaison des facteurs de production (travail, machines, matériaux) pour produire des sorties de la **plus haute qualité possible** à partir des entrées. |
+| **Transformation** | §1.2 | Passage des matières premières ou produits non finis de l'**état actuel** à l'**état souhaité** grâce à la main-d'œuvre, aux machines, outils et énergie. La production accomplit une transformation. |`;
+
+const DEMO_501_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Production** = biens · énergies · services (+ le processus)
+- **Processus** = étapes de l'idée au produit vendable
+- **Valeur ajoutée** = inputs + facteurs → outputs de qualité
+- **Transformation** = état actuel → état souhaité`;
+
+/** Mises en situation Module 501 */
+const DEMO_501_SITUATION_FULL = `## Mises en situation — Module 501
+
+EnterSite AG doit **innover** face à la concurrence. En équipe de trois, vous travaillez sur une **nouvelle idée de produit ou service** et planifiez son introduction dans l'entreprise.
+
+### Vue d'ensemble des missions
+1. Brainstorming produit/service
+2. Description détaillée du produit choisi
+3. Tâches par département (idée → élimination)
+4. Discussion STA
+
+---
+
+## Mission 1 — Brainstorming
+
+Trouvez deux partenaires et listez les produits ou services qui manquent chez EnterSite AG.
+
+:::reponse
+**Réponse d'équipe** — brainstorming libre : que changeriez-vous dans l'offre ?
+
+Document de référence : *Produit_service_solution.pdf* (EnterSite).
+:::
+
+### Mission 1.1 — Idées innovantes et groupe cible
+
+:::reponse
+**Réponse individuelle** — marquer les idées les plus intéressantes du brainstorming.
+
+Vérifier si le produit/service correspond au **groupe cible** d'EnterSite AG (B2B logistique / fournitures de bureau / toner… selon votre idée).
+:::
+
+---
+
+## Mission 2 — Description du produit/service
+
+Exemple de solution (équipement de bureau durable) :
+
+:::reponse
+**Description / fonction**
+
+Mobilier respectueux de l'environnement, papeterie recyclable, équipements à **faible consommation d'énergie** (chaises ergonomiques, bureaux/armoires en bois recyclé et plastique durable, papier recyclé, imprimantes/PC économes).
+
+**Innovation**
+
+Répond à la demande d'articles de bureau **écologiques** · matériaux durables · technologies basse consommation → empreinte écologique réduite.
+
+**Processus de création de valeur**
+
+Sélection de matériaux durables · fournisseurs responsables · fabrication selon normes environnementales · production en **usine suisse** · contrôle qualité · livraison client.
+
+**Structure du produit**
+
+Mobilier (chaises, bureaux, armoires) · papeterie recyclable · équipements basse énergie (imprimantes, photocopieuses, ordinateurs).
+
+**Groupe cible**
+
+Entreprises attachées à la **durabilité** (toutes tailles, tous secteurs) souhaitant équiper leurs bureaux de manière écologique.
+
+**Notre produit convainc parce que…**
+- bureaux plus durables · contribution environnementale positive
+- qualité élevée · besoins modernes
+- équipements économes → coûts électricité ↓
+- image client renforcée (produits durables)
+- **innovation** différenciante face à la concurrence
+:::
+
+---
+
+## Mission 3 — Tâches par département
+
+De l'**idée** à l'**introduction** et l'**élimination** : quelles informations pour chaque responsable ? Comment les obtenir ? Quoi communiquer à qui ?
+
+:::reponse
+| Département | Tâches principales |
+| --- | --- |
+| **Customer Service** | Analyse de marché · conception produit · flyer / page web · objectifs (environnement, conditions de travail, philosophie) |
+| **Procurement Management** | Demande fournisseurs · comparer prix · alternatives · objectifs durabilité |
+| **Logistics** | Planifier entrepôt · capacité de stockage |
+| **Production** | Machines et personnel · contrôles (avec contrôle de gestion) · matériel · plans de production · nomenclatures |
+| **Support and Distribution** | Compétences / formation / embauche · vente directe ou distributeur · informer clients · calcul des prix |
+| **Fundation** | Flux de marchandises · élimination des déchets |
+| **FICO** | Flyers · personnel (besoins, embauches) · contrôle de gestion (coûts) · comptabilité (prix, articles ERP) |
+| **Informatique** | Saisie articles · système de gestion des stocks |
+
+Tenir compte du **profil EnterSite AG** et des **objectifs d'entreprise** à chaque étape.
+:::
+
+---
+
+## Mission 4 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_501_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : brainstorming innovation · groupe cible
+- **M2** : description · innovation · création de valeur · structure · cible
+- **M3** : tâches CS · achats · logistique · production · distribution · FICO · IT
+- **M4** : discussion`;
+
+/** Exercices de maths Module 501 */
+const DEMO_501_MATHS_FULL = `## Exercices de mathématiques — Module 501
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Coûts R&D (nouvelle génération toner)
+
+| Poste | CHF |
+| --- | --- |
+| Publicité | 302,75 |
+| Salons | 1'000,00 |
+| Formation vendeurs | 100,00 |
+| Démonstrations | 100,00 |
+| **Recherche & développement** | **?** |
+
+R&D = **54,50 %** des coûts **totaux**.
+
+:::solution
+**1'800,00 CHF**
+
+\`\`\`
+Autres coûts = 302,75 + 1'000 + 100 + 100 = 1'502,75 CHF (= 45,5 %)
+Total        = 1'502,75 / 0,455 = 3'302,75 CHF
+R&D          = 3'302,75 × 0,545 = **1'800,00 CHF**
+
+(ou : 1'502,75 / (100 − 54,5) × 54,5 ≈ 1'800 CHF)
+\`\`\`
+:::
+
+### Exercice 2 — Distance entre trous (gabarit acier)
+
+Gabarit **960 mm** de long · **4 trous** (rayon **4 cm**, surface **55,256 cm²** chacun) · distance **x** identique entre les trous.
+
+:::solution
+**x = 11 cm**
+
+\`\`\`
+Longueur utile : 96 cm − 10 − 10 = 76 cm (marges)
+Largeur trou   : 2 × 4 cm = 8 cm par trou
+4 trous        : 4 × 8 = 32 cm
+Reste / 4      : (76 − 32) / 4 = **11 cm**
+\`\`\`
+:::
+
+### Exercice 3 — Masse du gabarit
+
+Acier **7 mm** d'épaisseur · densité **7,85 g/cm³** · gabarit **96 × 35 cm** (mm) avec 4 trous de **55,256 cm²**.
+
+:::solution
+**17,248 kg**
+
+\`\`\`
+Surface nette = (96 × 35) − (4 × 55,256) = 3'360 − 221,024 = 3'138,976 cm²
+Volume        = 3'138,976 × 0,7 cm = 2'197,283 cm³
+Masse         = 2'197,283 × 7,85 = 17'248,67 g = **17,248 kg**
+\`\`\`
+:::
+
+### Exercice 4 — Taux d'erreur
+
+**1'000** toners produits · **1 défaut sur 96**.
+
+:::solution
+**1,04 %**
+
+\`\`\`
+1 / 96 × 100 = **1,0417 %** ≈ **1,04 %**
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 11 · 1,04 · 1'800 · 17,248`;
+
+const DEMO_501_MATHS_SUMMARY = `## Maths — Solutions
+1. R&D : **1'800 CHF** (54,5 % du total)
+2. Distance trous : **11 cm**
+3. Masse gabarit : **17,248 kg**
+4. Taux d'erreur : **1,04 %**`;
+
+/** Vérification des acquis Module 501 */
+const DEMO_501_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 501 — La production**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Définis le terme **« production »**.
+
+:::reponse
+La **production** désigne la fabrication de **biens matériels**, d'**énergies** ou de **services**. Elle décrit aussi un **déroulement** / **processus** de transformation.
+:::
+
+### Question 2
+
+Que sont les **facteurs de production** ?
+
+:::reponse
+- **Prestation de travail** — personnes, spécialistes
+- **Moyens de production** (matériel d'exploitation) — machines
+- **Matériaux** — matières premières, matériaux bruts
+:::
+
+### Question 3
+
+Explique ce qu'est un **processus de création de valeur**.
+
+:::reponse
+Lors d'un processus de **création de valeur**, des biens de la **plus haute qualité possible** sont produits à partir de biens d'entrée par la **combinaison des facteurs de production** (travail, machines, matériaux).
+:::
+
+### Question 4
+
+Cite **trois objectifs** spécifiques de la production (en plus du bon produit).
+
+:::reponse
+Exemples (trois suffisent) :
+- **Coûts** réduits
+- **Rendement** élevé
+- Haute **qualité** (peu de rebuts)
+- Respect des **délais**
+- Bonne utilisation des **moyens de production**
+- **Temps de passage** faible
+- Grande **satisfaction** des clients
+:::
+
+### Question 5
+
+Quels sont les **objectifs de la structure des produits** ?
+
+:::reponse
+- Être le plus **simple** possible
+- Être le plus **neutre** possible pour le client (**standardisée**) jusqu'aux niveaux supérieurs
+- Les écarts individuels (souhaits client) le **plus tard possible** dans le processus de fabrication
+:::`;
+
+const DEMO_501_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Production = biens · énergies · services · processus
+2. Facteurs = travail · machines · matériaux
+3. Création de valeur = inputs + facteurs → outputs qualité
+4. Coûts · rendement · qualité · délais · passage · satisfaction…
+5. Structure simple · standardisée · personnalisation tardive`;
+
 /** Contenu Module 502 — La logistique de production */
 const DEMO_502_THEORIE_FULL = `## 2. Logistique de production
 
@@ -26381,6 +26638,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_501_THEORIE_FULL,
       summary: DEMO_501_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_501_GLOSSAIRE_FULL,
+      summary: DEMO_501_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_501_SITUATION_FULL,
+      summary: DEMO_501_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_501_MATHS_FULL,
+      summary: DEMO_501_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_501_VERIFICATION_FULL,
+      summary: DEMO_501_VERIFICATION_SUMMARY,
     },
   },
   "502": {
