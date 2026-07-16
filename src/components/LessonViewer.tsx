@@ -154,9 +154,14 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
     });
   }
 
-  function markDone() {
-    setLessonProgress(currentUser!.id, lesson!.id, { status: "done" });
+  function toggleReadDone(checked: boolean) {
+    setLessonProgress(currentUser!.id, lesson!.id, {
+      status: checked ? "done" : "reading",
+      modePref: progress?.modePref ?? "full",
+    });
   }
+
+  const isDone = progress?.status === "done";
 
   return (
     <div>
@@ -183,18 +188,35 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
       ) : null}
 
       {isTheoryPage ? (
-        <div className="mb-4 animate-soft-pop">
+        <div className="mb-4 animate-soft-pop space-y-3">
           <Switch
             checked={summaryMode}
             onChange={toggleMode}
             label="Mode résumé"
             description="Affiche uniquement les points clés à retenir"
           />
+          {!isTrainer ? (
+            <Switch
+              checked={isDone}
+              onChange={toggleReadDone}
+              label="Marqué comme lu"
+              description="Désactivez pour remettre la page en cours de lecture"
+            />
+          ) : null}
+        </div>
+      ) : !isTrainer ? (
+        <div className="mb-4 animate-soft-pop">
+          <Switch
+            checked={isDone}
+            onChange={toggleReadDone}
+            label="Marqué comme lu"
+            description="Désactivez pour remettre la page en cours de lecture"
+          />
         </div>
       ) : null}
 
       <Panel className="animate-fade-up">
-        {paginated && chapters ? (
+        {paginated && chapters && isTrainer ? (
           <TheoryChapterNav
             chapters={chapters}
             pageIndex={safeIndex}
@@ -223,17 +245,26 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
             pageIndex={safeIndex}
             onPageChange={goToChapter}
             placement="bottom"
+            variant={isTrainer ? "default" : "student"}
           />
         ) : null}
 
-        <div className="mt-8 flex flex-wrap gap-2 border-t border-border pt-4">
-          <Button onClick={markDone}>Marquer comme lu</Button>
-          {!exercisePage ? (
-            <Link href={mod ? curriculumExercisePaths(mod.code).index : "/logistique/exercices"}>
-              <Button variant="secondary">Passer aux exercices</Button>
-            </Link>
-          ) : null}
-        </div>
+        {isTrainer ? (
+          <div className="mt-8 flex flex-wrap gap-2 border-t border-border pt-4">
+            <Button onClick={() => toggleReadDone(true)}>Marquer comme lu</Button>
+            {!exercisePage ? (
+              <Link
+                href={
+                  mod
+                    ? curriculumExercisePaths(mod.code).index
+                    : "/logistique/exercices"
+                }
+              >
+                <Button variant="secondary">Passer aux exercices</Button>
+              </Link>
+            ) : null}
+          </div>
+        ) : null}
       </Panel>
     </div>
   );
