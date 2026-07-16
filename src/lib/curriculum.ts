@@ -14868,6 +14868,347 @@ const DEMO_405_OBJECTIFS_SUMMARY = `## Objectifs
 - Accidents / STOP / secours
 - Incendie · vol · MD · nuisibles`;
 
+/** Glossaire Module 405 */
+const DEMO_405_GLOSSAIRE_FULL = `## Glossaire — Module 405
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Étiquetage SGH | GHS · Système général harmonisé | **Marquage** des produits chimiques et marchandises dangereuses avec les **pictogrammes SGH/GHS** (9 symboles) : identification des dangers pour la **santé**, la **sécurité** et l'**environnement** · complété par la **FDS** (fiche de données de sécurité). |
+| Systèmes d'extinction (sprinkler) | Sprinklers | Installations d'**extinction automatique** : têtes de sprinkler déclenchées par la **chaleur** (~70 °C) · pulvérisation d'**eau** (ou autre agent) sur le foyer · jet jusqu'à ~8 m · surveillance 24 h/24 · risque de **dégâts d'eau** si déclenchement accidentel. |
+| Classes de feu | | Classification des feux selon le **matériau** en combustion — l'**agent extincteur** doit correspondre à la classe : **A** (solides : bois, papier, textiles) · **B** (liquides inflammables) · **C** (gaz) · **D** (métaux) · **F** (graisses/huiles de cuisine). Mauvais agent = inefficace ou **dangereux**. `;
+
+const DEMO_405_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Étiquetage SGH** : pictogrammes dangers · FDS obligatoire
+- **Sprinkler** : extinction auto par chaleur · eau · dégâts d'eau possibles
+- **Classes de feu** : A solides · B liquides · C gaz · D métaux · F graisses`;
+
+/** Mises en situation Module 405 */
+const DEMO_405_SITUATION_FULL = `## Mises en situation — Module 405
+
+Contexte : tu participes au programme de formation **« Les dangers nous guettent partout »** pour les nouveaux collaborateurs du département **Logistics** chez **EnterSite AG** (Reto Stierndli). Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions.
+
+### Vue d'ensemble des missions
+1. Sécurité au travail — objectifs et protection personnelle
+2. Signaux d'obligation et EPI
+3. Prévention incendie · dispositifs · comportement
+4. Vidéo « Apprendre des accidents » (principe STOP) + FDS EnterSite
+5. Discussion de la STA
+
+---
+
+## Mission 1 — Sécurité au travail
+
+### Objectifs de la sécurité au travail
+
+:::reponse
+- **Prévenir** les accidents et blessures sur le lieu de travail
+- **Protéger** la santé et le bien-être des employés
+- Garantir un environnement de travail **sûr et sain**
+- **Minimiser** les risques et dangers
+- **Respecter** les dispositions légales et normes de protection
+:::
+
+### Où te protèges-tu dans l'entreprise ?
+
+:::reponse
+- **EPI** adaptés au poste : chaussures de sécurité, lunettes, gants…
+- Manipulation de **moyens de transport** (chariots, engins)
+- Manipulation de **substances dangereuses**
+- Travail avec **poussières**, éclats, matières pulvérulentes
+- *(Autres réponses spécifiques à l'entreprise formatrice)*
+:::
+
+### Où te protèges-tu au quotidien ?
+
+:::reponse
+- **Code de la route**, ceinture, casque vélo
+- Utilisation sûre des **appareils ménagers** et de l'électricité
+- Protection soleil, bruit, produits chimiques
+- EPI lors des **activités sportives** (casque ski…)
+:::
+
+### Où des mesures sont-elles prescrites ?
+
+:::reponse
+**Entreprise** — prescrit par la **loi** (LTr, OPA) : chutes, bruit, produits chimiques… L'employeur doit prendre les mesures et **informer** les collaborateurs.
+
+**Quotidien** — normes transport, denrées alimentaires, construction (garde-corps…).
+:::
+
+### Mission 1.1 — « Des dangers nous guettent partout » (Logistics)
+
+:::reponse
+Dans la logistique, de nombreux dangers peuvent affecter la **sécurité** et les **processus** :
+
+- **Engins** de manutention · véhicules de transport
+- **Rayonnages** (effondrement, chocs)
+- **Matières dangereuses**
+- Circulation piétons/engins · charges lourdes…
+
+Les collaborateurs doivent connaître ces dangers et appliquer : directives de sécurité · **EPI** · entretien machines · **formation**. La sensibilisation permet un travail **sûr et efficace**.
+:::
+
+---
+
+## Mission 2 — Signaux d'obligation et EPI
+
+Cherche les **signaux d'obligation** importants en entrepôt et décris les dangers correspondants.
+
+| Signal | Signification | Travaux / dangers |
+| --- | --- | --- |
+| Chaussures de sécurité | Protection des pieds | Transport · sols glissants · chutes d'objets lourds |
+| Lunettes de protection | Protection des yeux | Poussière · particules · projections chimiques |
+| Casque de protection | Protection de la tête | Risque de **chute d'objets** |
+| Gants | Protection des mains | Objets rugueux · arêtes · **substances dangereuses** |
+| Protection auditive | Protection des oreilles | **Bruit** fort (engins, machines) |
+| Protection respiratoire | Protection des voies respiratoires | Poussières · vapeurs · MD |
+| Gilet de sécurité | Haute visibilité | Forte **circulation** de véhicules |
+
+:::reponse
+Voir tableau ci-dessus — compléter avec les pictogrammes ISO 7010 observés dans l'entrepôt EnterSite ou l'entreprise formatrice.
+:::
+
+---
+
+## Mission 3 — Prévention des incendies
+
+Prépare l'intervention sur : **prévention** · **dispositifs** · **comportement**.
+
+### Mesures préventives (4–5 phrases)
+
+:::reponse
+- Tous les collaborateurs contribuent à la prévention par la **prudence**
+- **Interdiction de fumer** sur tout le site EnterSite AG
+- Réparations uniquement avec mesures de protection · contrôle post-travaux (odeur de fumée…)
+- **Ordre et propreté** : déchets enlevés régulièrement · jamais dans couloirs/escaliers
+:::
+
+### Dispositifs de protection
+
+:::reponse
+- **Portes coupe-feu** pour limiter fumée et flammes
+- Entretien régulier · **anomalies signalées** immédiatement
+- Collaborateurs formés à l'utilisation des équipements
+- Extincteurs déclenchés → **recharge** professionnelle, pas remis en place vides
+:::
+
+### Comportement en cas d'incendie
+
+:::reponse
+- **Garder son calme** · alerter les pompiers : **Qui ? Quoi ? Où ? Combien ?**
+- Quitter la **zone de danger** · fermer les portes si possible · **lieu de rassemblement**
+- Si voie d'évacuation bloquée → **alternative**
+- Si pièce impossible à quitter → portes fermées · se signaler à la **fenêtre**
+:::
+
+### Mission 3.1 — Dispositifs (description)
+
+:::reponse
+**Définition** — appareils qui **signalent**, **aident à éteindre**, ou **font les deux**.
+
+| Dispositif | Rôle | Avantages | Inconvénients |
+| --- | --- | --- | --- |
+| **Extincteur** | Extinction portable | Mobile · réaction rapide · classes multiples | Volume limité · manipulation manuelle · portée |
+| **Lance d'incendie** | Eau sur dévidoir | Grand volume · réaction rapide | Portée limitée · pas tous les feux |
+| **Détecteur fumée** | Alarme fumée | Avertissement précoce · 24/7 | Pas la source · fausses alarmes |
+| **Détecteur chaleur** | Alarme chaleur (~60 °C) | Fiable en poussière | Idem détecteur |
+| **Sprinklers** | Extinction auto | Couverture large · efficace | **Dégâts d'eau** · installation coûteuse |
+:::
+
+### Mission 3.2 — Comportement en urgence (4–5 phrases)
+
+:::reponse
+- Principe **« Alerter – Sauver – Éteindre »**
+- Fermer fenêtres et portes si possible
+- **Tout** incendie, même mineur → signaler aux pompiers
+- Voies d'évacuation alternatives si danger
+- Au rassemblement → suivre les **instructions** · pointage du personnel
+:::
+
+---
+
+## Mission 4 — Vidéo « Apprendre des accidents »
+
+En groupe : identifier un **danger** logistique + action pouvant provoquer un accident · créer une **vidéo** (2–4 min) selon le principe **STOP**.
+
+**Exigences** : storyboard · intro / corps / conclusion · mini-générique · crédits discrets.
+
+:::reponse
+**Réponse individuelle / de groupe** — dépôt de la vidéo et du storyboard selon consignes de l'enseignant·e.
+:::
+
+### Tâche supplémentaire — FDS « Solution de résine X 150 »
+
+> **EnterSite salle 3 V3** — visite virtuelle, image à droite. [Vers EnterSite](#entersite-placeholder)
+
+- Quel **fournisseur** met à disposition la FDS ?
+- **Premiers secours** ?
+- **Agent d'extinction** approprié ?
+- Quels **EPI** ?
+- Élimination avec déchets ménagers ? **Quelle section** ?
+
+:::reponse
+**Réponse individuelle** — selon la FDS EnterSite *Solution de résine X 150* (salle 3 V3).
+:::
+
+---
+
+## Mission 5 — Discussion
+
+Discute de la STA en plénière. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion.
+:::`;
+
+const DEMO_405_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : objectifs SST · EPI entreprise/quotidien · dangers Logistics partout
+- **M2** : signaux obligation → chaussures · lunettes · casque · gants · auditif · respiratoire · gilet
+- **M3** : prévention · portes coupe-feu · Alerter-Sauver-Éteindre · extincteur/sprinkler/détecteurs
+- **M4** : vidéo STOP (2–4 min) · FDS résine X 150 (EnterSite 3 V3)
+- **M5** : discussion STA`;
+
+/** Exercices de maths Module 405 */
+const DEMO_405_MATHS_FULL = `## Exercices de mathématiques — Module 405
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Tuyaux sprinkler
+
+**800** tuyaux de **6 m** sont nécessaires. Combien de tuyaux de **9,6 m** faudrait-il ?
+
+:::solution
+**500 tuyaux**
+
+Calcul :
+\`\`\`
+Longueur totale : 800 × 6 = 4'800 m
+Avec tuyaux 9,6 m : 4'800 / 9,6 = **500 tuyaux**
+\`\`\`
+:::
+
+### Exercice 2 — Débit sprinkler
+
+Chaque tête : **1,35 l/s**. Fermeture de la conduite après **5,3 minutes**.
+
+Combien de **litres** passent par une tête ?
+
+:::solution
+**429,3 litres**
+
+Calcul :
+\`\`\`
+5,3 min × 60 s × 1,35 l/s = 318 × 1,35 = **429,3 litres**
+\`\`\`
+:::
+
+### Exercice 3 — Hauteur d'eau
+
+Scénario exercice 2 : volume d'eau dans une pièce de **5 × 5 m**.
+
+Quelle **hauteur d'eau** ?
+
+:::solution
+**17,2 cm** (0,172 m)
+
+Calcul (méthode EnterSite) :
+\`\`\`
+Volume d'eau : 429,3 l = 0,4293 m³
+Surface pièce : 5 × 5 = 25 m²
+Hauteur : 0,4293 / 25 = 0,0172 m = **17,2 cm**
+\`\`\`
+:::
+
+### Exercice 4 — Durée moyenne d'absence
+
+**15** accidents · **CHF 1'000/jour** en moyenne · coût total **CHF 75'000**.
+
+Durée moyenne d'**absence** par employé ?
+
+:::solution
+**5 jours**
+
+Calcul :
+\`\`\`
+75'000 / 1'000 / 15 = **5 jours** d'absence en moyenne par accident
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 17,2 · 500 · 5 · 429,3`;
+
+const DEMO_405_MATHS_SUMMARY = `## Maths — Solutions
+1. **500 tuyaux** (800 × 6 / 9,6)
+2. **429,3 litres** (5,3 × 60 × 1,35)
+3. **17,2 cm** hauteur d'eau (pièce 5×5 m)
+4. **5 jours** absence moyenne (75'000 / 1'000 / 15)`;
+
+/** Vérification des acquis Module 405 */
+const DEMO_405_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 405 — Les dangers dans l'entrepôt**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Dans quelles **catégories** peut-on classer les mesures pour réduire les accidents du travail ?
+
+:::reponse
+- **Humaines** (formation, comportement)
+- **Techniques** (sécurisation des installations)
+- **Matérielles** (EPI, équipements)
+- **Opérationnelles** / **d'exploitation** (procédures, organisation)
+- **Légales** (respect des normes)
+:::
+
+### Question 2
+
+Comment procéder en cas d'**incendie** ?
+
+:::reponse
+Principe **« Alerter – Sauver – Éteindre »** :
+
+1. **Alerter** — ne pas retarder l'alarme (pompiers)
+2. **Sauver** — évacuer · lieu de rassemblement
+3. **Éteindre** — seulement si possible sans danger personnel
+:::
+
+### Question 3
+
+Quelles mesures **préventives** contre les **vols internes** ?
+
+:::reponse
+- Contrôles **fiables** et opportuns des entrées/sorties
+- Gestion minutieuse des **retours**
+- **Séparation** hommes / marchandises
+- Moyens **techniques** de contrôle
+- Conception de l'**emballage**
+- Contrôles réguliers des **sacs** et **portes**
+:::
+
+### Question 4
+
+Qu'est-ce qu'une **substance dangereuse** ?
+
+:::reponse
+Marchandises qui présentent un **danger** pour les **personnes**, les **animaux** et l'**environnement** si elles ne sont pas manipulées correctement.
+:::
+
+### Question 5
+
+Quel principe lors de l'achat de marchandises dangereuses ?
+
+:::reponse
+**« Autant que nécessaire — aussi peu que possible. »**
+
+(Acheter et stocker uniquement les quantités réellement requises.)
+:::`;
+
+const DEMO_405_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Humain · technique · matériel · opérationnel · légal
+2. **Alerter – Sauver – Éteindre**
+3. Contrôles E/S · retours · séparation · techniques · emballage · portes
+4. MD = danger personnes/animaux/environnement si mauvaise manipulation
+5. Autant que nécessaire · aussi peu que possible`;
+
 /** Contenu Module 406 — Principes de stockage */
 const DEMO_406_THEORIE_FULL = `## 6. Principes de stockage
 
@@ -21710,6 +22051,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_405_THEORIE_FULL,
       summary: DEMO_405_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_405_GLOSSAIRE_FULL,
+      summary: DEMO_405_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_405_SITUATION_FULL,
+      summary: DEMO_405_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_405_MATHS_FULL,
+      summary: DEMO_405_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_405_VERIFICATION_FULL,
+      summary: DEMO_405_VERIFICATION_SUMMARY,
     },
   },
   "406": {
