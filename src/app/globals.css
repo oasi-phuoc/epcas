@@ -191,3 +191,27 @@ mark.epcas-anno[data-has-note="1"]::after {
   opacity: 0.75;
   vertical-align: super;
 }
+
+mark.epcas-hl,
+.epcas-hl {
+  border-radius: 0.15em;
+  color: inherit;
+}
+.epcas-hl-yellow {
+  background: rgb(250 204 21 / 0.55);
+}
+.epcas-hl-green {
+  background: rgb(74 222 128 / 0.5);
+}
+.epcas-hl-blue {
+  background: rgb(125 211 252 / 0.55);
+}
+.epcas-hl-pink {
+  background: rgb(249 168 212 / 0.55);
+}
+.epcas-hl-orange {
+  background: rgb(251 146 60 / 0.5);
+}
+.epcas-hl-violet {
+  background: rgb(196 181 253 / 0.55);
+}

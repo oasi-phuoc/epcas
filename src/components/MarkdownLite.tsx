@@ -10,6 +10,10 @@ import {
   isGlossaryTableHeader,
 } from "@/lib/glossary-markdown";
 import {
+  highlightClassName,
+  parseHighlightMarkdown,
+} from "@/lib/highlight-colors";
+import {
   imageBlockFigureClass,
   imageBlockImgClass,
   parseMarkdownImageBlock,
@@ -26,7 +30,7 @@ export type MarkdownLiteProps = {
 function formatInline(text: string): ReactNode[] {
   // Gras · surlignage · italique · code · liens
   const parts = text.split(
-    /(\*\*[^*]+\*\*|==[^=]+==|\*[^*]+\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g,
+    /(\*\*[^*]+\*\*|==(?:\[\w+\])?[^=]+==|\*[^*]+\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g,
   );
   return parts.map((part, i) => {
     if (part.startsWith("**") && part.endsWith("**")) {
@@ -36,13 +40,17 @@ function formatInline(text: string): ReactNode[] {
         </strong>
       );
     }
-    if (part.startsWith("==") && part.endsWith("==")) {
+    const highlight = parseHighlightMarkdown(part);
+    if (highlight) {
       return (
         <mark
           key={i}
-          className="rounded bg-warning-soft px-0.5 text-ink"
+          className={cn(
+            "rounded px-0.5 text-ink",
+            highlightClassName(highlight.color),
+          )}
         >
-          {part.slice(2, -2)}
+          {highlight.text}
         </mark>
       );
     }

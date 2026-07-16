@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Highlighter, MessageSquarePlus } from "lucide-react";
 import { Alert, Button, TextArea } from "@/components/ui";
 import { MarkdownLite } from "@/components/MarkdownLite";
+import { HighlightColorPicker } from "@/components/HighlightColorPicker";
 import { cn } from "@/lib/cn";
 import {
   applyStudentAnnotations,
@@ -15,6 +16,10 @@ import {
   type StudentLessonAnnotations,
 } from "@/lib/lesson-annotations";
 import { StudentAnnotationContext } from "@/components/theory/StudentAnnotationContext";
+import {
+  DEFAULT_HIGHLIGHT_COLOR,
+  type HighlightColor,
+} from "@/lib/highlight-colors";
 
 type Props = {
   userId: string;
@@ -43,6 +48,9 @@ export function StudentTheoryReader({
   const [commentDraft, setCommentDraft] = useState("");
   const [feedback, setFeedback] = useState<string | null>(null);
   const [pendingAnchor, setPendingAnchor] = useState<string | undefined>();
+  const [highlightColor, setHighlightColor] = useState<HighlightColor>(
+    DEFAULT_HIGHLIGHT_COLOR,
+  );
 
   const storageScope = `${userId}:${lessonId}:${mode}:${chapterIndex}`;
 
@@ -98,7 +106,7 @@ export function StudentTheoryReader({
       ...annotations,
       highlights: [
         ...annotations.highlights,
-        { id: newStudentAnnotationId("hl"), quote },
+        { id: newStudentAnnotationId("hl"), quote, color: highlightColor },
       ],
     });
     window.getSelection()?.removeAllRanges();
@@ -181,6 +189,11 @@ export function StudentTheoryReader({
             <Highlighter className="h-4 w-4 shrink-0" />
             <span className="hidden sm:inline">Surligner</span>
           </Button>
+          <HighlightColorPicker
+            value={highlightColor}
+            onChange={setHighlightColor}
+            className="shrink-0"
+          />
           <Button
             type="button"
             size="sm"

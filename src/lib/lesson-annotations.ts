@@ -1,6 +1,12 @@
+import {
+  type HighlightColor,
+  wrapHighlightMarkdown,
+} from "@/lib/highlight-colors";
+
 export type StudentHighlight = {
   id: string;
   quote: string;
+  color?: HighlightColor;
 };
 
 export type StudentComment = {
@@ -93,8 +99,10 @@ function applyHighlights(
   for (const h of highlights) {
     const quote = h.quote;
     if (!quote) continue;
-    const wrapped = `==${quote}==`;
+    const wrapped = wrapHighlightMarkdown(quote, h.color ?? "yellow");
     if (out.includes(wrapped)) continue;
+    const plain = wrapHighlightMarkdown(quote, "yellow");
+    if (out.includes(plain)) continue;
     const idx = out.indexOf(quote);
     if (idx === -1) continue;
     out =
