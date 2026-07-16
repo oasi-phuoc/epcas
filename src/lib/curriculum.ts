@@ -17239,6 +17239,243 @@ const DEMO_607_OBJECTIFS_SUMMARY = `## Objectifs
 - Chargement & forces
 - MD · avenir`;
 
+/** Glossaire Module 607 */
+const DEMO_607_GLOSSAIRE_FULL = `## Glossaire — Module 607
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Interdiction de circuler la nuit** | §7 | Restrictions de circulation des **poids lourds** la nuit en Suisse · le **rail** devient crucial pour le transport de marchandises sur longues distances. |
+| **Ports du Rhin** | §7 | Ports rhénans (**Bâle**…) · relais rail–route–eau · objectif **50 %** conteneurs sur rail · **Gateway Basel Nord**. |
+| **Tracé** | §7.1 | Itinéraires ferroviaires (axes **N–S** Gothard/NLFA · **O–E** Genève–Zurich) · lignes d'accès aux tunnels de base. |
+| **Manœuvres** | §7.2 | Opérations en gare (aiguillages, triage, « laisser-couler ») · contraintes **fortes** sur le chargement · jusqu'à **4 g** en choc de triage. |`;
+
+const DEMO_607_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Nuit** PL interdits → rail indispensable
+- **Ports Rhin** = Bâle · report conteneurs sur rail
+- **Tracé** = axes NLFA N–S / O–E
+- **Manœuvres** = aiguillages · triage · forces jusqu'à **4 g**`;
+
+/** Mises en situation Module 607 */
+const DEMO_607_SITUATION_FULL = `## Mises en situation — Module 607
+
+**EnterSite AG** : choix de wagon, sécurisation, plan de chargement ferroviaire, forces dynamiques.
+
+### Vue d'ensemble des missions
+1. Choisir un wagon (41 palettes)
+2. Sécuriser les wagons (sabot + frein)
+3. Plan de chargement wagon
+4. Forces dynamiques (schéma)
+5. Discussion STA
+
+---
+
+## Mission 1 — Choisir un wagon (41 palettes)
+
+Recherche sur **types de wagons CFF**.
+
+:::reponse
+**Wagon Habils A** — convient au transport de marchandises **fragiles** sur palettes.
+
+- Capacité **46 palettes** max. (41 palettes OK)
+- **Parois coulissantes** pour sécuriser optimalement la charge
+- Photo + justification : **réponse individuelle** (CFF Cargo)
+:::
+
+---
+
+## Mission 2 — Sécuriser les wagons
+
+Référence : module **305**.
+
+:::reponse
+Un wagon peut être sécurisé par :
+
+**Frein à main** — monté sur le côté longitudinal ou sur la plate-forme · empêche le roulement.
+
+**Sabot d'arrêt** — placé sur le **rail** · agit comme une **cale** · bloque le wagon.
+
+Compléter avec **photos** trouvées sur Internet.
+:::
+
+---
+
+## Mission 3 — Plan de chargement wagon
+
+Fichier **Wagon marchandise.pptx** · 41 palettes dont **circuits imprimés fragiles** · wagon entier · une seule adresse.
+
+:::reponse
+**Réponse individuelle** — placer les palettes dans le PowerPoint.
+
+**Justification type**
+- Répartition charge : rapport longitudinal **1:3** et transversal **1:1,25** **respectés**
+- Palettes **PCB fragiles** au **centre** (protection contre forces de tamponnement)
+- Espaces vides compactés par **coussins d'air**
+- Chargement **à la forme** · pas de vide non comblé
+:::
+
+---
+
+## Mission 4 — Forces dynamiques
+
+:::reponse
+Lors du transport ferroviaire :
+
+- **Aiguillages et manœuvres** — contraintes fortes sur les marchandises
+- **Gare de triage** (« laisser-couler ») — choc avec train en attente : jusqu'à **4 g**
+- **Virages / aiguillages** — vibrations d'environ **0,3 g** (moins violentes)
+
+**Schéma** — dessiner les forces sur l'image du wagon (ex. mission 1).
+:::
+
+---
+
+## Mission 5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_607_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : **Habils A** · 46 pal. max. · parois coulissantes
+- **M2** : frein à main + **sabot d'arrêt** (module 305)
+- **M3** : PCB au centre · coussins d'air · 1:3 / 1:1,25
+- **M4** : triage **4 g** · aiguillages **0,3 g**`;
+
+/** Exercices de maths Module 607 */
+const DEMO_607_MATHS_FULL = `## Exercices de mathématiques — Module 607
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Durée du trajet en train
+
+| Lieu | Arrivée | Départ |
+| --- | --- | --- |
+| Hunzenschwil | — | 18:00 |
+| Aarau | 18:05 | 19:15 |
+| Luzern | 20:45 | 20:55 |
+| Chiasso | 00:20 | — |
+
+Soustraire les **temps d'arrêt**.
+
+:::solution
+**300 min = 5 h** de temps de trajet
+
+\`\`\`
+Hunzenschwil → Aarau : 5 min
+Aarau → Luzern     : 90 min (19:15 → 20:45)
+Luzern → Chiasso   : 205 min (20:55 → 00:20)
+Total              : 5 + 90 + 205 = 300 min = 5 h
+\`\`\`
+:::
+
+### Exercice 2 — Vitesse moyenne
+
+Distance **280 km** · durée ex. 1 = **5 h**.
+
+:::solution
+**56 km/h**
+
+\`\`\`
+280 / 5 = 56 km/h
+\`\`\`
+:::
+
+### Exercice 3 — Charge sur le 2e essieu
+
+1er essieu chargé à **3,69 t** · rapport bogie **1:3**.
+
+:::solution
+**11,07 t** maximum sur le 2e essieu
+
+\`\`\`
+3,69 × 3 = 11,07 t
+\`\`\`
+:::
+
+### Exercice 4 — Coût par rame (tunnel Gothard)
+
+Coût **12,2 milliards CHF** · **260** sillons/jour · **100 ans** à pleine capacité.
+
+:::solution
+**CHF 1'286** par rame
+
+\`\`\`
+12'200'000'000 / (260 × 365 × 100) = 1'285,56 ≈ 1'286 CHF
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 56 · 1'286 · 11,07 · 5`;
+
+const DEMO_607_MATHS_SUMMARY = `## Maths — Solutions
+1. Trajet : **5 h** (300 min)
+2. Vitesse moyenne : **56 km/h**
+3. 2e essieu max. : **11,07 t**
+4. Coût/rame Gothard : **1'286 CHF**`;
+
+/** Vérification des acquis Module 607 */
+const DEMO_607_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 607 — Le transport ferroviaire**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Trois avantages du transport ferroviaire ?
+
+:::reponse
+- Plus **rapide** que le transport **maritime**
+- Moins **cher** que le transport **aérien**
+- Beaucoup plus **respectueux de l'environnement** que air, eau et route
+:::
+
+### Question 2
+
+Décris la **NLFA**.
+
+:::reponse
+*Nouvelle ligne ferroviaire à travers les Alpes* — œuvre du siècle · 3 tunnels de base + accès · rapproche nord et sud CH/Europe.
+
+- **Lötschberg** 34,7 km (2007)
+- **Saint-Gothard** **57 km** (2016) — plus long tunnel ferroviaire du monde
+- **Ceneri** 15,4 km (2020) — achèvement NLFA
+
+Renforce le fret ferroviaire respectueux de l'environnement sur la ligne de plaine.
+:::
+
+### Question 3
+
+Qui est responsable d'un **chargement défectueux** ?
+
+:::reponse
+Le **chargeur/client** (CIM art. 13 al. 2 · CGV **CFF Cargo**) : respect des directives de chargement · limites de charge · **poids exact** sur la lettre de voiture · toutes les conséquences d'un chargement défectueux.
+:::
+
+### Question 4
+
+Plus grandes **forces dynamiques** sur un wagon ?
+
+:::reponse
+En **gare de triage** (wagon roulant d'une montagne de déchargement, choc avec train en attente) : jusqu'à **4 g**.
+
+Vibrations ~**0,3 g** lors du franchissement d'**aiguillages** et dans les **virages** (moins violentes).
+:::
+
+### Question 5
+
+Deux outils pour sécuriser le chargement des wagons ?
+
+:::reponse
+- **Coussins d'air**
+- **Cloisons de séparation**
+- Éventuellement des **sangles d'arrimage**
+:::`;
+
+const DEMO_607_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Rapide vs mer · moins cher vs air · écologique
+2. NLFA = Lötschberg · Gothard 57 km · Ceneri
+3. **Chargeur/client** (CIM · CFF Cargo)
+4. Triage jusqu'à **4 g** · aiguillages ~0,3 g
+5. Coussins d'air · cloisons · sangles`;
+
 /** Contenu Module 608 — Le transport aérien */
 const DEMO_608_THEORIE_FULL = `## 8. Le transport aérien
 
@@ -21962,6 +22199,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_607_THEORIE_FULL,
       summary: DEMO_607_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_607_GLOSSAIRE_FULL,
+      summary: DEMO_607_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_607_SITUATION_FULL,
+      summary: DEMO_607_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_607_MATHS_FULL,
+      summary: DEMO_607_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_607_VERIFICATION_FULL,
+      summary: DEMO_607_VERIFICATION_SUMMARY,
     },
   },
   "608": {
