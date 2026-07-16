@@ -79,7 +79,7 @@ function StudentCorrectionAsset({ asset }: { asset: InformatiqueAsset }) {
   if (asPdf) {
     return (
       <li className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-3 sm:p-4">
-        <PdfViewer url={asset.url} layout="book" />
+        <PdfViewer url={asset.url} layout="paged" />
       </li>
     );
   }
@@ -106,7 +106,7 @@ function StudentCorrectionAsset({ asset }: { asset: InformatiqueAsset }) {
 
   return (
     <li className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-3 sm:p-4">
-      <PdfViewer url={asset.url} layout="book" />
+      <PdfViewer url={asset.url} layout="paged" />
     </li>
   );
 }
@@ -321,7 +321,7 @@ function AssetList({
                   </div>
                 ) : null}
                 {asResultatPdf ? (
-                  <PdfViewer url={asset.url} title={asset.name} layout="book" />
+                  <PdfViewer url={asset.url} title={asset.name} layout="paged" />
                 ) : null}
               </li>
             );

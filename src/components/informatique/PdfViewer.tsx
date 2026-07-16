@@ -1,26 +1,55 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { PDFDocumentProxy } from "pdfjs-dist";
 import { cn } from "@/lib/cn";
-import { CompactPageNav } from "@/components/ui/CompactPageNav";
 
 type PdfViewerProps = {
   url: string;
   title?: string;
   /**
    * book — pages empilées (lecture continue)
-   * paged — une page à la fois avec pagination compacte
+   * paged — une page à la fois, précédent / suivant (feuilletage)
    */
   layout?: "book" | "paged";
 };
 
+function PagedNavButton({
+  direction,
+  disabled,
+  onClick,
+}: {
+  direction: "prev" | "next";
+  disabled: boolean;
+  onClick: () => void;
+}) {
+  const Icon = direction === "prev" ? ChevronLeft : ChevronRight;
+  const label = direction === "prev" ? "Page précédente" : "Page suivante";
+  return (
+    <button
+      type="button"
+      aria-label={label}
+      disabled={disabled}
+      onClick={onClick}
+      className={cn(
+        "inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[var(--radius-md)] border border-border bg-surface text-ink shadow-sm transition",
+        "hover:bg-surface-muted disabled:pointer-events-none disabled:opacity-35",
+      )}
+    >
+      <Icon className="h-6 w-6" strokeWidth={2} />
+    </button>
+  );
+}
+
 function PdfPageCanvas({
   pdf,
   pageNumber,
+  singlePage = false,
 }: {
   pdf: PDFDocumentProxy;
   pageNumber: number;
+  singlePage?: boolean;
 }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -55,14 +84,14 @@ function PdfPageCanvas({
   return (
     <div
       ref={wrapRef}
-      className="w-full border-b border-border/60 bg-white last:border-b-0"
+      className={cn("w-full bg-white", !singlePage && "border-b border-border/60 last:border-b-0")}
     >
       <canvas ref={canvasRef} className="mx-auto block h-auto max-w-full" />
     </div>
   );
 }
 
-export function PdfViewer({ url, title, layout = "book" }: PdfViewerProps) {
+export function PdfViewer({ url, title, layout = "paged" }: PdfViewerProps) {
   const [pdf, setPdf] = useState<PDFDocumentProxy | null>(null);
   const [numPages, setNumPages] = useState(0);
   const [pageIndex, setPageIndex] = useState(0);
@@ -140,37 +169,61 @@ export function PdfViewer({ url, title, layout = "book" }: PdfViewerProps) {
 
   const paged = layout === "paged";
   const pagesToShow = paged ? [pageIndex + 1] : Array.from({ length: numPages }, (_, i) => i + 1);
+  const isFirst = pageIndex <= 0;
+  const isLast = pageIndex >= numPages - 1;
+
+  const pageFrame = (
+    <div
+      className={cn(
+        "min-w-0 flex-1 overflow-hidden rounded-[var(--radius-md)] border border-border bg-ink/5",
+        !paged && "max-h-[min(75vh,48rem)] overflow-y-auto overscroll-contain",
+      )}
+    >
+      {pagesToShow.map((pageNum) => (
+        <PdfPageCanvas
+          key={pageNum}
+          pdf={pdf}
+          pageNumber={pageNum}
+          singlePage={paged}
+        />
+      ))}
+    </div>
+  );
 
   return (
-    <div className="space-y-3">
-      {title ? (
-        <p className="sr-only">{title}</p>
-      ) : null}
+    <div className="space-y-2">
+      {title ? <p className="sr-only">{title}</p> : null}
       {paged ? (
-        <CompactPageNav
-          pageIndex={pageIndex}
-          total={numPages}
-          onPageChange={setPageIndex}
-        />
-      ) : null}
-      <div
-        className={cn(
-          "overflow-hidden rounded-[var(--radius-md)] border border-border bg-ink/5",
-          !paged && "max-h-[min(75vh,48rem)] overflow-y-auto overscroll-contain",
-        )}
-      >
-        {pagesToShow.map((pageNum) => (
-          <PdfPageCanvas key={pageNum} pdf={pdf} pageNumber={pageNum} />
-        ))}
-      </div>
-      {paged ? (
-        <CompactPageNav
-          pageIndex={pageIndex}
-          total={numPages}
-          onPageChange={setPageIndex}
-          className="pt-1"
-        />
-      ) : null}
+        <div className="space-y-2">
+          <div className="flex items-stretch gap-2 sm:gap-3">
+            {numPages > 1 ? (
+              <PagedNavButton
+                direction="prev"
+                disabled={isFirst}
+                onClick={() => setPageIndex((i) => Math.max(0, i - 1))}
+              />
+            ) : null}
+            {pageFrame}
+            {numPages > 1 ? (
+              <PagedNavButton
+                direction="next"
+                disabled={isLast}
+                onClick={() => setPageIndex((i) => Math.min(numPages - 1, i + 1))}
+              />
+            ) : null}
+          </div>
+          {numPages > 1 ? (
+            <p
+              className="text-center text-sm font-medium tabular-nums text-ink-muted"
+              aria-live="polite"
+            >
+              Page {pageIndex + 1} / {numPages}
+            </p>
+          ) : null}
+        </div>
+      ) : (
+        pageFrame
+      )}
     </div>
   );
 }
