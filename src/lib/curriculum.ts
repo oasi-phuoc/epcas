@@ -29080,6 +29080,242 @@ const DEMO_701_OBJECTIFS_SUMMARY = `## Objectifs
 - Déroulement
 - Différences`;
 
+/** Glossaire Module 701 */
+const DEMO_701_GLOSSAIRE_FULL = `## Glossaire — Module 701
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Registre du commerce** | §1.1 | Registre officiel des entreprises · inscription obligatoire pour établir un **bilan annuel**. |
+| **Bilan** | §1.1 | État financier annuel · les **stocks** (actifs) doivent être contrôlés par inventaire. |
+| **Stock comptable** | §1.4 | = **stock théorique** — quantités **enregistrées** dans le système · ce qui devrait être en stock. |
+| **Stock physique** | §1.4 | = **stock réel** — quantités **effectivement** présentes en entrepôt. |
+| **Temps réel** | §1.2.2 | Inventaire avec **MDE** permettant de continuer entrées/sorties pendant le comptage (inventaire tournant). |`;
+
+const DEMO_701_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Théorique** = comptable · **réel** = physique
+- Obligation : registre commerce → bilan → inventaire **1×/an**
+- Docs conservés **10 ans** · CO art. 958c
+- **Temps réel** = MDE + mouvements continus`;
+
+/** Mise en situation Module 701 */
+const DEMO_701_SITUATION_FULL = `## Mise en situation — Module 701
+
+**EnterSite AG** — organisation et réalisation de l'inventaire annuel.
+
+---
+
+### Mission 1 — Préparer l'inventaire
+
+:::reponse
+**Étapes de préparation** :
+- Définir une **procédure** · instruction d'inventaire contraignante
+- **Concertation** entre collaborateurs
+- **Délimiter** entrées/sorties non planifiées
+- Éliminer palettes vides et emballage inutile
+- **Étiqueter** proprement les étagères
+- **Pré-trier** les unités de comptage courantes
+
+**Obstacles possibles** :
+- Erreurs de comptage · unités de quantité peu claires
+- Pannes ou **mauvaise utilisation** des appareils MDE
+:::
+
+#### Mission 1.1 — Les 3 types d'inventaire
+
+:::reponse
+**À date fixe** — jour de clôture précis · comptage ce jour · listes par secteur · équipes · papier ou MDE · idéalement **aucune** entrée/sortie · très précis.
+
+**Permanent (tournant)** — tout au long de l'année · système indique aléatoirement quoi compter · chaque article **≥ 1×/an** · idéal avec inventaire **temps réel** (MDE).
+
+**Par sondage** — accord autorités fiscales · **échantillon** représentatif extrapolé · articles bon marché · articles de valeur = inventaire complet.
+:::
+
+#### Mission 1.2 — Type d'inventaire par entrepôt
+
+:::reponse
+**Réponse individuelle** — tableau avec entrepôt, type (fixe / permanent / sondage) et **justification** par groupe.
+:::
+
+---
+
+### Mission 2 — Réaliser l'inventaire (date fixe)
+
+Article **206BBZ2011** — Toner Black A1CC530A · écart persistant après recomptage.
+
+:::reponse
+**Stock réel** : **20 pièces** · **stock théorique** ajusté de 21 → **20** (différence −1 confirmée).
+
+**Mesures** — correction du **stock comptable** dans la fiche article pour traçabilité · visa inventaire **CBU** le 27.1 · stock final **20**.
+
+| Date | Sortie | Stock th. | Inventaire | Diff. |
+| --- | --- | --- | --- | --- |
+| 27.1 | 11 | 21 | **20** | **−1** |
+| Ajustement | | **20** | 20 | 0 |
+:::
+
+---
+
+### Mission 3 — Inventaire par drone
+
+:::reponse
+**Fonctionnement** :
+1. Plan de vol couvrant les zones
+2. Drone autonome ou piloté · photos/vidéos HD
+3. **Reconnaissance d'image** · comptage/identification
+4. Intégration dans le **système de gestion des stocks**
+
+**Avantages** — rapide · précision ↑ (erreur humaine ↓) · économie de main-d'œuvre · sécurité (hauteur, espaces confinés)
+
+**Limites** — coûts initiaux · petits objets / forte densité difficiles à détecter
+
+**Pour EnterSite** — évaluer coûts vs bénéfices avant décision.
+:::
+
+---
+
+### Mission 4 — Raisons de l'inventaire
+
+:::reponse
+**Mission 4** — **réponse individuelle** (à deux) : obligation légale bilan · contrôle actifs · détecter écarts · améliorer processus · CO 958c…
+
+**Mission 4.1 — Ruptures de stock** — exemples vécus + théorie (autre couleur) : erreurs saisie · livraisons non enregistrées · vol · casse · DLC · picking erroné…
+:::
+
+---
+
+### Mission 5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_701_SITUATION_SUMMARY = `## Mise en situation — À retenir
+- **Préparation** : instruction · MDE · étiquetage · délimitation EM
+- **3 types** : fixe · tournant · sondage
+- **Écart** : recompter → ajuster stock théorique
+- **Drone** : rapide mais coûteux · limites petits objets`;
+
+/** Exercices de maths Module 701 */
+const DEMO_701_MATHS_FULL = `## Exercices de mathématiques — Module 701
+
+### Exercice 1 — Écarts d'inventaire
+
+| Article | Théorique | Réel |
+| --- | --- | --- |
+| 206BBZ2011 | 21 | 20 |
+| 406BBZ2016 | 65 | 67 |
+| GT70-106R01486 | 1 | 1 |
+| 406BBZ2012 | 28 | 20 |
+
+:::solution
+| Article | Diff. pièces | Diff. % |
+| --- | --- | --- |
+| 206BBZ2011 | **−1** | **−4,76 %** |
+| 406BBZ2016 | **+2** | **+3,08 %** |
+| GT70-106R01486 | **0** | **0 %** |
+| 406BBZ2012 | **−8** | **−28,57 %** |
+
+Formule : (réel − théorique) · % = diff./théorique × 100
+:::
+
+### Exercice 2 — Temps de travail
+
+Inventaire **45 min** = **7,5 %** du temps de travail quotidien.
+
+:::solution
+**10 heures** de travail
+
+\`\`\`
+0,75 h / 7,5 × 100 = 10 h
+(45 min = 0,75 h)
+\`\`\`
+:::
+
+### Exercice 3 — Conversion d'unités
+
+:::solution
+| Valeur | Conversion |
+| --- | --- |
+| 23,7 cm | **0,237 m** |
+| 30'050 g | **0,03005 t** |
+| 5'034 l | **5'034'000 ml** |
+| 10 mm² | **0,1 cm²** |
+:::
+
+### Exercice 4 — Différence de stock en %
+
+Valeur stock **291'751 CHF** · différence **8'642 CHF**.
+
+:::solution
+**2,96 %**
+
+\`\`\`
+8'642 / 291'751 × 100 = 2,9621 % ≈ 2,96 %
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 2,96 · 0,1 · 10 · 0,237 · −4,76 · 0,03005 · +3,08 · 5'034'000 · 0 · 28,57`;
+
+const DEMO_701_MATHS_SUMMARY = `## Maths — Solutions
+1. Écarts : −4,76 % · +3,08 % · 0 % · −28,57 %
+2. Journée : **10 h**
+3. Conversions : 0,237 m · 0,03005 t · 5'034'000 ml · 0,1 cm²
+4. Différence stock : **2,96 %**`;
+
+/** Vérification des acquis Module 701 */
+const DEMO_701_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 701 — L'inventaire**.
+
+### Question 1
+
+3 types d'inventaire ?
+
+:::reponse
+1. Inventaire **par sondage**
+2. Inventaire **permanent** (tournant)
+3. Inventaire **à jour fixe**
+:::
+
+### Question 2
+
+À quelle fréquence effectuer un inventaire ?
+
+:::reponse
+**Une fois par exercice financier** (≥ 1×/an).
+:::
+
+### Question 3
+
+Décris le **stock théorique**.
+
+:::reponse
+= **Stock comptable** — ce qui est **enregistré** dans le système et devrait être en stock.
+:::
+
+### Question 4
+
+Décris le **stock réel**.
+
+:::reponse
+= **Stock physique** — ce qui est **effectivement** présent en stock.
+:::
+
+### Question 5
+
+Qui est tenu de faire un inventaire ?
+
+:::reponse
+Toute entreprise inscrite au **registre du commerce** — bilan annuel obligatoire · les **stocks** (actifs) doivent être vérifiés : valeurs théoriques (comptables) vs valeurs réelles (physiques) par **inventaire**.
+:::`;
+
+const DEMO_701_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Sondage · tournant · date fixe
+2. **1×/an** (exercice financier)
+3. Théorique = comptable · enregistré
+4. Réel = physique · présent
+5. Entreprise au registre du commerce → bilan → inventaire stocks`;
+
 /** Contenu Module 703 — Les coûts du personnel */
 const DEMO_703_THEORIE_FULL = `## 3. Coût du personnel
 
@@ -33318,6 +33554,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_701_THEORIE_FULL,
       summary: DEMO_701_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_701_GLOSSAIRE_FULL,
+      summary: DEMO_701_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_701_SITUATION_FULL,
+      summary: DEMO_701_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_701_MATHS_FULL,
+      summary: DEMO_701_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_701_VERIFICATION_FULL,
+      summary: DEMO_701_VERIFICATION_SUMMARY,
     },
   },
   "703": {
