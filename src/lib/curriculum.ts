@@ -14045,6 +14045,473 @@ const DEMO_311_OBJECTIFS_SUMMARY = `## Objectifs
 - Commande + Andler
 - ABC/XYZ · réception`;
 
+/** Glossaire Module 311 */
+const DEMO_311_GLOSSAIRE_FULL = `## Glossaire — Module 311
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Procédure de rythme de commande | | Procédure de commande déclenchée à un **moment fixe** (date / rythme contractuel), **indépendamment** du niveau de stock actuel — pas de point de commande. |
+| Procédure de rythme de commande — quantité fixe | | Commande à **rythme fixe** avec une quantité **toujours identique** (**q** fixe). Adaptée aux ventes stables ; automatisable si les paramètres sont bien calibrés. |
+| Procédure de rythme de commande — quantité variable | | Commande à **rythme fixe** ; la quantité commandée vise à remonter le stock au **maximum**. Livraisons régulières contractuelles ; risque de dépasser le max si les ventes baissent. |
+| Procédure du point de commande | | Procédure **orientée consommation** : une nouvelle commande est déclenchée lorsque le stock atteint ou passe sous le **point de commande** (cote d'alerte). |
+| Procédure du point de commande — quantités fixes | | Commande au **point de commande** avec une quantité **fixe** (**q**). Simple, adaptée à forte rotation ; risque de surstock si la demande baisse. |
+| Procédure du point de commande — quantités variables | | Commande au **point de commande** ; la quantité vise à remonter le stock au **maximum**. Suit mieux les ventes ; calcul à chaque commande. |
+| Valeur ajoutée | | Apport économique d'une activité ou d'une étape de processus : transformation que le **client est prêt à payer**. À distinguer des activités **sans valeur ajoutée** (attente, déplacements inutiles, reprises…). |
+| Compétence clé | | Activité que l'entreprise maîtrise **mieux que les autres** — un **point fort** stratégique. Base des décisions *Make or Buy* et du choix des formes d'approvisionnement. |
+| Stock tampon | | Stock de **réserve** (aussi appelé stock de **sécurité** ou de **compensation**) qui absorbe les aléas : retards de livraison, variations de consommation, livraisons incomplètes ou défectueuses. |
+| Délai de réapprovisionnement | | Période entre la **passation de commande** et la **disponibilité** de la marchandise en stock. Base du calcul du **stock mini** (consommation journalière × délai de réapprovisionnement). `;
+
+const DEMO_311_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Point de commande** vs **rythme** : déclencheur stock vs date fixe
+- **Qté fixe** vs **variable** (remonter au max)
+- **Valeur ajoutée** : ce que le client paie · **compétence clé** : savoir-faire distinctif
+- **Stock tampon** = sécurité / compensation · **délai réappro** → stock mini`;
+
+/** Mises en situation Module 311 */
+const DEMO_311_SITUATION_FULL = `## Mises en situation — Module 311
+
+Contexte : tu prépares les **négociations fournisseurs** et analyses les **concepts d'approvisionnement** chez **EnterSite AG**, puis tu relies la théorie à ton **entreprise formatrice**. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / exemples proposés.
+
+> **Fichiers Excel EnterSite** (missions ABC / Qopt) : \`EnterSite_Mise en situation_Analyse_ABC_Analyse_31_Mission_1.xlsx\` · \`Qopt_Module_311.xlsx\` — voir aussi les versions *solution* / *réponse*.
+
+### Vue d'ensemble des missions
+1. Analyse ABC orientée valeur (EnterSite)
+2. Analyse XYZ et combinaison ABC × XYZ
+3. Juste-à-temps (JIT)
+4. Formule d'Andler
+5. Discussion EnterSite
+6. Formes et concepts d'approvisionnement (entreprise formatrice)
+7. Point de commande dans l'ERP
+8. Contrats sur appel / contrats-cadres
+9. Répartition XYZ en entreprise
+10. Réception des marchandises
+11. Discussion entreprise formatrice
+
+---
+
+## Mission 1 — Analyse ABC orientée valeur (EnterSite)
+
+Pour planifier les négociations fournisseurs, tu effectues une **analyse ABC axée sur la valeur** à partir de la liste d'articles ERP.
+
+### Étape 1 — Capital généré par les articles stockés
+
+Calcule la **valeur** de chaque ligne avec une formule Excel (ex. cellule D5) :
+
+\`\`\`
+=B5*C5
+\`\`\`
+
+*(Quantité stockée × prix d'achat unitaire.)*
+
+### Mission 1.1 — Tri décroissant
+
+1. Sélectionner le **tableau entier** (titres inclus)
+2. **Données** → **Trier**
+3. Colonne **Valeur** · tri par valeur de cellule · **du plus grand au plus petit** → OK
+
+### Mission 1.2 — Montants cumulés
+
+Reporter le montant de D5 dans E5, puis formule à partir de E6 :
+
+\`\`\`
+=E5+D6
+\`\`\`
+
+### Mission 1.3 — Pourcentages cumulés
+
+Formule à partir de F5 (F24 = total cumulé) :
+
+\`\`\`
+=(100/F$24)*E5
+\`\`\`
+
+*(Adapter la référence de colonne si ton tableau diffère.)*
+
+### Mission 1.4 — Répartition ABC
+
+| Classe | Part cumulée |
+| --- | --- |
+| **A** | 0 – 80 % |
+| **B** | 80 – 95 % |
+| **C** | 95 – 100 % |
+
+:::reponse
+**Résultat attendu** — chaque article reçoit une classe A, B ou C selon son pourcentage cumulé. Les articles **A** concentrent l'essentiel de la **valeur** : ils orientent en priorité les négociations fournisseurs.
+:::
+
+---
+
+## Mission 2 — Analyse XYZ
+
+L'analyse **XYZ** déduit de la **consommation** une prévision future et répartit les articles en classes **X**, **Y** et **Z**.
+
+- **X** : consommation très régulière, quantités à peu près égales → **prévision très précise**
+- **Y** : consommation régulière, croissante ou décroissante → **prévisibilité moyenne**
+- **Z** : consommation très irrégulière → **prévisibilité faible**
+
+### Mission 2.1 — Utilité de la combinaison ABC × XYZ
+
+En quoi la combinaison ABC + XYZ est-elle utile ?
+
+:::reponse
+Elle permet de formuler des **recommandations sur les formes d'approvisionnement** :
+- **Approvisionnement en stock**
+- **Approvisionnement au cas par cas / individuel**
+- **Juste-à-temps (JIT)**
+:::
+
+### Mission 2.2 — Combinaisons les plus difficiles à planifier
+
+:::reponse
+Les combinaisons **ZA**, **ZB** et **ZC** sont les plus difficiles à planifier.
+
+- **ZA** : consommation irrégulière, faible précision de prévision — mais **forte part de valeur** (classe A)
+- **ZB** : consommation irrégulière — part de valeur et de quantité **moyennes**
+- **ZC** : consommation irrégulière — **faible part de valeur**, mais **forte part de quantité**
+:::
+
+---
+
+## Mission 3 — Juste-à-temps (JIT)
+
+L'approvisionnement en **flux tendu** présente des avantages et des inconvénients.
+
+**a.** Quels sont les principaux **avantages** ?  
+**b.** Quels sont les **inconvénients** ?
+
+:::reponse
+**a. Avantages**
+- Réduction des coûts grâce à la **diminution des stocks**
+- Augmentation de l'efficacité : livraison au **moment exact** du besoin
+- Réduction des stocks car les marchandises ne sont livrées **qu'en cas de besoin**
+- Amélioration de la **qualité** : petites quantités → erreurs détectées plus vite
+
+**b. Inconvénients**
+- **Vulnérabilité** aux ruptures si fournisseurs peu fiables ou perturbations
+- **Faible flexibilité** (synchronisation étroite des processus)
+- **Risque accru** en cas de grèves ou troubles politiques (peu de marge)
+- Besoin élevé de **communication** et de **coordination**
+:::
+
+---
+
+## Mission 4 — Formule d'Andler
+
+Pourquoi, dans la formule d'Andler, les **coûts de stockage** augmentent-ils lorsque la quantité commandée augmente, alors que les **coûts de commande** (par pièce) diminuent ?
+
+:::reponse
+De **grandes quantités** en stock immobilisent du **capital** → coûts de stockage ↑.
+
+Les **coûts de commande** diminuent par pièce car chaque commande individuelle génère des frais fixes (offre, passation, réception…) répartis sur plus de pièces.
+:::
+
+---
+
+## Mission 5 — Discussion EnterSite
+
+Discute de la mise en situation en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion (pas de solution unique).
+:::
+
+---
+
+> 👆 **Attention** : pour les missions 6 à 11, demande au préalable la **permission** de ton·ta formateur·rice et informe-le/la de ta tâche.
+
+## Mission 6 — Formes et concepts d'approvisionnement
+
+### 6.1 — Formes d'approvisionnement (chapitre 11.2)
+
+En accord avec ton formateur·rice, interroge le service d'approvisionnement et trouve un **exemple** pour chaque forme. Décris l'article et justifie le choix.
+
+| Forme | Exemple & justification |
+| --- | --- |
+| **Approvisionnement en stock** | |
+| **Approvisionnement au cas par cas / individuel** | |
+| **Juste-à-temps (JAT) / synchronisé fabrication** | |
+
+:::reponse
+**Réponse individuelle** — exemples réels de l'entreprise formatrice (articles, volumes, délais, criticité…).
+:::
+
+### 6.2 — Concepts d'approvisionnement (chapitre 11.3)
+
+Quels concepts de **sourcing** sont appliqués ? Pourquoi certains articles sont-ils achetés avec un concept donné ?
+
+:::reponse
+**Réponse individuelle** — ex. global / local sourcing · single / double / multiple sourcing · modular sourcing — avec article, concept et justification.
+:::
+
+---
+
+## Mission 7 — Procédure du point de commande (ERP)
+
+Trouve dans l'**ERP** deux articles gérés par **procédure du point de commande**. Analyse et note les données.
+
+| Champ | Article 1 | Article 2 |
+| --- | --- | --- |
+| Numéro d'article | | |
+| Point de commande / cote d'alerte | | |
+| Stock de sécurité | | |
+| Délai d'approvisionnement | | |
+| Quantité commandée | | |
+| Ton évaluation | | |
+
+:::reponse
+**Réponse individuelle** — relevé ERP + commentaire (qté fixe ou variable, adéquation au profil de consommation…).
+:::
+
+---
+
+## Mission 8 — Contrats sur appel / contrats-cadres
+
+Demande au service d'approvisionnement si tu peux consulter un **contrat sur appel** ou un **contrat-cadre**.
+
+**a.** À quoi faire attention lors de la conclusion ?  
+**b.** Pourquoi a-t-il été conclu avec ce fournisseur ?  
+**c.** Quels avantages pour l'entreprise ?
+
+:::reponse
+**Réponse individuelle** — structure du contrat, volumes garantis, délais, clauses de résiliation, dépendance fournisseur, prix, flexibilité…
+:::
+
+---
+
+## Mission 9 — Analyse XYZ en entreprise (chapitre 11.7.4)
+
+**a.** Une classification X / Y / Z (ou similaire) existe-t-elle chez ton entreprise formatrice ?  
+**b.** Comment les classes sont-elles organisées dans l'approvisionnement ?
+
+| Classe | Article exemple |
+| --- | --- |
+| **X** (ou désignation interne) | |
+| **Y** | |
+| **Z** | |
+
+:::reponse
+**Réponse individuelle** — pratiques réelles ou équivalent interne (codes article, règles de commande associées).
+:::
+
+---
+
+## Mission 10 — Réception des marchandises
+
+La réception est l'**interface** entre livraison et stockage.
+
+**a.** Quels sont les grands **défis** ?  
+**b.** Quels **points d'amélioration** ?  
+**c.** Combien de livraisons traitées en moyenne par **semaine** ?
+
+:::reponse
+**Réponse individuelle** — délais, contrôles qualité, pics JIT, manque de place, traçabilité ERP, communication avec les achats…
+:::
+
+---
+
+## Mission 11 — Discussion entreprise formatrice
+
+Discute de la mise en situation en plénière. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — synthèse des visites et entretiens sur le terrain.
+:::`;
+
+const DEMO_311_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : ABC valeur → tri · cumul · % · classes A 0–80 % / B 80–95 % / C 95–100 %
+- **M2** : XYZ (X régulier · Y tendance · Z irrégulier) · ABC×XYZ → forme d'appro
+- **M3** : JIT — moins de stock vs dépendance & coordination
+- **M4** : Andler — stockage ↑ avec qté · coût commande/pce ↓
+- **M5** : discussion EnterSite
+- **M6–M11** : entreprise formatrice (formes, sourcing, ERP, contrats, XYZ, réception)`;
+
+/** Exercices de maths Module 311 */
+const DEMO_311_MATHS_FULL = `## Exercices de mathématiques — Module 311
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Qopt (Andler)
+
+| Paramètre | Valeur |
+| --- | --- |
+| Coût de passation de commande (**B**) | 130 CHF |
+| Coût de stockage (**L**) | 15 % |
+| Besoin annuel (**M**) | 1'250 pces |
+| Prix d'achat unitaire (**P**) | 20 CHF |
+
+Calcule la **quantité optimale de commande** (Qopt). Arrondis au **chiffre supérieur**.
+
+:::solution
+**330 pces**
+
+Calcul :
+\`\`\`
+Qopt = √(2 × B × M / (P × L))
+     = √(2 × 130 × 1'250 / (20 × 0,15))
+     = √(325'000 / 3)
+     = √108'333,33…
+     ≈ 329,14 → **330 pces** (arrondi supérieur)
+\`\`\`
+:::
+
+### Exercice 2 — Nombre de commandes par an
+
+Avec Qopt = **330 pces** et M = **1'250 pces/an**, combien de commandes par an ? Arrondis au **chiffre supérieur**.
+
+:::solution
+**4 fois par an**
+
+Calcul : 1'250 / 330 = 3,7879… → **4** commandes/an (arrondi supérieur)
+:::
+
+### Exercice 3 — Qopt par tableau
+
+Trouve la Qopt à l'aide du tableau (\`Qopt_Module_311.xlsx\`). Quelle quantité optimale en résulte ?
+
+:::solution
+**2'000 pces**
+
+*(Lire le minimum des coûts totaux dans le tableau — fichier \`Qopt_Module_311_réponse.xlsx\`.)*
+:::
+
+### Exercice 4 — Qopt (formule d'Andler, données exercice 3)
+
+Utilise les chiffres de l'exercice 3 dans la formule d'Andler.
+
+:::solution
+**2'080 pces**
+
+Calcul :
+\`\`\`
+Qopt = √(2 × 800 × 1'250 / (18,50 × 0,25))
+     = √(2'000'000 / 4,625)
+     = √432'432,43…
+     ≈ 2'079,50 → **2'080 pces** (arrondi supérieur)
+\`\`\`
+:::
+
+### Exercice 5 — Conflit stockage / commande
+
+| Paramètre | Valeur |
+| --- | --- |
+| Coûts de passation (**B**) | 100 CHF |
+| Besoin annuel (**M**) | 10'000 pces |
+| Prix d'achat (**P**) | 80 CHF |
+| Coûts de stockage (**L**) | 10 % |
+
+Calcule **Qopt** et le **nombre de commandes par an** avec Qopt.
+
+:::solution
+**Qopt = 500 pces** · **20 commandes/an**
+
+Calcul Qopt :
+\`\`\`
+Qopt = √(2 × 100 × 10'000 / (80 × 0,10))
+     = √(2'000'000 / 8)
+     = √250'000 = **500 pces**
+\`\`\`
+
+Commandes/an : 10'000 / 500 = **20 fois**
+:::
+
+### Exercice 6 — Valeur totale du stock (ABC)
+
+La valeur cumulée des articles **A** = **22'860'190 CHF**, soit **80,52 %** de la valeur totale du stock.
+
+Quelle est la **valeur totale du stock** ?
+
+:::solution
+**28'390'697 CHF**
+
+Calcul (règle de trois) :
+\`\`\`
+22'860'190 CHF = 80,52 %
+X CHF = 100 %
+X = 22'860'190 × 100 / 80,52 = **28'390'697 CHF**
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 28'390'697 · 2'000 · 500 · 4 · 20 · 2'080 · 330`;
+
+const DEMO_311_MATHS_SUMMARY = `## Maths — Solutions
+1. **330 pces** (Andler · B=130 · L=15 % · M=1'250 · P=20)
+2. **4** commandes/an (1'250 / 330)
+3. **2'000 pces** (tableau Excel)
+4. **2'080 pces** (Andler · données ex. 3)
+5. **500 pces** · **20** commandes/an
+6. **28'390'697 CHF** (valeur totale stock ABC)`;
+
+/** Vérification des acquis Module 311 */
+const DEMO_311_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 311 — Concepts d'approvisionnement**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Il est vrai que les articles **XA** (analyses XYZ et ABC) devraient si possible être gérés avec des **stocks importants**. Pour quelle raison ?
+
+:::reponse
+**Non, c'est faux.**
+
+- **X** = consommation **régulière**, grande **précision** de prévision
+- **A** = **forte** part de **valeur**
+
+Ce type d'article devrait plutôt être géré en **flux tendu (JIT)** — c'est-à-dire **sans stockage** important — pour limiter le capital immobilisé sur les articles à forte valeur.
+:::
+
+### Question 2
+
+Quels avantages peut apporter une **optimisation des emplacements de stockage** selon l'analyse ABC ?
+
+:::reponse
+L'analyse ABC selon la **rotation** des stocks et le tri des articles ( **A** à l'avant, **B** au milieu, **C** à l'arrière ) permet d'**économiser du temps de trajet** : les articles les plus utilisés sont stockés **le plus près** de la sortie / production.
+:::
+
+### Question 3
+
+Quelles sont les **quatre procédures de commande** basées sur la consommation que tu connais ?
+
+:::reponse
+1. **Procédure du point de commande — quantités fixes**
+2. **Procédure du point de commande — quantités variables**
+3. **Procédure de rythme de commande — quantités fixes**
+4. **Procédure de rythme de commande — quantités variables**
+:::
+
+### Question 4
+
+Qu'entends-tu par **« sourcing multiple »** ? Quels avantages ? Qu'évite-t-on ?
+
+:::reponse
+Le **sourcing multiple** consiste à acheter des **biens standardisés** auprès de **plusieurs fournisseurs**.
+
+**Avantages** : avantages de **prix** à court terme, comparaison permanente.
+
+**Ce que l'on évite** : la **dépendance** vis-à-vis d'un seul fournisseur — les volumes sont répartis sur plusieurs sources.
+:::
+
+### Question 5
+
+Quel type d'approvisionnement est recommandé pour un article **XC** ?  
+(X = consommation régulière, prévision élevée · C = faible part de valeur, forte part de quantité)
+
+- Approvisionnement en stock
+- Approvisionnement au cas par cas / individuel
+- Juste-à-temps (JIT)
+
+:::reponse
+L'**approvisionnement en stock**, combiné à la **taille optimale des lots** (formule d'Andler / Qopt), est recommandé.
+
+Article à forte rotation et faible valeur unitaire → stock + lots optimisés plutôt que JIT ou achat individuel.
+:::`;
+
+const DEMO_311_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. **Faux** — XA → plutôt JIT / flux tendu (X régulier + A forte valeur)
+2. ABC emplacements → trajets ↓ (A près de la sortie)
+3. 4 procédures : point commande / rythme × qté fixe / variable
+4. Multiple sourcing → prix · pas de dépendance mono-fournisseur
+5. **XC** → approvisionnement en stock + Qopt`;
+
 /** Contenu Module 312 — Données de stockage */
 const DEMO_312_THEORIE_FULL = `## 12. Données de stockage
 
@@ -21626,6 +22093,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_311_THEORIE_FULL,
       summary: DEMO_311_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_311_GLOSSAIRE_FULL,
+      summary: DEMO_311_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_311_SITUATION_FULL,
+      summary: DEMO_311_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_311_MATHS_FULL,
+      summary: DEMO_311_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_311_VERIFICATION_FULL,
+      summary: DEMO_311_VERIFICATION_SUMMARY,
     },
   },
   "312": {
