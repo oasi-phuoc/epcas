@@ -33108,18 +33108,74 @@ Il y a **4 alignements possibles** : gauche, droite, centré et justifié.
 
 ![](/assets/curriculum/805/word/word-para-dialog.svg)
 
-### 5.4 Tabulateurs
+### 5.4 Illustrations
 
-Taquet + touche **Tab** pour aligner précisément.
+Dans Word, vous pouvez insérer différents types d'illustration comme des images, des formes, des schémas, etc.
 
-| Type | Effet |
+Dans le ruban vous avez :
+
+1. **Images**
+2. **Formes**
+3. **Schémas**
+4. **Capture d'écran**
+5. **Zone de texte** et **WordArt**
+
+![](/assets/curriculum/805/word/illustrations/img-01-ribbon.svg)
+
+#### Insérer des images
+
+1. Dans le menu, sélectionnez l'option « **Images** »
+2. Ensuite, choisissez l'emplacement de l'image
+- Vous pouvez également effectuer un « **glisser / déposer** » depuis le dossier vers le document Word (en maintenant le bouton gauche de la souris)
+
+![](/assets/curriculum/805/word/illustrations/img-02-insert.svg)
+
+#### Changer les paramètres de l'image
+
+Lorsque vous sélectionnez une image, une option spéciale **Format de l'image** apparaît dans le ruban. Grâce à cet onglet, vous pouvez facilement modifier les paramètres de l'image.
+
+![](/assets/curriculum/805/word/illustrations/img-03-format-tab.svg)
+
+**3. Changer les dimensions de l'image**
+
+- **Rogner** : permet de couper l'image
+- **Hauteur** et **largeur** : permet de changer la taille
+
+**4. Aligner l'image** par rapport aux marges ou aux autres images du document
+
+Alignement horizontal :
+
+![](/assets/curriculum/805/word/illustrations/img-04-align-h.svg)
+
+Alignement vertical :
+
+![](/assets/curriculum/805/word/illustrations/img-05-align-v.svg)
+
+**5. Changer l'habillage de l'image**
+
+| Habillage | Exemple |
 | --- | --- |
-| Gauche | Alignement à gauche |
-| Centré | Centré sur le taquet |
-| Droite | Alignement à droite |
-| Décimal | Alignement sur la virgule |
+| Aligné sur le texte | ![](/assets/curriculum/805/word/illustrations/img-06-wrap-inline.svg) |
+| Encadré | ![](/assets/curriculum/805/word/illustrations/img-07-wrap-square.svg) |
+| Adapté | ![](/assets/curriculum/805/word/illustrations/img-08-wrap-tight.svg) |
+| Au travers | ![](/assets/curriculum/805/word/illustrations/img-09-wrap-through.svg) |
+| Haut et bas | ![](/assets/curriculum/805/word/illustrations/img-10-wrap-top-bottom.svg) |
+| Derrière le texte | ![](/assets/curriculum/805/word/illustrations/img-11-wrap-behind.svg) |
+| Devant le texte | ![](/assets/curriculum/805/word/illustrations/img-12-wrap-front.svg) |
 
-Clics sur le bouton à gauche de la **règle** pour choisir le type · clic sur la règle pour poser · ou boîte **Tabulation** (groupe Paragraphe).
+**6. Définir la position de l'image**
+
+a. Sélectionner l'image et effectuer un **clic droit**
+b. Ensuite, sélectionner « **Taille et position…** »
+c. Sélectionner l'onglet « **Position** »
+
+![](/assets/curriculum/805/word/illustrations/img-13-position.svg)
+
+**7. Changer le style de l'image**
+
+| Bordure | Ombre | Réflexion | Lumière | Estompé | Biseau | Rotation |
+| --- | --- | --- | --- | --- | --- | --- |
+| ![](/assets/curriculum/805/word/illustrations/style-bordure.svg) | ![](/assets/curriculum/805/word/illustrations/style-ombre.svg) | ![](/assets/curriculum/805/word/illustrations/style-reflexion.svg) | ![](/assets/curriculum/805/word/illustrations/style-lumiere.svg) | ![](/assets/curriculum/805/word/illustrations/style-estompe.svg) | ![](/assets/curriculum/805/word/illustrations/style-biseau.svg) | ![](/assets/curriculum/805/word/illustrations/style-rotation.svg) |
 
 ### 5.5 Bordure et trame
 
@@ -33492,7 +33548,7 @@ const DEMO_805_THEORIE_SUMMARY = `## À retenir — Module 805
 Tableaux **Base à connaître** (¶, Enter, Shift+Enter, Ctrl+Enter, sélection) et **Police** (gras, italique, souligné, casse, indice/exposant…). **Paramètres avancés** : espacement des lettres, couleur / dégradé, effets (contour, ombre, reflet).
 
 ### Mise en forme et listes
-**Paragraphe** : 4 alignements (gauche, droite, centré, justifié) et exemples de retraits (voir schéma *Aligner les paragraphes*). Le groupe Paragraphe permet aussi l'interligne et les retraits. Les tabulateurs alignent précisément le texte sur la règle.
+**Paragraphe** : 4 alignements (gauche, droite, centré, justifié) et exemples de retraits (voir schéma *Aligner les paragraphes*). Le groupe Paragraphe permet aussi l'interligne et les retraits. **Illustrations** : insertion d'images (glisser-déposer), onglet **Format de l'image** (dimensions, alignements, habillage du texte, position, styles).
 
 ### Styles et table des matières
 Un style regroupe des mises en forme réutilisables pour les caractères, les paragraphes, les listes ou les tableaux. Les styles Titre 1, Titre 2 et suivants sont indispensables pour générer une table des matières via l'onglet Références. Celle-ci se met à jour automatiquement après modification du document.
@@ -33509,7 +33565,7 @@ Ce module couvre les bases de **Word Microsoft 365** : saisie, mise en forme, st
 
 ### Vous allez découvrir
 1. Saisie de texte, date/heure et symboles
-2. Paragraphes, tabulateurs, bordures, listes
+2. Paragraphes, illustrations, bordures, listes
 3. Styles, table des matières, en-têtes / pieds et numérotation
 4. Aperçu avant impression
 
@@ -33526,7 +33582,7 @@ const DEMO_805_OBJECTIFS_FULL = `## Objectifs du module 805
 À l'issue de ce module, l'apprenti·e est capable de :
 
 - Saisir et corriger un texte (paragraphes, sauts, casse, date, symboles)
-- Mettre en forme paragraphes, tabulateurs, bordures/trames et listes
+- Mettre en forme paragraphes, insérer et formater des **illustrations**, bordures/trames et listes
 - Appliquer des **styles Titre** et générer / mettre à jour une **table des matières**
 - Insérer en-têtes, pieds de page, numéros de page et préparer l'impression`;
 
@@ -33543,7 +33599,8 @@ const DEMO_805_GLOSSAIRE_FULL = `## Glossaire — Module 805
 | Paragraphe | | Bloc de texte délimité par **Enter**. Un **saut de ligne** dans le même paragraphe se fait avec **Shift+Enter**. |
 | Afficher tout (¶) | | Mode qui affiche les **caractères non imprimables** (retours paragraphe, espaces, tabulations). Raccourci : **Ctrl+Shift+8**. |
 | Saut de page | | Force le texte suivant à commencer sur une **nouvelle page**. Raccourci : **Ctrl+Enter**. |
-| Tabulateur / Taquet | | Position sur la **règle** pour aligner du texte avec la touche **Tab** (gauche, centré, droite, décimal). |
+| Habillage (texte) | | Mode de **disposition** d'une image par rapport au texte (aligné sur le texte, encadré, adapté, au travers, haut et bas, derrière / devant le texte). |
+| Format de l'image | | Onglet du ruban affiché lorsqu'une **image** est sélectionnée : taille, rognage, alignement, habillage, styles. |
 | Style | | Ensemble de mises en forme **mémorisées** (police, taille, alignement…). Types : caractère, paragraphe, lié, liste, tableau. |
 | Titre 1 / Titre 2… | | Styles de **titres** hiérarchiques. Indispensables pour générer une **table des matières** automatique. |
 | Table des matières (TdM) | | Liste automatique des titres du document avec **numéros de page**. Créée via **Références → Table des matières** après application des styles Titre. |
@@ -33751,15 +33808,15 @@ Quelles étapes pour créer une **table des matières** automatique ?
 
 ### Question 3
 
-Cite les **quatre types de tabulateurs** et leur effet.
+Cite **trois types d'habillage** d'image et décris brièvement leur effet.
 
 :::reponse
-| Type | Effet |
+| Habillage | Effet |
 | --- | --- |
-| **Gauche** | Alignement à gauche sur le taquet |
-| **Centré** | Texte centré sur le taquet |
-| **Droite** | Alignement à droite |
-| **Décimal** | Alignement sur la virgule (nombres) |
+| **Aligné sur le texte** | L'image se comporte comme un caractère dans la ligne |
+| **Encadré** | Le texte contourne l'image sur un rectangle |
+| **Haut et bas** | Le texte passe au-dessus et en dessous, pas sur les côtés |
+| *(autres : adapté, au travers, derrière / devant le texte)* | Disposition libre ou calque sous / sur le texte |
 :::
 
 ### Question 4
@@ -33788,7 +33845,7 @@ Les deux s'insèrent via **Références** (Insérer une note de bas de page / de
 const DEMO_805_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
 1. **Enter** = paragraphe · **Shift+Enter** = saut de ligne
 2. Styles Titre → Références → TdM → Mettre à jour
-3. Tabulateurs : gauche · centré · droite · décimal
+3. Habillage image : aligné sur le texte · encadré · haut et bas (etc.)
 4. Mettre à jour style = tout le document cohérent
 5. Bas de page = même page · Note de fin = fin du document`;
 

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" viewBox="0 0 200 120" role="img" aria-label="Alignement vertical">
+  <rect width="200" height="120" fill="#fff"/>
+  <g font-family="Segoe UI,sans-serif" font-size="11">
+    <text x="48" y="30">Aligner en haut</text>
+    <rect x="12" y="14" width="28" height="20" fill="none" stroke="#111"/><line x1="12" y1="14" x2="40" y2="14" stroke="#2563eb" stroke-width="2"/>
+    <text x="48" y="62">Aligner au milieu</text>
+    <rect x="12" y="48" width="28" height="20" fill="none" stroke="#111"/><line x1="12" y1="58" x2="40" y2="58" stroke="#111"/>
+    <text x="48" y="94">Aligner en bas</text>
+    <rect x="12" y="78" width="28" height="20" fill="none" stroke="#111"/><line x1="12" y1="98" x2="40" y2="98" stroke="#2563eb" stroke-width="2"/>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="200" viewBox="0 0 480 200" role="img" aria-label="Image insérée dans Word">
+  <rect width="480" height="200" fill="#fff" stroke="#d1d5db"/>
+  <text x="20" y="36" font-family="Segoe UI,sans-serif" font-size="13" fill="#374151">Document Word  image insérée (glisser-déposer ou menu Images)</text>
+  <image href="/assets/curriculum/805/word/illustrations/forklift-icon.svg" x="180" y="60" width="120" height="90"/>
+  <rect x="20" y="70" width="140" height="80" fill="none" stroke="#93c5fd" stroke-dasharray="4 2"/>
+  <text x="28" y="95" font-size="11">Dossier ’</text>
+  <text x="28" y="115" font-size="11">document</text>
+</svg>
