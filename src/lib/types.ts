@@ -293,6 +293,29 @@ export interface AttemptRecord {
   createdAt: string;
 }
 
+/** Styles d'annotation élève (ne modifient jamais le texte source) */
+export type AnnotationStyle =
+  | "highlight"
+  | "underline"
+  | "bold"
+  | "italic"
+  | "note";
+
+/** Annotation personnelle sur une leçon — calquée sur le texte affiché, pas sur le markdown source */
+export interface TextAnnotation {
+  id: string;
+  userId: string;
+  lessonId: string;
+  /** Mode d'affichage au moment de la sélection */
+  mode: "full" | "summary";
+  start: number;
+  end: number;
+  style: AnnotationStyle;
+  /** Texte libre pour le style "note" */
+  note?: string;
+  createdAt: string;
+}
+
 export interface AppState {
   classes: ClassRoom[];
   users: UserAccount[];
@@ -306,6 +329,8 @@ export interface AppState {
   assessmentQuestions: AssessmentQuestion[];
   sequences: LearningSequence[];
   classTasks: ClassTask[];
+  /** Annotations personnelles des apprentis (surlignage, notes…) */
+  textAnnotations: TextAnnotation[];
   progress: Record<string, LessonProgress[]>;
   attempts: AttemptRecord[];
   currentUserId: string | null;

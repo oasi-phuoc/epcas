@@ -200,6 +200,7 @@ export const initialState: AppState = {
   attempts: [],
   assessments: [],
   assessmentQuestions: [],
+  textAnnotations: [],
   classTasks: [
     {
       id: "task-demo-1",
