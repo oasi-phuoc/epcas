@@ -37,7 +37,7 @@ import {
   collapseImageBlocksForEditor,
   expandImageBlocksFromEditor,
 } from "@/lib/markdown-assets";
-import type { DiplomaLevel, Lesson, LessonAttachment, LessonPageSlug } from "@/lib/types";
+import type { DiplomaLevel, Lesson, LessonAttachment, LessonPageSlug, Module } from "@/lib/types";
 import { Eye, Pencil, Redo2, Undo2 } from "lucide-react";
 
 function LessonEditor({
@@ -371,33 +371,55 @@ export function ContenuPageEditor({
     [state.modules],
   );
 
-  const mainBlocks = useMemo(
-    () => [...state.blocks].sort((a, b) => a.order - b.order),
-    [state.blocks],
-  );
+  const blocksWithModules = useMemo(() => {
+    const blocks = [...state.blocks].sort((a, b) => a.order - b.order);
+    return blocks
+      .map((block) => ({
+        block,
+        modules: modulesSorted.filter((m) => m.blockId === block.id),
+      }))
+      .filter((entry) => entry.modules.length > 0);
+  }, [state.blocks, modulesSorted]);
 
   const [moduleQuery, setModuleQuery] = useState("");
-  const [moduleId, setModuleId] = useState(modulesSorted[0]?.id ?? "");
-  const [selectedBlockId, setSelectedBlockId] = useState(
-    () => modulesSorted[0]?.blockId ?? mainBlocks[0]?.id ?? "block-100",
+  const [blockId, setBlockId] = useState(
+    () => blocksWithModules[0]?.block.id ?? "",
   );
+  const [moduleId, setModuleId] = useState(modulesSorted[0]?.id ?? "");
   const [editLevel, setEditLevel] = useState<DiplomaLevel>("CFC");
 
+  const effectiveBlockId = useMemo(() => {
+    if (blocksWithModules.some((b) => b.block.id === blockId)) return blockId;
+    return blocksWithModules[0]?.block.id ?? "";
+  }, [blocksWithModules, blockId]);
+
+  const modulesInBlock = useMemo(
+    () => modulesSorted.filter((m) => m.blockId === effectiveBlockId),
+    [modulesSorted, effectiveBlockId],
+  );
+
   const filteredModules = useMemo(() => {
-    const inBlock = modulesSorted.filter((m) => m.blockId === selectedBlockId);
     const q = moduleQuery.trim().toLowerCase();
-    if (!q) return inBlock;
-    return inBlock.filter(
+    if (!q) return modulesInBlock;
+    return modulesInBlock.filter(
       (m) =>
         m.code.toLowerCase().includes(q) ||
         m.title.toLowerCase().includes(q),
     );
-  }, [modulesSorted, moduleQuery, selectedBlockId]);
+  }, [modulesInBlock, moduleQuery]);
 
   const effectiveModuleId = useMemo(() => {
     if (filteredModules.some((m) => m.id === moduleId)) return moduleId;
     return filteredModules[0]?.id ?? "";
   }, [filteredModules, moduleId]);
+
+  const currentModule: Module | undefined = state.modules.find(
+    (m) => m.id === effectiveModuleId,
+  );
+
+  const currentBlock = blocksWithModules.find(
+    (b) => b.block.id === effectiveBlockId,
+  )?.block;
 
   const lesson = useMemo(() => {
     if (!effectiveModuleId) return undefined;
@@ -441,45 +463,68 @@ export function ContenuPageEditor({
       </nav>
 
       <Panel className="mb-4">
-        <div className="flex flex-col gap-2">
-          <p className="text-sm font-medium text-ink">Rechercher un module</p>
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-            <div className="min-w-0 flex-1 basis-[12rem]">
-              <TextField
-                aria-label="Rechercher un module"
-                value={moduleQuery}
-                onChange={(e) => setModuleQuery(e.target.value)}
-                placeholder="Ex. 101, histoire, stockage…"
-              />
-            </div>
-            <div
-              className="flex shrink-0 flex-wrap gap-2"
-              role="group"
-              aria-label="Module principal"
-            >
-              {mainBlocks.map((block) => (
+        <div>
+          <p className="mb-2 text-sm font-medium text-ink">Bloc</p>
+          <div
+            className="flex flex-wrap gap-1.5"
+            role="tablist"
+            aria-label="Blocs de modules"
+          >
+            {blocksWithModules.map(({ block, modules }) => {
+              const selected = block.id === effectiveBlockId;
+              return (
                 <Button
                   key={block.id}
                   type="button"
                   size="md"
                   className="min-w-11 px-3"
-                  variant={
-                    selectedBlockId === block.id ? "primary" : "secondary"
-                  }
+                  role="tab"
+                  aria-selected={selected}
+                  variant={selected ? "primary" : "secondary"}
                   onClick={() => {
-                    setSelectedBlockId(block.id);
-                    const firstInBlock = modulesSorted.find(
-                      (m) => m.blockId === block.id,
-                    );
-                    if (firstInBlock) setModuleId(firstInBlock.id);
+                    setBlockId(block.id);
+                    setModuleQuery("");
+                    setModuleId(modules[0]?.id ?? "");
                   }}
                 >
                   {block.code}
                 </Button>
-              ))}
+              );
+            })}
+          </div>
+          {currentBlock ? (
+            <p className="mt-2 text-xs text-ink-subtle">
+              Bloc {currentBlock.code} — {currentBlock.title} (
+              {modulesInBlock.length} module
+              {modulesInBlock.length > 1 ? "s" : ""})
+            </p>
+          ) : null}
+        </div>
+
+        <div className="mt-4">
+          <TextField
+            label="Rechercher dans ce bloc"
+            value={moduleQuery}
+            onChange={(e) => setModuleQuery(e.target.value)}
+            placeholder="Ex. 101, histoire, stockage…"
+          />
+        </div>
+
+        {currentModule ? (
+          <div className="mt-3 rounded-[var(--radius-md)] border border-primary bg-primary-soft/40 px-3 py-2">
+            <p className="text-xs font-medium text-primary-strong">
+              Module sélectionné
+            </p>
+            <p className="text-sm font-medium text-ink">
+              {currentModule.code} — {currentModule.title}
+            </p>
+            <div className="mt-1 flex flex-wrap gap-2">
+              <Badge tone="accent">
+                {currentModule.levels.join(" + ")}
+              </Badge>
             </div>
           </div>
-        </div>
+        ) : null}
 
         <div className="mt-3">
           <p className="mb-2 text-sm font-medium text-ink">
@@ -488,8 +533,8 @@ export function ContenuPageEditor({
           {filteredModules.length === 0 ? (
             <p className="rounded-[var(--radius-md)] border border-dashed border-border px-3 py-4 text-center text-sm text-ink-subtle">
               {moduleQuery.trim()
-                ? `Aucun module pour « ${moduleQuery} »`
-                : "Aucun module dans ce module principal"}
+                ? `Aucun module pour « ${moduleQuery} » dans ce bloc`
+                : "Aucun module dans ce bloc"}
             </p>
           ) : (
             <ul
