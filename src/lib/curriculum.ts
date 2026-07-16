@@ -19156,6 +19156,265 @@ const DEMO_802_OBJECTIFS_SUMMARY = `## Objectifs
 - Track & Trace · statut
 - LIFO · optimisation tournées`;
 
+
+const DEMO_802_GLOSSAIRE_FULL = `## Glossaire — Module 802
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Indicateurs | | Grandeurs **mesurées** pendant le transport (température, chocs, humidité, inclinaison…) pour prouver le respect des conditions de manutention. Voir aussi module **307**. |
+| Enregistreur de données | | Appareil qui enregistre de manière **continue et incorruptible** les conditions de transport (chocs, vibrations, température, pression, inclinaison…) avec horodatage. Export vers PC pour analyses statistiques. |
+| Transitaire | | Entreprise ou personne qui **organise et coordonne** le transport international de marchandises (douane, documents, combinaison de modes de transport). |
+| Statistique | | Analyse **numérique** des données enregistrées pendant le transport (graphiques, tendances) pour détecter des anomalies ou améliorer les processus. |
+| Track and Trace | | Système de **suivi et traçabilité** d'un envoi de l'expéditeur au destinataire. Code-barres unique scanné aux étapes clés · statut consultable en ligne. |
+| Advanced Track and Trace | | Variante avancée du suivi : saisie **automatique** via **RFID** au lieu du scan manuel de codes-barres. |
+| Avis | | **Information préalable** au destinataire sur la livraison prévue (ex. e-commerce informe de la date de livraison). Première étape du suivi colis. |
+| Statut | | **État actuel** d'un envoi dans la chaîne logistique (ex. « Trié pour la livraison », « En transit »). Lu en deux étapes au scanner : statut puis code d'identification. |
+| Priorités | | **Urgence** ou importance d'une livraison (créneau client, express, SameDay…) influençant l'ordre des tournées et la planification. |
+| Planification des tournées | | Organisation des **ordres de transport** en tournées (1 personne + 1 véhicule) : regroupement, ordre des arrêts, respect du principe **LIFO**. |
+| Planification d'itinéraire | | Détermination du **parcours optimal** entre les lieux de déchargement en tenant compte du trafic, des restrictions, des capacités véhicules et des priorités clients. |`;
+
+const DEMO_802_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Indicateurs** · **enregistreur** : mesure conditions transport
+- **Transitaire** : organisation transport international
+- **Track & Trace** : suivi envoi · **Advanced** : RFID
+- **Avis** · **statut** · **priorités**
+- **Planification** : tournées · itinéraire optimal · LIFO`;
+
+/** Mises en situation Module 802 */
+const DEMO_802_SITUATION_FULL = `## Mises en situation — Module 802
+
+Contexte : tu es chargé·e de **planifier et organiser des livraisons** chez EnterSite AG. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / indications proposées.
+
+---
+
+### Mission 1 — Itinéraire le plus rapide (Google Maps)
+
+Tu dois livrer quatre clients. Détermine l'itinéraire le plus rapide à l'aide de **Google Maps**.
+
+| Étape | Lieu |
+| --- | --- |
+| **Départ** | EnterSite AG, Rigistrasse 2, 5102 Rupperswil |
+| 1er déchargement | Aarau |
+| 2e déchargement | Reinach |
+| 3e déchargement | Zofingen |
+| 4e déchargement | Sursee |
+
+:::reponse
+**Réponse individuelle** — utiliser Google Maps pour comparer les ordres de passage possibles et choisir l'itinéraire le plus rapide (tenir compte du trafic, des distances et de l'ordre logique des livraisons).
+:::
+
+---
+
+### Mission 2 — Centres de gravité (plan de chargement)
+
+Afin que le chauffeur n'ait pas de problèmes lors d'un contrôle de police, prépare un plan de chargement de sorte que le **centre de gravité** reste dans les limites autorisées après chaque lieu de déchargement.
+
+:::reponse
+**Réponse individuelle** — plan de chargement à réaliser en respectant le principe **LIFO** (dernier chargé = premier déchargé) et en veillant au centre de gravité après chaque arrêt.
+:::
+
+---
+
+### Mission 3 — Plan de chargement (dessin)
+
+Dessine un plan de chargement de manière à ce que le chargeur puisse charger le véhicule **sans se poser de questions**.
+
+:::reponse
+**Réponse individuelle** — schéma / plan de chargement clair avec ordre de chargement, emplacement des palettes et lieux de déchargement indiqués.
+:::
+
+---
+
+### Mission 4 — Répartition du poids
+
+Calcule la répartition du poids dans le bloc de chargement. Selon M. **Holzer**, la différence maximale entre les **quatre zones d'angle** peut être de **50 kg**.
+
+:::reponse
+**Réponse individuelle** — calcul de la répartition du poids par zone d'angle. Vérifier que l'écart maximal entre les quatre zones ne dépasse pas **50 kg**.
+:::
+
+---
+
+### Mission 5 — Discussion STA
+
+Discute de la situation de travail et d'apprentissage en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_802_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : itinéraire Google Maps (Rupperswil → Aarau · Reinach · Zofingen · Sursee)
+- **M2** : centre de gravité · LIFO
+- **M3** : plan de chargement (dessin)
+- **M4** : répartition poids · max. **50 kg** d'écart entre zones
+- **M5** : discussion STA`;
+
+/** Exercices de maths Module 802 */
+const DEMO_802_MATHS_FULL = `## Exercices de mathématiques — Module 802
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+---
+
+### Exercice 1 — Coûts de diesel par camion
+
+Tournée moyenne : **400 km**/jour · consommation **28 l/100 km** · diesel **1,82 CHF**/l
+
+Quels sont les coûts de diesel par camion ?
+
+:::solution
+**Coût du diesel : 203,85 CHF**
+
+400 / 100 × 28 × 1,82 = **203,84 CHF** → **203,85 CHF** (arrondi)
+:::
+
+---
+
+### Exercice 2 — Économie de diesel (optimisation)
+
+Grâce à un logiciel de planification, la tournée passe de **400 km** à **372 km** en moyenne.
+
+Combien de frais de diesel peuvent être économisés par camion ?
+
+:::solution
+**Coût pour 372 km :** 372 / 100 × 28 × 1,82 = **189,57 CHF**
+
+**Économie :** 203,85 − 189,57 = **14,28 CHF** par camion et par jour
+:::
+
+---
+
+### Exercice 3 — Économie salariale (32 chauffeurs)
+
+En optimisant la tournée, le chauffeur rentre **30 minutes** plus tôt. Salaire horaire moyen : **28,40 CHF**. **32** chauffeurs.
+
+Combien de coûts salariaux l'entreprise économise-t-elle par jour ?
+
+:::solution
+**Économie : 454,40 CHF/jour**
+
+32 × 28,40 × 0,5 h = **454,40 CHF**
+:::
+
+---
+
+### Exercice 4 — Licenciement de deux chauffeurs
+
+Tous les chauffeurs travaillent **8 h**/jour et **22 jours**/mois. La direction licencie **2** chauffeurs (sur 32).
+
+**a.** Combien de coûts salariaux économisés par mois (ensemble des 32 → 30) ?
+
+**b.** Combien gagne en moyenne un chauffeur par mois ?
+
+**c.** La décision est-elle compréhensible d'un point de vue purement mathématique ?
+
+:::solution
+**a. Économie mensuelle : 10'032 CHF**
+
+- Coûts 32 chauffeurs : 8 × 22 × 28,50 × 32 = **160'512 CHF**
+- Coûts 30 chauffeurs : 8 × 22 × 28,50 × 30 = **150'480 CHF**
+- Économie : 160'512 − 150'480 = **10'032 CHF**
+
+**b. Salaire moyen mensuel : 5'016 CHF**
+
+160'512 / 32 = **5'016 CHF**
+
+**c. Oui** — purement mathématique, l'entreprise économise environ **10'000 CHF** par mois.
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 203,85 · 14,28 · 454,40 · 10'032 · 5'016 · Oui`;
+
+const DEMO_802_MATHS_SUMMARY = `## Maths — Solutions
+1. Diesel **203,85 CHF**/jour (400 km)
+2. Économie **14,28 CHF**/camion
+3. Économie salariale **454,40 CHF**/jour (32 ch.)
+4. **10'032 CHF**/mois · salaire moy. **5'016 CHF** · **Oui**`;
+
+/** Vérification des acquis Module 802 */
+const DEMO_802_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Transport**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quelles données un **enregistreur de données de transport** peut-il mesurer ?
+
+:::reponse
+- Température
+- Poids
+- Quantité de marchandise
+- Angle d'inclinaison
+- Pression de l'air
+- Vibration
+:::
+
+### Question 2
+
+Nomme les **domaines d'application** de la surveillance du transport.
+
+:::reponse
+- Services de colis
+- Transports postaux, aériens et maritimes
+- Transitaires
+- Transporteurs
+- Manutention interne de marchandises
+:::
+
+### Question 3
+
+**Track and Trace** — quels sont les termes / éléments qui en font partie ?
+
+:::reponse
+- Confirmation / Reçu
+- Numéro d'envoi / Historique des envois
+- Suivi électronique des envois sur Internet
+- Trouver la preuve
+:::
+
+### Question 4
+
+Quels énoncés concernent le **Track and Trace** ?
+
+:::reponse
+- Le destinataire est indiqué sur le **récépissé**
+- Le marquage à barres sur le paquet est le **code-barres**
+- Le **statut** d'un envoi indique l'étape actuelle dans la chaîne logistique (pas « cher ou bon marché »)
+- Le client reçoit un **reçu** avec un numéro de code-barres
+:::
+
+### Question 5
+
+Quelles sont les **réponses correctes** concernant le Track and Trace (axes d'optimisation) ?
+
+:::reponse
+- Moyens auxiliaires de chargement disponibles
+- Utilisation économique des véhicules
+- Chargement optimal et conforme des véhicules
+- Planification d'un parcours optimal
+:::
+
+### Question 6
+
+Quelles activités supposent une bonne **planification de l'itinéraire** ?
+
+:::reponse
+- Répartition de la charge dans le camion
+- Priorités et souhaits des clients
+- Connaissance des restrictions
+- Arrimage du chargement
+- Véhicules concernés
+- Utilisation des chauffeurs de camion
+:::`;
+
+const DEMO_802_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Enregistreur : T°, poids, inclinaison, vibration…
+2. Colis · poste · transitaires · transporteurs · manutention
+3. Reçu · n° envoi · suivi Internet · preuve
+4. Récépissé · code-barres · statut · reçu
+5. Optimisation : véhicules · chargement · parcours
+6. Charge · priorités · restrictions · arrimage · véhicules · chauffeurs`;
+
 /** Contenu Module 803 — Logiciel d'exploitation */
 const DEMO_803_THEORIE_FULL = `## 3. Logiciel d'exploitation
 
@@ -22172,6 +22431,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_802_THEORIE_FULL,
       summary: DEMO_802_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_802_GLOSSAIRE_FULL,
+      summary: DEMO_802_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_802_SITUATION_FULL,
+      summary: DEMO_802_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_802_MATHS_FULL,
+      summary: DEMO_802_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_802_VERIFICATION_FULL,
+      summary: DEMO_802_VERIFICATION_SUMMARY,
     },
   },
   "803": {
