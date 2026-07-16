@@ -20628,6 +20628,293 @@ const DEMO_809_OBJECTIFS_SUMMARY = `## Objectifs
 - Poste de contrôle · KPI
 - Rôle · profil collab.`;
 
+
+const DEMO_809_GLOSSAIRE_FULL = `## Glossaire — Module 809
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Intralogistique | | Logistique qui se déroule **à l'intérieur** de l'entreprise. Mission : contrôler, exécuter et organiser le **flux de marchandises** interne (réception, stockage, transport, picking, expédition…). |
+| Télématique | | Combinaison des **télécommunications** et de l'**informatique** pour transmettre des données en temps réel (localisation de véhicules, suivi de flotte, communication entre systèmes logistiques). |
+| Capteurs | | Dispositifs qui **mesurent** des grandeurs physiques (température, poids, position, remplissage…) et transmettent les données au système de gestion. Essentiels pour le poste de contrôle et l'automatisation. |
+| Robotique | | Systèmes automatisés (robots de stockage, chariots autonomes, bras manipulateurs…) qui exécutent des tâches de manutention et de transport en intralogistique, souvent pilotés depuis le poste de contrôle. |
+| Visualisation | | Représentation **graphique** des processus, des KPI et de l'état du système sur le poste de contrôle. Permet de détecter rapidement les perturbations et d'orienter les décisions. |
+| Pensée analytique | | Capacité à **analyser** des données et des processus, identifier les causes et proposer des solutions de manière structurée et anticipative. Compétence clé des collaborateurs du poste de contrôle. |`;
+
+const DEMO_809_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Intralogistique** : flux matériel interne à l'entreprise
+- **Télématique** : télécom + informatique (données en temps réel)
+- **Capteurs** : mesure et transmission de données
+- **Robotique** : automatisation de la manutention
+- **Visualisation** : graphiques KPI / processus sur le poste de contrôle
+- **Pensée analytique** : analyse structurée et anticipative`;
+
+/** Mises en situation Module 809 */
+const DEMO_809_SITUATION_FULL = `## Mises en situation — Module 809
+
+Contexte : tu travailles chez **EnterSite AG**, service d'assistance. Monsieur **Holzer** t'a chargé·e d'analyser le **flux de marchandises** d'un client. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.
+
+---
+
+### Mission 1 — Analyser le flux de marchandises
+
+Un client signale qu'en dépit de davantage de personnel et d'engins de manutention, le volume de matériel dans la zone de réception et de stockage ne peut pas être augmenté. Le plan de situation montre le flux de marchandises (indiqué en rouge).
+
+En tant que logisticien·ne, vois-tu un potentiel d'amélioration ?
+
+:::reponse
+Au premier coup d'œil, le flux de marchandises semble ordonné et en ordre.
+:::
+
+---
+
+### Mission 2 — Optimiser le poste de travail n° 2
+
+L'employé·e du point 2 dispose d'un poste PC, d'un scanner à main et d'une imprimante d'étiquettes. Il/elle se plaint de ne pas pouvoir traiter à temps le volume de marchandises provenant de la zone de réception.
+
+Quelle solution proposes-tu ? Justifie ta réponse pour la communiquer au client.
+
+:::reponse
+**Analyser les goulots d'étranglement**
+- Analyser les processus de travail pour identifier goulots et inefficacités
+- Vérifier le matériel (PC, scanner, imprimante) : fonctionnement et mise à jour
+
+**Optimiser logiciel et matériel**
+- Vérifier que le logiciel répond aux exigences du processus
+- S'assurer que scanner et imprimante sont suffisamment rapides
+
+**Automatiser les processus**
+- Saisie automatique des codes-barres, impression d'étiquettes après numérisation, autres mesures gain de temps
+
+**Former et soutenir les employé·e·s**
+- Formations pour une utilisation optimale de la technologie
+- Service d'assistance pour résoudre rapidement les problèmes
+
+**Communiquer avec les employé·e·s**
+- Discuter des changements proposés, recueillir expériences et préoccupations
+
+**Surveiller et adapter en permanence**
+- Système de contrôle des performances
+- Réexaminer les possibilités d'optimisation dès que de nouveaux défis apparaissent
+:::
+
+---
+
+### Mission 3 — Optimiser le poste de travail n° 3
+
+Les six caristes responsables de la livraison au stockage en bloc et au stockage de palettes ont reçu un avertissement écrit parce qu'ils se parlent beaucoup.
+
+Quelle solution proposes-tu ? Justifie ta réponse.
+
+:::reponse
+- Définir des **directives claires** sur le comportement pendant les heures de travail (conversations)
+- Sensibiliser aux effets des conversations excessives sur la **productivité**, la concentration et l'efficacité
+- Définir des **temps de pause** clairs pour les échanges
+- Mettre en place un **système de surveillance** du comportement
+- Donner un **feedback** régulier aux collaborateurs
+- **Optimiser l'aménagement** des postes pour réduire les tentations de discussion
+- Introduire un **système de récompense** pour les caristes qui respectent les directives
+- Développer une **culture de travail positive** montrant l'impact des performances individuelles sur le succès global
+:::
+
+---
+
+### Mission 4 — Optimiser sortie, expédition et chargement
+
+Le client se plaint que les chauffeurs de camion attendent trop longtemps et doivent récupérer les documents de livraison, de fret et de douane dans différents bureaux.
+
+Quelle solution proposes-tu ? Justifie ta réponse.
+
+:::reponse
+- **Système centralisé** pour livraison, fret et douane — un seul point de retrait pour les chauffeurs
+- Passer à des **systèmes numériques** de gestion des documents
+- **Transmission numérique anticipée** des documents avec fournisseurs et transporteurs
+- **Intégration** gestion de la chaîne d'approvisionnement / dédouanement
+- **Politiques et procédures claires** avec tous les partenaires
+- **Vérification anticipée** des chargements et documents
+- **Automatisation** des processus douaniers
+- **Calendrier d'enlèvements** pour minimiser les temps d'attente
+:::
+
+---
+
+### Mission 5 — Discussion STA
+
+Discute de la situation de travail et d'apprentissage en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_809_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : flux marchandises — premier regard ordonné
+- **M2** : poste n° 2 — goulots · automatisation · formation
+- **M3** : caristes — directives · pauses · aménagement · feedback
+- **M4** : expédition — documents centralisés · numérique · planning
+- **M5** : discussion STA`;
+
+/** Exercices de maths Module 809 */
+const DEMO_809_MATHS_FULL = `## Exercices de mathématiques — Module 809
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+---
+
+### Exercice 1 — Conteneurs non conformes
+
+Un système de stockage de conteneurs entièrement automatisé effectue **152'000** mouvements de conteneurs par jour. Un fournisseur livre par erreur **897** conteneurs avec un fond à tête de taureau.
+
+Quel est le **pourcentage** de conteneurs non conformes introduits ce jour-là ?
+
+:::solution
+**Taux de conteneurs non conformes : 0,5901 %**
+
+897 / 152'000 × 100 = **0,5901 %**
+:::
+
+---
+
+### Exercice 2 — Temps d'arrêt de l'installation
+
+Des dysfonctionnements d'accumulation sont signalés dans le système de stockage de **huit** conteneurs. Le poste de contrôle arrête l'installation complète. Pour chaque conteneur : en moyenne **6 ¼ min** de dépannage.
+
+Combien de temps l'installation complète est-elle arrêtée ?
+
+:::solution
+**Temps d'arrêt : 50 minutes**
+
+6,25 × 8 = **50 min**
+:::
+
+---
+
+### Exercice 3 — Coûts d'immobilisation
+
+Une heure d'exploitation du système coûte **CHF 1'250**. Utilise les données de l'exercice 2.
+
+Quels sont les **coûts d'immobilisation** prévus ?
+
+:::solution
+**Coût d'immobilisation : 1'041,67 CHF**
+
+1'250 × 50 / 60 = **1'041,67 CHF**
+:::
+
+---
+
+### Exercice 4 — Sortie et retraitement des conteneurs
+
+Le poste de contrôle sort du stock tous les conteneurs restants avec fond à tête de taureau.
+
+| Opération | Temps/unité | Quantité |
+| --- | --- | --- |
+| Déstockage | 17 sec. | 889 conteneurs |
+| Transvasement manuel | 20 sec. | 889 |
+| Nouvel étiquetage | 5 sec. | 889 |
+| Mise en stock | 17 sec. | 889 |
+
+**1 employé** à **28,40 CHF**/h · coût installation **1'250 CHF**/h
+
+**a.** Combien d'heures dure l'action ?
+
+**b.** À combien s'élèvent les coûts totaux ?
+
+:::solution
+**Temps total :** (17 + 20 + 5 + 17) × 889 = **52'451 sec.** = **14,56972 h**
+
+| Poste | Calcul | Montant |
+| --- | --- | --- |
+| Coût collaborateur | 14,56972 × 28,40 | **413,78 CHF** |
+| Coût installation | 14,56972 × 1'250 | **18'212,15 CHF** |
+| **Coût total** | | **18'625,93 CHF** |
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 0,5901 · 50 · 1'041,67 · 14,56972 · 18'625,93`;
+
+const DEMO_809_MATHS_SUMMARY = `## Maths — Solutions
+1. Non conformes **0,5901 %**
+2. Arrêt **50 min**
+3. Immobilisation **1'041,67 CHF**
+4. **14,57 h** · coût total **18'625,93 CHF** (889 cont.)`;
+
+/** Vérification des acquis Module 809 */
+const DEMO_809_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Poste de contrôle**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Que signifie le terme **intralogistique** ? Quelles sont les tâches assumées par l'intralogistique au sein de l'entreprise ?
+
+:::reponse
+**Intralogistique :** logistique qui se déroule à l'intérieur de ses propres portes.
+
+**Missions :** contrôler, exécuter et organiser le **flux de marchandises** au sein de l'entreprise.
+:::
+
+### Question 2
+
+Décris les principales caractéristiques du **poste de contrôle**.
+
+:::reponse
+Dans l'intralogistique, le poste de contrôle (également appelé **Control Panel**) est un **point central** d'un système de gestion d'entrepôt. Il assiste les collaborateurs·trices responsables dans la **gestion globale** de l'entrepôt et de l'exploitation.
+:::
+
+### Question 3
+
+Quels sont les **deux objectifs** du poste de contrôle ? Donne à chaque fois deux exemples pratiques.
+
+:::reponse
+**Objectif 1 — Regroupement des indicateurs d'intralogistique**
+
+Exemples :
+- Quelle quantité de commandes en préparation ? Combien de commandes urgentes ?
+- Quels transports sont utilisés à quelle fréquence ? Lesquels sont actifs ?
+- Quelle capacité en personnel pour l'expédition / la préparation ?
+- Quelles livraisons entrantes sont encore ouvertes ?
+- Quel est le taux de prélèvement ? Quel volume de commandes prévu aujourd'hui ?
+
+**Objectif 2 — Représentation des processus**
+
+Permet de réagir de manière ciblée aux perturbations internes et aux événements imprévus.
+
+Exemples :
+- Quelles perturbations connues dans la manutention ?
+- Quels dysfonctionnements connus côté logiciel ?
+:::
+
+### Question 4
+
+Décris **trois tâches** du poste de contrôle d'une entreprise de logistique.
+
+:::reponse
+Parmi les tâches possibles :
+- Visualisation des processus
+- Planification des processus
+- Optimisation
+- Comparaison des objectifs et de la réalité
+- Mise en évidence des limites de performance
+- Contrôle de gestion
+- Affichage de l'état du système
+:::
+
+### Question 5
+
+Décris **quatre exigences** auxquelles doivent répondre les collaborateurs du poste de contrôle.
+
+:::reponse
+- Formation initiale et continue **solide en logistique**
+- **Expérience** dans la pratique
+- Bonnes **compétences informatiques**, notamment **Excel**
+- **Pensée analytique**, orientée processus et **anticipative**
+:::`;
+
+const DEMO_809_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Intralogistique = flux interne · contrôler / exécuter / organiser
+2. Point central WMS · gestion globale entrepôt
+3. KPI + visualisation processus (exemples)
+4. Visualisation · planification · optimisation…
+5. Logistique · expérience · Excel · pensée analytique`;
+
 /** Contenu Module 901 — Planifier et évaluer les projets logistiques */
 const DEMO_901_THEORIE_FULL = `## 1. Planifier et évaluer les projets logistiques
 
@@ -22270,6 +22557,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_809_THEORIE_FULL,
       summary: DEMO_809_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_809_GLOSSAIRE_FULL,
+      summary: DEMO_809_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_809_SITUATION_FULL,
+      summary: DEMO_809_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_809_MATHS_FULL,
+      summary: DEMO_809_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_809_VERIFICATION_FULL,
+      summary: DEMO_809_VERIFICATION_SUMMARY,
     },
   },
   "901": {
