@@ -25927,6 +25927,252 @@ const DEMO_610_OBJECTIFS_SUMMARY = `## Objectifs
 - ROLA · ISO
 - ACTS · Domino · CST`;
 
+/** Glossaire Module 610 */
+const DEMO_610_GLOSSAIRE_FULL = `## Glossaire — Module 610
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Wagon à plate-forme surbaissée** | §10.1 | Wagon à **plancher bas** pour le **ferroutage (ROLA)** : le camion roule sur le wagon · chauffeur en voiture-couchette. |
+| **Semi-remorque** | §10.1.1 | Remorque sans tracteur · en ferroutage **non accompagné** : laissée au terminal · voyage seule en train · reprise par tracteur à destination. |
+| **ISO** | §10.2 | Norme internationale des **conteneurs** (dimensions en pieds · 20'/40') · transbordement multi-modes sans déchargement intermédiaire. |
+| **Centres de tri de courrier et de colis** | §10 | **Interface** transport combiné rail/route · tri et transbordement des envois postaux/colis entre modes. |`;
+
+const DEMO_610_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **ROLA** = wagon plancher bas + camion
+- **Semi-remorque** = ferroutage non accompagné
+- **ISO** = 20'/40' · 1 pied = 30,48 cm
+- Interfaces : gares · terminaux · ports · aéroports · tri postal`;
+
+/** Mises en situation Module 610 */
+const DEMO_610_SITUATION_FULL = `## Mises en situation — Module 610
+
+**Transport combiné** EnterSite AG : conteneur Chine → Rotterdam → Bâle → Rupperswil · ACTS · CST · comparaison des modes.
+
+### Vue d'ensemble des missions
+1. Conteneur ISO 20' (Chine → EnterSite)
+2. ACTS (déchets)
+3. Cargo Sous Terrain
+4. Comparaison des modes de transport
+5. EnterSite Support & Distribution salle 17 V1
+6. Discussion STA
+
+---
+
+## Mission 1 — Conteneur ISO (transport combiné)
+
+Chine → bateau **Rotterdam** → train **Bâle** → camion **Rupperswil**.
+
+:::reponse
+**Pourquoi combiner les modes ?**
+- **Efficacité/coûts** — mer = grandes quantités/longues distances · rail/route = distances moyennes/courtes fiables
+- **Flexibilité** — livraison sans être au bord du port/gare
+- **Réduction des risques** — alternative si une voie est perturbée
+
+**Pourquoi conteneur ISO ?**
+- **Standardisation** — transbordement transparent entre modes
+- **Polyvalence** — diverses marchandises · chargement optimisé
+- **Protection** — robuste · intempéries · vol · surveillance
+:::
+
+### Mission 1.1 — Dessin échelle 1:50
+
+:::reponse
+**Réponse individuelle** — vue de dessus conteneur 20' (589 × 235 cm → échelle 1:50) · palettes EUR 120×80 cm (2,4 × 1,6 cm à l'échelle) · photo du plan.
+:::
+
+### Mission 1.2 — Palettes EUR dans un 20'
+
+:::reponse
+**11 palettes** avec chargement **décalé** possible.
+
+**Taux de remplissage** — bon mais **pas optimal** avec palettes EUR.
+
+**Alternative** — palettes industrielles **1,2 × 1,0 m** → utilisation proche de **100 %**.
+:::
+
+---
+
+## Mission 2 — ACTS (déchets)
+
+:::reponse
+Conteneur **ACTS** : **roulettes** d'un côté · **crochet** de l'autre · dépôt au sol · **basculement** par camion spécial.
+
+Usage : ballots papier · gravats · **déchets** · logistique d'élimination.
+:::
+
+---
+
+## Mission 3 — Cargo Sous Terrain (CST)
+
+:::reponse
+**Avantages** — moins trafic routier · moins CO₂ · logistique rapide/fiable · compétitivité entreprises.
+
+**Obstacles** — coûts construction élevés · défis techniques · planification complexe · acceptation population · coûts d'exploitation récurrents.
+
+**Entretien spécialisé** avec un(e) camarade.
+:::
+
+---
+
+## Mission 4 — Comparaison des modes
+
+:::reponse
+| Mode | Avantages | Inconvénients |
+| --- | --- | --- |
+| **Route** | Porte-à-porte · rapide courtes/moyennes distances · express/petits envois | CO₂ · embouteillages · cher gros volumes/longues distances |
+| **Rail** | Moins CO₂/t·km · grandes quantités · moins embouteillages | Réseau nécessaire · plus lent international |
+| **Air** | Très rapide · mondial · fiable vs météo maritime | Cher · CO₂ élevé · capacité limitée |
+| **Maritime** | Grandes quantités · faible coût/t·km · moins CO₂ que route/air | Lent · dépend des ports · météo |
+:::
+
+---
+
+## Mission 5 — EnterSite salle 17 V1
+
+:::reponse
+**Réponse individuelle** — visite virtuelle **Support & Distribution salle 17 V1** · image à droite · finaliser le travail.
+:::
+
+---
+
+## Mission 6 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_610_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : mer+rail+route · ISO standardisé · **11** palettes EUR · industrielles 1,2×1 m
+- **M2** : **ACTS** = roulettes + crochet · déchets
+- **M3** : **CST** avantages vs obstacles
+- **M4** : tableau comparatif 4 modes
+- **M5** : EnterSite 17 V1`;
+
+/** Exercices de maths Module 610 */
+const DEMO_610_MATHS_FULL = `## Exercices de mathématiques — Module 610
+
+Émissions indicatives CO₂ par **t·km** : porte-conteneur **3 g** · camion **80 g** · avion **435 g**.
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — CO₂ Rupperswil → Marly
+
+Conteneur **15'625 kg** · **122,2 km**.
+
+:::solution
+**Camion** · **152,75 kg CO₂**
+
+\`\`\`
+15'625 kg = 15,625 t
+15,625 × 122,2 km × 80 g/t·km / 1'000 = 152,75 kg CO₂
+\`\`\`
+:::
+
+### Exercice 2 — Camion vs wagon (31 palettes)
+
+Camion : **CHF 17,75/palette** · Wagon : **CHF 300** + transbordement **CHF 186**.
+
+:::solution
+**Wagon** plus avantageux (**CHF 486** vs **CHF 550,25**)
+
+\`\`\`
+Camion : 31 × 17,75 = 550,25 CHF
+Wagon  : 300 + 186 = 486 CHF
+\`\`\`
+:::
+
+### Exercice 3 — Volume conteneur ISO 20'
+
+Intérieur **5,898 × 2,352 × 2,352 m**.
+
+:::solution
+**32,627 m³** (≈ 32,6 m³)
+
+\`\`\`
+5,898 × 2,352 × 2,352 = 32,6272 m³
+\`\`\`
+:::
+
+### Exercice 4 — Remboursement CST Härkingen–Zurich
+
+Investissement **3 milliards CHF** · rendement **4 %/an**.
+
+:::solution
+**25 ans** pour rembourser
+
+\`\`\`
+100 / 4 = 25 ans
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 32,627 · 25 · wagon · 152,75`;
+
+const DEMO_610_MATHS_SUMMARY = `## Maths — Solutions
+1. **Camion** · **152,75 kg** CO₂
+2. **Wagon** (486 CHF) < camion (550,25 CHF)
+3. Volume 20' : **32,627 m³**
+4. CST : remboursement **25 ans**`;
+
+/** Vérification des acquis Module 610 */
+const DEMO_610_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 610 — Le transport combiné**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Qu'est-ce que la **chaussée roulante (ROLA)** ?
+
+:::reponse
+**Ferroutage accompagné** : le camion roule sur un **wagon à plancher bas** · le chauffeur voyage dans une **voiture-couchette** · à destination il reprend son véhicule sur la route.
+:::
+
+### Question 2
+
+Différents **types de conteneurs** ?
+
+:::reponse
+- Conteneur **20 pieds** · **40 pieds**
+- Porte **frontale** · porte **latérale**
+- Conteneur **frigorifique**
+- Parois **démontables**
+- **High-Cube** · **open top** · conteneur-**citerne**
+:::
+
+### Question 3
+
+Longueur d'un **pied** (unité conteneur) ?
+
+:::reponse
+**30,48 cm** (1 pied = 30,48 cm).
+:::
+
+### Question 4
+
+Décrire le système des **caisses mobiles**.
+
+:::reponse
+Comme les conteneurs ISO, **normalisées** · reposent sur **supports rabattables**.
+
+**Pratique** : camion passe sous la caisse · enclenchement · suspension pneumatique soulève · béquilles rabattues · sur rail : **grue** vers le wagon.
+:::
+
+### Question 5
+
+Décrire le système **Cargo Domino**.
+
+:::reponse
+Complément route/rail avec **caisses mobiles** et conteneurs interchangeables · profilé **transversal**.
+
+**Pas de rotation** (contrairement ACTS) : camion à côté du wagon · caisse poussée **perpendiculairement** sur le wagon.
+:::`;
+
+const DEMO_610_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. **ROLA** = ferroutage accompagné · plancher bas · couchette
+2. 20'/40' · frigo · High-Cube · citerne…
+3. 1 pied = **30,48 cm**
+4. Caisses mobiles = supports rabattables · grue sur wagon
+5. **Domino** = poussée perpendiculaire · sans rotation`;
+
 /** Contenu Module 611 — La préparation de commandes (approfondissement) */
 const DEMO_611_THEORIE_FULL = `## 11. La préparation de commandes (approfondissement)
 
@@ -30805,6 +31051,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_610_THEORIE_FULL,
       summary: DEMO_610_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_610_GLOSSAIRE_FULL,
+      summary: DEMO_610_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_610_SITUATION_FULL,
+      summary: DEMO_610_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_610_MATHS_FULL,
+      summary: DEMO_610_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_610_VERIFICATION_FULL,
+      summary: DEMO_610_VERIFICATION_SUMMARY,
     },
   },
   "611": {
