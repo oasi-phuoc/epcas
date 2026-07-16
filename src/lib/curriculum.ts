@@ -23356,6 +23356,265 @@ const DEMO_603_OBJECTIFS_SUMMARY = `## Objectifs
 - Feuillard & rupture
 - Fermetures`;
 
+/** Glossaire Module 603 */
+const DEMO_603_GLOSSAIRE_FULL = `## Glossaire — Module 603
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Élasticité d'extension** | §3.1.2 | **Allongement** en % jusqu'à la rupture du feuillard · le **PP** est le plus extensible (16–22 %) · influence la capacité d'étirement lors du cerclage. |
+| **Bande de cerclage en PP** | §3.1 | Feuillard **polypropylène** · traction 330–400 N/mm² · extensibilité **élevée** · bon marché · rappel important si la charge se tasse. |
+| **Bande de cerclage en PET** | §3.1 | Feuillard **polyester** (plastique) · extensibilité 16–22 % · **recyclable** · bon rapport prix/performance. |
+| **Ruban textile en polyester** | §3.1 | Feuillard **textile** · traction 470–570 N/mm² · extensibilité 11–16 % · cher · non recyclable · souvent avec **boucles**. |
+| **Bande de cerclage métallique** | §3.1 | Feuillard **acier** · traction 700–1'100 N/mm² · faible extensibilité (6–12 %) · **faible rappel** · très résistant · coût élevé. |
+| **Newton (par mm²)** | §3.1.1 | **N/mm²** = résistance à la **traction** · force nécessaire pour déchirer 1 mm² de section · **force de rupture** = section (mm²) × N/mm² · ~**10 N ≈ 1 kg**. |
+| **Dérouleur de film étirable** | §Filmage | Outil **manuel** pour envelopper une palette avec du **film stretch** · le film doit être **étiré** pendant l'enveloppement pour assurer la stabilité. |
+| **Machine à filmer automatique (filmeuse)** | §Filmage | **Dérouleuse automatique** · enveloppe les palettes de façon homogène · réglage de la tension · productivité ↑ vs dérouleur manuel. |`;
+
+const DEMO_603_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **N/mm²** × section = **force de rupture** (~10 N = 1 kg)
+- **PP** extensible · **PET** recyclable · **textile** · **acier**
+- **Stretch** : dérouleur manuel ou **filmeuse** auto`;
+
+/** Mises en situation Module 603 */
+const DEMO_603_SITUATION_FULL = `## Mises en situation — Module 603
+
+**Support & Distribution** EnterSite AG : sécurisation des palettes pour le transport routier, maritime et aérien.
+
+### Vue d'ensemble des missions
+1. Sécuriser palettes (route · conteneur · avion · sacs farine)
+2. Comparer filmage / thermo-rétraction / cerclage
+3. Comparaison des coûts des feuillards (recherche CHF)
+4. Vidéo + EnterSite salle 17 V1
+5. Discussion STA
+
+---
+
+## Mission 1 — Sécuriser les palettes
+
+### Mission 1.1 — Route Rupperswil → Thoune
+
+:::reponse
+1. Placer une **planche de protection** sur les harasses
+2. **Cercler deux fois** (feuillard) pour lier charge et palette
+
+**Justification** — route nationale · vibrations et freinages · cerclage vertical relie palette + charge · planche protège les arêtes du feuillard.
+:::
+
+### Mission 1.2 — Conteneur ISO Rotterdam → Brisbane (bateau)
+
+:::reponse
+**Variante 1** — cercler les couches **transversalement** · planche de protection en haut · puis cercler le chargement sur la palette.
+
+**Variante 2** — cercler vers le bas · puis **envelopper de film étirable** (couches transversales maintenues + protection humidité/sel marin).
+
+**Justification** — long trajet maritime · secousses importantes · combinaison cerclage + stretch ou planches recommandée.
+:::
+
+### Mission 1.3 — ULD aérien Zurich → Saint-Pétersbourg
+
+:::reponse
+**Protections d'arêtes** sur tous les côtés · **cerclage** sur la palette · puis **enveloppement film étirable**.
+
+**Justification** — accélérations/décélérations et turbulences en vol · arêtes protégées évitent de percer le film · stretch homogène pour charges compactes.
+:::
+
+### Mission 1.4 — Sacs de farine route Rupperswil → Moscou
+
+:::reponse
+**Réduire la palette avec un capot en plastique** (housse/rétraction ou film étirable renforcé).
+
+**Justification** — sacs instables et sensibles à l'humidité · capot protège contre intempéries et poussière sur long trajet.
+:::
+
+---
+
+## Mission 2 — Comparer les techniques
+
+:::reponse
+| Technique | Avantages | Inconvénients |
+| --- | --- | --- |
+| **Filmer** (stretch) | Flexible · film peu coûteux · facile à manipuler | Protection chocs limitée · peut se détacher si mal enroulé · peu d'étanchéité |
+| **Thermo-rétraction** | S'adapte étroitement · protection chocs · maintient bien | Outils spéciaux · coût ↑ · déchets plastique (peu écolo) |
+| **Cerclage** | Grande stabilité · charges lourdes/volumineuses · facile | Pas toutes les formes · outils spéciaux · coût machines élevé |
+:::
+
+---
+
+## Mission 3 — Coût des feuillards (recherche CH)
+
+Cercler **2 fois** une Europalette chargée **1,2 m** · **8 m** de feuillard · sites **.ch** en **CHF** · sans machines ni rabais quantité.
+
+:::reponse
+**Exemples (plastique 12 mm × 7 mm)**
+
+| Fournisseur | Rouleau | Prix/palette (8 m) |
+| --- | --- | --- |
+| **Raja** | 2'500 m = CHF 205 | 205/2'500 × 8 = **CHF 0,66** |
+| **Schäfer Shop** | 2'500 m = CHF 203 | 203/2'500 × 8 = **CHF 0,65** |
+
+**Formule** : prix rouleau ÷ longueur rouleau × **8 m**
+
+**Réponse individuelle** pour : plastique 3–4 · textile 1–4 · acier 1–4 (liens + tableau complété).
+:::
+
+---
+
+## Mission 4 — Vidéo & EnterSite
+
+:::reponse
+**Réponse individuelle** — vidéo 3–5 min du filmage/cerclage en entreprise · upload dépôt de fichiers.
+
+**EnterSite** — visite virtuelle **Support & Distribution salle 17 V1** · image à droite · résoudre le puzzle · dépôt fichier.
+:::
+
+---
+
+## Mission 5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_603_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : route = planche + cerclage · mer = cerclage + stretch · avion = arêtes + stretch · farine = capot
+- **M2** : stretch flexible · rétraction étanche · cerclage stable
+- **M3** : 8 m/palette · recherche prix CHF
+- **M4** : vidéo + EnterSite 17 V1`;
+
+/** Exercices de maths Module 603 */
+const DEMO_603_MATHS_FULL = `## Exercices de mathématiques — Module 603
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Force de rupture
+
+**Force de rupture = résistance (N/mm²) × section (mm²)** · conversion kg : N ÷ 10
+
+:::solution
+| Résistance | Section | Force (N) | Force (kg) |
+| --- | --- | --- | --- |
+| 540 N/mm² | 6,0 mm² | 540 × 6 = **3'240 N** | **324 kg** |
+| 1'080 N/mm² | 22,5 mm² | 1'080 × 22,5 = **24'300 N** | **2'430 kg** |
+| 350 N/mm² | 4,5 mm² | 350 × 4,5 = **1'575 N** | **157,5 kg** |
+:::
+
+### Exercice 2 — Longueur de feuillard
+
+Palette chargée **1,2 m** · cerclage **2 fois en travers** (Europalette 1'200 × 800 mm).
+
+:::solution
+**8 m**
+
+\`\`\`
+(1,2 + 0,8 + 1,2 + 0,8) × 2 = 8 m
+\`\`\`
+:::
+
+### Exercice 3 — Coût par palette
+
+| Méthode | Consommation | Prix achat |
+| --- | --- | --- |
+| Filmer | 32 m/palette | 300 m = CHF 17 |
+| Thermo-rétraction | 1 housse/palette | 50 pcs = CHF 243 |
+| Cerclage | 8 m/palette | 1'200 m = CHF 263 |
+
+:::solution
+| Méthode | Calcul | **Coût/palette** |
+| --- | --- | --- |
+| Filmer | 17/300 × 32 | **CHF 1,81** |
+| Rétraction | 243/50 | **CHF 4,86** |
+| Cerclage | 263/1'200 × 8 | **CHF 1,75** |
+:::
+
+### Exercice 4 — Allongement maximal des bandes
+
+:::solution
+| Bande | Données | **Résultat** |
+| --- | --- | --- |
+| PET 10 m | +12 % | 10 + 10×12/100 = **11,2 m** |
+| PP 1,7 m | +21 % | 1,7 + 1,7×21/100 = **2,057 m** |
+| PP 8 m → 9,44 m | allongement ? | (9,44−8)/8×100 = **18 %** |
+| Métal 2,835 m | +5 % | longueur initiale = 2,835/1,05 = **2,7 m** |
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 3'240 · 11,2 · 2'430 · 157,5 · 1,81 · 2,057 · 4,86 · 24'300 · 18 · 1'575 · 2,7 · 1,75 · 324 · 8`;
+
+const DEMO_603_MATHS_SUMMARY = `## Maths — Solutions
+1. **3'240 N** (324 kg) · **24'300 N** (2'430 kg) · **1'575 N** (157,5 kg)
+2. Feuillard : **8 m**
+3. Film **1,81** · rétraction **4,86** · cerclage **1,75** CHF
+4. PET **11,2 m** · PP **2,057 m** · **18 %** · métal **2,7 m**`;
+
+/** Vérification des acquis Module 603 */
+const DEMO_603_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 603 — L'arrimage des marchandises**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Comment fonctionne une **soudeuse par vibration** ?
+
+:::reponse
+Les bandes sont **superposées** et chauffées par **vibration** (frottement ~200–300 Hz) · elles **fusionnent** ainsi · fermeture sans chape.
+:::
+
+### Question 2
+
+Types de **bandes de cerclage** et types de **fermeture** ?
+
+:::reponse
+**Bandes**
+- Feuillard **acier**
+- Feuillard plastique **PET** ou **PP**
+- Feuillard **textile** / polyester
+
+**Fermetures**
+- **Boucles**
+- **Chapes**
+- Soudage par **points**
+- Soudure par **vibration**
+- **Encliquetage** / poinçonnage
+:::
+
+### Question 3
+
+Comment fonctionne la **thermo-rétraction** d'une palette ?
+
+:::reponse
+Une **housse PVC** est placée sur la marchandise puis **chauffée** (flamme, soufflante ou four) · le plastique **se rétracte** et épouse la charge · protection intempéries/poussière.
+:::
+
+### Question 4
+
+Comment fonctionne le **filmage** ? Points d'attention au **dérouleur manuel** ?
+
+:::reponse
+Envelopper l'unité de charge avec un **film étirable** (dérouleur manuel ou filmeuse automatique).
+
+**Attention**
+- **Étirer** le film pendant le banderolage (stabilité par rétention élastique)
+- Inclure la **palette** dans le stretch pour stabilité optimale · **sauf** avant contrôle de profil auto (sinon « palette défectueuse »)
+- Charges **homogènes** · arêtes saillantes percent le film
+- Charges lourdes : **+ cerclage** en complément
+:::
+
+### Question 5
+
+Que signifie la **capacité de rétractation** (rappel) des bandes de cerclage ?
+
+:::reponse
+Capacité de la bande à se **resserrer** après avoir été tendue et après que la charge s'est **tassée**.
+
+Le feuillard **plastique** a un rappel **beaucoup plus élevé** que l'**acier** (l'acier étiré ne se contracte presque plus).
+:::`;
+
+const DEMO_603_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Soudeuse vibration = friction → fusion
+2. Acier · PET/PP · textile · boucles/chapes/soudure/encliquetage
+3. Housse PVC + chaleur → rétraction
+4. Stretch + tension · palette incluse (sauf profil auto) · + cerclage si lourd
+5. Rappel = resserrage après tassement · plastique >> acier`;
+
 /** Contenu Module 604 — Les systèmes de distribution */
 const DEMO_604_THEORIE_FULL = `## 4. Les systèmes de distribution
 
@@ -28834,6 +29093,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_603_THEORIE_FULL,
       summary: DEMO_603_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_603_GLOSSAIRE_FULL,
+      summary: DEMO_603_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_603_SITUATION_FULL,
+      summary: DEMO_603_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_603_MATHS_FULL,
+      summary: DEMO_603_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_603_VERIFICATION_FULL,
+      summary: DEMO_603_VERIFICATION_SUMMARY,
     },
   },
   "604": {
