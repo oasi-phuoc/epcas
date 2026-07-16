@@ -10655,6 +10655,373 @@ const DEMO_304_OBJECTIFS_SUMMARY = `## Objectifs
 - Documents + plombs
 - Sous réserve · CVIM / Maastricht`;
 
+/** Glossaire Module 304 */
+const DEMO_304_GLOSSAIRE_FULL = `## Glossaire — Module 304
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Identification globale | | Première étape à l'arrivée du transport : vérifier si la marchandise est **destinée à EnterSite** (adresse sur les documents, documents d'accompagnement) **avant** le déchargement. Comprend aussi un premier coup d'œil sur l'état du chargement et le respect des consignes de sécurité à l'ouverture. |
+| Identification détaillée | | Deuxième étape une fois la livraison confirmée : contrôler si la **bonne marchandise** a été livrée (fournisseur, articles, quantités, colis/palettes, documents douaniers si besoin) et la comparer au bulletin de livraison / commande. |
+| Le traité de Maastricht | | Traité signé le **7.2.1992**, en vigueur le **1.11.1993**, qui structure l'UE en trois piliers (Communauté européenne, PESC, coopération policière et judiciaire). Impact logistique : développement des réseaux de transport **transfrontaliers** (route, rail). |
+| Convention de Vienne | | **CVIM** — Convention des Nations unies sur les contrats de vente internationale de marchandises (signée en 1980, ~89 pays). Objectif : règles **uniformes** pour les contrats de vente internationaux, égalité et avantage mutuel, réduction des obstacles juridiques au commerce. |
+| CMR | | **Convention relative au contrat de transport international de marchandises par route** — base de la **lettre de voiture CMR** pour les transports routiers rémunérés, surtout transfrontaliers (Suisse, UE, Russie, Turquie, Islande…). Nécessaire si au moins un pays de chargement ou de déchargement est partie à la convention ; **3 exemplaires originaux** signés. `;
+
+const DEMO_304_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Identification globale** : pour nous ? adresse / docs avant déchargement
+- **Identification détaillée** : bonne marchandise ? articles · quantités · docs
+- **Maastricht** : intégration UE · transports transfrontaliers
+- **Convention de Vienne (CVIM)** : vente internationale uniforme
+- **CMR** : transport routier international · lettre de voiture (3 originaux)`;
+
+/** Mises en situation Module 304 */
+const DEMO_304_SITUATION_FULL = `## Mises en situation — Module 304
+
+Contexte : tu travailles à la **réception des marchandises** chez **EnterSite AG**. Les missions portent sur l'**identification de la livraison**, les **documents de transport** et le **bulletin de livraison**. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / exemples proposés.
+
+### Vue d'ensemble des missions
+1. Défauts constatés — étape et mesures
+2. Préparer une réception planifiée
+2.1 Identification globale avant déchargement
+3. Traiter le bulletin de transport
+3.1 Signature du transporteur
+3.2 Plomb douanier sur conteneur
+3.3 Lettre de voiture CMR
+4. Corriger le bulletin de livraison
+5. Discussion de la mise en situation
+
+---
+
+## Mission 1 — Identification des marchandises
+
+Tu travailles déjà depuis quelques semaines à la réception des marchandises chez EnterSite AG. Ton formateur veut vérifier tes connaissances : à quelle **étape** de la réception les défauts suivants ont été constatés et quelles **mesures** tu prendrais ?
+
+### Défaut 1
+Un colis est livré par DHL et est adressé à une **entreprise voisine**.
+
+**Étape :** …  
+**Mesures à prendre :** …
+
+:::reponse
+**Étape :** identification **globale**
+
+**Mesures :** refuser la réception de la marchandise (mauvais destinataire).
+:::
+
+### Défaut 2
+Lors d'une livraison de colis sur **10 palettes**, il **manque un colis**.
+
+**Étape :** …  
+**Mesures à prendre :** …
+
+:::reponse
+**Étape :** identification **détaillée**
+
+**Mesures :** corriger le bulletin de livraison et le signaler au service des achats.
+:::
+
+### Défaut 3
+Sur une palette, un carton est presque entièrement **enfoncé**.
+
+**Étape :** …  
+**Mesures à prendre :** …
+
+:::reponse
+**Étape :** identification **globale** (première vision à l'ouverture)
+
+**Mesures :** procès-verbal de dommage avec photo et signature du transporteur ; annonce au service des achats.
+:::
+
+### Défaut 4
+Lors du contrôle des marchandises, une partie des produits dans un colis est **endommagée**.
+
+**Étape :** …  
+**Mesures à prendre :** …
+
+:::reponse
+**Étape :** identification **détaillée**
+
+**Mesures :** établir un procès-verbal de dommage ; corriger le bulletin de livraison et en informer le service des achats.
+:::
+
+---
+
+## Mission 2 — Préparer la réception des marchandises
+
+Bravo — tu as réussi le test. Aujourd'hui, pour la première fois, tu es seul responsable de la réception. Un chargement (palettes, cartons, fûts) est annoncé pour cet après-midi.
+
+Décris ce que cela signifie pour toi et comment tu t'y prépares.
+
+:::reponse
+Grâce à la réception **planifiée**, je peux préparer des palettes vides et/ou des cadres et couvercles pour l'échange. Je peux libérer le quai et réserver une place dans la zone de réception. Les responsables de l'entrepôt sont **informés** et un emplacement de stockage est attribué.
+:::
+
+---
+
+## Mission 2.1 — Identification globale avant déchargement
+
+Avec une demi-heure de retard, le camion **Planzer** arrive. Le chauffeur ouvre la paroi arrière et tire immédiatement une palette sur le quai. Tu lui demandes d'attendre pour effectuer d'abord les premières étapes de l'identification.
+
+Décris ces **premières étapes**.
+
+:::reponse
+L'**identification globale** : contrôle de l'adresse de livraison, premier coup d'œil dans le camion, vérification que les mesures de **sécurité** sont respectées — **avant** de laisser décharger.
+:::
+
+---
+
+## Mission 3 — Traiter le bulletin de transport
+
+L'identification effectuée, le transporteur te remet le bulletin de transport. Traite-le avec les informations suivantes (tu peux compléter librement d'autres indications) :
+
+- **Destinataire :** EnterSite AG, Rigistrasse 2, 5102 Rupperswil
+- **Expéditeur :** ALSO Suisse SA, Meierhofstrasse 5, 6032 Emmen
+- Outils de mesure sur **1** palette Euro avec cadre et couvercle, **55 kg**
+- **2** cartons d'outils de mesure, **12 kg**
+- Matière première **Encre Black** en **9** fûts, **430 kg**
+- Cartouches de toner vides, **7** palettes de **35 kg** chacune
+- **6** palettes perdues, matière première **Toner Black** en sacs, **650 kg**
+
+### Bulletin de transport (modèle)
+
+| Champ | Valeur |
+| --- | --- |
+| Destinataire | EnterSite AG, Rigistrasse 2, 5102 Rupperswil |
+| Expéditeur | ALSO Schweiz AG, Meierhofstrasse 5, 6032 Emmen |
+| N° de commande | xxx |
+| Date / heure | xxx |
+| Mode d'expédition | Camion |
+
+| Pos. | Nombre | Unité | Contenu | Poids |
+| --- | --- | --- | --- | --- |
+| 1 | 1 | Europalette | Outils de mesure | 55 kg |
+| 2 | 2 | Carton | Outils de mesure | 12 kg |
+| 3 | 9 | Fûts | Encre brute Black | 430 kg |
+| 4 | 7 | Europalette | Cartouches de toner vides | 245 kg |
+| 5 | 6 | Palettes perdues | Matières premières Toner Black | 650 kg |
+| | | | **Poids total** | **1'392 kg** |
+| | 8 | Palette Euro | | |
+| | 1 | Cadre | | |
+| | 1 | Couvercle | | |
+
+:::reponse
+Bulletin complété selon le tableau ci-dessus (dates, n° commande et signatures à compléter). Vérifier cohérence des poids : 55 + 12 + 430 + 245 + 650 = **1'392 kg**.
+:::
+
+---
+
+## Mission 3.1 — Signature sur le bulletin de transport
+
+Tu sais que tu ne dois **pas** conserver le bulletin de transport signé. Mais pourquoi le transporteur a-t-il besoin de **ta signature** ?
+
+:::reponse
+Avec cette signature, il peut prouver à l'expéditeur que la commande a été **exécutée** et ainsi réclamer son **paiement**.
+:::
+
+---
+
+## Mission 3.2 — Plomb douanier sur conteneur
+
+Pendant que tu réceptionnes, un collègue ne peut pas ouvrir un conteneur : une pièce inconnue est fixée à la serrure.
+
+Explique ce qui est indiqué sur le conteneur et comment ton collègue doit agir.
+
+:::reponse
+Il s'agit d'un **plomb de douane**. Le collègue **ne doit pas** l'ouvrir. Il est impératif de respecter les **directives internes** ou d'informer le **supérieur hiérarchique**. Des instructions sur la manière de procéder seront définies en collaboration avec les **autorités douanières**.
+:::
+
+---
+
+## Mission 3.3 — Lettre de voiture CMR
+
+Ton collègue reçoit un document qu'il ne connaît pas. Explique-lui de quoi il s'agit et les différences avec les papiers de transport habituels.
+
+:::reponse
+La **lettre de voiture CMR** correspond à la *Convention relative au contrat de transport international de marchandises par route*. Elle est valable pour les transports routiers de marchandises **à titre onéreux**. Une CMR couvre surtout les livraisons **au-delà des frontières** vers d'autres pays participants (UE et hors UE : Russie, Turquie, Islande… ; la Suisse en fait partie).
+
+Avant le transport, la lettre de voiture doit être **remplie** et remise au transporteur pour la présenter aux instances autorisées (douanes, etc.).
+
+**Différences principales** avec un simple bon de transport national : **3 exemplaires originaux**, effet **probatoire**, champs normalisés (art. 6 CMR), responsabilité du transporteur en cas de dommages.
+
+Une CMR est nécessaire si **au moins un** des deux pays (chargement ou déchargement) est partie à la convention.
+:::
+
+---
+
+## Mission 4 — Traiter le bulletin de livraison
+
+Avant de quitter, tu traites le bulletin de livraison. Lors du contrôle :
+
+- **Encre matière première** : un fût n'est pas entièrement rempli → il manque **15 litres**
+- **Rohstoff Toner** : un sac déchiré → **4 kg** de toner perdus pendant le transport
+- **Cartouches de toner vides** : il manque **une unité d'emballage**
+
+Corrige le bulletin de livraison de manière professionnelle.
+
+:::reponse
+Corrections à porter **sur le bulletin** (en présence du transporteur si possible, signatures) :
+
+| Poste | Quantité corrigée |
+| --- | --- |
+| Encre matière première | **435 lt** (volume corrigé) |
+| Rohstoff Toner | **646 kg** (650 − 4 kg) |
+| Cartouches de toner vides | **49 uv** (unités d'emballage) |
+
+Ne jamais effacer (pas de Tipp-Ex) : corrections **lisibles**, motif indiqué, signatures transporteur **et** destinataire. Informer le **service des achats** / fournisseur si nécessaire.
+:::
+
+---
+
+## Mission 5 — Discussion de la mise en situation
+
+Discute de la mise en situation en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion (pas de solution unique).
+:::`;
+
+const DEMO_304_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : globale = mauvais destinataire / dommage visible · détaillée = quantité / contenu
+- **M2** : réception planifiée → quai, engins d'échange, stockage
+- **M2.1** : identification globale **avant** déchargement
+- **M3** : bulletin de transport ALSO → 1'392 kg
+- **M3.1** : signature = preuve de livraison pour paiement transporteur
+- **M3.2** : plomb douanier → ne pas ouvrir · hiérarchie / douanes
+- **M3.3** : CMR = transport international routier (3 originaux)
+- **M4** : corrections bulletin : 435 lt · 646 kg · 49 uv
+- **M5** : discussion plénière`;
+
+/** Exercices de maths Module 304 */
+const DEMO_304_MATHS_FULL = `## Exercices de mathématiques — Module 304
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Dégâts sur tablettes tactiles
+
+Parmi **3'500** tablettes tactiles achetées à Taïwan pour **665'000 CHF**, **6 %** des pièces sont devenues inutilisables (eau de mer dans le conteneur).
+
+À combien s'élèvent les dégâts en CHF ?
+
+:::solution
+**39'900 CHF**
+
+Calcul :
+- Pièces défectueuses : 3'500 × 6 / 100 = **210** pièces
+- Prix unitaire : 665'000 / 3'500 = **190 CHF**
+- Dégâts : 210 × 190 = **39'900 CHF**
+:::
+
+### Exercice 2 — Composants imprimante 3D
+
+Lors du contrôle à l'entrée, sur **250** composants, **15** pièces sont endommagées. Prix unitaire : **22,50 CHF**.
+
+a) Dégâts en CHF ?  
+b) Dégâts en % de la livraison ?
+
+:::solution
+a) **337,50 CHF** — 15 × 22,50 = 337,50 CHF
+
+b) **6 %** — 15 × 100 / 250 = 6 %
+:::
+
+### Exercice 3 — Liquide de refroidissement
+
+Liquide de refroidissement : densité **0,95 kg/dm³**. Conteneur : poids brut **230 kg**, tare **40 kg**.
+
+Combien de **litres** ont été livrés ?
+
+:::solution
+**200 litres**
+
+Calcul :
+- Poids net : 230 − 40 = **190 kg**
+- 1 dm³ = 1 litre → volume : 190 / 0,95 = **200 dm³** = **200 litres**
+:::
+
+### Exercice 4 — Capacité citerne de mazout
+
+Citerne camion-silo : diamètre intérieur **4 m**, longueur **8 m**, remplie de mazout.  
+Citerne EnterSite : diamètre **5 m**, hauteur **13 m**, déjà remplie aux **¾**.
+
+La capacité restante est-elle suffisante pour recevoir le camion-silo ?
+
+:::solution
+**Non**
+
+Calcul :
+- Citerne camion : (4/2)² × 3,14 × 8 = **100,48 m³**
+- Citerne EnterSite : (5/2)² × 3,14 × 13 = **255,125 m³**
+- Remplissage ¾ : 255,125 × 75 / 100 = **191,34 m³**
+- Reste : 255,125 − 191,34 = **63,785 m³**
+- **63,785 m³ < 100,48 m³** → capacité **insuffisante**
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 200 · Non · 39'900 · 6 · 337,50`;
+
+const DEMO_304_MATHS_SUMMARY = `## Maths — Solutions
+1. **39'900 CHF** (210 × 190)
+2. a) **337,50 CHF** · b) **6 %**
+3. **200 litres** (190 / 0,95)
+4. **Non** (63,8 m³ restants < 100,5 m³ camion)`;
+
+/** Vérification des acquis Module 304 */
+const DEMO_304_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 304 — L'identification de la livraison**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quelles sont les **deux étapes** de l'identification des marchandises ?
+
+:::reponse
+1. **Identification globale**
+2. **Identification détaillée**
+:::
+
+### Question 2
+
+Nommez les objets illustrés (scellés / plombs douaniers) et décrivez leur fonction.
+
+:::reponse
+Les **scellés ou plombs douaniers** apposés sur les camions, semi-remorques ou conteneurs **ne doivent en aucun cas** être coupés ou détachés sans autorisation.
+
+Les conteneurs scellés doivent être ouverts conformément aux **règles de l'entreprise**. Dans certains cas, il faut faire appel à un spécialiste de l'administration des douanes ou à une personne **habilitée** par l'entreprise. La procédure doit être **clarifiée au préalable**.
+:::
+
+### Question 3
+
+Que faut-il faire si l'on constate des **dommages** sur le chargement d'un camion lors de son ouverture ?
+
+:::reponse
+Vérifier que les **instructions internes** ont été respectées ou consulter le **supérieur hiérarchique**.
+
+Si le travail peut être poursuivi, les dégâts doivent être **documentés** (constat avec **photos**). Si le transporteur est sur place, il peut consigner la documentation. S'il n'est plus sur place, prendre contact avec le **fournisseur**.
+:::
+
+### Question 4
+
+Quels sont les documents d'accompagnement des marchandises que l'on peut avoir lors d'un **transport routier** ?
+
+:::reponse
+- Le **bulletin de transport** (bon de transport)
+- Le **bulletin de livraison**
+- (En international) la lettre de voiture **CMR**
+:::
+
+### Question 5
+
+Quel est l'objectif de la **Convention de Vienne** ?
+
+:::reponse
+Permettre le **développement** dans le **commerce international** grâce à des règles **uniformes** pour les contrats de vente internationaux (égalité, avantage mutuel, réduction des obstacles juridiques).
+:::`;
+
+const DEMO_304_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Globale · détaillée
+2. Plombs douaniers : ne pas couper · procédure entreprise / douanes
+3. Documenter (photos) · hiérarchie · fournisseur si besoin
+4. Bulletin de transport · bulletin de livraison (+ CMR international)
+5. CVIM : commerce international uniforme`;
+
 /** Contenu Module 305 — Déchargement des marchandises */
 const DEMO_305_THEORIE_FULL = `## 5. Déchargement des marchandises
 
@@ -19566,6 +19933,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_304_THEORIE_FULL,
       summary: DEMO_304_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_304_GLOSSAIRE_FULL,
+      summary: DEMO_304_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_304_SITUATION_FULL,
+      summary: DEMO_304_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_304_MATHS_FULL,
+      summary: DEMO_304_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_304_VERIFICATION_FULL,
+      summary: DEMO_304_VERIFICATION_SUMMARY,
     },
   },
   "305": {
