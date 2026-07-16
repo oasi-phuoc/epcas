@@ -13529,6 +13529,315 @@ const DEMO_310_OBJECTIFS_SUMMARY = `## Objectifs
 - Fiche de stock
 - Disponible vs total`;
 
+/** Glossaire Module 310 */
+const DEMO_310_GLOSSAIRE_FULL = `## Glossaire — Module 310
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Automatisation | | L'**homme ne participe pas** directement à ces travaux : logiciels et matériel permettent de réaliser l'étape de manière **autonome** (ex. rayonnage palettes automatique avec marquage pour stockage/déstockage système). |
+| Manutention | | Ensemble des opérations de **déplacement**, **manipulation** et **transport** des marchandises. La préparation au stockage peut viser à faciliter la manutention (ex. regrouper des pièces en bacs au lieu de les stocker à l'unité). |
+| Offre groupée | | Regroupement de **plusieurs produits** en une **nouvelle unité** de vente (*bundle*). Les produits peuvent être différents ou identiques. Ex. : kit toner C/M/Y/K · trousse scolaire (crayons + gomme + règle). `;
+
+const DEMO_310_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Automatisation** : travail autonome par système (sans intervention humaine directe)
+- **Manutention** : déplacer · manipuler · transporter
+- **Offre groupée** : plusieurs produits = une unité (bundle)`;
+
+/** Mises en situation Module 310 */
+const DEMO_310_SITUATION_FULL = `## Mises en situation — Module 310
+
+Contexte : tu prépares les marchandises pour la **mise en stock** chez **EnterSite AG** après réception et contrôles. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / exemples proposés.
+
+### Vue d'ensemble des missions
+1. Préparation en entreprise formatrice
+2. Préparer deux articles (exemples 1)
+3. Préparer deux autres articles (exemples 2)
+4. Gestion des stocks (écritures)
+5. EnterSite — Procurement Management
+6. Discussion de la mise en situation
+
+---
+
+## Mission 1 — Préparation en entreprise formatrice
+
+Comment les marchandises sont-elles préparées pour le stockage dans **ton entreprise de formation** après la réception ?
+
+:::reponse
+**Réponse individuelle** — décrire les étapes réelles : contrôle, étiquetage, reconditionnement, enregistrement, emplacement de stockage…
+:::
+
+---
+
+## Mission 2 — Préparer deux articles (variantes)
+
+Choisis **deux articles** et décris **quatre variantes** différentes sur la manière et les raisons de les préparer pour le stockage.
+
+### Article 1 — SwissEnterSite Cartouche SAMSUNG CLP-415BK Toner noir
+
+Livré en **unité de 20 pièces** ; vendu en **pièces détachées** → reconditionnement nécessaire.
+
+### Article 2 — Oki Toner Black pour MC883dn
+
+Action de vente : composition d'un **lot** Black, Yellow, Magenta et Cyan.
+
+:::reponse
+**Article 1 — Samsung CLP-415BK (exemples de variantes)**
+
+1. **Déconditionnement** : ouvrir les cartons de 20 et préparer la vente à l'unité
+2. **Réemballage** : emballage de vente EnterSite (logo, format POS)
+3. **Étiquetage** : code article / prix / code-barres par pièce
+4. **Manutention** : regroupement en bacs de prélèvement pour le picking
+
+**Article 2 — Oki MC883dn (exemples de variantes)**
+
+1. **Offre groupée (bundle)** : regrouper les 4 couleurs en un kit promotionnel
+2. **Marquage promotion** : étiquette « action de vente » sur le lot
+3. **Emballage adapté** : carton bundle avec calage pour les 4 toners
+4. **Enregistrement ERP** : créer un article « kit » + décrémenter les articles unitaires
+:::
+
+---
+
+## Mission 3 — Deux autres articles
+
+Sélectionne **deux autres articles** pour la préparation à la mise en stock.
+
+:::reponse
+**Réponse 1 — Cartouches d'encre vides**  
+Pour faciliter la manipulation, emballage par **50 pièces** (reconditionnement en lots).
+
+**Réponse 2 — Matière première Encre Black**  
+Livrée en **Big Packs** / citernes ; transfert dans les **conteneurs de production** correspondants avant stockage ou alimentation directe de la ligne.
+
+*Autres réponses possibles* : substances dangereuses + fiche technique · palettes entières en réserve · zone expédition directe…
+:::
+
+---
+
+## Mission 4 — Gestion des stocks
+
+Exécute les **écritures** et calcule le **stock disponible** et le **stock total** pour les deux articles.
+
+### Article 2677970 — DELL D Series D2721H (27")
+
+| Date | Entrées | Sorties | Stock réservé | Stock AQ | Stock bloqué | Stock disponible | Stock total |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 01.09.20xx | | | | | | ? | ? |
+| … | | | | | | | |
+
+### Article 2622942 — ACER Predator X27P (27" 4K)
+
+| Date | Entrées | Sorties | … | Stock disponible | Stock total |
+| --- | --- | --- | --- | --- | --- |
+
+:::reponse
+**DELL D2721H — 2677970**
+
+| Date | Entrées | Sorties | Stock réservé | Stock AQ | Stock bloqué | Stock disponible | Stock total |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 01.09.20xx | | | | | | **18** | **18** |
+| 02.09.20xx | | 4 | | | | **14** | **14** |
+| 03.09.20xx | | 3 | | | | **11** | **11** |
+| 04.09.20xx | | 5 | | | | **6** | **6** |
+| 05.09.20xx | 10 | | | | | **16** | **16** |
+| 06.09.20xx | | 7 | | | | **9** | **9** |
+
+**ACER Predator X27P — 2622942**
+
+| Date | Entrées | Sorties | Stock réservé | Stock AQ | Stock bloqué | Stock disponible | Stock total |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 01.09.20xx | | | | | | **23** | **32** |
+| 02.09.20xx | | 12 | | | | **11** | **20** |
+| 03.09.20xx | | 4 | | | | **7** | **16** |
+| 04.09.20xx | | 2 | | | | **5** | **14** |
+| 05.09.20xx | 25 | | | | | **30** | **39** |
+| 06.09.20xx | | 7 | | | | **23** | **32** |
+
+*Stock total = disponible + réservé + AQ + bloqué (ici différences dues aux stocks réservés/AQ/bloqués non détaillés ligne par ligne).*
+:::
+
+---
+
+## Mission 5 — EnterSite Procurement Management
+
+> **Astuce EnterSite** : suis la visite virtuelle dans le bureau **Procurement Management**, salle de travail **14 V1**. Cherche l'image de droite et résous le travail final. Lien : [Vers EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+:::reponse
+**Réponse individuelle** — selon l'exercice EnterSite (salle 14 V1, Procurement Management).
+:::
+
+---
+
+## Mission 6 — Discussion de la mise en situation
+
+Discute de la mise en situation en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion (pas de solution unique).
+:::`;
+
+const DEMO_310_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : préparation en entreprise formatrice (individuel)
+- **M2** : Samsung → déconditionner 20 pces · Oki → bundle 4 couleurs
+- **M3** : encres vides ×50 · encre Black Big Pack → production
+- **M4** : écritures stock DELL / ACER (disponible vs total)
+- **M5** : EnterSite salle **14 V1**
+- **M6** : discussion plénière`;
+
+/** Exercices de maths Module 310 */
+const DEMO_310_MATHS_FULL = `## Exercices de mathématiques — Module 310
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Réserve de fiches techniques
+
+**80** articles/jour équipés d'une fiche technique → réserve suffisante **6 jours**.
+
+Pour combien de jours la réserve suffit-elle si **60** articles/jour doivent être équipés ?
+
+:::solution
+**8 jours**
+
+Calcul :
+- Réserve totale : 80 × 6 = **480** articles
+- Durée : 480 / 60 = **8 jours**
+:::
+
+### Exercice 2 — Valeur de la livraison
+
+Articles en zone de préparation (prix d'achat unitaire) :
+
+| Article | Qté | Prix unitaire |
+| --- | --- | --- |
+| Cartouches encre Cyan | 150 | 23,85 CHF |
+| Cartouches encre noir | 56 | 20,00 CHF |
+| Set cartouches encre | 240 | 52,00 CHF |
+| Écrous imprimante 3D | 605 | 1,35 CHF |
+| Puce électronique 3D | 25 | 3,50 CHF |
+
+Quelle est la **valeur** de cette livraison ?
+
+:::solution
+**18'081,75 CHF**
+
+Calcul :
+(150 × 23,85) + (56 × 20) + (240 × 52) + (605 × 1,35) + (25 × 3,50)
+= 3'577,50 + 1'120 + 12'480 + 816,75 + 87,50 = **18'081,75 CHF**
+:::
+
+### Exercice 3 — Coût du reconditionnement
+
+À reconditionner avant stockage :
+- Cartouches (Cyan + noir + sets) : **446** pièces → boîtes plastique **20,20 CHF/pièce** (1 pièce = 1 emballage)
+- Puces électroniques : **25** pièces → sachets ESD **34,35 CHF/pièce**
+
+Main-d'œuvre : **27 CHF/h** · **22,3 h** pour cartouches · **125 min** pour puces.
+
+Coût total du reconditionnement ?
+
+:::solution
+**10'526,21 CHF**
+
+Calcul matériel :
+- Cartouches : (150 + 56 + 240) × 20,20 = **9'009,20 CHF**
+- Puces : 25 × 34,35 = **858,75 CHF**
+- Total matériel : **9'867,95 CHF**
+
+Main-d'œuvre :
+- Temps : (22,3 × 60) + 125 = 1'463 min = **24,38 h**
+- Coût : 24,38 × 27 = **658,26 CHF**
+
+**Total : 9'867,95 + 658,26 = 10'526,21 CHF**
+:::
+
+### Exercice 4 — Amortissement contenants réutilisables
+
+Réduction des déchets : **15 %**. Coût actuel élimination : **980 CHF/mois**.  
+Investissement contenants réutilisables : **5'600 CHF**.
+
+Combien de temps pour **amortir** l'investissement ?
+
+:::solution
+**38 mois** (environ **3 ans et 2 mois**)
+
+Calcul :
+- Économie mensuelle : 980 × 15 / 100 = **147 CHF**
+- Amortissement : 5'600 / 147 = 38,1… → **38 mois**
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 18'081,75 · 38 · 8 · 10'526,21`;
+
+const DEMO_310_MATHS_SUMMARY = `## Maths — Solutions
+1. **8 jours** (480 articles / 60 par jour)
+2. **18'081,75 CHF** (valeur livraison)
+3. **10'526,21 CHF** (matériel + main-d'œuvre)
+4. **38 mois** (5'600 / 147 CHF économisés)`;
+
+/** Vérification des acquis Module 310 */
+const DEMO_310_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 310 — La préparation à l'entreposage**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quelle est la définition d'un **emballage** ?
+
+:::reponse
+Objet destiné à **contenir temporairement** un produit ou un groupe de produits en vue de le **protéger** ou de faciliter les opérations suivantes : **manipulation**, **stockage**, **transport** et **présentation en magasin**.
+:::
+
+### Question 2
+
+Cite **trois influences** possibles sur le **temps** de préparation pour la mise en stock.
+
+:::reponse
+Exemples (citer au moins trois) :
+- La marchandise doit-elle passer par le **contrôle qualité** ?
+- Doit-elle être **reconditionnée** pour le stockage ?
+- Stockage en **réserve palettes** (palettes entières) ?
+- Destination directe **zone d'expédition** ?
+- **Compatibilité** avec les autres marchandises (dangerosité, manipulation…) ?
+:::
+
+### Question 3
+
+Que signifient ces **pictogrammes** ?
+
+*(Ne pas renverser · Centre de gravité · À protéger de la chaleur.)*
+
+:::reponse
+- **Ne pas renverser**
+- **Centre de gravité** (indiquer le centre de gravité pour la manutention)
+- **À protéger de la chaleur**
+:::
+
+### Question 4
+
+Le stockage peut être très **automatisé**. Qu'entend-on par « automatisation » ?
+
+:::reponse
+L'**homme ne participe pas** à ces travaux. Les **logiciels** et le **matériel** fonctionnent de manière à ce que cette étape puisse être réalisée de manière **autonome**.
+:::
+
+### Question 5
+
+EnterSite travaille avec des **offres groupées**. Qu'entendez-vous par ce terme ? Citez un exemple du quotidien.
+
+:::reponse
+Une **offre groupée** (*bundle*) réunit **plusieurs produits** en une seule unité (produits différents ou non).
+
+Ex. EnterSite : les **quatre couleurs** de toner en un seul ensemble.
+
+Au quotidien : une **trousse scolaire** (crayons, feutres, gomme, règle) — plusieurs pièces deviennent une **nouvelle unité**.
+:::`;
+
+const DEMO_310_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Emballage = contenir · protéger · manipulation/stockage/transport/vente
+2. AQ · reconditionnement · réserve palettes · expédition · compatibilité
+3. Ne pas renverser · centre de gravité · protéger de la chaleur
+4. Automatisation = autonome sans intervention humaine directe
+5. Bundle = plusieurs produits en une unité (kit toner · trousse scolaire)`;
+
 /** Contenu Module 311 — Concepts d'approvisionnement */
 const DEMO_311_THEORIE_FULL = `## 11. Les concepts de l'approvisionnement
 
@@ -21287,6 +21596,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_310_THEORIE_FULL,
       summary: DEMO_310_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_310_GLOSSAIRE_FULL,
+      summary: DEMO_310_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_310_SITUATION_FULL,
+      summary: DEMO_310_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_310_MATHS_FULL,
+      summary: DEMO_310_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_310_VERIFICATION_FULL,
+      summary: DEMO_310_VERIFICATION_SUMMARY,
     },
   },
   "311": {
