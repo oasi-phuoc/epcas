@@ -16607,6 +16607,353 @@ const DEMO_404_OBJECTIFS_SUMMARY = `## Objectifs
 - Mécanisé / auto
 - 3 principes de stockage`;
 
+/** Glossaire Module 404 */
+const DEMO_404_GLOSSAIRE_FULL = `## Glossaire — Module 404
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Types d'entrepôts | | Classification selon l'**enveloppe** (ouvert · couvert · fermé), la **hauteur** (faible ≤7 m · moyenne ≤15 m · grande/MGH jusqu'à ~45 m) et la **structure** (mécanisé · automatique · système complexe). |
+| Zones de stockage | | Ensemble des **secteurs fonctionnels** d'un entrepôt, organisés selon le **flux** de marchandises (entrée → stockage → picking → expédition) et les exigences des produits (rotation, valeur, périssabilité, dangerosité…). |
+| Zone de chargement et de déchargement | Quais | Secteur des **quais** où les véhicules sont chargés ou déchargés · interface entre transport externe et entrepôt. |
+| Zone de réception des marchandises | Entrée entrepôt | Première zone après le quai : **déchargement**, contrôles sommaires, enregistrement des entrées, orientation vers stockage ou AQ. |
+| Zone de reconditionnement | | Secteur de **transformation** avant mise en stock : étiquetage, reconditionnement, regroupement en lots, adaptation des emballages. |
+| Zone de quarantaine | Stock AQ | Zone isolée pour marchandises en **attente de contrôle** (qualité, quantité) — **non disponibles** tant que le résultat n'est pas validé. |
+| Zone de stockage | Réserve | Zone principale de **conservation** des marchandises sur sol ou rayonnages — souvent réserve à **faible rotation** ou palettes entières. |
+| Zone de prélèvement (Picking) | Préparation commandes | Secteur où les articles sont **prélevés** pour les commandes clients/production — accès rapide, souvent articles à **forte rotation** (ABC). |
+| Zone d'expédition et contrôle de sortie | Sortie entrepôt | Dernière zone avant le quai : **emballage**, contrôle des sorties, constitution des envois, **chargement**. |
+| Zone de maintenance | | Secteur pour l'**entretien** des engins, installations et équipements de l'entrepôt. |
+| Zone de gestion des stocks | | Zone administrative / informatique liée au **pilotage** des stocks : bureaux, postes WMS/ERP, planification des flux et des emplacements. `;
+
+const DEMO_404_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Types d'entrepôts** : ouvert · couvert · fermé · hauteurs · mécanisé/auto
+- **Flux des zones** : quais → réception → (reconditionnement/AQ) → stockage → picking → expédition
+- **Quarantaine** = AQ · non disponible · **picking** = prélèvement commandes`;
+
+/** Mises en situation Module 404 */
+const DEMO_404_SITUATION_FULL = `## Mises en situation — Module 404
+
+Contexte : **EnterSite AG** stocke ses marchandises dans des **conditions variées**. Tu prépares des mandats pour Reto Stierndli (département Logistique) : description d'entrepôts, catalogue de questions client, planification de hall et concept de stockage professionnel.
+
+### Vue d'ensemble des missions
+1. Décrire des entrepôts (images / conditions)
+2. Catalogue de questions (client Berne, 55'000 kg/mois)
+3. Choix de halle (45 articles · 230 palettes/mois)
+4. Concept de stockage professionnel
+5. Discussion de la STA
+
+---
+
+## Mission 1 — Types d'entrepôts (images)
+
+Décris les trois situations illustrées (modules précédents + prescriptions de stockage).
+
+### Image 1 — Entrepôt fermé, rayonnage palettes
+
+:::reponse
+**Description** — entrepôt **fermé**, stockage sur **rayonnages statiques**, **rayonnage à palettes**.
+
+**Marchandises** — sensibles aux **intempéries** ou au **vol**.
+
+**Avantages** — bonne utilisation surface/espace · peut être **mécanisé**
+
+**Inconvénients** — manipulation parfois **manuelle** · temps d'accès parfois **élevé**
+:::
+
+### Image 2 — Entrepôt ouvert
+
+:::reponse
+**Description** — entrepôt **ouvert** / **à ciel ouvert**.
+
+**Marchandises** — insensibles aux intempéries · peu exposées au vol (ex. vrac, citernes, bois, containers).
+
+**Avantages** — **coûts** d'infrastructure faibles · organisation simple
+
+**Inconvénients** — **aucune** protection intempéries/vol · peu mécanisable en hauteur
+:::
+
+### Image 3 — Entrepôt couvert, cantilever
+
+:::reponse
+**Description** — entrepôt **couvert** (semi-ouvert), rayonnage **statique**, **cantilever** (porte-à-faux).
+
+**Marchandises** — protection soleil/pluie · insensibles aux variations T°/humidité · peu de risque de vol (ex. tubes acier, planches).
+
+**Avantages** — coûts infrastructure modérés · partiellement **mécanisable** · protection humidité/lumière
+
+**Inconvénients** — marchandises **longues** : mise à disposition parfois **laborieuse** · côtés ouverts
+:::
+
+---
+
+## Mission 2 — Catalogue de questions (client technologie)
+
+Demande : entrepôt région **Berne** · ~**55'000 kg/mois** · stockage professionnel · regroupement pour grands distributeurs.
+
+:::reponse
+**Catalogue structuré (extraits)**
+
+**Type de produits**
+1. De quel type de produits s'agit-il exactement ?
+2. Exigences de stockage (température, humidité…) ?
+3. Mesures de sécurité particulières ?
+
+**Capacité et volume**
+1. Surface nécessaire (m²) ?
+2. Poids mensuel moyen ? Variations saisonnières ?
+
+**Stockage et gestion**
+1. Méthode FIFO / LIFO / lot ?
+2. Gestion et contrôle des stocks ?
+3. Fréquence des appels / livraisons ?
+
+**Préparation et expédition**
+1. Exigences de picking et d'emballage ?
+2. Matériaux d'emballage ?
+3. Modalités de transport ?
+
+**Sécurité et assurance**
+1. Contrôle d'accès, alarmes, surveillance ?
+2. Assurance pendant stockage ?
+
+**Durée et flexibilité**
+1. Durée prévue du mandat ?
+2. Flexibilité gamme / capacité ?
+:::
+
+---
+
+## Mission 3 — Choix de halle
+
+**45 articles** · **~230 palettes/mois** (1,15 m haut) · 3 halles vides à aménager.
+
+| Halle | Dimensions | Hauteur | Quais |
+| --- | --- | --- | --- |
+| **1** | 17 × 15 m | 12 m | 3 (côté long) |
+| **2** | 18 × 13 m | 7 m | 2 (petit côté) |
+| **3** | 20 × 20 m | 9 m | 3 (un côté) |
+
+**Étagère** : 2,70 m × 1,50 m · 5 niveaux × 1,20 m (+ places au sol 2,00 m pour picking).
+
+Quelle halle proposer ? Croquis + justification.
+
+:::reponse
+**Choix recommandé — Halle 1 ou Halle 3**
+
+**Halle 1** — 255 m² · **12 m** de haut → exploitation verticale optimale · 3 quais.
+
+**Halle 3** — **400 m²** (plus grande surface) → ~**330 palettes** possibles · marge pour fin de mois + nouvelles livraisons. Hauteur 9 m moins optimale que Halle 1.
+
+**Halle 2** — hauteur **7 m** seulement → exploitation verticale limitée malgré surface correcte.
+
+**Croquis** — répartition : quais réception/expédition · zone picking (2,00 m hauteur) · rayonnages doubles · allées chariots · réserve en hauteur.
+
+*Travail individuel : insérer croquis détaillé.*
+:::
+
+---
+
+## Mission 4 — Concept de stockage professionnel
+
+Sur la base de la Mission 3, élabore un **concept général** (propreté · spaciosité · netteté).
+
+:::reponse
+**Éléments du concept**
+
+**Division de la surface** — zones distinctes pour stockage ordonné et identification facile.
+
+**Zone de préparation des commandes** — places au sol **2,00 m** de hauteur (ergonomie) · réserve dans les niveaux supérieurs.
+
+**Disposition des rayonnages** — doubles allées · 3 travées × 5 niveaux = **54 euro-palettes**/rangée (selon plan).
+
+**Voies de circulation** — allées larges entre rayonnages et picking · flux fluide.
+
+**Entrée / sortie** — rampes séparées réception/expédition · **3e rampe** de secours en cas de goulot.
+
+**Autres** — propreté · marquage emplacements · numérotation articles · taux d'occupation 80–90 % max.
+:::
+
+---
+
+## Mission 5 — Discussion
+
+Discute de la STA en plénière. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion.
+:::`;
+
+const DEMO_404_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : fermé/palettes · ouvert · couvert/cantilever
+- **M2** : catalogue questions client (produits · capacité · picking · sécurité)
+- **M3** : Halle 1 (hauteur) ou 3 (surface ~330 pal.) · croquis zones
+- **M4** : zones · picking 2 m · rayonnages doubles · 3 quais
+- **M5** : discussion STA`;
+
+/** Exercices de maths Module 404 */
+const DEMO_404_MATHS_FULL = `## Exercices de mathématiques — Module 404
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Palettes pour 340 paquets
+
+**340 paquets** (40 × 60 × 35 cm) sur palettes EUR. Empilage autorisé.  
+Hauteur chargement **sans palette** : 1,85 m · hauteur palette : 0,15 m.
+
+Combien de **palettes** ?
+
+:::solution
+**17 palettes**
+
+Calcul :
+\`\`\`
+Longueur pal. : 120 / 60 = 2 colis
+Largeur pal. : 80 / 40 = 2 colis
+Hauteur : 185 / 35 = 5,28… → 5 couches
+Colis/palette : 2 × 2 × 5 = 20
+Palettes : 340 / 20 = **17 palettes**
+\`\`\`
+:::
+
+### Exercice 2 — Film étirable
+
+Chaque palette banderolée **2 fois**. Palette **incluse** sur **5 cm** en haut et en bas.
+
+Combien de **m²** de film ?
+
+:::solution
+**14,4 m²**
+
+Calcul :
+\`\`\`
+Hauteur banderolage : 5 × 35 + 5 = 180 cm = 1,80 m
+Périmètre palette EUR : 2 × 80 + 2 × 120 = 400 cm = 4,00 m
+Surface/palette : 1,80 × 4,00 = 7,2 m²
+2 tours : 7,2 × 2 = **14,4 m²** (pour 1 palette)
+
+× 17 palettes = 244,8 m² si toutes les palettes
+\`\`\`
+
+*(Le corrigé EnterSite retient **14,4 m²** par palette banderolée.)*
+:::
+
+### Exercice 3 — Poids brut des colis
+
+Poids **net** : 8,7 kg/colis · emballage = **5 %** du poids net.
+
+Poids **brut** ?
+
+:::solution
+**9,16 kg** (9,1579… kg)
+
+Calcul :
+\`\`\`
+Net = 95 % du brut → Brut = 8,7 / 95 × 100 = **9,1579 kg** → **9,16 kg**
+\`\`\`
+:::
+
+### Exercice 4 — Niveaux en rayonnage moyenne hauteur
+
+Entrepôt **15 m** (moyenne hauteur). Traverses **100 mm**. **15 cm** d'espace libre entre palette et traverse suivante.  
+Hauteur charge sur palette : 5 × 35 cm = 1,75 m (+ palette 15 cm selon exercice 1).
+
+Combien de **niveaux** empilables ?
+
+:::solution
+**7 niveaux**
+
+Calcul :
+\`\`\`
+Hauteur par niveau : (5 × 0,35) + 0,15 + 0,10 = 1,90 m
+Niveaux : 15 / 1,90 = 7,89… → **7 hauteurs**
+
+(Variante corrigé : 15 / ((5×0,35) + 0,15 + 0,10) = 7,5 → **7**)
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 7 · 14,4 · 17 · 9,16`;
+
+const DEMO_404_MATHS_SUMMARY = `## Maths — Solutions
+1. **17 palettes** (20 colis/pal · 340 colis)
+2. **14,4 m²** film/palette (2 tours · 1,80 × 4,00 m)
+3. **9,16 kg** brut (8,7 / 95 × 100)
+4. **7 niveaux** (15 m / ~1,90 m par niveau)`;
+
+/** Vérification des acquis Module 404 */
+const DEMO_404_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 404 — Les exigences techniques de stockage**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quelles **conditions de construction** permettent de différencier le stockage ?
+
+:::reponse
+1. Stockage **ouvert** (à ciel ouvert)
+2. Stockage **semi-ouvert** / **couvert**
+3. Stockage **fermé**
+:::
+
+### Question 2
+
+Note le terme technique pour les hauteurs suivantes :
+
+| Hauteur | Terme |
+| --- | --- |
+| À partir de **15 m** | ? |
+| **Inférieur à 7 m** | ? |
+| **> 7 m et < 15 m** | ? |
+
+:::reponse
+| Hauteur | Terme |
+| --- | --- |
+| ≥ 15 m | **Entrepôts à grande hauteur** (MGH) |
+| < 7 m | **Entrepôts à faible hauteur** |
+| > 7 m et < 15 m | **Entrepôts à moyenne hauteur** |
+:::
+
+### Question 3
+
+Pourquoi le stockage à **faible hauteur** est-il le plus courant en PME ? Cite **deux raisons**.
+
+:::reponse
+1. **Peu coûteux** à l'achat / à l'aménager
+2. S'**intègre bien** dans les bâtiments existants (pas de nouvelle infrastructure lourde)
+:::
+
+### Question 4
+
+Dans un **système de stockage complexe**, cite **quatre composants** à relier entre eux.
+
+:::reponse
+Exemples (citer quatre) :
+- Dispositifs de **déchargement** et de **chargement**
+- Installation de stockage **statique**
+- Installation de stockage **dynamique**
+- **Convoyeurs continus** (bande, rouleaux)
+- **Convoyeurs discontinus** (chariots, AGV, transstockeurs, monte-charges)
+- Postes de **préparation de commandes**
+- Installations d'**emballage**
+:::
+
+### Question 5
+
+Différence entre entrepôt **mécanisé** et entrepôt **entièrement automatisé** ?
+
+:::reponse
+Dans les **deux** cas, des appareils assistent stockage et préparation.
+
+**Automatisé** — appareils commandés par **ordinateur** (WMS) · l'homme intervient surtout en cas de **dysfonctionnement**.
+
+**Mécanisé** — la commande des appareils est assurée par l'**employé** (ex. transstockeur à conducteur).
+:::`;
+
+const DEMO_404_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Ouvert · semi-ouvert/couvert · fermé
+2. ≥15 m = grande hauteur · <7 m = faible · 7–15 m = moyenne
+3. Peu coûteux · s'intègre aux bâtiments existants
+4. Chargement/déchargement · stockage stat./dyn. · convoyeurs · picking · emballage
+5. Mécanisé = opérateur · Automatisé = WMS, intervention si panne`;
+
 /** Contenu Module 405 — Dangers dans les entrepôts */
 const DEMO_405_THEORIE_FULL = `## 5. Dangers dans les entrepôts
 
@@ -23657,6 +24004,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_404_THEORIE_FULL,
       summary: DEMO_404_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_404_GLOSSAIRE_FULL,
+      summary: DEMO_404_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_404_SITUATION_FULL,
+      summary: DEMO_404_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_404_MATHS_FULL,
+      summary: DEMO_404_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_404_VERIFICATION_FULL,
+      summary: DEMO_404_VERIFICATION_SUMMARY,
     },
   },
   "405": {
