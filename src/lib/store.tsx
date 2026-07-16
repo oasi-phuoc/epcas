@@ -54,6 +54,7 @@ import {
 import {
   isClientSupabaseConfigured,
   readSyncMeta,
+  writeSyncMeta,
   type SyncMeta,
 } from "./sync/types";
 import type {
@@ -809,8 +810,29 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
         ...s,
         lessons: s.lessons.map((l) => (l.id === lesson.id ? lesson : l)),
       }));
+      void fetch(`/api/sync/lessons/${encodeURIComponent(lesson.id)}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(lesson),
+      })
+        .then(async (res) => {
+          if (!res.ok) return;
+          const json = (await res.json()) as { revision?: number };
+          if (typeof json.revision === "number") {
+            const meta = readSyncMeta();
+            writeSyncMeta({
+              ...meta,
+              revision: Math.max(meta.revision, json.revision),
+              lastPushedAt: new Date().toISOString(),
+            });
+            setCloudSyncMeta(readSyncMeta());
+          }
+        })
+        .catch(() => {
+          /* hors-ligne ou Supabase absent : contenu local uniquement */
+        });
     },
-    [commit],
+    [commit, setCloudSyncMeta],
   );
 
   const upsertInformatiqueExercise = useCallback(

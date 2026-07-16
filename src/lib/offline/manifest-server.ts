@@ -4,6 +4,7 @@ import {
   buildCurriculumModules,
   curriculumBlocks,
 } from "@/lib/curriculum";
+import { loadMergedLessons } from "@/lib/sync/published-lessons";
 import type { Lesson, LessonAttachment, LessonPageSlug, Module } from "@/lib/types";
 
 export type ContentManifestEntry = {
@@ -87,12 +88,10 @@ export function buildLessonPack(lesson: Lesson): LessonPackPayload {
 }
 
 let cachedManifest: ContentManifest | null = null;
+let cachedManifestVersion: string | null = null;
 
-export function buildContentManifest(): ContentManifest {
-  if (cachedManifest) return cachedManifest;
-
+function buildManifestFromLessons(lessons: Lesson[]): ContentManifest {
   const modules = buildCurriculumModules();
-  const lessons = buildCurriculumLessons();
   const moduleById = new Map(modules.map((m) => [m.id, m] as const));
   const blockById = new Map(curriculumBlocks.map((b) => [b.id, b] as const));
 
@@ -120,14 +119,37 @@ export function buildContentManifest(): ContentManifest {
   const versionSeed = entries.map((e) => `${e.id}:${e.hash}`).join("|");
   const version = hashContent(versionSeed);
 
-  cachedManifest = {
+  return {
     version,
     generatedAt: new Date().toISOString(),
     totalEntries: entries.length,
     totalBytes,
     entries,
   };
+}
+
+export function buildContentManifest(): ContentManifest {
+  if (cachedManifest) return cachedManifest;
+  const lessons = buildCurriculumLessons();
+  cachedManifest = buildManifestFromLessons(lessons);
+  cachedManifestVersion = cachedManifest.version;
   return cachedManifest;
+}
+
+/** Manifeste basé sur Supabase + catalogue (source publique pour tous les utilisateurs). */
+export async function buildContentManifestAsync(): Promise<ContentManifest> {
+  const lessons = await loadMergedLessons();
+  const manifest = buildManifestFromLessons(lessons);
+  if (cachedManifestVersion !== manifest.version) {
+    cachedManifest = manifest;
+    cachedManifestVersion = manifest.version;
+  }
+  return manifest;
+}
+
+export function invalidateContentManifestCache(): void {
+  cachedManifest = null;
+  cachedManifestVersion = null;
 }
 
 export function getLessonPackById(id: string): LessonPackPayload | null {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import {
   Alert,
@@ -27,6 +27,7 @@ import { LessonAttachmentsPanel } from "@/components/LessonAttachmentsPanel";
 import { moduleVisibleForLevel } from "@/lib/levels";
 import { isStaffRole } from "@/lib/roles";
 import { useAppStore } from "@/lib/store";
+import type { LessonPackPayload } from "@/lib/offline/manifest-server";
 import {
   loadTheoryChapterIndex,
   saveTheoryChapterIndex,
@@ -41,7 +42,47 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
   const { state, currentUser, getUserProgress, setLessonProgress, userLevel } =
     useAppStore();
 
-  const lesson = state.lessons.find((l) => l.id === lessonId);
+  const lessonFromStore = state.lessons.find((l) => l.id === lessonId);
+  const [livePack, setLivePack] = useState<LessonPackPayload | null>(null);
+
+  const lesson = useMemo(() => {
+    if (!lessonFromStore) return undefined;
+    if (!livePack) return lessonFromStore;
+    return {
+      ...lessonFromStore,
+      title: livePack.title,
+      contentFull: livePack.contentFull,
+      contentSummary: livePack.contentSummary,
+      contentFullAfp: livePack.contentFullAfp,
+      contentSummaryAfp: livePack.contentSummaryAfp,
+      attachments: livePack.attachments ?? lessonFromStore.attachments,
+      attachmentsAfp: livePack.attachmentsAfp ?? lessonFromStore.attachmentsAfp,
+      published: livePack.published,
+    };
+  }, [lessonFromStore, livePack]);
+
+  const fetchLiveLesson = useCallback(() => {
+    void fetch(`/api/content/lessons/${encodeURIComponent(lessonId)}`, {
+      cache: "no-store",
+    })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((pack: LessonPackPayload | null) => {
+        if (pack) setLivePack(pack);
+      })
+      .catch(() => {
+        /* garde le contenu local */
+      });
+  }, [lessonId]);
+
+  useEffect(() => {
+    fetchLiveLesson();
+  }, [fetchLiveLesson]);
+
+  useEffect(() => {
+    const onFocus = () => fetchLiveLesson();
+    window.addEventListener("focus", onFocus);
+    return () => window.removeEventListener("focus", onFocus);
+  }, [fetchLiveLesson]);
   const mod = lesson
     ? state.modules.find((m) => m.id === lesson.moduleId)
     : undefined;
