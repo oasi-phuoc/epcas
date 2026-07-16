@@ -24129,6 +24129,275 @@ const DEMO_605_OBJECTIFS_SUMMARY = `## Objectifs
 - Tri & distribution
 - PickPost / My Post 24`;
 
+/** Glossaire Module 605 */
+const DEMO_605_GLOSSAIRE_FULL = `## Glossaire — Module 605
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Machines de tri** | §5.4 | Automates de tri postal · lecture rue + **NPA** · code-barres · si échec → photo + saisie manuelle · jusqu'à ~**18 millions** de lettres/jour. |
+| **Alignement à gauche** | §5.1 | Règle d'**adressage** des lettres : adresse alignée à gauche · 3–6 lignes · NPA + localité · indispensable pour le tri automatique. |
+| **Norme** | §5.1 | Critères stricts d'étiquetage (police, disposition, code-barres, expéditeur) pour un flux postal **sans faille** dépôt → distribution. |
+| **Services douaniers** | §5.3 | Contrôles douaniers pays d'**origine et destination** à l'export · documents complets · hubs Urdorf / ZRH / Mülligen selon poids. |
+| **Centres de tri de courrier et de colis** | §5.4 | **3 grands centres** lettres (oblitération, tri séquencé) · centres colis (RollBox RX, tri NPA, distribution régionale). |`;
+
+const DEMO_605_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Adressage** aligné à gauche · normes strictes pour machines
+- **Tri** lettres (séquencé) · colis (RollBox RX)
+- **Export** = douanes · hubs selon poids
+- **AMP** = gestion adresses · **My Post 24** = 24/7`;
+
+/** Mises en situation Module 605 */
+const DEMO_605_SITUATION_FULL = `## Mises en situation — Module 605
+
+**La Poste Suisse** : tarifs, MyPost24, portrait employeur, prestations lettres/colis, quiz EnterSite.
+
+### Vue d'ensemble des missions
+1. Consulter les tarifs d'envoi (3 colis)
+2. MyPost24
+3. La Poste en tant qu'employeur
+4. MindMap prestations lettres/colis
+5. Test connaissances — EnterSite logistique salle 3V3
+6. Discussion STA
+
+---
+
+## Mission 1 — Tarifs Poste Suisse
+
+Rechercher les prix sur **post.ch** pour :
+
+| # | Destination | Poids | Délai / options |
+| --- | --- | --- | --- |
+| 1 | Australie (Wishart QLD) | 1,56 kg · 200×200×50 mm | ≤ 2 semaines |
+| 2 | Lenk (imprimante) | 12 kg · 20×20×10 cm | 1 semaine · **signature** |
+| 3 | Sarnen (encre) | 1,8 kg · 10×10×10 cm | **Demain avant 9 h** · signature |
+
+:::reponse
+**Réponse individuelle** — tarifs actuels sur post.ch · prestation adaptée (international / PRI+SI / Lune+SI…) · prix CHF.
+:::
+
+---
+
+## Mission 2 — MyPost24
+
+:::reponse
+**Offre** — accès **24/7** à des boîtes à colis et points de retrait · réception et envoi de colis · notification à l'arrivée.
+
+**Cible** — particuliers absents · **PME** indépendantes des heures de guichet.
+
+**Avantages**
+- Flexibilité (week-ends, fériés)
+- Boîtes sûres et résistantes aux intempéries
+- Gain de temps (pas d'attente livraison)
+- Nombreux sites en Suisse
+
+**Site le plus proche** — **réponse individuelle** (lien localisateur Poste).
+:::
+
+---
+
+## Mission 3 — Portrait La Poste (employeur)
+
+:::reponse
+**Histoire** — fondation **1849** (État fédéral moderne).
+
+**Statut** — entreprise publique **100 % Confédération** · filiales : Post CH SA, PostFinance, CarPostal, Communication, Réseau.
+
+**Missions** — lettres · colis/logistique · PostFinance · filiales · boîtes postales / MyPost 24 · e-commerce · international · paiements électroniques.
+
+**Employeur** — l'un des plus grands employeurs CH (facteurs, logistique, IT, banque…).
+
+**Durabilité** — réduction CO₂ · véhicules électriques · énergies renouvelables · emballages écologiques.
+
+**Innovation** — services numériques · plateformes en ligne.
+
+**PostFinance** — comptes, crédits, paiements.
+:::
+
+---
+
+## Mission 4 — MindMap prestations
+
+:::reponse
+**Réponse individuelle** — carte mentale : subdivision **lettres** (A, B, R, BLN, Lune, SameDay…) et **colis** (PRI, ECO, SP, SI, AS, FRA…).
+:::
+
+---
+
+## Mission 5 — EnterSite logistique salle 3V3
+
+:::reponse
+**Réponse individuelle** — visite virtuelle **logistique salle 3V3** · image à droite · test de connaissances envoi postal.
+:::
+
+---
+
+## Mission 6 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_605_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : tarifs post.ch · international / SI / Lune
+- **M2** : MyPost24 = 24/7 · particuliers + PME
+- **M3** : Poste 1849 · service public · PostFinance
+- **M4** : MindMap lettres vs colis
+- **M5** : EnterSite 3V3`;
+
+/** Exercices de maths Module 605 */
+const DEMO_605_MATHS_FULL = `## Exercices de mathématiques — Module 605
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Hausse timbre Courrier B
+
+2020 : **1'706 millions** de lettres · Courrier B **85 ct** → 2022 : **90 ct** (même volume).
+
+:::solution
+**CHF 85'300'000** de gain supplémentaire
+
+\`\`\`
+1'706'000'000 × (0,90 − 0,85) = 85'300'000 CHF
+\`\`\`
+:::
+
+### Exercice 2 — Part des lettres dans les recettes
+
+2020 : recettes **CHF 7'074 millions** · **1'706 millions** lettres B à **85 ct**.
+
+:::solution
+**20,5 %** (environ) des recettes
+
+\`\`\`
+1'706'000'000 × 0,85 / 7'074'000'000 × 100 = 20,5 %
+\`\`\`
+:::
+
+### Exercice 3 — Saisie manuelle NPA
+
+**1,5 %** des 1'706 millions de lettres illisibles pour la machine.
+
+:::solution
+**25'590'000 lettres**
+
+\`\`\`
+1'706'000'000 × 1,5 / 100 = 25'590'000
+\`\`\`
+:::
+
+### Exercice 4 — Capacité saisie & effectif nécessaire
+
+1 code postal/seconde · **8,5 h/j** · **200 j/an** · traiter les lettres de l'ex. 3.
+
+:::solution
+- **30'600 courriers/jour** par personne
+- **4,18 collaborateurs** (un peu plus de **4**)
+
+\`\`\`
+8,5 × 3'600 × 1 = 30'600 / jour
+25'590'000 / (200 × 30'600) = 4,18
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 85'300'000 · 20,5 · 25'590'000 · 30'600 · 4,18`;
+
+const DEMO_605_MATHS_SUMMARY = `## Maths — Solutions
+1. Gain timbre B : **85'300'000 CHF**
+2. Part recettes lettres : **20,5 %**
+3. Saisie manuelle : **25'590'000** lettres
+4. **30'600**/j · **4,18** collaborateurs`;
+
+/** Vérification des acquis Module 605 */
+const DEMO_605_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 605 — Service d'envoi postal**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Inscris l'étiquette d'adresse (n° d'envoi + prestations) :
+
+**Destinataire** : BWZ OW · Herr Mulwich · Grundacherweg 6 · 6060 Sarnen  
+**Expéditeur** : EnterSite AG · Rigistrasse 2 · 5102 Rupperswil  
+**Prestation** : livraison **demain avant 9 h** + **accusé de réception**
+
+:::reponse
+\`\`\`
+                                    [Code-barres envoi]
+                                    [Swiss-Express Lune]
+                                    [Signature / AR]
+
+BWZ OW
+Herr Mulwich
+Grundacherweg 6
+6060 Sarnen
+
+
+EnterSite AG          ← expéditeur vertical à gauche
+Rigistrasse 2
+5102 Rupperswil
+\`\`\`
+
+Adresse destinataire **alignée à gauche** · étiquettes prestations à **droite** du code-barres · **Lune** (avant 9 h) + **signature** (accusé de réception).
+:::
+
+### Question 2
+
+Prestations **lettres** : Courrier A · B · R · BLN · Swiss-Express Lune · SameDay
+
+:::reponse
+- **Courrier A** — J+1 (lun–sam)
+- **Courrier B** — économique · au plus tard **3e** jour ouvrable (lun–ven)
+- **R (recommandé)** — contre **signature** · preuve · assuré **500 CHF**
+- **BLN** — remise contre **paiement** espèces · crédit compte postal expéditeur
+- **Swiss-Express Lune** — dépôt avant fermeture guichets → lendemain **avant 9 h**
+- **SameDay Coursier** — **jour même** (lun–ven) · plus cher
+:::
+
+### Question 3
+
+Prestations **colis** : PRI · ECO · SP · SI · BLN · RMP · AS · FRA · Lune · SameDay
+
+:::reponse
+- **PRI (Priority)** — J+1 lun–ven
+- **ECO (Economy)** — 2e jour ouvrable lun–ven
+- **SP (encombrants)** — volumineux / non emballés · tri manuel
+- **SI (Signature)** — contre signature · responsabilité **1'500 CHF**
+- **BLN** — comme lettres (contre-remboursement)
+- **RMP** — remise **en personne** à la personne nommée (clients commerciaux)
+- **AS (Assurance)** — comme SI · assuré **5'000 CHF** · discret
+- **FRA (Fragile)** — soin particulier · assuré **5'000 CHF**
+- **Lune / SameDay** — comme lettres
+:::
+
+### Question 4
+
+Moyens techniques pour la **distribution** à la Poste ?
+
+:::reponse
+Selon rentabilité et conditions locales : à **pied**, **vélo**, **scooter électrique**, **tricycle électrique (DXP)**, **voiture** ou **camionnette**.
+
+Le livreur utilise un **scanner** à main (smartphone) pour les codes-barres et données de tournée.
+:::
+
+### Question 5
+
+Explique la **gestion des adresses** (AMP).
+
+:::reponse
+Quand un **nouveau client** emménage, le facteur saisit les données dans le système **AMP** (*Adress-Management Post*).
+
+Les données AMP sont mises à jour **quotidiennement** par tous les facteurs en Suisse.
+
+Adresses correctes → **moins d'erreurs** de livraison · base du **tri séquencé**.
+:::`;
+
+const DEMO_605_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Étiquette : gauche · Lune + AR/SI · expéditeur vertical
+2. A J+1 · B 3j · R 500 CHF · BLN · Lune 9h · SameDay
+3. PRI/ECO/SP · SI 1'500 · AS/FRA 5'000 · RMP commercial
+4. Pied · vélo · DXP · voiture · scanner
+5. **AMP** = saisie facteur · MAJ quotidienne · tri séquencé`;
+
 /** Contenu Module 606 — Le transport routier */
 const DEMO_606_THEORIE_FULL = `## 6. Le transport routier
 
@@ -29405,6 +29674,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_605_THEORIE_FULL,
       summary: DEMO_605_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_605_GLOSSAIRE_FULL,
+      summary: DEMO_605_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_605_SITUATION_FULL,
+      summary: DEMO_605_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_605_MATHS_FULL,
+      summary: DEMO_605_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_605_VERIFICATION_FULL,
+      summary: DEMO_605_VERIFICATION_SUMMARY,
     },
   },
   "606": {
