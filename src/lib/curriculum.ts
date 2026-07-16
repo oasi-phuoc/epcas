@@ -33112,15 +33112,15 @@ Il y a **4 alignements possibles** : gauche, droite, centré et justifié.
 
 Dans Word, vous pouvez insérer différents types d'illustration comme des images, des formes, des schémas, etc.
 
+![](/assets/curriculum/805/word/illustrations/img-01-ruban-insertion.png)
+
 Dans le ruban vous avez :
 
 1. **Images**
 2. **Formes**
-3. **Schémas**
+3. **Schémas** (SmartArt, graphiques…)
 4. **Capture d'écran**
 5. **Zone de texte** et **WordArt**
-
-![](/assets/curriculum/805/word/illustrations/img-01-ribbon.svg)
 
 #### Insérer des images
 

@@ -11,7 +11,8 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { initialState, getCurriculumLessonById } from "./demo-data";
+import { getCurriculumLessonById, initialState } from "./demo-data";
+import { mergeLessonWithCurriculumBase } from "./curriculum-lesson-merge";
 import { isStaffRole } from "./roles";
 import {
   assessmentVisibleForLevel,
@@ -88,23 +89,6 @@ const LEGACY_STORAGE_KEYS = [
   "epcas-logistique-v88",
   "epcas-logistique-v87",
 ];
-
-/** Ancien placeholder OneNote : à remplacer par le curriculum dès qu'il est rempli. */
-function isPlaceholderLessonContent(text: string | undefined | null): boolean {
-  if (!text || !text.trim()) return true;
-  return (
-    text.includes("## Contenu à importer") ||
-    text.includes("Contenu résumé à compléter après import OneNote")
-  );
-}
-
-function preferCurriculumContent(
-  saved: string | undefined,
-  base: string,
-): string {
-  if (saved == null || isPlaceholderLessonContent(saved)) return base;
-  return saved;
-}
 
 type AppStore = {
   state: AppState;
@@ -274,26 +258,7 @@ function normalizeState(parsed: Partial<AppState> | null): AppState {
   );
   const lessons = initialState.lessons.map((base) => {
     const saved = lessonMap.get(base.id);
-    if (!saved) return base;
-    return {
-      ...base,
-      ...saved,
-      id: base.id,
-      moduleId: base.moduleId,
-      pageSlug: base.pageSlug,
-      order: base.order,
-      title: saved.title || base.title,
-      // Si le navigateur a encore l'ancien "Contenu à importer", on reprend
-      // le texte curriculum (ex. blocs 500 / 600 / 700 déjà intégrés).
-      contentFull: preferCurriculumContent(saved.contentFull, base.contentFull),
-      contentSummary: preferCurriculumContent(
-        saved.contentSummary,
-        base.contentSummary,
-      ),
-      contentFullAfp: saved.contentFullAfp,
-      contentSummaryAfp: saved.contentSummaryAfp,
-      published: saved.published ?? base.published,
-    };
+    return mergeLessonWithCurriculumBase(saved, base);
   });
   const modules = normalizeModules(parsed.modules);
 

@@ -2,6 +2,7 @@ import { initialState } from "@/lib/demo-data";
 import { buildCurriculumLessons } from "@/lib/curriculum";
 import { createServiceClient, isSupabaseConfigured } from "@/lib/supabase/service";
 import { APP_STATE_SYNC_ID } from "@/lib/sync/types";
+import { mergeLessonWithCurriculumBase } from "@/lib/curriculum-lesson-merge";
 import type { AppState, Lesson } from "@/lib/types";
 
 /** Fusionne le catalogue Git avec les leçons enregistrées dans Supabase. */
@@ -13,16 +14,7 @@ export function mergeCurriculumWithRemoteLessons(
   const map = new Map(remote.map((l) => [l.id, l] as const));
   return base.map((b) => {
     const saved = map.get(b.id);
-    if (!saved) return b;
-    return {
-      ...b,
-      ...saved,
-      id: b.id,
-      moduleId: b.moduleId,
-      pageSlug: b.pageSlug,
-      order: b.order,
-      title: saved.title?.trim() ? saved.title : b.title,
-    };
+    return mergeLessonWithCurriculumBase(saved, b);
   });
 }
 
