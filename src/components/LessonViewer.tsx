@@ -15,6 +15,8 @@ import { TheoryChapterNav } from "@/components/TheoryChapterNav";
 import {
   getLessonBody,
   isExercisePageSlug,
+  isTheoryPageSlug,
+  MODULE_EXERCISE_PAGE_SLUGS,
 } from "@/lib/lesson-content";
 import { moduleVisibleForLevel } from "@/lib/levels";
 import { isStaffRole } from "@/lib/roles";
@@ -46,7 +48,11 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
   }, [currentUser, getUserProgress, lessonId]);
 
   const isTrainer = Boolean(currentUser && isStaffRole(currentUser.role));
-  const summaryMode = progress?.modePref === "summary";
+  const isTheoryPage = lesson ? isTheoryPageSlug(lesson.pageSlug) : false;
+  const isInteractiveExercisePage = lesson
+    ? MODULE_EXERCISE_PAGE_SLUGS.includes(lesson.pageSlug)
+    : false;
+  const summaryMode = isTheoryPage && progress?.modePref === "summary";
   const isTheoryBody = lesson?.pageSlug === "theorie";
 
   const body = useMemo(() => {
@@ -141,7 +147,9 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
         description={
           mod
             ? `Module ${mod.code} — ${mod.title}`
-            : "Basculez en mode résumé pour réviser."
+            : isTheoryPage
+              ? "Basculez en mode résumé pour réviser."
+              : undefined
         }
         actions={
           <Link href={backHref}>
@@ -161,20 +169,24 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
         </div>
       ) : null}
 
-      <div className="mb-4 animate-soft-pop">
-        <Switch
-          checked={summaryMode}
-          onChange={toggleMode}
-          label="Mode résumé"
-          description="Affiche uniquement les points clés à retenir"
-        />
-      </div>
+      {isTheoryPage ? (
+        <div className="mb-4 animate-soft-pop">
+          <Switch
+            checked={summaryMode}
+            onChange={toggleMode}
+            label="Mode résumé"
+            description="Affiche uniquement les points clés à retenir"
+          />
+        </div>
+      ) : null}
 
       <Panel className="animate-fade-up">
         <div className="mb-4 flex flex-wrap gap-2">
-          <Badge tone={summaryMode ? "accent" : "primary"}>
-            {summaryMode ? "Résumé" : "Complet"}
-          </Badge>
+          {isTheoryPage ? (
+            <Badge tone={summaryMode ? "accent" : "primary"}>
+              {summaryMode ? "Résumé" : "Complet"}
+            </Badge>
+          ) : null}
           {mod ? <Badge tone="neutral">{mod.code}</Badge> : null}
           {progress?.status === "done" ? (
             <Badge tone="success">Lu</Badge>
@@ -195,7 +207,17 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
           />
         ) : null}
 
-        <MarkdownLite text={displayBody} />
+        <MarkdownLite
+          text={displayBody}
+          answerMode={
+            isInteractiveExercisePage && !isTrainer ? "input" : "reveal"
+          }
+          answerStorageKey={
+            isInteractiveExercisePage && !isTrainer && currentUser
+              ? `${currentUser.id}:${lessonId}`
+              : undefined
+          }
+        />
 
         {paginated && chapters ? (
           <TheoryChapterNav

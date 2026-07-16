@@ -1,5 +1,14 @@
 import type { ReactNode } from "react";
 import { AnswerReveal } from "@/components/AnswerReveal";
+import { ExerciseAnswerField } from "@/components/ExerciseAnswerField";
+
+export type MarkdownLiteProps = {
+  text: string;
+  /** "reveal" = formateur / éditeur ; "input" = saisie élève avec Valider / Contrôle */
+  answerMode?: "reveal" | "input";
+  /** Clé de persistance : `${userId}:${lessonId}` */
+  answerStorageKey?: string;
+};
 
 function formatInline(text: string): ReactNode[] {
   // Gras · surlignage · italique · code · liens
@@ -104,10 +113,25 @@ function parseRevealBlock(lines: string[], start: number) {
     i += 1;
   }
   if (i < lines.length) i += 1; // skip closing :::
-  return { body: body.join("\n"), nextIndex: i, label };
+  return {
+    body: body.join("\n"),
+    nextIndex: i,
+    label,
+    kind: kind.startsWith("solution") ? ("solution" as const) : ("reponse" as const),
+  };
 }
 
-function renderBlock(lines: string[], startKey: number): ReactNode[] {
+type RenderOptions = {
+  answerMode: "reveal" | "input";
+  answerStorageKey?: string;
+  questionCounter: { value: number };
+};
+
+function renderBlock(
+  lines: string[],
+  startKey: number,
+  options: RenderOptions,
+): ReactNode[] {
   const nodes: ReactNode[] = [];
   let i = 0;
 
@@ -125,11 +149,31 @@ function renderBlock(lines: string[], startKey: number): ReactNode[] {
 
     const reveal = parseRevealBlock(lines, i);
     if (reveal) {
-      nodes.push(
-        <AnswerReveal key={`r-${key}`} label={reveal.label}>
-          <MarkdownLite text={reveal.body} />
-        </AnswerReveal>,
-      );
+      const questionIndex = options.questionCounter.value;
+      options.questionCounter.value += 1;
+
+      if (options.answerMode === "input" && options.answerStorageKey) {
+        const [userId, lessonId] = options.answerStorageKey.split(":");
+        nodes.push(
+          <ExerciseAnswerField
+            key={`q-${key}`}
+            questionId={`q-${questionIndex}`}
+            lessonId={lessonId}
+            userId={userId}
+            teacherAnswer={reveal.body}
+            kind={reveal.kind}
+            label={reveal.label}
+          >
+            <MarkdownLite text={reveal.body} answerMode="reveal" />
+          </ExerciseAnswerField>,
+        );
+      } else {
+        nodes.push(
+          <AnswerReveal key={`r-${key}`} label={reveal.label}>
+            <MarkdownLite text={reveal.body} answerMode="reveal" />
+          </AnswerReveal>,
+        );
+      }
       i = reveal.nextIndex;
       continue;
     }
@@ -257,7 +301,20 @@ function renderBlock(lines: string[], startKey: number): ReactNode[] {
   return nodes;
 }
 
-export function MarkdownLite({ text }: { text: string }) {
+export function MarkdownLite({
+  text,
+  answerMode = "reveal",
+  answerStorageKey,
+}: MarkdownLiteProps) {
   const lines = text.split("\n");
-  return <div className="space-y-1">{renderBlock(lines, 0)}</div>;
+  const questionCounter = { value: 0 };
+  return (
+    <div className="space-y-1">
+      {renderBlock(lines, 0, {
+        answerMode,
+        answerStorageKey,
+        questionCounter,
+      })}
+    </div>
+  );
 }
