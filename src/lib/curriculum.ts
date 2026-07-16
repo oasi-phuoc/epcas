@@ -27179,6 +27179,268 @@ const DEMO_613_OBJECTIFS_SUMMARY = `## Objectifs
 - Cadre postal
 - LPMVM · marges`;
 
+/** Glossaire Module 613 */
+const DEMO_613_GLOSSAIRE_FULL = `## Glossaire — Module 613
+
+| Terme spécialisé | Définition |
+| --- | --- |
+| **Orientation service** | L'entreprise oriente ses produits et prestations en fonction des **besoins et souhaits** de ses clients. |
+| **Qualité du service** | Détermine si un produit ou une prestation **répond aux attentes** de la clientèle — remplies ou dépassées si la qualité est bonne. |
+| **Image** | **Réputation** de l'entreprise — ce que les gens pensent de l'entreprise. |
+| **Envois CEC et courrier** | Offres de prestations des entreprises de distribution : **CEC** = coursier, express, colis · **courrier** = expédition de lettres. |
+| **Mandat de service universel / Service public** | La Poste a pour mandat de la Confédération de proposer partout en Suisse des prestations importantes au **même prix** et dans la **même qualité**. |
+| **Loi sur la poste** | Décrit les prestations que la Poste **doit fournir** à la population. |
+| **Services universels** | Prestations que la Poste **doit fournir** en vertu de la loi sur la poste. |
+| **Monopole** | Seule cette entreprise est **autorisée** à proposer ce produit ou cette prestation. |
+| **Coûts de distribution** | Coûts du transport d'un produit du **fabricant au client final**. |
+| **Marge** | Prix de vente − prix d'achat · bénéfice par produit vendu ou prestation fournie (≠ bénéfice net). |
+| **Flux monétaire** | Indique où l'argent est **dépensé ou encaissé** dans l'entreprise · évaluation de la situation financière. |`;
+
+const DEMO_613_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Qualité** : attentes ↔ prestation · **6B** · image
+- **Postal** : service universel · réservé ≤50 g · non réservé · libre
+- **Coûts** : LPMVM · marge · flux monétaire`;
+
+/** Mises en situation Module 613 */
+const DEMO_613_SITUATION_FULL = `## Mises en situation — Module 613
+
+**EnterSite / LOGO** — trois blocs : qualité de service, cadre légal postal, coûts de distribution.
+
+---
+
+## Bloc A — Qualité du service dans les entreprises de distribution
+
+### Exercice A1 — Une histoire vraie (colis non livré)
+
+:::reponse
+**Erreurs** :
+- Facteur n'a **pas sonné** (invitation de retrait déposée)
+- Guichet : collaboratrice **non responsable** · cliente non comprise
+- Service clientèle : ton **pincé** · demande **pas prise au sérieux**
+
+**Amabilité** (au moins 3) : sourire · accueil · ton approprié · prendre l'interlocuteur au sérieux
+
+**Éviter la plainte** : sonner · écouter · traiter la réclamation · s'excuser · corriger le processus
+:::
+
+### Exercice A2 — Croquis qualité de service (LOGO)
+
+:::reponse
+**Réponse individuelle** — croquis ou 3 termes expliqués à la stagiaire.
+
+Mentionner la **règle des 6B** : bonne **marchandise** · **qualité** · **moment** · **endroit** · **quantité** · **prix**.
+:::
+
+### Exercice A3 — Orientation service (automate à colis)
+
+:::reponse
+Exemples concrets :
+- **Saluer** le client
+- Expliquer **aimablement** le dépôt à l'automate
+- **Écoute attentive**
+- Manipuler les envois **avec soin**
+- Rester **disponible** et courtois
+:::
+
+### Exercice A4 — Mind map : pourquoi la qualité compte ?
+
+:::reponse
+| Raison | Exemple |
+| --- | --- |
+| **Image** | Entreprise perçue positivement |
+| **Satisfaction clientèle** | Clients racontent des expériences positives |
+| **Argent / CA** | Clients réguliers reviennent · recommandations → plus de ventes |
+| **Concurrence** | Se démarquer par une qualité de service élevée |
+:::
+
+### Exercice A5 — Expériences personnelles
+
+:::reponse
+**Réponse individuelle** — smiley + 3 mots (bonne et mauvaise expérience) · échange en classe.
+:::
+
+### Exercice A6 — Changement de perspective
+
+:::reponse
+| Bonne expérience :) | Mauvaise expérience :( |
+| --- | --- |
+| Expérience racontée → **nouveaux clients** | Client **n'achète plus** |
+| **Bouche-à-oreille** positif | **Mauvaise image** · expérience négative partagée |
+| **Fidélisation** · clients réguliers | **Moins de CA** |
+| Plus de CA · **salaires assurés** | Plaintes sur **réseaux sociaux** |
+| **Lien émotionnel** avec la marque | |
+:::
+
+### Exercice A7 — Conseils pour LOGO (retours négatifs EnterSite)
+
+:::reponse
+**Conséquences** : perte d'**image** · perte de **clients** · réclamations ↑ · recettes ↓ · passage à la **concurrence**
+
+**Conseils** :
+- **Formations** qualité de service
+- Prescriptions **écrites** et communiquées
+- **Dialogue** avec les collaborateurs concernés
+- Prendre les réclamations **au sérieux**
+- **Contrôle qualité** renforcé
+:::
+
+---
+
+## Bloc B — Conditions-cadres légales sur le marché de la distribution
+
+### Exercice B1 — Classer les termes
+
+:::reponse
+| Terme | Définition |
+| --- | --- |
+| Envois CEC et courrier | **C** |
+| Mandat de service universel | **A** |
+| Loi sur la poste | **D** |
+| Services universels | **B** |
+| Monopole | **E** |
+| Service libre | **F** |
+
+**Exemples** :
+- **Service public** : filiale Poste accessible en ~20 min (pied/TP) pour paiements
+- **Monopole** : lettres intérieures ≤ **50 g** · prix fixé par l'État · amende jusqu'à **100 000 CHF**
+- **Envois CEC** : coursier, express, colis
+:::
+
+### Exercice B2 — Extrait de loi
+
+:::reponse
+**Où ?** — **Loi sur la poste**
+
+**Sujet** — **Mandat de service universel**
+
+**Sans cette loi** (idées) : prix variables selon parcours · offre selon rentabilité · zones isolées délaissées · pas de service à domicile · courrier pas quotidien · prix urbains ↓ / ruraux ↑ · impact personnes âgées (guichet)…
+:::
+
+### Exercice B3 — Texte à trous
+
+:::reponse
+La Poste a pour mandat de la Confédération d'assurer le **service universel** en Suisse. Ce mandat est désigné par le terme **service public** et est réglementé dans la **loi sur la poste**.
+
+Font partie du service universel les prestations proposées dans toute la Suisse dans la même qualité et aux mêmes prix. Le service **réservé**, pour lequel seule la Poste est autorisée à proposer certaines prestations, en fait partie. Les lettres du service intérieur jusqu'à **50** grammes en sont un exemple. Ce service fait partie des **services universels**.
+
+Si d'autres entreprises peuvent proposer la prestation (ex. colis), il s'agit d'un service **non réservé**.
+
+Outre ces prestations régies par la loi, la Poste peut proposer d'autres prestations sans droit spécial de la Confédération. C'est le **service libre**.
+:::
+
+### Exercice B4 — Mandats de service universel en Suisse
+
+:::reponse
+**Entreprises** : **Poste** · **CFF** · **Swisscom** · **SSR**
+
+**Exemples de contact** :
+- **Poste** — changement d'adresse · réexpédition du courrier
+- **CFF** — transports publics vers l'école professionnelle
+- **Swisscom** — Internet et raccordement fixe pour tous les ménages
+- **SSR** — informations locales · messages urgents police/alarmes
+:::
+
+### Exercice B5 — Idée du « pigeon voyageur »
+
+:::reponse
+**Mauvaise idée** pour lettres < **50 g** — service **réservé** · amendes élevées possibles.
+
+**Possible** si seules des lettres **> 50 g** (hors monopole réservé).
+:::
+
+### Exercice B6 — Attribuer les produits
+
+:::reponse
+| Produit | Service | Réservé / non réservé |
+| --- | --- | --- |
+| Colis | **Universel** | **Non réservé** |
+| Journaux distribution matinale | **Libre** | — |
+| Abonnements téléphonie mobile | **Libre** | — |
+| Grandes lettres | **Universel** | **Non réservé** |
+| Transport de marchandises | **Libre** | — |
+| Versements | **Universel** | **Non réservé** |
+| Liaisons par bus | **Libre** | — |
+| Distribution des journaux | **Universel** | **Non réservé** |
+:::
+
+---
+
+## Bloc C — Coûts dans le processus de distribution
+
+### Exercice C1 — Camionnette poulet rôti
+
+:::reponse
+**Réponse individuelle** — calculer tous les coûts (LPMVM) · fixer prix poulet entier / demi-poulet · pistes d'économies ou revenus supplémentaires.
+:::
+
+### Exercice C2 — Réaliser des économies (−10 % Poste)
+
+:::reponse
+Au moins **5 mesures** (exemples) :
+- Surfaces de bureau **optimisées**
+- **Économies d'énergie** (éclairage, chauffage, e-mobilité, renouvelables)
+- Travail **numérique** · réunions virtuelles · moins d'impression
+- **Optimisation itinéraires** de distribution
+- Distribution **tous les 2 jours** · levée BA réduite
+- Filiales peu fréquentées → **partenariat**
+- **Automatisation** de certaines tâches
+:::
+
+### Exercice C3 — Optimisation dans ton entreprise
+
+:::reponse
+**Réponse individuelle** — où trop de moyens ? processus inutiles ou trop compliqués ? que ferais-tu différemment en tant que chef ?
+:::
+
+### Exercice C4 — Commande en ligne (3 flux)
+
+:::reponse
+**Réponse individuelle** — schéma des acteurs (boutique en ligne, banque, entrepôt, transporteur, client) et des **3 flux** :
+- **Marchandises** : entrepôt → transport → domicile
+- **Informations** : commande, suivi, confirmation
+- **Argent** : client → banque → vendeur
+:::
+
+### Exercice C5 — Facteurs de coûts boîte aux lettres publique (LPMVM)
+
+:::reponse
+| Facteur | Pertinent pour BA publique ? | Exemple |
+| --- | --- | --- |
+| **L**oyer | Oui (évent.) | Frais d'utilisation du site |
+| **P**ersonnes | Oui | Vidage, nettoyage, entretien |
+| **M**achines | Non | — |
+| **V**éhicules | Oui | Transport lettres vers prochain point (DXP, véhicule livraison) |
+| **M**atériel | Oui | Produits nettoyage · smartphone professionnel |
+
+→ explique pourquoi une carte postale coûte **1 CHF** (tous ces coûts cumulés dans la chaîne).
+:::
+
+### Exercice C6 — Coûts prise en charge vs point de dépôt desservi
+
+:::reponse
+| Source de coûts | Prise en charge | Point de dépôt desservi |
+| --- | --- | --- |
+| **Personnes** | Personnel | Personnel |
+| **Loyer** | Aucun | Pour le site |
+| **Matériel** | RX, scanner | Ordinateur, imprimante, table, chaise… |
+| **Véhicules** | Véhicule prise en charge | Transport vers centre de tri |
+| **Machines** | Aucune | Aucune |
+:::
+
+---
+
+## Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière avec la classe et l'enseignant(e).
+:::`;
+
+const DEMO_613_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **Bloc A** : 6B · amabilité · mind map (image, CA, concurrence)
+- **Bloc B** : 1C·2A·3D·4B·5E·6F · réservé ≤50 g · pigeon voyageur
+- **Bloc C** : **LPMVM** · 3 flux · BA publique vs prise en charge
+- Mauvaise qualité → bouche-à-oreille ×10–15`;
+
 /** Contenu Module 614 — CPD — Possibilités de dépôt */
 const DEMO_614_THEORIE_FULL = `## 14. Possibilités de dépôt
 
@@ -31734,6 +31996,14 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_613_THEORIE_FULL,
       summary: DEMO_613_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_613_GLOSSAIRE_FULL,
+      summary: DEMO_613_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_613_SITUATION_FULL,
+      summary: DEMO_613_SITUATION_SUMMARY,
     },
   },
   "614": {
