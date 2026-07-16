@@ -12166,6 +12166,261 @@ const DEMO_307_OBJECTIFS_SUMMARY = `## Objectifs
 - Dégâts & indicateurs
 - Protocole sinistre`;
 
+/** Glossaire Module 307 */
+const DEMO_307_GLOSSAIRE_FULL = `## Glossaire — Module 307
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Protocole de dégâts | | Document de **constatation des dégâts** (mise en page libre) décrivant la nature et l'ampleur des dommages, avec **photos**, bon de transport/livraison traité et **visa du transporteur**. Sert de preuve pour le fournisseur et l'assurance. |
+| Indicateur | | Dispositif apposé sur l'emballage pendant le transport pour **détecter** et **prouver** des anomalies (choc, basculement, température…). Vérifié à la prise en charge et à la réception. |
+| Dommages | | Atteintes aux marchandises ou emballages pendant le **transport** ou la **manutention** (déchirures, bosses, fuites, influences climatiques…). À documenter immédiatement (photos, protocole, signature transporteur si présent). |
+| Thermomètre infrarouge | | Appareil **à infrarouge** permettant de mesurer la **température instantanée** à l'arrivée (sans contact). Ne reconstitue pas l'historique du transport — utile en complément des indicateurs/enregistreurs. |
+| Indicateur de basculement | | Indicateur mesurant l'**inclinaison** pendant le transport (ex. sable de quartz ou billes de verre). Se déclenche au-delà d'un angle critique (~60°) → preuve de basculement anormal. |
+| Indicateur de choc | | Indicateur mesurant les **secousses**, **chocs** ou contraintes dues aux chutes (tube en verre + liquide coloré). Coloration **irréversible** en cas de choc anormal. `;
+
+const DEMO_307_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Protocole de dégâts** : constat + photos + visa transporteur
+- **Indicateur** : preuve d'anomalie transport (poser · contrôler départ/arrivée)
+- **Dommages** : atteintes transport/manutention → documenter tout de suite
+- **Thermomètre infrarouge** : température instantanée à l'arrivée
+- **Basculement** : inclinaison · **Choc** : secousses / chutes`;
+
+/** Mises en situation Module 307 */
+const DEMO_307_SITUATION_FULL = `## Mises en situation — Module 307
+
+Contexte : tu travailles à la **réception** chez **EnterSite AG** et formes un **nouveau collègue**. Les missions portent sur les **sources d'erreur**, la **détection des dommages** et le **traitement des sinistres**. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / exemples proposés.
+
+### Vue d'ensemble des missions
+1. Sources d'erreur à la réception
+1.1 Autres signes de marchandises défectueuses
+2. Moyens auxiliaires de détection des dommages
+3. Procédure selon le mode de transport
+4. Établir un protocole de dégâts
+5. Discussion de la mise en situation
+
+---
+
+## Mission 1 — Identifier les sources d'erreur
+
+Beaucoup de travail t'attend à la réception. Tu formes un collègue qui découvre le métier. Des erreurs et dommages sont fréquents à la réception.
+
+Décris les différentes **sources d'erreur** auxquelles il doit être particulièrement attentif.
+
+:::reponse
+- **Mauvais destinataire** (livraison non destinée à EnterSite)
+- **Mauvaise marchandise** (articles incorrects)
+- **Mauvaise quantité** (trop/peu de pièces ou colis)
+- **Non-conformité qualitative** (qualité insuffisante, dommages produit)
+- **Emballages endommagés** (suremballage ou emballage de vente abîmé)
+:::
+
+---
+
+## Mission 1.1 — Autres signes sans déplacer une palette
+
+En ouvrant le pont de chargement, vous découvrez une palette fortement endommagée. Ton collègue demande s'il existe d'autres signes de marchandises défectueuses **sans déplacer une palette entière**.
+
+:::reponse
+- Emballages qui ne sont plus en bon état (**déchirés**, **bosselés**, **enfoncés**)
+- Emballages **tachés** → fuites de liquides possibles
+- Dommages **climatiques** (température, humidité) : très difficiles à détecter de l'extérieur → outils comme un **indicateur de température** ou un thermomètre infrarouge
+:::
+
+---
+
+## Mission 2 — Moyens auxiliaires de détection
+
+Tu expliques que des dommages peuvent être détectés avec des **outils** même sans signe évident au premier abord. Cite quelques moyens auxiliaires et leur fonction.
+
+| Moyens auxiliaires | Fonction / description |
+| --- | --- |
+| … | … |
+
+:::reponse
+| Moyens auxiliaires | Fonction / description |
+| --- | --- |
+| **Indicateur de basculement** | Mesure l'**inclinaison** pendant le transport |
+| **Indicateur de choc** | Mesure les **secousses**, chocs ou contraintes dues aux chutes |
+| **Indicateur de température** | Mesure la **température** pendant le transport |
+| **Appareils à infrarouge** | Mesurent la température **à l'arrivée** (instantanée) |
+| **Enregistreurs numériques** | Enregistrent les données en **temps réel** pendant le transport (température, humidité, chocs…) |
+:::
+
+---
+
+## Mission 3 — Procédure en cas de dommage
+
+EnterSite AG reçoit des marchandises de différents fournisseurs. Le traitement des dommages varie selon le **transporteur**. Que fais-tu dans ces situations ?
+
+| Transporteurs | Mesures à prendre en cas de dommage |
+| --- | --- |
+| Poste / coursier | … |
+| Camion | … |
+| Train | … |
+
+:::reponse
+| Transporteurs | Mesures à prendre en cas de dommage |
+| --- | --- |
+| **Poste / coursier** | Déclaration de dommage avec le formulaire « Déclaration de dommage ». Délai et procédure selon le prestataire. **Conserver** l'envoi endommagé jusqu'à la fin de l'enquête. |
+| **Camion** | Constat en **présence du conducteur**. Il **signe** le formulaire de constatation. L'entreprise transmet le document au **fournisseur**. Le chauffeur décide s'il informe son entreprise. |
+| **Train** | Signaler au **gestionnaire d'événements ferroviaires** de la région (wagon ou conteneur) pour déterminer sur place la nature et l'ampleur des dommages. |
+:::
+
+---
+
+## Mission 4 — Établir un protocole de dégâts
+
+Tu dois rédiger un **constat des dégâts** pour la livraison de la commande 1.1 (palette endommagée). Tu peux inventer librement les données manquantes.
+
+> **Dépôt de fichiers** : constat de dégât (PDF) selon le modèle fourni.
+
+:::reponse
+**Réponse individuelle** — dépôt du protocole de dégâts (description, photos, date, références commande/transport, visa transporteur si applicable).
+:::
+
+---
+
+## Mission 5 — Discussion de la mise en situation
+
+Discute de la mise en situation en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion (pas de solution unique).
+:::`;
+
+const DEMO_307_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : 5 sources d'erreur (destinataire · marchandise · quantité · qualité · emballage)
+- **M1.1** : signes visibles + indicateurs température
+- **M2** : basculement · choc · température · infrarouge · enregistreurs
+- **M3** : coursier (déclaration + conserver) · camion (signature) · train (gestionnaire)
+- **M4** : protocole de dégâts (fichier)
+- **M5** : discussion plénière`;
+
+/** Exercices de maths Module 307 */
+const DEMO_307_MATHS_FULL = `## Exercices de mathématiques — Module 307
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Tolérance de poids (cartouches d'encre)
+
+Poids visé au remplissage : **540 g** par cartouche. Tolérance acceptée : **−2 %** et **+3 %**.
+
+Quelle **fourchette de poids** (en grammes) est acceptée au contrôle final ?
+
+:::solution
+**529,2 g à 556,2 g**
+
+Calcul :
+- Tolérance négative : 540 × 98 / 100 = **529,2 g**
+- Tolérance positive : 540 × 103 / 100 = **556,2 g**
+:::
+
+### Exercice 2 — Cartouches défectueuses
+
+Lors du remplissage, **1 cartouche sur 14** est défectueuse et ne peut pas être mise en stock.
+
+Combien de cartouches ne peuvent **pas** être stockées si l'on contrôle **2'000** pièces ?
+
+:::solution
+**143 cartouches**
+
+Calcul : 2'000 / 14 = 142,857… → **143 cartouches** défectueuses (arrondi supérieur selon consigne).
+:::
+
+### Exercice 3 — Limite de taux de perte
+
+Le taux de perte doit être **inférieur à 3,2 %** (sur 2'000 cartouches contrôlées).
+
+Combien de cartouches peuvent être défectueuses au maximum ?
+
+:::solution
+**63 cartouches**
+
+Calcul : 2'000 × 3,2 / 100 = **64 cartouches** (= 3,2 %)  
+Taux **inférieur** à 3,2 % → maximum **63 cartouches** défectueuses.
+:::
+
+### Exercice 4 — Taux d'erreur fournisseur
+
+EnterSite se fournit chez **98** fournisseurs. Sur **780** livraisons/an, le plus gros fournisseur représente **30 %** des livraisons. Sur son total, **27** livraisons comportaient des erreurs.
+
+a) Combien de livraisons cela représente-t-il ?  
+b) Quel est le **taux d'erreur** de ce fournisseur ?
+
+:::solution
+a) **234 livraisons** — 780 × 30 / 100 = 234
+
+b) **11,53 %** — 27 / 234 × 100 = 11,5385… ≈ **11,53 %**
+
+Formule : nombre d'erreurs / nombre total de livraisons × 100
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 529,2 · 234 · 143 · 556,2 · 63 · 11,53`;
+
+const DEMO_307_MATHS_SUMMARY = `## Maths — Solutions
+1. **529,2 – 556,2 g** (−2 % / +3 % de 540 g)
+2. **143** cartouches (2'000 / 14)
+3. **63** cartouches (< 3,2 % de 2'000)
+4. **234** livraisons · **11,53 %** d'erreurs (27/234)`;
+
+/** Vérification des acquis Module 307 */
+const DEMO_307_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 307 — Identification globale et règlement des dommages**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Donne la **formule** pour calculer le taux d'erreurs de livraisons.
+
+:::reponse
+**Nombre d'erreurs de livraison / nombre total de livraisons × 100**
+:::
+
+### Question 2
+
+Qu'est-ce qu'une livraison **excédentaire** ?
+
+:::reponse
+Livraison pour laquelle la quantité livrée est **supérieure** à la quantité attendue et/ou indiquée sur le bulletin de livraison **hors de la tolérance** acceptée.
+:::
+
+### Question 3
+
+Par quelles **mesures** le destinataire peut-il éviter de recevoir des marchandises erronées ?
+
+:::reponse
+- Contrôler que les marchandises nous sont bien **destinées** (identification **globale** : adresse, documents)
+- Vérifier qu'il s'agit bien des **marchandises attendues** (identification **détaillée** : fournisseur, articles, quantités)
+- Utiliser des **scanners** et contrôles visuels rigoureux
+- Maintenir des **adresses et contacts clairs** entre expéditeur, transporteur et destinataire
+:::
+
+### Question 4
+
+Qu'est-ce qu'une livraison **incomplète** ?
+
+:::reponse
+Livraison pour laquelle il **manque** une certaine quantité par rapport à la quantité indiquée sur le bulletin de livraison **hors de la tolérance** acceptée.
+:::
+
+### Question 5
+
+Comment le **fournisseur** peut-il éviter les livraisons incomplètes ?
+
+:::reponse
+- Attribuer clairement des **numéros d'article**
+- Effectuer un **contrôle visuel sérieux** avant expédition
+- Indiquer le plus clairement possible la **désignation** et les quantités sur le **bulletin de livraison**
+- Mettre en place un **double contrôle** ou des scanners en préparation
+:::`;
+
+const DEMO_307_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Erreurs / total livraisons × 100
+2. Excédentaire = quantité > attendue hors tolérance
+3. ID globale + détaillée · scanners · contacts clairs
+4. Incomplète = quantité manquante hors tolérance
+5. N° articles · contrôle visuel · bulletin clair · double contrôle`;
+
 /** Contenu Module 308 — Contrôles de quantités */
 const DEMO_308_THEORIE_FULL = `## 8. Les contrôles de quantités
 
@@ -20292,6 +20547,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_307_THEORIE_FULL,
       summary: DEMO_307_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_307_GLOSSAIRE_FULL,
+      summary: DEMO_307_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_307_SITUATION_FULL,
+      summary: DEMO_307_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_307_MATHS_FULL,
+      summary: DEMO_307_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_307_VERIFICATION_FULL,
+      summary: DEMO_307_VERIFICATION_SUMMARY,
     },
   },
   "308": {
