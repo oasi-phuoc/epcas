@@ -12576,6 +12576,349 @@ const DEMO_308_OBJECTIFS_SUMMARY = `## Objectifs
 - Mesure & balances
 - Tarer / calibrer / vérification`;
 
+/** Glossaire Module 308 */
+const DEMO_308_GLOSSAIRE_FULL = `## Glossaire — Module 308
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Pied à coulisse | | Instrument de mesure de **précision** (calibre) pour l'**épaisseur**, le **diamètre** ou la **profondeur** d'un objet (ex. longueur et diamètre d'une vis). Précision de l'ordre du **1/10 mm**. |
+| Balance à bras égaux | | Balance fonctionnant selon la **loi du levier** : l'objet à peser est placé sur un plateau, des **poids normalisés** sont ajoutés sur l'autre plateau jusqu'à l'**équilibre**. |
+| Dynamomètre | | Instrument mesurant directement une **force** (ressort). Utilisé pour la pesée par déformation d'une ressort ou pour la **traction** (grues). Sensible au lieu d'utilisation (gravité) ; la ressort s'use avec le temps. |
+| Balance compteuse | | Balance déterminant le **nombre de pièces** à partir d'un **poids de référence** (ex. 10 pièces pesées) puis comparaison avec le poids total. Idéale pour inventaires (vis, boulons, clous…). |
+| Tare | | Poids de l'**emballage** ou du contenant vide. Le **tarage** (mise à zéro avec emballage) permet d'obtenir le **poids net** de la marchandise sans compter l'emballage. |
+| Calibrage | | Remise à **zéro** de la balance avant utilisation (sol non idéal, déséquilibre, nouveau lieu / influence de la gravité). Peut être fait **sans officier** si le résultat n'a pas de conséquence financière directe. |
+| Étalonnage | | Contrôle **officiel** périodique des instruments de mesure selon la **loi fédérale sur la métrologie** (art. 125 Cst.). Effectué par un **vérificateur** ; instruments vérifiés reçoivent un **signe distinctif**. Sinon : mention « non vérifié officiellement ». |
+| Balance multitêtes | | Balance professionnelle avec **plusieurs plateaux** ou **têtes de pesage** (multitêtes), permettant de peser différentes unités ou postes de travail sur une même installation — utile en réception pour pièces légères et charges moyennes. `;
+
+const DEMO_308_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Pied à coulisse** : diamètre · longueur · profondeur (~0,1 mm)
+- **Bras égaux** : levier + poids normalisés
+- **Dynamomètre** : force / ressort (traction possible)
+- **Balance compteuse** : poids référence → nombre de pièces
+- **Tare** : poids emballage · tarer = zéro avec emballage
+- **Calibrage** : remise à zéro (usage courant)
+- **Étalonnage** : vérification officielle (métrologie)
+- **Multitêtes** : plusieurs plateaux / têtes de pesage`;
+
+/** Mises en situation Module 308 */
+const DEMO_308_SITUATION_FULL = `## Mises en situation — Module 308
+
+Contexte : tu es affecté·e au **contrôle détaillé** à la réception chez **EnterSite AG**. Les missions portent sur les **outils de mesure**, de **pesage** et de **comptage**. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / exemples proposés.
+
+### Vue d'ensemble des missions
+1. Énumérer les outils de mesure
+2. Décrire les outils de mesure (vis — dimensions)
+2.1 Résultats de mesure · 2.2 Alternatives
+3. Outils de pesage et de comptage
+3.1 Étalonnage vs calibrage · 3.2 Utilisation professionnelle · 3.3 Comptage · 3.4 Tolérance
+4. Mesurer les liquides (fûts)
+4.1 Calcul du volume · 4.2 EnterSite salle 3 V3
+5. Discussion de la mise en situation
+
+---
+
+## Mission 1 — Énumérer les outils de mesure
+
+Tu es chargé·e du contrôle détaillé à la réception. Quels **outils de mesure** connais-tu sur ce thème ?
+
+:::reponse
+**Réponse individuelle** — ex. : pied à coulisse, micromètre, gabarit, mètre ruban, balance compteuse, balance de table, pompe à piston, pont-bascule, compteur manuel…
+:::
+
+---
+
+## Mission 2 — Contrôle des dimensions (vis)
+
+Des vis commandées en Chine doivent être contrôlées (dimensions + échantillonnage). Le **diamètre** et la **longueur** doivent être vérifiés.
+
+Choisis un outil et décris en détail ses **avantages**.
+
+:::reponse
+**Pied à coulisse** — convient pour mesurer précisément les dimensions des vis.
+
+Lors du contrôle d'une vis, plusieurs valeurs comptent : **longueur**, **diamètre** et **pas de vis**. La méthode dépend aussi de la forme (tête hexagonale, tête ronde, etc.). Le pied à coulisse permet des mesures directes avec une bonne précision (~1/10 mm).
+:::
+
+---
+
+## Mission 2.1 — Résultats de mesure
+
+Les mesures effectuées donnent les résultats suivants :
+
+- **78,45 mm**
+- **23,60** (mm — diamètre ou autre dimension selon le plan)
+
+:::reponse
+**Réponse individuelle** — consigner les valeurs mesurées et les comparer aux **tolérances** / cotes du plan fournisseur (longueur, diamètre, pas de filetage).
+:::
+
+---
+
+## Mission 2.2 — Autres instruments de mesure
+
+D'autres instruments conviendraient-ils comme **alternative** pour le contrôle des dimensions des vis ?
+
+:::reponse
+- **Gabarit** ou **jauge de filetage** : résultats **rapides** si la précision maximale n'est pas exigée
+- **Gabarit de filetage** : contrôle **précis** du filetage (pas, profil)
+- **Micromètre** : très haute précision pour diamètres fins (alternative au pied à coulisse)
+:::
+
+---
+
+## Mission 3 — Balance de comptage
+
+Il faut contrôler le **nombre de pièces** par échantillonnage avec la balance de comptage **récemment étalonnée**. Laquelle choisis-tu ?
+
+:::reponse
+**Réponse individuelle** — choisir la **balance compteuse** adaptée (charge max, précision, affichage en **nombre de pièces** après saisie du poids de référence). Vérifier le **signe de vérification** / étalonnage officiel si usage commercial.
+:::
+
+---
+
+## Mission 3.1 — Étalonner ou calibrer ?
+
+Explique ce que tu sais à ce sujet.
+
+:::reponse
+**Étalonnage (vérification officielle)**  
+Sur la base de la **loi fédérale sur la métrologie** (art. 125 Cst.), le bon fonctionnement et l'indication correcte des instruments doivent être contrôlés **à intervalles réguliers** par un **vérificateur** (personne officielle). Les instruments vérifiés reçoivent un **signe distinctif**. Sinon : mention « **non vérifié officiellement** ».
+
+**Calibrage**  
+Remise à **zéro** avant utilisation (sol, déséquilibre, nouveau lieu / gravité). La balance peut afficher 0,1–0,2 kg sans charge. Le calibrage peut être fait **sans officier** lorsque le résultat n'a **pas de conséquence financière** directe.
+:::
+
+---
+
+## Mission 3.2 — Utilisation professionnelle des balances
+
+Donne les règles pour obtenir des résultats de mesure **corrects**.
+
+:::reponse
+- Balances = instruments de **précision** : propres, entretien par **spécialiste** ; ne pas toucher au mécanisme
+- Respecter la charge **maximale** (et parfois **minimale**) ; prudence sur **ponts-bascules** avec chariots
+- Utiliser une balance **adaptée** à l'usage ; lire le **mode d'emploi**
+- Balances électroniques : **préchauffage** ; ne pas éteindre pendant la journée de travail
+:::
+
+---
+
+## Mission 3.3 — Processus de comptage
+
+Décris **étape par étape** le processus de comptage des vis avec la balance compteuse.
+
+:::reponse
+1. Peser une **quantité de référence** (ex. **10 pièces**) → enregistrer le **poids de référence**
+2. Peser la **quantité totale** à contrôler (ou l'échantillon)
+3. La balance **compare** avec le poids de référence
+4. L'écran affiche le **nombre de pièces** (au lieu du poids seul)
+:::
+
+---
+
+## Mission 3.4 — Tolérance
+
+La marchandise est en ordre « en raison de la **tolérance** ». Que signifie la tolérance dans ce contexte ?
+
+:::reponse
+Lors de la livraison, une **tolérance** peut être convenue : la quantité effectivement livrée peut différer d'un certain **pourcentage** (en plus ou en moins) de la quantité commandée. Elle permet au fournisseur de compenser les fluctuations de **production** ou de **stocks**.
+:::
+
+---
+
+## Mission 4 — Quantité manquante dans un fût
+
+Deux fûts de liquide de refroidissement sont livrés ; l'un n'est rempli qu'aux **deux tiers**. Le fournisseur demande la **quantité manquante** pour ne pas sur-facturer.
+
+Avec quel **outil** déterminer la quantité manquante ? Décris son fonctionnement.
+
+:::reponse
+**Pompe à piston** — instrument simple de mesure de volume.
+
+Un **piston** monte et descend dans un **cylindre étagé** de volume connu. En montant, le piston **aspire** le liquide ; en descendant, il le **refoule**. Les mouvements ascendants sont comptés par un **compteur** fixé à la pompe → volume mesuré.
+:::
+
+---
+
+## Mission 4.1 — Calcul du volume manquant
+
+La détermination serait aussi possible par **calcul**. Comment ?
+
+:::reponse
+1. Calculer le **volume total** du fût : V_total = (r² × π) × h_fût
+2. Mesurer la **hauteur de liquide** dans le fût et calculer V_liquide = (r² × π) × h_liquide
+3. **Quantité manquante** = V_total − V_liquide
+:::
+
+---
+
+## Mission 4.2 — EnterSite (salle 3 V3)
+
+> **Astuce EnterSite** : suis la visite virtuelle dans la salle **3 V3**. Cherche 1 à 3 collègues et montre tes capacités dans la tâche de contrôle détaillé. Cherche l'image sur la droite. Lien : [Vers EnterSite](#entersite-placeholder) (URL à compléter lorsque disponible).
+
+:::reponse
+**Réponse individuelle** — selon l'exercice EnterSite (salle 3 V3, contrôle détaillé en équipe).
+:::
+
+---
+
+## Mission 5 — Discussion de la mise en situation
+
+Discute de la mise en situation en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion (pas de solution unique).
+:::`;
+
+const DEMO_308_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : outils de mesure (liste individuelle)
+- **M2** : pied à coulisse (longueur · diamètre · pas)
+- **M2.2** : gabarit / jauge de filetage · micromètre
+- **M3** : balance compteuse · étalonnage vs calibrage · règles d'usage
+- **M3.3** : référence 10 pces → comptage total
+- **M4** : pompe à piston · calcul volume fût
+- **M4.2** : EnterSite salle **3 V3**
+- **M5** : discussion plénière`;
+
+/** Exercices de maths Module 308 */
+const DEMO_308_MATHS_FULL = `## Exercices de mathématiques — Module 308
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Échantillons qualité (huile)
+
+À la réception, **6 fûts** d'huile de charge égale (1 baril = **158,8 litres** chacun). L'assurance qualité demande de prélever **0,1 %** de la quantité livrée dans des bouteilles de **250 ml** (0,25 l), **une bouteille par fût** (ne jamais regrouper plusieurs échantillons).
+
+Combien de bouteilles et d'étiquettes faut-il ?
+
+:::solution
+**6 bouteilles** et **6 étiquettes**
+
+Calcul :
+- Prélèvement par fût : 158,8 × 0,1 / 100 = **0,1588 l**
+- Une bouteille (0,25 l) par fût suffit
+- **6 fûts** → **6 bouteilles** et **6 étiquettes**
+:::
+
+### Exercice 2 — Comptage de boulons
+
+Balance compteuse : **10 boulons** = **136,16 g** (poids de référence).  
+Masse brute de l'envoi : **6,5 kg** · emballage : **700 g**.
+
+Combien de boulons ont été livrés ?
+
+:::solution
+**425 boulons**
+
+Calcul :
+- Masse brute : 6,5 kg = **6'500 g**
+- Masse nette : 6'500 − 700 = **5'800 g**
+- Proportion : 5'800 × 10 / 136,16 = 425,97… → **425 boulons**
+:::
+
+### Exercice 3 — Conversion pouces / centimètres
+
+Écrans d'ordinateur : bulletin en **pouces** (22, 24, 15) ; mesure métrique : **55,88 cm**, **60,96 cm**, **38,1 cm**.
+
+Doit-on accepter la livraison ? *(1 pouce = 2,54 cm)*
+
+:::solution
+**Oui**
+
+Calcul :
+- 22 × 2,54 = **55,88 cm** ✓
+- 24 × 2,54 = **60,96 cm** ✓
+- 15 × 2,54 = **38,1 cm** ✓
+
+Les mesures **correspondent** → livraison **acceptable**.
+:::
+
+### Exercice 4 — Poids brut, tare et net
+
+Marchandise : **7'600 kg** brut. L'emballage représente **7 %** du poids.
+
+Calcule le poids de l'emballage et le **poids net**.
+
+:::solution
+- **Tare (emballage) : 532 kg** — 7'600 × 7 / 100 = 532 kg
+- **Poids net : 7'068 kg** — 7'600 − 532 = 7'068 kg
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : Oui · 6 · 425 · 532 · 6 · 7'068`;
+
+const DEMO_308_MATHS_SUMMARY = `## Maths — Solutions
+1. **6** bouteilles + **6** étiquettes (0,1588 l < 0,25 l par fût)
+2. **425** boulons (5'800 g net / 136,16 g pour 10)
+3. **Oui** (conversions pouces OK)
+4. Tare **532 kg** · net **7'068 kg**`;
+
+/** Vérification des acquis Module 308 */
+const DEMO_308_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 308 — Le contrôle détaillé**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quelle est la contenance en litres d'un **gallon USA** et **GB** ? Pour quelles marchandises sont-ils utilisés ?
+
+:::reponse
+- **Gallon USA** : **3,79 litres**
+- **Gallon GB** : **4,55 litres**
+
+Utilisés pour les **liquides** et les **carburants**.
+:::
+
+### Question 2
+
+Qu'est-ce qui est pesé avec un **pont-bascule** ? Explique le processus de pesage.
+
+:::reponse
+Il sert à peser de **grandes charges** (**camion** ou **wagon**).
+
+Le véhicule se gare sur le pont-bascule placé sur la voie de circulation. Après l'arrêt, la pesée est effectuée.
+
+En principe : pesée **chargée**, puis après déchargement **à vide**. La **différence** = poids de la marchandise.
+:::
+
+### Question 3
+
+Quelle balance est représentée sur l'image ? Décris son fonctionnement.
+
+*(Image : balance à bras égaux.)*
+
+:::reponse
+C'est une **balance à bras égaux**. Elle fonctionne selon la **loi du levier** : on pose l'objet à peser sur un plateau, puis on place des **poids normalisés** sur l'autre plateau jusqu'à ce que la balance soit en **équilibre**.
+:::
+
+### Question 4
+
+Dans quels cas une balance doit-elle être **vérifiée** (étalonnage officiel) ?
+
+:::reponse
+Exemples d'installations soumises à vérification :
+- Installations pour la fixation des **droits de douane**
+- **Distributeurs de carburant** pour la vente de carburant au public
+:::
+
+### Question 5
+
+Comment s'appelle cet instrument de mesure ? Que peux-tu mesurer avec ?
+
+*(Image : pied à coulisse / calibre.)*
+
+:::reponse
+**Pied à coulisse** (ou **calibre**).
+
+Il sert à mesurer l'**épaisseur**, le **diamètre** ou la **profondeur** d'un objet.
+:::`;
+
+const DEMO_308_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Gallon USA **3,79 l** · GB **4,55 l** · liquides / carburants
+2. Pont-bascule : camion/wagon · chargé − vide = marchandise
+3. **Balance à bras égaux** · levier + poids normalisés
+4. Douanes · pompes à essence (vente)
+5. **Pied à coulisse** · épaisseur · diamètre · profondeur`;
+
 /** Contenu Module 309 — Contrôle de la qualité */
 const DEMO_309_THEORIE_FULL = `## 9. Contrôle de la qualité
 
@@ -20577,6 +20920,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_308_THEORIE_FULL,
       summary: DEMO_308_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_308_GLOSSAIRE_FULL,
+      summary: DEMO_308_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_308_SITUATION_FULL,
+      summary: DEMO_308_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_308_MATHS_FULL,
+      summary: DEMO_308_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_308_VERIFICATION_FULL,
+      summary: DEMO_308_VERIFICATION_SUMMARY,
     },
   },
   "309": {
