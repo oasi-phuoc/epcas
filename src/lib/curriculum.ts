@@ -11229,6 +11229,275 @@ const DEMO_305_OBJECTIFS_SUMMARY = `## Objectifs
 - Sécurisation + engins S/R
 - Auxiliaires · signaux`;
 
+/** Glossaire Module 305 */
+const DEMO_305_GLOSSAIRE_FULL = `## Glossaire — Module 305
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Signaux d'avertissement | | Signaux de forme **triangulaire**. En entreprise, les dangers imminents sont en général signalés en **jaune/noir** ; sur les voies de circulation, on utilise aussi des signaux **rouge/blanc** issus de la circulation routière. Souvent combinés avec des signaux d'interdiction. |
+| Signaux d'interdiction | | Signaux **ronds**, **rouge/blanc** (comme sur la route). Ils imposent une **interdiction obligatoire** — ils doivent absolument être respectés (ex. interdiction d'accès aux chariots élévateurs sur un quai étroit). |
+| Signaux d'obligation | | Signaux **ronds**, **bleu/blanc**. Ils imposent un comportement de protection (casque, lunettes de protection, chaussures de sécurité…). Également **contraignants** et à respecter. |
+| Signaux de secours | | Signaux d'**indication** (pas toujours uniformes), en général **vert/blanc**. Ils indiquent les voies d'évacuation ou les lieux/installations où obtenir de l'aide en cas d'urgence. `;
+
+const DEMO_305_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Avertissement** : triangle · jaune/noir (ou rouge/blanc circulation)
+- **Interdiction** : rond · rouge/blanc · obligatoire
+- **Obligation** : rond · bleu/blanc · EPI / comportement imposé
+- **Secours** : vert/blanc · évacuation · aide d'urgence`;
+
+/** Mises en situation Module 305 */
+const DEMO_305_SITUATION_FULL = `## Mises en situation — Module 305
+
+Contexte : tu travailles au **déchargement** chez **EnterSite AG**. Les missions portent sur les **dangers au quai**, la **signalisation de sécurité** et l'analyse des **zones dangereuses**. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / exemples proposés.
+
+### Vue d'ensemble des missions
+1. Dangers sur les quais de chargement
+2. Signalisation de sécurité
+3. Vidéo d'apprentissage (travail de groupe)
+4. Zones dangereuses dans l'entreprise formatrice
+5. Discussion de la mise en situation
+
+---
+
+## Mission 1 — Dangers sur les quais de chargement
+
+Chez EnterSite AG, plusieurs situations délicates se sont produites lors du déchargement sur le quai. La direction te demande ton aide.
+
+Cherche sur Internet les déclarations d'accidents du travail sur les quais de chargement (mots-clés : « accident du travail » et « quai de chargement »). Sur la base de tes recherches et de tes connaissances, remplis le tableau des dangers possibles.
+
+| Activité | Dangers possibles |
+| --- | --- |
+| Approche et accostage à la rampe | … |
+| Chargement et déchargement | … |
+| Utilisation de la tôle de liaison | … |
+| Départ du camion | … |
+
+:::reponse
+| Activité | Dangers possibles |
+| --- | --- |
+| **Approche et accostage à la rampe** | Personne coincée sur la rampe · rampe mal approchée |
+| **Chargement et déchargement** | Le véhicule se déplace ; la personne et le véhicule chutent le long de la rampe · le/la logisticien·ne tombe d'une rampe non sécurisée |
+| **Utilisation de la tôle de liaison** | Le pont de transbordement ne supporte pas le poids et s'effondre · le pont n'a pas été fixé — l'homme et le véhicule soutiennent la rampe |
+| **Départ du camion** | Le véhicule est arrimé à la rampe mais le transporteur démarre quand même · le transporteur démarre alors que le/la logisticien·ne n'a pas terminé son travail |
+:::
+
+---
+
+## Mission 2 — Signalisation de sécurité
+
+Pour minimiser les risques, EnterSite AG prévoit d'apposer davantage de marquages de sécurité. Explique les différents **signaux distinctifs** avec leur forme, leur couleur et leur utilisation.
+
+:::reponse
+| Signaux | Forme, couleur et utilisation |
+| --- | --- |
+| **Signaux d'avertissement** | Toujours **triangulaires**. En entreprise : dangers imminents en **jaune/noir** ; sur les voies de circulation aussi **rouge/blanc** (route). Souvent combinés avec des interdictions. |
+| **Signaux d'interdiction** | **Ronds**, **rouge/blanc** (comme sur la route). **Obligatoires** — à respecter absolument. |
+| **Signaux d'obligation** | **Ronds**, **bleu/blanc**. Imposent un comportement de protection (lunettes, casque…). Également obligatoires. |
+| **Signaux de secours** | Signaux d'indication, en général **vert/blanc**. Voies d'évacuation ou lieux d'aide en cas d'urgence. |
+:::
+
+---
+
+## Mission 3 — Vidéo d'apprentissage
+
+Pendant la pause, l'idée de tourner une vidéo sur la sécurité au travail surgit. Avec **trois partenaires**, réalisez une vidéo sur le thème **« Dangers lors du déchargement sur le quai »**.
+
+**Exigences :**
+- Vidéo structurée (introduction, partie principale, conclusion)
+- Sujet présenté de manière condensée
+- **Scénario** préalable visible et présenté à l'enseignant·e avant le tournage
+- Générique de début et de fin (noms + date de remise en fin, discret)
+- Durée : **2 à 4 minutes** max.
+- Matériel disponible (ex. smartphones) — temps total d'environ **3 leçons**
+
+> **Modèle** : scénario selon le modèle fourni (fichier Word).
+
+:::reponse
+**Réponse individuelle** — dépôt de la vidéo et du scénario (travail de groupe, évaluation selon la grille de la mission).
+:::
+
+---
+
+## Mission 4 — Zones dangereuses (entreprise formatrice)
+
+Qu'en est-il des zones dangereuses dans **ton entreprise formatrice** ?
+
+- Quels domaines, appareils ou moyens auxiliaires considères-tu comme **dangereux** ?
+- Quelles **mesures de protection** ont été ou sont appliquées ?
+- Ces mesures sont-elles **suffisantes** ? Justifie.
+
+| Zones dangereuses | Mesures de protection | Tes appréciations |
+| --- | --- | --- |
+| … | … | … |
+
+:::reponse
+**Réponse individuelle** — tableau à compléter selon ton entreprise de formation (quais, engins, rampes, stockage, électricité…).
+:::
+
+---
+
+## Mission 5 — Discussion de la mise en situation
+
+Discute de la mise en situation en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion (pas de solution unique).
+:::`;
+
+const DEMO_305_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : tableau dangers quai (accostage · déchargement · tôle · départ camion)
+- **M2** : 4 types de signaux (forme + couleurs)
+- **M3** : vidéo 2–4 min + scénario (groupe, dépôt fichier)
+- **M4** : zones dangereuses entreprise formatrice (individuel)
+- **M5** : discussion plénière`;
+
+/** Exercices de maths Module 305 */
+const DEMO_305_MATHS_FULL = `## Exercices de mathématiques — Module 305
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Surface de chargement camion
+
+Un chauffeur affirme que la surface de chargement de son camion (**8,50 m × 2,44 m**) est exploitée à **70 %** et qu'il peut encore charger **8** palettes Euro type I.
+
+Combien de palettes peut-il **réellement** encore charger ?
+
+*(Palette Euro type I : 1,20 m × 0,80 m = 0,96 m².)*
+
+:::solution
+**6 palettes**
+
+Calcul :
+- Surface totale : 8,50 × 2,44 = **20,74 m²**
+- Surface exploitée (70 %) : 20,74 × 70 / 100 = **14,518 m²**
+- Surface restante : 20,74 − 14,518 = **6,22 m²**
+- Surface 1 palette : 1,20 × 0,80 = **0,96 m²**
+- Nombre de palettes : 6,22 / 0,96 = **6,48** → **6 palettes** (pas 8)
+:::
+
+### Exercice 2 — Capacité de charge d'une tôle de liaison
+
+Tôle de liaison (1 m × 0,8 m) : étiquette **charge admissible max. 8'330 N**.  
+Nouveau chariot à timon : **1,05 t** · palette la plus lourde : **1'200 kg** · collaborateur : **95 kg** · distance camion–rampe : **0,6 m**.
+
+L'affirmation du collègue (capacité insuffisante) est-elle **juste** ?
+
+:::solution
+**Oui**
+
+Calcul :
+- Charge admissible : 8'330 / 10 = **833 kg** (≈ 850 kg)
+- Charge totale : 1'050 + 1'200 + 95 = **2'345 kg**
+- **2'345 kg > 833 kg** → l'affirmation du collègue est **correcte** : la tôle ne convient **pas**.
+:::
+
+### Exercice 3 — Nombre de camions pour 36 palettes
+
+EnterSite AG : 4 camions. Dimensions intérieures : **7,52 m × 2,43 m × 2,45 m**.  
+À charger : **36** palettes EUR type I pour un client.
+
+Combien de camions faut-il réserver ?
+
+:::solution
+**2 camions**
+
+Calcul :
+- Palettes en longueur : 7,52 / 1,20 = **6** palettes
+- Palettes en largeur : 2,43 / 0,80 = **3** palettes
+- Par camion : 6 × 3 = **18** palettes
+- Pour 36 palettes : 36 / 18 = **2 camions**
+:::
+
+### Exercice 4 — Charge utile des camions
+
+Charge utile des camions réservés : **12 tonnes** chacun.  
+Une palette avec chargement pèse **640 kg**. (**36** palettes au total.)
+
+Peut-on utiliser les camions de l'entreprise ou faut-il un transporteur externe ?
+
+:::solution
+**Camions de l'entreprise**
+
+Calcul :
+- Poids total : 640 × 36 = **23'040 kg** = **23,04 tonnes**
+- Capacité 2 camions : 2 × 12 = **24 tonnes**
+- **23,04 t < 24 t** → les **camions de l'entreprise** suffisent.
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 6 · Oui · 2 · camions de l'entreprise`;
+
+const DEMO_305_MATHS_SUMMARY = `## Maths — Solutions
+1. **6 palettes** (6,22 m² restants / 0,96 m²)
+2. **Oui** (2'345 kg > 833 kg admissibles)
+3. **2 camions** (18 palettes/camion)
+4. **Camions de l'entreprise** (23,04 t < 24 t)`;
+
+/** Vérification des acquis Module 305 */
+const DEMO_305_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 305 — Déchargement des marchandises**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quels sont les points auxquels il faut faire particulièrement attention lors du **chargement et du déchargement** des camions ?
+
+:::reponse
+- La **sécurité** du véhicule à charger ou décharger
+- Le choix d'un **engin de manutention** approprié
+- L'utilisation correcte des **rampes de chargement** et des **tôles de liaison**
+- Aménager les lieux de travail pour que la circulation des **piétons** et des **véhicules** se fasse en toute sécurité
+:::
+
+### Question 2
+
+Comment un camion doit-il être **sécurisé** sur le quai de chargement ? Cite toutes les mesures de sécurité que tu connais.
+
+:::reponse
+- Serrer le **frein à main**
+- Couper le **contact** (arrêter le moteur)
+- Placer une **cale** sous les roues
+- Fixer le véhicule à la rampe avec une **chaîne** ou une **sangle**
+:::
+
+### Question 3
+
+Que représente cette image ? Donne une explication la plus précise possible.
+
+*(Image : frein à main sur wagon ferroviaire.)*
+
+:::reponse
+Il s'agit du **frein à main** sur les **wagons de chemin de fer**. On le trouve soit sur la **plateforme** du wagon, soit sur le **côté longitudinal** du wagon. Il sert à immobiliser le wagon pendant le chargement ou le déchargement.
+:::
+
+### Question 4
+
+Quelles conditions doivent être remplies par les **tôles de liaison / ponts de chargement** pour une utilisation en toute sécurité ?
+
+:::reponse
+- Une **capacité de charge suffisante** (indiquée sur l'équipement)
+- Une surface **antidérapante**
+- Une protection contre le **déplacement** (fixation au quai de préférence)
+:::
+
+### Question 5
+
+Où peux-tu rencontrer ce pictogramme dans une entreprise de logistique ? Existe-t-il des exceptions qui lèvent cette interdiction ?
+
+*(Pictogramme : interdiction d'accès aux chariots élévateurs.)*
+
+:::reponse
+Cela signifie une **interdiction d'accès pour les chariots élévateurs**. On le constate notamment si les quais de chargement sont **trop étroits** ou **inadaptés** aux chariots élévateurs.
+
+**Non**, il n'y a en principe **pas d'exceptions** qui lèvent cette interdiction.
+:::`;
+
+const DEMO_305_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Sécurité véhicule · engin adapté · rampes/tôles · circulation piétons/véhicules
+2. Frein · contact OFF · cales · chaîne/sangle
+3. **Frein à main** wagon (plateforme ou côté longitudinal)
+4. Charge indiquée · antidérapant · anti-déplacement
+5. Interdiction chariots (quai étroit) · pas d'exception`;
+
 /** Contenu Module 306 — Contrôle des contenants / supports de charge */
 const DEMO_306_THEORIE_FULL = `## 6. Contrôle des contenants
 
@@ -19963,6 +20232,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_305_THEORIE_FULL,
       summary: DEMO_305_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_305_GLOSSAIRE_FULL,
+      summary: DEMO_305_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_305_SITUATION_FULL,
+      summary: DEMO_305_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_305_MATHS_FULL,
+      summary: DEMO_305_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_305_VERIFICATION_FULL,
+      summary: DEMO_305_VERIFICATION_SUMMARY,
     },
   },
   "306": {
