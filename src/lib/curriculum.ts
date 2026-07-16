@@ -17848,6 +17848,291 @@ const DEMO_612_OBJECTIFS_SUMMARY = `## Objectifs
 - Make or Buy · HACCP
 - Arrimage · Cross-Docking`;
 
+/** Glossaire Module 612 */
+const DEMO_612_GLOSSAIRE_FULL = `## Glossaire — Module 612
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Outsourcing** | §12.3 | Externalisation — confier des prestations (ex. transport) à un **prestataire externe** plutôt qu'en interne (Make or Buy). |
+| **Image** | §12.3.1 | Réputation de l'entreprise auprès des clients et du public · critère **subjectif** dans l'analyse Make or Buy. |
+| **Ressources** | §12.3.1 | Moyens disponibles (chauffeurs, véhicules, liquidités…) · critère de décision interne vs externalisation. |
+| **Subjectif** | §12.3 | Critère **non quantifiable** directement (image, ambiance…) · pondéré dans l'analyse de la valeur d'usage. |
+| **Écologie** | §12.2.4 | Facteur de planification : km ↓ · consommation ↓ · CO₂ ↓ · itinéraires optimisés. |
+| **Cross Docking** | §12.6 | Réception → (reconditionnement éventuel) → expédition **sans stockage** prolongé · 1, 2 ou multi-niveaux. |
+| **Analyse de rentabilité** | §12.2.4 | Comparaison **coûts vs revenus** d'une tournée ou d'un mode de transport · véhicule optimal · RPLP. |
+| **Stratégique** | §12.3 | Décision **long terme** · critères subjectifs · analyse de la valeur d'usage / scoring pondéré. |
+| **Opérationnel** | §12.3 | Décision **court terme** · focus sur les **coûts directs** immédiats (ex. coût au km). |`;
+
+const DEMO_612_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Make or Buy** : opérationnel (coûts) vs stratégique (scoring)
+- **Cross-Docking** : 1 étape · 2 étapes · multi-niveaux
+- **Écologie** : km et carburant ↓
+- **Responsabilité arrimage** : **chauffeur** (transporteur)`;
+
+/** Mise en situation Module 612 */
+const DEMO_612_SITUATION_FULL = `## Mise en situation — Module 612
+
+**EnterSite AG** — sécurisation du chargement, scoring, chaîne du froid, HACCP et cross-docking.
+
+---
+
+### Mission 1 — Sécurisation du chargement / unités de transport
+
+Situation accident d'arrimage (voir image situation initiale) — aurait-elle pu être évitée ?
+
+:::reponse
+**Oui**, en principe toujours évitable. Mesures clés :
+
+1. **Arrimage correct** — sangles, filets, systèmes spéciaux (anti-glisse / chute)
+2. **Contrôle avant départ** — vérification systématique de l'arrimage
+3. **Formation régulière** — transporteurs et chargeurs (méthodes, règles sécurité)
+4. **Équipement adéquat** — dispositifs d'arrimage sur véhicules
+5. **Entretien** — tracteur et remorque en bon état
+6. **Conduite adaptée** — vitesse, virages, freinage, accélération
+7. **Communication** — transporteur informé des exigences et caractéristiques du chargement
+:::
+
+#### Mission 1.1 — Responsabilité légale
+
+:::reponse
+C'est au **transporteur** (chauffeur) qu'incombe la responsabilité : véhicule et chargement conformes aux prescriptions. La préparation/arrimage par des **tiers** n'y change rien !
+:::
+
+#### Mission 1.2 — Abréviations légales
+
+:::reponse
+| Abrév. | Signification |
+| --- | --- |
+| **LTr** | **Loi sur le travail** — horaires, pauses, repos |
+| **LCR** | **Loi sur la circulation routière** — circulation sur routes publiques |
+| **OSR** | **Ordonnance sur la signalisation routière** — signalisation et règles de circulation |
+| **RPLP** | **Redevance sur le trafic des poids lourds liée aux prestations** — obligation de déclarer et saisie |
+| **OTR** | **Ordonnance sur la durée du travail et du repos** — temps de travail/repos des conducteurs professionnels |
+| **ADR/SDR** | **Réglementation transport marchandises dangereuses** — basée sur l'ADR international (route) |
+:::
+
+---
+
+### Mission 2 — Le modèle de classement (analyse de la valeur d'usage)
+
+:::reponse
+**Structure** — critères d'évaluation · pondération · échelle · notation des options · valeur d'usage totale.
+
+**Fonctionnement** :
+1. Identifier les critères pertinents
+2. Attribuer une **pondération** à chaque critère (total 100 %)
+3. Noter chaque option sur une échelle (faible → élevé)
+4. Multiplier score × pondération et **additionner**
+5. Choisir l'option au **score total le plus élevé**
+
+**Adaptée à** — décisions **complexes** multi-critères · comparaison **objective** et transparente · projets commerciaux, logistiques, investissements.
+:::
+
+---
+
+### Mission 3 — Transport denrées alimentaires et chaîne du froid
+
+:::reponse
+**Symbole** — **verre et fourchette** (symbole UE) sur les matériaux en contact avec les aliments (transport, stockage).
+:::
+
+#### Mission 3.1 — Produits de la chaîne du froid
+
+:::reponse
+Marchandises nécessitant une **température contrôlée** en continu (fabricant → vente) : réfrigération/congélation pour qualité, sécurité et durée de conservation. Souvent **périssables**.
+:::
+
+#### Mission 3.2 — Exemples (au moins 3)
+
+:::reponse
+- **Aliments** — fruits/légumes frais, viande, produits laitiers
+- **Médicaments** — vaccins, insuline, antibiotiques
+- **Produits chimiques** sensibles à la température
+- **Fleurs et plantes**
+:::
+
+---
+
+### Mission 4 — Le concept HACCP
+
+:::reponse
+**Objectif** — garantir la **sécurité alimentaire** : concept systématique et **préventif** pour identifier, évaluer et maîtriser les dangers sanitaires.
+:::
+
+#### Mission 4.1 — Utilité au quotidien (UE depuis 2006)
+
+:::reponse
+- Réduction du risque d'**intoxication alimentaire**
+- Garantie de la **qualité** (production et stockage optimaux)
+- **Confiance** des consommateurs
+- Promotion de la **santé publique** (maladies d'origine alimentaire ↓)
+:::
+
+---
+
+### Mission 5 — Cross-docking et groupage
+
+:::reponse
+**Cross-docking en 1 étape** — marchandises déjà emballées par le fournisseur pour le client · réception → expédition directe · pas d'étapes logistiques supplémentaires.
+
+**Cross-docking en 2 étapes** — unités fournisseur **reconditionnées** en unités plus compactes au hub · **besoins clients** au centre · puis livraison.
+
+**Cross-docking multi-niveaux** — basé sur 2 étapes + tâches supplémentaires : assemblage, remplissage, conditionnement, découpe, étiquetage…
+:::
+
+#### Mission 5.1 — Avantage économique du groupage
+
+:::reponse
+**Compression des livraisons** — unités (palettes, conteneurs…) partiellement vides remplies avec d'autres marchandises à livrer → **place et carburant** économisés.
+:::
+
+---
+
+### Mission 6 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière avec la classe et l'enseignant(e).
+:::`;
+
+const DEMO_612_SITUATION_SUMMARY = `## Mise en situation — À retenir
+- **Arrimage** : 7 mesures préventives · responsabilité = **transporteur**
+- **LTr · LCR · OSR · RPLP · OTR · ADR**
+- **Scoring** : critères pondérés → valeur d'usage
+- **Froid** : verre-fourchette · HACCP préventif
+- **CD** : 1 étape (direct) · 2 étapes (reconditionnement) · multi (value-added)`;
+
+/** Exercices de maths Module 612 */
+const DEMO_612_MATHS_FULL = `## Exercices de mathématiques — Module 612
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Distance parcourue
+
+Camion à **75 km/h** · durée **1 h 48 min**.
+
+:::solution
+**135 km**
+
+\`\`\`
+48/60 = 0,8 h → 1,8 h au total
+75 × 1,8 = 135 km
+\`\`\`
+:::
+
+### Exercice 2 — Retard lié aux perturbations
+
+Même trajet (135 km) · vitesse moyenne **63 km/h**. Combien de **minutes en plus** ?
+
+:::solution
+**20 minutes** de plus
+
+\`\`\`
+Temps à 63 km/h : 135/63 = 2,143 h ≈ 2 h 09 min
+Temps initial : 1 h 48 min
+Différence : ≈ 20 min
+\`\`\`
+:::
+
+### Exercice 3 — Taux d'utilisation de l'espace
+
+Volume chargement **36,6 m³** · taux d'utilisation **92,8 %**.
+
+:::solution
+**33,96 m³** exploités
+
+\`\`\`
+36,6 × 92,8/100 = 33,9648 m³ ≈ 33,96 m³
+\`\`\`
+:::
+
+### Exercice 4 — Augmentation prix diesel
+
+Août 2019 : **1,72 CHF/l** · Août 2022 : **2,33 CHF/l**. Augmentation en **%** ?
+
+:::solution
+**35,47 %**
+
+\`\`\`
+Différence : 2,33 − 1,72 = 0,61 CHF
+0,61/1,72 × 100 = 35,4651 % ≈ 35,47 %
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 20 · 135 · 35,47 · 33,96`;
+
+const DEMO_612_MATHS_SUMMARY = `## Maths — Solutions
+1. Distance : **135 km**
+2. Retard : **20 min**
+3. Volume utilisé : **33,96 m³**
+4. Hausse diesel : **35,47 %**`;
+
+/** Vérification des acquis Module 612 */
+const DEMO_612_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 612 — La planification des transports**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+La force centrifuge agit à l'extérieur du virage. **3 facteurs** dont elle dépend ?
+
+:::reponse
+1. **Vitesse** du véhicule
+2. **Rayon** du virage
+3. **Poids** du chargement
+:::
+
+### Question 2
+
+Dans quelle variante de cross-docking les **besoins individuels des clients** sont au centre (assemblage en nouvelles unités avant livraison) ?
+
+:::reponse
+**Cross-docking en 2 étapes** — unités fournisseur reconditionnées en nouvelles unités compactes au point de cross-docking/transbordement.
+:::
+
+### Question 3
+
+4 informations collectées/réutilisées par la **télématique** moderne pendant un transport ?
+
+:::reponse
+- **Emplacement** du véhicule
+- **Heure d'arrivée** (ETA)
+- **Situation du trafic** sur le trajet
+- **État d'avancement** de la tâche
+- Temps de conduite/travail **restant**
+- Type et durée de la **prochaine pause**
+- **Clôture de tâche** après arrivée chez le client
+
+*(au moins 4 parmi ces éléments)*
+:::
+
+### Question 4
+
+Explique le principe **LIFO** pour le chargement d'un véhicule.
+
+:::reponse
+**LIFO** = *Last In, First Out* — dernières marchandises chargées = premières déchargées.
+
+Selon l'itinéraire : marchandises de la **1re destination** chargées **en dernier** (déchargées en premier) · marchandises de la **dernière destination** chargées **en premier** (déchargées en dernier).
+:::
+
+### Question 5
+
+Nom des **4 forces dynamiques** agissant sur le chargement dans le trafic routier ?
+
+:::reponse
+1. **Force d'accélération**
+2. **Force de décélération** (freinage)
+3. **Force centrifuge**
+4. **Forces verticales** (vibrations, bosses)
+:::`;
+
+const DEMO_612_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Centrifuge : vitesse · rayon · poids
+2. Cross-docking **2 étapes**
+3. Télématique : position · ETA · trafic · avancement…
+4. LIFO : dernier chargé = premier déchargé (selon itinéraire)
+5. Accélération · décélération · centrifuge · verticales/vibrations`;
+
 /** Contenu Module 613 — CPD — Qualité de service dans la distribution */
 const DEMO_613_THEORIE_FULL = `## 13. Qualité du service dans les entreprises de distribution
 
@@ -22032,6 +22317,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_612_THEORIE_FULL,
       summary: DEMO_612_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_612_GLOSSAIRE_FULL,
+      summary: DEMO_612_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_612_SITUATION_FULL,
+      summary: DEMO_612_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_612_MATHS_FULL,
+      summary: DEMO_612_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_612_VERIFICATION_FULL,
+      summary: DEMO_612_VERIFICATION_SUMMARY,
     },
   },
   "613": {
