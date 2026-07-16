@@ -20953,6 +20953,309 @@ const DEMO_503_OBJECTIFS_SUMMARY = `## Objectifs
 - Organisations
 - Lean`;
 
+const DEMO_503_GLOSSAIRE_FULL = `## Glossaire — Module 503
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Types de fabrication** | §3.2 | Classification selon **quantité**, **organisation** et **lieu** : unitaire, multiple, masse, série, variété, lots. |
+| **Fabrication unitaire** | §3.2.1 | Chaque pièce est **unique** · personnel et machines **polyvalents** · changements fréquents. Ex. : tableaux, costumes sur mesure. |
+| **Fabrication multiple** | §3.2.2 | Même produit fabriqué **plusieurs fois** · process **répétitif** · optimisation possible. |
+| **Fabrication de masse** | §3.2.3 | **Très grandes quantités** en minimum de temps · forte **automatisation** · coût unitaire ↓. Ex. : stylos, canettes, ampoules. |
+| **Fabrication en série** | §3.2.4 | **Grandes quantités limitées** de produits similaires · différences minimales. Ex. : voitures, ordinateurs, téléviseurs. |
+| **Fabrication de variété** | §3.2.5 | Variantes en grande quantité · caractéristiques **légèrement différentes**. Ex. : smartphones couleurs, yaourts parfums. |
+| **Fabrication par lots** | §3.2.6 | Quantités **déterminées** (lots) · taille/recette peut varier · **traçabilité**. Ex. : médicaments, peinture, bière. |
+| **Principes de fabrication** | §3.3 | Formes d'**organisation** : à l'**établi**, en **atelier**, à la **chaîne** (flux), sur **chantier**. |
+| **Make to Stock (MTS)** | Principe déroulement | Produire **avant** la commande client et stocker — adapté à la **masse** / prévision forte. |
+| **Assemble to Order (ATO)** | Principe déroulement | **Assembler** à la commande à partir de composants **préfabriqués** en stock. |
+| **Make to Order (MTO)** | Principe déroulement | **Fabriquer** uniquement **après** réception de la commande client. |
+| **Engineer to Order (ETO)** | Principe déroulement | **Concevoir** (ingénierie) **puis** fabriquer sur mesure par commande. Ex. : projets uniques, machines spéciales. |
+| **Lean production** | §3.5 | Production **allégée** : éliminer le superflu · stocks ↓ · petits lots · flexibilité · temps de passage ↓. |`;
+
+const DEMO_503_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Types** : unitaire · multiple · masse · série · variété · lots
+- **Organisation** : établi · atelier · chaîne · chantier
+- **Déroulement** : MTS · ATO · MTO · ETO
+- **Lean** = moins de gaspillage · plus de valeur`;
+
+/** Mises en situation Module 503 */
+const DEMO_503_SITUATION_FULL = `## Mises en situation — Module 503
+
+Contexte : **EnterSite AG** et commande **Digitec Galaxus** — assemblage d'ordinateurs portables. Monsieur **Münster** demande une planification de production.
+
+### Vue d'ensemble des missions
+1. Trois critères du type de fabrication
+2. Cinq types de fabrication + exemples
+3. Répartition du travail (chaîne vs établi)
+4. Présentation organisation (groupe)
+5. Matrice type ↔ principe de déroulement
+6. Discussion STA
+
+---
+
+## Mission 1 — Critères de choix
+
+Explique avec tes mots : taille des lots · organisation · dépendance du lieu.
+
+:::reponse
+**Taille des lots** — quantité de produits fabriqués en **une** opération de fabrication.
+
+**Organisation de la fabrication** — manière dont la production est structurée dans l'entreprise ; une organisation optimisée permet un processus **fluide et efficace**.
+
+**Dépendance du lieu de fabrication** — conditions du site et **espace disponible** influencent le mode de fabrication approprié.
+:::
+
+---
+
+## Mission 2 — Types de fabrication
+
+Décris chaque type en 2–3 phrases + **5 produits** courants.
+
+:::reponse
+**Fabrication unitaire (à la pièce)** — produits **individuels** sur commande. Ex. : meubles sur mesure, cadeaux personnalisés, œuvres d'art, appartements, bijoux.
+
+**Fabrication de masse** — très grandes quantités, **standardisées**, forte automatisation. Ex. : stylos, brosses à dents, canettes, T-shirts, ampoules.
+
+**Fabrication en série** — grandes quantités standardisées, séries limitées. Ex. : smartphones, ordinateurs, téléviseurs, voitures, meubles en série.
+
+**Fabrication de variétés** — variantes en grande quantité, légères différences. Ex. : smartphones couleurs, yaourts parfums, vêtements tailles, bières sortes, cigarettes.
+
+**Fabrication par lots** — quantités déterminées (lots), recettes/tailles variables. Ex. : médicaments, cosmétiques, pâtisseries, peintures, vin/bière.
+:::
+
+---
+
+## Mission 3 — Planification laptops Digitec
+
+Étapes : carte mère · alimentation · disque dur · carte graphique · RAM · carte réseau · couvercle · test.
+
+### Mission 3a — 300 laptops/jour, équipement identique (chaîne)
+
+:::reponse
+**Principe chaîne** — chaque collaborateur effectue **une** opération sur tous les postes (ex. 20 PC → 2 pièces/employé/étape).
+
+*+* formation rapide · coûts salariaux ↓ · utilisation élevée des moyens  
+*−* monotone · peu flexible · risque d'erreurs ↑
+:::
+
+### Mission 3b — ~100 laptops/jour, séries 10–15, équipement variable (établi)
+
+:::reponse
+**Principe établi** — chaque collaborateur réalise **toutes** les opérations sur ses pièces (ex. 20 PC → 4 PC complets/employé).
+
+*+* variété des tâches · **flexible**  
+*−* formation importante · coûts salariaux ↑ · utilisation des moyens ↓
+:::
+
+---
+
+## Mission 4 — Présentation en groupe (25 min)
+
+Groupes : établi · atelier · chaîne · chantier.
+
+:::reponse
+**Réponse individuelle** — PowerPoint (1–2 diapos) :
+- principe de fonctionnement attribué
+- tableau avantages / inconvénients
+- esquisse du **flux de matériaux**
+
+Dépôt fichier + présentation orale par le porte-parole.
+:::
+
+---
+
+## Mission 5 — Matrice type ↔ organisation
+
+Indiquer les combinaisons **appropriées** (X).
+
+:::reponse
+| Type \\ Organisation | Établi | Atelier | Chaîne | Chantier |
+| --- | --- | --- | --- | --- |
+| **Unitaire** | X | X | | X |
+| **Petite série** | X | X | | X |
+| **Grande série** | | | X | |
+| **Masse** | | | X | |
+| **Lots** | X | X | X | X |
+:::
+
+### Mission 5.1 — Recommandation pour Münster
+
+:::reponse
+**Mission 1 (300/jour, équipement identique)**  
+Type : **production de masse** (ou grande série) · Principe : **chaîne / flux** — étapes fixes, collaborateurs spécialisés.
+
+**Mission 2 (~100/jour, séries 10–15, équipement variable)**  
+Type : **production par lots** (petites séries) · Principe : **atelier** — zones selon équipement · flexibilité de planification.
+:::
+
+### Mission 5.2 — Lean Management chez EnterSite
+
+:::reponse
+**Lean Management** = minimiser le **gaspillage** tout en maximisant la **valeur ajoutée**.
+
+Mise en œuvre possible EnterSite :
+- analyser processus · identifier gaspillages (stocks, attentes, transports, bureaucratie)
+- flux continus · **pull** / **JIT**
+- analyse des **flux de valeur** · éliminer goulots
+- impliquer les collaborateurs
+- culture d'**amélioration continue** (PAC/PDCA)
+:::
+
+---
+
+## Mission 6 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_503_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : lots · organisation · lieu
+- **M2** : unitaire · masse · série · variété · lots + exemples
+- **M3** : 300/j → chaîne · 100/j lots → établi/atelier
+- **M5** : matrice types/orga · M1 masse+chaîne · M2 lots+atelier · Lean
+- **M6** : discussion`;
+
+/** Exercices de maths Module 503 */
+const DEMO_503_MATHS_FULL = `## Exercices de mathématiques — Module 503
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Nombre de collaborateurs
+
+Temps par laptop : 6+3+3+1,5+1+1,5+2+6 = **24 min** = **0,4 h** · journée **8 h**.
+
+**Mission 1** : 300 laptops/jour identiques  
+**Mission 2** : 100 laptops/jour en petites séries
+
+:::solution
+**Mission 1 : 15 personnes**
+
+\`\`\`
+300 × 0,4 / 8 = **15**
+\`\`\`
+
+**Mission 2 : 5 personnes**
+
+\`\`\`
+100 × 0,4 / 8 = **5**
+\`\`\`
+:::
+
+### Exercice 2 — Durée avec 2 collaborateurs en moins
+
+7'500 appareils · planning initial **25 jours** avec **15** personnes · **2** partent pour le toner → **13** personnes.
+
+:::solution
+**29 jours**
+
+\`\`\`
+Cadence : 15 × 8 / 0,4 = 300 appareils/j (vérif. 25 j × 300 = 7'500)
+Avec 13 pers. : 13 × 8 / 0,4 = 260 appareils/j
+7'500 / 260 = **28,85 → 29 jours**
+\`\`\`
+:::
+
+### Exercice 3 — Appareils défectueux
+
+**98 %** conformes = **2'940** appareils.
+
+:::solution
+**60 appareils** non conformes
+
+\`\`\`
+Total testés = 2'940 / 0,98 = 3'000
+Défectueux   = 3'000 − 2'940 = **60**
+\`\`\`
+:::
+
+### Exercice 4 — Tissu pour housses (7'500 appareils)
+
+Dimensions repliées : **34,5 × 19,4 cm** · épaisseur **2 cm** · **+10 %** pour couture. Arrondir au m² supérieur si demandé.
+
+:::solution
+**1'104,75 m²** (≥ **1'105 m²** arrondi supérieur)
+
+\`\`\`
+Surface/housse = 0,345 × 0,194 × 2 = 0,13386 m²
+Majorée 10 %   = 0,13386 × 1,10 = 0,14725 m²
+Total          = 0,14725 × 7'500 = **1'104,75 m²**
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 29 · 1'104,75 · 15 · 60 · 5`;
+
+const DEMO_503_MATHS_SUMMARY = `## Maths — Solutions
+1. Collaborateurs : **15** (300/j) · **5** (100/j)
+2. Durée 7'500 app. avec 13 pers. : **29 j**
+3. Défectueux : **60** (3'000 testés, 98 % OK)
+4. Tissu : **1'104,75 m²**`;
+
+/** Vérification des acquis Module 503 */
+const DEMO_503_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 503 — L'organisation de la production**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quels sont les **trois critères** qui influencent le type de fabrication ?
+
+:::reponse
+1. **Taille des lots** (quantité fabriquée)
+2. **Organisation** de la production
+3. **Dépendance du lieu** de fabrication
+:::
+
+### Question 2
+
+Cite **cinq types** de fabrication.
+
+:::reponse
+- Fabrication **unitaire**
+- Fabrication en **série**
+- Fabrication de **masse**
+- Fabrication de **variétés**
+- Fabrication par **lots**
+
+*(Aussi : fabrication **multiple**.)*
+:::
+
+### Question 3
+
+Explique la **fabrication par lots**.
+
+:::reponse
+Production d'une **quantité déterminée** de produits similaires dans les **mêmes conditions** pour qu'ils soient identiques au sein du lot.
+
+Permet la **traçabilité** — utile pour produits à normes de sécurité élevées (pharma, alimentaire…). Souvent limitée par l'infrastructure (four, cuve, parcelle).
+:::
+
+### Question 4
+
+Différences entre fabrication en **atelier** et à la **chaîne** ?
+
+:::reponse
+**Atelier** — postes réalisant les **mêmes opérations** regroupés · le produit circule entre postes · **ordre flexible** · temps de passage souvent ↑.
+
+**Chaîne (flux)** — postes en **ordre fixe** · **coordination dans le temps** · transport continu · temps de traitement ↓ · tâches monotones.
+:::
+
+### Question 5
+
+Qu'est-ce que le **Lean Management** / **Lean Production** ?
+
+:::reponse
+Philosophie visant à **minimiser le gaspillage** (muda) et à n'utiliser que le nécessaire, tout en créant un maximum de **valeur ajoutée**.
+
+Objectifs : stocks ↓ · petits lots · flexibilité client ↑ · temps de passage ↓ · amélioration continue (PAC/PDCA).
+:::`;
+
+const DEMO_503_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Lots · organisation · lieu
+2. Unitaire · série · masse · variété · lots
+3. Lots = quantité fixe · traçabilité · normes
+4. Atelier = flexible · chaîne = ordre fixe synchronisé
+5. Lean = alléger · anti-gaspillage · valeur ajoutée`;
+
 /** Contenu Module 504 — Le flux de matériel */
 const DEMO_504_THEORIE_FULL = `## 4. Le flux de matériel
 
@@ -26974,6 +27277,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_503_THEORIE_FULL,
       summary: DEMO_503_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_503_GLOSSAIRE_FULL,
+      summary: DEMO_503_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_503_SITUATION_FULL,
+      summary: DEMO_503_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_503_MATHS_FULL,
+      summary: DEMO_503_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_503_VERIFICATION_FULL,
+      summary: DEMO_503_VERIFICATION_SUMMARY,
     },
   },
   "504": {
