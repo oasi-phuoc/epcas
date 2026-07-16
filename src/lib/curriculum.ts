@@ -14452,6 +14452,415 @@ const DEMO_402_OBJECTIFS_SUMMARY = `## Objectifs
 - Central / décentral
 - Transbordement · consignation · maturation`;
 
+/** Glossaire Module 402 */
+const DEMO_402_GLOSSAIRE_FULL = `## Glossaire — Module 402
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Stock self-service | Entrepôt self-service | Petit stock de **petites quantités** d'articles **fréquents** (vis, rondelles, joints…) placé **près des postes de travail**. Les collaborateurs se servent **sans** comptabiliser chaque prélèvement ; contrôles périodiques pour recalculer les stocks. |
+| Stock intermédiaire | Entrepôt intermédiaire | Stock de **transition** entre deux étapes de production (temps d'attente entre prémontage, fabrication, peinture, montage…). Permet d'**optimiser l'utilisation** des capacités de production. En pharma : souvent appelé **bulk**. |
+| Entrepôt de transbordement | Cross-docking (partiel) | Entrepôt **sans stock durable** : marchandises en **transit** — changement de moyen de transport, tri, préparation au chargement, formalités **douanières**. Tâches admin. : lettres de voiture, contrôles de sécurité, facturation transport. |
+| Entrepôt de produits finis | Stock de vente | Stocke les produits **non vendus immédiatement** après fabrication — lien entre **production** et **vente**. En commerce : aussi appelé stock / entrepôt de **vente**. |
+| Centre de distribution | Entrepôt de livraison | Réduit la **distance** et le **délai** de livraison vers les clients. Un producteur peut aussi stocker chez un **transporteur** pour livraisons rapides à la demande. |
+| Entrepôt de préparation des commandes | Commissionnement · consignation | Entrepôt orienté **picking** et mise à disposition des commandes. Peut inclure un stock de **consignation** : marchandises propriété du **fournisseur**, stockées chez le client jusqu'à la vente effective. |
+| Entrepôt de maturation | Entrepôt de mûrissement | Stockage de produits devant **mûrir** avant vente ou consommation (fromage, vin, charcuterie, fruits exotiques). Le **climat** et la durée de stockage déterminent la qualité finale. `;
+
+const DEMO_402_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Self-service** : près du poste · prélèvement sans écriture unitaire
+- **Intermédiaire** : transition entre étapes de production
+- **Transbordement** : transit · pas de stock durable · douane
+- **Produits finis** : entre production et vente
+- **Centre de distribution** : proximité client · délais ↓
+- **Préparation commandes** : picking · consignation possible
+- **Maturation** : fromage · vin · bananes…`;
+
+/** Mises en situation Module 402 */
+const DEMO_402_SITUATION_FULL = `## Mises en situation — Module 402
+
+Contexte : les entrepôts font partie de la **chaîne de création de valeur** chez **EnterSite AG**. Tu participes aux réflexions sur les **genres de stockage** et les scénarios d'avenir. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions.
+
+### Vue d'ensemble des missions
+1. Processus de prestation (cartouches SwissEnterSite)
+2. Types d'entrepôts et self-service
+3. Centralisé vs décentralisé · JIT · choix de site
+4. iPad · consignation · transbordement · EnterSite salle 3 V4
+5. Discussion de la STA
+
+---
+
+## Mission 1 — Processus de prestation
+
+Esquisse le **processus de prestation** d'EnterSite AG : étapes de fabrication et **types de stock**, de l'achat à la vente — en lien avec les cartouches **SwissEnterSite** et les cartouches d'**encre** SwissEnterSite.
+
+:::reponse
+**Schéma type (de l'achat à la vente) :**
+
+\`\`\`
+Achats MP / auxiliaires / consommables
+        ↓
+Entrepôt matières premières (tampon)
+        ↓
+Production (cartouches toner / encre)
+        ↓
+Entrepôt intermédiaire / produits semi-finis (si applicable)
+        ↓
+Entrepôt produits finis / préparation commandes
+        ↓
+Distribution / centre de livraison → client
+\`\`\`
+
+Les **types de stock** varient selon l'étape : MP en amont · stock intermédiaire en production · produits finis en aval · éventuellement transbordement ou consignation selon le canal.
+:::
+
+### Mission 1.1 — Matières pour la fabrication
+
+Quelles **matières premières**, **auxiliaires** et **consommables** sont nécessaires ?
+
+:::reponse
+**Matières premières** — plastiques, métaux, encres, toners…
+
+**Matières auxiliaires** — matériaux d'**emballage**
+
+**Consommables** — fournitures machines de production : eau de refroidissement, huile, etc.
+:::
+
+---
+
+## Mission 2 — Types de stockage
+
+Explique avec tes mots et cite des **exemples de marchandises**.
+
+### Centre de distribution
+
+:::reponse
+Une entreprise commerciale réduit la **distance** et le **temps de livraison** au client. Un producteur peut stocker chez un **transporteur** qui livre sans délai à l'appel du client.
+
+**Marchandises** : produits **prêts à la vente**, emballés ou non.
+:::
+
+### Entrepôt temporaire
+
+:::reponse
+Entrepôts dont le but est de stocker **temporairement** jusqu'au traitement, enlèvement ou vente.
+
+Exemples : **consignes à bagages**, casiers, boîtes aux lettres, entrepôts intermédiaires en production.
+
+**Marchandises** : valises, bijoux, documents, colis, MP et semi-finis…
+:::
+
+### Mission 2.1 — Stock self-service
+
+Décris la **fonction** et le **mode de fonctionnement** (voir images cours).
+
+:::reponse
+Forme spéciale d'entrepôt pour un **accès rapide** aux produits fréquemment demandés, **à portée de main**.
+
+Placé **à proximité immédiate** des postes de travail → les collaborateurs accèdent rapidement aux marchandises.
+:::
+
+### Mission 2.2 — Quand utiliser un self-service ?
+
+:::reponse
+Idéal pour marchandises **fréquemment utilisées**, de **valeur modérée**, gérables en **Kanban**. Les collaborateurs se servent **sans comptabilisation permanente** de chaque prélèvement.
+
+**Exemples** : vis, rondelles, joints près d'un poste d'assemblage · consommables d'atelier à faible valeur unitaire.
+:::
+
+### Mission 2.3 — Avantages du self-service
+
+:::reponse
+Marchandises **directement sur les postes** · la plupart des articles **sans écriture unitaire** → charge de travail de la logistique **considérablement allégée**.
+:::
+
+---
+
+## Mission 3 — Centralisé vs décentralisé
+
+Extension de production : **deux zones** supplémentaires. Oppose stockage **centralisé** et **décentralisé**.
+
+:::reponse
+**Centralisé — avantages**
+- Efficacité ↑ (synergies, ressources optimisées)
+- Coûts ↓ (achats en volume, rabais)
+- Meilleur **contrôle** et transparence des stocks
+
+**Centralisé — inconvénients**
+- Délais de livraison internes ↑
+- Coûts de **transport** entre sites
+
+**Décentralisé — avantages**
+- Disponibilité **sur place** en production
+- **Flexibilité** par zone
+
+**Décentralisé — inconvénients**
+- Surfaces et coûts de stockage ↑
+- Risque de **surstockage** ou surveillance difficile
+
+**Choix proposé** — plutôt **centralisé** pour l'extension : efficacité, contrôle, utilisation optimale des ressources — en tenant compte des exigences spécifiques d'EnterSite AG.
+:::
+
+### Mission 3.1 — Scénario flux tendu / fabrication sur commande
+
+Quels types de stock seraient en grande partie **supprimés** ?
+
+:::reponse
+- **Stock de matières premières** ↓ — livraison JIT directe à la ligne
+- **Stockage intermédiaire** ↓ — production en flux continu, moins de semi-finis en attente
+- **Stock de produits finis** ↓ — fabrication sur commande, livraison directe après production
+
+→ JIT + flux tendu **minimisent** les stocks et rendent la supply chain plus efficace.
+:::
+
+### Mission 3.2 — Facteurs d'implantation
+
+:::reponse
+**Facteurs internes** — type de marchandises · poids · volume · durée de conservation · taux de rotation
+
+**Facteurs externes** — règles de construction · prescriptions environnementales · protection contre le bruit · stockage MD · circulation
+:::
+
+---
+
+## Mission 4 — Types de stock pour l'iPad
+
+L'**Apple iPad (2020)** vieillit techniquement vite. Décris **deux types de stock** adaptés.
+
+:::reponse
+**1. Entrepôt de transbordement (cross-docking)**
+
+Marchandises fournisseur → **directement** zone d'expédition, sans stockage long. Rotation rapide → risque d'**obsolescence** ↓.
+
+**2. Entrepôt de préparation de commandes / consignation**
+
+Produits sur place mais **propriété du fournisseur** jusqu'à la vente → moins de **capital immobilisé** · stocks adaptables à la demande · risque de perte de valeur maîtrisé.
+:::
+
+### Mission 4.1 — HP Notebook 2670420 (consignation)
+
+:::reponse
+**Définition** — stock de **consignation** : produits non payés avant la vente ; restent propriété du **fournisseur** (HP) jusqu'à vente effective.
+
+**Avantages pour EnterSite**
+- **Capital** moins immobilisé
+- **Risque** réduit (pas de valeur totale en bilan)
+- **Flexibilité** d'adaptation à la demande
+- Stockage **efficace** sur site EnterSite — pas de délais allongés ni site externe
+:::
+
+### Mission 4.2 — Entrepôt de transbordement (Samsung Galaxy Tab)
+
+Esquisse le fonctionnement (\`Entrepôt de transbordement.pdf\`).
+
+:::reponse
+**Principe** — marchandises **en transit** sur longs transports :
+
+\`\`\`
+Fournisseur (outre-mer) → réception transbordement
+        ↓
+Tri · contrôle · formalités douanières · changement de moyen de transport
+        ↓
+Expédition vers EnterSite / client (sans stockage durable)
+\`\`\`
+
+Pas de stockage prolongé — objectif : **rapidité** et **continuité** du flux.
+:::
+
+### Mission 4.3 — EnterSite salle 3 V4
+
+> **Astuce EnterSite** : visite virtuelle **Logistique salle 3 V4** — attribue les types d'entrepôts à l'image de droite. [Vers EnterSite](#entersite-placeholder)
+
+:::reponse
+**Réponse individuelle** — selon l'exercice EnterSite (salle 3 V4).
+:::
+
+---
+
+## Mission 5 — Discussion
+
+Discute de la STA en plénière. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion (pas de solution unique).
+:::`;
+
+const DEMO_402_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : processus achat → MP → production → finis → client (cartouches)
+- **M2** : distribution · temporaire · self-service (Kanban, près du poste)
+- **M3** : centralisé (efficacité) vs décentralisé · JIT supprime MP/inter/finis
+- **M4** : iPad → cross-docking + consignation · HP 2670420 · transbordement Tab
+- **M5** : discussion STA`;
+
+/** Exercices de maths Module 402 */
+const DEMO_402_MATHS_FULL = `## Exercices de mathématiques — Module 402
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Panneaux photovoltaïques (toit entrepôt HP)
+
+Surface toit (orange) : panneaux **150 cm × 150 cm** (1,5 m × 1,5 m) à **506,25 CHF/pièce** (montage inclus).
+
+**a)** Combien de panneaux peuvent être posés (en pratique) ?  
+**b)** Quelle est la **surface totale** du toit ?
+
+*(Plan : longueur 30 m · largeur 15 m · encoche 5,5 m × 10 m.)*
+
+:::solution
+**a) 151 panneaux**
+
+Calcul (arrondi à l'inférieur par côté) :
+\`\`\`
+Sur 15 m : 15 / 1,5 = 10 panneaux
+Sur 20 m : 20 / 1,5 = 13 panneaux (13,33…)
+Sur 5,5 m : 5,5 / 1,5 = 3 panneaux (3,66…)
+Sur 30 m : 30 / 1,5 = 20 panneaux
+
+Total : (13 × (10 − 3)) + (20 × 3) = 91 + 60 = **151 panneaux**
+\`\`\`
+
+**b) 402,5 m²**
+
+\`\`\`
+Surface = 30 × 15 − ((15 − 5,5) × (30 − 20) / 2)
+        = 450 − 47,5 = **402,5 m²**
+\`\`\`
+:::
+
+### Exercice 2 — Rabais installation photovoltaïque
+
+Rabais de **3'822,20 CHF**, soit **5 %** jusqu'à fin de mois.
+
+**a)** Combien HP Allemagne doit-elle payer pour l'installation ?
+
+:::solution
+**72'621,80 CHF**
+
+Calcul :
+\`\`\`
+Prix avant remise : 3'822,20 / 5 × 100 = 76'444 CHF
+Prix à payer : 76'444 − 3'822,20 = **72'621,80 CHF**
+
+(ou : 3'822,20 / 5 × 95 = 72'621,80 CHF)
+\`\`\`
+:::
+
+### Exercice 3 — Stockage propre vs externe
+
+L'entrepôt MP d'EnterSite atteint ses limites. Crée le **tableur comparatif** (coûts stockage propre / externe) et détermine à partir de quelle **quantité** le stockage externe devient rentable.
+
+:::solution
+**Seuil de rentabilité : 213,75** (unités selon le tableau de l'exercice)
+
+*(Compléter le tableur fourni par le formateur — comparer coûts fixes et variables par unité stockée ; le point d'intersection des deux courbes/coûts totaux = **213,75**.)*
+:::
+
+### Exercice 4 — Heures supplémentaires (transbordement)
+
+**15** collaborateurs × **8 h/jour**. **2** absents pendant **10 jours**.
+
+Combien d'heures par jour doivent travailler les **13** restants pour réaliser le même travail ?
+
+:::solution
+**9,23 h/jour** (environ)
+
+Calcul :
+\`\`\`
+Charge totale : 15 × 8 = 120 h/jour
+Répartie sur 13 personnes : 120 / 13 = 9,2308… → **9,23 h/jour**
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 9,23 · 213,75 · 402,5 · 72'621,80 · 151`;
+
+const DEMO_402_MATHS_SUMMARY = `## Maths — Solutions
+1. **151 panneaux** · toit **402,5 m²**
+2. **72'621,80 CHF** (après remise 5 %)
+3. Seuil externe rentable : **213,75** (selon tableur)
+4. **9,23 h/jour** (120 h / 13 personnes)`;
+
+/** Vérification des acquis Module 402 */
+const DEMO_402_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 402 — Les genres de stockage**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Dans l'entrepôt de **transbordement**, les marchandises sont traitées **en transit**. Cite **trois activités administratives** supplémentaires au transbordement proprement dit.
+
+:::reponse
+Exemples (citer trois) :
+- Établir des **lettres de voiture**
+- Régler les **formalités douanières**
+- Effectuer des **contrôles de sécurité**
+- **Facturer** les frais de transport
+:::
+
+### Question 2
+
+L'entrepôt **intermédiaire** accueille temporairement des marchandises. Cite **quatre types** d'entrepôts temporaires.
+
+:::reponse
+1. **Consignes à bagages**
+2. **Casiers** à bagages
+3. **Casiers à courrier** / boîtes aux lettres
+4. **Entrepôt de récipients** (bulk pharma)
+5. Stockage intermédiaire dans le **processus de production**
+
+*(Quatre suffisent.)*
+:::
+
+### Question 3
+
+L'entrepôt de **préparation de commandes** est un type particulier. Expliquez.
+
+:::reponse
+Le **commissionnement** ou stock de **consignation** : marchandises d'un **fournisseur** mises à disposition du client (site commercial) **aux frais du fournisseur**.
+
+Les marchandises restent **propriété du fournisseur** mais sont **stockées chez le client** — prélèvements décomptés à la vente.
+:::
+
+### Question 4
+
+Cite **trois facteurs internes** et **trois facteurs externes** influençant le choix du site d'entrepôt.
+
+:::reponse
+**Internes** — type de marchandises · poids · volume · durée de conservation · taux de rotation
+
+**Externes** — règles de construction · prescriptions environnementales · protection contre le bruit · stockage MD · mesures de circulation
+
+*(Trois de chaque suffisent.)*
+:::
+
+### Question 5
+
+Associe chaque situation au **type d'entrepôt** correspondant.
+
+| Situation | Type d'entrepôt |
+| --- | --- |
+| Tu loues une **boîte postale** à la Poste. | ? |
+| Le **toner** est livré pour être traité. | ? |
+| Les biens entreposés **appartiennent au fournisseur**. | ? |
+| Les **bananes** doivent encore être stockées **2+ semaines** avant vente. | ? |
+| Les collaborateurs de production **se servent eux-mêmes**. | ? |
+| L'entrepôt permet d'**optimiser les capacités** de production. | ? |
+
+:::reponse
+| Situation | Type |
+| --- | --- |
+| Boîte postale | **Entrepôt temporaire** |
+| Toner livré pour traitement | **Entrepôt de matières premières** |
+| Biens = propriété fournisseur | **Entrepôt de commissionnement / consignation** |
+| Bananes 2+ semaines | **Entrepôt de maturation** |
+| Collaborateurs se servent seuls | **Entrepôt self-service** |
+| Optimiser capacités de production | **Entrepôt intermédiaire** |
+:::`;
+
+const DEMO_402_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Transbordement : lettres de voiture · douane · sécurité · facturation
+2. Temporaire : consignes · casiers · courrier · récipients · intermédiaire prod.
+3. Préparation / consignation = propriété fournisseur chez le client
+4. Internes : type · poids · volume… / Externes : construction · environnement · bruit…
+5. Poste→temporaire · toner→MP · fournisseur→consignation · bananes→maturation · self→self-service · capacités→intermédiaire`;
+
 /** Contenu Module 403 — Les formes de stockage */
 const DEMO_403_THEORIE_FULL = `## 3. Les formes de stockage
 
@@ -21668,6 +22077,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_402_THEORIE_FULL,
       summary: DEMO_402_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_402_GLOSSAIRE_FULL,
+      summary: DEMO_402_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_402_SITUATION_FULL,
+      summary: DEMO_402_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_402_MATHS_FULL,
+      summary: DEMO_402_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_402_VERIFICATION_FULL,
+      summary: DEMO_402_VERIFICATION_SUMMARY,
     },
   },
   "403": {
