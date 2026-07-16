@@ -3,6 +3,10 @@ import { AnswerReveal } from "@/components/AnswerReveal";
 import { ExerciseAnswerField } from "@/components/ExerciseAnswerField";
 import { cn } from "@/lib/cn";
 import {
+  glossaryTableColumnIndexes,
+  isGlossaryTableHeader,
+} from "@/lib/glossary-markdown";
+import {
   imageBlockFigureClass,
   imageBlockImgClass,
   parseMarkdownImageBlock,
@@ -113,6 +117,44 @@ function parseFigureBlock(lines: string[], start: number) {
   }
   if (i < lines.length) i += 1;
   return { kind, body: body.join("\n"), nextIndex: i };
+}
+
+function GlossaryTableList({ body }: { body: string[][] }) {
+  const { termIdx, linkIdx, defIdx } = glossaryTableColumnIndexes();
+
+  return (
+    <div className="my-4">
+      {body.map((row, index) => {
+        const term = row[termIdx] ?? "";
+        const link = row[linkIdx] ?? "";
+        const definition = row[defIdx] ?? "";
+        const hasLink = link.trim().length > 0;
+
+        return (
+          <div key={index}>
+            <p className="text-justify leading-relaxed">
+              <span className="font-semibold text-ink">{index + 1}. </span>
+              <span className="font-semibold text-ink">{formatInline(term)}</span>
+            </p>
+            {definition.trim() ? (
+              <p className="mt-1.5 text-justify text-sm leading-relaxed text-ink-muted">
+                {formatInline(definition)}
+              </p>
+            ) : null}
+            {hasLink ? (
+              <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">
+                <span className="font-medium text-ink">Lien : </span>
+                {formatInline(link)}
+              </p>
+            ) : null}
+            {index < body.length - 1 ? (
+              <hr className="my-4 border-0 border-t border-border" />
+            ) : null}
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 function FigureBlock({ kind, body }: { kind: string; body: string }) {
@@ -292,38 +334,44 @@ function renderBlock(
       const { rows, nextIndex } = parseTableBlock(lines, i);
       if (rows.length > 0) {
         const [header, ...body] = rows;
-        nodes.push(
-          <div key={`t-${key}`} className="my-4 overflow-x-auto">
-            <table className="w-full min-w-[20rem] border-collapse text-sm">
-              <thead>
-                <tr className="border-b border-border bg-surface-muted/70">
-                  {header.map((cell, ci) => (
-                    <th
-                      key={ci}
-                      className="px-3 py-2 text-left font-semibold text-ink"
-                    >
-                      {formatInline(cell)}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {body.map((row, ri) => (
-                  <tr key={ri} className="border-b border-border/70">
-                    {row.map((cell, ci) => (
-                      <td
+        if (isGlossaryTableHeader(header)) {
+          nodes.push(
+            <GlossaryTableList key={`g-${key}`} body={body} />,
+          );
+        } else {
+          nodes.push(
+            <div key={`t-${key}`} className="my-4 overflow-x-auto">
+              <table className="w-full min-w-[20rem] border-collapse text-sm">
+                <thead>
+                  <tr className="border-b border-border bg-surface-muted/70">
+                    {header.map((cell, ci) => (
+                      <th
                         key={ci}
-                        className="px-3 py-2 text-justify text-ink-muted"
+                        className="px-3 py-2 text-left font-semibold text-ink"
                       >
                         {formatInline(cell)}
-                      </td>
+                      </th>
                     ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>,
-        );
+                </thead>
+                <tbody>
+                  {body.map((row, ri) => (
+                    <tr key={ri} className="border-b border-border/70">
+                      {row.map((cell, ci) => (
+                        <td
+                          key={ci}
+                          className="px-3 py-2 text-justify text-ink-muted"
+                        >
+                          {formatInline(cell)}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>,
+          );
+        }
       }
       i = nextIndex;
       continue;
