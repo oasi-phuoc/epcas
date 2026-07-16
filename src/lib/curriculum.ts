@@ -20548,6 +20548,282 @@ const DEMO_502_OBJECTIFS_SUMMARY = `## Objectifs
 - Types de stocks
 - Élimination`;
 
+const DEMO_502_GLOSSAIRE_FULL = `## Glossaire — Module 502
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Règle des 6B** | §2.2 | Principe logistique (Jünemann, module 101) : mettre à disposition le **bon** matériau, en **bonne** quantité, de **bonne** qualité, au **bon** moment, au **bon** endroit, au **bon** prix. |
+| **Stock de production** | §2.3 | Stocks situés dans ou près de la zone de production : **amont** (MP, semi-finis pour démarrer), **intermédiaire** (tampon entre étapes), **aval** (semi-finis/finis avant suite ou expédition), **proximité** (petit stock mobile, libre-service). |
+| **Logistique de l'élimination des déchets** | §2.4 | Collecter, trier, emballer, stocker et évacuer les déchets de manière **écologique** et **économique**. Priorité : **éviter** → **valoriser** → **éliminer**. Prestations : TTS + tri + information (→ module 106). |`;
+
+const DEMO_502_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **6B** = bon type · quantité · qualité · moment · endroit · prix
+- **Stocks prod.** = amont · intermédiaire · aval · proximité
+- **Élimination** = éviter > valoriser > éliminer · TTS`;
+
+/** Mises en situation Module 502 */
+const DEMO_502_SITUATION_FULL = `## Mises en situation — Module 502
+
+Contexte : texte de lecture **Stephan Seek** (*La logistique, facteur de réussite*, Gabler 2010) et application chez **EnterSite AG** (logistique de production + déchets).
+
+### Vue d'ensemble des missions
+1. Définition logistique de production (texte Seek)
+2. Domaines gestion de production ↔ logistique de production
+3. Déchets EnterSite AG
+4. Élimination en entreprise formatrice
+5. Discussion STA
+
+---
+
+## Mission 1 — Définition (texte Seek)
+
+Sur la base du texte, note une **définition** de la logistique de production d'EnterSite AG et ses **objectifs**.
+
+:::reponse
+**Définition**
+
+La logistique de production d'EnterSite AG comprend la **planification**, la **commande**, la **réalisation** et le **contrôle** de tous les processus de production nécessaires à la fabrication de solutions de communication bureautique et de **Total Office Solutions**.
+
+Elle inclut :
+- la détermination du **layout** de production
+- la mise à disposition de **matériel** et d'**informations**
+- la planification et le contrôle **opérationnels**
+
+**Objectifs**
+- Alignement optimal des processus sur le **flux de matériel** · fabrication efficace, opportune et économique
+- Éviter goulots d'étranglement et stocks inutiles → production **allégée** et flexible
+- Amélioration continue → **qualité** élevée et **satisfaction** client
+:::
+
+---
+
+## Mission 2 — Domaines INCLUS (Seek)
+
+Quels domaines de la gestion de production font partie de la logistique de production ?
+
+:::reponse
+| Domaine | Justification |
+| --- | --- |
+| **Disposition des équipements** (layout) | Planification de l'agencement machines/stocks pour un **flux de matériel optimal** |
+| **Mise à disposition d'informations** | Bonnes infos au bon moment et au bon endroit |
+| **Mise à disposition de matériel** | Bonnes pièces disponibles au bon moment et au bon endroit |
+| **Planification opérationnelle** | Piloter les processus · réagir aux fluctuations de demande |
+
+Méthodes citées : ship-to-line · **JIT/JIS** · **Kanban**
+:::
+
+### Mission 2.1 — Domaines EXCLUS (Seek)
+
+:::reponse
+| Domaine | Justification |
+| --- | --- |
+| **Développement de produits** | Conception / création — pas planification opérationnelle des processus |
+| **Structure / gamme de produits** | Stratégie d'offre et marketing — pas logistique opérationnelle |
+| **Choix des modes de production** | Décision stratégique (atelier, flux…) — hors planification/contrôle opérationnel |
+:::
+
+---
+
+## Mission 3 — Déchets EnterSite AG
+
+Liste des déchets issus de la production et de la logistique.
+
+:::reponse
+- Ordures ménagères
+- Papier · carton · plastique
+- Vieux métaux
+- Piles · pneus · huiles
+- Toner
+- Déchets électriques / électroniques
+:::
+
+### Mission 3.1 — Élimination appropriée
+
+🔎 Guide des déchets EnterSite
+
+:::reponse
+| Type | Destination |
+| --- | --- |
+| **Papier** | Recyclage / UIOM |
+| **Ordures ménagères** | UIOM ou décharge |
+| **Carton** | Recyclage / UIOM |
+| **Plastique** | Recyclage / UIOM |
+| **Vieux métaux** | Recyclage |
+| **Piles** | Déchets spéciaux |
+| **Pneus** | Déchets spéciaux |
+| **Huiles** | Déchets spéciaux |
+| **Toner** | Recyclage / déchets spéciaux |
+| **Déchets électroniques** | Recyclage / déchets spéciaux / UIOM |
+:::
+
+---
+
+## Mission 4 — Entreprise formatrice
+
+Document Word sur l'élimination des déchets (questions directrices) :
+
+:::reponse
+**Réponse individuelle** — dépôt du document couvrant :
+- Quels déchets ? Où et pourquoi ?
+- Quantités et fréquence ?
+- Éliminer · valoriser · réutiliser ?
+- Éviter / réduire possible ?
+- Élimination efficace et sûre (environnement) ?
+:::
+
+---
+
+## Mission 5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_502_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : planifier · commander · réaliser · contrôler · layout · matériel/info
+- **M2** : IN = layout · matériel · info · planif. op. · EX = développement · gamme · modes
+- **M3** : déchets EnterSite · recyclage / spéciaux / UIOM
+- **M4** : document entreprise formatrice
+- **M5** : discussion`;
+
+/** Exercices de maths Module 502 */
+const DEMO_502_MATHS_FULL = `## Exercices de mathématiques — Module 502
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Autonomie stock toner (avant campagne)
+
+Production **60 p./jour** · **500 g** de poudre de toner/pièce · stock **650 kg**.
+
+Combien de **jours** de production le stock couvrait-il **avant** la campagne ?
+
+:::solution
+**21,6 jours** (≈ 21,67 j)
+
+\`\`\`
+Consommation/jour = 60 × 0,5 kg = 30 kg
+650 ÷ 30 = **21,67 jours**
+\`\`\`
+:::
+
+### Exercice 2 — Autonomie après campagne (+40 %)
+
+Production augmente de **40 %** (même stock 650 kg).
+
+:::solution
+**15,4 jours** (≈ 15,48 j)
+
+\`\`\`
+Production/jour = 60 × 1,40 = 84 pièces
+Consommation     = 84 × 0,5 = 42 kg/j
+650 ÷ 42 = **15,48 jours**
+\`\`\`
+:::
+
+### Exercice 3 — Diamètre de tube (pouces → cm)
+
+3/6 pouce = **12,7 mm**. Tube de **1¾ pouce**.
+
+:::solution
+**4,45 cm**
+
+\`\`\`
+1 pouce = 12,7 / (3/6) × (3/6) = 12,7 mm × (6/3)… 
+Méthode proportion : 12,7 mm pour 3/6" → 1" = 25,4 mm
+1¾" = 1,75 × 25,4 = 44,45 mm = **4,45 cm**
+\`\`\`
+:::
+
+### Exercice 4 — Palettes en 15 jours ouvrables
+
+Cartons **24 × 20 × 15 cm** · hauteur max palette **0,8 m** (80 cm).  
+Production après campagne (ex. 2) · **15 jours ouvrables**.
+
+:::solution
+**12 palettes**
+
+\`\`\`
+Cartons/couche = (120/24) × (80/20) = 5 × 4 = 20
+Couches        = 80/15 = 5 (arrondi inf.)
+Cartons/pal.   = 20 × 5 = 100
+Toners 15 j.   = 84 × 15 = 1'260
+Palettes       = 1'260 / 100 = **12,6 → 12 palettes**
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 4,45 · 21,6 · 12 · 15,4`;
+
+const DEMO_502_MATHS_SUMMARY = `## Maths — Solutions
+1. Stock avant campagne : **21,6 j** (650 kg ÷ 30 kg/j)
+2. Après +40 % : **15,4 j** (650 ÷ 42 kg/j)
+3. Tube 1¾" : **4,45 cm**
+4. Palettes 15 j. : **12** (1'260 toners ÷ 100 cartons/pal.)`;
+
+/** Vérification des acquis Module 502 */
+const DEMO_502_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 502 — La logistique de production**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Définis le terme **logistique de production**.
+
+:::reponse
+La logistique de production **planifie**, **dirige** et **contrôle** le transport interne, le **transbordement** et les processus de **stockage** dans la zone de production (entre approvisionnement et distribution).
+:::
+
+### Question 2
+
+Cite **six objectifs** découlant des tâches de la logistique de production.
+
+:::reponse
+1. Délais d'**exécution** courts
+2. Grand respect des **délais**
+3. **Stocks** les plus bas possibles
+4. Niveau de **qualité** élevé
+5. Utilisation optimale des **capacités** (hommes et machines)
+6. **Voies de transport** optimales dans la production
+:::
+
+### Question 3
+
+Décris la fonction des entrepôts de production **en amont**, **intermédiaires** et **en aval**.
+
+:::reponse
+| Type | Fonction |
+| --- | --- |
+| **En amont** | Stockage de MP, semi-finis ou finis pour **démarrer** le processus de production |
+| **Intermédiaire** | Tampon de semi-finis en attente de l'**étape suivante** |
+| **En aval** | Semi-finis/finis stockés avant **traitement ultérieur** ou **expédition** client |
+:::
+
+### Question 4
+
+Qu'est-ce qui est spécifique à la gestion d'un **stock de proximité** (libre-service) ?
+
+:::reponse
+Les collaborateurs s'y servent en **libre-service**, en général **sans comptabilisation ERP** pièce à pièce.
+
+Le petit matériel (ex. vis pour un vélo) est débité comme **consommable** lié au produit fini, pas article par article.
+:::
+
+### Question 5
+
+Quel **principe** respecter pour la logistique d'élimination des déchets ?
+
+:::reponse
+**Éviter — valoriser — éliminer**
+
+Éviter les déchets **avant** de les valoriser, et valoriser **avant** d'éliminer.
+:::`;
+
+const DEMO_502_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Planifier · diriger · contrôler TTS en production
+2. Exécution · délais · stocks · qualité · capacité · voies
+3. Amont = démarrer · intermédiaire = tampon · aval = suite/expédition
+4. Proximité = libre-service · souvent hors ERP détail
+5. Éviter > valoriser > éliminer`;
+
 /** Contenu Module 503 — L'organisation de la production */
 const DEMO_503_THEORIE_FULL = `## 3. Organisation de la production
 
@@ -26668,6 +26944,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_502_THEORIE_FULL,
       summary: DEMO_502_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_502_GLOSSAIRE_FULL,
+      summary: DEMO_502_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_502_SITUATION_FULL,
+      summary: DEMO_502_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_502_MATHS_FULL,
+      summary: DEMO_502_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_502_VERIFICATION_FULL,
+      summary: DEMO_502_VERIFICATION_SUMMARY,
     },
   },
   "503": {
