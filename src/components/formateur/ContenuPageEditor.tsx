@@ -17,27 +17,37 @@ import { MarkdownToolbar } from "@/components/MarkdownToolbar";
 import {
   FORMATEUR_EXERCISE_PAGES,
   FORMATEUR_THEORY_PAGES,
+  MODULE_EXERCISE_PAGE_SLUGS,
   applyLevelContent,
   getLessonBody,
   isAfpIdenticalToCfc,
 } from "@/lib/lesson-content";
+import {
+  applyLevelAttachments,
+  getLessonAttachments,
+  isAfpAttachmentsIdenticalToCfc,
+} from "@/lib/lesson-attachments";
+import { LessonAttachmentsPanel } from "@/components/LessonAttachmentsPanel";
 import { useAppStore } from "@/lib/store";
 import { isStaffRole } from "@/lib/roles";
 import { useEditorHistory } from "@/lib/use-editor-history";
-import type { DiplomaLevel, Lesson, LessonPageSlug } from "@/lib/types";
+import type { DiplomaLevel, Lesson, LessonAttachment, LessonPageSlug } from "@/lib/types";
 import { Eye, Pencil, Redo2, Undo2 } from "lucide-react";
 
 function LessonEditor({
   lesson,
   editLevel,
+  supportsAttachments,
   onSave,
 }: {
   lesson: Lesson;
   editLevel: DiplomaLevel;
+  supportsAttachments: boolean;
   onSave: (next: Lesson) => void;
 }) {
   const initialFull = getLessonBody(lesson, editLevel, "full");
   const initialSummary = getLessonBody(lesson, editLevel, "summary");
+  const initialAttachments = getLessonAttachments(lesson, editLevel);
 
   const {
     present,
@@ -55,6 +65,8 @@ function LessonEditor({
   });
 
   const { title, full, summary } = present;
+  const [attachments, setAttachments] =
+    useState<LessonAttachment[]>(initialAttachments);
   const [saved, setSaved] = useState(false);
   const [mode, setMode] = useState<"edit" | "preview">("preview");
   const [which, setWhich] = useState<"full" | "summary">("full");
@@ -78,7 +90,11 @@ function LessonEditor({
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    onSave(applyLevelContent(lesson, editLevel, title, full, summary));
+    let next = applyLevelContent(lesson, editLevel, title, full, summary);
+    if (supportsAttachments) {
+      next = applyLevelAttachments(next, editLevel, attachments);
+    }
+    onSave(next);
     setSaved(true);
     setTimeout(() => setSaved(false), 2500);
   }
@@ -174,6 +190,9 @@ function LessonEditor({
         <Alert tone="info">
           Contenu AFP actuellement <strong>identique au CFC</strong>. Toute
           modification enregistrée créera une variante AFP.
+          {supportsAttachments && isAfpAttachmentsIdenticalToCfc(lesson)
+            ? " Les fichiers d'exercice suivent aussi le CFC."
+            : null}
         </Alert>
       ) : null}
       {editLevel === "AFP" && !identical ? (
@@ -193,6 +212,14 @@ function LessonEditor({
         }
         required
       />
+
+      {supportsAttachments ? (
+        <LessonAttachmentsPanel
+          attachments={attachments}
+          editable={mode === "edit"}
+          onChange={mode === "edit" ? setAttachments : undefined}
+        />
+      ) : null}
 
       {mode === "edit" ? (
         <>
@@ -242,6 +269,7 @@ function LessonEditor({
                 const next = { ...lesson };
                 delete next.contentFullAfp;
                 delete next.contentSummaryAfp;
+                delete next.attachmentsAfp;
                 onSave(next);
                 setPresent(
                   {
@@ -251,6 +279,7 @@ function LessonEditor({
                   },
                   { history: "none" },
                 );
+                setAttachments(lesson.attachments ?? []);
                 setSaved(true);
                 setTimeout(() => setSaved(false), 2500);
               }
@@ -297,6 +326,8 @@ export function ContenuPageEditor({
   const hubHref =
     section === "exercices" ? "/formateur/exercices" : "/formateur/contenu";
   const pageMeta = sectionPages.find((p) => p.slug === pageSlug);
+
+  const supportsAttachments = MODULE_EXERCISE_PAGE_SLUGS.includes(pageSlug);
 
   const modulesSorted = useMemo(
     () =>
@@ -498,6 +529,7 @@ export function ContenuPageEditor({
             key={`${lesson.id}-${editLevel}`}
             lesson={lesson}
             editLevel={editLevel}
+            supportsAttachments={supportsAttachments}
             onSave={updateLesson}
           />
         </Panel>

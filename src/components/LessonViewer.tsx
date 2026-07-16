@@ -17,6 +17,8 @@ import {
   isTheoryPageSlug,
   MODULE_EXERCISE_PAGE_SLUGS,
 } from "@/lib/lesson-content";
+import { getDownloadableLessonAttachments } from "@/lib/lesson-attachments";
+import { LessonAttachmentsPanel } from "@/components/LessonAttachmentsPanel";
 import { moduleVisibleForLevel } from "@/lib/levels";
 import { isStaffRole } from "@/lib/roles";
 import { useAppStore } from "@/lib/store";
@@ -116,6 +118,16 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
   const displayBody =
     paginated && chapters ? chapters[safeIndex]?.markdown ?? body : body;
 
+  const exerciseAttachments = useMemo(() => {
+    if (!lesson || !MODULE_EXERCISE_PAGE_SLUGS.includes(lesson.pageSlug)) {
+      return [];
+    }
+    return getDownloadableLessonAttachments(
+      lesson,
+      isTrainer ? "CFC" : userLevel,
+    );
+  }, [lesson, isTrainer, userLevel]);
+
   function goToChapter(index: number) {
     if (!chapters) return;
     const next = Math.min(Math.max(index, 0), chapters.length - 1);
@@ -181,6 +193,8 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
             placement="top"
           />
         ) : null}
+
+        <LessonAttachmentsPanel attachments={exerciseAttachments} />
 
         <MarkdownLite
           text={displayBody}

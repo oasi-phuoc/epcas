@@ -4,7 +4,7 @@ import {
   buildCurriculumModules,
   curriculumBlocks,
 } from "@/lib/curriculum";
-import type { Lesson, LessonPageSlug, Module } from "@/lib/types";
+import type { Lesson, LessonAttachment, LessonPageSlug, Module } from "@/lib/types";
 
 export type ContentManifestEntry = {
   id: string;
@@ -37,6 +37,8 @@ export type LessonPackPayload = {
   contentSummary: string;
   contentFullAfp?: string;
   contentSummaryAfp?: string;
+  attachments?: LessonAttachment[];
+  attachmentsAfp?: LessonAttachment[];
   hash: string;
   size: number;
 };
@@ -53,6 +55,8 @@ function stableLessonPayload(lesson: Lesson) {
     contentSummary: lesson.contentSummary,
     contentFullAfp: lesson.contentFullAfp ?? null,
     contentSummaryAfp: lesson.contentSummaryAfp ?? null,
+    attachments: lesson.attachments ?? null,
+    attachmentsAfp: lesson.attachmentsAfp ?? null,
   });
 }
 
@@ -75,6 +79,8 @@ export function buildLessonPack(lesson: Lesson): LessonPackPayload {
     contentSummary: lesson.contentSummary,
     contentFullAfp: lesson.contentFullAfp,
     contentSummaryAfp: lesson.contentSummaryAfp,
+    attachments: lesson.attachments,
+    attachmentsAfp: lesson.attachmentsAfp,
     hash,
     size,
   };

@@ -107,7 +107,26 @@ export interface Lesson {
    * Absent / undefined = identique au CFC.
    */
   contentSummaryAfp?: string;
+  /**
+   * Fichiers d'exercice téléchargeables (mise en situation, maths, vérification).
+   * Absent = aucun fichier.
+   */
+  attachments?: LessonAttachment[];
+  /** Variante AFP des pièces jointes ; absent = identique au CFC. */
+  attachmentsAfp?: LessonAttachment[];
   published: boolean;
+}
+
+/** Document téléchargeable rattaché à une page d'exercice curriculum. */
+export interface LessonAttachment {
+  id: string;
+  name: string;
+  /**
+   * URL de téléchargement.
+   * Placeholder public, data URL (fichiers légers), ou vide si pas encore fourni.
+   */
+  url: string;
+  mimeType?: string;
 }
 
 export interface Module {
