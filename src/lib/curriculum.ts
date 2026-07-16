@@ -16492,6 +16492,284 @@ const DEMO_601_OBJECTIFS_SUMMARY = `## Objectifs
 - Scan / Voice / Light / Vision
 - Pick-and-Pack`;
 
+/** Glossaire Module 601 */
+const DEMO_601_GLOSSAIRE_FULL = `## Glossaire — Module 601
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Préparation de commandes dynamiques** | §1.1.1 | La **marchandise vient à l'homme** : un système de stockage amène automatiquement les articles vers la zone de prélèvement · le reste est restocké · fréquent dans les entrepôts automatisés. |
+| **Préparation de commandes statiques** | §1.1.1 | L'**homme va à la marchandise** : stock immobile dans les rayonnages · le préparateur se déplace (à pied ou avec engin) vers les emplacements. |
+| **Préparation des commandes sans documents** | §1.2 | Picking assisté par ordinateur (**MDE**) sans listes papier · données en **temps réel** · techniques : Pick-by-Scan, Voice, Light, Vision · objectifs : vitesse ↑ · erreurs ↓. |`;
+
+const DEMO_601_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Statique** = homme → marchandise · **dynamique** = marchandise → homme
+- **Sans documents** = MDE + Scan / Voice / Light / Vision
+- Batch vs **real-time** · centralisé vs décentralisé`;
+
+/** Mises en situation Module 601 */
+const DEMO_601_SITUATION_FULL = `## Mises en situation — Module 601
+
+**Support & Distribution** EnterSite AG : techniques de **préparation de commandes** (picking), comparaison des méthodes et analyse du processus en entrepôt.
+
+### Vue d'ensemble des missions
+1. Pick-by-Voice — classification et évaluation
+2. Comparaison Pick-by-Light / Scan / Vision / Papier
+3. Croquis du processus de picking (entrepôt)
+4. Vidéo du déroulement (3–5 min)
+5. Discussion STA
+
+---
+
+## Mission 1 — Pick-by-Voice
+
+### Explication
+
+:::reponse
+**Pick-by-Voice** (préparation vocale) : le préparateur porte un **casque** avec micro. Le système lui **dicte** les instructions (emplacement, article, quantité) · il **confirme** oralement ou par code vocal. Les **deux mains restent libres** pour le prélèvement.
+
+Données transmises en **temps réel** via **MDE** (WLAN) · pas de papier ni scanner à tenir.
+:::
+
+### Classification (EnterSite — exemple type)
+
+:::reponse
+| Critère | Choix |
+| --- | --- |
+| Mise à disposition de la marchandise | **Préparation statique** (homme va à la marchandise) |
+| Déplacement | **Pluri dimensionnel** (horizontal + vertical · grande levée) |
+| Prélèvement | **Manuel** |
+| Remise de la marchandise | **Centralisé** (vers zone d'expédition) |
+| Traitement des données | **Real-time** |
+:::
+
+### Avantages et inconvénients
+
+:::reponse
+**Avantages**
+- **Mains libres** → prélèvement plus rapide et ergonomique
+- **Moins d'erreurs** que le papier · guidage direct
+- **Productivité** et qualité souvent supérieures au picking papier
+- Données **actualisées** en continu (stocks, modifs de commande)
+
+**Inconvénients**
+- **Coût** d'acquisition et maintenance (casques, serveur, logiciel)
+- **Formation** du personnel à la reconnaissance vocale
+- **Dépendance technique** · pannes ou bruit ambiant peuvent gêner
+- Investissement plus élevé que le picking **papier**
+:::
+
+---
+
+## Mission 2 — Comparaison des techniques
+
+### Pick-by-Light
+
+:::reponse
+**Avantages** — guidage visuel rapide et précis · faible taux d'erreur · formation facile des nouveaux.
+
+**Inconvénients** — coût système + LED · flexibilité limitée si réagencement · dépendance de l'éclairage.
+:::
+
+### Pick-by-Scan
+
+:::reponse
+**Avantages** — grande précision scanner + logiciel · meilleure adaptabilité qu'au Light · saisie lot / DLC possible.
+
+**Inconvénients** — coût scanner/logiciel · formation · pannes techniques · souvent **une main occupée**.
+:::
+
+### Pick-by-Vision
+
+:::reponse
+**Avantages** — guidage visuel (lunettes AR) · **mains libres** · infos superposées (lieu, qté, n°).
+
+**Inconvénients** — coût équipement · formation · dépendance des appareils.
+:::
+
+### Papier
+
+:::reponse
+**Avantages** — faible coût initial · pas de dépendance technique · pas de risque de panne IT.
+
+**Inconvénients** — **plus d'erreurs** · vitesse/efficacité moindres · mise à jour difficile des emplacements · données pas toujours actuelles (batch).
+:::
+
+---
+
+## Mission 3 — Processus de préparation (croquis)
+
+:::reponse
+**Réponse individuelle** — décrire précisément le processus de ton entrepôt : lieu de départ, engins auxiliaires, disposition, remise.
+
+Si tu es en **distribution**, visite un camarade en **entrepôt** pour documenter le processus de stockage/picking.
+:::
+
+---
+
+## Mission 4 — Vidéo du picking
+
+:::reponse
+**Réponse individuelle** — film 3–5 min du picking en entreprise · upload **Stream/O365** · lien dans le dépôt de fichiers.
+
+Si tu es en distribution, filmer chez un camarade en entrepôt.
+:::
+
+---
+
+## Mission 5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière avec la classe et l'enseignant.
+:::`;
+
+const DEMO_601_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : Voice = casque · statique · 2D · manuel · centralisé · real-time
+- **M2** : Light / Scan / Vision / Papier — avantages vs coûts
+- **M3–M4** : croquis + vidéo (réponses individuelles)
+- **M5** : discussion STA`;
+
+/** Exercices de maths Module 601 */
+const DEMO_601_MATHS_FULL = `## Exercices de mathématiques — Module 601
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Capacité de prélèvement
+
+**40 prélèvements/h** · journée **8,5 h** · semaine **5 j** · année **46 sem.**
+
+:::solution
+- **Par jour : 340** prélèvements
+- **Par semaine : 1'700** prélèvements
+- **Par an : 78'200** prélèvements
+
+\`\`\`
+Jour   : 8,5 × 40 = 340
+Semaine: 340 × 5 = 1'700
+An     : 1'700 × 46 = 78'200
+\`\`\`
+:::
+
+### Exercice 2 — Augmentation de rendement (+1,5 %)
+
+Sur la base de l'exercice 1 — combien de prélèvements l'année prochaine ?
+
+:::solution
+**79'373 prélèvements**
+
+\`\`\`
+78'200 + (78'200 × 1,5 / 100) = 79'373
+\`\`\`
+:::
+
+### Exercice 3 — Passage au picking 1D
+
+Actuellement **2D** : 40 prél./h · 8,5 h/j.  
+Nouveau **1D** : 60 prél./h mais **0,5 h/j** de réapprovisionnement → **8 h** de picking effectif.
+
+:::solution
+**480 prélèvements par jour**
+
+\`\`\`
+8 × 60 = 480 prélèvements/jour
+\`\`\`
+:::
+
+### Exercice 4 — Conversions (kommissionierer horizontal)
+
+:::solution
+| Grandeur | Calcul | Résultat |
+| --- | --- | --- |
+| Poids | 2'546'000 g ÷ 1'000 ÷ 1'000 | **2,546 t** |
+| Longueur | 2'420 mm ÷ 1'000 | **2,42 m** |
+| Hauteur levage | 125 mm ÷ 1'000 | **0,125 m** |
+| Vitesse | 3,333 m/s × 3,6 | **12 km/h** |
+
+\`\`\`
+3,333 × 3'600 / 1'000 = 11,9988 ≈ 12 km/h
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 340 · 2,546 · 78'200 · 2,42 · 480 · 12 · 0,125 · 1'700 · 79'373`;
+
+const DEMO_601_MATHS_SUMMARY = `## Maths — Solutions
+1. **340** /j · **1'700** /sem. · **78'200** /an
+2. **79'373** (+1,5 %)
+3. Picking 1D : **480**/j
+4. **2,546 t** · **2,42 m** · **0,125 m** · **12 km/h**`;
+
+/** Vérification des acquis Module 601 */
+const DEMO_601_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 601 — La préparation des commandes**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Décris la préparation de commandes **orientée articles** (en deux étapes).
+
+:::reponse
+Les marchandises sont prélevées **simultanément** pour **plusieurs commandes** (orienté articles). Une **2e étape** répartit ensuite les articles entre les commandes clients.
+
+Judicieux lorsque les **trajets de picking sont longs** (économie de distance en 1re étape).
+:::
+
+### Question 2
+
+Décrire : 1) statique/dynamique · 2) 1D/2D · 3) manuel/auto · 4) centralisé/décentralisé.
+
+:::reponse
+**1a Statique** — « homme va à la marchandise » · stock fixe · préparateur se déplace.
+
+**1b Dynamique** — « marchandise vient à l'homme » · système amène l'article · reste restocké.
+
+**2a 1 dimension** — déplacement horizontal seul · sol / 1er niveau · rapide · 1 emplacement sol/article · réappro nécessaire.
+
+**2b 2 dimensions** — horizontal **+** vertical · grande levée / transstockeurs · pas de transfert réserve→picking.
+
+**3a Manuel** — préparateur prélève et place dans le bac (même en entrepôt auto souvent).
+
+**3b Automatique** — trieurs/robots vers le bac (rare).
+
+**4a Centralisé** — remise à un point central (expédition/emballage).
+
+**4b Décentralisé** — dépôt en fin d'allée/convoyeur puis regroupement central · trajets ↓ · fréquent avec transstockeurs.
+:::
+
+### Question 3
+
+Décrire la préparation de commandes **par allée de prélèvement**.
+
+:::reponse
+Alternative au picking **en série** (longs trajets si toutes les allées sont visitées).
+
+Accès aux allées **d'un seul côté** · articles **A** (rotation rapide) le plus près possible de l'allée principale · analyse **ABC** (module **408**) selon fréquence des commandes.
+:::
+
+### Question 4
+
+Cite **deux avantages** de la préparation sans documents.
+
+:::reponse
+- **Augmentation de la productivité**
+- **Réduction des erreurs**
+:::
+
+### Question 5
+
+Décrire le processus **Pick-by-Light**.
+
+:::reponse
+Picking **sans papier** · des **LED** indiquent l'emplacement et la **quantité** à prélever · confirmation par **touche** après prélèvement.
+
+**Limite** : une seule commande affichable **par zone** → délimitation des zones de prélèvement nécessaire.
+:::`;
+
+const DEMO_601_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Orienté articles = prélèvement multi-commandes + 2e répartition
+2. Statique/dynamique · 1D/2D · manuel/auto · centralisé/décentralisé
+3. Par allée = ABC · articles A près de l'allée principale
+4. Productivité ↑ · erreurs ↓
+5. Pick-by-Light = LED + confirmation · 1 commande/zone`;
+
 /** Contenu Module 602 — Les emballages */
 const DEMO_602_THEORIE_FULL = `## 2. Les emballages
 
@@ -21878,6 +22156,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_601_THEORIE_FULL,
       summary: DEMO_601_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_601_GLOSSAIRE_FULL,
+      summary: DEMO_601_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_601_SITUATION_FULL,
+      summary: DEMO_601_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_601_MATHS_FULL,
+      summary: DEMO_601_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_601_VERIFICATION_FULL,
+      summary: DEMO_601_VERIFICATION_SUMMARY,
     },
   },
   "602": {
