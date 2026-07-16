@@ -30951,6 +30951,549 @@ const DEMO_705_OBJECTIFS_SUMMARY = `## Objectifs
 - Composants · amortissement
 - Niveaux · taux stockage / possession`;
 
+
+const DEMO_705_GLOSSAIRE_FULL = `## Glossaire — Module 705
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Taux de couverture des coûts | | Rapport entre les coûts totaux et le chiffre d'affaires, exprimé en pourcentage. **Formule :** coûts totaux / chiffre d'affaires × 100. Inférieur à 100 % : les recettes couvrent les coûts (rentable). Supérieur à 100 % : pertes économiques. |
+| Amortissement | | Répartition comptable de la perte de valeur d'un bien d'investissement (bâtiment, chariot élévateur, rayonnage…) sur sa durée d'utilisation. Calcul linéaire courant : valeur à neuf / durée de vie en années. |
+| Coûts de stockage | | Ensemble des frais liés à la détention de marchandises en entrepôt : frais administratifs, locaux, assurances, capital immobilisé, amortissements, personnel, énergie, etc. Distingués en coûts **fixes** (indépendants du volume) et **variables** (proportionnels à l'activité). |
+| Types de stocks | | Niveaux de stock définis pour la gestion des approvisionnements : **stock de sécurité** (réserve pour retards ou pics de consommation), **point de commande** (seuil déclenchant une nouvelle commande), **stock maximum** (plafond pour limiter les coûts). Voir aussi module **311**. |`;
+
+const DEMO_705_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Taux de couverture** : coûts totaux / CA × 100 (< 100 % = rentable)
+- **Amortissement** : répartition de la valeur d'un investissement sur sa durée de vie
+- **Coûts de stockage** : fixes + variables (admin., locaux, capital…)
+- **Types de stocks** : sécurité · point de commande · maximum`;
+
+/** Mises en situation Module 705 */
+const DEMO_705_SITUATION_FULL = `## Mises en situation — Module 705
+
+Contexte : tu travailles chez **EnterSite AG**. Les missions portent sur la **rentabilité de l'entrepôt** (coûts, capacités, simulation, optimisation des stocks). Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.
+
+---
+
+## Bloc A — Rentabilité et jeu de simulation
+
+### Mission 1 — Définir la rentabilité
+
+Explique le plus précisément possible ce que signifie le terme **« rentabilité »** dans le domaine de la logistique. Utilise tes propres mots.
+
+:::reponse
+La rentabilité en matière de logistique se réfère à la capacité de planifier, d'organiser, de mettre en œuvre et de contrôler les activités et les processus logistiques de manière efficace et rentable. Une mesure ou un investissement logistique est considéré comme rentable s'il répond aux objectifs et aux exigences visés, tout en minimisant les coûts et en utilisant les ressources de manière optimale.
+
+La logistique ne peut atteindre cet objectif ambitieux qu'en fournissant une prestation de haute qualité, c'est-à-dire qu'elle doit remplir les **« 6B »** (bonne marchandise, bonne qualité, bonne quantité, bon moment, bon endroit, bon prix).
+:::
+
+#### Mission 1.1 — Évaluation dans l'entreprise formatrice
+
+:::reponse
+**Réponse individuelle** — aspects positifs ou négatifs par rapport à ton entreprise formatrice (pas de solution unique).
+:::
+
+---
+
+### Mission 2 — Jeu de simulation
+
+Formez des groupes de cinq personnes maximum. Vous êtes tous chefs de service chez EnterSite AG et responsables de l'approvisionnement. Ouvrez le fichier Excel et jouez ensemble au jeu de simulation selon les instructions de l'enseignant·e.
+
+**Fichiers :**
+- **EnterSite_705_MES_Plan de jeu.xlsx**
+- **Instruction jeu simulation.docx**
+- **EnterSite_705_cartes de jeu.pptx**
+
+:::reponse
+**Réponse individuelle** — enregistrer le tableau de fin de jeu dans le champ des solutions.
+:::
+
+---
+
+### Mission 3 — Taux d'intérêt du stock et capital immobilisé
+
+Calcule le **taux d'intérêt du stock** à l'aide de ton tableau. Taux d'intérêt usuel sur le marché : **3 %**.
+
+**Formule :** taux d'intérêt du marché × durée moyenne de stockage / 360 jours
+
+#### Mission 3.1 — Coût du capital immobilisé
+
+**Formule :** taux d'intérêt de stockage × stock moyen × prix de revient
+
+:::reponse
+**Réponse individuelle** — résultats dépendant du tableau de simulation.
+:::
+
+---
+
+### Mission 4 — Évaluation de la simulation
+
+Comment évalues-tu ton expérience de la simulation et les résultats de tes calculs en termes de rentabilité ?
+
+:::reponse
+**Réponse individuelle** — évaluation personnelle (pas de solution unique).
+:::
+
+---
+
+### Mission 5 — Discussion STA (bloc A)
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::
+
+---
+
+## Bloc B — Stockage externe (Rupperswil, Köniz, Tessin)
+
+### Situation
+
+Les compétences clés d'EnterSite AG se situent dans le domaine des **Total Office Solutions**. La direction a décidé de gérer des stocks de marchandises pour les clients. EnterSite AG reçoit l'e-mail suivant de Monsieur **Sauber** (AZL Rupperswil).
+
+**Décompte comptabilité — frais de stockage mars**
+
+| Poste | Rupperswil (central) | Köniz (externe) | Tessin (externe) |
+| --- | --- | --- | --- |
+| Frais administratifs | CHF 10'300 | CHF 78 | CHF 480 |
+| Frais de locaux | CHF 780 | CHF 480 | CHF 20 |
+| Assurances | CHF 420 | CHF 46 | CHF 47,70 |
+| Capital immobilisé | CHF 750 | — | CHF 35 |
+| **Total mars** | **CHF 12'250** | **CHF 604** | **CHF 582,70** |
+| **Occupation** | **80 %** | **18 %** | **20 %** |
+
+Un supplément de bénéfice de **30 %** doit être calculé pour le stockage externe.
+
+Fichier : **calendrier.pdf**
+
+---
+
+### Mission 1 — Capacités (Rupperswil)
+
+Calcule si le matériel pédagogique peut être stocké dans l'entrepôt central de **Rupperswil**.
+
+:::reponse
+**Entrepôt central de Rupperswil**
+
+- 20 m × 30 m = **600 m²**
+- (20 m × 20 m) / 2 = **200 m²**
+- **Total : 800 m²**
+- 20 % libre = **160 m²** disponibles
+
+**Le stockage est possible.**
+:::
+
+#### Mission 1.1 — Capacités (Köniz)
+
+:::reponse
+**Entrepôt externe de Köniz**
+
+- Longueur moyenne = (4,5 m + 8 m) / 2 = **6,25 m**
+- 6,25 m × 5 m = **31,25 m²**
+- 82 % libre = **25,625 m²** disponibles
+
+**Le stockage est possible.**
+:::
+
+#### Mission 1.2 — Capacités (Tessin)
+
+:::reponse
+**Entrepôt externe du Tessin**
+
+- (1 m × 5 m) × 3 = **15 m²**
+- 5 m × 5 m = **25 m²**
+- ((1 m × 1 m) / 2) × 2 = **1 m²**
+- **Total : 41 m²**
+- 80 % libre = **32,8 m²** disponibles
+
+**Le stockage est possible.**
+:::
+
+---
+
+### Mission 2 — Coûts de stockage par m² (Rupperswil)
+
+**Formule :** coûts de stockage totaux / total m²
+
+:::reponse
+**Par mois :** 12'250 / 800 m² = **15,31 CHF/m²**
+
+**Par jour :** 15,31 / 31 = **0,49 CHF/m²**
+:::
+
+#### Mission 2.1 — Coûts de stockage (Köniz)
+
+:::reponse
+**Par mois :** 604 / 31,25 m² = **19,32 CHF/m²**
+
+**Par jour :** 19,32 / 31 = **0,62 CHF/m²**
+:::
+
+#### Mission 2.2 — Coûts de stockage (Tessin)
+
+:::reponse
+**Par mois :** 582,70 / 41 m² = **14,20 CHF/m²**
+
+**Par jour :** 14,20 / 31 = **0,46 CHF/m²**
+:::
+
+---
+
+### Mission 3 — Prix de revient et offre (Rupperswil)
+
+Surface nécessaire : **25 m²** · Durée : **47 jours** · Supplément bénéfice : **30 %**
+
+:::reponse
+| | Montant |
+| --- | --- |
+| Coût de revient (25 m² × 0,45 CHF × 47 j) | **528,75 CHF** |
+| Majoration bénéfice (528,75 × 30 %) | **158,65 CHF** |
+| **Prix de l'offre** | **687,40 CHF** |
+:::
+
+#### Mission 3.1 — Offre (Köniz)
+
+:::reponse
+| | Montant |
+| --- | --- |
+| Coût de revient (25 m² × 0,62 CHF × 47 j) | **728,50 CHF** |
+| Majoration bénéfice (728,50 × 30 %) | **218,55 CHF** |
+| **Prix de l'offre** | **947,05 CHF** |
+:::
+
+#### Mission 3.2 — Offre (Tessin)
+
+:::reponse
+| | Montant |
+| --- | --- |
+| Coût de revient (25 m² × 0,46 CHF × 47 j) | **540,50 CHF** |
+| Majoration bénéfice (540,50 × 30 %) | **162,15 CHF** |
+| **Prix de l'offre** | **702,65 CHF** |
+:::
+
+---
+
+### Mission 4 — E-mail de réponse
+
+Sur la base de tes calculs, rédige un e-mail de réponse avec l'offre pour le stockage externe des palettes contenant le matériel d'enseignement.
+
+Archivage : **Mail retour.pdf**
+
+:::reponse
+**Réponse individuelle** — rédaction d'un e-mail professionnel avec l'offre la plus avantageuse (Tessin : **702,65 CHF** pour 25 m² sur 47 jours).
+:::
+
+---
+
+### Mission 5 — Discussion STA (bloc B)
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::
+
+---
+
+## Bloc C — Matière première toner RS-Toner-black
+
+### Situation
+
+La matière première pour la production de toner est livrée sur des **europalettes** en grands sacs « Big Bag ». Les palettes traînent souvent dans les couloirs ; les sacs sont parfois endommagés.
+
+Ton supérieur te demande d'analyser les données de stock. **Dix palettes** quittent l'entrepôt chaque jour (samedi/dimanche compris). Délai de livraison : **quatre jours**.
+
+Fichier : **EnterSite_705_MES_réelle_Situation1.xlsx**
+
+---
+
+### Mission 1 — Situation réelle (Excel)
+
+Ouvre le fichier et continue la liste jusqu'à la fin du mois.
+
+Dépôt : **EnterSite_705_MES_réelle_Situation_solution.xlsx**
+
+#### Mission 1.1 — Diagramme (situation réelle)
+
+Élabore un diagramme pertinent avec les données relatives aux mouvements de stock.
+
+:::reponse
+**Réponse individuelle** — diagramme à déposer (pas de solution unique).
+:::
+
+---
+
+### Mission 2 — Taux de frais de stockage (65 %)
+
+:::reponse
+Un taux de coûts de stockage de **65 %** est très élevé et indique des coûts importants pour le stockage. Cela peut signaler :
+- Niveau de stock élevé
+- Coûts de stockage élevés
+- Forte immobilisation de capital
+- Faible taux de rotation des stocks
+:::
+
+#### Mission 2.1 — Alternatives
+
+:::reponse
+Réduire d'abord les **coûts variables**, puis si nécessaire les **coûts fixes**. Possibilités :
+- Utilisation parcimonieuse des consommables
+- Entretien régulier des moyens de transport, machines et outils
+- Respect des consignes de sécurité
+- Déterminer les indicateurs de stock
+- Optimiser les types de stocks
+:::
+
+---
+
+### Mission 3 — Quantité optimale de commande
+
+Données : besoins annuels de la situation réelle · prix de revient par palette **CHF 1'680** · coût de passation **CHF 550** · coût de stockage **65 %**
+
+**Formule Andler (module 311) :** Qopt = √(2 × M × B / (P × L))
+
+Besoin annuel : 10 palettes/jour × 360 jours = **3'600 palettes**
+
+:::reponse
+Qopt = √(2 × 3'600 × 550 / (1'680 × 0,65))
+
+= √(3'960'000 / 1'092)
+
+= √3'626,37
+
+≈ **60 palettes** (arrondi)
+:::
+
+#### Mission 3.1 — Situation souhaitée (Excel)
+
+Crée une situation souhaitée avec la quantité calculée. Stock de sécurité et délai de livraison conformes à la situation réelle.
+
+Dépôt : **EnterSite_705_MES_devrait_Situation_solution.xlsx**
+
+#### Mission 3.2 — Diagramme (situation souhaitée)
+
+:::reponse
+**Réponse individuelle** — diagramme à déposer (pas de solution unique).
+:::
+
+#### Mission 3.3 — Intérêts de stockage (réelle vs souhaitée)
+
+Taux d'intérêt du marché : **3 %**
+
+**Situation réelle**
+
+| Indicateur | Valeur |
+| --- | --- |
+| Rotation | 310 / 88 = **3,5 fois** |
+| Durée de stockage | 360 / 3,5 = **102 jours** |
+| Taux d'intérêt stockage | 3 % × 102 / 360 = **0,85 %** |
+| Intérêt de stockage | 0,85 % × 88 × 1'680 = **1'256,64 CHF** |
+
+**Situation souhaitée**
+
+| Indicateur | Valeur |
+| --- | --- |
+| Rotation | 310 / 59 = **5,25 fois** |
+| Durée de stockage | 360 / 5,25 = **68,5 jours** |
+| Taux d'intérêt stockage | 3 % × 68,5 / 360 = **0,57 %** |
+| Intérêt de stockage | 0,57 % × 59 × 1'680 = **564,98 CHF** |
+:::
+
+---
+
+### Mission 4 — Comparaison et évaluation
+
+:::reponse
+En adaptant la quantité commandée, les intérêts de stockage diminuent de près de la moitié. EnterSite AG économise de l'argent. Les palettes trouvent mieux leur place dans l'entrepôt, ce qui réduit les big packs défectueux et le travail logistique supplémentaire. Frais et taux d'intérêt de stockage plus bas.
+:::
+
+---
+
+### Mission 5 — Discussion STA (bloc C)
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_705_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **Bloc A** : rentabilité · 6B · jeu simulation Excel (réponses individuelles)
+- **Bloc B** : capacités Rupperswil/Köniz/Tessin · coûts/m² · offres **687 / 947 / 703 CHF**
+- **Bloc C** : toner RS · taux 65 % · Qopt ≈ **60 pal.** · intérêts ↓ ~50 %`;
+
+/** Exercices de maths Module 705 */
+const DEMO_705_MATHS_FULL = `## Exercices de mathématiques — Module 705
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+---
+
+### Exercice 1 — Point de commande (HP 1320 Toner Black)
+
+| Donnée | Valeur |
+| --- | --- |
+| Stock initial | 930 pces |
+| Consommation par jour | 120 pces |
+| Stock de sécurité | 150 pces |
+| Délai de livraison | 3 jours |
+
+À partir de quel niveau de stock dois-tu informer le service d'approvisionnement ?
+
+:::solution
+**Cote d'alerte : 510 pces**
+
+(3 × 120) + 150 = **510 pces**
+:::
+
+---
+
+### Exercice 2 — Coûts annuels chariot élévateur
+
+Chariot grande hauteur : **CHF 42'000** · amortissement **10 %**/an de la valeur à neuf.
+
+| Poste | Taux / montant |
+| --- | --- |
+| Taux d'intérêt | 7,5 % |
+| Entretien | 5 % |
+| Énergie | 630 CHF |
+| Assurance | 0,7 % |
+
+:::solution
+| Poste | Calcul | Montant |
+| --- | --- | --- |
+| Amortissement | 42'000 × 10 % | **4'200 CHF** |
+| Intérêts | (42'000 / 2) × 7,5 % | **1'575 CHF** |
+| Entretien | 42'000 × 5 % | **2'100 CHF** |
+| Assurance | 42'000 × 0,7 % | **294 CHF** |
+| **Total annuel** | | **8'169 CHF** |
+:::
+
+---
+
+### Exercice 3 — Intérêt de stockage annuel
+
+Rotation : **7 fois** · taux d'intérêt marché : **3 %** · stock moyen : **45 pces** · prix de revient : **95 CHF**
+
+:::solution
+**Intérêt de stockage : 128,25 CHF**
+
+45 × 95 × 3 / 100 = **128,25 CHF**
+:::
+
+---
+
+### Exercice 4 — Intérêts journaliers (capital étranger)
+
+| Investissement | Montant |
+| --- | --- |
+| Bâtiment | 6,75 M CHF |
+| Installations | 653'000 CHF |
+| Appareils de manutention | 250'000 CHF |
+| ERP | 95'000 CHF |
+
+Fonds propres : **48,7 %** · taux banque : **5,5 %** · **360 jours**/an
+
+:::solution
+**Montant total :** 7'748'000 CHF
+
+**Part capitaux étrangers :** 7'748'000 × (100 − 48,7) % = **3'974'724 CHF**
+
+**Intérêts par jour :** (3'974'724 / 2 × 5,5 % / 100) / 360 = **303,62 CHF/jour**
+:::
+
+---
+
+### Exercice 5 — Offre manutention (38 europalettes)
+
+| Activité | Temps |
+| --- | --- |
+| Déchargement / rechargement | 0,65 min/palette |
+| Contrôle | 2 collaborateurs × 55 min |
+| Mise en stock | 4 min 48 sec/palette |
+| Sortie de stock | 3 min 54 sec/palette |
+
+Salaire horaire : **28,65 CHF** · chariot élévateur : **22,50 CHF**/h
+
+:::solution
+| Poste | Calcul |
+| --- | --- |
+| Déchargement | 38 × 0,65 = 24,7 min |
+| Contrôle | 2 × 55 = 110 min |
+| Mise en stock | 38 × 4,8 = 182,4 min |
+| Sortie | 38 × 3,9 = 148,2 min |
+| **Temps total** | (24,7 + 110 + 182,4 + 148,2) / 60 = **7,75 h** |
+
+**Coûts :** (28,65 + 22,50) × 7,75 = **396,41 CHF** (env. **400 CHF**)
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 8'169 · 128,25 · 303,62 · 510 · 396,41`;
+
+const DEMO_705_MATHS_SUMMARY = `## Maths — Solutions
+1. Cote d'alerte **510** pces
+2. Chariot **8'169 CHF**/an (corrigé source)
+3. Intérêt stockage **128,25 CHF**
+4. Intérêts **303,62 CHF**/jour
+5. Manutention **396,41 CHF** (≈ 400 CHF)`;
+
+/** Vérification des acquis Module 705 */
+const DEMO_705_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Stockage — la rentabilité de l'entrepôt**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Le taux de couverture des coûts peut indiquer si une entreprise fonctionne de manière économiquement solide. Explique ce que tu entends par taux de couverture des coûts.
+
+:::reponse
+Le taux de couverture des coûts compare les **coûts totaux** aux recettes issues du **chiffre d'affaires**. Si cette valeur est **supérieure** à 100 %, le produit des ventes ne parvient pas à couvrir les coûts de l'entreprise. Si cette valeur reste supérieure à 100 % pendant une période prolongée, l'entreprise enregistre des **pertes économiques**. (Inférieur à 100 % : rentable.)
+:::
+
+### Question 2
+
+Dans l'entrepôt, nous connaissons différents types de stocks : stock de sécurité, point de commande et stock maximum. Décris ces trois types avec tes propres mots.
+
+:::reponse
+**Stock de sécurité (minimum) :** réserve qui ne devrait être dépassée vers le bas qu'en cas exceptionnel (consommation plus élevée ou retards de livraison). Niveau selon consommation moyenne et délai de réapprovisionnement.
+
+**Point de commande :** niveau de stock dont le dépassement vers le bas déclenche une nouvelle commande. Dépend du délai de livraison et de la consommation moyenne — plus le délai est long, plus le point de commande est élevé.
+
+**Stock maximum :** plafond fixé individuellement par article pour éviter des coûts inutilement élevés. Généralement atteint à l'arrivée d'une nouvelle livraison.
+:::
+
+### Question 3
+
+Le stock moyen est également un indicateur important. Pourquoi ? Comment le calcule-t-on ?
+
+:::reponse
+Le stock moyen est une donnée de départ importante pour le calcul d'autres indicateurs : rotation des stocks, taux d'intérêt des stocks, taux de frais de stockage, etc.
+
+**Formules :**
+- (Stock début d'année + stock fin d'année) / **2**
+- (½ stock début + 11 mois de stock + ½ stock fin) / **12**
+:::
+
+### Question 4
+
+Quels sont les facteurs qui composent le pourcentage des coûts de stockage ? Comment est-il calculé ?
+
+:::reponse
+Pour calculer le taux de frais de stockage, on a besoin des **coûts de stockage** et de la **valeur moyenne du stock**. Les coûts de stockage sont calculés par rapport à la valeur moyenne du stock. En ajoutant le **taux d'intérêt usuel du marché**, on obtient le taux de frais de stockage.
+:::
+
+### Question 5
+
+Pour réduire les coûts, l'optimisation des stocks est un outil bienvenu. Cependant, il n'est pas rare qu'elle entraîne un conflit d'objectifs. Décris pourquoi.
+
+:::reponse
+Des **stocks élevés** entraînent souvent beaucoup de capital immobilisé, des coûts accrus dans l'entrepôt et le risque de « gardiens de stock ».
+
+Des **stocks faibles** peuvent entraîner des goulots d'étranglement dans les livraisons ou des pertes de production. Il y a alors un risque de perdre des clients.
+
+→ Conflit entre minimiser les coûts de stockage et garantir la disponibilité.
+:::`;
+
+const DEMO_705_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Couverture = coûts totaux / CA × 100
+2. Sécurité · point de commande · stock max
+3. Base pour rotation, intérêts… · formules /2 et /12
+4. Coûts stockage / valeur moyenne + taux marché
+5. Stocks ↑ = coûts ↑ · stocks ↓ = ruptures`;
+
 /** Contenu Module 801 — L'identification des marchandises */
 const DEMO_801_THEORIE_FULL = `## 1. Identification des marchandises
 
@@ -34824,6 +35367,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_705_THEORIE_FULL,
       summary: DEMO_705_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_705_GLOSSAIRE_FULL,
+      summary: DEMO_705_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_705_SITUATION_FULL,
+      summary: DEMO_705_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_705_MATHS_FULL,
+      summary: DEMO_705_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_705_VERIFICATION_FULL,
+      summary: DEMO_705_VERIFICATION_SUMMARY,
     },
   },
   "801": {
