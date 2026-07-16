@@ -17124,6 +17124,286 @@ const DEMO_606_OBJECTIFS_SUMMARY = `## Objectifs
 - Répartition légale
 - RPLP`;
 
+/** Glossaire Module 606 */
+const DEMO_606_GLOSSAIRE_FULL = `## Glossaire — Module 606
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **RPLP** | §6.3 | *Redevance pour le trafic des poids lourds* · taxe sur véhicules > **3,5 t** selon **émissions** et km · objectifs : freiner trafic lourd · report **rail** · environnement. |
+| **Transport de marchandises** | §6.1 | Acheminement routier de biens · flexible (quoi, quand, où) · idéal **distribution fine** · contraintes : embouteillages · temps de conduite · RPLP. |
+| **Semi-remorque** | §6.3 | Remorque sans moteur tractée par un **tracteur routier** · trains routiers jusqu'à **40 t** · répartition charge sur essieux directeur/tracteur. |
+| **Tachygraphe** | §6.3 | Appareil enregistreur obligatoire (temps de conduite/repos) · en CH couplé au dispositif **RPLP** électronique · contrôle **GPS** par les douanes. |`;
+
+const DEMO_606_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **RPLP** = taxe PL · EURO 6 moins cher · report rail
+- **Semi-remorque** + tracteur · max 40 t
+- **Tachygraphe** = temps conduite + RPLP
+- **4 forces** : accélération · décélération · centrifuge · vibrations`;
+
+/** Mises en situation Module 606 */
+const DEMO_606_SITUATION_FULL = `## Mises en situation — Module 606
+
+**EnterSite AG** Rupperswil : planification de tournées, calcul des coûts, rôle du disponent, chargement camion (LIFO).
+
+### Vue d'ensemble des missions
+1. Planifier 3 tournées (Google Maps)
+2. Calculer les coûts des tournées
+3. Rôle du disponent
+4. Plan de chargement + contrôle charge utile
+5. Discussion STA
+
+**Ressources communes** — 3× MAN TGL (15 palettes) · départ/retour **EnterSite AG** · 5 min/palette déchargement · pauses : matin 20 min · midi 60 min · après-midi 20 min.
+
+---
+
+## Mission 1 — Planification des tournées
+
+:::reponse
+**Tournée 1 — Kobel Ernst** (12 palettes)
+
+| Parcours | Temps | km | Décharg. |
+| --- | --- | --- | --- |
+| Rupperswil → Lyss | 1 h 09 | 83,7 | 25 min |
+| Lyss → Lausanne | 1 h 25 | 102 | 10 min |
+| Lausanne → La Chaux-de-Fonds | 1 h 09 | 88,6 | 10 min |
+| La Chaux-de-Fonds → Reconvilier | 50 min | 40 | 15 min |
+| Reconvilier → Rupperswil | 1 h 17 | 96,7 | — |
+| **Total** | **5 h 50** | **411** | **1 h** (+ pauses 1 h 40) |
+
+**Tournée 2 — Müller Fritz** (3 palettes · retour **16 h 00** impératif)
+
+| Parcours | Temps | km | Décharg. |
+| --- | --- | --- | --- |
+| Rupperswil → Frauenfeld | 1 h 12 | 81,9 | 5 min |
+| Frauenfeld → Goldach | 50 min | 57,2 | 15 min |
+| Goldach → Rupperswil | 1 h 45 | 132 | — |
+| **Total** | **3 h 47** | **271,1** | **20 min** |
+
+**Tournée 3 — Erika Wegmüller** (14 palettes)
+
+| Parcours | Temps | km | Décharg. |
+| --- | --- | --- | --- |
+| Rupperswil → Luzern | 1 h 03 | 72 | 15 min |
+| Luzern → Sarnen | 35 min | 102 | 30 min (+ attente 60 min) |
+| Sarnen → Interlaken | 1 h 00 | 49,3 | 10 min |
+| Interlaken → Thun | 30 min | 28,2 | 15 min |
+| Thun → Rupperswil | 1 h 30 | 112 | — |
+| **Total** | **4 h 38** | **363,5** | **1 h 10** (+ pauses 2 h 40) |
+
+> D'autres solutions judicieuses sont possibles (Google Maps).
+:::
+
+---
+
+## Mission 2 — Coûts des tournées
+
+Paramètres : véhicule **CHF 1,80/km** · Müller **4'200/42,5 h/sem.** · Kobel **4'000/42,5 h/sem.** · Erika **CHF 46/h** + **CHF 20/j** forfait · RPLP **EURO 6** · charge utile **8 t**.
+
+:::reponse
+**Kobel Ernst** — durée ~8,5 h · **CHF 998,82**
+
+\`\`\`
+Salaire : 8,5 × (4'000/184,9) = 184,05
+Véhicule : 411 × 1,80 = 739,80
+RPLP : 74,97
+Total : 998,82 CHF
+\`\`\`
+
+**Müller Fritz** — durée ~4,5 h · **CHF 639,60**
+
+\`\`\`
+Salaire : 4,5 × (4'200/184,9) = 102,15
+Véhicule : 271,1 × 1,80 = 487,98
+RPLP : 49,45
+Total : 639,60 CHF
+\`\`\`
+
+**Erika Wegmüller** — durée ~8,5 h · **CHF 1'131,60**
+
+\`\`\`
+Salaire : 8,5 × 46 + 20 = 411,00
+Véhicule : 363,5 × 1,80 = 654,30
+RPLP : 66,30
+Total : 1'131,60 CHF
+\`\`\`
+:::
+
+---
+
+## Mission 3 — Le disponent
+
+:::reponse
+**Critères de planification** — itinéraire optimal · capacité chargement · créneaux horaires clients · coûts (carburant/personnel) · trafic · disponibilité véhicules · prescriptions légales (temps conduite, RPLP…).
+
+**Événements inattendus** — accident/panne · météo · fermetures routes · retards fournisseurs · dommages chargement · déviations (catastrophes, événements politiques).
+
+**Compétences** — logistique/planification · résistance stress · communication · réglementation transport · résolution problèmes · organisation · flexibilité.
+
+**En une phrase** — Le disponent planifie itinéraires et procédures de transport pour acheminer marchandises efficacement et à l'heure, en optimisant coûts/temps/ressources et en réagissant aux imprévus.
+:::
+
+---
+
+## Mission 4 — Plan de chargement (tournée Erika)
+
+Ordre de livraison : **Luzern** (3 pal.) → **Sarnen** (6) → **Interlaken** (2) → **Thun** (3) · chargement **LIFO** (dernier livré = chargé en premier).
+
+:::reponse
+**Réponse individuelle** — dessiner le plan de chargement sur le pont 2,45 × 6 m · **14 palettes** · poids par client indiqués.
+
+**Contrôle plan de répartition charge utile** — centre de gravité dans la **zone verte** ? · ≥ **20 %** sur essieu directeur · ≥ **25 %** sur tracteur · charge max. non dépassée → décision rouler ou réorganiser.
+:::
+
+---
+
+## Mission 5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_606_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : 3 tournées Kobel/Müller/Erika · Google Maps · LIFO
+- **M2** : coûts ~999 / 640 / 1'132 CHF (km + salaire + RPLP)
+- **M3** : disponent = planifier · imprévus · compétences
+- **M4** : plan chargement + zone verte CdG`;
+
+/** Exercices de maths Module 606 */
+const DEMO_606_MATHS_FULL = `## Exercices de mathématiques — Module 606
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Taux d'utilisation surface
+
+MAN TGL : pont **2,45 × 6 m** · **14 palettes** Europalette **1,20 × 0,80 m**.
+
+:::solution
+**91,43 %**
+
+\`\`\`
+Surface camion : 2,45 × 6 = 14,7 m²
+Surface palettes : 1,2 × 0,8 × 14 = 13,44 m²
+Taux : 13,44 / 14,7 × 100 = 91,43 %
+\`\`\`
+:::
+
+### Exercice 2 — Taux d'utilisation volume
+
+Palettes chargées **1,5 m** de haut · intérieur camion **2,5 m**.
+
+:::solution
+**54,86 %**
+
+\`\`\`
+Volume camion : 14,7 × 2,5 = 36,75 m³
+Volume charge : 13,44 × 1,5 = 20,16 m³
+Taux : 20,16 / 36,75 × 100 = 54,86 %
+\`\`\`
+:::
+
+### Exercice 3 — Surfaces bleue et orange (plan de charge)
+
+:::solution
+**Surface orange : 7,8 m²** · **Surface bleue : 6,9 m²**
+
+\`\`\`
+Orange : (2,4 × 2,45) + (1,2 × 1,6) = 7,8 m²
+Bleu  : (2,45 × 6) − 7,8 = 6,9 m²
+\`\`\`
+:::
+
+### Exercice 4 — Temps de travail et salaire Erika
+
+Salaire **CHF 46/h** · pauses **non payées**.
+
+:::solution
+**a) 374 min = 6,23 h** de temps total · **b) CHF 275,25** (≈ **276**)
+
+\`\`\`
+Total : 63+75+13+35+10+25+15+45+13+65+15 = 374 min
+Travail payé : 374 − 15 (pause) = 359 min
+Salaire : 359/60 × 46 = 275,25 CHF
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 374 · 6,23 · 275,25 (276) · 91,43 · 7,8 · 54,86`;
+
+const DEMO_606_MATHS_SUMMARY = `## Maths — Solutions
+1. Surface pont : **91,43 %**
+2. Volume : **54,86 %**
+3. Orange **7,8 m²** · Bleu **6,9 m²**
+4. **374 min** · **6,23 h** · salaire **275,25 CHF**`;
+
+/** Vérification des acquis Module 606 */
+const DEMO_606_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 606 — Le transport routier**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Décris les **quatre forces dynamiques** (direction d'action).
+
+:::reponse
+**Accélération** — vers l'**arrière** (inverse du sens de marche) · ↑ avec masse et accélération.
+
+**Décélération** — vers l'**avant** (inertie au freinage) · souvent **> accélération** · jusqu'à ~**1 g**.
+
+**Centrifuge** — vers l'**extérieur** du virage · ↑ si rayon ↓ et vitesse ↑ · vitesse au **carré** (×2 vitesse → ×4 force) · risque de renversement.
+
+**Verticales (vibrations)** — chocs/oscillations · ↓ adhérence · charge peut glisser → nécessite **arrimage**.
+:::
+
+### Question 2
+
+Arrimage de **force**, **sangles** et **tapis antidérapants** ?
+
+:::reponse
+**Arrimage de force** — marchandises **libres** sur le pont · pas de contact avec les parois · exigences d'arrimage **très élevées**.
+
+**Sangles d'arrimage** (*Spanset*) — outil pour fixer la charge sur la surface de chargement.
+
+**Tapis antidérapants** — améliorent l'**adhérence** · réduisent le glissement.
+:::
+
+### Question 3
+
+Qu'est-ce qu'un **plan de répartition de la charge utile** ?
+
+:::reponse
+Permet de déterminer si le chargement complet peut être positionné **contre la paroi frontale** · centre de gravité dans la **zone autorisée** (essieux directeur ≥ 20 % · tracteur ≥ 25 %).
+:::
+
+### Question 4
+
+Possibilités d'**arrimer** une charge sur un camion ?
+
+:::reponse
+- Sangles d'arrimage
+- Chaînes d'arrimage
+- Filets de sécurité
+- Tapis antidérapants
+- Barres horizontales et verticales
+- Barres de blocage
+- Coussins d'air (gonflables)
+:::
+
+### Question 5
+
+Objectifs de la **RPLP** ?
+
+:::reponse
+- **Limiter** la croissance du trafic routier lourd
+- **Favoriser** le transfert du transport de marchandises vers le **rail**
+- **Soulager** l'environnement (émissions, bruit)
+:::`;
+
+const DEMO_606_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Accélération ↓ arrière · décélération ↓ avant · centrifuge ↓ extérieur · vibrations ↓ adhérence
+2. Force = libre sur pont · sangles · tapis antidérapants
+3. Plan charge utile = CdG zone verte · paroi frontale
+4. Sangles · chaînes · filets · tapis · barres · coussins d'air
+5. RPLP = moins PL · plus rail · environnement`;
+
 /** Contenu Module 607 — Le transport ferroviaire */
 const DEMO_607_THEORIE_FULL = `## 7. Le transport ferroviaire
 
@@ -21948,6 +22228,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_606_THEORIE_FULL,
       summary: DEMO_606_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_606_GLOSSAIRE_FULL,
+      summary: DEMO_606_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_606_SITUATION_FULL,
+      summary: DEMO_606_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_606_MATHS_FULL,
+      summary: DEMO_606_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_606_VERIFICATION_FULL,
+      summary: DEMO_606_VERIFICATION_SUMMARY,
     },
   },
   "607": {
