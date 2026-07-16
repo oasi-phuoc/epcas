@@ -407,39 +407,43 @@ export function ContenuPageEditor({
       </nav>
 
       <Panel className="mb-4">
-        <div className="flex flex-wrap items-end gap-2 sm:gap-3">
-          <div className="min-w-0 flex-1 basis-[12rem]">
-            <TextField
-              label="Rechercher un module"
-              value={moduleQuery}
-              onChange={(e) => setModuleQuery(e.target.value)}
-              placeholder="Ex. 101, histoire, stockage…"
-            />
-          </div>
-          <div
-            className="flex shrink-0 flex-wrap gap-2"
-            role="group"
-            aria-label="Module principal"
-          >
-            {mainBlocks.map((block) => (
-              <Button
-                key={block.id}
-                type="button"
-                size="sm"
-                variant={
-                  selectedBlockId === block.id ? "primary" : "secondary"
-                }
-                onClick={() => {
-                  setSelectedBlockId(block.id);
-                  const firstInBlock = modulesSorted.find(
-                    (m) => m.blockId === block.id,
-                  );
-                  if (firstInBlock) setModuleId(firstInBlock.id);
-                }}
-              >
-                {block.code}
-              </Button>
-            ))}
+        <div className="flex flex-col gap-2">
+          <p className="text-sm font-medium text-ink">Rechercher un module</p>
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+            <div className="min-w-0 flex-1 basis-[12rem]">
+              <TextField
+                aria-label="Rechercher un module"
+                value={moduleQuery}
+                onChange={(e) => setModuleQuery(e.target.value)}
+                placeholder="Ex. 101, histoire, stockage…"
+              />
+            </div>
+            <div
+              className="flex shrink-0 flex-wrap gap-2"
+              role="group"
+              aria-label="Module principal"
+            >
+              {mainBlocks.map((block) => (
+                <Button
+                  key={block.id}
+                  type="button"
+                  size="md"
+                  className="min-w-11 px-3"
+                  variant={
+                    selectedBlockId === block.id ? "primary" : "secondary"
+                  }
+                  onClick={() => {
+                    setSelectedBlockId(block.id);
+                    const firstInBlock = modulesSorted.find(
+                      (m) => m.blockId === block.id,
+                    );
+                    if (firstInBlock) setModuleId(firstInBlock.id);
+                  }}
+                >
+                  {block.code}
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
 
