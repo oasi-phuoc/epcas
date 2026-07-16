@@ -241,7 +241,9 @@ export default function ParametresPage() {
           ) : (
             <Alert tone="info">
               Les modifications sont aussi poussées automatiquement après ~1 s
-              d’inactivité, et au retour en ligne.
+              d’inactivité, et au retour en ligne. Leçons, pratique Office,
+              évaluations, classes et séquences sont rechargées depuis Supabase
+              à l’ouverture du site.
             </Alert>
           )}
         </div>

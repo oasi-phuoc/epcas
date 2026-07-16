@@ -57,6 +57,13 @@ import {
   writeSyncMeta,
   type SyncMeta,
 } from "./sync/types";
+import {
+  pullSharedContentFromApi,
+  pushAssessmentsToApi,
+  pushInformatiqueExerciseToApi,
+  pushInformatiqueExercisesListToApi,
+  pushOrgToApi,
+} from "./sync/client-cloud";
 import type {
   AppState,
   Assessment,
@@ -177,6 +184,8 @@ type AppStore = {
   }>;
   cloudSyncConfigured: boolean;
   cloudSyncMeta: SyncMeta;
+  /** Recharge pratique Office, évaluations, classes depuis Supabase. */
+  refreshSharedContentFromServer: () => Promise<void>;
 };
 
 const AppStoreContext = createContext<AppStore | null>(null);
@@ -429,6 +438,32 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     [scheduleCloudPush],
   );
 
+  const mergeSharedCommit = useCallback((updater: (s: AppState) => AppState) => {
+    setMemoryState((prev) => {
+      const base = prev ?? readStorage();
+      const next = updater(base);
+      writeStorage(next);
+      return next;
+    });
+  }, []);
+
+  const refreshSharedContentFromServer = useCallback(async () => {
+    if (!isClientSupabaseConfigured()) return;
+    const remote = await pullSharedContentFromApi();
+    if (!remote) return;
+    mergeSharedCommit((s) => ({
+      ...s,
+      informatiqueExercises:
+        remote.informatiqueExercises ?? s.informatiqueExercises,
+      assessments: remote.assessments ?? s.assessments,
+      assessmentQuestions:
+        remote.assessmentQuestions ?? s.assessmentQuestions,
+      classes: remote.classes ?? s.classes,
+      users: remote.users ?? s.users,
+      sequences: remote.sequences ?? s.sequences,
+    }));
+  }, [mergeSharedCommit]);
+
   const syncCloudNow = useCallback(async () => {
     if (!isClientSupabaseConfigured()) {
       return { ok: true, configured: false, action: "skipped" as const };
@@ -556,20 +591,24 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
   const upsertUser = useCallback(
     (user: Omit<UserAccount, "id"> & { id?: string }) => {
       commit((s) => {
+        let next: AppState;
         if (user.id) {
-          return {
+          next = {
             ...s,
             users: s.users.map((u) =>
               u.id === user.id ? { ...u, ...user, id: user.id } : u,
             ),
           };
+        } else {
+          const id = `user-${crypto.randomUUID().slice(0, 8)}`;
+          next = {
+            ...s,
+            users: [...s.users, { ...user, id }],
+            progress: { ...s.progress, [id]: [] },
+          };
         }
-        const id = `user-${crypto.randomUUID().slice(0, 8)}`;
-        return {
-          ...s,
-          users: [...s.users, { ...user, id }],
-          progress: { ...s.progress, [id]: [] },
-        };
+        void pushOrgToApi(next.classes, next.users, next.sequences);
+        return next;
       });
     },
     [commit],
@@ -631,8 +670,9 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
       const level = normalizeClassLevel(classroom);
       const studyYear = normalizeClassStudyYear({ ...classroom, level });
       commit((s) => {
+        let next: AppState;
         if (classroom.id) {
-          return {
+          next = {
             ...s,
             classes: s.classes.map((c) =>
               c.id === classroom.id
@@ -650,21 +690,24 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
                 : c,
             ),
           };
+        } else {
+          next = {
+            ...s,
+            classes: [
+              ...s.classes,
+              {
+                id,
+                name: classroom.name,
+                year: classroom.year,
+                level,
+                studyYear,
+                active: classroom.active !== false,
+              },
+            ],
+          };
         }
-        return {
-          ...s,
-          classes: [
-            ...s.classes,
-            {
-              id,
-              name: classroom.name,
-              year: classroom.year,
-              level,
-              studyYear,
-              active: classroom.active !== false,
-            },
-          ],
-        };
+        void pushOrgToApi(next.classes, next.users, next.sequences);
+        return next;
       });
       return id;
     },
@@ -709,7 +752,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
         if (s.classes.length <= 1) return s;
         const fallback = s.classes.find((c) => c.id !== classId)?.id;
         if (!fallback) return s;
-        return {
+        const next = {
           ...s,
           classes: s.classes.filter((c) => c.id !== classId),
           users: s.users.map((u) =>
@@ -717,6 +760,8 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
           ),
           classTasks: s.classTasks.filter((t) => t.classId !== classId),
         };
+        void pushOrgToApi(next.classes, next.users, next.sequences);
+        return next;
       });
     },
     [commit],
@@ -727,13 +772,14 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
       commit((s) => {
         if (s.currentUserId === userId) return s;
         const { [userId]: _removed, ...restProgress } = s.progress;
-        return {
+        const next = {
           ...s,
           users: s.users.filter((u) => u.id !== userId),
           progress: restProgress,
           attempts: s.attempts.filter((a) => a.userId !== userId),
-          classTasks: s.classTasks.filter((t) => t.userId !== userId),
         };
+        void pushOrgToApi(next.classes, next.users, next.sequences);
+        return next;
       });
     },
     [commit],
@@ -850,8 +896,9 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
       commit((s) => {
         const list = s.informatiqueExercises ?? [];
         const existing = list.find((e) => e.id === id);
+        let next: AppState;
         if (existing) {
-          return {
+          next = {
             ...s,
             informatiqueExercises: list.map((e) =>
               e.id === id
@@ -864,24 +911,28 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
                 : e,
             ),
           };
+        } else {
+          const siblings = list.filter(
+            (e) =>
+              e.app === exercise.app &&
+              (exercise.year == null || e.year === exercise.year),
+          );
+          const order =
+            exercise.order ??
+            (siblings.length > 0
+              ? Math.max(...siblings.map((e) => e.order)) + 1
+              : 1);
+          next = {
+            ...s,
+            informatiqueExercises: [
+              ...list,
+              { ...exercise, id, order } as InformatiqueExercise,
+            ],
+          };
         }
-        const siblings = list.filter(
-          (e) =>
-            e.app === exercise.app &&
-            (exercise.year == null || e.year === exercise.year),
-        );
-        const order =
-          exercise.order ??
-          (siblings.length > 0
-            ? Math.max(...siblings.map((e) => e.order)) + 1
-            : 1);
-        return {
-          ...s,
-          informatiqueExercises: [
-            ...list,
-            { ...exercise, id, order } as InformatiqueExercise,
-          ],
-        };
+        const saved = next.informatiqueExercises.find((e) => e.id === id);
+        if (saved) void pushInformatiqueExerciseToApi(saved);
+        return next;
       });
       return id;
     },
@@ -890,12 +941,13 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
 
   const deleteInformatiqueExercise = useCallback(
     (id: string) => {
-      commit((s) => ({
-        ...s,
-        informatiqueExercises: (s.informatiqueExercises ?? []).filter(
+      commit((s) => {
+        const informatiqueExercises = (s.informatiqueExercises ?? []).filter(
           (e) => e.id !== id,
-        ),
-      }));
+        );
+        void pushInformatiqueExercisesListToApi(informatiqueExercises);
+        return { ...s, informatiqueExercises };
+      });
     },
     [commit],
   );
@@ -946,7 +998,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
         const exists = sequences.some(
           (seq) => seq.level === level && seq.studyYear === studyYear,
         );
-        return {
+        const next = {
           ...s,
           sequences: exists
             ? sequences
@@ -955,6 +1007,8 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
                 { id, level, studyYear, moduleIds: cleaned },
               ],
         };
+        void pushOrgToApi(next.classes, next.users, next.sequences);
+        return next;
       });
     },
     [commit],
@@ -964,18 +1018,23 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     (level?: DiplomaLevel) => {
       commit((s) => {
         const defaults = buildDefaultSequences(s.modules);
-        if (!level) return { ...s, sequences: defaults };
-        return {
-          ...s,
-          sequences: s.sequences.map((seq) => {
-            if (seq.level !== level) return seq;
-            return (
-              defaults.find(
-                (d) => d.level === level && d.studyYear === seq.studyYear,
-              ) ?? seq
-            );
-          }),
-        };
+        let next: AppState;
+        if (!level) next = { ...s, sequences: defaults };
+        else {
+          next = {
+            ...s,
+            sequences: s.sequences.map((seq) => {
+              if (seq.level !== level) return seq;
+              return (
+                defaults.find(
+                  (d) => d.level === level && d.studyYear === seq.studyYear,
+                ) ?? seq
+              );
+            }),
+          };
+        }
+        void pushOrgToApi(next.classes, next.users, next.sequences);
+        return next;
       });
     },
     [commit],
@@ -1050,8 +1109,9 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
       const id = assessment.id ?? `asmt-${crypto.randomUUID().slice(0, 8)}`;
       const levels = normalizeLevels(assessment.levels);
       commit((s) => {
+        let next: AppState;
         if (assessment.id) {
-          return {
+          next = {
             ...s,
             assessments: s.assessments.map((a) =>
               a.id === assessment.id
@@ -1065,19 +1125,22 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
                 : a,
             ),
           };
+        } else {
+          const created: Assessment = {
+            id,
+            title: assessment.title,
+            description: assessment.description,
+            durationMin: assessment.durationMin,
+            maxAttempts: assessment.maxAttempts,
+            published: assessment.published,
+            levels,
+            createdAt: now,
+            updatedAt: now,
+          };
+          next = { ...s, assessments: [created, ...s.assessments] };
         }
-        const created: Assessment = {
-          id,
-          title: assessment.title,
-          description: assessment.description,
-          durationMin: assessment.durationMin,
-          maxAttempts: assessment.maxAttempts,
-          published: assessment.published,
-          levels,
-          createdAt: now,
-          updatedAt: now,
-        };
-        return { ...s, assessments: [created, ...s.assessments] };
+        void pushAssessmentsToApi(next.assessments, next.assessmentQuestions);
+        return next;
       });
       return id;
     },
@@ -1086,27 +1149,35 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
 
   const deleteAssessment = useCallback(
     (id: string) => {
-      commit((s) => ({
-        ...s,
-        assessments: s.assessments.filter((a) => a.id !== id),
-        assessmentQuestions: s.assessmentQuestions.filter(
-          (q) => q.assessmentId !== id,
-        ),
-      }));
+      commit((s) => {
+        const next = {
+          ...s,
+          assessments: s.assessments.filter((a) => a.id !== id),
+          assessmentQuestions: s.assessmentQuestions.filter(
+            (q) => q.assessmentId !== id,
+          ),
+        };
+        void pushAssessmentsToApi(next.assessments, next.assessmentQuestions);
+        return next;
+      });
     },
     [commit],
   );
 
   const setAssessmentPublished = useCallback(
     (id: string, published: boolean) => {
-      commit((s) => ({
-        ...s,
-        assessments: s.assessments.map((a) =>
-          a.id === id
-            ? { ...a, published, updatedAt: new Date().toISOString() }
-            : a,
-        ),
-      }));
+      commit((s) => {
+        const next = {
+          ...s,
+          assessments: s.assessments.map((a) =>
+            a.id === id
+              ? { ...a, published, updatedAt: new Date().toISOString() }
+              : a,
+          ),
+        };
+        void pushAssessmentsToApi(next.assessments, next.assessmentQuestions);
+        return next;
+      });
     },
     [commit],
   );
@@ -1115,7 +1186,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     (question: AssessmentQuestion) => {
       commit((s) => {
         const exists = s.assessmentQuestions.some((q) => q.id === question.id);
-        return {
+        const next = {
           ...s,
           assessmentQuestions: exists
             ? s.assessmentQuestions.map((q) =>
@@ -1128,6 +1199,8 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
               : a,
           ),
         };
+        void pushAssessmentsToApi(next.assessments, next.assessmentQuestions);
+        return next;
       });
     },
     [commit],
@@ -1135,10 +1208,14 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
 
   const deleteAssessmentQuestion = useCallback(
     (id: string) => {
-      commit((s) => ({
-        ...s,
-        assessmentQuestions: s.assessmentQuestions.filter((q) => q.id !== id),
-      }));
+      commit((s) => {
+        const next = {
+          ...s,
+          assessmentQuestions: s.assessmentQuestions.filter((q) => q.id !== id),
+        };
+        void pushAssessmentsToApi(next.assessments, next.assessmentQuestions);
+        return next;
+      });
     },
     [commit],
   );
@@ -1216,6 +1293,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     syncCloudNow,
     cloudSyncConfigured,
     cloudSyncMeta,
+    refreshSharedContentFromServer,
   };
 
   return (
