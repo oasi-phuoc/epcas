@@ -17460,6 +17460,236 @@ const DEMO_609_OBJECTIFS_SUMMARY = `## Objectifs
 - Ports · TEU · manutention
 - Forces & arrimage`;
 
+/** Glossaire Module 609 */
+const DEMO_609_GLOSSAIRE_FULL = `## Glossaire — Module 609
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Globalisation** | §9 | Commerce mondial lié au transport maritime depuis > **8 000 ans** · grandes quantités à **faible coût** · villes portuaires = centres d'échange. |
+| **Eaux intérieures** | §9.1.1 | Voies navigables intérieures (lacs, fleuves) · en Suisse : surtout le **Rhin** (convention de **Mannheim** 1868) · capacité bateaux ~300–3'000 t. |
+| **Capacité** | §9.2.2 | Charge maximale d'un navire exprimée en **TEU** (*Twenty-foot Equivalent Unit*) · ex. plus grands porte-conteneurs > **23'000 TEU**. |
+| **Miles nautiques** | §9.1.2 | Unité de distance maritime · **1 NM = 1,852 km** · ex. Cap Horn → Rotterdam > **6'500 NM**. |`;
+
+const DEMO_609_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Navigation** = mondialisation · lent · cheap · grandes quantités
+- **Rhin** = voie intérieure n°1 Europe pour la CH
+- **TEU** = conteneur 20 pieds · **1 NM = 1,852 km**
+- Suez · Panama · Kiel = artères du commerce`;
+
+/** Mises en situation Module 609 */
+const DEMO_609_SITUATION_FULL = `## Mises en situation — Module 609
+
+**Navigation maritime** : entretien manutention conteneurs, port de Hambourg, transbordement, sécurisation à bord.
+
+### Vue d'ensemble des missions
+1. Entretien professionnel — chargement conteneurs
+2. Port de Hambourg (porte-conteneurs + portrait)
+3. Transbordement de conteneurs au port
+4. Sécurisation du chargement sur porte-conteneurs
+5. Discussion STA
+
+---
+
+## Mission 1 — Entretien manutention conteneurs
+
+:::reponse
+**Réponse individuelle** — entretien (présentiel ou électronique) avec une personne qui charge/décharge des conteneurs · **≥ 5 questions** · résultat (e-mail/notes/vidéo).
+
+**Questions possibles**
+- Étapes pour charger et sécuriser un conteneur ?
+- Gestion des différents types de fret · exigences selon marchandises ?
+- Défis outre-mer · différences selon pays d'origine ?
+- Rôle des technologies de suivi (évolution récente) ?
+- Collaboration avec autres services pour un processus sans faille ?
+:::
+
+---
+
+## Mission 2.1 — Plus grand porte-conteneurs à Hambourg
+
+:::reponse
+**Réponse individuelle** — site des escales Hambourg · plus grand navire (capacité **TEU**) des 3 derniers mois · description + photo.
+:::
+
+---
+
+## Mission 2.2 — Portrait du port de Hambourg
+
+:::reponse
+**Situation** — Elbe · > **7'200 ha** · > **300** postes d'amarrage · plus grand port d'Allemagne · hub conteneurs européen.
+
+**Histoire** — depuis le **IXe siècle** · Speicherstadt (UNESCO).
+
+**Infrastructure** — terminaux conteneurs · vrac · liquides · véhicules · projet · liaisons route/rail/fluvial.
+
+**Économie** — dizaines de milliers d'emplois · transbordement mondial.
+
+**Durabilité** — réduction émissions · énergies renouvelables.
+
+**Culture** — croisières Elbe · musées · cœur vivant de la ville.
+:::
+
+---
+
+## Mission 3 — Transbordement au port
+
+:::reponse
+**Côté eau** — ponts à conteneurs semi-automatiques (2 chariots) · **AGV** (chariots autoguidés) vers l'entrepôt · logiciel + transpondeurs (~17'000).
+
+**Entrepôt** — grues à portique (tri logiciel) · livraison côté terre : joystick + caméra sur camions/châssis.
+
+**Rail** — plus grande gare conteneurs d'Europe (CTA) · **9 voies** parallèles ~**700 m** · trains complets.
+:::
+
+---
+
+## Mission 4 — Sécurisation sur porte-conteneurs
+
+:::reponse
+- **Twistlocks** — aux 4 coins · verrouillent les conteneurs entre eux
+- **Dunnage Bags** — coussins d'air gonflables · combler les vides
+- **Système d'arrimage** — barres en diagonale sur conteneurs extérieurs du pont
+- En **tempête** : conteneurs parfois **débarqués volontairement** pour éviter le chavirement
+:::
+
+---
+
+## Mission 5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_609_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : entretien manutention conteneurs (5 questions)
+- **M2** : Hambourg · TEU · Elbe · Speicherstadt
+- **M3** : ponts roulants · AGV · grues portique · rail
+- **M4** : twistlocks · dunnage bags · barres · tempête
+- **M5** : discussion STA`;
+
+/** Exercices de maths Module 609 */
+const DEMO_609_MATHS_FULL = `## Exercices de mathématiques — Module 609
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Blocage canal de Suez (Ever Given 2021)
+
+Coûts estimés **2 milliards EUR** · économie suisse **0,5 %**.
+
+:::solution
+**CHF/EUR 10'000'000** pour l'économie suisse
+
+\`\`\`
+2'000'000'000 × 0,5 / 100 = 10'000'000
+\`\`\`
+:::
+
+### Exercice 2 — Bateau vs camion Rotterdam → Bâle
+
+Bateau **6 × 24 h** · camion **700 km** à **50 km/h**.
+
+:::solution
+**a) 14 h** de trajet camion · **b) 10** allers-retours possibles
+
+\`\`\`
+Camion : 700 / 50 = 14 h
+Allers-retours : (6 × 24) / 14 = 10,29 ≈ 10
+\`\`\`
+:::
+
+### Exercice 3 — Volume du plus grand porte-conteneurs
+
+**23'992 TEU** · conteneur 20' = **6 × 2,4 × 2,4 m**.
+
+:::solution
+**34,56 m³** par conteneur · **829'163,52 m³** au total
+
+\`\`\`
+Volume unitaire : 6 × 2,4 × 2,4 = 34,56 m³
+Total : 23'992 × 34,56 = 829'163,52 m³
+\`\`\`
+:::
+
+### Exercice 4 — Ballons de football dans le cargo
+
+Ballon gonflé **5'306 cm³**.
+
+:::solution
+**156'269'039 ballons**
+
+\`\`\`
+5'306 cm³ = 0,005306 m³
+829'163,52 / 0,005306 = 156'269'039
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 10 · 156'269'039 · 34,56 · 10'000'000 · 14 · 829'163,52`;
+
+const DEMO_609_MATHS_SUMMARY = `## Maths — Solutions
+1. Coût CH **10'000'000** (0,5 % de 2 Md)
+2. Camion **14 h** · **10** allers-retours
+3. **34,56 m³**/TEU · **829'163,52 m³** total
+4. **156'269'039** ballons`;
+
+/** Vérification des acquis Module 609 */
+const DEMO_609_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 609 — Navigation**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Un **avantage** du transport maritime ?
+
+:::reponse
+Les **grandes quantités** sont transportées à **moindre coût**.
+:::
+
+### Question 2
+
+Un **inconvénient** du transport maritime ?
+
+:::reponse
+Les transports sont très **lents**.
+:::
+
+### Question 3
+
+Trois voies maritimes artificielles clés ?
+
+:::reponse
+- **Canal de Suez**
+- **Canal de Panama**
+- **Canal de Kiel** (mer du Nord)
+:::
+
+### Question 4
+
+Trois moyens de transport pour le **transbordement** de conteneurs ?
+
+:::reponse
+- **Grue** (portique)
+- **Chariot élévateur** charges lourdes (jusqu'à ~**50 t**)
+- **Porte-conteneurs** (*Container-Carrier* / cavalier)
+:::
+
+### Question 5
+
+Deux outils pour **sécuriser** le chargement de conteneurs ?
+
+:::reponse
+- **Coussins d'air** (*dunnage bags*)
+- **Systèmes de retenue / sangles d'arrimage**
+- **Filet d'arrimage** de la charge
+- **Twistlocks** · barres d'arrimage (également acceptés)
+:::`;
+
+const DEMO_609_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Grandes quantités · faible coût
+2. Très lent
+3. Suez · Panama · Kiel
+4. Grue · chariot ~50 t · porte-conteneurs
+5. Coussins d'air · sangles · filets · twistlocks`;
+
 /** Contenu Module 610 — Le transport combiné */
 const DEMO_610_THEORIE_FULL = `## 10. Le transport combiné
 
@@ -21990,6 +22220,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_609_THEORIE_FULL,
       summary: DEMO_609_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_609_GLOSSAIRE_FULL,
+      summary: DEMO_609_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_609_SITUATION_FULL,
+      summary: DEMO_609_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_609_MATHS_FULL,
+      summary: DEMO_609_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_609_VERIFICATION_FULL,
+      summary: DEMO_609_VERIFICATION_SUMMARY,
     },
   },
   "610": {
