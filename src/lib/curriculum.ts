@@ -16228,6 +16228,274 @@ const DEMO_505_OBJECTIFS_SUMMARY = `## Objectifs
 - Bulk & besoins
 - Types de BOM`;
 
+const DEMO_505_GLOSSAIRE_FULL = `## Glossaire — Module 505
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Planification de la production** | §5 · PCP | Ensemble des tâches de la **PCP** : programme de production, quantités matériel, délais/capacités, lancement d'ordres, suivi des commandes. |
+| **Préparation du travail** | PCP | Phase avant l'exécution : réglage machines, préparation de lots, ordres de travail (OT), attribution des capacités — conditionne le démarrage de la fabrication. |
+| **Production en flux poussé/tiré** | §5.1 | **Push** : planification **centrale** · infos et marchandises même sens · stocks souvent ↑. **Pull** : pilotage par la **demande** · infos à contre-courant · stocks ↓ · orientation client ↑. |
+| **Production en vrac** | §5.2 | *Bulk* : marchandises en **très grandes quantités** (cargaisons) pour commerçants/transformateurs · production **récurrente** de masse. |
+| **Nomenclature** | §5.3 | *Bill of Materials* (BOM) : liste de tous les articles et sous-ensembles nécessaires au produit final · base pour planification, achats et production. |
+| **Nomenclature modulaire** | §5.3.1 | Découpe de la nomenclature **structurelle** : montre l'assemblage d'un **sous-ensemble** donné (niveau de fabrication). |
+| **Nomenclature de montage** | §5.3.1 | Synonyme courant de nomenclature **structurelle** : hiérarchie des composants et **ordre** d'assemblage visible. |
+| **Nomenclature des pièces de rechange** | §5.3 | Liste des pièces détachées pour maintenance/réparation — souvent dérivée de la BOM produit. |`;
+
+const DEMO_505_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **PCP** = programme → quantités → délais → lancement → suivi
+- **Push** central / stocks ↑ · **Pull** demande / stocks ↓
+- **BOM** : primaire → secondaire → net
+- Types : quantitative · structurelle · modulaire · variantes`;
+
+/** Mises en situation Module 505 */
+const DEMO_505_SITUATION_FULL = `## Mises en situation — Module 505
+
+**EnterSite SA** lance la **Gold Edition** toner : **2'000 unités** à produire. **Michael Münster** (Production) demande nomenclatures et planification PCP.
+
+### Vue d'ensemble des missions
+1. Notion de nomenclature · besoins primaire/secondaire
+2. Nomenclature structurelle (Excel)
+3. Nomenclature quantitative · besoins 2'000 toners
+4. Planification PCP sous-ensemble C (200 premiers)
+5. Discussion STA
+
+---
+
+## Mission 1 — Notion de nomenclature
+
+:::reponse
+Une **nomenclature** est une liste **structurée** d'articles, composants et pièces nécessaires à la fabrication d'un produit.
+
+Elle indique les composants, leurs **proportions** et leurs **utilisations**. Base pour planification matériaux, production, approvisionnement et fabrication efficace.
+:::
+
+### Mission 1.1 — Besoins primaire et secondaire
+
+:::reponse
+**Besoin primaire** — quantité du **produit final** vendable (programme de vente).  
+Ex. : **2'000** toners Gold Edition à produire.
+
+**Besoin secondaire** — quantité de **composants** nécessaires pour fabriquer le primaire (d'après la BOM).  
+Ex. : pour 2'000 toners → **4'000** paquets toner magenta (2 par sous-ensemble A × 2'000).
+
+**Besoin secondaire net** = besoin secondaire − **stock** disponible.
+:::
+
+---
+
+## Mission 2 — Nomenclature structurelle
+
+Toner Gold Edition = **1× 506BG_A** + **2× 506BG_B** + **1× 506BG_C**.
+
+**506BG_A** : 2× 506BG_B · 1× 506BBZ2015 · 2× 506BBZ2011  
+**506BG_B** : 2× 506BBZ2018 · 3× 506BBZ2019 · 5× 506BBZ2020  
+**506BG_C** : 1× 506BBZ2012 · 1× 506BBZ2013 · 4× 506BBZ2014
+
+:::reponse
+**Dépôt** — nomenclature structurelle dans *Structure.xlsx* (EnterSite).
+
+Arborescence hiérarchique : produit final → sous-ensembles A/B/C → pièces détaillées.
+:::
+
+---
+
+## Mission 3 — Nomenclature quantitative (2'000 toners)
+
+:::reponse
+| Pos. | N° art. | Désignation | Fournisseur | Qté/unité | Qté totale |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 506BG_A | Sous-ensemble A | Prod. interne | 1 | **2'000** |
+| 2 | 506BG_B | Sous-ensemble B | Prod. interne | 4 | **8'000** |
+| 3 | 506BG_C | Sous-ensemble C | Prod. interne | 1 | **2'000** |
+| 4 | 506BBZ2011 | Toner Magenta | Sous-traitance | 2 | **4'000** |
+| 5 | 506BBZ2012 | OPC | Sous-traitance | 1 | **2'000** |
+| 6 | 506BBZ2013 | Tambour | Sous-tr./interne | 1 | **2'000** |
+| 7 | 506BBZ2014 | Agrafe | Sous-tr./interne | 4 | **8'000** |
+| 8 | 506BBZ2015 | Emballage vide | Sous-traitance | 1 | **2'000** |
+| 9 | 506BBZ2018 | Boulon | Sous-tr./interne | 8 | **16'000** |
+| 10 | 506BBZ2019 | Bague d'étanchéité | Sous-traitance | 12 | **24'000** |
+| 11 | 506BBZ2020 | Anneaux hélicoïdaux | Sous-tr./interne | 20 | **40'000** |
+:::
+
+---
+
+## Mission 4 — Planification PCP sous-ensemble C (200 toners)
+
+3 lots OT (25/27/32) × **50 p.** · machines 1–3 · puis montage **5 min**/sous-ensemble.
+
+Fichier : *Grille Planification et contrôle de la production.xlsx*
+
+:::reponse
+**Dépôt** — grille PCP complétée (*…_solution.xlsx*).
+
+Ordre : OT 25 → OT 27 → OT 32 · réglage séquentiel par machine · montage C après toutes les commandes.
+:::
+
+### Mission 4.1 — Heures de montage
+
+:::reponse
+**Début montage sous-ensemble C** : après **58 heures**
+
+**Début montage final** (25 premiers assemblages prêts) : après **60 h 05 min**
+:::
+
+### Mission 4.2 — Optimisation
+
+:::reponse
+**Possibilités** — chevauchement des réglages, parallélisation sur machines libres, réduction temps de préparation, réaffectation OT 32 (M3 inutilisée)…
+
+**Dépôt** — *Grille … après optimisation_solution.xlsx*
+:::
+
+---
+
+## Mission 5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_505_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : BOM = liste structurée · primaire = produit fini · secondaire = composants
+- **M2** : structurelle Gold Edition (A/B/C)
+- **M3** : quantités pour **2'000** toners (ex. 40'000 anneaux)
+- **M4** : PCP 3 OT · montage dès **58 h** · final **60 h 05**
+- **M5** : discussion`;
+
+/** Exercices de maths Module 505 */
+const DEMO_505_MATHS_FULL = `## Exercices de mathématiques — Module 505
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Temps d'immobilisation
+
+Temps de passage **40 h** · temps de traitement **31,5 h**.
+
+:::solution
+**21,25 %**
+
+\`\`\`
+(40 − 31,5) / 40 × 100 = **21,25 %**
+\`\`\`
+:::
+
+### Exercice 2 — Fourchette de poids toner
+
+Remplissage **250 g** · tolérance **−1 %** à **+3 %**.
+
+:::solution
+**247,5 g – 257,5 g**
+
+\`\`\`
+Min : 250 − (250 × 1/100) = **247,5 g**
+Max : 250 + (250 × 3/100) = **257,5 g**
+\`\`\`
+:::
+
+### Exercice 3 — Matériau emballages (7 % déchets)
+
+**3,6 kg** de déchets en **1 h** = **7 %** du matériau traité.
+
+:::solution
+**51,43 kg**
+
+\`\`\`
+3,6 / 7 × 100 = **51,43 kg/h**
+\`\`\`
+:::
+
+### Exercice 4 — Surface palettes par jour
+
+**250 palettes** / **5 jours** · palette **835 × 1'240 mm** · **4** palettes empilées (= 1 emplacement au sol).
+
+:::solution
+**13,46 m²**
+
+\`\`\`
+Palettes/jour     : 250 / 5 = 50
+Emplacements sol  : 50 / 4 = 12,5 → **13**
+Surface           : 13 × 1,24 × 0,835 = **13,46 m²**
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 247,5 – 257,5 · 13,46 · 21,25 · 51,43`;
+
+const DEMO_505_MATHS_SUMMARY = `## Maths — Solutions
+1. Immobilisation : **21,25 %**
+2. Tolérance poids : **247,5 – 257,5 g**
+3. Matériau/h : **51,43 kg**
+4. Surface/jour : **13,46 m²**`;
+
+/** Vérification des acquis Module 505 */
+const DEMO_505_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 505 — Planification et contrôle de la production (PCP)**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Cite **trois fonctions** de la planification et du contrôle de production.
+
+:::reponse
+Exemples (trois suffisent) :
+1. Planification du **programme** de production
+2. **Gestion du matériel** / planification des quantités
+3. Planification des **délais et capacités**
+4. **Lancement** des commandes / ordres
+5. **Suivi** des commandes
+:::
+
+### Question 2
+
+Vrai ou faux — push vs pull ?
+
+:::reponse
+| Affirmation | V/F |
+| --- | --- |
+| Le flux **tiré** s'oriente vers la demande → **augmentation** des stocks | **Faux** (stocks ↓) |
+| En **push**, infos et marchandises vont dans le **même sens** | **Vrai** |
+| Le **pull** entraîne une orientation client **plus élevée** | **Vrai** |
+| En **push**, planification **décentralisée** | **Faux** (centralisée) |
+:::
+
+### Question 3
+
+Comment appelle-t-on les marchandises produites en masse pour commerçants/transformateurs (pas directement consommateurs finaux) ?
+
+:::reponse
+**Production en vrac** (*bulk*).
+:::
+
+### Question 4
+
+Cite **trois principaux types** de nomenclatures.
+
+:::reponse
+1. Nomenclature **quantitative**
+2. Nomenclature **structurelle**
+3. Nomenclature **modulaire**
+
+*(Aussi : nomenclature **variantes**.)*
+:::
+
+### Question 5
+
+Quel type de nomenclature sur l'illustration ? Que peut-on en déduire ?
+
+:::reponse
+**Nomenclature structurelle** (de montage).
+
+On voit **quelles pièces** sont nécessaires et **en quelle quantité** à chaque niveau.
+
+Ex. : B1 utilisé 1× → composé de 1× B3 + 1× T1 + 3× T2 · B3 = 1× T1 + 3× T3 + 1× T4.
+:::`;
+
+const DEMO_505_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Programme · quantités · délais · lancement · suivi (3+)
+2. F · V · V · F (pull/push)
+3. **Production en vrac**
+4. Quantitative · structurelle · modulaire
+5. **Structurelle** — pièces, quantités, hiérarchie`;
+
 /** Contenu Module 506 — L'assurance qualité dans la production */
 const DEMO_506_THEORIE_FULL = `## 6. Assurance qualité (AQ) dans la production
 
@@ -21850,6 +22118,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_505_THEORIE_FULL,
       summary: DEMO_505_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_505_GLOSSAIRE_FULL,
+      summary: DEMO_505_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_505_SITUATION_FULL,
+      summary: DEMO_505_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_505_MATHS_FULL,
+      summary: DEMO_505_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_505_VERIFICATION_FULL,
+      summary: DEMO_505_VERIFICATION_SUMMARY,
     },
   },
   "506": {
