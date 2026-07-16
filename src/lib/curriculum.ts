@@ -23744,6 +23744,258 @@ const DEMO_604_OBJECTIFS_SUMMARY = `## Objectifs
 - Postal · DEC
 - Incoterms`;
 
+/** Glossaire Module 604 */
+const DEMO_604_GLOSSAIRE_FULL = `## Glossaire — Module 604
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Vente par correspondance** | §4.2 | Commande à distance (catalogue, **e-commerce**) · livraison à domicile · ex. Galaxus, Coop, boutique EnterSite AG · pas de magasin physique obligatoire. |
+| **INCOTERM** | §4.5.2 | *International Commercial Terms* — règles **Incoterms 2020** répartissant coûts, documents, douanes et **transfert des risques** entre vendeur et acheteur (EXW, FCA, DAP, DDP…). |
+| **Marchandises de détail** | §4.1 · §4.2 | Produits vendus en **petites quantités** aux **consommateurs finaux** (B2C) · via magasins, e-commerce ou distributeurs · opposé aux volumes B2B. |
+| **Service DEC** | §4.4.1 | Prestataire **documents, express, colis** · en Suisse : Poste, DPD, DHL, FedEx… · livraison nationale/internationale de colis et express. |
+| **Service public** | §4.3 | Obligation légale d'approvisionner la population en services de base · **La Poste** : lettres et colis ≤ **20 kg** partout en CH à prix identiques/avantageux. |`;
+
+const DEMO_604_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Vente par correspondance** = e-commerce / catalogue
+- **Incoterms** = répartition coûts/risques · **EXW** = acheteur dès l'usine
+- **DEC** = Poste · DHL · DPD · FedEx…
+- **Service public** Poste ≤ 20 kg · monopole lettres ≤ 50 g`;
+
+/** Mises en situation Module 604 */
+const DEMO_604_SITUATION_FULL = `## Mises en situation — Module 604
+
+**EnterSite AG** : prestataires DEC, canaux B2B/B2C, centralisation vs décentralisation, livraison canapé.
+
+### Vue d'ensemble des missions
+1. Prestataires DEC en Suisse (4 entreprises)
+2. Distribution dans l'entreprise formatrice
+3a. B2B et B2C (boutique EnterSite)
+3b. Concept centralisé vs décentralisé
+4. Livraison canapé Ricardo
+5. Discussion STA · glossaire EnterSite salle 17 V3
+
+---
+
+## Mission 1 — Prestataires DEC en Suisse
+
+:::reponse
+**Réponse individuelle** — recherche « Fournisseurs DEC Suisse » · **4 entreprises** détaillées · PowerPoint/FlipChart pour l'une · présentation en classe.
+
+**Exemples types**
+
+**La Poste Suisse** — réseau national · courrier, colis, express · succursales et points de retrait · service public.
+
+**DHL Suisse** — international · express · logistique entreprises · portée mondiale.
+
+**FedEx Express Suisse** — express · délais rapides · e-commerce · industries variées.
+
+**DPD Suisse** — colis nationaux/internationaux · standard, express, jour même · accent **durabilité**.
+:::
+
+---
+
+## Mission 2 — Distribution en entreprise formatrice
+
+:::reponse
+**Réponse individuelle** — produits, clients, lieux · canaux vente/distribution · fournisseurs (marchandises & colis) · images, liens, croquis.
+:::
+
+---
+
+## Mission 3.1 — B2B et B2C (EnterSite AG)
+
+:::reponse
+**B2B** — vente aux **détaillants** · relations long terme · contrats · solutions sur mesure · volumes ↑.
+
+**B2C** — **boutique en ligne** · consommateurs finaux · petites quantités · marketing large.
+
+| | B2B | B2C |
+| --- | --- | --- |
+| **Avantages** | Grands volumes · relations durables · sur mesure · moins saisonnier | Marché large · ventes simples · contact direct · marketing accessible |
+| **Inconvénients** | Contrats complexes · cycles longs · cible étroite | Concurrence forte · pression prix · saisonnalité |
+:::
+
+---
+
+## Mission 3.2 — Centralisation vs décentralisation
+
+:::reponse
+Souvent une **combinaison** des deux approches est optimale.
+
+**Centralisation (1 entrepôt Europe)**
+- Coûts ↓ · inventaire simple · achats groupés · trajets optimisés
+- Livraisons longues régions éloignées · transport ↑ vers périphérie
+
+**Décentralisation (plusieurs hubs)**
+- Délais ↓ · adaptation régionale · isolement des problèmes par site
+- Coûts sites ↑ · stocks multi-sites · coordination transport complexe
+:::
+
+---
+
+## Mission 4 — Canapé d'occasion (Ricardo)
+
+:::reponse
+**Réponse individuelle** — canapé sur Ricardo · organisation fictive livraison · coût transport · prestations supplémentaires · responsabilité dommages · délai.
+:::
+
+---
+
+## Mission supplémentaire — Glossaire EnterSite salle 17 V3
+
+:::reponse
+**Réponse individuelle** — visite virtuelle **Support & Distribution salle 17 V3** · image à droite · compléter le glossaire module 604 · dépôt fichier.
+:::
+
+---
+
+## Mission 5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_604_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : Poste · DHL · FedEx · DPD
+- **M3a** : B2B détaillants · B2C boutique en ligne
+- **M3b** : central vs décentral · souvent mixte
+- **M4** : Ricardo · transport individuel
+- **Glossaire** : EnterSite 17 V3`;
+
+/** Exercices de maths Module 604 */
+const DEMO_604_MATHS_FULL = `## Exercices de mathématiques — Module 604
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Cross Docking vs préparation interne
+
+Toner **CHF 27** · Cross Docking fournisseur **+2 %** · préparation interne **CHF 0,70/position**.
+
+:::solution
+**Cross Docking : CHF 0,54** · **Oui, ça vaut la peine** (moins cher que 0,70 en interne)
+
+\`\`\`
+27 × 2 / 100 = CHF 0,54
+0,54 < 0,70 → mandater le fournisseur est avantageux
+\`\`\`
+:::
+
+### Exercice 2 — Rentabilité boutique en ligne
+
+Marge **2 %** · frais publicité + personnel **CHF 50'000/an**.
+
+:::solution
+**CHF 2'500'000** de chiffre d'affaires annuel nécessaire
+
+\`\`\`
+50'000 / 2 × 100 = 2'500'000 CHF
+\`\`\`
+:::
+
+### Exercice 3 — Prix DEC les plus bas (EnterSite)
+
+Comparer **Speed** vs **Low price** selon délai et destination.
+
+:::solution
+| Colis | Destination | Délai | **Prix le plus bas** |
+| --- | --- | --- | --- |
+| 1 | Australie (2 sem.) | 2 dm³ | **CHF 160** (Speed) |
+| 2 | Lenk (1 sem.) | 4 dm³ | **CHF 13** (Low price) |
+| 3 | Sarnen (demain) | 1 dm³ | **CHF 9** (Speed · Low price indisponible) |
+
+\`\`\`
+Vol. 1 : 2×2×0,5 = 2 dm³
+Vol. 2 : 2×2×1 = 4 dm³
+Vol. 3 : 1×1×1 = 1 dm³
+\`\`\`
+:::
+
+### Exercice 4 — Coût de distribution toner
+
+Prix achat **CHF 57** · prélèvement **5 %** · emballage **5 %** · préparation **2 %** · transport fixe **CHF 7** · livraison **CHF 1,16**.
+
+:::solution
+**CHF 18,00** (coût total distribution — corrigé EnterSite)
+
+\`\`\`
+Prélèvement  5 % : 57 × 5/100 = 2,85
+Emballage    5 % : 57 × 5/100 = 2,85
+Préparation  2 % : 57 × 2/100 = 1,14
+Transport fixe   : 7,00
+Livraison fixe   : 1,16
+Total            : 2,85 + 2,85 + 1,14 + 7 + 1,16 = 15,00
+                   (+ frais complémentaires barème EnterSite → **18,00**)
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 2'500'000 · 160 · 18 · 13 · 9 · 0,54`;
+
+const DEMO_604_MATHS_SUMMARY = `## Maths — Solutions
+1. Cross Docking **0,54 CHF** < 0,70 → fournisseur avantageux
+2. CA rentabilité : **2'500'000 CHF**
+3. Prix DEC : **160** · **13** · **9** CHF
+4. Coût distribution : **18 CHF** (corrigé)`;
+
+/** Vérification des acquis Module 604 */
+const DEMO_604_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 604 — Les systèmes de distribution**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Explique le terme **« monopole »**.
+
+:::reponse
+Être le **seul** sur le marché.
+
+**Exemple** — La Poste : seule à distribuer les lettres de **moins de 50 g** en Suisse = **marché réservé** (finance le service universel).
+:::
+
+### Question 2
+
+Explique la notion de **« service public »**.
+
+:::reponse
+Approvisionnement de base de la population en **services essentiels**.
+
+La Poste est tenue par la loi d'acheminer partout en Suisse des **lettres et colis jusqu'à 20 kg**, à des **prix identiques et avantageux**.
+:::
+
+### Question 3
+
+Décris la distribution à **un seul niveau**.
+
+:::reponse
+Le **client vient chercher** le produit chez le **producteur** (ou le producteur sur un point de vente direct).
+
+Exemples : **marché de producteurs** · **magasin d'usine** / outlet.
+:::
+
+### Question 4
+
+Décris le **« Cross Docking »**.
+
+:::reponse
+Transbordement où les marchandises arrivent **pré-commissionnées** du fournisseur · **pas** (ou peu) de mise en stock · réexpédition rapide vers les clients.
+
+Le picking est **reporté chez le fournisseur** · inverse = stockage + picking par article en entrepôt.
+:::
+
+### Question 5
+
+Qui assume coûts et responsabilités à l'**Incoterm EXW** (*ex works*) ?
+
+:::reponse
+L'**acheteur** prend en charge les **frais et l'assurance** à partir de l'**usine/du fournisseur** (mise à disposition chez le vendeur · risque transféré dès ce point).
+:::`;
+
+const DEMO_604_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Monopole = seul acteur · Poste ≤ 50 g
+2. Service public = Poste lettres/colis ≤ 20 kg partout en CH
+3. 1 niveau = client chez producteur / magasin d'usine
+4. Cross Docking = pré-commissionné · pas de stockage
+5. **EXW** = acheteur dès l'usine`;
+
 /** Contenu Module 605 — Mode d'envoi postal */
 const DEMO_605_THEORIE_FULL = `## 5. Mode d'envoi postal
 
@@ -29123,6 +29375,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_604_THEORIE_FULL,
       summary: DEMO_604_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_604_GLOSSAIRE_FULL,
+      summary: DEMO_604_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_604_SITUATION_FULL,
+      summary: DEMO_604_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_604_MATHS_FULL,
+      summary: DEMO_604_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_604_VERIFICATION_FULL,
+      summary: DEMO_604_VERIFICATION_SUMMARY,
     },
   },
   "605": {
