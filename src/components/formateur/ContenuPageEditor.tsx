@@ -5,6 +5,7 @@ import Link from "next/link";
 import { cn } from "@/lib/cn";
 import {
   Alert,
+  Badge,
   Button,
   EmptyState,
   PageHeader,
@@ -13,6 +14,7 @@ import {
   TextField,
 } from "@/components/ui";
 import { MarkdownLite } from "@/components/MarkdownLite";
+import { BookMarkdown } from "@/components/BookMarkdown";
 import { MarkdownToolbar } from "@/components/MarkdownToolbar";
 import {
   FORMATEUR_EXERCISE_PAGES,
@@ -263,13 +265,26 @@ function LessonEditor({
         </>
       ) : (
         <div className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-4 sm:p-5">
-          <p className="mb-2 text-xs text-ink-subtle">
-            {which === "summary" ? "Résumé" : "Complet"} · {editLevel}
-          </p>
-          <h2 className="mb-4 font-display text-2xl text-ink sm:text-3xl">
-            {title || "Sans titre"}
-          </h2>
-          <MarkdownLite text={activeValue} />
+          <div className="mb-4 flex flex-wrap items-center gap-2">
+            <Badge tone={which === "summary" ? "accent" : "primary"}>
+              {which === "summary" ? "Résumé" : "Complet · mode livre"}
+            </Badge>
+            <Badge tone="neutral">{editLevel}</Badge>
+          </div>
+          {which === "summary" ? (
+            <>
+              <h2 className="mb-4 font-display text-2xl text-ink sm:text-3xl">
+                {title || "Sans titre"}
+              </h2>
+              <MarkdownLite text={activeValue} />
+            </>
+          ) : (
+            <BookMarkdown
+              text={activeValue}
+              paginate
+              resetKey={`${lesson.id}-preview-full`}
+            />
+          )}
         </div>
       )}
 
