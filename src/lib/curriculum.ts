@@ -15667,6 +15667,360 @@ const DEMO_410_OBJECTIFS_SUMMARY = `## Objectifs
 - Continus & transferts
 - Accumulation · sécurité`;
 
+const DEMO_410_GLOSSAIRE_FULL = `## Glossaire — Module 410
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Plate-forme élévatrice** | §10.1.1 | Dispositif à mouvement **alternatif** (souvent à **ciseaux** hydrauliques) pour élever marchandises ou adapter la hauteur d'un plan de travail. Utilisé sur quais, en combinaison avec convoyeurs. |
+| **Convoyeur en S** | §10.1.2 | Convoyeur **vertical** en forme de S : rouleaux en bas → plates-formes tournantes (mouvement vertical) → rouleaux en haut. Variante : Liftveyor / ascenseur à sacs. |
+| **Pont-roulant** | §10.2.1 | Engin de **levage** fixe qui **enjambe** la surface de travail sur **rails** latéraux. Le **chariot roulant** (mécanisme de levage) se déplace transversalement sur la charpente. |
+| **Pont-roulant suspendu** | §10.2.2 | La charpente est **suspendue** au plafond (rails au plafond). Plus léger et moins cher qu'un pont portique, mais **pas** pour charges très lourdes. Charriots à membrure inférieure. |
+| **Portique-roulant** | §10.2.3 | Portique pour **conteneurs** dans terminaux / ports. Se déplace sur **rails** · levage vertical et horizontal. |
+| **Container Carrier** | §10.2.3 | Portique sur **roues** (cavalier) — alternative au chariot télescopique à conteneurs. Déplacement **libre** · empilage jusqu'à ~4 conteneurs · allées étroites. |
+| **Convoyeur à rouleaux** | §10.3.1 | Convoyeur **continu** au sol : galets/rouleaux entraînés pour caisses, palettes, colis. Souvent combiné avec chaînes ou bandes (virages, pentes). |
+| **Convoyeur à chaîne porteuse** | §10.3.2 | Convoyeur **continu** : chaînes sous les planches de palette pour entraînement **dynamique** (ex. entrée d'entrepôt automatique). Prise longitudinale ou transversale. |`;
+
+const DEMO_410_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Vertical** : plate-forme ciseaux · convoyeur **S** · élévateurs
+- **Levage** : pont · suspendu · portique · **Container Carrier** (roues)
+- **Continu** : rouleaux · chaîne porteuse · transferts · accumulation`;
+
+/** Mises en situation Module 410 */
+const DEMO_410_SITUATION_FULL = `## Mises en situation — Module 410
+
+Contexte EnterSite AG : **~100 palettes/jour** de la production à l'entrepôt de distribution sur **50 m**. Tu prépares l'entretien avec **Samuel Stähli** (Division Manager) sur les **convoyeurs continus**, les **engins de levage** et les **poulies**.
+
+### Vue d'ensemble des missions
+1. Convoyeurs continus (bande + rouleaux)
+2. Pont roulant (identification)
+3. Engins de levage (travail de groupe)
+4. Poulies et démultiplication
+5. Discussion STA
+
+---
+
+## Mission 1 — Convoyeurs continus
+
+### Définition et comparaison
+
+:::reponse
+**Définition** — Le convoyeur **continu** se déplace **en permanence** dans la **même direction** (boucle). Virages et obstacles possibles, mais pas de marche arrière.
+
+**Avantages** (vs discontinu) :
+- Flux **continu et régulier**
+- **Débit** et capacité plus élevés
+- Charge **uniforme** dans le process
+- Souvent **moins encombrant** (mouvement rectiligne)
+- Plus facile à **automatiser** et synchroniser
+
+**Inconvénients** :
+- Moins **flexible**
+- Coûts d'**acquisition**, d'**exploitation** et d'**entretien** plus élevés
+:::
+
+### Mission 1.1 — Deux propositions pour 50 m
+
+:::reponse
+**Proposition 1 — Convoyeur à bande**
+
+*Justification* : flux continu · déplacement **au plan** (peu d'espace) · moins de risques d'accidents / dommages aux palettes.
+
+**Proposition 2 — Convoyeur à rouleaux**
+
+*Justification* : technologie **éprouvée** · adaptable / extensible · entretien souvent ↓ · conditions de travail ↑ (moins de déplacement manuel).
+:::
+
+### Mission 1.2 — Transport à l'étage supérieur
+
+:::reponse
+| Solution | Fonction |
+| --- | --- |
+| **Convoyeur en S, C ou Z** | Rouleaux bas → plates-formes tournantes (vertical) → rouleaux haut |
+| **Monte-charge 1 côté** | Convoyeurs → contrôle profil → porte → étage → convoyeurs. **1 produit/étage/cycle** → capacité limitée |
+| **Monte-charge 2 côtés** | Chargement et déchargement **croisés** : pendant qu'on décharge à droite, la charge suivante est prête à gauche → capacité ↑ |
+:::
+
+### Mission 1.3 — Éléments de transfert
+
+:::reponse
+**Distributeur à chaîne** — Chaîne porteuse soulève la palette entre deux convoyeurs à rouleaux parallèles → transfert transversal (signal : palpeur ou cellule).
+
+**Pousseur à chaîne** — Pousse la charge sur un convoyeur transversal ou une glissière (sans soulever comme le distributeur).
+
+**Pousseur pour produits légers** — Bras hydraulique simple · colis postaux / tri.
+:::
+
+### Mission 1.4 — Rouleaux d'accumulation
+
+:::reponse
+Convoyeur spécial pour **ralentir ou arrêter** temporairement le flux sans empiler les marchandises.
+
+**Mécanisme** : rouleaux d'entraînement (ressort) entraînent les porteurs. Produit sur **galet palpeur** → genouillère abaisse l'entraînement → arrêt. Galet libéré → reprise du transport.
+:::
+
+### Mission 1.5 — Quatre mesures de sécurité
+
+:::reponse
+1. **Ne jamais pénétrer** dans les installations de transport.
+2. Traverser **uniquement** sur les **ponts** prévus.
+3. Ne pas transporter de pièces en **vrac** sur convoyeurs continus.
+4. Entretien : installation **hors tension** · interrupteur **verrouillé** (panneau + cadenas).
+:::
+
+---
+
+## Mission 2 — Pont roulant
+
+Identification de la grue vue au centre d'élimination des déchets.
+
+:::reponse
+**Nom** : **Pont-roulant**
+
+Éléments typiques (🔎 pièces détachées EnterSite) : rails de guidage · poutre/charpente · **chariot roulant** · palan/moufle · crochet · limiteurs · télécommande…
+:::
+
+### Mission 2.1 — Schéma annoté
+
+:::reponse
+**Réponse individuelle** — croquis Internet annoté **ou** dessin papier photographié avec toutes les pièces détachées identifiées.
+:::
+
+---
+
+## Mission 3 — Engins de levage (travail de groupe)
+
+Présentation en sous-groupes de 4 (2 min par expert).
+
+### Mon engin — Pont roulant
+
+:::reponse
+**Fonction** — Enjambe la surface · se déplace sur **rails** latéraux · **chariot** mobile transversalement avec mécanisme de levage.
+
+**Domaine** — Industries (réponse individuelle selon recherche).
+
+**Sécurité** — Réponse individuelle (règles SUVA §10.2.5).
+:::
+
+### Mission 3.1 — Notes des trois autres engins
+
+:::reponse
+**1. Pont roulant suspendu** — Charpente **suspendue** au plafond · plus léger · pas pour très lourdes charges · passage possible vers travée voisine.
+
+**2. Portique roulant** — Manutention **conteneurs** · déplacement sur **rails** · terminaux / ports.
+
+**3. Container-Carrier (cavalier)** — Portique sur **roues** · libre · alternative au télescopique conteneurs · terminaux / ports.
+:::
+
+### Mission 3.2 — Quiz sécurité
+
+:::reponse
+Voir liens EnterSite : **Règles pour le levage** · **Quiz sécurité** (🔨 modules 410).
+:::
+
+### Mission 3.3 — Capacité des élingues (angle β)
+
+:::reponse
+La capacité **résiduelle** diminue quand l'**angle d'inclinaison** augmente.
+
+Ex. à **45°** ≈ **70 %** de la charge nominale :  
+2'000 kg × 70 % = **1'400 kg**
+
+À **60°** ≈ **50 %** (β > 60° **interdit**).
+
+🔨 Exercice : **Capacité de levage des sangles et élingues** (unités : **1'000 kg** avec apostrophe).
+:::
+
+---
+
+## Mission 4 — Poulies
+
+Film 🔎 **G_126 — Poulies et cales**
+
+:::reponse
+**Force de traction** — diminue **proportionnellement** au nombre de **brins** de corde.
+
+**Trajectoire** — la distance de traction **s'allonge** proportionnellement aux brins.
+:::
+
+### Mission 4.1 — Atelier ou recherche historique
+
+:::reponse
+**Réponse individuelle** — reproduction en salle (photo) **ou** résumé historique de la poulie.
+:::
+
+### Mission 4.2 — Démultiplication des forces
+
+:::reponse
+🔨 Exercices EnterSite : **Poulie** · **Démultiplication des forces 1** · **Démultiplication des forces 2**
+:::
+
+### Mission 4.3 — Nombre de brins (exemple)
+
+:::reponse
+**16 brins** visibles sur le schéma.
+
+Exemple : hommes 75 kg et 68 kg → calcul de la force selon consigne EnterSite (**89,37 N** dans le corrigé — vérifier l'énoncé du schéma).
+
+**Réponse individuelle** — créer un exemple et le faire résoudre par un voisin.
+:::
+
+---
+
+## Mission 5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_410_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : continu = même sens · bande + rouleaux · S / monte-charge · transferts · accumulation · 4 règles sécu
+- **M2** : pont roulant · schéma pièces
+- **M3** : pont · suspendu · portique · cavalier · élingues β 45° = 70 %
+- **M4** : poulies = force ÷ brins · distance × brins
+- **M5** : discussion`;
+
+/** Exercices de maths Module 410 */
+const DEMO_410_MATHS_FULL = `## Exercices de mathématiques — Module 410
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Palans (m = 6 kg, levée 10 cm)
+
+Pour chaque poulie, déterminer la **force (N)** et la **longueur de câble (cm)**.  
+(1 kg ≈ 10 N · g = 10)
+
+:::solution
+| Palan | Brins | Force | Longueur câble |
+| --- | --- | --- | --- |
+| **1** | 1 | **60 N** | **10 cm** |
+| **2** | 2 | **30 N** | **20 cm** |
+| **3** | 3 | **20 N** | **30 cm** |
+| **4** | 4 | **15 N** | **40 cm** |
+
+\`\`\`
+Force    = (m × 10) / nombre de brins
+Longueur = 10 cm × nombre de brins
+\`\`\`
+:::
+
+### Exercice 2 — Capacité résiduelle des élingues
+
+Calculer la charge admissible selon l'angle (45° → 70 % · 60° → 50 %).
+
+| Charge nominale | 45° (70 %) | 60° (50 %) |
+| --- | --- | --- |
+| 2'000 kg | **1'400 kg** | **1'000 kg** |
+| 3'000 kg | **2'100 kg** | **1'500 kg** |
+| 5'000 kg | **3'500 kg** | **2'500 kg** |
+
+:::solution
+Ex. 2'000 kg à 45° : 2'000 × 0,70 = **1'400 kg**  
+Ex. 2'000 kg à 60° : 2'000 × 0,50 = **1'000 kg**  
+*(Même logique pour 3'000 et 5'000 kg.)*
+:::
+
+### Exercice 3 — Pierres 50 kg
+
+Avec quelle force tirer sur la corde ?
+
+:::solution
+**500 N**
+
+\`\`\`
+50 kg × 10 = **500 N**
+\`\`\`
+:::
+
+### Exercice 4 — Charge 30 kg, 3 brins
+
+:::solution
+**100 N**
+
+\`\`\`
+30 × 10 / 3 = **100 N**
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 10 · 60 · 20 · 30 · 30 · 20 · 40 · 15 · 1'400 · 1'000 · 1'000 · 2'100 · 1'500 · 1'500 · 3'500 · 2'500 · 2'500 · 500 · 100`;
+
+const DEMO_410_MATHS_SUMMARY = `## Maths — Solutions
+1. Palans 6 kg : **60/30/20/15 N** · câbles **10/20/30/40 cm**
+2. Élingues : **1'400/1'000** · **2'100/1'500** · **3'500/2'500** kg
+3. Pierres 50 kg : **500 N**
+4. 30 kg / 3 brins : **100 N**`;
+
+/** Vérification des acquis Module 410 */
+const DEMO_410_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 410 — Les dispositifs de convoyage**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Classe les moyens de transport suivants dans l'arborescence (type de mouvement · position · direction).
+
+:::reponse
+| Moyen | Mouvement | Position | Direction |
+| --- | --- | --- | --- |
+| **Pont-roulant** | Discontinu | Aérien (suspendu/enjambant) | Vertical + horizontal |
+| **Portique-roulant** | Discontinu | Aérien (suspendu) | Vertical + horizontal |
+| **Container Carrier** | Discontinu | **Au sol** | Vertical + horizontal |
+| **Convoyeur à rouleaux** | **Continu** | Au sol | **Horizontal** |
+| **Convoyeur à chaîne** | **Continu** | Au sol | **Horizontal** |
+:::
+
+### Question 2
+
+Décrire les **huit règles de sécurité** pour le levage avec grues / ponts roulants.
+
+:::reponse
+1. **Interdit** de se tenir sous une charge suspendue · signal SUVA · vue d'ensemble · éloigner les non-autorisés
+2. Dispositifs de levage **contrôlés et appropriés** uniquement · jamais improvisés · charge nominale visible
+3. **Contrôle régulier** (fissures, frottement) · retirer si endommagé · attention produits chimiques
+4. **Protéger** des arêtes vives (gaines, élingues renforcées)
+5. **Nœuds interdits** dans câbles et élingues
+6. Ne jamais poser sangle sur la **pointe** du crochet · linguet fermé · ne pas tordre
+7. **Centre de gravité** sous le crochet · objets longs → **palonnier**
+8. Respecter l'**angle d'inclinaison β** · β > **60°** interdit
+:::
+
+### Question 3
+
+Identifie les différentes **parties d'un pont roulant**.
+
+:::reponse
+Exemples : **rails** de guidage · **poutre(s)** / charpente · **chariot roulant** · mécanisme de levage (palan) · **moufle** · **crochet** · limiteurs de charge · alimentation · télécommande / cabine.
+
+*(Voir 🔎 Pont-roulant pièces détachées 1 & 2 — EnterSite.)*
+:::
+
+### Question 4
+
+Explique la fonctionnalité de la **table à billes**.
+
+:::reponse
+Type spécial de convoyeur à rouleaux : **billes** encastrées (quelques mm au-dessus de la surface) → déplacement de colis lourds **presque sans effort**, **toutes directions**.
+
+Usage : reconditionnement de grandes feuilles (papier…). Variante : **buses d'air** (même principe).
+:::
+
+### Question 5
+
+Énumère **quatre éléments de transfert** pour convoyeurs continus.
+
+:::reponse
+1. **Distributeur à chaîne**
+2. **Pousseur à chaîne**
+3. **Pousseur pour produits légers**
+4. **Tables tournantes** pour palettes
+:::`;
+
+const DEMO_410_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Pont/portique = discontinu aérien V+H · Carrier = sol · rouleaux/chaîne = continu horizontal
+2. Huit règles SUVA (sous charge · matériel contrôlé · contrôle · arêtes · pas de nœuds · crochet · CdG · angle β)
+3. Rails · poutre · chariot · palan · crochet…
+4. Table à billes = billes / air · déplacement multidirectionnel
+5. Distributeur · pousseur chaîne · pousseur léger · table rotative`;
+
 /** Contenu Module 501 — La production */
 const DEMO_501_THEORIE_FULL = `## 1. Production
 
@@ -21780,6 +22134,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_410_THEORIE_FULL,
       summary: DEMO_410_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_410_GLOSSAIRE_FULL,
+      summary: DEMO_410_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_410_SITUATION_FULL,
+      summary: DEMO_410_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_410_MATHS_FULL,
+      summary: DEMO_410_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_410_VERIFICATION_FULL,
+      summary: DEMO_410_VERIFICATION_SUMMARY,
     },
   },
   "501": {
