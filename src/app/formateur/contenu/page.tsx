@@ -36,7 +36,7 @@ export default function ContenuHubPage() {
       <div className="grid gap-3 sm:grid-cols-2">
         {FORMATEUR_THEORY_PAGES.map((page) => {
           const Icon = ICONS[page.slug] ?? BookOpen;
-          const count = state.lessons.filter(
+          const count = (state.lessons ?? []).filter(
             (l) => l.pageSlug === (page.slug as LessonPageSlug),
           ).length;
           return (
