@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="200" viewBox="0 0 520 200" role="img" aria-label="Textures de trame">
+  <defs>
+    <pattern id="h" width="8" height="8" patternUnits="userSpaceOnUse"><line x1="0" y1="4" x2="8" y2="4" stroke="#2563eb" stroke-width="1.5"/></pattern>
+    <pattern id="v" width="8" height="8" patternUnits="userSpaceOnUse"><line x1="4" y1="0" x2="4" y2="8" stroke="#ea580c" stroke-width="1.5"/></pattern>
+    <pattern id="d" width="8" height="8" patternUnits="userSpaceOnUse"><line x1="0" y1="8" x2="8" y2="0" stroke="#16a34a" stroke-width="1.2"/></pattern>
+    <pattern id="g" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="3" height="3" fill="#eab308"/><rect x="3" y="3" width="3" height="3" fill="#eab308"/></pattern>
+    <pattern id="t" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M0 10 L10 0 M0 0 L10 10" stroke="#7c3aed" stroke-width="1"/></pattern>
+  </defs>
+  <g font-family="Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#111">
+    <rect y="0" width="520" height="36" fill="url(#h)"/><text x="12" y="24">Horizontale</text>
+    <rect y="40" width="520" height="36" fill="url(#v)"/><text x="12" y="64">Verticale</text>
+    <rect y="80" width="520" height="36" fill="url(#d)"/><text x="12" y="104">Diagonale</text>
+    <rect y="120" width="520" height="36" fill="url(#g)"/><text x="12" y="144">Quadrillage</text>
+    <rect y="160" width="520" height="36" fill="url(#t)"/><text x="12" y="184">Treillis</text>
+  </g>
+</svg>

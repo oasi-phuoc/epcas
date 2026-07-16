@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="Bordures Word  menu et boîte de dialogue">
+  <rect width="640" height="360" fill="#f9fafb"/>
+  <text x="20" y="28" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#111">12. Options de bordure ’ Bordure et trame&</text>
+  <rect x="20" y="40" width="280" height="56" fill="#fff" stroke="#9ca3af"/>
+  <text x="32" y="62" font-size="10" fill="#6b7280">Paragraphe</text>
+  <rect x="32" y="68" width="28" height="22" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="70" y="82" font-size="10">Bordures ¾</text>
+  <rect x="320" y="40" width="300" height="140" fill="#fff" stroke="#9ca3af"/>
+  <text x="332" y="58" font-size="10">Bordure inférieure&</text>
+  <text x="332" y="78" font-size="10">Toutes les bordures&</text>
+  <rect x="328" y="148" width="284" height="22" fill="#fef08a" stroke="#ca8a04"/>
+  <text x="336" y="163" font-size="11" font-weight="600">Bordure et trame&</text>
+  <rect x="20" y="110" width="400" height="230" fill="#ece9d8" stroke="#888"/>
+  <text x="32" y="132" font-size="12" font-weight="600" fill="#fff">
+    <tspan fill="#0054e3"> </tspan> Bordure et trame
+  </text>
+  <text x="36" y="158" font-size="10" font-weight="600">Bordures</text>
+  <text x="36" y="180" font-size="9">3. Type : Aucune · Encadrement · Ombre · 3D · Personnalisé</text>
+  <text x="36" y="198" font-size="9">4. Style des traits</text>
+  <text x="36" y="216" font-size="9">5. Couleur · 6. Largeur (½ pt&)</text>
+  <rect x="220" y="150" width="90" height="70" fill="#fff" stroke="#888"/>
+  <text x="228" y="168" font-size="8">7. Aperçu</text>
+  <text x="228" y="182" font-size="7">cliquer schéma</text>
+  <text x="36" y="250" font-size="9">8. Appliquer à : Paragraphe / Texte</text>
+</svg>

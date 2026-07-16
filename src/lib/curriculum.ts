@@ -33123,7 +33123,38 @@ Clics sur le bouton à gauche de la **règle** pour choisir le type · clic sur 
 
 ### 5.5 Bordure et trame
 
-Sélectionner le(s) paragraphe(s) **avec** la marque ¶ · Accueil → Bordure et trame : Encadrement / Ombre · Style, Couleur, Largeur · **trame** = fond coloré.
+#### Comment ajouter des bordures
+
+![](/assets/curriculum/805/word/word-borders-step1.svg)
+
+1. Cliquer sur les options de bordure
+2. Sélectionner « Bordure et trame… »
+
+Dans ce menu, vous pouvez choisir :
+
+3. Le type
+4. Le style des traits des bordures
+5. La couleur
+6. La largeur
+7. Appliquer les bordures en cliquant sur le schéma central
+8. Sélectionner où rajouter ces bordures
+
+#### Comment ajouter des trames
+
+![](/assets/curriculum/805/word/word-shading-tab.svg)
+
+1. Sélectionner l’onglet « Trame de fond »
+2. Remplissage en couleur
+
+![](/assets/curriculum/805/word/word-shading-fill-color.svg)
+
+3. Trame de fond à 25%
+
+![](/assets/curriculum/805/word/word-shading-25.svg)
+
+4. Trame de fond avec des différentes textures
+
+![](/assets/curriculum/805/word/word-shading-textures.svg)
 
 ### 5.6 Puces et numérotation
 
@@ -33461,7 +33492,7 @@ const DEMO_805_THEORIE_SUMMARY = `## À retenir — Module 805
 Tableaux **Base à connaître** (¶, Enter, Shift+Enter, Ctrl+Enter, sélection) et **Police** (gras, italique, souligné, casse, indice/exposant…). **Paramètres avancés** : espacement des lettres, couleur / dégradé, effets (contour, ombre, reflet).
 
 ### Mise en forme et listes
-Le groupe Paragraphe permet de régler l'alignement, l'interligne et les retraits. Les tabulateurs alignent précisément le texte sur la règle. Les bordures et trames encadrent ou colorent les paragraphes. Les puces, la numérotation et les listes à plusieurs niveaux structurent le contenu.
+**Paragraphe** : 4 alignements (gauche, droite, centré, justifié) et exemples de retraits (voir schéma *Aligner les paragraphes*). Le groupe Paragraphe permet aussi l'interligne et les retraits. Les tabulateurs alignent précisément le texte sur la règle.
 
 ### Styles et table des matières
 Un style regroupe des mises en forme réutilisables pour les caractères, les paragraphes, les listes ou les tableaux. Les styles Titre 1, Titre 2 et suivants sont indispensables pour générer une table des matières via l'onglet Références. Celle-ci se met à jour automatiquement après modification du document.

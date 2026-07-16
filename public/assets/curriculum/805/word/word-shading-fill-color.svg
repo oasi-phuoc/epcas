@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="72" viewBox="0 0 480 72" role="img" aria-label="Remplissage en couleur sur le paragraphe">
+  <rect width="480" height="72" fill="#4ade80"/>
+  <text x="16" y="32" font-family="Segoe UI, sans-serif" font-size="16" fill="#111827">Remplissage en couleur</text>
+  <text x="16" y="54" font-family="Segoe UI, sans-serif" font-size="16" fill="#111827">Sur tout le paragraphe</text>
+</svg>

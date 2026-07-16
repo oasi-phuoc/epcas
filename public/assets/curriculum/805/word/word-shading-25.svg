@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="72" viewBox="0 0 480 72" role="img" aria-label="Trame de fond 25 pourcent">
+  <defs>
+    <pattern id="dots25" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#22c55e"/>
+    </pattern>
+  </defs>
+  <rect width="480" height="72" fill="url(#dots25)"/>
+  <text x="16" y="32" font-family="Segoe UI, sans-serif" font-size="16" fill="#111827">Trame de fond à 25%</text>
+  <text x="16" y="54" font-family="Segoe UI, sans-serif" font-size="16" fill="#111827">Sur tout le paragraphe</text>
+</svg>
