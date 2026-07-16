@@ -19,17 +19,60 @@ export function isStaleSavedLessonContent(
     if (!saved.includes("### 5.4 Illustrations")) return true;
     if (saved.includes("### 5.4 Tabulateurs")) return true;
     if (
+      base.includes("/assets/curriculum/805/illustrations-ruban.png") &&
+      !saved.includes("/assets/curriculum/805/illustrations-ruban.png")
+    ) {
+      return true;
+    }
+    if (
       base.includes("/word/illustrations/") &&
-      !saved.includes("/word/illustrations/")
+      !saved.includes("/illustrations-ruban.png") &&
+      !saved.includes("/image-onglet-format.png")
+    ) {
+      return true;
+    }
+  }
+
+  if (base.includes("### 5.5 Bordure et trame")) {
+    if (
+      base.includes("bordure-et-trame-dialog.png") &&
+      saved.includes("word-borders-step1.svg") &&
+      !saved.includes("bordure-et-trame-dialog.png")
+    ) {
+      return true;
+    }
+  }
+
+  if (base.includes("### 5.2 Écrire un texte")) {
+    if (
+      base.includes("mise-en-forme-caracteres-raccourcis.png") &&
+      !saved.includes("mise-en-forme-caracteres-raccourcis.png") &&
+      saved.includes("### 5.2 Écrire un texte")
     ) {
       return true;
     }
   }
 
   if (
+    base.includes("ruban-alignements.png") &&
+    !saved.includes("ruban-alignements.png") &&
+    saved.includes("### 5.3 Paragraphe")
+  ) {
+    return true;
+  }
+
+  if (
     base.includes(":::figure word-align-paragraphes") &&
     !saved.includes(":::figure word-align-paragraphes") &&
     saved.includes("### 5.3 Paragraphe")
+  ) {
+    return true;
+  }
+
+  if (
+    base.includes("aligner-paragraphes.png") &&
+    saved.includes("### 5.3 Paragraphe") &&
+    !saved.includes("aligner-paragraphes.png")
   ) {
     return true;
   }

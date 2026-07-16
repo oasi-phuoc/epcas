@@ -33052,6 +33052,8 @@ Interface Word : ruban (onglets Accueil, Insertion, Références…), zone de te
 
 ### 5.2 Écrire un texte
 
+![](/assets/curriculum/805/mise-en-forme-caracteres-raccourcis.png)
+
 #### 5.2.1 Base à connaître
 
 | Action | Bouton | Raccourci |
@@ -33083,15 +33085,15 @@ Interface Word : ruban (onglets Accueil, Insertion, Références…), zone de te
 
 1. Étendre et réduire l'espacement des lettres
 
-![](/assets/curriculum/805/word/word-advanced-spacing.svg)
+![](/assets/curriculum/805/police-espacement-avance.png)
 
 2. Changer la couleur du texte et dégradé
 
-![](/assets/curriculum/805/word/word-font-color-gradient.svg)
+![](/assets/curriculum/805/couleur-texte-degrade.png)
 
 3. Effets de texte
 
-![](/assets/curriculum/805/word/word-text-effects-menu.svg)
+![](/assets/curriculum/805/effets-de-texte.png)
 
 - ![Contour](/assets/curriculum/805/word/word-effect-outline.svg) **Contour**
 - ![Ombre](/assets/curriculum/805/word/word-effect-shadow.svg) **Ombre**
@@ -33101,18 +33103,17 @@ Interface Word : ruban (onglets Accueil, Insertion, Références…), zone de te
 
 Il y a **4 alignements possibles** : gauche, droite, centré et justifié.
 
-![](/assets/curriculum/805/word/word-para-align-ribbon.svg)
+![](/assets/curriculum/805/ruban-alignements.png)
 
-:::figure word-align-paragraphes
-:::
+![](/assets/curriculum/805/aligner-paragraphes.png)
 
-![](/assets/curriculum/805/word/word-para-dialog.svg)
+![](/assets/curriculum/805/paragraphe-retrait-espacement.png)
 
 ### 5.4 Illustrations
 
 Dans Word, vous pouvez insérer différents types d'illustration comme des images, des formes, des schémas, etc.
 
-![](/assets/curriculum/805/word/illustrations/img-01-ruban-insertion.png)
+![](/assets/curriculum/805/illustrations-ruban.png)
 
 Dans le ruban vous avez :
 
@@ -33134,7 +33135,7 @@ Dans le ruban vous avez :
 
 Lorsque vous sélectionnez une image, une option spéciale **Format de l'image** apparaît dans le ruban. Grâce à cet onglet, vous pouvez facilement modifier les paramètres de l'image.
 
-![](/assets/curriculum/805/word/illustrations/img-03-format-tab.svg)
+![](/assets/curriculum/805/image-onglet-format.png)
 
 **3. Changer les dimensions de l'image**
 
@@ -33145,13 +33146,17 @@ Lorsque vous sélectionnez une image, une option spéciale **Format de l'image**
 
 Alignement horizontal :
 
-![](/assets/curriculum/805/word/illustrations/img-04-align-h.svg)
+![](/assets/curriculum/805/image-alignement-horizontal.png)
 
 Alignement vertical :
 
-![](/assets/curriculum/805/word/illustrations/img-05-align-v.svg)
+![](/assets/curriculum/805/image-alignement-vertical.png)
 
 **5. Changer l'habillage de l'image**
+
+![](/assets/curriculum/805/image-habillage-bouton.png)
+
+![](/assets/curriculum/805/image-habillage-modes.png)
 
 | Habillage | Exemple |
 | --- | --- |
@@ -33167,24 +33172,29 @@ Alignement vertical :
 
 a. Sélectionner l'image et effectuer un **clic droit**
 b. Ensuite, sélectionner « **Taille et position…** »
+
+![](/assets/curriculum/805/image-menu-taille-position.png)
+
 c. Sélectionner l'onglet « **Position** »
 
-![](/assets/curriculum/805/word/illustrations/img-13-position.svg)
+![](/assets/curriculum/805/image-dialog-position.png)
 
 **7. Changer le style de l'image**
 
+![](/assets/curriculum/805/image-styles-galerie.png)
+
 | Bordure | Ombre | Réflexion | Lumière | Estompé | Biseau | Rotation |
 | --- | --- | --- | --- | --- | --- | --- |
-| ![](/assets/curriculum/805/word/illustrations/style-bordure.svg) | ![](/assets/curriculum/805/word/illustrations/style-ombre.svg) | ![](/assets/curriculum/805/word/illustrations/style-reflexion.svg) | ![](/assets/curriculum/805/word/illustrations/style-lumiere.svg) | ![](/assets/curriculum/805/word/illustrations/style-estompe.svg) | ![](/assets/curriculum/805/word/illustrations/style-biseau.svg) | ![](/assets/curriculum/805/word/illustrations/style-rotation.svg) |
+| ![](/assets/curriculum/805/image-style-bordure.png) | ![](/assets/curriculum/805/image-style-ombre.png) | ![](/assets/curriculum/805/image-style-reflexion.png) | ![](/assets/curriculum/805/image-style-lumiere.png) | ![](/assets/curriculum/805/image-style-estompe.png) | ![](/assets/curriculum/805/image-style-biseau.png) | ![](/assets/curriculum/805/image-style-rotation.png) |
 
 ### 5.5 Bordure et trame
 
 #### Comment ajouter des bordures
 
-![](/assets/curriculum/805/word/word-borders-step1.svg)
-
 1. Cliquer sur les options de bordure
 2. Sélectionner « Bordure et trame… »
+
+![](/assets/curriculum/805/bordure-et-trame-dialog.png)
 
 Dans ce menu, vous pouvez choisir :
 
@@ -33197,20 +33207,17 @@ Dans ce menu, vous pouvez choisir :
 
 #### Comment ajouter des trames
 
-![](/assets/curriculum/805/word/word-shading-tab.svg)
-
 1. Sélectionner l’onglet « Trame de fond »
-2. Remplissage en couleur
 
-![](/assets/curriculum/805/word/word-shading-fill-color.svg)
+![](/assets/curriculum/805/trame-de-fond-onglet.png)
+
+2. Remplissage en couleur
 
 3. Trame de fond à 25%
 
-![](/assets/curriculum/805/word/word-shading-25.svg)
-
 4. Trame de fond avec des différentes textures
 
-![](/assets/curriculum/805/word/word-shading-textures.svg)
+![](/assets/curriculum/805/trame-exemples.png)
 
 ### 5.6 Puces et numérotation
 
