@@ -79,13 +79,8 @@ export function CurriculumModuleDetail({
       <PageHeader
         title={`Module ${mod.code}`}
         description={mod.title}
-        actions={
-          <Link href={sectionHref}>
-            <Button variant="ghost" size="sm">
-              ← Blocs
-            </Button>
-          </Link>
-        }
+        backHref={sectionHref}
+        backLabel="Retour aux blocs"
       />
 
       <div className="mb-4 flex flex-wrap gap-2">

@@ -299,7 +299,6 @@ export function ContenuPageEditor({
     section === "exercices" ? FORMATEUR_EXERCISE_PAGES : FORMATEUR_THEORY_PAGES;
   const hubHref =
     section === "exercices" ? "/formateur/exercices" : "/formateur/contenu";
-  const hubLabel = section === "exercices" ? "← Exercices" : "← Contenu";
   const pageMeta = sectionPages.find((p) => p.slug === pageSlug);
 
   const modulesSorted = useMemo(
@@ -354,16 +353,11 @@ export function ContenuPageEditor({
     <div>
       <PageHeader
         title={pageMeta?.title ?? "Contenu"}
+        backHref={hubHref}
+        backLabel={section === "exercices" ? "Retour aux exercices" : "Retour au contenu"}
         description={
           pageMeta?.description ??
           "Éditez la page pour le module et le niveau choisis."
-        }
-        actions={
-          <Link href={hubHref}>
-            <Button variant="ghost" size="sm">
-              {hubLabel}
-            </Button>
-          </Link>
         }
       />
 

@@ -1,7 +1,6 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
-import Link from "next/link";
 import { useParams } from "next/navigation";
 import {
   Alert,
@@ -664,14 +663,9 @@ export default function EvaluationEditPage() {
     <div>
       <PageHeader
         title={assessment.title}
+        backHref="/formateur/evaluations"
+        backLabel="Retour à la liste"
         description="Paramètres + questions (modèles prêts à personnaliser)."
-        actions={
-          <Link href="/formateur/evaluations">
-            <Button variant="ghost" size="sm">
-              ← Liste
-            </Button>
-          </Link>
-        }
       />
 
       <Panel className="mb-4">

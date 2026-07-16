@@ -16,7 +16,6 @@ import {
 import { STUDY_YEAR_LABELS } from "@/lib/levels";
 import { isStaffRole } from "@/lib/roles";
 import { countLessonsForLevel, useAppStore } from "@/lib/store";
-import { ArrowLeft } from "lucide-react";
 
 export default function ElevesTablePage() {
   const {
@@ -75,15 +74,9 @@ export default function ElevesTablePage() {
     <div>
       <PageHeader
         title="Élèves"
+        backHref="/formateur/classes"
+        backLabel="Retour aux classes"
         description="Tableau global des apprentis — filtre, déplacement, activation."
-        actions={
-          <Link href="/formateur/classes">
-            <Button variant="ghost" size="sm">
-              <ArrowLeft className="h-4 w-4" />
-              Classes
-            </Button>
-          </Link>
-        }
       />
 
       {message ? (

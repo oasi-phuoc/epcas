@@ -103,8 +103,6 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
     : mod
       ? `/theorie/module/${mod.id}`
       : "/theorie";
-  const backLabel = "← Module";
-
   const isPlaceholder = body.includes("Contenu à importer");
   const paginated = Boolean(chapters && chapters.length > 1);
   const safeIndex = paginated
@@ -138,17 +136,12 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
     <div>
       <PageHeader
         title={lesson.title}
+        backHref={backHref}
+        backLabel="Retour au module"
         description={
           mod
             ? `Module ${mod.code} — ${mod.title}`
             : "Basculez en mode résumé pour réviser."
-        }
-        actions={
-          <Link href={backHref}>
-            <Button variant="ghost" size="sm">
-              {backLabel}
-            </Button>
-          </Link>
         }
       />
 

@@ -1,7 +1,6 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
-import Link from "next/link";
 import { useParams } from "next/navigation";
 import {
   Alert,
@@ -100,14 +99,9 @@ export default function ExerciseDetailPage() {
     <div>
       <PageHeader
         title={exercise.title}
+        backHref="/exercices"
+        backLabel="Retour à la liste"
         description="Feedback immédiat après chaque tentative."
-        actions={
-          <Link href="/exercices">
-            <Button variant="ghost" size="sm">
-              ← Liste
-            </Button>
-          </Link>
-        }
       />
 
       <Panel>

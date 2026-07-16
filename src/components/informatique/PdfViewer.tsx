@@ -14,10 +14,7 @@ export function PdfViewer({ url, title }: PdfViewerProps) {
 
   return (
     <div className="space-y-2">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <p className="text-sm font-medium text-ink">
-          {title ?? "Document PDF"}
-        </p>
+      <div className="flex flex-wrap items-center justify-end gap-2">
         <div className="flex items-center gap-2">
           <Button
             type="button"

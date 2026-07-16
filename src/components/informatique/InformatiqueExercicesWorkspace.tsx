@@ -58,6 +58,70 @@ function isVideoAsset(asset: InformatiqueAsset): boolean {
   return /\.(mp4|webm|mov|m4v)(\?|$)/i.test(lower);
 }
 
+function StudentCorrectionAsset({ asset }: { asset: InformatiqueAsset }) {
+  const [videoOpen, setVideoOpen] = useState(false);
+  const asVideo = isVideoAsset(asset);
+  const asPdf = isResultatPdf(asset);
+
+  if (!asset.url) {
+    return (
+      <li className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 px-3 py-2.5">
+        <Badge tone="warning">Pas encore disponible</Badge>
+      </li>
+    );
+  }
+
+  if (asPdf) {
+    return (
+      <li className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-3 sm:p-4">
+        <PdfViewer url={asset.url} />
+      </li>
+    );
+  }
+
+  if (asVideo) {
+    return (
+      <li className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-3 sm:p-4">
+        {!videoOpen ? (
+          <Button
+            type="button"
+            size="sm"
+            variant="secondary"
+            onClick={() => setVideoOpen(true)}
+          >
+            <Eye className="h-4 w-4" />
+            Visionner
+          </Button>
+        ) : (
+          <div className="overflow-hidden rounded-[var(--radius-md)] border border-border bg-ink/5">
+            <video
+              className="max-h-[min(70vh,28rem)] w-full"
+              controls
+              controlsList="nodownload noplaybackrate"
+              disablePictureInPicture
+              preload="metadata"
+              src={asset.url}
+            >
+              Votre navigateur ne prend pas en charge la vidéo.
+            </video>
+          </div>
+        )}
+      </li>
+    );
+  }
+
+  return (
+    <li className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-3 sm:p-4">
+      <a href={asset.url} target="_blank" rel="noreferrer" className="inline-flex">
+        <Button type="button" size="sm" variant="secondary">
+          <Eye className="h-4 w-4" />
+          Visionner
+        </Button>
+      </a>
+    </li>
+  );
+}
+
 async function fileToAsset(
   file: File,
   kind: "document" | "video",
@@ -119,6 +183,10 @@ function AssetList({
       ) : (
         <ul className="space-y-2">
           {assets.map((asset) => {
+            if (studentMode && !editable && defaultMode === "mixed") {
+              return <StudentCorrectionAsset key={asset.id} asset={asset} />;
+            }
+
             const asVideo =
               defaultMode === "document" ? false : isVideoAsset(asset);
             const asResultatPdf =
@@ -650,7 +718,6 @@ export function InformatiqueExercicesWorkspace({
   }
 
   const hubHref = isEdit ? "/formateur/exercices" : "/exercices";
-  const hubLabel = isEdit ? "← Exercices" : "← Exercices";
   const studentYear = resolveInformatiqueYear(userStudyYear);
 
   const appsToShow = INFORMATIQUE_APPS.filter(
@@ -661,17 +728,12 @@ export function InformatiqueExercicesWorkspace({
     <div>
       <PageHeader
         title="Informatique"
+        backHref={hubHref}
+        backLabel={isEdit ? "Retour aux exercices" : "Retour aux exercices"}
         description={
           isEdit
             ? "Gérez les exercices Word et Excel (1re et 3e année) — documents et corrections."
             : `Exercices ${informatiqueAppLabel(selectedApp)} — ${informatiqueYearLabel(studentYear)}.`
-        }
-        actions={
-          <Link href={hubHref}>
-            <Button variant="ghost" size="sm">
-              {hubLabel}
-            </Button>
-          </Link>
         }
       />
 

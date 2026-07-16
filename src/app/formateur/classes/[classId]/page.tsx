@@ -31,7 +31,6 @@ import type {
   StudyYear,
 } from "@/lib/types";
 import {
-  ArrowLeft,
   Check,
   Plus,
   Trash2,
@@ -197,15 +196,9 @@ export default function ClassDetailPage() {
     <div>
       <PageHeader
         title={classroom.name}
+        backHref="/formateur/classes"
+        backLabel="Retour aux classes"
         description={`${classroom.year} · ${DIPLOMA_LABELS[classroom.level]} · ${STUDY_YEAR_LABELS[classroom.studyYear]}`}
-        actions={
-          <Link href="/formateur/classes">
-            <Button variant="ghost" size="sm">
-              <ArrowLeft className="h-4 w-4" />
-              Classes
-            </Button>
-          </Link>
-        }
       />
 
       <div className="mb-4 flex flex-wrap gap-2">
