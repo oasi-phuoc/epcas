@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode, RefObject } from "react";
+import { useRef, useState, type ReactNode, type RefObject } from "react";
 import {
   Bold,
   Eye,
@@ -8,6 +8,7 @@ import {
   Heading2,
   Heading3,
   Highlighter,
+  ImagePlus,
   Italic,
   Link2,
   List,
@@ -15,9 +16,17 @@ import {
   Minus,
   Quote,
   RemoveFormatting,
+  Shapes,
   Table2,
 } from "lucide-react";
 import { cn } from "@/lib/cn";
+import {
+  MARKDOWN_IMAGE_MAX_BYTES,
+  buildImageMarkdown,
+  fileToDataUrl,
+  isImageFile,
+} from "@/lib/markdown-assets";
+import { MARKDOWN_FIGURE_TEMPLATES } from "@/lib/markdown-figures";
 
 type Props = {
   textareaRef: RefObject<HTMLTextAreaElement | null>;
@@ -98,7 +107,28 @@ function applyLinePrefix(
   };
 }
 
+function insertBlock(
+  value: string,
+  start: number,
+  end: number,
+  block: string,
+  selectStart?: number,
+  selectEnd?: number,
+) {
+  const before = start > 0 && value[start - 1] !== "\n" ? "\n\n" : "";
+  const after = "\n\n";
+  const insert = before + block + after;
+  const next = value.slice(0, start) + insert + value.slice(end);
+  const base = start + before.length;
+  const selStart = selectStart ?? base + block.length;
+  const selEnd = selectEnd ?? selStart;
+  return { next, selStart, selEnd };
+}
+
 export function MarkdownToolbar({ textareaRef, value, onChange }: Props) {
+  const imageInputRef = useRef<HTMLInputElement>(null);
+  const [figuresOpen, setFiguresOpen] = useState(false);
+  const [imageError, setImageError] = useState<string | null>(null);
   function focusAndSelect(selStart: number, selEnd: number) {
     requestAnimationFrame(() => {
       const el = textareaRef.current;
@@ -123,7 +153,51 @@ export function MarkdownToolbar({ textareaRef, value, onChange }: Props) {
     focusAndSelect(selStart, selEnd);
   }
 
+  async function handleImageFile(file: File) {
+    setImageError(null);
+    if (!isImageFile(file)) {
+      setImageError("Choisissez une image (PNG, JPG, GIF, WebP ou SVG).");
+      return;
+    }
+    if (file.size > MARKDOWN_IMAGE_MAX_BYTES) {
+      setImageError(
+        `Image trop volumineuse (max ${Math.round(MARKDOWN_IMAGE_MAX_BYTES / 1_000_000)} Mo).`,
+      );
+      return;
+    }
+    try {
+      const dataUrl = await fileToDataUrl(file);
+      const alt = file.name.replace(/\.[^.]+$/, "") || "Illustration";
+      const markdown = buildImageMarkdown(alt, dataUrl);
+      withSelection((v, s, e) => insertBlock(v, s, e, markdown));
+    } catch {
+      setImageError("Impossible de lire ce fichier image.");
+    }
+  }
+
+  function insertFigureTemplate(markdown: string) {
+    withSelection((v, s, e) => {
+      const before = s > 0 && v[s - 1] !== "\n" ? "\n\n" : "";
+      const after = "\n\n";
+      const insert = before + markdown + after;
+      const next = v.slice(0, s) + insert + v.slice(e);
+      const base = s + before.length;
+      const bodyStart = markdown.indexOf("\n") + 1;
+      const bodyEnd = markdown.lastIndexOf("\n:::");
+      if (bodyStart > 0 && bodyEnd > bodyStart) {
+        return {
+          next,
+          selStart: base + bodyStart,
+          selEnd: base + bodyEnd,
+        };
+      }
+      return { next, selStart: base + markdown.length, selEnd: base + markdown.length };
+    });
+    setFiguresOpen(false);
+  }
+
   return (
+    <div className="space-y-2">
     <div className="flex flex-wrap gap-1.5 rounded-[var(--radius-md)] border border-border bg-surface-muted/50 p-2">
       <ToolBtn
         label="Titre"
@@ -235,6 +309,65 @@ export function MarkdownToolbar({ textareaRef, value, onChange }: Props) {
       <span className="mx-0.5 hidden h-9 w-px bg-border sm:block" />
 
       <ToolBtn
+        label="Image"
+        title="Insérer une image depuis un fichier"
+        onClick={() => imageInputRef.current?.click()}
+      >
+        <ImagePlus className="h-4 w-4" />
+      </ToolBtn>
+      <ToolBtn
+        label="Image URL"
+        title="Insérer une image par lien"
+        onClick={() =>
+          withSelection((v, s, e) => {
+            const selected = v.slice(s, e) || "Légende";
+            const insert = `![${selected}](https://)`;
+            const before = s > 0 && v[s - 1] !== "\n" ? "\n\n" : "";
+            const after = "\n\n";
+            const block = before + insert + after;
+            const next = v.slice(0, s) + block + v.slice(e);
+            const urlStart = s + before.length + selected.length + 4;
+            return { next, selStart: urlStart, selEnd: urlStart + 8 };
+          })
+        }
+      >
+        <ImagePlus className="h-4 w-4 opacity-70" />
+      </ToolBtn>
+      <div className="relative">
+        <ToolBtn
+          label="Formes"
+          title="Illustrations, encadrés et graphiques"
+          onClick={() => setFiguresOpen((open) => !open)}
+        >
+          <Shapes className="h-4 w-4" />
+        </ToolBtn>
+        {figuresOpen ? (
+          <div className="absolute left-0 top-full z-20 mt-1 w-[min(20rem,calc(100vw-2rem))] rounded-[var(--radius-md)] border border-border bg-surface p-2 shadow-[var(--shadow-md)]">
+            <p className="mb-2 px-1 text-xs text-ink-subtle">
+              Encadrés éditables et formes graphiques
+            </p>
+            <div className="grid gap-1">
+              {MARKDOWN_FIGURE_TEMPLATES.map((tpl) => (
+                <button
+                  key={tpl.id}
+                  type="button"
+                  className="rounded-[var(--radius-sm)] px-2 py-2 text-left text-sm transition hover:bg-primary-soft"
+                  onClick={() => insertFigureTemplate(tpl.markdown)}
+                >
+                  <span className="font-medium text-ink">{tpl.label}</span>
+                  <span className="mt-0.5 block text-xs text-ink-subtle">
+                    {tpl.description}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+        ) : null}
+      </div>
+
+      <span className="mx-0.5 hidden h-9 w-px bg-border sm:block" />
+
+      <ToolBtn
         label="Lien"
         title="Insérer un lien"
         onClick={() =>
@@ -326,6 +459,23 @@ export function MarkdownToolbar({ textareaRef, value, onChange }: Props) {
       >
         <RemoveFormatting className="h-4 w-4" />
       </ToolBtn>
+    </div>
+    <input
+      ref={imageInputRef}
+      type="file"
+      accept="image/png,image/jpeg,image/gif,image/webp,image/svg+xml,.svg"
+      className="sr-only"
+      onChange={(e) => {
+        const file = e.target.files?.[0];
+        e.target.value = "";
+        if (file) void handleImageFile(file);
+      }}
+    />
+    {imageError ? (
+      <p className="text-xs text-danger" role="alert">
+        {imageError}
+      </p>
+    ) : null}
     </div>
   );
 }

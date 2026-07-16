@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { AnswerReveal } from "@/components/AnswerReveal";
 import { ExerciseAnswerField } from "@/components/ExerciseAnswerField";
+import { cn } from "@/lib/cn";
 
 export type MarkdownLiteProps = {
   text: string;
@@ -92,6 +93,68 @@ function parseTableBlock(lines: string[], start: number) {
 
 const REVEAL_OPEN = /^:::(reponse|réponse|solution)(?:\s+(.*))?$/i;
 const REVEAL_CLOSE = /^:::\s*$/;
+const FIGURE_OPEN = /^:::figure\s+(\w+)/i;
+
+function parseFigureBlock(lines: string[], start: number) {
+  const open = lines[start].trim().match(FIGURE_OPEN);
+  if (!open) return null;
+  const kind = open[1].toLowerCase();
+
+  const body: string[] = [];
+  let i = start + 1;
+  while (i < lines.length && !REVEAL_CLOSE.test(lines[i].trim())) {
+    body.push(lines[i]);
+    i += 1;
+  }
+  if (i < lines.length) i += 1;
+  return { kind, body: body.join("\n"), nextIndex: i };
+}
+
+function FigureBlock({ kind, body }: { kind: string; body: string }) {
+  if (kind === "etapes") {
+    const steps = body
+      .split("\n")
+      .map((line) => line.replace(/^\d+\.\s*/, "").trim())
+      .filter(Boolean);
+    return (
+      <div className="my-4 flex flex-wrap items-stretch gap-2">
+        {steps.map((step, index) => (
+          <div key={index} className="flex min-w-[8rem] flex-1 items-center gap-2">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-white">
+              {index + 1}
+            </div>
+            <div className="flex-1 rounded-[var(--radius-md)] border border-border bg-surface px-3 py-2 text-sm text-ink-muted">
+              {step}
+            </div>
+            {index < steps.length - 1 ? (
+              <span className="hidden text-primary-strong sm:inline" aria-hidden>
+                →
+              </span>
+            ) : null}
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  const styles: Record<string, string> = {
+    encadre:
+      "rounded-[var(--radius-md)] border-2 border-border bg-surface px-4 py-3",
+    remarque:
+      "rounded-[var(--radius-md)] border-2 border-warning/50 bg-warning-soft/60 px-4 py-3",
+  };
+
+  return (
+    <div
+      className={cn(
+        "my-4 text-sm leading-relaxed text-ink-muted",
+        styles[kind] ?? styles.encadre,
+      )}
+    >
+      <MarkdownLite text={body} />
+    </div>
+  );
+}
 
 function parseRevealBlock(lines: string[], start: number) {
   const open = lines[start].trim().match(REVEAL_OPEN);
@@ -175,6 +238,15 @@ function renderBlock(
         );
       }
       i = reveal.nextIndex;
+      continue;
+    }
+
+    const figure = parseFigureBlock(lines, i);
+    if (figure) {
+      nodes.push(
+        <FigureBlock key={`f-${key}`} kind={figure.kind} body={figure.body} />,
+      );
+      i = figure.nextIndex;
       continue;
     }
 
