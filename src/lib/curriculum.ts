@@ -14954,6 +14954,315 @@ const DEMO_406_OBJECTIFS_SUMMARY = `## Objectifs
 - Case vs chaotique
 - FIFO / LIFO / HIFO`;
 
+/** Glossaire Module 406 */
+const DEMO_406_GLOSSAIRE_FULL = `## Glossaire — Module 406
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Principe de l'emplacement fixe | Lotissement par case | Chaque article possède un **emplacement définitivement attribué** (« chaque chose à sa place »). Simple à gérer · bonne orientation — mais mauvaise utilisation de l'espace si le stock fluctue (case réservée au **maximum**). |
+| Stockage chaotique | Stockage anarchique | Tout **emplacement libre** peut être utilisé — pas de réservation fixe par article. **Meilleure** exploitation de l'espace · nécessite un **SGS/ERP** informatisé. |
+| FIFO | *First In, First Out* | Le premier entré est le **premier sorti** — rotation des stocks les plus **anciens** en priorité. Indispensable pour **périssables** / DLC. |
+| LIFO | *Last In, First Out* | Le **dernier** entré est le **premier** sorti — souvent **non souhaité** (vieux stocks restent en fond). Inévitable en bloc, drive-in à une entrée, rangées à accès unique. |
+| HIFO | *Highest In, First Out* | Méthode de **valorisation** : sortir d'abord les articles au **prix d'achat le plus élevé** → stock final valorisé bas · CA élevé à l'inventaire (règles fiscales variables). |
+| LOFO | *Lowest In, First Out* | Méthode de **valorisation** inverse au HIFO : sortir d'abord les articles au **prix le plus bas** → stock final à valeur plus **élevée** · évaluation prudente inverse selon contexte comptable. `;
+
+const DEMO_406_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Emplacement fixe** : 1 article = 1 place · simple · occupation ↓ si stock variable
+- **Chaotique** : place libre · ERP obligatoire · occupation ↑
+- **FIFO** : ancien d'abord · **LIFO** : récent d'abord
+- **HIFO** / **LOFO** : valorisation comptable (cher/bon marché sorti d'abord)`;
+
+/** Mises en situation Module 406 */
+const DEMO_406_SITUATION_FULL = `## Mises en situation — Module 406
+
+Contexte : chez **EnterSite AG**, tu répartis deux **entrepôts de palettes** selon le **lotissement par case** et le stockage **chaotique**, puis tu analyses le **FIFO** et l'entrepôt de ton **entreprise formatrice**.
+
+### Vue d'ensemble des missions
+1. Lotissement par case (MP) et stockage chaotique (réserve)
+2. Capacité toner — emplacements fixes vs chaotique
+3. Trois variantes FIFO chez EnterSite
+4. Description de l'entrepôt en entreprise formatrice
+5. Discussion de la STA
+
+---
+
+## Mission 1 — Lotissement par case (entrepôt MP)
+
+Répartir le rayonnage selon le **principe de réservation de place** (articles A–H) :
+
+| Article | Stock actuel | Consommation |
+| --- | --- | --- |
+| **A** | 50 % du max | Élevée |
+| **B** | 1/3 du max | Élevée |
+| **C** | 100 % du max | Basse |
+| **D** | 1/3 du max | Basse |
+| **E** | 1/4 du max | Moyenne |
+| **F** | 100 % du max | Basse |
+| **G** | 1/6 du max | Élevée |
+| **H** | 100 % du max | Moyenne |
+
+:::reponse
+**Travail pratique** — copier le schéma d'étagère (Word/PowerPoint) et placer chaque article dans **son emplacement fixe** réservé au **stock maximum** (même si la quantité actuelle est inférieure).
+
+*Principe* : chaque article A–H occupe **toujours** la même case — les cases vides à l'intérieur d'un emplacement réservé ne peuvent pas servir à un autre article.
+:::
+
+### Mission 1.1 — Stockage chaotique (entrepôt principal / réserve)
+
+Mêmes articles A–H — entreposer selon le principe **chaotique**.
+
+:::reponse
+**Travail pratique** — placer les palettes dans les **emplacements libres** sans réservation fixe par article → **meilleure** utilisation de l'espace (ex. article G à 1/6 peut partager une zone avec d'autres).
+
+*Nécessite* un **SGS/ERP** pour retrouver les emplacements.
+:::
+
+---
+
+## Mission 2 — Capacité rayonnage toner
+
+Stocks sur **10 semaines** (21–30) — décider le nombre d'**emplacements palettes** :
+
+| Article | Stock moyen | Arrondi | Stock max |
+| --- | --- | --- | --- |
+| RS-Tinte black | 4,1 | 5 | 8 |
+| RS-Tinte cyan | 2,6 | 3 | 4 |
+| RS-Tinte magenta | 2,8 | 3 | 6 |
+| RS-Tinte yellow | 4,3 | 5 | 8 |
+| RS-Toner black | 4,1 | 5 | 7 |
+| RS-Toner cyan | 12,0 | 12 | 18 |
+| RS-Toner magenta | 2,8 | 3 | 10 |
+| RS-Toner yellow | 3,4 | 4 | 6 |
+| **Total** | **36,1** | **40** | **67** |
+
+:::reponse
+**Lotissement par case (réservation de place)** — **67 emplacements**  
+*(somme des stocks **maximaux** — chaque article a sa case au maximum.)*
+
+**Stockage chaotique** — **40 emplacements**  
+*(somme des stocks moyens **arrondis** à la palette — utilisation optimale de l'espace.)*
+:::
+
+---
+
+## Mission 3 — FIFO chez EnterSite (3 variantes)
+
+### Lié au transfert de charge
+
+:::reponse
+Application par **transferts** dans l'entrepôt : stocks **anciens à l'avant**, **nouveaux à l'arrière**. Livraisons placées **derrière** le stock existant. Nécessite une **surveillance périodique** de l'entrepôt.
+:::
+
+### Lié à la construction
+
+:::reponse
+Rendu possible par la **construction** des équipements :
+- **Rayonnage dynamique** (rouleaux + gravité) : glissement arrière → avant
+- **Rayonnages à tiroirs** : poussée par l'arrière · prélèvement par l'avant
+:::
+
+### Conditionné par le système
+
+:::reponse
+Application via **SGS / ERP** ou logiciel spécialisé : enregistrement des entrées/sorties · distribution automatique des stocks **les plus anciens** en premier · suivi électronique de l'ordre des marchandises.
+:::
+
+---
+
+## Mission 4 — Entrepôt en entreprise formatrice
+
+Décris l'entrepôt de ton entreprise d'apprentissage (\`Modèle de fiche de description de l'entrepôt.docx\`).
+
+:::reponse
+**Réponse individuelle** — compléter la fiche : type d'entrepôt · zones · formes de stockage · principes (fixe/chaotique/FIFO) · engins · sécurité…
+
+Corrigé type : \`Modèle de fiche de description de l'entrepôt_solution.pdf\`
+:::
+
+---
+
+## Mission 5 — Discussion
+
+Discute de la STA en plénière. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion.
+:::`;
+
+const DEMO_406_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : case fixe = emplacement max réservé · chaotique = place libre + ERP
+- **M2** : toner — **67** places (max) vs **40** (moyenne arrondie)
+- **M3** : FIFO = transfert · construction (dynamique) · système (SGS)
+- **M4** : fiche entrepôt entreprise formatrice
+- **M5** : discussion STA`;
+
+/** Exercices de maths Module 406 */
+const DEMO_406_MATHS_FULL = `## Exercices de mathématiques — Module 406
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Cadence de stockage palettes EUR
+
+Stockage d'une palette : **1 min 12 s** (72 s). Journée de **8 h**.
+
+Combien de palettes peuvent être stockées ?
+
+:::solution
+**400 palettes**
+
+Calcul :
+\`\`\`
+8 h = 8 × 3'600 = 28'800 s
+28'800 / 72 = **400 palettes**
+\`\`\`
+:::
+
+### Exercice 2 — Largeur d'étagère pour tubes
+
+**45 tubes** côte à côte · circonférence extérieure **151,75 mm** chacun.
+
+Largeur d'étagère nécessaire en **cm** ?
+
+:::solution
+**217,476 cm** (≈ 217,5 cm)
+
+Calcul :
+\`\`\`
+Diamètre : 151,75 / π = 151,75 / 3,14 ≈ 48,328 mm
+Largeur : 48,328 × 45 = 2'174,76 mm = **217,476 cm**
+\`\`\`
+:::
+
+### Exercice 3 — Passage au stockage chaotique
+
+Aujourd'hui **275 articles** en emplacement fixe. Passage au chaotique → **+20 %** de capacité.
+
+Combien d'articles après le changement ?
+
+:::solution
+**330 articles**
+
+Calcul :
+\`\`\`
+275 + (275 × 20 / 100) = 275 + 55 = **330 articles**
+\`\`\`
+:::
+
+### Exercice 4 — Économie temps de préparation
+
+Avant : **8,3 min**/commande · après : **27 s** de moins.
+
+Économie en **pourcentage** ?
+
+:::solution
+**5,42 %**
+
+Calcul :
+\`\`\`
+Temps avant : 8,3 × 60 = 498 s
+Économie : 27 / 498 × 100 = 5,4217… → **5,42 %**
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 5,42 · 400 · 217,476 · 330`;
+
+const DEMO_406_MATHS_SUMMARY = `## Maths — Solutions
+1. **400 palettes** (28'800 s / 72 s)
+2. **217,476 cm** (45 tubes × Ø 48,328 mm)
+3. **330 articles** (275 + 20 %)
+4. **5,42 %** (27 s / 498 s)`;
+
+/** Vérification des acquis Module 406 */
+const DEMO_406_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 406 — Les principes de stockage**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Explique le principe de **l'emplacement fixe** et cite un **avantage** et un **inconvénient**.
+
+:::reponse
+Chaque article a un **emplacement de stockage attribué** de façon permanente.
+
+**Avantages**
+- Orientation facile dans l'entrepôt
+- Pas de temps perdu à **chercher** un emplacement
+- Bonne **structure** et vue d'ensemble
+
+**Inconvénients**
+- Peu de **flexibilité** pour les grandes quantités
+- Utilisation du rayonnage **non optimale** (cases réservées au max)
+:::
+
+### Question 2
+
+Explique le **stockage chaotique** — avantage et inconvénient.
+
+:::reponse
+L'emplacement peut être choisi **librement** (tout emplacement libre).
+
+**Avantages**
+- Espace utilisé de manière **optimale**
+- Temps de préparation parfois **réduit**
+- Surplus temporaire d'un article absorbable
+
+**Inconvénients**
+- Nécessite un **ERP/SGS** → coûts et complexité
+:::
+
+### Question 3
+
+Cite **deux conditions** de base pour le stockage chaotique.
+
+:::reponse
+Exemples (deux suffisent) :
+- Tenir compte des **caractéristiques** des marchandises et des **interdictions** de stockage en commun
+- Tenir compte de la **rotation** / fréquence des articles
+- Répartition sur **plusieurs allées** (résilience)
+- Le **système de gestion des stocks** doit supporter le chaotique
+:::
+
+### Question 4
+
+Où le principe d'**emplacement fixe** est-il toujours appliqué ?
+
+:::reponse
+- Rayons de **magasins en libre-service**
+- Zone de **préparation des commandes** (picking)
+- Stockage **manuel** structuré
+:::
+
+### Question 5
+
+Quelles formes de stockage supportent le **FIFO** et lesquelles conduisent au **LIFO** ?
+
+| Forme de stockage | FIFO | LIFO |
+| --- | --- | --- |
+| Stockage en pile avec prélèvement à la **base** | | |
+| Rayonnages à **1 entrée** (drive-in) | | |
+| Ligne/rangée — accès **un seul** côté | | |
+| Rayonnage **double entrée** | | |
+| Stockage en **bloc** | | |
+| Rayonnage **dynamique** | | |
+
+:::reponse
+| Forme de stockage | FIFO | LIFO |
+| --- | :---: | :---: |
+| Pile — prélèvement à la base | **✓** | |
+| Rayonnage 1 entrée | | **✓** |
+| Ligne/rangée — 1 côté | | **✓** |
+| Double entrée | **✓** | |
+| Stockage en bloc | | **✓** |
+| Rayonnage dynamique | **✓** | |
+:::`;
+
+const DEMO_406_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Fixe = 1 place/article · avantage orientation · inconvénient occupation
+2. Chaotique = libre · ERP requis
+3. Caractéristiques MD · rotation · ERP · répartition allées
+4. Libre-service · picking · manuel
+5. FIFO : pile base · double entrée · dynamique — LIFO : 1 entrée · bloc · rangée 1 côté`;
+
 /** Contenu Module 407 — Moyens de transport */
 const DEMO_407_THEORIE_FULL = `## 7. Moyens de transport
 
@@ -21724,6 +22033,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_406_THEORIE_FULL,
       summary: DEMO_406_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_406_GLOSSAIRE_FULL,
+      summary: DEMO_406_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_406_SITUATION_FULL,
+      summary: DEMO_406_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_406_MATHS_FULL,
+      summary: DEMO_406_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_406_VERIFICATION_FULL,
+      summary: DEMO_406_VERIFICATION_SUMMARY,
     },
   },
   "407": {
