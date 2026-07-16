@@ -17708,6 +17708,314 @@ const DEMO_611_OBJECTIFS_SUMMARY = `## Objectifs
 - Trieurs · temps
 - Ratios · conception`;
 
+/** Glossaire Module 611 */
+const DEMO_611_GLOSSAIRE_FULL = `## Glossaire — Module 611
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Trieuse** | §11.4 | Machine automatisée répartissant les articles vers des destinations selon un **code lu** au début du processus. |
+| **Trieuse à plateaux** | §11.4 | *Tilt Tray* — bacs sur plateaux **inclinables** · article bascule vers goulotte · large spectre (ex. bagages). |
+| **Trieuse à sabots** | §11.4 | *Sliding Shoe* — patins poussent l'article sur plaques · fonds lisses (cartons, blisters). |
+| **Trieuse à galets orientables** | §11.4 | *Pop-up Roller* — rouleaux pivotants relevés/inclinés · sols rigides lisses · ≠ sachets souples. |
+| **Trieuse à bandes transversales** | §11.4 | Bandes perpendiculaires au sens de marche · éjection plus soigneuse que bascule. |
+| **Trieuse à trappe et split-tray** | §11.4 | Fond du bac **s'ouvre** vers le bas · articles légers/souples (textiles, lettres). |
+| **Temps de préparation des commandes** | §11.5 | Somme des **5 temps partiels** (organisation + déplacement + prélèvement + mort + perdu) = **100 %**. |
+| **Flux d'informations** | §11.3.1 | Saisie → préparation → transmission → **quittance** · batch ou real-time · avec/sans document. |
+| **Flux de marchandises** | §11.3.2 | Préparation · déplacement · prélèvement · transfert · contrôle (statique/dynamique · 1D/multi). |
+| **Système d'organisation** | §11.3.3 | Zones · 1/multi commandes · série/parallèle · 1 ou 2 étapes · parcours (allée, MOP). |`;
+
+const DEMO_611_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **5 temps** : orga · déplacement · prélèvement · mort · perdu
+- **Trieuses** : plateaux · sabots · galets · bandes · trappes
+- **3 sous-systèmes** : infos · matériel · organisation
+- Capacité = **3600 / temps (s/pos.)**`;
+
+/** Mises en situation Module 611 */
+const DEMO_611_SITUATION_FULL = `## Mises en situation — Module 611
+
+**EnterSite AG** — trois blocs : analyse des temps (Gavranovic/Beutler/Knobel), préparation série vs 2 étapes, présentation Sway entreprise formatrice.
+
+---
+
+## Bloc A — Mesure des temps de préparation (audit externe)
+
+Trois collaborateurs · même commande · enregistrement scanner : **Maria Gavranovic** (20 ans) · **Hermann Beutler** (intérimaire) · **Manfred Knobel** (apprenti 3e année).
+
+### Mission A1 — Affecter les activités aux temps partiels
+
+:::reponse
+| Activité | Temps |
+| --- | --- |
+| Trier la commande et chercher conteneur | **Organisation** |
+| Se déplacer (A07, C03, D10…) | **Déplacement** |
+| Prélever / placer article | **Prélèvement** |
+| Vérifier, ouvrir carton, compter, réappro, contrôle, regroupement, remise | **Mort** |
+| Discussion collègues, attendre prochaine commande | **Perdu** |
+:::
+
+### Mission A2 — Temps totaux et pourcentages
+
+:::reponse
+| Temps | M. Gavranovic | H. Beutler | M. Knobel |
+| --- | --- | --- | --- |
+| Organisation | **139 s** (22,6 %) | **196 s** (22,5 %) | **207 s** (25,8 %) |
+| Prélèvement | **40 s** (6,5 %) | **53 s** (6,1 %) | **46 s** (5,7 %) |
+| Déplacement | **79 s** (12,8 %) | **98 s** (11,3 %) | **93 s** (11,6 %) |
+| Mort | **237 s** (38,5 %) | **314 s** (36,1 %) | **297 s** (37,0 %) |
+| Perdu | **120 s** (19,5 %) | **210 s** (24,1 %) | **160 s** (19,9 %) |
+| **Total** | **615 s** | **871 s** | **803 s** |
+
+**Mission 2.2** — diagrammes camembert dans **EnterSite_611_temps de préparation de commandes.xlsx** (dépôt fichier).
+:::
+
+### Mission A3 — Analyse et optimisation (Mission 4)
+
+:::reponse
+**Gavranovic** — la plus rapide : prélèvement ↓ · déplacement modéré · mort/perdu ↓ (expérience 20 ans).
+
+**Beutler** — le plus lent : organisation ↑ · déplacement ↑ · mort ↑ · perdu ↑ (intérimaire, discussion 90 s).
+
+**Knobel** — intermédiaire : prélèvement > Maria · mort ↑ · perdu correct.
+
+**Mesures d'optimisation** (extraits) :
+- **Organisation** — sans papier (Voice) · auxiliaires à portée · Pick-and-Pack
+- **Prélèvement** — profondeur ↓ · hauteur idéale · ergonomie
+- **Déplacement** — ABC · 2D/dynamique · engins si longues distances
+- **Mort** — lisibilité · balance · unités entières · Voice
+- **Perdu** — ambiance · motivation · pauses flexibles · primes
+:::
+
+---
+
+## Bloc B — Préparation en série vs 2 étapes (M. Holzer)
+
+Picking **1 étape · série** · orga 2 min 15 s · déplacement 35 s · prélèvement 12 s/article · (orga+dépl.+prél.) = **54 %**.
+
+### Mission B1 — Temps par commande
+
+:::reponse
+| Commande | Pos. | Articles | 54 % | **Temps total** |
+| --- | --- | --- | --- | --- |
+| **Bürocom.ch** | 7 | 20 | 620 s | **1'148 s** (19,1 min) |
+| **Baumer Bürobedarf** | 7 | 26 | 692 s | **1'281 s** (21,4 min) |
+| **Top Solution** | 7 | 21 | 632 s | **1'170 s** (19,5 min) |
+| **Total 3 commandes** | | | | **3'600 s** (60 min) |
+
+Formule : (135 + 7×35 + n×12) / 0,54
+:::
+
+### Mission B2 — Prélèvement en 2 étapes
+
+:::reponse
+**Principe** — étape 1 : prélèvement **orienté articles** (toutes commandes) · étape 2 : **répartition** par commande client.
+
+**2.1** — temps d'organisation ↑ (regroupement) mais **gain global** > surcoût orga (système génère commande groupée).
+
+**2.4 Commande groupée** — orga 9 min 30 s · dépl. 21 s · 12 positions · 67 articles :
+- 54 % = **1'626 s** → total **3'011 s** (**50,2 min**) vs **60 min** en série → **~17 %** plus rapide
+
+**2.5 Autres méthodes** — par **allée** (ABC, trajets ↓) · en **parallèle** (zones simultanées, grosses commandes).
+:::
+
+### Mission B3–B4 — Entrepôt EnterSite & sans documents
+
+:::reponse
+**Avant prélèvement** — auxiliaires · localiser · chercher article · ouvrir carton si besoin.
+
+**Après dépose** — ranger palette/échelle · article suivant.
+
+**Évaluation** — propre mais rendement ↓ si pièces individuelles + auxiliaires fréquents.
+
+**Organisation idéale** — picking **rangée basse** · réserve au-dessus · dynamique petits articles · 2e niveau selon levée engin (~1 m).
+
+**Mission 4** — présentation sans documents : RFID · scan · WLAN · Voice/Light vs papier · critères décision EnterSite.
+:::
+
+---
+
+## Bloc C — Présentation Sway (entreprise formatrice)
+
+:::reponse
+**Missions 1–2** — page d'accueil groupe + page personnelle (réponse individuelle).
+
+**Mission 3** — flux **informations** (saisie, préparation, transmission, quittance) et **marchandises** (préparation, transport, prélèvement, distribution, contrôle).
+
+**Mission 3.2** — système **organisation** : zones · 1/multi commandes · série/parallèle · par article/commande.
+
+**Missions 4–5** — ergonomie + conclusion picking entreprise formatrice (réponse individuelle).
+
+**EnterSite** — visite virtuelle logistique **salle 3 V3** · vidéo explicative picking.
+:::
+
+---
+
+## Mission 5/6 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_611_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **Bloc A** : Gavranovic 615 s · Beutler 871 s · Knobel 803 s · mort ~37–39 %
+- **Bloc B** : série 60 min · groupée 50 min · 2 étapes orienté articles
+- **Bloc C** : Sway · flux infos/marchandises · entreprise formatrice
+- **Optimisation** : Voice · ABC · Pick-and-Pack · dynamique`;
+
+/** Exercices de maths Module 611 */
+const DEMO_611_MATHS_FULL = `## Exercices de mathématiques — Module 611
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Temps de préparation d'une commande
+
+8 positions · 40 articles · 75 m · 1,5 m/s déplacement.
+
+| Temps | Valeur |
+| --- | --- |
+| Organisation | 70 s/commande |
+| Déplacement | 1,5 m/s |
+| Prélèvement | 7,2 s/article |
+| Mort | 14 s/position |
+| Perdu | 35 s/commande |
+
+:::solution
+**555 secondes**
+
+\`\`\`
+70 + (75/1,5) + (7,2×40) + (14×8) + 35 = 555 s
+\`\`\`
+:::
+
+### Exercice 2 — Rayonnage dynamique (−35 % déplacement)
+
+Combien de commandes/jour (8 h) ?
+
+:::solution
+**54 commandes/jour**
+
+\`\`\`
+Déplacement : 75/1,5 × 0,65 = 32,5 s
+Total : 70 + 32,5 + 288 + 112 + 35 = 537,5 s
+(8×3600) / 537,5 = 53,58 ≈ 54
+\`\`\`
+:::
+
+### Exercice 3 — Effectif nécessaire
+
+450 commandes/jour · 8 h · base ex. 2 (54 commandes/pers.).
+
+:::solution
+**9 préparateurs**
+
+\`\`\`
+450 / 54 = 8,33 ≈ 9
+\`\`\`
+:::
+
+### Exercice 4 — Magasin pièces détachées
+
+6 s prélèvement/pos. · 22 s trajet · 5 art./pos. · prélèvement = 17 % · déplacement = 24 %.
+
+:::solution
+**a) 52,71 positions/h** · **b) 30 commandes/jour** (14 pos./commande)
+
+\`\`\`
+Temps/pos. : (22+6)/(24+17)×100 = 68,29 s
+3600/68,29 = 52,71 pos./h
+8×3600/(14×68,29) = 30,12 ≈ 30 commandes
+\`\`\`
+:::
+
+### Exercice 5 — Optimisation −8 % (orga, mort, perdu)
+
+Sur base 30 commandes/jour (ex. 4).
+
+:::solution
+**32 commandes/jour**
+
+\`\`\`
+30 + (30×8/100) = 32,4 ≈ 32
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 9 · 30 · 555 · 32 · 52,71 · 54`;
+
+const DEMO_611_MATHS_SUMMARY = `## Maths — Solutions
+1. Temps commande : **555 s**
+2. Après −35 % dépl. : **54** commandes/j
+3. Effectif : **9** préparateurs
+4. **52,71** pos./h · **30** commandes/j
+5. Après −8 % : **32** commandes/j`;
+
+/** Vérification des acquis Module 611 */
+const DEMO_611_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 611 — La préparation des commandes (approfondissement)**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+3 causes d'erreurs de picking et 3 mesures ?
+
+:::reponse
+**Causes** — responsabilité collaborateurs · documents/étiquettes illisibles · manque formation · problèmes techniques.
+
+**Mesures** — bonne ambiance · formation · contrôles (poids, quatre yeux) · **sans documents**.
+:::
+
+### Question 2
+
+Timon électrique + Voice + conteneur → transport : décrire mise à disposition, déplacement, prélèvement, distribution.
+
+:::reponse
+- **Mise à disposition** : **statique** (homme → marchandise)
+- **Déplacement** : **unidimensionnel** (hauteur de prélèvement seulement)
+- **Prélèvement** : **manuel**
+- **Distribution** : **centralisée** (conteneur au point de regroupement transport)
+:::
+
+### Question 3
+
+Différence prélèvement **2 étapes** vs **parallèle** ?
+
+:::reponse
+**2 étapes (orienté articles)** — prélèvement simultané pour plusieurs commandes · puis **répartition** en 2e étape · judicieux si longs trajets ou articles communs.
+
+**Parallèle** — commande divisée en ordres partiels · traitement **simultané** dans différentes zones · temps ↓ pour grosses commandes.
+:::
+
+### Question 4
+
+Confirmation et décompte stock : avec vs sans document ?
+
+:::reponse
+**Avec documents** — rayure des positions · comptabilisation avant ou après.
+
+**Sans documents** — acquittement Scan / Light / Voice / RFID · comptabilisation **directe** après acquittement · entrepôt toujours à jour.
+:::
+
+### Question 5
+
+Associer activités aux temps :
+
+:::reponse
+| Activité | Temps |
+| --- | --- |
+| Dépôt au point de rassemblement | **Mort** |
+| Déplacement entre deux positions | **Déplacement** |
+| Prélèvement d'un carton | **Prélèvement** |
+| Valider en cochant la liste | **Mort** |
+| Pause cigarette | **Perdu** |
+| Ouvrir le colis avant prélèvement | **Mort** |
+| Attendre le réapprovisionnement | **Perdu** |
+:::`;
+
+const DEMO_611_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Causes : motivation · docs · formation · Mesures : ambiance · contrôles · Voice
+2. Statique · 1D · manuel · centralisé
+3. 2 étapes = articles puis répartition · parallèle = zones simultanées
+4. Papier = rayure · sans doc = scan/voice → stock direct
+5. Mort / déplacement / prélèvement / perdu (tableau)`;
+
 /** Contenu Module 612 — La planification des transports */
 const DEMO_612_THEORIE_FULL = `## 12. La planification des transports
 
@@ -22018,6 +22326,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_611_THEORIE_FULL,
       summary: DEMO_611_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_611_GLOSSAIRE_FULL,
+      summary: DEMO_611_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_611_SITUATION_FULL,
+      summary: DEMO_611_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_611_MATHS_FULL,
+      summary: DEMO_611_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_611_VERIFICATION_FULL,
+      summary: DEMO_611_VERIFICATION_SUMMARY,
     },
   },
   "612": {
