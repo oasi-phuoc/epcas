@@ -41,6 +41,14 @@ import {
   Trash2,
   Video,
 } from "lucide-react";
+import { PdfViewer } from "@/components/informatique/PdfViewer";
+import { isResultatPdf } from "@/lib/informatique-exercises";
+
+const STUDENT_INSTRUCTIONS = [
+  "Téléchargez les documents à utiliser ci-dessous.",
+  "Réalisez l'exercice en suivant le fichier de données / le texte de base.",
+  "Consultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
+];
 
 const MAX_EMBED_BYTES = 1_500_000;
 
@@ -84,6 +92,8 @@ function AssetList({
   accept,
   /** Mode d'affichage par défaut si l'asset n'indique pas clairement vidéo/doc. */
   defaultMode,
+  /** Vue apprenti : PDF résultat en visionneuse, pas de téléchargement. */
+  studentMode = false,
 }: {
   assets: InformatiqueAsset[];
   emptyLabel: string;
@@ -94,6 +104,7 @@ function AssetList({
   onAddUrl?: (name: string, url: string, kind: "document" | "video") => void;
   accept?: string;
   defaultMode: "document" | "video" | "mixed";
+  studentMode?: boolean;
 }) {
   const fileRef = useRef<HTMLInputElement>(null);
   const [urlName, setUrlName] = useState("");
@@ -110,6 +121,9 @@ function AssetList({
           {assets.map((asset) => {
             const asVideo =
               defaultMode === "document" ? false : isVideoAsset(asset);
+            const asResultatPdf =
+              studentMode && !editable && isResultatPdf(asset) && asset.url;
+            const allowDownload = !studentMode || !asResultatPdf;
             return (
               <li
                 key={asset.id}
@@ -140,7 +154,7 @@ function AssetList({
                         </Button>
                       </a>
                     ) : null}
-                    {!asVideo && asset.url ? (
+                    {!asVideo && asset.url && allowDownload ? (
                       <a
                         href={asset.url}
                         download={asset.name}
@@ -152,7 +166,7 @@ function AssetList({
                         </Button>
                       </a>
                     ) : null}
-                    {asVideo && asset.url ? (
+                    {asVideo && asset.url && allowDownload ? (
                       <a
                         href={asset.url}
                         download={asset.name}
@@ -191,6 +205,9 @@ function AssetList({
                       Votre navigateur ne prend pas en charge la vidéo.
                     </video>
                   </div>
+                ) : null}
+                {asResultatPdf ? (
+                  <PdfViewer url={asset.url} title={asset.name} />
                 ) : null}
               </li>
             );
@@ -507,28 +524,45 @@ function StudentExerciseDetail({
 }) {
   return (
     <div className="space-y-4">
-      <ExercisePreview exercise={exercise} />
+      <Panel>
+        <div className="mb-4 flex flex-wrap items-center gap-2">
+          <Badge tone="neutral">{informatiqueAppLabel(exercise.app)}</Badge>
+        </div>
+        <h2 className="font-display text-2xl text-ink sm:text-3xl">
+          {exercise.title || "Sans titre"}
+        </h2>
+        {exercise.description ? (
+          <p className="mt-1 text-sm text-ink-muted">{exercise.description}</p>
+        ) : null}
+
+        <h3 className="mt-6 font-display text-lg text-ink">Consignes</h3>
+        <ul className="mt-2 space-y-1.5 text-sm text-ink-muted">
+          {STUDENT_INSTRUCTIONS.map((line) => (
+            <li key={line} className="ml-5 list-disc text-justify leading-relaxed">
+              {line}
+            </li>
+          ))}
+        </ul>
+      </Panel>
 
       <Panel>
         <h3 className="mb-1 font-display text-lg text-ink">
           Documents à utiliser / à télécharger
         </h3>
-        <p className="mb-3 text-sm text-ink-muted">
-          Téléchargez les fichiers nécessaires pour réaliser l&apos;exercice.
-        </p>
         <AssetList
           defaultMode="document"
           assets={exercise.documents}
           emptyLabel="Aucun document pour cet exercice."
           downloadLabel="Télécharger"
           editable={false}
+          studentMode
         />
       </Panel>
 
       <Panel>
         <h3 className="mb-1 font-display text-lg text-ink">Corrections</h3>
         <p className="mb-3 text-sm text-ink-muted">
-          Vidéos à visionner ou fichiers de correction / résultat attendu.
+          Vidéos à visionner ou résultat attendu à consulter directement.
         </p>
         <AssetList
           defaultMode="mixed"
@@ -536,6 +570,7 @@ function StudentExerciseDetail({
           emptyLabel="Aucune correction disponible pour le moment."
           downloadLabel="Télécharger"
           editable={false}
+          studentMode
         />
       </Panel>
     </div>
@@ -616,6 +651,7 @@ export function InformatiqueExercicesWorkspace({
 
   const hubHref = isEdit ? "/formateur/exercices" : "/exercices";
   const hubLabel = isEdit ? "← Exercices" : "← Exercices";
+  const studentYear = resolveInformatiqueYear(userStudyYear);
 
   const appsToShow = INFORMATIQUE_APPS.filter(
     (app) => isEdit || availableApps.includes(app.id),
@@ -628,7 +664,7 @@ export function InformatiqueExercicesWorkspace({
         description={
           isEdit
             ? "Gérez les exercices Word et Excel (1re et 3e année) — documents et corrections."
-            : "Choisissez l'année, l'application, puis un exercice pour voir consignes, documents et corrections."
+            : `Exercices ${informatiqueAppLabel(selectedApp)} — ${informatiqueYearLabel(studentYear)}.`
         }
         actions={
           <Link href={hubHref}>
@@ -655,31 +691,39 @@ export function InformatiqueExercicesWorkspace({
       ) : null}
 
       <Panel className="mb-4">
-        <p className="mb-2 text-sm font-medium text-ink">Année</p>
-        <div
-          className="flex flex-wrap gap-2"
-          role="group"
-          aria-label="Choisir une année"
-        >
-          {INFORMATIQUE_YEARS.map((y) => (
-            <Button
-              key={y.id}
-              type="button"
-              size="sm"
-              variant={selectedYear === y.id ? "primary" : "secondary"}
-              onClick={() => {
-                setSelectedYear(y.id);
-                setSelectedId("");
-                setExerciseQuery("");
-              }}
+        {isEdit ? (
+          <>
+            <p className="mb-2 text-sm font-medium text-ink">Année</p>
+            <div
+              className="flex flex-wrap gap-2"
+              role="group"
+              aria-label="Choisir une année"
             >
-              {y.label}
-            </Button>
-          ))}
-        </div>
-        <p className="mt-2 text-xs text-ink-subtle">
-          Pas de cours Informatique en 2e année — seuls 1re et 3e sont proposés.
-        </p>
+              {INFORMATIQUE_YEARS.map((y) => (
+                <Button
+                  key={y.id}
+                  type="button"
+                  size="sm"
+                  variant={selectedYear === y.id ? "primary" : "secondary"}
+                  onClick={() => {
+                    setSelectedYear(y.id);
+                    setSelectedId("");
+                    setExerciseQuery("");
+                  }}
+                >
+                  {y.label}
+                </Button>
+              ))}
+            </div>
+            <p className="mt-2 text-xs text-ink-subtle">
+              Pas de cours Informatique en 2e année — seuls 1re et 3e sont proposés.
+            </p>
+          </>
+        ) : (
+          <p className="text-sm text-ink-muted">
+            Parcours <strong className="text-ink">{informatiqueYearLabel(studentYear)}</strong> — seuls les exercices de votre année sont affichés.
+          </p>
+        )}
 
         <p className="mb-2 mt-4 text-sm font-medium text-ink">Application</p>
         <div
@@ -817,7 +861,7 @@ export function InformatiqueExercicesWorkspace({
           description={
             isEdit
               ? "Créez un exercice ou choisissez-en un dans la liste."
-              : "Choisissez une année, une application puis un exercice."
+              : "Choisissez une application puis un exercice."
           }
         />
       ) : isEdit ? (

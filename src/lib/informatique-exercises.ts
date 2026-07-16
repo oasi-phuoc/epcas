@@ -59,6 +59,14 @@ export function resolveInformatiqueYear(
   return studyYear === 3 ? 3 : 1;
 }
 
+export function isResultatPdf(asset: {
+  name?: string;
+  url?: string;
+}): boolean {
+  const ref = (asset.name || asset.url || "").toLowerCase();
+  return /\.pdf(\?|$)/i.test(ref) && ref.includes("resultat");
+}
+
 /** Catalogue dérivé de public/assets/informatique/{1,3}/… */
 export const SEED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] =
   GENERATED_INFORMATIQUE_EXERCISES;

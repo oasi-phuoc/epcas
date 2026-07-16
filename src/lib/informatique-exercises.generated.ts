@@ -5,7 +5,7 @@
  */
 import type { InformatiqueExercise } from "./types";
 
-export const INFORMATIQUE_CATALOG_VERSION = 1784119279478;
+export const INFORMATIQUE_CATALOG_VERSION = 1784190933145;
 
 export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
   {
@@ -14,7 +14,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 01",
     "description": "Année 1 · 01. Formatage des caractères",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG1_01.01_DONNEES.docx`\n- `INF_WORD_LOG1_01.01_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 1,
     "published": true,
     "documents": [
@@ -52,7 +52,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 02",
     "description": "Année 1 · 01. Formatage des caractères",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG1_01.02_DONNEES.docx`\n- `INF_WORD_LOG1_01.02_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 2,
     "published": true,
     "documents": [
@@ -90,7 +90,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 03",
     "description": "Année 1 · 01. Formatage des caractères",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG1_01.03_DONNEES.docx`\n- `INF_WORD_LOG1_01.03_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 3,
     "published": true,
     "documents": [
@@ -128,7 +128,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 04",
     "description": "Année 1 · 02. Formatage des paragraphes",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG1_02.04_DONNEES.docx`\n- `INF_WORD_LOG1_02.04_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 4,
     "published": true,
     "documents": [
@@ -166,7 +166,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 05",
     "description": "Année 1 · 02. Formatage des paragraphes",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG1_02.05_DONNEES.docx`\n- `INF_WORD_LOG1_02.05_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 5,
     "published": true,
     "documents": [
@@ -204,7 +204,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 06",
     "description": "Année 1 · 02. Formatage des paragraphes",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG1_02.06_DONNEES.docx`\n- `INF_WORD_LOG1_02.06_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 6,
     "published": true,
     "documents": [
@@ -242,7 +242,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 07",
     "description": "Année 1 · 02. Formatage des paragraphes",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG1_02.07_DONNEES.docx`\n- `INF_WORD_LOG1_02.07_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 7,
     "published": true,
     "documents": [
@@ -280,7 +280,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 08",
     "description": "Année 1 · 02. Formatage des paragraphes",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG1_02.08_DONNEES.docx`\n- `INF_WORD_LOG1_02.08_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 8,
     "published": true,
     "documents": [
@@ -318,7 +318,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 09",
     "description": "Année 1 · 03. Illustrations",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG1_03.09_DONNEES.docx`\n- `INF_WORD_LOG1_03.09_IMAGE.jpg`\n- `INF_WORD_LOG1_03.09_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 9,
     "published": true,
     "documents": [
@@ -362,7 +362,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 10",
     "description": "Année 1 · 03. Illustrations",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG1_03.10_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 10,
     "published": true,
     "documents": [
@@ -394,7 +394,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 11",
     "description": "Année 1 · 03. Illustrations",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG1_03.11_DONNEES.docx`\n- `INF_WORD_LOG1_03.11_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 11,
     "published": true,
     "documents": [
@@ -432,7 +432,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 12",
     "description": "Année 1 · 03. Illustrations",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG1_03.12_DONNEES.docx`\n- `INF_WORD_LOG1_03.12_IMAGE-1.jpg`\n- `INF_WORD_LOG1_03.12_IMAGE-2.jpg`\n- `INF_WORD_LOG1_03.12_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 12,
     "published": true,
     "documents": [
@@ -482,7 +482,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 13",
     "description": "Année 1 · 04. Bordures et trames",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG1_04.13_DONNEES.docx`\n- `INF_WORD_LOG1_04.13_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 13,
     "published": true,
     "documents": [
@@ -520,7 +520,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 14",
     "description": "Année 1 · 04. Bordures et trames",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG1_04.14_DONNEES.docx`\n- `INF_WORD_LOG1_04.14_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 14,
     "published": true,
     "documents": [
@@ -558,7 +558,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 15",
     "description": "Année 1 · 04. Bordures et trames",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG1_04.15_DONNEES.docx`\n- `INF_WORD_LOG1_04.15_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 15,
     "published": true,
     "documents": [
@@ -596,7 +596,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 16",
     "description": "Année 1 · 05. Tableaux",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG1_05.16_DONNEES.docx`\n- `INF_WORD_LOG1_05.16_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 16,
     "published": true,
     "documents": [
@@ -634,7 +634,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 17",
     "description": "Année 1 · 05. Tableaux",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG1_05.17_DONNEES.docx`\n- `INF_WORD_LOG1_05.17_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 17,
     "published": true,
     "documents": [
@@ -672,7 +672,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 18",
     "description": "Année 1 · 05. Tableaux",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG1_05.18_DONNEES.docx`\n- `INF_WORD_LOG1_05.18_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 18,
     "published": true,
     "documents": [
@@ -710,7 +710,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 01 - Format",
     "description": "Année 1 · 01. Mise en forme et calculs",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_EX_01.01_BASE.xlsm`\n- `INF_EXCEL_EX_01.01_BASE.xlsx`\n- `INF_EXCEL_EX_01.01_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 1,
     "published": true,
     "documents": [
@@ -748,7 +748,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 02 - Suite de données",
     "description": "Année 1 · 01. Mise en forme et calculs",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_EX_01.02_BASE.xlsm`\n- `INF_EXCEL_EX_01.02_BASE.xlsx`\n- `INF_EXCEL_EX_01.02_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 2,
     "published": true,
     "documents": [
@@ -786,7 +786,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 03 - Ajustement de cellules",
     "description": "Année 1 · 01. Mise en forme et calculs",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_EX_01.03_BASE.xlsm`\n- `INF_EXCEL_EX_01.03_BASE.xlsx`\n- `INF_EXCEL_EX_01.03_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 3,
     "published": true,
     "documents": [
@@ -824,7 +824,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 04 - Mise en forme",
     "description": "Année 1 · 01. Mise en forme et calculs",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_EX_01.04_BASE.xlsm`\n- `INF_EXCEL_EX_01.04_BASE.xlsx`\n- `INF_EXCEL_EX_01.04_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 4,
     "published": true,
     "documents": [
@@ -862,7 +862,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 05 - Calculs arithmétiques bases",
     "description": "Année 1 · 02. Calculs",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_EX_02.05_BASE.xlsm`\n- `INF_EXCEL_EX_02.05_BASE.xlsx`\n- `INF_EXCEL_EX_02.05_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 5,
     "published": true,
     "documents": [
@@ -900,7 +900,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 06 - Calculs de formes",
     "description": "Année 1 · 02. Calculs",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_EX_02.06_BASE.xlsm`\n- `INF_EXCEL_EX_02.06_BASE.xlsx`\n- `INF_EXCEL_EX_02.06_DONNEES.docx`\n- `INF_EXCEL_EX_02.07_IMAGE-1_PaveDroit.png`\n- `INF_EXCEL_EX_02.07_IMAGE-2_Trapeze.png`\n- `INF_EXCEL_EX_02.07_IMAGE-3_Cone.png`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 6,
     "published": true,
     "documents": [
@@ -956,7 +956,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 07 - Calculs arithmétiques avancés",
     "description": "Année 1 · 02. Calculs",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_EX_02.07_BASE.xlsm`\n- `INF_EXCEL_EX_02.07_BASE.xlsx`\n- `INF_EXCEL_EX_02.07_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 7,
     "published": true,
     "documents": [
@@ -994,7 +994,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 08 - Volume et densité",
     "description": "Année 1 · 02. Calculs",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_EX_02.08_BASE.xlsm`\n- `INF_EXCEL_EX_02.08_BASE.xlsx`\n- `INF_EXCEL_EX_02.08_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 8,
     "published": true,
     "documents": [
@@ -1032,7 +1032,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Révision 01 - Surface et vitesse",
     "description": "Année 1 · 02. Calculs",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_REV_01_BASE.xlsm`\n- `INF_EXCEL_REV_01_BASE.xlsx`\n- `INF_EXCEL_REV_01_DONNEES.docx`\n- `INF_EXCEL_REV_01_IMAGE-1.jpg`\n- `INF_EXCEL_REV_01_IMAGE-2.jpg`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 9,
     "published": true,
     "documents": [
@@ -1082,7 +1082,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 10 - Calcul de quantités",
     "description": "Année 1 · 03. Fonction - SOMME et MOYENNE",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_EX_03.10_BASE.xlsm`\n- `INF_EXCEL_EX_03.10_BASE.xlsx`\n- `INF_EXCEL_EX_03.10_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 10,
     "published": true,
     "documents": [
@@ -1113,7 +1113,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 11 - Calcul d'offres",
     "description": "Année 1 · 03. Fonction - SOMME et MOYENNE",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_EX_03.11_BASE.xlsm`\n- `INF_EXCEL_EX_03.11_BASE.xlsx`\n- `INF_EXCEL_EX_03.11_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 11,
     "published": true,
     "documents": [
@@ -1144,7 +1144,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 9 - Somme et moyenne, simple",
     "description": "Année 1 · 03. Fonction - SOMME et MOYENNE",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_EX_03.09_BASE.xlsm`\n- `INF_EXCEL_EX_03.09_BASE.xlsx`\n- `INF_EXCEL_EX_03.09_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 12,
     "published": true,
     "documents": [
@@ -1175,7 +1175,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 12 - Fonction SI",
     "description": "Année 1 · 04. Fonction - SI, ET, OU",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_EX_04.12_BASE.xlsm`\n- `INF_EXCEL_EX_04.12_BASE.xlsx`\n- `INF_EXCEL_EX_04.12_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 13,
     "published": true,
     "documents": [
@@ -1206,7 +1206,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 13 - Salaires",
     "description": "Année 1 · 04. Fonction - SI, ET, OU",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_EX_04.13_BASE.xlsm`\n- `INF_EXCEL_EX_04.13_BASE.xlsx`\n- `INF_EXCEL_EX_04.13_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 14,
     "published": true,
     "documents": [
@@ -1237,7 +1237,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 1,
     "title": "Exercice 14 - Recyclage",
     "description": "Année 1 · 04. Fonction - SI, ET, OU",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_EX_04.14_BASE.xlsm`\n- `INF_EXCEL_EX_04.14_BASE.xlsx`\n- `INF_EXCEL_EX_04.14_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 15,
     "published": true,
     "documents": [
@@ -1268,7 +1268,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 01",
     "description": "Année 3 · 01. Révision",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `Image-1.jpg`\n- `Image-2.jpg`\n- `INF_WORD_LOG3_01.01_DONNEES.docx`\n- `INF_WORD_LOG3_01.01_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 1,
     "published": true,
     "documents": [
@@ -1312,7 +1312,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 02",
     "description": "Année 3 · 01. Révision",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `Image-1.png`\n- `Image-2.jpg`\n- `Image-3.png`\n- `INF_WORD_LOG3_01.02_DONNEES.docx`\n- `INF_WORD_LOG3_01.02_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 2,
     "published": true,
     "documents": [
@@ -1362,7 +1362,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 03",
     "description": "Année 3 · 02. Style",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG3_02.03_DONNEES.docx`\n- `INF_WORD_LOG3_02.03_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 3,
     "published": true,
     "documents": [
@@ -1394,7 +1394,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 04",
     "description": "Année 3 · 02. Style",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `Image-1.jpg`\n- `Image-2.jpg`\n- `Image-3.jpg`\n- `INF_WORD_LOG3_02.04_DONNEES.docx`\n- `INF_WORD_LOG3_02.04_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 4,
     "published": true,
     "documents": [
@@ -1444,7 +1444,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 05",
     "description": "Année 3 · 02. Style",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `Image-1.jpg`\n- `INF_WORD_LOG3_02.05_DONNEES.docx`\n- `INF_WORD_LOG3_02.05_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 5,
     "published": true,
     "documents": [
@@ -1482,7 +1482,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 06",
     "description": "Année 3 · 03. Table des matières",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_WORD_LOG3_03.06_DONNEES.docx`\n- `INF_WORD_LOG3_03.06_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 6,
     "published": true,
     "documents": [
@@ -1514,7 +1514,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 07",
     "description": "Année 3 · 03. Table des matières",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `Image-1.png`\n- `Image-2.png`\n- `Image-3.jpg`\n- `INF_WORD_LOG3_03.07_DONNEES.docx`\n- `INF_WORD_LOG3_03.07_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 7,
     "published": true,
     "documents": [
@@ -1564,7 +1564,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 08",
     "description": "Année 3 · 03. Table des matières",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `Image-1.jpg`\n- `INF_WORD_LOG3_03.08_DONNEES.docx`\n- `INF_WORD_LOG3_03.08_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 8,
     "published": true,
     "documents": [
@@ -1602,7 +1602,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 09",
     "description": "Année 3 · 04. Référencements",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `Image-1.jpg`\n- `Image-2.jpg`\n- `Image-3.webp`\n- `Image-4.jpg`\n- `Image-5.png`\n- `Image-6.gif`\n- `Image-7.png`\n- `INF_WORD_LOG3_04.09_DONNEES.docx`\n- `INF_WORD_LOG3_04.09_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 9,
     "published": true,
     "documents": [
@@ -1676,7 +1676,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 10",
     "description": "Année 3 · 04. Référencements",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `Image-1.jpg`\n- `Image-2.png`\n- `INF_WORD_LOG3_04.10_DONNEES.docx`\n- `INF_WORD_LOG3_04.10_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 10,
     "published": true,
     "documents": [
@@ -1720,7 +1720,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 11",
     "description": "Année 3 · 04. Référencements",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `Image-1.jpg`\n- `Image-2.png`\n- `Image-3.jpg`\n- `Image-4.jpg`\n- `Image-5.jpg`\n- `Image-6.jpg`\n- `INF_WORD_LOG3_04.11_DONNEES.docx`\n- `INF_WORD_LOG3_04.11_TEXTEBASE.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 11,
     "published": true,
     "documents": [
@@ -1788,7 +1788,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 01",
     "description": "Année 3 · 01. Révision",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_01.01_BASE.xlsx`\n- `INF_EXCEL_LOG3_01.01_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 1,
     "published": true,
     "documents": [
@@ -1820,7 +1820,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 02",
     "description": "Année 3 · 01. Révision",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `Image-1.jpg`\n- `Image-2.jpg`\n- `Image-3.jpg`\n- `Image-4.jpg`\n- `Image-5.jpg`\n- `INF_EXCEL_LOG3_01.02_BASE.xlsx`\n- `INF_EXCEL_LOG3_01.02_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 2,
     "published": true,
     "documents": [
@@ -1882,7 +1882,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 03",
     "description": "Année 3 · 01. Révision",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_01.03_BASE.xlsx`\n- `INF_EXCEL_LOG3_01.03_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 3,
     "published": true,
     "documents": [
@@ -1914,7 +1914,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 04",
     "description": "Année 3 · 01. Révision",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_01.04_BASE.xlsx`\n- `INF_EXCEL_LOG3_01.04_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 4,
     "published": true,
     "documents": [
@@ -1946,7 +1946,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Extra 01",
     "description": "Année 3 · 01. Révision › Exercices supplémentaires (afaire)",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_EXTRA_01.01_BASE.xlsx`\n- `INF_EXCEL_LOG3_EXTRA_01.01_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 5,
     "published": true,
     "documents": [
@@ -1978,7 +1978,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Extra 02 (a faire et adapter)",
     "description": "Année 3 · 01. Révision › Exercices supplémentaires (afaire)",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_EVA_01_BASE.xlsx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 6,
     "published": true,
     "documents": [
@@ -1997,7 +1997,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 05",
     "description": "Année 3 · 02. Fonction logique",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_02.05_BASE.xlsx`\n- `INF_EXCEL_LOG3_02.05_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 7,
     "published": true,
     "documents": [
@@ -2029,7 +2029,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 06",
     "description": "Année 3 · 02. Fonction logique",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_02.06_BASE.xlsx`\n- `INF_EXCEL_LOG3_02.06_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 8,
     "published": true,
     "documents": [
@@ -2061,7 +2061,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 07",
     "description": "Année 3 · 02. Fonction logique",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_02.07_BASE.xlsx`\n- `INF_EXCEL_LOG3_02.07_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 9,
     "published": true,
     "documents": [
@@ -2093,7 +2093,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 08",
     "description": "Année 3 · 02. Fonction logique",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_02.08_BASE.xlsx`\n- `INF_EXCEL_LOG3_02.08_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 10,
     "published": true,
     "documents": [
@@ -2125,7 +2125,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Extra 03",
     "description": "Année 3 · 02. Fonction logique › Exercices supplémentaires (a faire)",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_01.02_DONNEES - Copie (2).docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 11,
     "published": true,
     "documents": [
@@ -2144,7 +2144,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Extra 04",
     "description": "Année 3 · 02. Fonction logique › Exercices supplémentaires (a faire)",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_01.02_DONNEES - Copie (3).docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 12,
     "published": true,
     "documents": [
@@ -2163,7 +2163,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Extra 05",
     "description": "Année 3 · 02. Fonction logique › Exercices supplémentaires (a faire)",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_01.02_DONNEES - Copie (4).docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 13,
     "published": true,
     "documents": [
@@ -2182,7 +2182,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 09",
     "description": "Année 3 · 03. Arrondi",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_03.09_BASE.xlsm`\n- `INF_EXCEL_LOG3_03.09_BASE.xlsx`\n- `INF_EXCEL_LOG3_03.09_DONNEES-Sans réponses.docx`\n- `INF_EXCEL_LOG3_03.09_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 14,
     "published": true,
     "documents": [
@@ -2226,7 +2226,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 10",
     "description": "Année 3 · 03. Arrondi",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_03.10_BASE.xlsm`\n- `INF_EXCEL_LOG3_03.10_BASE.xlsx`\n- `INF_EXCEL_LOG3_03.10_DONNEES-Sans réponses.docx`\n- `INF_EXCEL_LOG3_03.10_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 15,
     "published": true,
     "documents": [
@@ -2270,7 +2270,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 11",
     "description": "Année 3 · 03. Arrondi",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_03.11_BASE.xlsm`\n- `INF_EXCEL_LOG3_03.11_BASE.xlsx`\n- `INF_EXCEL_LOG3_03.11_DONNEES-Sans réponses.docx`\n- `INF_EXCEL_LOG3_03.11_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 16,
     "published": true,
     "documents": [
@@ -2314,7 +2314,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 12",
     "description": "Année 3 · 03. Arrondi",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_03.12_BASE.xlsm`\n- `INF_EXCEL_LOG3_03.12_BASE.xlsx`\n- `INF_EXCEL_LOG3_03.12_DONNEES-Sans réponses.docx`\n- `INF_EXCEL_LOG3_03.12_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 17,
     "published": true,
     "documents": [
@@ -2358,7 +2358,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 13",
     "description": "Année 3 · 04. Tri et filtre",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_04.13_BASE.xlsm`\n- `INF_EXCEL_LOG3_04.13_BASE.xlsx`\n- `INF_EXCEL_LOG3_04.13_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 18,
     "published": true,
     "documents": [
@@ -2396,7 +2396,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 14",
     "description": "Année 3 · 04. Tri et filtre",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_04.14_BASE.xlsm`\n- `INF_EXCEL_LOG3_04.14_BASE.xlsx`\n- `INF_EXCEL_LOG3_04.14_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 19,
     "published": true,
     "documents": [
@@ -2434,7 +2434,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 15",
     "description": "Année 3 · 04. Tri et filtre",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_04.15_BASE.xlsm`\n- `INF_EXCEL_LOG3_04.15_BASE.xlsx`\n- `INF_EXCEL_LOG3_04.15_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 20,
     "published": true,
     "documents": [
@@ -2472,7 +2472,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 16",
     "description": "Année 3 · 04. Tri et filtre",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_04.16_BASE.xlsm`\n- `INF_EXCEL_LOG3_04.16_BASE.xlsx`\n- `INF_EXCEL_LOG3_04.16_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 21,
     "published": true,
     "documents": [
@@ -2510,7 +2510,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 17",
     "description": "Année 3 · 05. Graphique",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_05.17_BASE.xlsm`\n- `INF_EXCEL_LOG3_05.17_BASE.xlsx`\n- `INF_EXCEL_LOG3_05.17_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 22,
     "published": true,
     "documents": [
@@ -2548,7 +2548,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 18",
     "description": "Année 3 · 05. Graphique",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_05.18_BASE.xlsm`\n- `INF_EXCEL_LOG3_05.18_BASE.xlsx`\n- `INF_EXCEL_LOG3_05.18_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 23,
     "published": true,
     "documents": [
@@ -2586,7 +2586,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 19",
     "description": "Année 3 · 05. Graphique",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_05.19_BASE.xlsm`\n- `INF_EXCEL_LOG3_05.19_BASE.xlsx`\n- `INF_EXCEL_LOG3_05.19_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 24,
     "published": true,
     "documents": [
@@ -2624,7 +2624,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 20",
     "description": "Année 3 · 05. Graphique",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_05.20_BASE.xlsm`\n- `INF_EXCEL_LOG3_05.20_BASE.xlsx`\n- `INF_EXCEL_LOG3_05.20_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 25,
     "published": true,
     "documents": [
@@ -2662,7 +2662,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 21",
     "description": "Année 3 · 06. Analyse ABC",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_06.21_BASE.xlsm`\n- `INF_EXCEL_LOG3_06.21_BASE.xlsx`\n- `INF_EXCEL_LOG3_06.21_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 26,
     "published": true,
     "documents": [
@@ -2700,7 +2700,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 22",
     "description": "Année 3 · 06. Analyse ABC",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_06.22_BASE.xlsm`\n- `INF_EXCEL_LOG3_06.22_BASE.xlsx`\n- `INF_EXCEL_LOG3_06.22_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 27,
     "published": true,
     "documents": [
@@ -2738,7 +2738,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 23",
     "description": "Année 3 · 07. MFC",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_07.23_BASE.xlsm`\n- `INF_EXCEL_LOG3_07.23_BASE.xlsx`\n- `INF_EXCEL_LOG3_07.23_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 28,
     "published": true,
     "documents": [
@@ -2776,7 +2776,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 24",
     "description": "Année 3 · 07. MFC",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_07.24_BASE.xlsm`\n- `INF_EXCEL_LOG3_07.24_BASE.xlsx`\n- `INF_EXCEL_LOG3_07.24_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 29,
     "published": true,
     "documents": [
@@ -2814,7 +2814,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 25",
     "description": "Année 3 · 07. MFC",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_07.25_BASE.xlsm`\n- `INF_EXCEL_LOG3_07.25_BASE.xlsx`\n- `INF_EXCEL_LOG3_07.25_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 30,
     "published": true,
     "documents": [
@@ -2852,7 +2852,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 26",
     "description": "Année 3 · 07. MFC",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_07.26_BASE.xlsm`\n- `INF_EXCEL_LOG3_07.26_BASE.xlsx`\n- `INF_EXCEL_LOG3_07.26_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 31,
     "published": true,
     "documents": [
@@ -2890,7 +2890,7 @@ export const GENERATED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] = [
     "year": 3,
     "title": "Exercice 27",
     "description": "Année 3 · 07. MFC",
-    "instructions": "## Consignes\n\n1. Téléchargez les **documents à utiliser** ci-dessous.\n2. Réalisez l'exercice en suivant le fichier de données / le texte de base.\n3. Consultez la **correction** (vidéo ou fichier) lorsqu'elle est disponible.\n\n### Fichiers fournis\n\n- `INF_EXCEL_LOG3_07.27_BASE.xlsm`\n- `INF_EXCEL_LOG3_07.27_BASE.xlsx`\n- `INF_EXCEL_LOG3_07.27_DONNEES.docx`\n",
+    "instructions": "Téléchargez les documents à utiliser ci-dessous.\nRéalisez l'exercice en suivant le fichier de données / le texte de base.\nConsultez la correction (vidéo ou fichier) lorsqu'elle est disponible.",
     "order": 32,
     "published": true,
     "documents": [

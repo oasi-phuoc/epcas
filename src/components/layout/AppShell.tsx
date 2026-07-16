@@ -8,6 +8,7 @@ import {
   Home,
   ListOrdered,
   LogOut,
+  Monitor,
   PencilLine,
   Settings,
   Users,
@@ -25,6 +26,7 @@ const apprenticeLinks = [
   { href: "/accueil", label: "Accueil", icon: Home },
   { href: "/theorie", label: "Théorie", icon: BookOpen },
   { href: "/exercices", label: "Exercices", icon: PencilLine },
+  { href: "/exercices/informatique", label: "Informatique", icon: Monitor },
   { href: "/blancs", label: "Blancs", icon: ClipboardCheck },
   { href: "/parametres", label: "Paramètres", icon: Settings },
 ];
@@ -41,6 +43,18 @@ const staffLinks = [
 
 function isActivePath(pathname: string, href: string) {
   if (href === "/accueil") return pathname === "/accueil";
+  if (href === "/exercices/informatique") {
+    return pathname === href || pathname.startsWith(`${href}/`);
+  }
+  if (href === "/exercices") {
+    return (
+      (pathname === href ||
+        pathname.startsWith(`${href}/module/`) ||
+        pathname.startsWith(`${href}/lecon/`) ||
+        /^\/exercices\/[^/]+$/.test(pathname)) &&
+      !pathname.startsWith("/exercices/informatique")
+    );
+  }
   if (href === "/formateur/classes") {
     return (
       pathname === href ||
