@@ -49,3 +49,8 @@ export function curriculumExercisePaths(code: string) {
     lesson: (lessonId: string) => `${base}/lecon/${lessonId}`,
   };
 }
+
+/** Situations / maths / vérif des modules 804–808 (hors pratique Office). */
+export const INFORMATIQUE_CURRICULUM_EXERCISES_FOR_APPRENTICES = false;
+
+export const INFORMATIQUE_PRATIQUE_OFFICE_HREF = "/informatique/exercices/pratique";

@@ -3,8 +3,13 @@
 import Link from "next/link";
 import { BookOpen, FileSpreadsheet, PencilLine } from "lucide-react";
 import { PageHeader, Panel } from "@/components/ui";
+import { isStaffRole } from "@/lib/roles";
+import { useAppStore } from "@/lib/store";
 
 export default function InformatiqueHubPage() {
+  const { currentUser } = useAppStore();
+  const staff = Boolean(currentUser && isStaffRole(currentUser.role));
+
   return (
     <div>
       <PageHeader
@@ -21,16 +26,21 @@ export default function InformatiqueHubPage() {
             </p>
           </Panel>
         </Link>
-        <Link href="/informatique/exercices">
-          <Panel className="flex h-full flex-col gap-2 p-5 transition hover:border-primary hover:bg-primary-soft/30">
-            <PencilLine className="h-6 w-6 text-primary-strong" />
-            <h2 className="font-display text-xl text-ink">Exercices</h2>
-            <p className="text-sm text-ink-muted">
-              Situations, maths et contrôles des modules ICT, plus fichiers Office.
-            </p>
-          </Panel>
-        </Link>
-        <Link href="/informatique/exercices/pratique" className="sm:col-span-2">
+        {staff ? (
+          <Link href="/informatique/exercices">
+            <Panel className="flex h-full flex-col gap-2 p-5 transition hover:border-primary hover:bg-primary-soft/30">
+              <PencilLine className="h-6 w-6 text-primary-strong" />
+              <h2 className="font-display text-xl text-ink">Exercices</h2>
+              <p className="text-sm text-ink-muted">
+                Situations, maths et contrôles des modules ICT, plus fichiers Office.
+              </p>
+            </Panel>
+          </Link>
+        ) : null}
+        <Link
+          href="/informatique/exercices/pratique"
+          className={staff ? "sm:col-span-2" : undefined}
+        >
           <Panel className="flex flex-col gap-2 p-5 transition hover:border-primary hover:bg-primary-soft/30 sm:flex-row sm:items-center sm:gap-4">
             <FileSpreadsheet className="h-6 w-6 shrink-0 text-primary-strong" />
             <div>

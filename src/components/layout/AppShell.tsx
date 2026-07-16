@@ -62,7 +62,7 @@ const apprenticeLinks: NavItem[] = [
     icon: Monitor,
     children: [
       { href: "/informatique/theorie", label: "Théorie" },
-      { href: "/informatique/exercices", label: "Exercices" },
+      { href: "/informatique/exercices/pratique", label: "Pratique Office" },
     ],
   },
   { kind: "link", href: "/blancs", label: "Blancs", icon: ClipboardCheck },
@@ -119,6 +119,9 @@ function isActivePath(pathname: string, href: string) {
     );
   }
   if (href === "/informatique/theorie") {
+    return pathname === href || pathname.startsWith(`${href}/`);
+  }
+  if (href === "/informatique/exercices/pratique") {
     return pathname === href || pathname.startsWith(`${href}/`);
   }
   if (href === "/informatique/exercices") {

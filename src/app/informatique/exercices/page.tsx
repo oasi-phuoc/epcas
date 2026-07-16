@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { CurriculumBlockIndex } from "@/components/CurriculumBlockIndex";
+import { InformatiqueCurriculumExercisesGate } from "@/components/informatique/InformatiqueCurriculumExercisesGate";
 import { Button, Panel } from "@/components/ui";
 import { MODULE_EXERCISE_PAGE_SLUGS } from "@/lib/lesson-content";
 import { useVisibleInformatiqueModules } from "@/lib/store";
@@ -10,7 +11,8 @@ export default function InformatiqueExercicesPage() {
   const modules = useVisibleInformatiqueModules();
 
   return (
-    <CurriculumBlockIndex
+    <InformatiqueCurriculumExercisesGate>
+      <CurriculumBlockIndex
       title="Exercices — Informatique"
       descriptionTrainer="Situations, maths et vérifications — modules 804 à 808."
       descriptionApprentice="Modules 804 à 808 — accessibles toutes années."
@@ -31,5 +33,6 @@ export default function InformatiqueExercicesPage() {
         </Panel>
       }
     />
+    </InformatiqueCurriculumExercisesGate>
   );
 }
