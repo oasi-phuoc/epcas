@@ -13,10 +13,12 @@ import {
 } from "@/lib/offline/idb";
 import {
   getOfflineStatus,
+  loadDirectoryHandle,
   pickOfflineDirectory,
   supportsDirectoryPicker,
   syncOfflineContent,
 } from "@/lib/offline/sync";
+import { isLikelyDesktop } from "@/lib/offline/filesystem";
 import { countPendingOutbox } from "@/lib/offline/tracking-outbox";
 import type {
   ContentManifest,
@@ -54,7 +56,7 @@ export function OfflineDownloadPanel() {
   });
   const [localBytes, setLocalBytes] = useState(0);
   const [scope, setScope] = useState<"parcours" | "all">("parcours");
-  const [writeDisk, setWriteDisk] = useState(supportsDirectoryPicker());
+  const [writeDisk, setWriteDisk] = useState(() => isLikelyDesktop());
   const [message, setMessage] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [pendingTracking, setPendingTracking] = useState(0);
@@ -140,13 +142,50 @@ export function OfflineDownloadPanel() {
     [changes],
   );
 
+  async function resolveDiskHandleForSync(): Promise<FileSystemDirectoryHandle | null> {
+    if (!writeDisk || !supportsDirectoryPicker()) return null;
+
+    let handle = await loadDirectoryHandle();
+    if (handle) {
+      const withPerm = handle as FileSystemDirectoryHandle & {
+        queryPermission?: (o: { mode: string }) => Promise<PermissionState>;
+        requestPermission?: (o: { mode: string }) => Promise<PermissionState>;
+      };
+      if (withPerm.queryPermission) {
+        const opts = { mode: "readwrite" };
+        let state = await withPerm.queryPermission(opts);
+        if (state !== "granted" && withPerm.requestPermission) {
+          state = await withPerm.requestPermission(opts);
+        }
+        if (state === "granted") return handle;
+      } else {
+        return handle;
+      }
+    }
+
+    handle = await pickOfflineDirectory();
+    return handle;
+  }
+
   async function runSync() {
     setBusy(true);
     setMessage(null);
     try {
+      let diskHandle: FileSystemDirectoryHandle | null = null;
+      if (writeDisk && supportsDirectoryPicker()) {
+        diskHandle = await resolveDiskHandleForSync();
+        if (!diskHandle) {
+          setMessage(
+            "Sélectionnez le Bureau (ou un dossier) pour enregistrer EPCAS-Logistique, ou décochez l’écriture sur le disque.",
+          );
+          return;
+        }
+      }
+
       const result = await syncOfflineContent({
         allowedIds,
-        writeToDisk: writeDisk && supportsDirectoryPicker(),
+        writeToDisk: Boolean(diskHandle),
+        diskHandle,
         onProgress: setProgress,
         onDiff: setDiff,
       });
@@ -317,9 +356,10 @@ export function OfflineDownloadPanel() {
             />
             <span>
               Écrire aussi sur le disque (dossier{" "}
-              <strong className="text-ink">EPCAS-Logistique</strong> — choisissez
-              le Bureau). Sur mobile, le contenu reste dans le navigateur
-              (IndexedDB / cache).
+              <strong className="text-ink">EPCAS-Logistique</strong> sur le{" "}
+              <strong className="text-ink">Bureau</strong> — le navigateur
+              demandera le dossier au premier téléchargement). Sur mobile, le
+              contenu reste dans le navigateur (IndexedDB / cache).
             </span>
           </label>
         ) : (

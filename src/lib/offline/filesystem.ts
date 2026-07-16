@@ -30,6 +30,15 @@ export function supportsDirectoryPicker(): boolean {
   );
 }
 
+export function isLikelyDesktop(): boolean {
+  if (typeof window === "undefined") return false;
+  if (!supportsDirectoryPicker()) return false;
+  return (
+    window.matchMedia("(pointer: fine)").matches ||
+    window.innerWidth >= 900
+  );
+}
+
 export async function loadDirectoryHandle(): Promise<FsHandle | null> {
   try {
     const db = await openMetaDb();

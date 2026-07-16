@@ -6,7 +6,6 @@ import {
 } from "./idb";
 import {
   loadDirectoryHandle,
-  pickOfflineDirectory,
   supportsDirectoryPicker,
   writeOfflinePackToDirectory,
 } from "./filesystem";
@@ -37,6 +36,8 @@ export type SyncOptions = {
   allowedIds?: Set<string>;
   /** Écrire aussi sur disque (Bureau / dossier choisi) si disponible */
   writeToDisk?: boolean;
+  /** Dossier déjà choisi (évite showDirectoryPicker hors geste utilisateur). */
+  diskHandle?: FileSystemDirectoryHandle | null;
   onProgress?: (p: DownloadProgress) => void;
   onDiff?: (diff: DiffItem[]) => void;
 };
@@ -153,15 +154,10 @@ export async function syncOfflineContent(
         currentLabel: "Écriture sur le disque…",
       });
 
-      let handle = await loadDirectoryHandle();
-      if (!handle) {
-        handle = await pickOfflineDirectory();
-      }
+      const handle =
+        options.diskHandle ?? (await loadDirectoryHandle());
       if (handle) {
-        // Réécrire le catalogue + les leçons modifiées (et manifeste)
         const allWritten = [...writtenLessons];
-        // Si première install, on pourrait tout écrire — ici on écrit au moins les changés
-        // + manifeste/catalog pour le suivi de versions
         await writeOfflinePackToDirectory({
           handle,
           manifestJson: JSON.stringify(remote, null, 2),
@@ -215,4 +211,9 @@ export async function getOfflineStatus(): Promise<{
   }
 }
 
-export { emptyCatalog, supportsDirectoryPicker, pickOfflineDirectory };
+export {
+  supportsDirectoryPicker,
+  pickOfflineDirectory,
+  loadDirectoryHandle,
+} from "./filesystem";
+export { emptyCatalog } from "./types";
