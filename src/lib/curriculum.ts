@@ -15519,6 +15519,299 @@ const DEMO_409_OBJECTIFS_SUMMARY = `## Objectifs
 - Entraînements & pièces
 - AGV / Autostore`;
 
+const DEMO_409_GLOSSAIRE_FULL = `## Glossaire — Module 409
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Autostore** | §9.8 | Système de stockage **robotisé** (grille + robots + caisses). Les robots se déplacent sur rails en **X/Y**, désempilent les caisses en profondeur. Le logiciel place les articles à **rotation rapide** en haut et les articles à **rotation lente** en bas. |
+| **Chariots de manutention** | §9.1–9.2 | Véhicules qui se déplacent **au sol** pour transporter, soulever ou empiler des charges (transpalette, gerbeur, chariot élévateur, préparateur, transstockeur…). Classés selon le mouvement **horizontal**. |
+| **Bras porteur** | §9.2 | Construction où le **centre de gravité** de la charge se trouve **à l'intérieur** du châssis / entre les bras porteurs (ex. mât rétractable, gerbeur, multidirectionnel). |
+| **En porte-à-faux** | §9.2 | La charge n'est **pas supportée par les roues** : elle est prise à l'avant sur les fourches, le **contrepoids** à l'arrière équilibre (ex. contrepoids, télescopique, mise en stock). |
+| **Mât de levage** | §9.4.1 | Structure hydraulique qui **soulève** fourches + charge. Types : Simplex (disparu) · Duplex · **Triplex** (standard) · **Quadruplex** (rare, plus lourd). |
+| **Type de mât** | §9.4.1 | Nombre de sections télescopiques du mât (duplex, triplex, quadruplex). « Mât à bonne visibilité » : cylindres/chaînes **latéraux** pour dégager la vue avant. |
+| **Types de levée** | §9.4.2 | **Sans levée libre** (mât se déploie avec la fourche) · **levée libre partielle** (~**40 cm** sans déployer le mât) · **levée libre complète** (fourche jusqu'à hauteur de construction sans sortir le profilé intérieur). |
+| **Systèmes de transport sans conducteur (FTS)** | §9.6 | **AGV** (Automatic Guided Vehicles) : transport automatisé sur itinéraires définis (induction, optique ou intelligent). Utilisés pour relier zones fixes (ex. quai ↔ dépôt conteneurs). |`;
+
+const DEMO_409_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Autostore** = grille + robots + caisses · rotation rapide/lente
+- **Porte-à-faux** = charge devant les roues · **bras porteur** = CdG dans le châssis
+- **Mâts** : duplex / triplex / quadruplex
+- **Levée libre** partielle ≈ **40 cm** · complète = sans déployer le profilé
+- **FTS/AGV** = sans conducteur · guidage induction/optique/intelligent`;
+
+/** Mises en situation Module 409 */
+const DEMO_409_SITUATION_FULL = `## Mises en situation — Module 409
+
+Contexte : ton **entreprise formatrice** prévoit d'acquérir de nouveaux chariots de manutention. Tu conseilles sur la **motorisation**, la **sécurité énergétique**, les **FTS** en port et les **composants** des chariots.
+
+### Vue d'ensemble des missions
+1. Type de propulsion (écologie + économie)
+2. Manutention de conteneurs / porte-à-faux / télescopique
+3. Rallonges de fourches et loi du levier
+4. Mâts de levage et accessoires
+5. Discussion STA
+
+---
+
+## Mission 1 — Types de propulsion
+
+Quel type de motorisation recommandes-tu ? Justifie sur le plan **écologique** et **économique**.
+
+:::reponse
+**Recommandation : entraînement électrique.**
+
+**Écologie** — pas d'émissions de CO₂, NOx ou particules (pas de moteur à combustion) → plus respectueux de l'environnement qu'un diesel/essence/gaz.
+
+**Économie** — achat souvent plus cher, mais **coûts d'exploitation** plus bas : moins d'entretien, énergie généralement moins chère que diesel/essence/gaz → meilleure rentabilité à long terme.
+:::
+
+### Mission 1.1 — Sécurité énergétique
+
+:::reponse
+Toute propulsion crée une **dépendance** vis-à-vis du fournisseur d'énergie (diesel, gaz, électricité).
+
+L'**indépendance** est surtout possible avec l'**électrique** : panneaux solaires, électricité renouvelable → réduction de la dépendance aux énergies conventionnelles et amélioration de la sécurité d'approvisionnement.
+:::
+
+### Mission 1.2 — Prix du diesel (2000–2020)
+
+**a.** Qu'est-ce qui te frappe ?  
+**b.** Pronostic diesel **2028** ?
+
+:::reponse
+**a.** Fortes **fluctuations** — influencées par le pétrole brut, la géopolitique, l'offre et la demande.
+
+**b.** Prévision difficile (facteurs incertains). Tendance : investissements dans le renouvelable, mais le diesel reste nécessaire ; les prix ont augmenté ces dernières années → **hausse probable** jusqu'en 2028.
+
+*(Recherche Internet + graphique selon consignes formateur.)*
+:::
+
+---
+
+## Mission 2 — Manutention de conteneurs (grands ports)
+
+Véhicules de déchargement dans les ports (Rotterdam, Hong Kong…).
+
+**a.** Catégorie technique ?  
+**b.** Fonction ?
+
+:::reponse
+**a.** **FTS** (Fahrerlose Transportsysteme) / **AGV** (Automatic Guided Vehicles).
+
+**b.** Transport automatisé entre **quais** et **dépôt de conteneurs**. Itinéraire optimisé grâce à des **transpondeurs** encastrés dans le sol (plusieurs milliers).
+:::
+
+### Mission 2.1 — « En porte-à-faux »
+
+Le chariot télescopique est un élévateur **en porte-à-faux**. Explique le terme.
+
+:::reponse
+**En porte-à-faux** : la charge à soulever n'est **pas supportée par les roues**. Elle est prise **à l'avant** sur les fourches ; le **contrepoids** à l'arrière équilibre la charge (famille contrepoids / mise en stock).
+:::
+
+### Mission 2.2 — Avantages du télescopique
+
+:::reponse
+Le **bras télescopique** est placé à l'**arrière**. Une grande partie du télescope sert de **contrepoids** intégré → capacité de levage **plus élevée** et **portée** accrue par rapport à d'autres conceptions.
+:::
+
+---
+
+## Mission 3 — Rallonges de fourches
+
+**a.** Quelle loi ?  
+**b.** Formule ?
+
+:::reponse
+**a.** **Loi du levier**
+
+**b.** Équilibre des moments : **F1 × a1 = F2 × a2**  
+(MG gauche = MD droite)
+:::
+
+### Mission 3.1 — Effets des rallonges / fourches rétractables
+
+:::reponse
+**a.** La rallonge ou l'avancement des fourches **déplace le centre de gravité vers l'avant** → capacité admissible **diminue**. Le conducteur doit connaître la charge max. avec fourches avancées.
+
+**b.** Un **diagramme de capacité de charge** doit être **apposé** sur le véhicule.
+:::
+
+---
+
+## Mission 4 — Mâts de levage
+
+Recherche Internet : hauteurs et charges pour **Triplex** et **Quadruplex**.
+
+:::reponse
+**Triplex** — levée jusqu'à environ **12,5 m** · charge jusqu'à environ **1,5 t**
+
+**Quadruplex** — levée jusqu'à environ **14 m** · charge jusqu'à environ **1,0 t**
+
+*(Valeurs indicatives selon fabricant — vérifier sur fiches techniques.)*
+:::
+
+### Mission 4.1 — Accessoire sur photo
+
+:::reponse
+**Pince à bobines** — courante dans l'**industrie du papier**.
+
+Surfaces de préhension **arrondies** (adaptées aux rouleaux). Un ou deux bras de préhension, souvent avec **dispositif de rotation**. Montée sur de **gros chariots** (bobines de plusieurs tonnes).
+:::
+
+---
+
+## Mission 5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_409_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : électrique · écologie + coûts long terme · indépendance via renouvelables
+- **M2** : FTS/AGV ports · porte-à-faux · télescopique = contrepoids intégré
+- **M3** : loi du levier · CdG avancé → diagramme obligatoire
+- **M4** : triplex ~12,5 m / 1,5 t · quad ~14 m / 1 t · pince à bobines
+- **M5** : discussion`;
+
+/** Exercices de maths Module 409 */
+const DEMO_409_MATHS_FULL = `## Exercices de mathématiques — Module 409
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Loi du levier
+
+**F1 × a1 = F2 × a2**
+
+| | F1 | a1 | F2 | a2 |
+| --- | --- | --- | --- | --- |
+| Données | **?** | 3,4 m | 18'000 N | 1,5 m |
+
+:::solution
+**F1 = 7'941,18 N**
+
+\`\`\`
+F1 = (F2 × a2) / a1
+   = (18'000 × 1,5) / 3,4
+   = 27'000 / 3,4
+   = **7'941,18 N**
+\`\`\`
+:::
+
+### Exercice 2 — Coût matériel (accident)
+
+Coût total **1'785 CHF** dont **42 %** de frais de matériel.
+
+:::solution
+**749,70 CHF**
+
+\`\`\`
+1'785 × 42 / 100 = **749,70 CHF**
+\`\`\`
+:::
+
+### Exercice 3 — Temps de stockage (3 employés)
+
+**220 palettes** · **1 employé** = **6,6 h** avec un chariot.
+
+Temps pour **3 employés** travaillant ensemble ?
+
+:::solution
+**2,20 h**
+
+\`\`\`
+6,6 ÷ 3 = **2,20 h** (2 h 12 min)
+\`\`\`
+:::
+
+### Exercice 4 — Préparation de commandes (2 chariots)
+
+**3 chariots** = **42 min** pour la même tâche.
+
+Temps avec **2 chariots** ?
+
+:::solution
+**63 min**
+
+\`\`\`
+42 × 3 / 2 = **63 min**
+\`\`\`
+
+*(Règle de trois inverse : moins de chariots → plus de temps.)*
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 749,70 · 63 · 2,20 · 7'941,18`;
+
+const DEMO_409_MATHS_SUMMARY = `## Maths — Solutions
+1. **F1 = 7'941,18 N** (loi du levier)
+2. Matériel : **749,70 CHF** (42 % de 1'785)
+3. **2,20 h** (6,6 h ÷ 3 employés)
+4. **63 min** (42 × 3 ÷ 2 chariots)`;
+
+/** Vérification des acquis Module 409 */
+const DEMO_409_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 409 — Les engins de manutention**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Cite au moins **deux** engins de manutention **en porte-à-faux**.
+
+:::reponse
+Exemples :
+- Chariot élévateur **télescopique**
+- Chariot élévateur à **contrepoids**
+- Engin de **mise en stock**
+:::
+
+### Question 2
+
+Explique le terme **« bras porteur »** pour un chariot élévateur.
+
+:::reponse
+Le **centre de gravité** de la charge se trouve **à l'intérieur** du châssis du véhicule (charge supportée **entre** ou **sur** les bras porteurs, pas en porte-à-faux devant les roues).
+
+Exemples : mât **rétractable**, gerbeur, multidirectionnel.
+:::
+
+### Question 3
+
+Lors de la **levée libre de transport**, à quelle hauteur la fourche peut-elle être soulevée **sans** que le profilé de mât ne se déploie ?
+
+:::reponse
+Environ **40 cm** (levée libre **partielle**).
+:::
+
+### Question 4
+
+Dans le chapitre Autostore (§9.8), on parle de **« rotation lente »** et **« rotation rapide »**. Que signifient ces termes ?
+
+:::reponse
+Ils désignent la **rotation des stocks** (renouvellement du stock moyen sur une période, ex. un an) :
+
+- **Rotation rapide** — article souvent renouvelé → à stocker **près** des robots / en haut (accès fréquent)
+- **Rotation lente** — article peu renouvelé → peut être stocké **plus loin** / plus bas
+
+Le logiciel Autostore réorganise les caisses en conséquence.
+:::
+
+### Question 5
+
+Nomme et décris ce chariot de manutention. Quelle est son utilisation spécifique ?
+
+:::reponse
+**Chariot à mât rétractable latéral** (chariot latéral, R3).
+
+Le mât coulisse **perpendiculairement** à la direction de marche → prise et dépôt **latéraux** de marchandises **longues** (bois, tubes, profilés) sans retourner le chariot.
+:::`;
+
+const DEMO_409_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Porte-à-faux : télescopique · contrepoids · mise en stock
+2. Bras porteur = CdG **dans** le châssis
+3. Levée libre partielle ≈ **40 cm**
+4. Rotation rapide/lente = fréquence de renouvellement du stock (Autostore)
+5. **Latéral** (R3) = marchandises longues, prise latérale`;
+
 /** Contenu Module 410 — Les dispositifs de convoyage */
 const DEMO_410_THEORIE_FULL = `## 10. Les dispositifs de convoyage
 
@@ -21766,6 +22059,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_409_THEORIE_FULL,
       summary: DEMO_409_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_409_GLOSSAIRE_FULL,
+      summary: DEMO_409_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_409_SITUATION_FULL,
+      summary: DEMO_409_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_409_MATHS_FULL,
+      summary: DEMO_409_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_409_VERIFICATION_FULL,
+      summary: DEMO_409_VERIFICATION_SUMMARY,
     },
   },
   "410": {
