@@ -20112,6 +20112,263 @@ const DEMO_805_OBJECTIFS_SUMMARY = `## Objectifs
 - Styles · TdM
 - En-têtes · impression`;
 
+const DEMO_805_GLOSSAIRE_FULL = `## Glossaire — Module 805
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Ruban | | Barre d'outils de Word organisée en **onglets** (Accueil, Insertion, Références…). Chaque onglet regroupe des commandes par thème. |
+| Paragraphe | | Bloc de texte délimité par **Enter**. Un **saut de ligne** dans le même paragraphe se fait avec **Shift+Enter**. |
+| Afficher tout (¶) | | Mode qui affiche les **caractères non imprimables** (retours paragraphe, espaces, tabulations). Raccourci : **Ctrl+Shift+8**. |
+| Saut de page | | Force le texte suivant à commencer sur une **nouvelle page**. Raccourci : **Ctrl+Enter**. |
+| Tabulateur / Taquet | | Position sur la **règle** pour aligner du texte avec la touche **Tab** (gauche, centré, droite, décimal). |
+| Style | | Ensemble de mises en forme **mémorisées** (police, taille, alignement…). Types : caractère, paragraphe, lié, liste, tableau. |
+| Titre 1 / Titre 2… | | Styles de **titres** hiérarchiques. Indispensables pour générer une **table des matières** automatique. |
+| Table des matières (TdM) | | Liste automatique des titres du document avec **numéros de page**. Créée via **Références → Table des matières** après application des styles Titre. |
+| En-tête / Pied de page | | Zones de texte en **marge haute** ou **basse**, souvent répétées sur toutes les pages (logo, titre, numéro…). |
+| Note de bas de page | | Explication ou source placée **en bas de la page** avec un appel de note (chiffre) dans le texte. Onglet **Références**. |
+| Note de fin | | Comme une note de bas de page, mais regroupée **à la fin du document**. |
+| Bibliographie | | Liste des **sources** utilisées (livres, sites, documents). Insérée après avoir saisi les sources dans le **Gestionnaire de sources**. |
+| Citation | | Renvoi dans le texte à une source enregistrée (ex. style **auteur–année**). **Références → Insérer une citation**. |
+| Légende | | Texte sous une **image** ou un graphique (ex. « Figure 1 : Logo de l'entreprise »). **Références → Insérer une légende**. |
+| Table des illustrations | | Liste des figures / tableaux légendés avec numéros de page, comme une TdM pour les images. |
+| Fusionner (cellules) | | Combiner plusieurs **cellules** d'un tableau en une seule. Onglet **Disposition → Fusionner**. |
+| Trame | | **Fond coloré** d'un paragraphe ou d'une cellule. Accueil → Bordure et trame. |`;
+
+const DEMO_805_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Enter** = paragraphe · **Shift+Enter** = saut de ligne · **Ctrl+Enter** = page
+- **Styles Titre** → base de la **TdM**
+- **Références** : notes · citations · bibliographie · légendes
+- **En-tête/pied** : marges haut/bas · **Fusionner** = cellules combinées`;
+
+/** Mises en situation Module 805 */
+const DEMO_805_SITUATION_FULL = `## Mises en situation — Module 805
+
+Contexte : chez **EnterSite AG**, Monsieur **Gugger** te demande de rédiger et mettre en forme des documents professionnels avec Word. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.
+
+---
+
+### Mission 1 — Rapport logistique avec styles et table des matières
+
+Tu dois rédiger un rapport intitulé **« Le Petit Rapporteur »** avec des chapitres structurés. Explique comment appliquer les styles et insérer une table des matières.
+
+:::reponse
+1. Rédiger le texte et appliquer **Titre 1**, **Titre 2**, **Titre 3** aux titres de chapitres et sous-chapitres (Accueil → Styles)
+2. Placer le curseur **au début** du document (avant le texte)
+3. Onglet **Références** → **Table des matières** → choisir un modèle (ou **personnalisée** pour les niveaux)
+4. Word génère automatiquement la liste avec les numéros de page
+5. Après modification des titres : clic dans la TdM → **Mettre à jour la table** → tout ou numéros de page uniquement
+:::
+
+---
+
+### Mission 2 — Tableau de planification des livraisons
+
+EnterSite doit présenter un planning sur **5 jours** et **4 tournées**. Décris comment créer et formater le tableau dans Word.
+
+:::reponse
+1. **Insertion** → **Tableau** → sélectionner **5×5** (1 ligne d'en-tête + 4 tournées) ou **Insérer un tableau…**
+2. Saisir les en-têtes (Jour, Tournée A, B, C, D…)
+3. Onglets **Création** et **Disposition** pour :
+   - Ajuster largeur/hauteur des cellules
+   - **Aligner** le texte (9 positions)
+   - **Fusionner** des cellules si besoin (ex. jour sur plusieurs lignes)
+   - **Bordures** pour encadrer (onglet Création)
+:::
+
+---
+
+### Mission 3 — Bibliographie et citation
+
+Dans ton rapport, tu cites une étude : *« L'entreprise de logistique a connu une croissance exponentielle… »* (Van, 2000). Comment gérer sources et bibliographie ?
+
+:::reponse
+1. **Références** → **Gérer les sources** → **Nouveau…**
+2. Renseigner auteur (**Van**), année (**2000**), titre, type de document → **OK**
+3. Placer le curseur dans le paragraphe → **Insérer une citation** → choisir la source
+4. Word ajoute le renvoi (ex. **Van, 2000**) en fin de paragraphe
+5. En fin de document : **Bibliographie** → choisir un modèle
+6. La liste des sources s'insère automatiquement
+:::
+
+---
+
+### Mission 4 — En-tête, pied de page et numérotation
+
+Le rapport EnterSite doit porter le logo en en-tête et le numéro de page en pied. La **première page** (page de garde) doit rester sans en-tête.
+
+:::reponse
+1. **Insertion** → **En-tête** → modèle → insérer le logo / nom EnterSite AG
+2. **Insertion** → **Pied de page** → modèle
+3. Dans l'en-tête/pied : cocher **Première page différente** (page 1 sans en-tête)
+4. **Insertion** → **Numéro de page** → position (haut ou bas) et style
+5. **Fermer** l'en-tête/pied (bouton ou double-clic hors zone)
+6. Vérifier via **Fichier → Imprimer** (aperçu)
+:::
+
+---
+
+### Mission 5 — Discussion STA
+
+Discute avec la classe de l'intérêt des **styles** par rapport à la mise en forme manuelle (couleur, gras, taille saisis à la main).
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_805_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : Titre 1/2/3 → Références → TdM → Mettre à jour
+- **M2** : Insertion → Tableau · Disposition · fusion · bordures
+- **M3** : Gérer sources → citation → bibliographie
+- **M4** : En-tête/pied · 1re page différente · n° de page
+- **M5** : discussion STA`;
+
+/** Exercices de maths Module 805 */
+const DEMO_805_MATHS_FULL = `## Exercices de mathématiques — Module 805
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Données — production documentaire EnterSite AG
+
+| Poste | Valeur |
+| --- | --- |
+| Rapport à rédiger | 3'500 mots |
+| Vitesse de frappe moyenne | 35 mots/min |
+| Pages du rapport final | 24 |
+| Exemplaires à imprimer | 20 |
+| Coût impression | CHF 0,12/page |
+| Tableau planning | 6 lignes × 5 colonnes |
+| Temps moyen par cellule | 1,5 min |
+
+---
+
+### Exercice 1 — Temps de rédaction
+
+Combien de **minutes** faut-il pour saisir **3'500 mots** à **35 mots/min** ?
+
+:::solution
+**Temps de saisie : 100 minutes**
+
+3'500 / 35 = **100 min** (= 1 h 40)
+:::
+
+---
+
+### Exercice 2 — Nombre de cellules du tableau
+
+Un tableau comporte **6 lignes** et **5 colonnes**.
+
+Combien de **cellules** au total ?
+
+:::solution
+**30 cellules**
+
+6 × 5 = **30 cellules**
+:::
+
+---
+
+### Exercice 3 — Temps de remplissage du tableau
+
+Chaque cellule du tableau (exercice 2) prend en moyenne **1,5 minute**.
+
+Quel est le temps total en **minutes** ?
+
+:::solution
+**Temps total : 45 minutes**
+
+30 × 1,5 = **45 min**
+:::
+
+---
+
+### Exercice 4 — Coût d'impression
+
+Le rapport fait **24 pages**. EnterSite imprime **20** exemplaires à **CHF 0,12** la page.
+
+Quel est le **coût total** d'impression ?
+
+:::solution
+**Coût total : 57,60 CHF**
+
+24 × 20 × 0,12 = **57,60 CHF**
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 100 · 30 · 45 · 57,60`;
+
+const DEMO_805_MATHS_SUMMARY = `## Maths — Solutions
+1. Saisie **100 min** (3'500 ÷ 35)
+2. Tableau **30 cellules** (6 × 5)
+3. Remplissage **45 min** (30 × 1,5)
+4. Impression **57,60 CHF** (24 × 20 × 0,12)`;
+
+/** Vérification des acquis Module 805 */
+const DEMO_805_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Word Microsoft 365**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quelle est la différence entre **Enter** et **Shift+Enter** lors de la saisie ?
+
+:::reponse
+- **Enter** crée un **nouveau paragraphe**
+- **Shift+Enter** crée un **saut de ligne** dans le **même paragraphe** (pas de nouvelle indentation ni espacement de paragraphe)
+:::
+
+### Question 2
+
+Quelles étapes pour créer une **table des matières** automatique ?
+
+:::reponse
+1. Appliquer les styles **Titre 1**, **Titre 2**, etc. aux titres du document
+2. Placer le curseur à l'emplacement souhaité (souvent en début de document)
+3. Onglet **Références** → **Table des matières** → choisir un modèle
+4. Après modification : **Mettre à jour la table** (tout ou numéros de page uniquement)
+:::
+
+### Question 3
+
+Cite les **quatre types de tabulateurs** et leur effet.
+
+:::reponse
+| Type | Effet |
+| --- | --- |
+| **Gauche** | Alignement à gauche sur le taquet |
+| **Centré** | Texte centré sur le taquet |
+| **Droite** | Alignement à droite |
+| **Décimal** | Alignement sur la virgule (nombres) |
+:::
+
+### Question 4
+
+Comment **modifier un style** pour que tous les paragraphes concernés se mettent à jour ?
+
+:::reponse
+**Méthode 1** : modifier un texte stylé → clic droit sur le style dans la galerie → **Mettre à jour … pour correspondre à la sélection**
+
+**Méthode 2** : clic droit sur le style → **Modifier…** → ajuster les options → **OK**
+
+Toutes les occurrences du style dans le document sont mises à jour automatiquement.
+:::
+
+### Question 5
+
+Quelle est la différence entre une **note de bas de page** et une **note de fin** ?
+
+:::reponse
+- **Note de bas de page** : l'explication apparaît **en bas de la même page** que l'appel de note
+- **Note de fin** : toutes les notes sont regroupées **à la toute fin du document**
+
+Les deux s'insèrent via **Références** (Insérer une note de bas de page / de fin).
+:::`;
+
+const DEMO_805_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. **Enter** = paragraphe · **Shift+Enter** = saut de ligne
+2. Styles Titre → Références → TdM → Mettre à jour
+3. Tabulateurs : gauche · centré · droite · décimal
+4. Mettre à jour style = tout le document cohérent
+5. Bas de page = même page · Note de fin = fin du document`;
+
 /** Contenu Module 806 — Excel Microsoft 365 */
 const DEMO_806_THEORIE_FULL = `## 6. Excel Microsoft 365
 
@@ -22214,6 +22471,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_805_THEORIE_FULL,
       summary: DEMO_805_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_805_GLOSSAIRE_FULL,
+      summary: DEMO_805_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_805_SITUATION_FULL,
+      summary: DEMO_805_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_805_MATHS_FULL,
+      summary: DEMO_805_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_805_VERIFICATION_FULL,
+      summary: DEMO_805_VERIFICATION_SUMMARY,
     },
   },
   "806": {
