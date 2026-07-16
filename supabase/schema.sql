@@ -206,3 +206,36 @@ create policy "classes_read" on public.classes for select to authenticated
   using (true);
 create policy "classes_write" on public.classes for all to authenticated
   using (public.is_trainer()) with check (public.is_trainer());
+
+-- ---------------------------------------------------------------------------
+-- Sync AppState (snapshot JSON partagé — plan Free)
+-- Voir aussi : migrations/20260712_sync_app_state.sql
+-- ---------------------------------------------------------------------------
+create table if not exists public.sync_app_state (
+  id text primary key default 'default',
+  payload jsonb not null default '{}'::jsonb,
+  revision bigint not null default 1,
+  updated_at timestamptz not null default now()
+);
+
+comment on table public.sync_app_state is
+  'Snapshot partagé AppState EPCAS — sync multi-utilisateurs (Free tier)';
+
+alter table public.sync_app_state enable row level security;
+
+drop policy if exists sync_app_state_select on public.sync_app_state;
+drop policy if exists sync_app_state_insert on public.sync_app_state;
+drop policy if exists sync_app_state_update on public.sync_app_state;
+
+create policy sync_app_state_select on public.sync_app_state
+  for select using (true);
+
+create policy sync_app_state_insert on public.sync_app_state
+  for insert with check (true);
+
+create policy sync_app_state_update on public.sync_app_state
+  for update using (true) with check (true);
+
+insert into public.sync_app_state (id, payload, revision)
+values ('default', '{}'::jsonb, 0)
+on conflict (id) do nothing;

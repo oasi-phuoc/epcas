@@ -200,6 +200,7 @@ export const initialState: AppState = {
   attempts: [],
   assessments: [],
   assessmentQuestions: [],
+  lessonQuestions: [],
   textAnnotations: [],
   classTasks: [
     {
