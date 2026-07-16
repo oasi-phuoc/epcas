@@ -16156,6 +16156,350 @@ const DEMO_403_OBJECTIFS_SUMMARY = `## Objectifs
 - FIFO/LIFO selon forme
 - Solutions modernes`;
 
+/** Glossaire Module 403 */
+const DEMO_403_GLOSSAIRE_FULL = `## Glossaire — Module 403
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Types de rayonnage | Formes de stockage | Ensemble des **installations** pour entreposer les marchandises en hauteur ou en structure : compartimenté, palettes, drive-in, dynamique, cantilever, mobile, rotatif, accumulation… Chaque type suit un **principe de mise à disposition** (statique homme→marchandise ou dynamique marchandise→homme) et un principe de rotation (**FIFO** / **LIFO**). |
+| Stockage au sol | | Forme la plus **simple** : marchandises posées **directement sur le sol**, sans étagères. Variantes : bloc à plat, piles, lignes/rangées, stockage incliné. Économique et flexible ; utilisation limitée de la **hauteur** verticale. |
+| AutoStore | Autostore | Système de stockage **compact** (Norvège) pour **petites pièces** : **bacs** empilés les uns sur les autres sans rayonnage classique ; chargement/déchargement par le **haut** via **robots**. Rotation rapide en haut, lente en bas · protection vol/poussière · extensible. Limité en volume/poids par bac. `;
+
+const DEMO_403_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Types de rayonnage** : sol · compartimenté · palettes · drive-in · dynamique · cantilever · mobile · rotatif…
+- **Stockage au sol** : direct au sol · blocs/piles/lignes · économique
+- **AutoStore** : bacs empilés · robots par le haut · petites pièces`;
+
+/** Mises en situation Module 403 */
+const DEMO_403_SITUATION_FULL = `## Mises en situation — Module 403
+
+Contexte : **EnterSite SA** prévoit un **nouvel entrepôt à Marly**. Reto Stierndli te charge de documenter les **formes de stockage** pour le groupe de travail. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / modèles proposés.
+
+> **Modèles** : \`Fiche descriptive exemple.docx\` · \`Expliquer le contexte.docx\` · \`Expliquer le contexte_solution.docx\`
+
+### Vue d'ensemble des missions
+1. Fiches descriptives d'étagères (9 types)
+2. Stockage au sol
+3. Caractéristiques ↔ structure des étagères
+4. Installation pour la série Cartridge SwissEnterSite (35 articles)
+5. Questions de révision
+6. Discussion de la STA
+
+---
+
+## Mission 1 — Fiches descriptives d'étagères
+
+Établis des **fiches descriptives** pour les installations suivantes (modèle : exemple compartimenté) :
+
+1. Rayonnage à **compartiments**
+2. Rayonnage à **palettes**
+3. Rayonnage à **une entrée** (drive-in)
+4. Rayonnage à **double entrée**
+5. Rayonnage **dynamique**
+6. Rayonnage en **porte à faux** (cantilever)
+7. Rayonnage **mobile**
+8. Rayonnage **rotatif**
+9. Rayonnage à **accumulation**
+
+Structure de chaque fiche : **1. Description** (construction, utilisation, mise à disposition, variantes, principe stockage, système) · **2. Marchandises** · **3. Avantages** · **4. Inconvénients** · **5. Illustration**
+
+:::reponse
+**Travail individuel** — une fiche complète par type. Modèle de référence : **rayonnage à compartiments** (extrait) :
+
+**1.1 Construction** — cadre (montants + traverses) · tablettes réglables en hauteur · parois, bacs, tiroirs possibles.
+
+**1.2 Utilisation** — accès manuel de tous côtés · échelles si besoin.
+
+**1.3 Mise à disposition** — **statique** (homme → marchandise).
+
+**1.5 Principe** — **FIFO** possible (effort selon marchandises).
+
+**2.2 Exemples** — vis · toners · corps moulés non palettisés.
+
+**Avantages** — flexibilité · vue d'ensemble · adaptable.
+
+**Inconvénients** — charge limitée/rayon · hauteur limitée · pas pour palettes.
+
+**Points clés des autres types (à développer) :**
+| Type | Essentiel |
+| --- | --- |
+| **Palettes** | Traverses/lisses · 1,6–4,5 t · antichoc, butées, grilles |
+| **Une entrée** | Canaux drive-in · LIFO · pas FIFO |
+| **Double entrée** | Entrée/sortie opposées · **FIFO** possible |
+| **Dynamique** | Rouleaux + gravité · remplissage ≠ prélèvement |
+| **Cantilever** | Bras latéraux · produits **longs** |
+| **Mobile** | Rails · allée ouverte au besoin · place ↑ · accès ↓ |
+| **Rotatif** | Paternoster / horizontal · marchandise → homme |
+| **Accumulation** | Poussée gravitaire · **LIFO** |
+:::
+
+---
+
+## Mission 2 — Stockage au sol
+
+**a.** Qu'entends-tu par **stockage au sol** ?  
+**b.** Décris **quatre types** en détail.  
+**c.** Avantages vs rayonnages ?  
+**d.** Inconvénients ?  
+**e.** Marchandises particulièrement adaptées ?
+
+:::reponse
+**a.** Entreposage **direct sur le sol**, sans étagères — forme la plus simple.
+
+**b. Quatre types**
+- **Accumulation / piles** — empilées · palettes/cartons · stabilité indispensable
+- **Bloc à plat** — réparties au sol, **non empilées**
+- **En lignes** — rangées successives · plus d'espace
+- **Incliné** — rangées inclinées · manœuvres chariot ↓ en espace restreint
+
+**c. Avantages** — plus **économique** (pas de rayonnages) · **flexible** (surface adaptable) · **simple** à gérer (pas de transstockeur obligatoire)
+
+**d. Inconvénients** — hauteur verticale souvent **sous-utilisée** · surface au sol limitée → occupation inefficace
+
+**e. Marchandises adaptées** — surtout **palettisées** · blocs = nombreuses unités **identiques** · **FIFO** exige une planification rigoureuse
+:::
+
+---
+
+## Mission 3 — Caractéristiques et étagères
+
+Sur la base des fiches, relie chaque **caractéristique** à la **structure/fonction** de l'étagère (\`Expliquer le contexte.docx\`).
+
+:::reponse
+**Réponse individuelle** — voir corrigé : \`Expliquer le contexte_solution.docx\`.
+
+Exemples de liens à établir : principe FIFO ↔ double entrée / dynamique · produits longs ↔ cantilever · faible rotation ↔ mobile · palettes lourdes ↔ rayonnage palettes…
+:::
+
+---
+
+## Mission 4 — Série Cartridge SwissEnterSite (Rupperswil)
+
+**35 articles** · **5'000 pièces** au total (25 × 10 × 29 cm) · manutention possible · gestion **manuelle** possible · préparation en **pièces individuelles**.
+
+| Étagère | Convient ? | Justification (résumé) |
+| --- | --- | --- |
+| Rayonnage compartimenté | **Oui** | Casiers adaptables · gestion manuelle · pièces individuelles |
+| Rayonnage à palettes | Sous réserve | Possible sur palettes |
+| Rayonnage une entrée | **Non** | Conçu pour **palettes entières** |
+| Rayonnage double entrée | Sous réserve | Plutôt flux palettes / FIFO volume |
+| Rayonnage dynamique | **Non** | Palettes/conteneurs entiers |
+| Porte à faux | **Non** | Marchandises **longues** |
+| Rayonnage mobile | Sous réserve | Efficace mais **temps d'accès élevé** |
+| Rayonnage rotatif | **Oui** | Adaptable · ergonomie · pièces individuelles |
+| Rayonnage accumulation | **Non** | Palettes/conteneurs entiers |
+
+:::reponse
+**Choix recommandés** — **rayonnage compartimenté** (principal) + éventuellement **rotatif** pour ergonomie et gain de place.
+
+**Rayonnage compartimenté** — montants + rayons réglables · solution **économique et flexible** pour petites pièces.
+
+**Rayonnage rotatif** — compartiments verticaux/horizontaux · prélèvement à hauteur ergonomique.
+:::
+
+### Mission 4.1 — Expliquer aux collègues
+
+:::reponse
+Voir explications M4 ci-dessus. **Rayonnage dynamique** (si retenu) : rouleaux + gravité · remplissage d'un côté, prélèvement de l'autre · **FIFO** naturel.
+:::
+
+### Mission 4.2 — Croquis
+
+:::reponse
+**Réponse individuelle** — insérer 2 croquis d'aménagement (compartimenté par référence article · rotatif ou mobile selon choix).
+:::
+
+### Mission 4.3 — Pour / contre
+
+:::reponse
+**Étagère 1 — compartimenté**
+
+*Pour* : stockage efficace · rentable · extensible
+
+*Contre* : FIFO avec effort manuel · ergonomie (hauteur)
+
+**Étagère 2 — rotatif / dynamique**
+
+*Pour* : FIFO (dynamique) · ergonomie (rotatif) · stockage dense
+
+*Contre* : **coût** ↑ · conçu plutôt pour fort débit de préparation
+:::
+
+---
+
+## Mission 5 — Questions de révision
+
+Teste tes connaissances via les **questions de révision module 403** (lien cours EnterSite).
+
+:::reponse
+**Auto-évaluation** — compléter le quiz de révision du module avant de consulter les solutions de vérification.
+:::
+
+---
+
+## Mission 6 — Discussion
+
+Discute de la STA en plénière. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion.
+:::`;
+
+const DEMO_403_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : 9 fiches descriptives (modèle compartimenté)
+- **M2** : sol = piles · plat · lignes · incliné · économique mais peu de hauteur
+- **M3** : lier caractéristiques ↔ type d'étagère
+- **M4** : Cartridge 5'000 pces → **compartimenté** + **rotatif** (pas drive-in/cantilever)
+- **M5** : quiz révision · **M6** : discussion`;
+
+/** Exercices de maths Module 403 */
+const DEMO_403_MATHS_FULL = `## Exercices de mathématiques — Module 403
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Surface de stockage palettes Euro
+
+Surface utile **443 m²**. **10 %** = zone de préparation (hors stockage). Du reste, **18 %** pour les allées.
+
+Combien de m² pour le **stockage** ?
+
+:::solution
+**326,93 m²** (326,934 m²)
+
+Calcul :
+\`\`\`
+Préparation : 443 × 10 % = 44,3 m²
+Allées : (443 − 44,3) × 18 % = 71,766 m²
+Stockage : 443 − 44,3 − 71,766 = **326,934 m²**
+\`\`\`
+:::
+
+### Exercice 2 — Nombre de palettes Euro
+
+Surface palette avec **2,5 cm** d'espace de chaque côté pour manœuvres.  
+Palette Euro : **120 × 80 cm**.
+
+:::solution
+**307 palettes**
+
+Calcul :
+\`\`\`
+Emprise au sol/palette : (0,025 + 1,20 + 0,025) × (0,025 + 0,80 + 0,025)
+                        = 1,25 × 0,85 = **1,0625 m²**
+Nombre : 326,934 / 1,0625 = 307,70… → **307 palettes**
+\`\`\`
+:::
+
+### Exercice 3 — Utilisation du volume
+
+Hauteur entrepôt **2,5 m** · charge moyenne/palette **1,5 m** · 1 pal = **1 m²** au sol.
+
+Quel **pourcentage** du volume utile est occupé par les palettes ?
+
+:::solution
+**41,58 %**
+
+Calcul :
+\`\`\`
+Volume palettes : 307 × 1,5 = 460,5 m³  (ou 307 m² × 1,5 m hauteur stockée)
+Volume pièce : 443 × 2,5 = 1'107,5 m³
+Taux : (307 × 1,5) / (443 × 2,5) × 100 = 41,5801… → **41,58 %**
+\`\`\`
+:::
+
+### Exercice 4 — Rendement journalier (double jeu)
+
+**5 min** par position (stockage + déstockage). Journée **8,3 h**.
+
+Combien de **positions** par employé et par jour ?
+
+:::solution
+**99 positions/jour**
+
+Calcul :
+\`\`\`
+8,3 h = 8,3 × 60 = 498 min
+498 / 5 = 99,6 → **99 positions** (arrondi pratique)
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 41,58 · 99 · 326,93 · 307`;
+
+const DEMO_403_MATHS_SUMMARY = `## Maths — Solutions
+1. **326,93 m²** (443 − 10 % prépa − 18 % allées)
+2. **307 palettes** (326,93 / 1,0625 m²)
+3. **41,58 %** (307 × 1,5 / 443 × 2,5)
+4. **99 positions/j** (8,3 × 60 / 5)`;
+
+/** Vérification des acquis Module 403 */
+const DEMO_403_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 403 — Les formes de stockage**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Le **rayonnage à accumulation** est une alternative au **stockage en bloc**. En quoi se distinguent-ils ? Quel est l'**inconvénient majeur** commun ?
+
+:::reponse
+Les deux servent à stocker des **blocs** de marchandises.
+
+**Différence** — l'accumulation est un **rayonnage** (profilés latéraux) → utilisable pour marchandises **sensibles à la pression**, contrairement au stockage en bloc empilé.
+
+**Inconvénient majeur** — **FIFO** impossible ou seulement avec de **grands efforts** (LIFO en accumulation).
+:::
+
+### Question 2
+
+Expliquez la gestion des marchandises dans un **rayonnage dynamique**.
+
+:::reponse
+Les marchandises circulent de manière **dynamique** : conteneurs ou palettes sur un plan incliné équipé de **rouleaux**. Sous l'effet de la **gravité**, elles avancent vers le côté de **prélèvement** ; le **remplissage** se fait du côté opposé → **FIFO** naturel.
+:::
+
+### Question 3
+
+Quelles sont les raisons **pour** et **contre** les rayonnages **mobiles** (compartiments ou palettes) ?
+
+:::reponse
+**Pour**
+- Bonne **utilisation de l'espace** (allées supprimées sauf où nécessaire)
+- Adapté aux marchandises à **faible rotation** et aux **espaces restreints**
+
+**Contre**
+- **Un seul** utilisateur par allée centrale en général
+- **Temps d'accès élevé** (ouverture de l'allée)
+- Selon l'équipement : **risque d'accident** accru
+:::
+
+### Question 4
+
+Nomme au moins **quatre éléments** d'un rayonnage à palettes et leur **fonction**.
+
+:::reponse
+1. **Cadres de soutien / montants** — supports latéraux du rayonnage
+2. **Entretoises** — **stabiliser** les montants
+3. **Traverses / lisses** — support des **palettes**
+4. **Protections anti-décrochage / butées arrière** — empêcher les palettes de traverser le rayonnage
+5. **Protection antichoc** — protéger les montants en cas d'erreur de chariot
+:::
+
+### Question 5
+
+Comment fonctionne le système **AutoStore** ?
+
+:::reponse
+Les **bacs** sont empilés **directement les uns sur les autres** (sans rayonnage classique). Chargement et déchargement par le **haut** via des **robots**.
+
+Construction **compacte** → utilisation **optimale** de l'espace · adapté aux **petites pièces** à rotation variable (rapide en haut, lente en bas).
+:::`;
+
+const DEMO_403_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Accumulation vs bloc : pression · FIFO difficile
+2. Dynamique : rouleaux + gravité · remplissage ≠ prélèvement
+3. Mobile : place ↑ / accès ↓ · 1 allée · risques
+4. Montants · entretoises · traverses · butées · antichoc
+5. AutoStore : bacs empilés · robots par le haut · compact`;
+
 /** Contenu Module 404 — Prescriptions de stockage */
 const DEMO_404_THEORIE_FULL = `## 4. Prescriptions de stockage
 
@@ -23283,6 +23627,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_403_THEORIE_FULL,
       summary: DEMO_403_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_403_GLOSSAIRE_FULL,
+      summary: DEMO_403_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_403_SITUATION_FULL,
+      summary: DEMO_403_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_403_MATHS_FULL,
+      summary: DEMO_403_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_403_VERIFICATION_FULL,
+      summary: DEMO_403_VERIFICATION_SUMMARY,
     },
   },
   "404": {
