@@ -25256,6 +25256,240 @@ const DEMO_608_OBJECTIFS_SUMMARY = `## Objectifs
 - ULD · belly freight
 - AWB · DGR`;
 
+/** Glossaire Module 608 */
+const DEMO_608_GLOSSAIRE_FULL = `## Glossaire — Module 608
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Marchés mondial** | §8.1 | Accès du commerce suisse aux **marchés internationaux** via fret aérien · ~**50 %** de la **valeur** des exportations CH (2019) malgré faible part en **tonnage**. |
+| **Vols de rapatriement** | §8.1 | Vols spéciaux pour **rapatrier** passagers ou marchandises (ex. crise COVID) · complément du fret commercial urgent. |
+| **Airwaybill (AWB)** | §8.8.4 | *Lettre de transport aérien* · contrat expéditeur ↔ compagnie · **non négociable** · base douane, assurance et facturation fret. |
+| **Bill of Lading (B/L)** | §8.8.4 | *Connaissement maritime* · titre de propriété **négociable** (contraire de l'AWB) · preuve de réception marchandises en transport **maritime**. |
+| **Épizootie** | §8.6 | Maladie animale contagieuse · contrôlée par le **vétérinaire de frontière** à l'import/export (hygiène, espèces protégées). |
+| **Aéroport binational** | §8.4.3 | **EuroAirport Bâle-Mulhouse** · seul aéroport binational CH/FR · région tri-nationale · pharma · accès autoroutes CH/FR/DE. |`;
+
+const DEMO_608_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- Fret aérien = **valeur** ↑ · tonnage ↓ vs maritime
+- **AWB** non négociable · **B/L** maritime négociable
+- **ULD** / **BUP** · **belly freight**
+- ZRH ~70 % fret CH · EuroAirport **binational**`;
+
+/** Mises en situation Module 608 */
+const DEMO_608_SITUATION_FULL = `## Mises en situation — Module 608
+
+**EnterSite AG** : import/export, produits fret aérien, emballage, belly freight Swiss → New York.
+
+### Vue d'ensemble des missions
+1. Import/Export — statistiques fret aérien CH
+2. Produits de fret aérien (quotidien)
+3. Carte mentale emballage fret aérien
+4. Belly Freight Swiss → NYC (JFK) + CO₂
+5. Discussion STA
+
+---
+
+## Mission 1.1 — Statistiques fret aérien suisse (2019)
+
+:::reponse
+**Tonnage** — part du fret aérien très **faible** vs fret **maritime**.
+
+**Valeur** — à l'**export** : fret aérien ≈ **77 %** de la valeur · à l'**import** : aérien et maritime s'équilibrent (~50 % chacun).
+
+**Volume par aéroport** — **Zurich** leader avec **~70,8 %** du fret aérien CH · **Bâle** et **Genève** se partagent le reste (~30 %).
+:::
+
+---
+
+## Mission 1.2 — Importation et exportation
+
+:::reponse
+**Importation** — achat de biens/services à l'**étranger** et entrée dans son propre pays · matières premières, produits finis, machines, technologies, services.
+
+**Exportation** — vente de biens/services sur des **marchés étrangers** · génère revenus, emplois et croissance économique.
+:::
+
+---
+
+## Mission 2 — Produits transportés par avion
+
+:::reponse
+Marchandises adaptées au fret aérien :
+- Animaux vivants · fleurs · fruits exotiques · journaux · films
+- Mode et articles **saisonniers**
+- Pièces de rechange **urgentes**
+- Médicaments et produits médicaux
+- Envois à **terme** · courrier aérien
+- Haute **valeur** · sensibles · volables
+- Biens de **secours** (catastrophes)
+- Documents · organes humains · dépouilles mortelles
+:::
+
+---
+
+## Mission 3 — Emballage fret aérien (carte mentale)
+
+:::reponse
+**Points clés emballage** — protection chocs/vibrations (décollage/atterrissage ~1 g) · étanchéité · identification · conformité **IATA** / **DGR** si MD · film + filet en ULD.
+
+**Moyens auxiliaires**
+- **BUP** (*Bulk Unitization Program*)
+- **ULD** (*Unit Load Devices*)
+- Plate-forme de levage
+- Chariot de transport
+- Tracteur de conteneur
+:::
+
+---
+
+## Mission 4 — Belly Freight vers New York
+
+:::reponse
+Recherche **Swiss World Cargo** — vol passager le plus proche vers **New York**.
+
+**Code IATA New York (JFK)** : **JFK**
+
+**Réponse individuelle** — numéro de vol · horaire · réservation belly freight.
+:::
+
+### Mission 4.1 — Empreinte CO₂ ZRH ↔ NYC
+
+:::reponse
+**Réponse individuelle** — calcul CO₂ passager ZRH–NYC A/R (calculateur en ligne) · comparaison avec **4,31 t CO₂/an** (moyenne Suisse 2019).
+
+**Mesures d'économie** — appareils basse consommation · énergies renouvelables · transports publics/vélo · réduction viande · projets environnementaux · efforts **politiques globaux** indispensables en complément.
+:::
+
+---
+
+## Mission 5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_608_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : tonnage ↓ vs mer · valeur 77 % export · ZRH 70 %
+- **M2** : urgent · périssable · haute valeur · médical
+- **M3** : ULD · BUP · plate-forme · tracteur
+- **M4** : belly freight · **JFK** · CO₂ ~46 % annuel Suisse
+- **M5** : discussion STA`;
+
+/** Exercices de maths Module 608 */
+const DEMO_608_MATHS_FULL = `## Exercices de mathématiques — Module 608
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — CO₂ vol vs consommation annuelle
+
+Vol ZRH ↔ NYC : **2 t CO₂** · moyenne Suisse 2019 : **4,31 t CO₂/habitant**.
+
+:::solution
+**46,4 %** de la consommation annuelle moyenne
+
+\`\`\`
+2 / 4,31 × 100 = 46,4 %
+\`\`\`
+:::
+
+### Exercice 2 — Swiss World Cargo à Zurich
+
+**1'200 t/jour** à ZRH · part Swiss World Cargo **65 %**.
+
+:::solution
+**780 tonnes/jour**
+
+\`\`\`
+1'200 × 65 / 100 = 780 t
+\`\`\`
+:::
+
+### Exercice 3 — Durée totale du voyage ZRH → Brisbane
+
+Vol **23 h 05** · escale Dubaï **3 h 50** · arrivée ZRH **45 min** · enregistrement **3 h** · douane Brisbane **55 min**.
+
+:::solution
+**31 h 35 min** (1'895 min)
+
+\`\`\`
+(23×60+5) + (3×60+50) + 45 + (3×60) + 55 = 1'895 min
+1'895 / 60 = 31 h 35 min
+\`\`\`
+:::
+
+### Exercice 4 — Avion vs bateau (carte mère Chine)
+
+Fret aérien **CHF 175** · maritime **CHF 12,50** (3 mois).
+
+:::solution
+L'avion est **14 fois** plus cher que le bateau
+
+\`\`\`
+175 / 12,5 = 14
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 31 h 35 min · 46,4 · 14 · 780`;
+
+const DEMO_608_MATHS_SUMMARY = `## Maths — Solutions
+1. Vol NYC = **46,4 %** consommation annuelle CO₂
+2. Swiss World Cargo : **780 t**/jour
+3. Voyage total : **31 h 35 min**
+4. Avion **14×** plus cher que bateau`;
+
+/** Vérification des acquis Module 608 */
+const DEMO_608_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 608 — Le transport aérien**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Un **avantage** du transport aérien ?
+
+:::reponse
+Utilisable à l'**échelle mondiale** et très **rapide**.
+:::
+
+### Question 2
+
+Un **inconvénient** du transport aérien ?
+
+:::reponse
+**Nuisible pour le climat** · **coûteux**.
+:::
+
+### Question 3
+
+Marchandises particulièrement adaptées au **fret aérien** ?
+
+:::reponse
+Animaux vivants · fleurs · fruits exotiques · journaux · films · mode/saisonnier · pièces urgentes · médicaments · envois à terme · courrier aérien · haute valeur/sensibles/volables · secours catastrophe · documents · organes humains · dépouilles mortelles.
+:::
+
+### Question 4
+
+Les **trois aéroports nationaux** en Suisse ?
+
+:::reponse
+**Zurich** · **Bâle** (EuroAirport) · **Genève**.
+:::
+
+### Question 5
+
+Qu'est-ce que l'**ULD** ?
+
+:::reponse
+*Unit Load Devices* — conteneurs/plaques de fret aérien pour bagages, fret et courrier.
+
+Réduisent le nombre d'unités à charger · économisent personnel au sol, **temps** et efforts pour les entreprises de manutention.
+:::`;
+
+const DEMO_608_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Mondial + rapide
+2. Climat + coût
+3. Urgent · périssable · haute valeur · médical…
+4. **Zurich · Bâle · Genève**
+5. **ULD** = conteneurs fret · gain temps/personnel`;
+
 /** Contenu Module 609 — Navigation */
 const DEMO_609_THEORIE_FULL = `## 9. Navigation
 
@@ -30281,6 +30515,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_608_THEORIE_FULL,
       summary: DEMO_608_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_608_GLOSSAIRE_FULL,
+      summary: DEMO_608_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_608_SITUATION_FULL,
+      summary: DEMO_608_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_608_MATHS_FULL,
+      summary: DEMO_608_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_608_VERIFICATION_FULL,
+      summary: DEMO_608_VERIFICATION_SUMMARY,
     },
   },
   "609": {
