@@ -32408,6 +32408,273 @@ const DEMO_803_OBJECTIFS_SUMMARY = `## Objectifs
 - PCP · qualité · projet
 - CoFi · GM · e-commerce`;
 
+
+const DEMO_803_GLOSSAIRE_FULL = `## Glossaire — Module 803
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| ERP | | *Enterprise Resource Planning* — système intégré de **planification des ressources** de l'entreprise. Regroupe plusieurs modules (finances, achats, stocks, ventes, RH…) pour une collaboration transparente entre les services. |
+| CRM | | *Customer Relationship Management* — gestion de la relation client. Trois dimensions : **logiciel** (données et analyses), **stratégie** (orientation client) et **processus** (procédures systématiques). Objectifs : acquisition et fidélisation. |
+| PCP | | *Planification et Contrôle de la Production* — planifier, mettre en œuvre et surveiller la production en **quantité** et **délais**. Couvre approvisionnement, fabrication et distribution. Synonyme courant : **GPAO**. |
+| Comptabilité financière | | Domaine qui détermine le **résultat global** de l'entreprise : actifs, variations de stocks, bénéfice ou perte. Produits : **compte de résultat** et **bilan**. Distingue créanciers (factures entrantes) et débiteurs (factures sortantes). |
+| Gestion des matières | | *Gestion de matériel (GM)* — gestion, planification et contrôle des **mouvements de matériel** (marchandises, biens). En production : approvisionner la fabrication. Lien étroit avec la PCP et l'achat (module **301**). |
+| E-Commerce | | Commerce électronique — échange numérique entre fournisseur et acheteur via Internet, BDD, médias sociaux, etc. Inclut le **WebEDI** (échange de données structurées entre partenaires commerciaux). |`;
+
+const DEMO_803_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **ERP** : planification intégrée des ressources (modules combinables)
+- **CRM** : relation client (logiciel · stratégie · processus)
+- **PCP/GPAO** : planification et contrôle de production
+- **CoFi** : compte de résultat · bilan
+- **GM** : mouvements de matériel · **E-Commerce** : WebEDI`;
+
+/** Mises en situation Module 803 */
+const DEMO_803_SITUATION_FULL = `## Mises en situation — Module 803
+
+Contexte : EnterSite AG se développe rapidement. Monsieur **Gugger** et Monsieur **Lang** te chargent de participer au nouveau projet **ERP**. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.
+
+---
+
+### Mission 1 — ERP : avantages et coûts
+
+Monsieur Lang souhaite que tu t'informes sur l'utilité et les coûts d'un ERP et que tu consignes tes conclusions par écrit.
+
+| Avantages | Coûts / défis |
+| --- | --- |
+| Intégration des processus (finances, achats, stocks, ventes, RH) → collaboration transparente et efficacité | Investissements initiaux importants (logiciels, matériel, formation) |
+| Données en temps réel → décisions éclairées · réactivité et compétitivité | Migration des données existantes : complexe · planification minutieuse |
+| Automatisation → réduction des coûts et interventions manuelles · ressources mieux utilisées | Formation des collaborateurs : temps et ressources |
+| Traitement plus rapide des demandes clients → satisfaction accrue | Adaptations spécifiques · intégration avec systèmes existants |
+| Évolutif → suit la croissance de l'entreprise (pertinent pour EnterSite AG) | Mise en place sur plusieurs mois selon taille et complexité |
+
+:::reponse
+Voir le tableau ci-dessus — avantages et coûts/défis d'un système ERP pour EnterSite AG.
+:::
+
+---
+
+### Mission 2 — Cadre des coûts pour le matériel
+
+Tous les collaborateurs ont besoin d'un nouvel ordinateur portable ; les responsables de division reçoivent une imprimante grand format. Recherche sur Internet des modèles correspondant aux spécifications.
+
+**Laptop**
+
+| Critère | Exigence |
+| --- | --- |
+| Clavier | Suisse |
+| Système | Windows 11 |
+| Processeur | Core i9 11th Gen · > 4,6 GHz · 8 cœurs |
+| RAM | 32 Go |
+| Écran | 17 pouces · tactile |
+| Stockage | SSD 1'000 GB |
+
+**Imprimante**
+
+| Critère | Exigence |
+| --- | --- |
+| Type | Multifonction · laser/LED · couleur |
+| Format | A3, A4, A5 |
+| Bacs | 4 |
+| Fonctions | Recto verso · perforatrice et agrafeuse |
+| Connectivité | LAN · Cloud Printing |
+
+:::reponse
+**Exemples d'ordinateurs portables**
+
+| Fabricant | Modèle | Processeur | RAM | Stockage | OS |
+| --- | --- | --- | --- | --- | --- |
+| Dell | XPS 17 | Intel Core i9-11900H | 32 Go | 1 TB SSD | Windows 11 |
+| HP | Spectre x360 17t | Intel Core i9-11900H | 32 Go | 1 TB SSD | Windows 11 |
+| ASUS | ROG Zephyrus S17 | Intel Core i9-11900H | 32 Go | 1 TB SSD | Windows 11 |
+
+**Exemples d'imprimantes**
+
+| Fabricant | Modèle | Technologie | Formats | Bacs | Connectivité |
+| --- | --- | --- | --- | --- | --- |
+| Brother | MFC-L8900CDW | Laser couleur | A3/A4/A5 | 4 | LAN, Cloud |
+| HP | Color LaserJet Pro MFP M479fdw | Laser couleur | A3/A4/A5 | 4 | LAN, Cloud |
+| Epson | EcoTank ET-16650 | LED couleur | A3/A4/A5 | 4 | LAN, Cloud |
+:::
+
+---
+
+### Mission 3 — Cadre des coûts pour le logiciel
+
+Recherche les coûts par utilisateur pour le logiciel ERP et le service.
+
+:::reponse
+Les coûts varient entre environ **50 CHF** et **350 CHF** par utilisateur et par demande.
+
+**Réponse individuelle** — recherche Internet complémentaire selon le fournisseur ERP choisi.
+:::
+
+---
+
+### Mission 4 — Présentation PowerPoint
+
+Réalise une présentation professionnelle pour M. Gugger et M. Lang lors de la prochaine réunion.
+
+:::reponse
+**Réponse individuelle** — dépôt du fichier PowerPoint (pas de solution unique).
+:::
+
+---
+
+### Mission 5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_803_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : ERP avantages (intégration · temps réel · évolutif) vs coûts (investissement · migration · formation)
+- **M2** : laptops i9/32 Go/1 TB · imprimantes A3 multifonction
+- **M3** : ERP **50–350 CHF**/utilisateur
+- **M4** : présentation PPT · **M5** : STA`;
+
+/** Exercices de maths Module 803 */
+const DEMO_803_MATHS_FULL = `## Exercices de mathématiques — Module 803
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Données — acquisition ERP EnterSite AG
+
+| Poste | Quantité | Prix unitaire |
+| --- | --- | --- |
+| Ordinateurs portables | 10 | CHF 1'840 |
+| Points d'accès | 5 | CHF 555 |
+| Imprimantes | 2 | CHF 5'234 |
+| Scanners | 10 | CHF 976 |
+| Serveur d'entreprise | 1 | CHF 12'250 |
+| Système ERP SAP | 1 | CHF 52'000 |
+| Système de sauvegarde | 1 | CHF 2'360 |
+
+---
+
+### Exercice 1 — Coûts d'acquisition totaux
+
+:::solution
+**Coût d'acquisition total : 108'013 CHF**
+
+(10 × 1'840) + (5 × 555) + (2 × 5'234) + (10 × 976) + 12'250 + 52'000 + 2'360 = **108'013 CHF**
+:::
+
+---
+
+### Exercice 2 — Coûts d'installation
+
+- Installation électrique point d'accès : **878 CHF**/pièce
+- Configuration par connexion (laptops, scanners, imprimantes) : **125 CHF**/connexion
+
+:::solution
+**Coûts d'installation : 7'765 CHF**
+
+(878 × 5) + ((10 + 5 + 2 + 10) × 125) = 4'390 + 3'375 = **7'765 CHF**
+:::
+
+---
+
+### Exercice 3 — Frais de formation
+
+10 collaborateurs · **5** soirées de **3 h** · **135 CHF**/h
+
+:::solution
+**Frais de formation : 2'025 CHF**
+
+5 × 3 × 135 = **2'025 CHF**
+:::
+
+---
+
+### Exercice 4 — Dépassement de budget ERP
+
+Budget prévu système ERP SAP : **52'000 CHF** · facturé : **95'000 CHF**
+
+De combien de pourcent le budget a-t-il été dépassé ?
+
+:::solution
+**Dépassement : 82,69 %**
+
+(95'000 − 52'000) / 52'000 × 100 = **82,69 %**
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 108'013 · 7'765 · 2'025 · 82,69`;
+
+const DEMO_803_MATHS_SUMMARY = `## Maths — Solutions
+1. Acquisition **108'013 CHF**
+2. Installation **7'765 CHF**
+3. Formation **2'025 CHF**
+4. Dépassement budget **82,69 %**`;
+
+/** Vérification des acquis Module 803 */
+const DEMO_803_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Logiciel d'exploitation**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Les systèmes ERP sont souvent divisés en modules combinables. Quels **services** peuvent être reliés par un ERP ?
+
+:::reponse
+- Ressources humaines
+- Gestion de projet
+- Gestion de la qualité
+- Ventes / marketing
+- Comptabilité
+- Contrôle de gestion
+- Achats
+- E-commerce
+:::
+
+### Question 2
+
+Quels sont les **cinq sous-domaines** couverts par le système GPAO (PCP) ?
+
+:::reponse
+1. Planification du programme de production
+2. Planification des besoins en matériel
+3. Suivi des commandes
+4. Lancement des commandes
+5. Planification des délais et des capacités
+:::
+
+### Question 3
+
+Décris le terme technique **« temps de passage »**.
+
+:::reponse
+L'un des facteurs les plus importants pour la planification de la production. Le **temps de passage** est le temps nécessaire pour qu'un produit passe par **toutes les étapes de production**.
+:::
+
+### Question 4
+
+Quelles mesures soutiennent l'optimisation des processus de production ? Cite **cinq** mesures.
+
+:::reponse
+1. Utilisation d'un système GPAO favorisant la réduction des temps de passage
+2. Réduction de la taille des lots pour éviter l'engorgement du système
+3. Réduction des temps de changement de production
+4. Éviter les longs trajets de transport, les temps d'attente et de repos
+5. Réduction des stocks
+:::
+
+### Question 5
+
+Le juste-à-temps (JIT) est une idéalisation : nous n'aurions pas de stock. Pour quelles raisons les stocks sont-ils néanmoins nécessaires ?
+
+:::reponse
+- Maintien de la **disponibilité des livraisons**
+- Compensation des **délais de réapprovisionnement**
+- Compensation des **fluctuations de la demande**
+- Production de **tailles de série économiques**
+:::`;
+
+const DEMO_803_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. ERP : RH · projet · qualité · ventes · compta · controlling · achats · e-commerce
+2. GPAO : programme · besoins matériel · suivi · lancement · délais/capacités
+3. **Temps de passage** = durée totale des étapes de production
+4. GPAO · lots ↓ · changements ↓ · transport ↓ · stocks ↓
+5. Stocks : livraison · délais · fluctuations · séries économiques`;
+
 /** Contenu Module 804 — Fondation Microsoft 365 / Bases & droit d'auteur */
 const DEMO_804_THEORIE_FULL = `## 4. Bases de l'informatique et droit d'auteur
 
@@ -35986,6 +36253,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_803_THEORIE_FULL,
       summary: DEMO_803_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_803_GLOSSAIRE_FULL,
+      summary: DEMO_803_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_803_SITUATION_FULL,
+      summary: DEMO_803_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_803_MATHS_FULL,
+      summary: DEMO_803_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_803_VERIFICATION_FULL,
+      summary: DEMO_803_VERIFICATION_SUMMARY,
     },
   },
   "804": {
