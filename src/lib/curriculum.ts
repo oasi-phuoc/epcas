@@ -20517,6 +20517,246 @@ const DEMO_806_OBJECTIFS_SUMMARY = `## Objectifs
 - Fonctions · graphiques
 - Source publipostage`;
 
+const DEMO_806_GLOSSAIRE_FULL = `## Glossaire — Module 806
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Classeur | | Fichier Excel contenant une ou plusieurs **feuilles** de calcul. S'ouvre via Nouveau, modèle ou liste **Récent**. |
+| Cellule | | Intersection d'une **ligne** et d'une **colonne**. Chaque cellule a une adresse (ex. **B2**). C'est l'unité de base pour saisir données et formules. |
+| Formule | | Calcul commençant toujours par **=**. Combine opérateurs (+, −, *, /…), références de cellules et **fonctions**. |
+| Fonction | | Formule **préécrite** par Excel (ex. **SOMME**, **MOYENNE**, **SI**, **RECHERCHV**). Saisie : \`=\` + nom → liste d'aide. |
+| Référence absolue | | Cellule **fixée** lors de la recopie. Touche **F4** : \`$A$1\` (ligne et colonne), puis ligne seule ou colonne seule. |
+| Plage | | Ensemble de cellules contiguës (ex. **B1:C4** avec \`:\`) ou séparées (ex. **B1;C4** avec \`;\`). |
+| RECHERCHV | | Fonction de **recherche verticale** dans un tableau. Retourne une valeur correspondant à un critère (ex. prix selon référence article). |
+| SI | | Fonction **conditionnelle** : si une condition est vraie, retourne une valeur, sinon une autre. Ex. \`=SI(A1>100;"OK";"KO")\`. |
+| NB.SI | | Compte le nombre de cellules répondant à un **critère** (ex. nombre de livraisons « Terminé »). |
+| SOMME.SI | | Additionne les valeurs d'une plage qui répondent à un **critère**. |
+| ARRONDI | | Arrondit un nombre à un nombre de décimales défini. Variantes : **ARRONDI.INF**, **ARRONDI.SUP**, **ARRONDI.AU.MULTIPLE**. |
+| Graphique | | Représentation visuelle des données. Types : histogramme/courbe (évolution), secteurs (%), barres (comparaison). |
+| Publipostage | | Envoi en nombre de documents personnalisés. **Excel** = source de données (champs × enregistrements) · **Word** = modèle avec champs. |
+| Enregistrement | | Ligne de données dans une table Excel (un client, un article, une livraison…). Chaque ligne = un **enregistrement** pour le publipostage. |
+| Format Comptabilité | | Format de cellule affichant les nombres avec symbole monétaire (**CHF**) et alignement en colonnes. |`;
+
+const DEMO_806_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Formule** commence par **=** · **F4** = référence absolue
+- **SI** · **RECHERCHV** · **NB.SI** · **SOMME.SI** · **ARRONDI**
+- **Graphique** : histogramme · secteurs · barres
+- **Publipostage** : Excel (données) + Word (modèle)`;
+
+/** Mises en situation Module 806 */
+const DEMO_806_SITUATION_FULL = `## Mises en situation — Module 806
+
+Contexte : chez **EnterSite AG**, Monsieur **Gugger** te charge d'analyser des données logistiques et de préparer un publipostage clients. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.
+
+---
+
+### Mission 1 — Tableau de ventes et formules
+
+Tu disposes d'un tableau avec colonnes **Article**, **Quantité** (B) et **Prix unitaire** (C). La colonne **Total** (D) doit calculer le montant par ligne.
+
+:::reponse
+1. Cellule **D2** : saisir \`=B2*C2\` → **Enter**
+2. Recopier la formule vers le bas (poignée de recopie)
+3. Pour un total général en **D20** : \`=SOMME(D2:D19)\` ou bouton **Somme** (Accueil → Édition)
+4. Vérifier l'alignement : texte à gauche, nombres à droite
+5. Formater en **Comptabilité CHF** si besoin (menu contextuel → Format de cellule)
+:::
+
+---
+
+### Mission 2 — RECHERCHV pour les tarifs transport
+
+Un tableau de référence liste les **codes postaux** et les **tarifs de livraison**. Dans une autre feuille, tu saisis le code postal et veux afficher automatiquement le tarif.
+
+:::reponse
+1. Créer le tableau de référence (ex. colonne A = code postal, colonne B = tarif)
+2. Dans la cellule résultat : \`=RECHERCHV(critère;plage;no_colonne;FAUX)\`
+3. Ex. : \`=RECHERCHV(A2;Tarifs!A:B;2;FAUX)\`
+4. Le **FAUX** impose une correspondance exacte
+5. Si erreur #N/A : vérifier le code postal ou utiliser **SIERREUR** pour masquer l'erreur
+:::
+
+---
+
+### Mission 3 — Graphique d'évolution des stocks
+
+EnterSite souhaite visualiser l'évolution des stocks sur **6 mois**. Quel type de graphique choisir et comment le créer ?
+
+:::reponse
+1. Choisir un **histogramme** ou une **courbe** (évolution dans le temps)
+2. Sélectionner les données (mois + quantités) — **Ctrl** si zones non contiguës
+3. **Insertion** → **Graphiques recommandés** ou choisir le type
+4. Adapter titre et légendes (onglet **Création**)
+5. Option : **Déplacer le graphique** → **Nouvelle feuille** pour un affichage dédié
+:::
+
+---
+
+### Mission 4 — Source de données pour publipostage
+
+EnterSite envoie **120 lettres** personnalisées aux clients. Décris la procédure Excel + Word.
+
+:::reponse
+1. **Excel** : créer un tableau avec une ligne par client (Nom, Adresse, Ville, N° client…)
+2. Chaque colonne = un **champ** de publipostage
+3. **Word** : rédiger la lettre type avec texte fixe
+4. **Publipostage** → **Sélection des destinataires** → **Utiliser une liste existante** → choisir le fichier Excel
+5. Insérer les **champs** (<<Nom>>, <<Adresse>>…) dans la lettre
+6. **Aperçu des résultats** → vérifier → **Terminer et fusionner** → document fusionné ou impression
+:::
+
+---
+
+### Mission 5 — Discussion STA
+
+Discute de l'intérêt de la touche **F4** (référence absolue) lors de la recopie de formules.
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_806_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : \`=B*C\` · SOMME · format CHF
+- **M2** : RECHERCHV(critère;plage;col;FAUX)
+- **M3** : histogramme/courbe · Insertion → graphique
+- **M4** : Excel = source · Word = publipostage · fusionner
+- **M5** : discussion STA (F4)`;
+
+/** Exercices de maths Module 806 */
+const DEMO_806_MATHS_FULL = `## Exercices de mathématiques — Module 806
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Données — suivi logistique EnterSite AG
+
+| Article | Quantité | Prix unitaire (CHF) |
+| --- | --- | --- |
+| Palette A | 45 | 12,50 |
+| Palette B | 32 | 18,00 |
+| Carton C | 120 | 3,75 |
+| Carton D | 88 | 4,20 |
+
+Taux de TVA : **8,1 %** · Remise globale : **5 %** sur le sous-total HT
+
+---
+
+### Exercice 1 — Total par ligne
+
+Calcule le total pour **Palette A** (45 × 12,50 CHF).
+
+:::solution
+**Total Palette A : 562,50 CHF**
+
+45 × 12,50 = **562,50 CHF**
+:::
+
+---
+
+### Exercice 2 — Sous-total HT
+
+Calcule le **sous-total HT** des quatre lignes.
+
+:::solution
+**Sous-total HT : 2'789,10 CHF**
+
+(45×12,50) + (32×18) + (120×3,75) + (88×4,20) = 562,50 + 576 + 450 + 369,60 = **2'789,10 CHF**
+:::
+
+---
+
+### Exercice 3 — Remise de 5 %
+
+Quel montant de **remise** (5 %) s'applique au sous-total HT ?
+
+:::solution
+**Remise : 139,46 CHF**
+
+2'789,10 × 5 / 100 = **139,455 CHF** → **139,46 CHF** (arrondi)
+:::
+
+---
+
+### Exercice 4 — Montant TTC
+
+Après remise, quelle est la **TVA** (8,1 %) puis le **total TTC** ?
+
+:::solution
+**Base après remise :** 2'789,10 − 139,46 = **2'649,64 CHF**
+
+**TVA :** 2'649,64 × 8,1 / 100 = **214,62 CHF**
+
+**Total TTC :** 2'649,64 + 214,62 = **2'864,26 CHF**
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 562,50 · 2'789,10 · 139,46 · 2'864,26`;
+
+const DEMO_806_MATHS_SUMMARY = `## Maths — Solutions
+1. Palette A **562,50 CHF**
+2. Sous-total HT **2'789,10 CHF**
+3. Remise **139,46 CHF**
+4. Total TTC **2'864,26 CHF**`;
+
+/** Vérification des acquis Module 806 */
+const DEMO_806_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Excel Microsoft 365**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Par quoi commence toute **formule** Excel ? Que signifie la touche **F4** ?
+
+:::reponse
+- Toute formule commence par **=**
+- **F4** fixe une référence lors de la recopie : \`$A$1\` (absolu complet), puis ligne seule (\`A$1\`), colonne seule (\`$A1\`), puis relatif (A1)
+:::
+
+### Question 2
+
+Calcule mentalement : \`2*3+4\` et \`2*(3+4)\`. Pourquoi utiliser des parenthèses ?
+
+:::reponse
+- \`2*3+4\` = 6 + 4 = **10** (multiplication avant addition)
+- \`2*(3+4)\` = 2 × 7 = **14** (parenthèses en premier)
+- Les **parenthèses** changent l'ordre des opérations et évitent des erreurs de calcul
+:::
+
+### Question 3
+
+À quoi sert la fonction **SI** ? Donne un exemple logistique.
+
+:::reponse
+**SI** teste une condition et retourne une valeur si vrai, une autre si faux.
+
+Ex. : \`=SI(B2>=50;"Stock OK";"Réapprovisionner")\` — si la quantité en B2 est ≥ 50, affiche « Stock OK », sinon « Réapprovisionner ».
+:::
+
+### Question 4
+
+Quels graphiques pour : (a) évolution mensuelle des ventes, (b) répartition des parts de marché ?
+
+:::reponse
+- **(a) Évolution dans le temps** : histogramme ou **courbe**
+- **(b) Répartition en %** d'une seule série : graphique en **secteurs**
+:::
+
+### Question 5
+
+Quels sont les **deux fichiers** nécessaires pour un publipostage et leur rôle ?
+
+:::reponse
+| Fichier | Rôle |
+| --- | --- |
+| **Excel** (source de données) | Tableau avec champs et enregistrements (une ligne = un destinataire) |
+| **Word** (document de base) | Lettre type avec champs de publipostage insérés (texte fixe + données variables) |
+:::`;
+
+const DEMO_806_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. **=** · **F4** = référence absolue ($A$1)
+2. 10 vs 14 · parenthèses = priorités
+3. **SI** = condition · ex. stock OK / réappro
+4. Courbe/histogramme · secteurs
+5. Excel = données · Word = modèle`;
+
 /** Contenu Module 807 — PowerPoint Microsoft 365 */
 const DEMO_807_THEORIE_FULL = `## 7. PowerPoint Microsoft 365
 
@@ -20682,6 +20922,256 @@ const DEMO_807_OBJECTIFS_SUMMARY = `## Objectifs
 - Média · animations
 - Diaporama · export`;
 
+const DEMO_807_GLOSSAIRE_FULL = `## Glossaire — Module 807
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Diapositive | | Page individuelle d'une présentation PowerPoint. Contient texte, images, tableaux, graphiques, vidéos… |
+| Masque des diapositives | | **Trame commune** (thème, polices, logo, puces) appliquée à **toutes** les diapositives. Modifications du masque = effet global. |
+| Disposition | | Modèle de mise en page d'une diapositive (Titre seul, Titre et contenu, Deux contenus…). |
+| Accès rapide | | Barre d'outils personnalisable en haut de l'écran (Enregistrer, Annuler, Commencer depuis le début…). |
+| SmartArt | | Graphiques intelligents pour organigrammes, processus, hiérarchies. Insertion → **SmartArt** → Hiérarchie. |
+| Transition | | Effet d'**apparition** entre deux diapositives (fondu, balayage…). Onglet **Transitions** · peut s'appliquer partout. |
+| Animation | | Effet sur un **objet** d'une diapositive (entrée, accentuation, sortie, trajectoire). Différent des transitions. |
+| Diaporama | | Mode de **présentation** plein écran. Variantes : présentateur, borne (boucle), personnalisé, mode Présentateur (2 écrans). |
+| Mode Présentateur | | Affichage sur **deux moniteurs** : notes et contrôles pour le présentateur, diapositive pour le public. |
+| .pptx | | Format de fichier PowerPoint standard. Conserve transitions et animations si le destinataire possède une visionneuse compatible. |
+| Liaison (objet Excel) | | Lien entre un graphique PowerPoint et un fichier Excel : les données se **mettent à jour** automatiquement si le fichier source change. |
+| Pied de page | | Zone en bas de diapositive pour date, numéro de diapositive ou texte fixe. **Insertion → En-tête et pied de page**. |`;
+
+const DEMO_807_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Masque** = trame globale · **Disposition** = mise en page
+- **Transition** = entre diapos · **Animation** = sur un objet
+- **SmartArt** = organigramme · **Diaporama** = mode présentation
+- **.pptx** · liaison Excel pour graphiques`;
+
+/** Mises en situation Module 807 */
+const DEMO_807_SITUATION_FULL = `## Mises en situation — Module 807
+
+Contexte : Monsieur **Gugger** te demande de préparer une présentation PowerPoint pour la prochaine réunion EnterSite AG sur les résultats logistiques. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.
+
+---
+
+### Mission 1 — Créer la présentation et le masque
+
+Tu dois créer une présentation avec le logo EnterSite et une charte graphique cohérente.
+
+:::reponse
+1. **Fichier → Nouveau** → choisir un thème ou modèle
+2. **Affichage → Masque des diapositives**
+3. Personnaliser : police, couleurs, puces (Accueil)
+4. **Insertion → Images** : placer le logo EnterSite AG
+5. Fermer le masque → toutes les diapositives héritent de la trame
+6. **Accueil → Diapositives** : ajouter des diapos avec disposition Titre et contenu
+:::
+
+---
+
+### Mission 2 — Insérer un graphique Excel
+
+Les données de ventes sont dans un fichier Excel. Comment les intégrer dans une diapositive avec mise à jour possible ?
+
+:::reponse
+**Méthode 1 — Objet lié**
+1. **Insertion → Objet → Créer à partir d'un fichier**
+2. Cocher **Liaison** pour mise à jour automatique
+
+**Méthode 2 — Disposition Titre et contenu**
+1. Icône **Graphique** sur la diapositive
+2. Choisir le type (histogramme, secteurs…)
+3. Adapter les données fictives dans la feuille Excel intégrée
+:::
+
+---
+
+### Mission 3 — Transitions et animations
+
+La présentation doit être fluide mais professionnelle. Comment gérer transitions et animations ?
+
+:::reponse
+**Transitions** (entre diapositives)
+1. Onglet **Transitions** → choisir un effet (ex. Fondu)
+2. Régler la **durée** · option **Après** pour défilement auto
+3. **Appliquer partout** pour uniformiser
+
+**Animations** (sur objets)
+1. Sélectionner l'objet (texte, image…)
+2. Onglet **Animations** → type : Entrée, Accentuation, Sortie, Trajectoire
+3. Volet Animation : ordre, démarrage (au clic / avec précédent / après), délai
+:::
+
+---
+
+### Mission 4 — Présenter et exporter
+
+La réunion approche. Comment lancer le diaporama et préparer une version vidéo pour les absents ?
+
+:::reponse
+**Diaporama live**
+1. **Diaporama → Depuis le début** (ou Accès rapide)
+2. Mode **Présentateur** si deux écrans (notes + public)
+
+**Export vidéo**
+1. **Fichier → Exporter → Créer une vidéo**
+2. Choisir résolution et minutage par diapositive
+3. Format **wmv** ou autre proposé
+
+**Enregistrement .pptx** : format standard, transitions et animations conservées
+:::
+
+---
+
+### Mission 5 — Discussion STA
+
+Discute des bonnes pratiques : PowerPoint est un **support** — quelles règles pour ne pas surcharger les diapositives ?
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_807_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : Masque → logo · dispositions
+- **M2** : Graphique Excel · liaison ou intégré
+- **M3** : Transitions (diapos) · Animations (objets)
+- **M4** : Diaporama · export vidéo · .pptx
+- **M5** : STA — support, pas surcharge`;
+
+/** Exercices de maths Module 807 */
+const DEMO_807_MATHS_FULL = `## Exercices de mathématiques — Module 807
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Données — présentation EnterSite AG
+
+| Paramètre | Valeur |
+| --- | --- |
+| Nombre de diapositives | 18 |
+| Durée moyenne par diapositive (exposé) | 2,5 min |
+| Temps de préparation par diapositive | 20 min |
+| Coût impression (notes, 4 diapos/page) | CHF 0,08/page |
+| Exemplaires notes à imprimer | 12 |
+
+---
+
+### Exercice 1 — Durée totale de l'exposé
+
+Combien de **minutes** dure la présentation (18 diapos × 2,5 min) ?
+
+:::solution
+**Durée : 45 minutes**
+
+18 × 2,5 = **45 min**
+:::
+
+---
+
+### Exercice 2 — Temps de préparation
+
+Combien de **heures** de préparation au total (18 × 20 min) ?
+
+:::solution
+**Préparation : 6 heures**
+
+18 × 20 = 360 min = **6 h**
+:::
+
+---
+
+### Exercice 3 — Pages d'impression des notes
+
+Les notes comprennent **18 diapositives**, **4 diapositives par page**. Combien de **pages** à imprimer (arrondi supérieur) ?
+
+:::solution
+**5 pages**
+
+18 / 4 = 4,5 → **5 pages** (arrondi supérieur)
+:::
+
+---
+
+### Exercice 4 — Coût d'impression des notes
+
+Imprimer **5 pages** × **12 exemplaires** à **CHF 0,08**/page.
+
+:::solution
+**Coût : 4,80 CHF**
+
+5 × 12 × 0,08 = **4,80 CHF**
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 45 · 6 · 5 · 4,80`;
+
+const DEMO_807_MATHS_SUMMARY = `## Maths — Solutions
+1. Exposé **45 min** (18 × 2,5)
+2. Préparation **6 h** (18 × 20 min)
+3. Impression **5 pages** (18 ÷ 4)
+4. Coût **4,80 CHF** (5 × 12 × 0,08)`;
+
+/** Vérification des acquis Module 807 */
+const DEMO_807_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **PowerPoint Microsoft 365**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quelle est la différence entre **masque des diapositives** et **disposition** ?
+
+:::reponse
+- **Masque** : trame **globale** (logo, polices, couleurs) appliquée à toutes les diapositives
+- **Disposition** : **mise en page** d'une diapositive individuelle (emplacement titre/contenu)
+:::
+
+### Question 2
+
+Quelle est la différence entre une **transition** et une **animation** ?
+
+:::reponse
+- **Transition** : effet de passage **entre deux diapositives** entières
+- **Animation** : effet sur un **objet** à l'intérieur d'une diapositive (entrée, accentuation, sortie, trajectoire)
+:::
+
+### Question 3
+
+Cite **quatre types d'animations** et leur moment.
+
+:::reponse
+| Type | Moment |
+| --- | --- |
+| **Entrée** | À l'arrivée de l'objet |
+| **Accentuation** | Objet déjà visible |
+| **Sortie** | Disparition de l'objet |
+| **Trajectoire** | Déplacement de l'objet |
+:::
+
+### Question 4
+
+Quelles configurations de diaporama connais-tu ?
+
+:::reponse
+- **Présentateur** (plein écran) — exposé live
+- **Borne** — boucle jusqu'à Échap (stands)
+- **Personnalisé** — sous-ensemble ou ordre choisi
+- **Mode Présentateur** — 2 moniteurs (notes + public)
+:::
+
+### Question 5
+
+Comment insérer une **vidéo** dans une diapositive ? Quelle option réduit la taille du fichier ?
+
+:::reponse
+1. Disposition **Titre et contenu** → icône Vidéo, ou **Insertion → Vidéo**
+2. **Fichier** sur le PC ou **Vidéo en ligne** (YouTube…)
+3. **Vidéo en ligne** = fichier moins lourd (pas de gros fichier intégré)
+4. Onglet **Lecture** : découper, aperçu, plein écran
+:::`;
+
+const DEMO_807_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Masque = trame globale · Disposition = mise en page
+2. Transition = entre diapos · Animation = sur objet
+3. Entrée · Accentuation · Sortie · Trajectoire
+4. Présentateur · Borne · Personnalisé · 2 écrans
+5. Insertion → Vidéo · en ligne = plus léger`;
+
 /** Contenu Module 808 — OneNote Microsoft 365 */
 const DEMO_808_THEORIE_FULL = `## 8. OneNote Microsoft 365
 
@@ -20799,6 +21289,244 @@ const DEMO_808_OBJECTIFS_SUMMARY = `## Objectifs
 - Versions · structure
 - Notes · partage
 - Balises · modèles · manuscrit`;
+
+const DEMO_808_GLOSSAIRE_FULL = `## Glossaire — Module 808
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Bloc-notes | | Conteneur principal OneNote regroupant **sections** et **pages**. Équivalent d'un classeur ou d'un dossier de cours. |
+| Section | | Division thématique d'un bloc-notes (ex. « Module 801 », « Projet EnterSite »). Créée via **+ Nouvelle section**. |
+| Page | | Feuille de notes dans une section. Clic sur le titre en haut pour **nommer**. Peut contenir sous-pages. |
+| OneNote 365 | | Version **cloud** : données stockées sur **OneDrive**, accessibles depuis plusieurs appareils. |
+| OneNote 2016 | | Version **bureau** : seule à pouvoir stocker aussi en **local** (PC) + cloud · ruban Office complet. |
+| Coédition | | Travail **simultané** de plusieurs personnes sur le même bloc-notes en temps réel. Via **Fichier → Partager**. |
+| Balise | | Marqueur visuel (case à cocher, adresse, étoile…) pour organiser et retrouver des notes. **Personnaliser mes balises** pour en créer. |
+| Modèle de page | | Mise en page prédéfinie (Académique, Professionnel, Planificateur…). **Insertion → Modèles de page**. |
+| Recherche intelligente | | Panneau web à droite affichant des résultats liés au texte sélectionné. Onglet **Révision**. |
+| Lasso | | Outil de sélection (onglet **Dessin**) pour entourer une écriture manuscrite et la convertir en texte. |
+| Entrée manuscrite en texte | | Conversion de l'écriture à la main en texte tapé. Lasso → **Entrée manuscrite en texte**. |
+| Historique des versions | | Suivi des modifications d'une page partagée. Permet de revenir à une version antérieure. |`;
+
+const DEMO_808_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Bloc-notes → sections → pages**
+- **365** = cloud OneDrive · **2016** = local possible
+- **Balises** · **modèles** · **coédition**
+- **Lasso** → manuscrit en texte · **Recherche intelligente**`;
+
+/** Mises en situation Module 808 */
+const DEMO_808_SITUATION_FULL = `## Mises en situation — Module 808
+
+Contexte : pour ton apprentissage chez **EnterSite AG**, tu organises tes notes de cours et de stage dans OneNote. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.
+
+---
+
+### Mission 1 — Structurer le bloc-notes CFC Logistique
+
+Tu débutes l'année et veux un bloc-notes clair pour tous les modules EnterSite.
+
+:::reponse
+1. **Fichier → Nouveau** → emplacement **OneDrive** → nom « CFC Logistique EnterSite »
+2. **+ Nouvelle section** par bloc ou module (ex. « Bloc 800 ICT », « Bloc 700 »)
+3. Clic droit sur section → **Renommer**
+4. **Ajouter une page** par leçon · nommer le titre en haut
+5. Couleur de section (clic droit → **Couleur de la section**) pour repérage visuel
+:::
+
+---
+
+### Mission 2 — Notes de réunion avec le formateur
+
+Pendant une réunion, tu prends des notes mixtes (texte + schéma). Comment organiser et retrouver les tâches ?
+
+:::reponse
+1. **Texte** : clic n'importe où sur la page · police/taille/couleur
+2. **Dessin** : onglet **Dessin** → stylet/souris → formes, surligneur
+3. **Balises** : case à cocher pour les tâches · **Rechercher des indicateurs** pour tout lister
+4. **Audio** : Insertion → **Enregistrer l'audio** pendant la réunion → fichier sur la page
+5. **Recherche intelligente** : sélectionner un terme technique → panneau web à droite
+:::
+
+---
+
+### Mission 3 — Partager avec un collègue de classe
+
+Tu travailles en binôme sur un rapport de stage. Comment partager le bloc-notes ?
+
+:::reponse
+1. **Fichier → Partager**
+2. Saisir l'e-mail du collègue (\`prenom.nom@edu.vs.ch\`)
+3. Choisir les **autorisations** (lecture ou modification)
+4. Message optionnel → **Envoyer**
+5. **Coédition en temps réel** : les deux peuvent modifier simultanément
+6. **Historique des versions** disponible pour revenir en arrière si besoin
+:::
+
+---
+
+### Mission 4 — Modèle de page pour comptes rendus
+
+Tu rédiges souvent des comptes rendus de stage avec la même structure.
+
+:::reponse
+1. Créer une page type (titre, date, activités, apprentissages, signature)
+2. **Insertion → Modèles de page** → choisir **Professionnel** ou **Vierge** comme base
+3. Mettre en forme la page finale
+4. **Enregistrer la page active comme modèle** → **Mes modèles**
+5. Option : définir comme **modèle par défaut** de la section
+6. Chaque nouvelle page peut reprendre cette structure
+:::
+
+---
+
+### Mission 5 — Discussion STA
+
+Discute des avantages de OneNote par rapport à un bloc-notes papier pour un apprenti en logistique.
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_808_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : bloc-notes OneDrive · sections par bloc · pages nommées
+- **M2** : texte + dessin · balises · audio · recherche intelligente
+- **M3** : Partager → coédition · historique versions
+- **M4** : modèle perso · Mes modèles · défaut section
+- **M5** : STA — OneNote vs papier`;
+
+/** Exercices de maths Module 808 */
+const DEMO_808_MATHS_FULL = `## Exercices de mathématiques — Module 808
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Données — organisation des notes EnterSite
+
+| Élément | Quantité |
+| --- | --- |
+| Modules CFC à documenter | 24 |
+| Pages par module (moyenne) | 8 |
+| Sections du bloc-notes | 6 |
+| Durée moyenne par page (prise de notes) | 12 min |
+| Enregistrements audio par semaine | 3 |
+| Durée moyenne par audio | 8 min |
+
+---
+
+### Exercice 1 — Nombre total de pages prévues
+
+Combien de **pages** au total (24 modules × 8 pages) ?
+
+:::solution
+**192 pages**
+
+24 × 8 = **192 pages**
+:::
+
+---
+
+### Exercice 2 — Pages par section
+
+Si les **192 pages** sont réparties également dans **6 sections**, combien de pages par section ?
+
+:::solution
+**32 pages par section**
+
+192 / 6 = **32 pages**
+:::
+
+---
+
+### Exercice 3 — Temps de saisie total
+
+Combien de **heures** pour saisir les 192 pages à 12 min/page ?
+
+:::solution
+**38,4 heures**
+
+192 × 12 = 2'304 min = **38,4 h**
+:::
+
+---
+
+### Exercice 4 — Temps audio hebdomadaire
+
+Combien de **minutes** d'audio par semaine (3 × 8 min) ?
+
+:::solution
+**24 minutes/semaine**
+
+3 × 8 = **24 min**
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 192 · 32 · 38,4 · 24`;
+
+const DEMO_808_MATHS_SUMMARY = `## Maths — Solutions
+1. **192 pages** (24 × 8)
+2. **32 pages/section** (192 ÷ 6)
+3. Saisie **38,4 h** (192 × 12 min)
+4. Audio **24 min/sem.** (3 × 8)`;
+
+/** Vérification des acquis Module 808 */
+const DEMO_808_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **OneNote Microsoft 365**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Quelle est la **structure hiérarchique** d'un bloc-notes OneNote ?
+
+:::reponse
+**Bloc-notes** → **sections** → **pages** (et éventuellement sous-pages)
+
+Chaque niveau peut être renommé, déplacé ou supprimé à tout moment.
+:::
+
+### Question 2
+
+Quelle différence entre **OneNote 2016** et **OneNote 365** concernant le stockage ?
+
+:::reponse
+- **OneNote 2016** (bureau) : seul à stocker aussi en **local** (PC) + cloud · ruban Office complet
+- **OneNote 365** : version **cloud** · données sur **OneDrive**
+:::
+
+### Question 3
+
+Comment **partager** un bloc-notes et permettre la coédition ?
+
+:::reponse
+1. **Fichier → Partager**
+2. Saisir l'e-mail du destinataire
+3. Définir les **autorisations** (lecture / modification)
+4. **Envoyer** → coédition en temps réel possible
+5. Modifier les personnes autorisées à tout moment
+:::
+
+### Question 4
+
+Comment convertir une **note manuscrite** en texte tapé ?
+
+:::reponse
+1. Onglet **Dessin**
+2. **Sélection par lasso** : entourer l'écriture manuscrite
+3. **Entrée manuscrite en texte** → conversion en texte tapé
+:::
+
+### Question 5
+
+À quoi servent les **balises** et comment les retrouver toutes ?
+
+:::reponse
+- **Balises** : marqueurs visuels (case à cocher, adresse, étoile…) pour organiser les notes et les tâches
+- **Personnaliser mes balises** : créer ses propres balises (nom, symbole, couleur)
+- **Rechercher des indicateurs** : panneau listant toutes les balises du bloc-notes (cocher/décocher depuis le panneau)
+:::`;
+
+const DEMO_808_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Bloc-notes → sections → pages
+2. 2016 = local+cloud · 365 = OneDrive
+3. Fichier → Partager → autorisations → coédition
+4. Dessin → Lasso → Entrée manuscrite en texte
+5. Balises = marqueurs · Rechercher des indicateurs`;
 
 /** Contenu Module 809 — Poste de contrôle */
 const DEMO_809_THEORIE_FULL = `## 9. Poste de contrôle
@@ -22502,6 +23230,22 @@ const filledByModule: Record<string, FilledPages> = {
       full: DEMO_806_THEORIE_FULL,
       summary: DEMO_806_THEORIE_SUMMARY,
     },
+    glossaire: {
+      full: DEMO_806_GLOSSAIRE_FULL,
+      summary: DEMO_806_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_806_SITUATION_FULL,
+      summary: DEMO_806_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_806_MATHS_FULL,
+      summary: DEMO_806_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_806_VERIFICATION_FULL,
+      summary: DEMO_806_VERIFICATION_SUMMARY,
+    },
   },
   "807": {
     objectifs: {
@@ -22516,6 +23260,22 @@ const filledByModule: Record<string, FilledPages> = {
       full: DEMO_807_THEORIE_FULL,
       summary: DEMO_807_THEORIE_SUMMARY,
     },
+    glossaire: {
+      full: DEMO_807_GLOSSAIRE_FULL,
+      summary: DEMO_807_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_807_SITUATION_FULL,
+      summary: DEMO_807_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_807_MATHS_FULL,
+      summary: DEMO_807_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_807_VERIFICATION_FULL,
+      summary: DEMO_807_VERIFICATION_SUMMARY,
+    },
   },
   "808": {
     objectifs: {
@@ -22529,6 +23289,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_808_THEORIE_FULL,
       summary: DEMO_808_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_808_GLOSSAIRE_FULL,
+      summary: DEMO_808_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_808_SITUATION_FULL,
+      summary: DEMO_808_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_808_MATHS_FULL,
+      summary: DEMO_808_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_808_VERIFICATION_FULL,
+      summary: DEMO_808_VERIFICATION_SUMMARY,
     },
   },
   "809": {
