@@ -18094,6 +18094,319 @@ const DEMO_614_OBJECTIFS_SUMMARY = `## Objectifs
 - Prise en charge
 - Levée BA / automates`;
 
+/** Glossaire Module 614 */
+const DEMO_614_GLOSSAIRE_FULL = `## Glossaire — Module 614
+
+| Terme spécialisé | Lien | Définition |
+| --- | --- | --- |
+| **Expéditeur / client déposant** | §14.2 | Personne ou entreprise qui **dépose** un envoi à expédier. |
+| **Entreprise de distribution** | §14.2 | Entreprise qui **prend en charge**, transporte et livre des marchandises pour les clients. |
+| **Prestataires CEC et courrier** | §14.2 | Entreprises logistiques et postales assurant le transport **coursier, express, colis et lettres**. |
+| **Envois** | §14.1 | **Colis ou lettres** à envoyer. |
+| **Destinataire / client destinataire** | §14.2 | Personne ou entreprise qui **reçoit** un envoi. |
+| **Possibilités de dépôt** | §14.3 | Le client déposant peut faire **prendre en charge** ses envois ou les **déposer lui-même** à des points desservis ou non desservis. |`;
+
+const DEMO_614_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Déposer** = côté client · **retirer/collecter** = côté distribution
+- **3 canaux** : prise en charge · desservi · non desservi
+- **CEC** = coursier · express · colis`;
+
+/** Mises en situation Module 614 */
+const DEMO_614_SITUATION_FULL = `## Mises en situation — Module 614
+
+**EnterSite AG / LOGO / Poste** — trois blocs : possibilités de dépôt, prise en charge, levée des points non desservis.
+
+---
+
+## Bloc A — Possibilités de dépôt (EnterSite / LOGO)
+
+EnterSite fait livrer son matériel de bureau par **LOGO** (prise en charge quotidienne). Enquête sur le potentiel d'économies (M. Holzer).
+
+### Mission A1 — Jeu puzzle (formateur)
+
+Présentation **PR_Aufgabemöglichkeiten_Puzzle.pptx** — deviner les possibilités de dépôt.
+
+:::reponse
+**Solutions images** :
+1. **Boîte aux lettres**
+2. **Station de service DHL**
+3. **Automate à colis My Post 24** (Poste)
+4. **Retrait de colis chez clients privés** (prise en charge)
+5. **Packstation DHL**
+6. **Filiale en partenariat** (Poste)
+7. **Prise en charge chez clients commerciaux** (DHL, Planzer, Poste)
+:::
+
+### Mission A2 — Présentation / mind map des possibilités de dépôt
+
+:::reponse
+**Réponse individuelle** — fichier à déposer.
+
+**Possibilités à couvrir** (avec exemple prestataire CEC chacune) :
+- **Prise en charge** privée/commerciale (ex. Poste pick@home, DHL)
+- **Points desservis** — filiales/partenaires (ex. Poste Volg/Landi, DPD pharmacie)
+- **Points non desservis** — BA, automates (My Post 24, DHL Packstation), self-service CC
+:::
+
+### Mission A3 — Prise en charge LOGO pour EnterSite
+
+:::reponse
+**3.1 Avantage** — charges de personnel EnterSite ↓ (aucun collaborateur n'apporte les envois).
+
+**Inconvénient** — la **prise en charge coûte**.
+
+**3.2 Autres possibilités** :
+- Dépôt à un **point non desservi**
+- **Livraison propre** EnterSite (véhicule interne)
+
+**3.3 Avantages / inconvénients** :
+
+| Option | Avantage | Inconvénient |
+| --- | --- | --- |
+| Point non desservi | Pas de factures LOGO pour prises en charge | Ressources coll. pour apporter envois (temps + argent) |
+| Livraison propre | Solution **interne** | Acquisition/entretien véhicule · personnel conducteur ↑ |
+:::
+
+### Mission A4 — Points non desservis : pourquoi importants ?
+
+:::reponse
+**Gain d'efficience** · **réduction des coûts** · **décharge** du service clientèle grâce à l'**automatisation** (24/7, moins de personnel sur place).
+:::
+
+### Mission A5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::
+
+---
+
+## Bloc B — Prise en charge des envois chez les clients
+
+### Mission B1 — Prestataires CEC suisses
+
+:::reponse
+**Recherche Internet** — compléter le tableau (exemples types de prise en charge) :
+
+| Prestataire | Types de prise en charge |
+| --- | --- |
+| **La Poste** | pick@home (privé) · commerciale régulière/occasionnelle |
+| **DHL** | Pickup chez expéditeur · express |
+| **DPD** | Pickup colis |
+| **Planzer** | Prise en charge commerciale |
+| **FedEx** | Pickup express international |
+| **UPS** | Pickup colis/express |
+
+**Mission 1.1** — colonne AVOR : décrire processus internes locaux + matériel (contenants, clés, badges) pour **au moins un** prestataire · comparer concurrents.
+:::
+
+### Mission B2 — Privé vs commercial
+
+:::reponse
+**Oui, différences** :
+- **Privé** — commande en ligne/Post-App · domicile ou adresse choisie · petits volumes
+- **Commercial** — contrat · lettres, colis, express, étranger · **régulier** (jours/plages fixes) ou **occasionnel** (sur commande)
+
+**2.1 Définitions** :
+- **Régulière** — jours et plages **contractuels** fixes
+- **Occasionnelle** — prise en charge **sur commande** / à la demande
+:::
+
+### Mission B3 — Avantages / inconvénients pour l'entreprise de distribution
+
+:::reponse
+**Avantage** — **confort client** · contact direct · fidélisation · volumes captés.
+
+**Inconvénients** — charges **personnel** · charges **véhicules** · **matériel roulant** · organisation tournées.
+:::
+
+### Mission B4 — Expériences personnelles
+
+:::reponse
+**Réponse individuelle** — expériences positives/négatives · échange avec 2 camarades (mandat 4.1).
+:::
+
+### Mission B5 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::
+
+---
+
+## Bloc C — Levée des points de collecte non desservis (stage Poste)
+
+### Mission C1 — Check-list levée boîte aux lettres (5 étapes)
+
+:::reponse
+| Étape | Action |
+| --- | --- |
+| **1** | Respecter les **heures de levée** (pas d'anticipation) |
+| **2** | Ouvrir avec attention · **scanner** le code à barres intérieur |
+| **3** | **Vider minutieusement** (coins, fond, rebord) |
+| **4** | **Bien fermer** · vérifier la clé |
+| **5** | **Regard de contrôle** avant le départ (rien tombé) |
+:::
+
+#### Mission C1.1 — Situations particulières
+
+:::reponse
+| Situation | Réaction |
+| --- | --- |
+| **Graffiti** sur la BA | Photographier · signaler au supérieur |
+| **Sous-affranchissement** (B4 Priority 700 g, timbre 1 CHF) | Carte **perception après coup** · supplément **1 CHF** à l'expéditeur |
+| **Trousseau KeyFinder** | Remettre au supérieur → renvoi **R** à l'adresse sur la plaquette |
+| **Bulletin de versement + billet 20 CHF** | Emporter · remettre au supérieur · **pas d'argent** dans une BA (sécurité) |
+:::
+
+### Mission C2 — Vidage automate My Post 24
+
+:::reponse
+| Étape | Action |
+| --- | --- |
+| **1** | **Login** (écran ou scanner 2.0) |
+| **2** | « Retirer un envoi » · vider **par catégorie** |
+| **3** | Comparer nb retiré ↔ total affiché par catégorie |
+| **4** | **Déconnexion** · charger véhicule **par catégorie** |
+| **5** | **Transport et livraison** séparés par catégories |
+
+**2.1 Sans écran (My Post 24 2.0)** — login via **scanner** : NPA + n° tournée · app « My Post 24 » · sélectionner site · **Bluetooth** activé, scanner près de l'automate.
+
+**2.2 Deux envois dans un compartiment** — erreur vidage (menu « Vider » sans retirer) ou entreposage (non confirmé, mauvaise taille). **Éviter** : contrôle approfondi du fond du compartiment.
+
+**2.3** — échange expériences (notes individuelles).
+:::
+
+### Mission C3 — Point clientèle commerciale self-service
+
+:::reponse
+| Défi | Gestion |
+| --- | --- |
+| Trop d'envois, pas assez de place véhicule | Informer **supérieur** (course supplémentaire) |
+| Envois dans le **mauvais canal** | **Attribuer au bon canal** |
+| Oubli séparation par offre de prestations | Au **hub**, séparer **après coup** selon l'offre |
+:::
+
+### Mission C4 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_614_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **Bloc A** : 7 possibilités dépôt · prise en charge LOGO vs alternatives
+- **Bloc B** : CEC CH · privé/commercial · régulier/occasionnel
+- **Bloc C** : BA 5 étapes · My Post 24 2.0 · secret postal
+- Non desservis = efficience · coûts ↓ · automatisation`;
+
+/** Exercices de maths Module 614 */
+const DEMO_614_MATHS_FULL = `## Exercices de mathématiques — Module 614
+
+### Exercice 1 — Location Mercedes Sprinter vs LOGO
+
+EnterSite AG envisage de louer un **Mercedes Sprinter** pour que ses logisticiens CFC livrent eux-mêmes les appareils de bureau (au lieu des prises en charge LOGO).
+
+**Hypothèses** :
+- 2 prises en charge/semaine · **1'000** appareils/an (1/client)
+- Plafond contractuel LOGO : **CHF 38'000**/an
+- 1 logisticien CFC/jour de livraison (2 j/semaine) · **250 km**/jour
+- Loyer Sprinter : **CHF 650**/mois
+- Salaire logisticien CFC : **CHF 5'120**/mois (2/5 pour les 2 j. de livraison/semaine)
+- Coûts exploitation : **CHF 0,28**/km
+
+*(Détails : Faktoren-Sammlung_Di.docx)*
+
+:::solution
+**Coûts annuels location + exploitation interne** :
+
+\`\`\`
+Loyer :     650 × 12        = CHF  7'800
+Salaire :   5'120 × 12 × 2/5 = CHF 24'576
+Exploitation : 2 × 52 × 250 × 0,28 = CHF 7'280
+Total :                       = CHF 39'656
+\`\`\`
+
+**Comparaison LOGO** : CHF **38'000**/an
+
+**Conclusion** : CHF 39'656 > CHF 38'000 → la location du véhicule **n'est pas rentable** pour EnterSite AG.
+:::`;
+
+const DEMO_614_MATHS_SUMMARY = `## Maths — Solution
+1. Location Sprinter : **CHF 39'656**/an > LOGO **CHF 38'000** → **non rentable**`;
+
+/** Vérification des acquis Module 614 */
+const DEMO_614_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 614 — Possibilités de dépôt**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+4 étapes de la prise en charge de colis/retours **privés** ?
+
+:::reponse
+1. Vérifier chaque jour les ordres dans l'application **« Liste des tâches »**
+2. Vue d'ensemble · effectuer les mandats **le jour même**
+3. Cliquer sur l'ordre · infos complémentaires · **scanner** le(s) envoi(s)
+4. **Charger** et livrer pour réexpédition
+:::
+
+### Question 2
+
+Client privé absent lors de la prise en charge — comment procéder ?
+
+:::reponse
+1. Appuyer sur **« Terminé »** sur l'ordre
+2. Sélectionner **« Prise en charge infructueuse »** · motif (client absent)
+3. Confirmer avec **« Terminé »** (ordre disparaît de la liste)
+:::
+
+### Question 3
+
+Levée des BA jaunes sous la pluie — étapes et attention particulière ?
+
+:::reponse
+**Étapes** :
+- Ne jamais vider **trop tôt**
+- **Vider toute** la boîte
+- **Scanner** le code à barres intérieur
+- **Fermer** · contrôler la fermeture
+- Vérifier qu'**rien n'est tombé** avant de repartir
+
+**Attention** : **protéger les envois des intempéries** (pluie) · aussi des **regards** (secret postal).
+:::
+
+### Question 4
+
+Client veut récupérer une lettre déposée il y a 5 minutes — que faire ?
+
+:::reponse
+- Demander une **description précise** (adresse, destinataire, taille, couleur, affranchissement)
+- Remise **seulement** si description exacte
+- En cas de doute : **pièce d'identité**
+- Objectif : garantir le **secret postal**
+:::
+
+### Question 5
+
+2 erreurs possibles au vidage des automates à colis — causes et prévention ?
+
+:::reponse
+**1. Deux envois dans le même compartiment**
+- *Cause* : vidage incomplet (menu « Vider » sans retirer) ou entreposage non confirmé / mauvaise taille
+- *Prévention* : contrôle approfondi du **fond** du compartiment
+
+**2. Automate plein**
+- *Cause* : vidage **pas régulier** / pas conforme au processus
+- *Prévention* : vider **avant** d'entreposer · respecter le processus prescrit
+:::`;
+
+const DEMO_614_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Liste tâches → scanner → charger/livrer
+2. Prise en charge **infructueuse** · client absent
+3. 5 étapes BA · protéger intempéries + secret postal
+4. Description précise · ID si doute
+5. 2 envois/casier · automate plein → contrôle fond · vider d'abord`;
+
 /** Contenu Module 615 — CPD — Préparer les envois postaux */
 const DEMO_615_THEORIE_FULL = `## 15. Préparer les envois pour le processus de tri
 
@@ -22060,6 +22373,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_614_THEORIE_FULL,
       summary: DEMO_614_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_614_GLOSSAIRE_FULL,
+      summary: DEMO_614_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_614_SITUATION_FULL,
+      summary: DEMO_614_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_614_MATHS_FULL,
+      summary: DEMO_614_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_614_VERIFICATION_FULL,
+      summary: DEMO_614_VERIFICATION_SUMMARY,
     },
   },
   "615": {
