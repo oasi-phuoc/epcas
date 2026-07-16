@@ -19,8 +19,11 @@ import {
   appsAvailableForYear,
   informatiqueAppLabel,
   informatiqueYearLabel,
+  isResultatPdf,
   newInformatiqueId,
   resolveInformatiqueYear,
+  studentInformatiqueAssetLabel,
+  studentInformatiqueDocumentSortKey,
 } from "@/lib/informatique-exercises";
 import { useAppStore } from "@/lib/store";
 import { isStaffRole } from "@/lib/roles";
@@ -46,7 +49,6 @@ import {
 } from "lucide-react";
 import { PdfViewer } from "@/components/informatique/PdfViewer";
 import { BulkDocumentsDownloadButton } from "@/components/informatique/BulkDocumentsDownloadButton";
-import { isResultatPdf } from "@/lib/informatique-exercises";
 
 const STUDENT_INSTRUCTIONS = [
   "Téléchargez les documents à utiliser ci-dessous.",
@@ -63,7 +65,6 @@ function isVideoAsset(asset: InformatiqueAsset): boolean {
 }
 
 function StudentCorrectionAsset({ asset }: { asset: InformatiqueAsset }) {
-  const [videoOpen, setVideoOpen] = useState(false);
   const asVideo = isVideoAsset(asset);
   const asPdf = isResultatPdf(asset);
 
@@ -78,7 +79,7 @@ function StudentCorrectionAsset({ asset }: { asset: InformatiqueAsset }) {
   if (asPdf) {
     return (
       <li className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-3 sm:p-4">
-        <PdfViewer url={asset.url} />
+        <PdfViewer url={asset.url} layout="book" />
       </li>
     );
   }
@@ -86,43 +87,80 @@ function StudentCorrectionAsset({ asset }: { asset: InformatiqueAsset }) {
   if (asVideo) {
     return (
       <li className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-3 sm:p-4">
-        {!videoOpen ? (
-          <Button
-            type="button"
-            size="sm"
-            variant="secondary"
-            onClick={() => setVideoOpen(true)}
+        <div className="overflow-hidden rounded-[var(--radius-md)] border border-border bg-ink/5">
+          <video
+            className="max-h-[min(70vh,28rem)] w-full"
+            controls
+            controlsList="nodownload noplaybackrate"
+            disablePictureInPicture
+            preload="metadata"
+            playsInline
+            src={asset.url}
           >
-            <Eye className="h-4 w-4" />
-            Visionner
-          </Button>
-        ) : (
-          <div className="overflow-hidden rounded-[var(--radius-md)] border border-border bg-ink/5">
-            <video
-              className="max-h-[min(70vh,28rem)] w-full"
-              controls
-              controlsList="nodownload noplaybackrate"
-              disablePictureInPicture
-              preload="metadata"
-              src={asset.url}
-            >
-              Votre navigateur ne prend pas en charge la vidéo.
-            </video>
-          </div>
-        )}
+            Votre navigateur ne prend pas en charge la vidéo.
+          </video>
+        </div>
       </li>
     );
   }
 
   return (
     <li className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-3 sm:p-4">
-      <a href={asset.url} target="_blank" rel="noreferrer" className="inline-flex">
-        <Button type="button" size="sm" variant="secondary">
-          <Eye className="h-4 w-4" />
-          Visionner
-        </Button>
-      </a>
+      <PdfViewer url={asset.url} layout="book" />
     </li>
+  );
+}
+
+function StudentDocumentDownloads({
+  assets,
+  emptyLabel,
+}: {
+  assets: InformatiqueAsset[];
+  emptyLabel: string;
+}) {
+  const downloadable = useMemo(
+    () =>
+      [...assets]
+        .filter((a) => a.url && !isResultatPdf(a))
+        .sort(
+          (a, b) =>
+            studentInformatiqueDocumentSortKey(a.name) -
+            studentInformatiqueDocumentSortKey(b.name),
+        ),
+    [assets],
+  );
+
+  if (downloadable.length === 0) {
+    return (
+      <p className="rounded-[var(--radius-md)] border border-dashed border-border px-3 py-4 text-center text-sm text-ink-subtle">
+        {emptyLabel}
+      </p>
+    );
+  }
+
+  return (
+    <ul className="divide-y divide-border overflow-hidden rounded-[var(--radius-md)] border border-border bg-surface-muted/30">
+      {downloadable.map((asset) => {
+        const label = studentInformatiqueAssetLabel(asset.name);
+        return (
+          <li
+            key={asset.id}
+            className="grid grid-cols-[1fr_auto] items-center gap-3 px-3 py-2.5"
+          >
+            <span className="text-sm font-medium text-ink">{label}</span>
+            <a
+              href={asset.url}
+              download={asset.name}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius-md)] border border-border bg-surface text-primary-strong transition hover:bg-primary-soft/40"
+              aria-label={`Télécharger ${label}`}
+              title={`Télécharger ${label}`}
+            >
+              <Download className="h-5 w-5" />
+            </a>
+          </li>
+        );
+      })}
+    </ul>
   );
 }
 
@@ -184,6 +222,8 @@ function AssetList({
         <p className="rounded-[var(--radius-md)] border border-dashed border-border px-3 py-4 text-center text-sm text-ink-subtle">
           {emptyLabel}
         </p>
+      ) : studentMode && !editable && defaultMode === "document" ? (
+        <StudentDocumentDownloads assets={assets} emptyLabel={emptyLabel} />
       ) : (
         <ul className="space-y-2">
           {assets.map((asset) => {
@@ -281,7 +321,7 @@ function AssetList({
                   </div>
                 ) : null}
                 {asResultatPdf ? (
-                  <PdfViewer url={asset.url} title={asset.name} />
+                  <PdfViewer url={asset.url} title={asset.name} layout="book" />
                 ) : null}
               </li>
             );
@@ -648,7 +688,7 @@ function StudentExerciseDetail({
       <Panel>
         <h3 className="mb-1 font-display text-lg text-ink">Corrections</h3>
         <p className="mb-3 text-sm text-ink-muted">
-          Vidéos à visionner ou résultat attendu à consulter directement.
+          Vidéo ou résultat attendu affichés directement ci-dessous.
         </p>
         <AssetList
           defaultMode="mixed"

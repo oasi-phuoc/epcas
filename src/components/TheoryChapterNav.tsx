@@ -1,7 +1,7 @@
 "use client";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button, Select } from "@/components/ui";
+import { CompactPageNav } from "@/components/ui/CompactPageNav";
 import { cn } from "@/lib/cn";
 import type { TheoryChapter } from "@/lib/theory-chapters";
 
@@ -32,40 +32,12 @@ export function TheoryChapterNav({
 
   if (variant === "student") {
     return (
-      <div
-        className={cn(
-          "flex items-center justify-center gap-3",
-          placement === "bottom" && "mt-8 border-t border-border pt-4",
-        )}
-      >
-        <button
-          type="button"
-          aria-label="Page précédente"
-          disabled={isFirst}
-          onClick={() => onPageChange(pageIndex - 1)}
-          className={cn(
-            "inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius-md)] border border-border bg-surface text-ink transition",
-            "hover:bg-surface-muted disabled:pointer-events-none disabled:opacity-40",
-          )}
-        >
-          <ChevronLeft className="h-5 w-5" />
-        </button>
-        <p className="min-w-[5.5rem] text-center text-sm font-medium tabular-nums text-ink-muted">
-          Page {pageIndex + 1}/{total}
-        </p>
-        <button
-          type="button"
-          aria-label="Page suivante"
-          disabled={isLast}
-          onClick={() => onPageChange(pageIndex + 1)}
-          className={cn(
-            "inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius-md)] border border-border bg-surface text-ink transition",
-            "hover:bg-surface-muted disabled:pointer-events-none disabled:opacity-40",
-          )}
-        >
-          <ChevronRight className="h-5 w-5" />
-        </button>
-      </div>
+      <CompactPageNav
+        pageIndex={pageIndex}
+        total={total}
+        onPageChange={onPageChange}
+        className={cn(placement === "bottom" && "mt-8 border-t border-border pt-4")}
+      />
     );
   }
 

@@ -67,6 +67,37 @@ export function isResultatPdf(asset: {
   return /\.pdf(\?|$)/i.test(ref) && ref.includes("resultat");
 }
 
+/** Libellé court pour la liste de téléchargements (apprentis). */
+export function studentInformatiqueAssetLabel(name: string): string {
+  const lower = name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+
+  if (lower.includes("donnee")) return "Données";
+  if (lower.includes("_base") || lower.includes("textebase")) return "Base";
+
+  const imageTag = name.match(/image[_\s.-]*(\d+)/i);
+  if (imageTag) return `Image-${imageTag[1]}`;
+
+  if (/\.(png|jpe?g|gif|webp|bmp)$/i.test(name)) {
+    const n = name.match(/(\d+)/);
+    return n ? `Image-${n[1]}` : "Image";
+  }
+
+  return "Document";
+}
+
+export function studentInformatiqueDocumentSortKey(name: string): number {
+  const label = studentInformatiqueAssetLabel(name);
+  if (label === "Base") return 0;
+  if (label === "Données") return 1;
+  if (label.startsWith("Image-")) {
+    return 100 + Number(label.replace("Image-", "") || 0);
+  }
+  return 50;
+}
+
 /** Catalogue dérivé de public/assets/informatique/{1,3}/… */
 export const SEED_INFORMATIQUE_EXERCISES: InformatiqueExercise[] =
   GENERATED_INFORMATIQUE_EXERCISES;
