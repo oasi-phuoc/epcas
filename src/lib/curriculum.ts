@@ -13072,6 +13072,313 @@ const DEMO_309_OBJECTIFS_SUMMARY = `## Objectifs
 - Quarantaine / échantillons
 - Complet vs échantillonnage`;
 
+/** Glossaire Module 309 */
+const DEMO_309_GLOSSAIRE_FULL = `## Glossaire — Module 309
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Qualité | | Degré selon lequel la **performance** d'un produit, service ou processus correspond à l'**attente** du client. Impact sur satisfaction, image, compétitivité et succès à long terme. |
+| Prélèvement d'échantillon | | Prise d'une **partie représentative** d'une livraison pour contrôle (composition, dimensions, couleur, fonctionnement…). Échantillon **étiqueté** et souvent placé en **quarantaine** jusqu'au résultat. |
+| Technique de contrôle | | Méthode choisie pour vérifier la qualité : **contrôle complet** (toutes les pièces) ou **contrôle par échantillonnage** (improvisé, simple planifié ou multiple planifié). |
+| Contrôle complet | | Vérification de **toutes** les pièces de la commande, une par une. Justifié pour nouveaux fournisseurs, défauts graves antérieurs, marchandises chères ou critiques pour la sécurité. |
+| Contrôle par échantillonnage simple | | Contrôle **planifié** sur une partie de l'envoi selon des règles fixes (ex. 2 unités par livraison, 1 livraison sur 2) ou un **plan** (lot, n, Tol n, niveau AQL, contrôle normal/approfondi). |
+| Contrôle par échantillonnage multiple | | Plusieurs **prélèvements successifs** ; résultat tracé dans un tableau **Refuser / Poursuivre / Accepter**. Le contrôle continue tant que le résultat reste en zone « Poursuivre le contrôle ». `;
+
+const DEMO_309_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Qualité** : performance = attente client
+- **Prélèvement** : partie représentative · quarantaine possible
+- **Technique** : complet vs échantillonnage
+- **Complet** : 100 % des pièces
+- **Simple** : plan fixe ou plan AQL (n, Tol n)
+- **Multiple** : prélèvements · Refuser / Poursuivre / Accepter`;
+
+/** Mises en situation Module 309 */
+const DEMO_309_SITUATION_FULL = `## Mises en situation — Module 309
+
+Contexte : tu participes au **contrôle de la qualité** à la réception chez **EnterSite AG**. Les missions portent sur la notion de **qualité**, les **méthodes de contrôle** et les **plans d'échantillonnage**. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / exemples proposés.
+
+### Vue d'ensemble des missions
+1. Importance de la qualité (quotidien + EnterSite)
+2. Contrôle complet vs échantillonnage
+2.1 Autres méthodes de contrôle
+3. Plan d'échantillonnage simple (tambours · boulons)
+4. Plan d'échantillonnage multiple (puces électroniques)
+5. Discussion de la mise en situation
+
+---
+
+## Mission 1 — Importance de la qualité
+
+La notion de « qualité » est perçue de manière **subjective**. Que signifie la qualité pour toi ? Note des exemples tirés de ta vie quotidienne.
+
+:::reponse
+**Réponse individuelle** — ex. : fiabilité d'un téléphone, goût d'un produit alimentaire, finition d'un vêtement, ponctualité d'un transport…
+:::
+
+---
+
+## Mission 1.1 — Qualité chez EnterSite AG
+
+Quelle est la signification du terme « qualité » par rapport à **EnterSite AG** ?
+
+:::reponse
+La qualité a une signification **centrale** pour EnterSite : caractéristiques et propriétés des produits, services ou processus qui garantissent la satisfaction des **exigences** et **attentes** des clients.
+
+Impact direct sur : satisfaction client · **image** de l'entreprise · **compétitivité** · succès à **long terme**.
+:::
+
+---
+
+## Mission 2 — Raisons d'un contrôle complet
+
+Ton collègue t'informe que tu dois effectuer un **contrôle complet**. Quelles raisons peuvent conduire à ce choix ?
+
+:::reponse
+- **Nouveau fournisseur** qui doit encore prouver sa fiabilité
+- **Défauts graves** constatés lors d'envois précédents du même fournisseur
+- La livraison **fait mauvaise impression** à l'arrivée
+- Marchandises **très chères**
+- Marchandises **importantes pour la sécurité** de l'entreprise
+- Forte **dépendance** de l'entreprise à la qualité des marchandises reçues
+:::
+
+---
+
+## Mission 2.1 — Autres méthodes de contrôle
+
+Avec quelles **autres méthodes**, en plus du contrôle complet, EnterSite peut-elle contrôler ses marchandises ?
+
+:::reponse
+**Contrôle par échantillonnage (général)** — ne porte pas sur la totalité de l'envoi.
+
+**Échantillonnage improvisé (spontané)** — non planifié, là où c'est le plus simple :
+- recomptage d'une partie de la livraison
+- soulever les emballages du haut pour examiner le bas
+- peser une partie de la livraison
+- ouvrir une unité pour vérifier le contenu
+
+**Échantillonnage selon un plan** — quantité et technique **prédéfinies** par le management qualité :
+- **échantillonnage simple** (ex. 2 unités par livraison, ou 1 livraison sur 2 ; plans AQL)
+- **échantillonnage multiple** (tableau Refuser / Poursuivre / Accepter)
+:::
+
+---
+
+## Mission 3 — Plan simple (tambours A1CC533A)
+
+Contrôle de **950 tambours** A1CC533A par échantillonnage simple — niveau **normal**, AQL **0,65**, contrôle **renforcé** (fournisseur en défaut). **2 tambours** non conformes constatés.
+
+- Combien de pièces contrôler ?
+- Marchandise acceptée ou non ?
+- Nombre maximal de tambours défectueux autorisé ?
+
+:::reponse
+- **Pièces à contrôler : 110**
+- **Acceptation : NON** (2 défauts > 1 autorisé)
+- **Défauts max autorisés : 1 tambour**
+:::
+
+---
+
+## Mission 3.1 — Plan simple (boulons A1CC533A)
+
+Lot de **2'530 boulons** A1CC533A. Contrôles :
+- **Longueur** (défaut **grave**)
+- **Diamètre** (défaut **moyen**)
+- **Arêtes cassées** (défaut **non grave**)
+
+Défauts constatés : longueur **3** · diamètre **2** · arêtes **3**  
+Contrôle **normal**, niveau de qualité **2,50**.
+
+- Quantité à contrôler ?
+- Envoi accepté ?
+
+:::reponse
+- **Quantité de contrôle : 150 pièces**
+- **Acceptation : NON** — l'envoi doit être **refusé**. Les erreurs constatées dépassent le maximum autorisé (**4 pièces** au total selon le plan ; 3+2+3 = 8 erreurs constatées sur les critères).
+:::
+
+---
+
+## Mission 4 — Plan d'échantillonnage multiple
+
+Contrôle de **puces électroniques** (maintenance à distance) par échantillonnage **multiple**. Lots de **30 pièces** :
+
+| Essai | Défauts constatés |
+| --- | --- |
+| 1er | 1 |
+| 2e | 0 |
+| 3e | 1 |
+| 4e | 1 |
+| 5e | 0 |
+
+Trace l'évolution dans le tableau. L'envoi peut-il être accepté ? Que faut-il faire ?
+
+:::reponse
+| Essai | Défauts (lot) | Cumul testé | Cumul défauts | Zone |
+| --- | --- | --- | --- | --- |
+| 1 | 1 | 30 | 1 | Poursuivre |
+| 2 | 0 | 60 | 1 | Poursuivre |
+| 3 | 1 | 90 | 2 | Poursuivre |
+| 4 | 1 | 120 | 3 | Poursuivre |
+| 5 | 0 | 150 | 3 | Selon tableau plan |
+
+L'envoi **ne peut pas encore être accepté** en l'état s'il n'y a pas de **résultat concret** (zone de décision non atteinte). Il faut **poursuivre les vérifications** ou **consulter le supérieur** / le fournisseur.
+
+*(Selon le plan multiple EnterSite, 3 défauts sur 150 pièces peut mener à l'acceptation — vérifier le tableau du plan en vigueur.)*
+:::
+
+---
+
+## Mission 5 — Discussion de la mise en situation
+
+Discute de la mise en situation en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion (pas de solution unique).
+:::`;
+
+const DEMO_309_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : qualité subjective · centrale chez EnterSite
+- **M2** : contrôle complet = nouveau fournisseur · défauts · sécurité · coût
+- **M2.1** : improvisé · simple · multiple
+- **M3** : 950 tambours → 110 pces · max 1 défaut · **refus** (2 défauts)
+- **M3.1** : 2'530 boulons → 150 pces · **refus** (> 4 erreurs max)
+- **M4** : multiple 5×30 pces · poursuivre / consulter hiérarchie
+- **M5** : discussion plénière`;
+
+/** Exercices de maths Module 309 */
+const DEMO_309_MATHS_FULL = `## Exercices de mathématiques — Module 309
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Dégâts sur tablettes tactiles
+
+**3'500** tablettes pour **665'000 CHF** ; **6 %** inutilisables (eau de mer).
+
+À combien s'élèvent les dégâts en CHF ?
+
+:::solution
+**39'900 CHF**
+
+Calcul : 665'000 × 6 / 100 = **39'900 CHF**
+:::
+
+### Exercice 2 — Coût du contrôle qualité
+
+Un collaborateur met **25 min** pour contrôler une tablette (**27 CHF/h**).  
+Combien coûte le contrôle des tablettes **fonctionnelles** (94 % de 3'500) ?
+
+:::solution
+**37'012,41 CHF**
+
+Calcul :
+- Tablettes fonctionnelles : 3'500 × 94 / 100 = **3'290**
+- Temps total : 25 × 3'290 = 82'250 min = 82'250 / 60 = **1'370,83 h**
+- Coût : 1'370,83 × 27 = **37'012,41 CHF**
+:::
+
+### Exercice 3 — Plan de sondage (deux contrôles)
+
+> Référence : plan de sondage fourni (PDF).
+
+**Contrôle normal** — lot **808**, niveau qualité **1,50**, **3** erreurs constatées.  
+**Contrôle approfondi** — lot **2'500**, niveau **0,65**, **6** erreurs constatées.
+
+Pour chaque contrôle : nombre de pièces à prélever et **décision**.
+
+:::solution
+**Contrôle normal**
+- Prélever **110 pièces**
+- Erreurs acceptées max : **4**
+- Avec **3** erreurs → décision : **Accepter**
+
+**Contrôle approfondi**
+- Prélever **150 pièces**
+- Erreurs acceptées max : **2**
+- Avec **6** erreurs → décision : **Refuser**
+:::
+
+### Exercice 4 — Tolérance de pièces défectueuses
+
+Livraison de **1'500** pièces. Tolérance acceptée : **0,75 %** de pièces défectueuses.  
+**14** pièces défectueuses constatées.
+
+Autorises-tu la mise en stock ?
+
+:::solution
+**Non**
+
+Calcul :
+- Défauts max acceptés : 1'500 × 0,75 / 100 = **11,25** pièces
+- **14 > 11,25** → mise en stock **non autorisée**
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 39'900 · 37'012,41 · 110/Accepter · 150/Refuser · Non`;
+
+const DEMO_309_MATHS_SUMMARY = `## Maths — Solutions
+1. **39'900 CHF** (665'000 × 6 %)
+2. **37'012,41 CHF** (3'290 tablettes × 25 min × 27 CHF/h)
+3. Normal : **110** pces, **accepter** (3 ≤ 4) · Approfondi : **150** pces, **refuser** (6 > 2)
+4. **Non** (14 > 11,25 défauts max)`;
+
+/** Vérification des acquis Module 309 */
+const DEMO_309_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 309 — Le contrôle de la qualité**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Lors d'un contrôle de qualité, on distingue critères **subjectifs** et **objectifs**. Explique ces deux notions.
+
+:::reponse
+**Critères subjectifs** : basés sur la conception **personnelle** de la qualité (opinions, sentiments, émotions, jugement personnel).
+
+**Critères objectifs** : basés sur la **mesurabilité réelle** (mesures géométriques, analyses en laboratoire, contrôles internes/externes, coloration, évaluations clients, etc.).
+:::
+
+### Question 2
+
+Que veut-on dire par **sous-qualité** pour un produit ?
+
+:::reponse
+Le produit **ne répond pas** aux exigences du client. Souvent moins cher à l'achat, mais représente un **coût à long terme** (retours, perte de confiance, image dégradée).
+:::
+
+### Question 3
+
+À quoi sert l'**assurance qualité** ?
+
+:::reponse
+L'assurance qualité comprend **toutes les mesures** qui servent à garantir de manière **constante** la qualité d'un produit ou service, afin que le client soit convaincu que le produit correspond à ses **attentes**.
+:::
+
+### Question 4
+
+Décrivez le **contrôle complet** des marchandises.
+
+:::reponse
+Le contrôle complet implique la vérification de **toutes les pièces** de la commande. Les pièces sont contrôlées **une par une**.
+:::
+
+### Question 5
+
+Note ce qui est fait lors d'un **contrôle aléatoire improvisé**.
+
+:::reponse
+- Recomptage d'une **partie** de la livraison
+- Soulever les emballages du **haut** pour examiner ceux du **bas**
+- **Peser** une partie de la livraison
+- **Ouvrir** une unité de livraison pour vérifier si le contenu correspond à la description
+:::`;
+
+const DEMO_309_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Subjectif = opinion · Objectif = mesurable
+2. Sous-qualité = n'atteint pas les exigences client
+3. AQ = qualité constante · attentes client
+4. Complet = 100 % des pièces, une par une
+5. Improvisé : recomptage · soulever · peser · ouvrir une unité`;
+
 /** Contenu Module 310 — Préparation à la mise en stock */
 const DEMO_310_THEORIE_FULL = `## 10. Préparation à la mise en stock
 
@@ -20950,6 +21257,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_309_THEORIE_FULL,
       summary: DEMO_309_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_309_GLOSSAIRE_FULL,
+      summary: DEMO_309_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_309_SITUATION_FULL,
+      summary: DEMO_309_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_309_MATHS_FULL,
+      summary: DEMO_309_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_309_VERIFICATION_FULL,
+      summary: DEMO_309_VERIFICATION_SUMMARY,
     },
   },
   "310": {
