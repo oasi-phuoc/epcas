@@ -6,8 +6,8 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 import { PageHeader, Panel, ProgressBar } from "@/components/ui";
 import { levelsLabel } from "@/lib/levels";
 import { isStaffRole } from "@/lib/roles";
-import { useAppStore, useVisibleModules } from "@/lib/store";
-import type { LessonPageSlug } from "@/lib/types";
+import { useAppStore, useVisibleLogistiqueModules } from "@/lib/store";
+import type { LessonPageSlug, Module } from "@/lib/types";
 
 type CurriculumBlockIndexProps = {
   title: string;
@@ -20,6 +20,8 @@ type CurriculumBlockIndexProps = {
   emptyMessage?: string;
   /** Contenu optionnel sous le titre (ex. raccourci Informatique). */
   preamble?: ReactNode;
+  /** Liste de modules à afficher (sinon parcours logistique par défaut). */
+  modules?: Module[];
 };
 
 export function CurriculumBlockIndex({
@@ -30,9 +32,11 @@ export function CurriculumBlockIndex({
   moduleHrefBase,
   emptyMessage = "Aucun module dans votre parcours pour le moment.",
   preamble,
+  modules: modulesOverride,
 }: CurriculumBlockIndexProps) {
   const { state, currentUser, getUserProgress } = useAppStore();
-  const visibleModules = useVisibleModules();
+  const defaultLogistique = useVisibleLogistiqueModules();
+  const visibleModules = modulesOverride ?? defaultLogistique;
   const isTrainer = currentUser ? isStaffRole(currentUser.role) : false;
   const slugSet = useMemo(() => new Set(pageSlugs), [pageSlugs]);
 

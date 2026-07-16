@@ -25,6 +25,10 @@ import {
   sequenceId,
 } from "./levels";
 import {
+  INFORMATIQUE_CURRICULUM_MODULE_CODES,
+  isInformatiqueCurriculumModuleCode,
+} from "./informatique-curriculum";
+import {
   enqueueAttempt,
   enqueueProgress,
 } from "./offline/tracking-outbox";
@@ -1055,6 +1059,32 @@ export function useVisibleModules(): Module[] {
     if (!currentUser || isStaffRole(currentUser.role)) return published;
     return modulesForSequence(state, userLevel, userStudyYear);
   }, [state, currentUser, userLevel, userStudyYear]);
+}
+
+/** Parcours logistique : séquence année, hors modules informatique 804–808. */
+export function useVisibleLogistiqueModules(): Module[] {
+  const visible = useVisibleModules();
+  return useMemo(
+    () =>
+      visible.filter((m) => !isInformatiqueCurriculumModuleCode(m.code)),
+    [visible],
+  );
+}
+
+/**
+ * Modules informatique (804–808) : toujours visibles pour les apprentis,
+ * sans restriction d'année scolaire.
+ */
+export function useVisibleInformatiqueModules(): Module[] {
+  const { state, currentUser } = useAppStore();
+  return useMemo(() => {
+    const codes = new Set<string>(INFORMATIQUE_CURRICULUM_MODULE_CODES);
+    const published = state.modules
+      .filter((m) => m.published && codes.has(m.code))
+      .sort((a, b) => a.code.localeCompare(b.code));
+    if (!currentUser || isStaffRole(currentUser.role)) return published;
+    return published;
+  }, [state.modules, currentUser]);
 }
 
 /** Exercices publiés dont le module est dans la séquence de l'apprenti. */

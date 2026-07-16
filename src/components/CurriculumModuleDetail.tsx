@@ -12,6 +12,7 @@ import { getLessonBody } from "@/lib/lesson-content";
 import { moduleVisibleForLevel } from "@/lib/levels";
 import { isStaffRole } from "@/lib/roles";
 import { useAppStore, useExercises } from "@/lib/store";
+import { isInformatiqueCurriculumModuleCode } from "@/lib/informatique-curriculum";
 import type { LessonPageSlug } from "@/lib/types";
 
 const interactiveTypeLabel = {
@@ -26,6 +27,8 @@ type CurriculumModuleDetailProps = {
   lessonHrefBase: string;
   /** Affiche aussi les exercices interactifs (QCM…) rattachés au module */
   includeInteractiveExercises?: boolean;
+  /** Inclure les exercices interactifs même hors séquence année (modules informatique). */
+  allowInformatiqueExerciseAccess?: boolean;
 };
 
 export function CurriculumModuleDetail({
@@ -33,10 +36,11 @@ export function CurriculumModuleDetail({
   sectionHref,
   lessonHrefBase,
   includeInteractiveExercises = false,
+  allowInformatiqueExerciseAccess = false,
 }: CurriculumModuleDetailProps) {
   const params = useParams<{ moduleId: string }>();
   const { state, currentUser, getUserProgress, userLevel } = useAppStore();
-  const exercises = useExercises();
+  const sequenceExercises = useExercises();
 
   if (!currentUser) return null;
 
@@ -66,6 +70,11 @@ export function CurriculumModuleDetail({
   const moduleLessonIds = new Set(
     state.lessons.filter((l) => l.moduleId === mod.id).map((l) => l.id),
   );
+  const allPublishedExercises = state.exercises.filter((e) => e.published);
+  const exercises =
+    allowInformatiqueExerciseAccess && isInformatiqueCurriculumModuleCode(mod.code)
+      ? allPublishedExercises
+      : sequenceExercises;
   const interactive = includeInteractiveExercises
     ? exercises.filter(
         (ex) => ex.lessonId && moduleLessonIds.has(ex.lessonId),

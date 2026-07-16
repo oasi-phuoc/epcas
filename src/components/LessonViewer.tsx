@@ -17,6 +17,10 @@ import {
   isTheoryPageSlug,
   MODULE_EXERCISE_PAGE_SLUGS,
 } from "@/lib/lesson-content";
+import {
+  curriculumExercisePaths,
+  curriculumTheoryPaths,
+} from "@/lib/informatique-curriculum";
 import { getDownloadableLessonAttachments } from "@/lib/lesson-attachments";
 import { LessonAttachmentsPanel } from "@/components/LessonAttachmentsPanel";
 import { moduleVisibleForLevel } from "@/lib/levels";
@@ -103,13 +107,18 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
   }
 
   const exercisePage = isExercisePageSlug(lesson.pageSlug);
+  const paths = mod
+    ? exercisePage
+      ? curriculumExercisePaths(mod.code)
+      : curriculumTheoryPaths(mod.code)
+    : null;
   const backHref = exercisePage
     ? mod
-      ? `/exercices/module/${mod.id}`
-      : "/exercices"
+      ? paths!.module(mod.id)
+      : "/logistique/exercices"
     : mod
-      ? `/theorie/module/${mod.id}`
-      : "/theorie";
+      ? paths!.module(mod.id)
+      : "/logistique/theorie";
   const isPlaceholder = body.includes("Contenu à importer");
   const paginated = Boolean(chapters && chapters.length > 1);
   const safeIndex = paginated
@@ -220,7 +229,7 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
         <div className="mt-8 flex flex-wrap gap-2 border-t border-border pt-4">
           <Button onClick={markDone}>Marquer comme lu</Button>
           {!exercisePage ? (
-            <Link href="/exercices">
+            <Link href={mod ? curriculumExercisePaths(mod.code).index : "/logistique/exercices"}>
               <Button variant="secondary">Passer aux exercices</Button>
             </Link>
           ) : null}

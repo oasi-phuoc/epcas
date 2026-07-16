@@ -737,7 +737,7 @@ export function InformatiqueExercicesWorkspace({
     return <EmptyState title="Accès réservé aux formateurs et admins" />;
   }
 
-  const hubHref = isEdit ? "/formateur/exercices" : "/exercices";
+  const hubHref = isEdit ? "/formateur/exercices" : "/informatique/exercices/pratique";
 
   const appsToShow = INFORMATIQUE_APPS.filter(
     (app) => isEdit || availableApps.includes(app.id),

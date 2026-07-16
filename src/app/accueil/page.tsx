@@ -129,10 +129,10 @@ export default function AccueilPage() {
               </div>
             ) : null}
             <div className="mt-5 flex flex-wrap gap-2">
-              <Link href="/theorie">
+              <Link href="/logistique/theorie">
                 <Button>Voir mon parcours</Button>
               </Link>
-              <Link href="/exercices">
+              <Link href="/logistique/exercices">
                 <Button variant="ghost">S&apos;entraîner</Button>
               </Link>
             </div>

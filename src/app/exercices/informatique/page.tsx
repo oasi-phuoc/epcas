@@ -1,7 +1,5 @@
-"use client";
+import { redirect } from "next/navigation";
 
-import { InformatiqueExercicesWorkspace } from "@/components/informatique/InformatiqueExercicesWorkspace";
-
-export default function ExercicesInformatiquePage() {
-  return <InformatiqueExercicesWorkspace mode="view" />;
+export default function ExercicesInformatiqueRedirectPage() {
+  redirect("/informatique/exercices/pratique");
 }

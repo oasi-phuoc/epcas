@@ -9,6 +9,7 @@ import {
   ListOrdered,
   LogOut,
   Monitor,
+  Package,
   PencilLine,
   Settings,
   Users,
@@ -22,38 +23,106 @@ import { isStaffRole } from "@/lib/roles";
 import { useAppStore } from "@/lib/store";
 import { Button } from "@/components/ui";
 
-const apprenticeLinks = [
-  { href: "/accueil", label: "Accueil", icon: Home },
-  { href: "/theorie", label: "Théorie", icon: BookOpen },
-  { href: "/exercices", label: "Exercices", icon: PencilLine },
-  { href: "/exercices/informatique", label: "Informatique", icon: Monitor },
-  { href: "/blancs", label: "Blancs", icon: ClipboardCheck },
-  { href: "/parametres", label: "Paramètres", icon: Settings },
+type NavLinkItem = {
+  kind: "link";
+  href: string;
+  label: string;
+  icon: typeof Home;
+};
+
+type NavGroupItem = {
+  kind: "group";
+  id: string;
+  href: string;
+  label: string;
+  icon: typeof Home;
+  children: { href: string; label: string }[];
+};
+
+type NavItem = NavLinkItem | NavGroupItem;
+
+const apprenticeLinks: NavItem[] = [
+  { kind: "link", href: "/accueil", label: "Accueil", icon: Home },
+  {
+    kind: "group",
+    id: "logistique",
+    href: "/logistique",
+    label: "Logistique",
+    icon: Package,
+    children: [
+      { href: "/logistique/theorie", label: "Théorie" },
+      { href: "/logistique/exercices", label: "Exercices" },
+    ],
+  },
+  {
+    kind: "group",
+    id: "informatique",
+    href: "/informatique",
+    label: "Informatique",
+    icon: Monitor,
+    children: [
+      { href: "/informatique/theorie", label: "Théorie" },
+      { href: "/informatique/exercices", label: "Exercices" },
+    ],
+  },
+  { kind: "link", href: "/blancs", label: "Blancs", icon: ClipboardCheck },
+  { kind: "link", href: "/parametres", label: "Paramètres", icon: Settings },
 ];
 
-const staffLinks = [
-  { href: "/accueil", label: "Accueil", icon: Home },
-  { href: "/formateur/classes", label: "Classes", icon: Users },
-  { href: "/formateur/contenu", label: "Théorie", icon: BookOpen },
-  { href: "/formateur/exercices", label: "Exercices", icon: PencilLine },
-  { href: "/formateur/sequences", label: "Séquences", icon: ListOrdered },
-  { href: "/formateur/evaluations", label: "Évaluations", icon: ClipboardCheck },
-  { href: "/parametres", label: "Paramètres", icon: Settings },
+const staffLinks: NavLinkItem[] = [
+  { kind: "link", href: "/accueil", label: "Accueil", icon: Home },
+  { kind: "link", href: "/formateur/classes", label: "Classes", icon: Users },
+  { kind: "link", href: "/formateur/contenu", label: "Théorie", icon: BookOpen },
+  { kind: "link", href: "/formateur/exercices", label: "Exercices", icon: PencilLine },
+  { kind: "link", href: "/formateur/sequences", label: "Séquences", icon: ListOrdered },
+  { kind: "link", href: "/formateur/evaluations", label: "Évaluations", icon: ClipboardCheck },
+  { kind: "link", href: "/parametres", label: "Paramètres", icon: Settings },
 ];
 
 function isActivePath(pathname: string, href: string) {
   if (href === "/accueil") return pathname === "/accueil";
-  if (href === "/exercices/informatique") {
-    return pathname === href || pathname.startsWith(`${href}/`);
+  if (href === "/logistique") {
+    return (
+      pathname === href ||
+      pathname.startsWith("/logistique/") ||
+      (pathname === "/theorie" || pathname.startsWith("/theorie/")) ||
+      (pathname === "/exercices" ||
+        pathname.startsWith("/exercices/module/") ||
+        pathname.startsWith("/exercices/lecon/") ||
+        /^\/exercices\/[^/]+$/.test(pathname))
+    );
   }
-  if (href === "/exercices") {
+  if (href === "/informatique") {
+    return (
+      pathname === href ||
+      pathname.startsWith("/informatique/") ||
+      pathname.startsWith("/exercices/informatique")
+    );
+  }
+  if (href === "/logistique/theorie" || href === "/theorie") {
+    return (
+      pathname === href ||
+      pathname.startsWith(`${href}/`) ||
+      (href === "/logistique/theorie" &&
+        (pathname === "/theorie" || pathname.startsWith("/theorie/")))
+    );
+  }
+  if (href === "/logistique/exercices" || href === "/exercices") {
     return (
       (pathname === href ||
-        pathname.startsWith(`${href}/module/`) ||
-        pathname.startsWith(`${href}/lecon/`) ||
+        pathname.startsWith(`${href}/`) ||
+        pathname === "/exercices" ||
+        pathname.startsWith("/exercices/module/") ||
+        pathname.startsWith("/exercices/lecon/") ||
         /^\/exercices\/[^/]+$/.test(pathname)) &&
       !pathname.startsWith("/exercices/informatique")
     );
+  }
+  if (href === "/informatique/theorie") {
+    return pathname === href || pathname.startsWith(`${href}/`);
+  }
+  if (href === "/informatique/exercices") {
+    return pathname === href || pathname.startsWith(`${href}/`);
   }
   if (href === "/formateur/classes") {
     return (
@@ -72,11 +141,29 @@ function isActivePath(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
+function groupOpen(pathname: string, group: NavGroupItem): boolean {
+  if (group.id === "logistique") {
+    return (
+      pathname.startsWith("/logistique") ||
+      pathname === "/theorie" ||
+      pathname.startsWith("/theorie/") ||
+      (pathname.startsWith("/exercices") &&
+        !pathname.startsWith("/exercices/informatique"))
+    );
+  }
+  if (group.id === "informatique") {
+    return (
+      pathname.startsWith("/informatique") ||
+      pathname.startsWith("/exercices/informatique")
+    );
+  }
+  return false;
+}
+
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const { currentUser, logout, state } = useAppStore();
   const staff = isStaffRole(currentUser?.role);
-  const links = staff ? staffLinks : apprenticeLinks;
   const theoryOpen =
     staff &&
     (pathname === "/formateur/contenu" ||
@@ -85,6 +172,16 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     staff &&
     (pathname === "/formateur/exercices" ||
       pathname.startsWith("/formateur/exercices/"));
+
+  const mobileLinks: { href: string; label: string; icon: typeof Home }[] = staff
+    ? staffLinks
+    : [
+        { href: "/accueil", label: "Accueil", icon: Home },
+        { href: "/logistique", label: "Logistique", icon: Package },
+        { href: "/informatique", label: "Info", icon: Monitor },
+        { href: "/blancs", label: "Blancs", icon: ClipboardCheck },
+        { href: "/parametres", label: "Réglages", icon: Settings },
+      ];
 
   return (
     <div className="min-h-dvh lg:flex">
@@ -97,59 +194,122 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </p>
         </div>
         <nav className="flex flex-1 flex-col gap-1 overflow-y-auto p-3">
-          {links.map(({ href, label, icon: Icon }) => {
-            const active = isActivePath(pathname, href);
-            const subPages =
-              href === "/formateur/contenu"
-                ? FORMATEUR_THEORY_PAGES
-                : href === "/formateur/exercices"
-                  ? FORMATEUR_EXERCISE_PAGES
-                  : null;
-            const subOpen =
-              href === "/formateur/contenu"
-                ? theoryOpen
-                : href === "/formateur/exercices"
-                  ? exercicesOpen
-                  : false;
-            return (
-              <div key={href}>
-                <Link
-                  href={href}
-                  className={cn(
-                    "flex items-center gap-3 rounded-[var(--radius-md)] px-3 py-2.5 text-sm font-medium transition",
-                    active
-                      ? "bg-primary-soft text-primary-strong"
-                      : "text-ink-muted hover:bg-surface-muted hover:text-ink",
-                  )}
-                >
-                  <Icon className="h-4 w-4" />
-                  {label}
-                </Link>
-                {subPages && subOpen ? (
-                  <ul className="mt-1 ml-4 space-y-0.5 border-l border-border pl-3">
-                    {subPages.map((page) => {
-                      const subActive = pathname === page.href;
-                      return (
-                        <li key={page.slug}>
-                          <Link
-                            href={page.href}
-                            className={cn(
-                              "block rounded-[var(--radius-sm)] px-2 py-1.5 text-xs font-medium transition",
-                              subActive
-                                ? "bg-primary-soft/70 text-primary-strong"
-                                : "text-ink-subtle hover:bg-surface-muted hover:text-ink",
-                            )}
-                          >
-                            {page.title}
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                ) : null}
-              </div>
-            );
-          })}
+          {staff
+            ? staffLinks.map(({ href, label, icon: Icon }) => {
+                const active = isActivePath(pathname, href);
+                const subPages =
+                  href === "/formateur/contenu"
+                    ? FORMATEUR_THEORY_PAGES
+                    : href === "/formateur/exercices"
+                      ? FORMATEUR_EXERCISE_PAGES
+                      : null;
+                const subOpen =
+                  href === "/formateur/contenu"
+                    ? theoryOpen
+                    : href === "/formateur/exercices"
+                      ? exercicesOpen
+                      : false;
+                return (
+                  <div key={href}>
+                    <Link
+                      href={href}
+                      className={cn(
+                        "flex items-center gap-3 rounded-[var(--radius-md)] px-3 py-2.5 text-sm font-medium transition",
+                        active
+                          ? "bg-primary-soft text-primary-strong"
+                          : "text-ink-muted hover:bg-surface-muted hover:text-ink",
+                      )}
+                    >
+                      <Icon className="h-4 w-4" />
+                      {label}
+                    </Link>
+                    {subPages && subOpen ? (
+                      <ul className="mt-1 ml-4 space-y-0.5 border-l border-border pl-3">
+                        {subPages.map((page) => {
+                          const subActive = pathname === page.href;
+                          return (
+                            <li key={page.slug}>
+                              <Link
+                                href={page.href}
+                                className={cn(
+                                  "block rounded-[var(--radius-sm)] px-2 py-1.5 text-xs font-medium transition",
+                                  subActive
+                                    ? "bg-primary-soft/70 text-primary-strong"
+                                    : "text-ink-subtle hover:bg-surface-muted hover:text-ink",
+                                )}
+                              >
+                                {page.title}
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    ) : null}
+                  </div>
+                );
+              })
+            : apprenticeLinks.map((item) => {
+                if (item.kind === "link") {
+                  const { href, label, icon: Icon } = item;
+                  const active = isActivePath(pathname, href);
+                  return (
+                    <Link
+                      key={href}
+                      href={href}
+                      className={cn(
+                        "flex items-center gap-3 rounded-[var(--radius-md)] px-3 py-2.5 text-sm font-medium transition",
+                        active
+                          ? "bg-primary-soft text-primary-strong"
+                          : "text-ink-muted hover:bg-surface-muted hover:text-ink",
+                      )}
+                    >
+                      <Icon className="h-4 w-4" />
+                      {label}
+                    </Link>
+                  );
+                }
+                const { href, label, icon: Icon, children, id } = item;
+                const active = isActivePath(pathname, href);
+                const subOpen = groupOpen(pathname, item);
+                return (
+                  <div key={id}>
+                    <Link
+                      href={href}
+                      className={cn(
+                        "flex items-center gap-3 rounded-[var(--radius-md)] px-3 py-2.5 text-sm font-medium transition",
+                        active
+                          ? "bg-primary-soft text-primary-strong"
+                          : "text-ink-muted hover:bg-surface-muted hover:text-ink",
+                      )}
+                    >
+                      <Icon className="h-4 w-4" />
+                      {label}
+                    </Link>
+                    {subOpen ? (
+                      <ul className="mt-1 ml-4 space-y-0.5 border-l border-border pl-3">
+                        {children.map((child) => {
+                          const subActive = isActivePath(pathname, child.href);
+                          return (
+                            <li key={child.href}>
+                              <Link
+                                href={child.href}
+                                className={cn(
+                                  "block rounded-[var(--radius-sm)] px-2 py-1.5 text-xs font-medium transition",
+                                  subActive
+                                    ? "bg-primary-soft/70 text-primary-strong"
+                                    : "text-ink-subtle hover:bg-surface-muted hover:text-ink",
+                                )}
+                              >
+                                {child.label}
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    ) : null}
+                  </div>
+                );
+              })}
         </nav>
         <div className="border-t border-border p-4">
           <p className="mb-2 truncate text-sm font-medium text-ink">
@@ -181,10 +341,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           <ul
             className="mx-auto grid max-w-lg gap-0.5 px-0.5 py-1.5"
             style={{
-              gridTemplateColumns: `repeat(${Math.min(links.length, 7)}, minmax(0, 1fr))`,
+              gridTemplateColumns: `repeat(${Math.min(mobileLinks.length, 7)}, minmax(0, 1fr))`,
             }}
           >
-            {links.slice(0, 7).map(({ href, label, icon: Icon }) => {
+            {mobileLinks.map(({ href, label, icon: Icon }) => {
               const active = isActivePath(pathname, href);
               return (
                 <li key={href}>
