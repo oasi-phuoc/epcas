@@ -18504,6 +18504,234 @@ const DEMO_703_OBJECTIFS_SUMMARY = `## Objectifs
 - 3 piliers · déductions
 - CO · LAA`;
 
+/** Glossaire Module 703 */
+const DEMO_703_GLOSSAIRE_FULL = `## Glossaire — Module 703
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| **Coûts de personnel directs** | §3.1 | **Salaire brut** et charges salariales directes versées à l'employé (rémunération brute). |
+| **Coûts de personnel indirects** | §3.1 | Frais **en plus** du salaire brut : recrutement, équipement poste, frais déplacement, maintien salaire maladie… |
+| **Paie** | §3.2 | Ensemble des **paiements** et déductions liés au travail · fiche de salaire mensuelle. |
+| **Salaire** | §3.1.1 | Rémunération pour travail **effectivement effectué** · **variable** (heures, tâche, pièces). |
+| **Rémunération** | §3.1.1 | Montant **fixe** convenu · indépendant du volume · heures supp. souvent compensées · payée aussi en vacances. |`;
+
+const DEMO_703_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Directs** = brut · **indirects** = au-delà du brut
+- **Salaire** = variable · **rémunération** = fixe
+- Déductions 2021 employé ≈ **7,15 %** (AVS, AI, APG, AANP, AC)
+- **3 piliers** : étatique · professionnel · privé`;
+
+/** Mise en situation Module 703 */
+const DEMO_703_SITUATION_FULL = `## Mise en situation — Module 703
+
+**EnterSite AG / FICO** — fiche de salaire, système social et emploi temporaire.
+
+---
+
+### Mission 1 — Fiche de salaire
+
+:::reponse
+**Réponse individuelle** — déposer une copie de sa fiche de salaire et comparer les **déductions** avec la théorie (AVS 4,35 % · AI 0,7 % · APG 0,25 % · AANP 0,75 % · AC 1,1 % · évent. LPP).
+:::
+
+---
+
+### Mission 2 — Retenues sur salaire
+
+:::reponse
+**Pourquoi des retenues ?**
+- Financent les **prestations sociales** indispensables (maladie, chômage, urgences)
+- Principe de **solidarité** : chacun cotise · chacun reçoit du soutien si besoin
+
+**Pourquoi en Suisse ?**
+- Promouvoir le **bien-être** · atténuer les **inégalités**
+- Assurances financées : **AVS** · **AI** · **APG** · **AC** · assurance **maladie**
+- Sécurité financière à la retraite · en cas de maladie · situations d'urgence
+:::
+
+---
+
+### Mission 3 — Système social dans d'autres pays
+
+:::reponse
+**Réponse individuelle** — rechercher via amis/famille comment le système social fonctionne et est **financé** ailleurs · échange en petits groupes.
+:::
+
+---
+
+### Mission 4 — Travail temporaire (intérim)
+
+:::reponse
+**Signification** — travailler temporairement via une **agence de travail temporaire** pour couvrir des besoins à court terme.
+
+**Avantages** — flexibilité horaires/lieux · découvrir secteurs · entrée rapide marché du travail · développement varié
+
+**Inconvénients** — pas de garantie long terme · moins d'avantages (maladie, congés…) · satisfaction parfois ↓
+
+**Agences connues** — **Adecco** · **Manpower** · **Randstad**
+:::
+
+---
+
+### Mission 5 — Visite virtuelle EnterSite FICO
+
+:::reponse
+**EnterSite** — visite virtuelle **ICT & FICO salle 18 V2** (image à droite) · résoudre le problème pour finaliser le travail FICO.
+:::
+
+---
+
+### Mission 6 — Discussion STA
+
+:::reponse
+**Réponse ouverte** — notes de discussion en plénière.
+:::`;
+
+const DEMO_703_SITUATION_SUMMARY = `## Mise en situation — À retenir
+- Fiche salaire : comparer déductions réelles vs théorie
+- Retenues = solidarité · AVS/AI/AC/APG/maladie
+- Intérim : flexibilité vs précarité
+- EnterSite salle 18 V2 · Adecco/Manpower/Randstad`;
+
+/** Exercices de maths Module 703 */
+const DEMO_703_MATHS_FULL = `## Exercices de mathématiques — Module 703
+
+### Exercice 1 — Salaire net (brut CHF 850)
+
+Déductions employé 2021 :
+
+| Abrév. | Taux |
+| --- | --- |
+| AVS | 4,35 % |
+| AI | 0,7 % |
+| APG | 0,25 % |
+| AANP | 0,75 % |
+| AC | 1,1 % |
+
+:::solution
+**Salaire net : CHF 789,25**
+
+\`\`\`
+AVS  : 36,98 CHF
+AI   :  5,95 CHF
+APG  :  2,13 CHF
+AANP :  6,38 CHF
+AC   :  9,35 CHF
+Total déductions : 60,78 CHF
+850 − 60,78 ≈ 789,25 CHF
+\`\`\`
+:::
+
+### Exercice 2 — Part employeur
+
+:::solution
+**CHF 60,75** (cotisations employeur sur le brut — ordre de grandeur identique aux déductions employé pour les assurances sociales obligatoires)
+:::
+
+### Exercice 3 — CDD après apprentissage
+
+**23 CHF/h** · 121 h · vacances **10,64 %** + fériés **3 %** · déductions **7,15 %**.
+
+:::solution
+**CHF 2'936,51** versés
+
+\`\`\`
+Brut : 121 × 23 = 2'783 CHF
++Avantages : 2'783 + (2'783 × 10,64 %) + (2'783 × 3 %) = 3'162,60 CHF
+Net : 3'162,60 − (3'162,60 × 7,15 %) = 2'936,51 CHF
+\`\`\`
+:::
+
+### Exercice 4 — Semaine de vacances
+
+:::solution
+**CHF 0** — les vacances sont **comprises** dans le tarif horaire (payées au prorata via les 10,64 %).
+:::
+
+> **Contrôle rapide** : 2'936,51 · 0 · 789,25 · 60,75`;
+
+const DEMO_703_MATHS_SUMMARY = `## Maths — Solutions
+1. Net : **789,25 CHF** (brut 850)
+2. Employeur : **60,75 CHF**
+3. CDD 121 h : **2'936,51 CHF**
+4. Vacances 1 semaine : **0 CHF** (inclus dans taux horaire)`;
+
+/** Vérification des acquis Module 703 */
+const DEMO_703_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 703 — Les coûts du personnel**.
+
+### Question 1
+
+Que comprennent les **frais de personnel** ?
+
+:::reponse
+- **Salaires** du personnel de l'entrepôt
+- **Prestations sociales** (assurances sociales)
+- **Prestations spéciales** (formations, frais, gratifications…)
+- **Frais d'administration** (gestion du personnel)
+:::
+
+### Question 2
+
+Différence coûts salariaux **directs** vs **indirects** ?
+
+:::reponse
+| Directs | Indirects |
+| --- | --- |
+| Rémunération / **salaire brut** | Équipement du poste de travail |
+| Cotisations AVS, maladie, chômage, APG | Coûts de **recrutement** |
+| Primes vacances et Noël | |
+| Gratifications | |
+| Frais de déplacement | |
+| Maintien salaire en cas de **maladie** | |
+:::
+
+### Question 3
+
+Différence **salaire** vs **rémunération** ?
+
+:::reponse
+**Salaire** — pour travail **réellement effectué** · **variable** (heures, tâche, pièces).
+
+**Rémunération** — somme **fixe** convenue · indépendante de la quantité · heures supp. compensées · payée aussi en **vacances**.
+:::
+
+### Question 4
+
+Principe des **trois piliers** en Suisse ?
+
+:::reponse
+**1er pilier — Étatique** : AVS · AI · PC · AC · AM · APG · système de **répartition** · dès 18 ans
+
+**2e pilier — Professionnel** : LPP (~60–70 % dernier salaire) · LAA · LFLP · assurances surobligatoires
+
+**3e pilier — Privé (facultatif)** :
+- **3a** — prévoyance vieillesse · déductible fiscalement · retrait anticipé logement possible
+- **3b** — épargne/placement · couverture risques invalidité/décès
+:::
+
+### Question 5
+
+Déductions sur la fiche de salaire (2021) ?
+
+:::reponse
+| Abrév. | Signification |
+| --- | --- |
+| **AVS** | Assurance vieillesse et survivants |
+| **AI** | Assurance-invalidité |
+| **APG** | Assurance perte de gain |
+| **AANP** | Assurance accidents non professionnels |
+| **AC** | Assurance chômage |
+:::`;
+
+const DEMO_703_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Salaires · sociales · spéciales · administration
+2. Directs = brut + cotisations · indirects = recrutement, équipement…
+3. Salaire variable · rémunération fixe
+4. Pilier 1 état · 2 professionnel (LPP) · 3 privé (3a/3b)
+5. AVS · AI · APG · AANP · AC`;
+
 /** Contenu Module 704 — Stockage — Les indicateurs logistiques */
 const DEMO_704_THEORIE_FULL = `## 4. Les indicateurs logistiques (KPI'S)
 
@@ -22116,6 +22344,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_703_THEORIE_FULL,
       summary: DEMO_703_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_703_GLOSSAIRE_FULL,
+      summary: DEMO_703_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_703_SITUATION_FULL,
+      summary: DEMO_703_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_703_MATHS_FULL,
+      summary: DEMO_703_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_703_VERIFICATION_FULL,
+      summary: DEMO_703_VERIFICATION_SUMMARY,
     },
   },
   "704": {
