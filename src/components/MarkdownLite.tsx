@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { AnswerReveal } from "@/components/AnswerReveal";
 import { ExerciseAnswerField } from "@/components/ExerciseAnswerField";
 import { StudentEleveNoteBlock } from "@/components/theory/StudentEleveNoteBlock";
+import { WordParagraphAlignFigure } from "@/components/theory/WordParagraphAlignFigure";
 import { cn } from "@/lib/cn";
 import {
   glossaryTableColumnIndexes,
@@ -198,6 +199,10 @@ function GlossaryTableList({ body }: { body: string[][] }) {
 }
 
 function FigureBlock({ kind, body }: { kind: string; body: string }) {
+  if (kind === "word-align-paragraphes") {
+    return <WordParagraphAlignFigure />;
+  }
+
   if (kind === "etapes") {
     const steps = body
       .split("\n")

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="380" viewBox="0 0 420 380" role="img" aria-label="Boîte de dialogue Paragraphe Word">
+  <rect width="420" height="380" fill="#ece9d8" stroke="#888"/>
+  <rect x="8" y="8" width="404" height="28" fill="#0054e3"/>
+  <text x="20" y="26" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff" font-weight="600">Paragraphe</text>
+  <rect x="16" y="44" width="120" height="22" fill="#fff" stroke="#888"/>
+  <text x="24" y="59" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600">Retrait et espacement</text>
+  <rect x="136" y="44" width="100" height="22" fill="#ece9d8" stroke="#888"/>
+  <text x="148" y="59" font-family="Segoe UI, sans-serif" font-size="11">Enchaînements</text>
+  <text x="24" y="88" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600">Général</text>
+  <text x="32" y="108" font-family="Segoe UI, sans-serif" font-size="10">Alignement :</text>
+  <rect x="110" y="94" width="100" height="20" fill="#fff" stroke="#888"/>
+  <text x="118" y="108" font-family="Segoe UI, sans-serif" font-size="10">À gauche</text>
+  <text x="24" y="140" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600">Retrait</text>
+  <text x="32" y="162" font-family="Segoe UI, sans-serif" font-size="10">Gauche : 0 cm · Droite : 0 cm</text>
+  <text x="24" y="190" font-family="Segoe UI, sans-serif" font-size="11" font-weight="600">Espacement</text>
+  <text x="32" y="212" font-family="Segoe UI, sans-serif" font-size="10">Avant : 12 pt · Après : 12 pt</text>
+  <text x="32" y="228" font-family="Segoe UI, sans-serif" font-size="10">Interligne : Multiple · 1,25</text>
+  <rect x="24" y="248" width="372" height="72" fill="#fff" stroke="#888"/>
+  <text x="32" y="268" font-family="Segoe UI, sans-serif" font-size="10" fill="#9ca3af">Aperçu  Paragraphe précédent&</text>
+  <text x="32" y="300" font-family="Segoe UI, sans-serif" font-size="11">Interligne</text>
+  <rect x="240" y="336" width="72" height="28" fill="#ece9d8" stroke="#888"/>
+  <text x="262" y="354" font-family="Segoe UI, sans-serif" font-size="11">OK</text>
+  <rect x="320" y="336" width="72" height="28" fill="#ece9d8" stroke="#888"/>
+  <text x="332" y="354" font-family="Segoe UI, sans-serif" font-size="11">Annuler</text>
+</svg>

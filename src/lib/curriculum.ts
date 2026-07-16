@@ -33099,7 +33099,14 @@ Interface Word : ruban (onglets Accueil, Insertion, Références…), zone de te
 
 ### 5.3 Paragraphe
 
-Curseur n'importe où dans le paragraphe · groupe **Paragraphe** (Accueil) : alignement · interligne · espacement · retraits.
+Il y a **4 alignements possibles** : gauche, droite, centré et justifié.
+
+![](/assets/curriculum/805/word/word-para-align-ribbon.svg)
+
+:::figure word-align-paragraphes
+:::
+
+![](/assets/curriculum/805/word/word-para-dialog.svg)
 
 ### 5.4 Tabulateurs
 
@@ -33451,7 +33458,7 @@ Si tu as mis plusieurs images ou graphiques avec des légendes, tu peux créer u
 const DEMO_805_THEORIE_SUMMARY = `## À retenir — Module 805
 
 ### Saisie de texte
-Word affiche l'interface avec le ruban, la zone de texte et la barre d'état. La commande Afficher tout révèle les caractères non imprimables. Enter crée un nouveau paragraphe, Shift+Enter un simple saut de ligne, et Ctrl+Enter un saut de page. On peut insérer la date, l'heure et des symboles via l'onglet Insertion, et annuler ou rétablir les actions.
+Tableaux **Base à connaître** (¶, Enter, Shift+Enter, Ctrl+Enter, sélection) et **Police** (gras, italique, souligné, casse, indice/exposant…). **Paramètres avancés** : espacement des lettres, couleur / dégradé, effets (contour, ombre, reflet).
 
 ### Mise en forme et listes
 Le groupe Paragraphe permet de régler l'alignement, l'interligne et les retraits. Les tabulateurs alignent précisément le texte sur la règle. Les bordures et trames encadrent ou colorent les paragraphes. Les puces, la numérotation et les listes à plusieurs niveaux structurent le contenu.
