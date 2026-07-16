@@ -97,9 +97,15 @@ export function StudentTheoryReader({
       );
       return;
     }
-    if (annotations.highlights.some((h) => h.quote === quote)) {
-      setFeedback("Ce passage est déjà surligné.");
+    const existing = annotations.highlights.find((h) => h.quote === quote);
+    if (existing) {
+      persist({
+        ...annotations,
+        highlights: annotations.highlights.filter((h) => h.id !== existing.id),
+      });
       window.getSelection()?.removeAllRanges();
+      setFeedback("Surlignage retiré.");
+      setTimeout(() => setFeedback(null), 2000);
       return;
     }
     persist({
@@ -168,8 +174,34 @@ export function StudentTheoryReader({
     [userId, lessonId, mode, chapterIndex],
   );
 
+  const updateComment = useCallback(
+    (id: string, text: string) => {
+      const trimmed = text.trim();
+      if (!trimmed) return;
+      setAnnotations((prev) => {
+        const next = {
+          ...prev,
+          comments: prev.comments.map((c) =>
+            c.id === id ? { ...c, text: trimmed } : c,
+          ),
+        };
+        saveStudentLessonAnnotations(
+          userId,
+          lessonId,
+          mode,
+          chapterIndex,
+          next,
+        );
+        return next;
+      });
+    },
+    [userId, lessonId, mode, chapterIndex],
+  );
+
   return (
-    <StudentAnnotationContext.Provider value={{ onDeleteComment: deleteComment }}>
+    <StudentAnnotationContext.Provider
+      value={{ onDeleteComment: deleteComment, onUpdateComment: updateComment }}
+    >
       <div className="space-y-3">
         <div
           className={cn(

@@ -1,9 +1,7 @@
 import type { ReactNode } from "react";
 import { AnswerReveal } from "@/components/AnswerReveal";
 import { ExerciseAnswerField } from "@/components/ExerciseAnswerField";
-import { useStudentAnnotationActions } from "@/components/theory/StudentAnnotationContext";
-import { Button } from "@/components/ui";
-import { Trash2 } from "lucide-react";
+import { StudentEleveNoteBlock } from "@/components/theory/StudentEleveNoteBlock";
 import { cn } from "@/lib/cn";
 import {
   glossaryTableColumnIndexes,
@@ -131,31 +129,7 @@ function parseEleveNoteBlock(lines: string[], start: number) {
 }
 
 function EleveNoteBlock({ id, body }: { id: string; body: string }) {
-  const { onDeleteComment } = useStudentAnnotationActions();
-  return (
-    <aside className="my-4 rounded-[var(--radius-md)] border-2 border-dashed border-primary/35 bg-primary-soft/30 px-4 py-3">
-      <div className="mb-2 flex items-start justify-between gap-2">
-        <p className="text-xs font-semibold uppercase tracking-wide text-primary-strong">
-          Votre commentaire
-        </p>
-        {onDeleteComment ? (
-          <Button
-            type="button"
-            size="sm"
-            variant="ghost"
-            className="h-8 min-h-8 px-2"
-            onClick={() => onDeleteComment(id)}
-            title="Supprimer ce commentaire"
-          >
-            <Trash2 className="h-4 w-4" />
-          </Button>
-        ) : null}
-      </div>
-      <div className="whitespace-pre-wrap text-sm leading-relaxed text-ink-muted">
-        {body}
-      </div>
-    </aside>
-  );
+  return <StudentEleveNoteBlock id={id} body={body} />;
 }
 
 function parseFigureBlock(lines: string[], start: number) {
