@@ -2,9 +2,9 @@
 
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { cn } from "@/lib/cn";
 import {
   Alert,
-  Badge,
   Button,
   EmptyState,
   PageHeader,
@@ -217,12 +217,9 @@ function LessonEditor({
         </>
       ) : (
         <div className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-4 sm:p-5">
-          <div className="mb-4 flex flex-wrap items-center gap-2">
-            <Badge tone={which === "summary" ? "accent" : "primary"}>
-              {which === "summary" ? "Résumé" : "Complet"}
-            </Badge>
-            <Badge tone="neutral">{editLevel}</Badge>
-          </div>
+          <p className="mb-2 text-xs text-ink-subtle">
+            {which === "summary" ? "Résumé" : "Complet"} · {editLevel}
+          </p>
           <h2 className="mb-4 font-display text-2xl text-ink sm:text-3xl">
             {title || "Sans titre"}
           </h2>
@@ -361,12 +358,19 @@ export function ContenuPageEditor({
         }
       />
 
-      <nav className="mb-4 flex flex-wrap gap-2">
+      <nav className="mb-4 flex flex-wrap gap-3">
         {sectionPages.map((p) => (
-          <Link key={p.slug} href={p.href}>
-            <Badge tone={p.slug === pageSlug ? "primary" : "neutral"}>
-              {p.title}
-            </Badge>
+          <Link
+            key={p.slug}
+            href={p.href}
+            className={cn(
+              "text-sm font-medium transition",
+              p.slug === pageSlug
+                ? "text-primary-strong"
+                : "text-ink-muted hover:text-ink",
+            )}
+          >
+            {p.title}
           </Link>
         ))}
       </nav>

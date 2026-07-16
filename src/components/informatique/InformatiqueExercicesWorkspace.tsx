@@ -4,7 +4,6 @@ import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import {
   Alert,
-  Badge,
   Button,
   EmptyState,
   PageHeader,
@@ -67,7 +66,7 @@ function StudentCorrectionAsset({ asset }: { asset: InformatiqueAsset }) {
   if (!asset.url) {
     return (
       <li className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 px-3 py-2.5">
-        <Badge tone="warning">Pas encore disponible</Badge>
+        <span className="text-sm text-ink-muted">Pas encore disponible</span>
       </li>
     );
   }
@@ -248,7 +247,9 @@ function AssetList({
                       </a>
                     ) : null}
                     {!asset.url ? (
-                      <Badge tone="warning">Pas encore disponible</Badge>
+                      <span className="text-sm text-ink-muted">
+                        Pas encore disponible
+                      </span>
                     ) : null}
                     {editable && onRemove ? (
                       <Button
@@ -370,11 +371,9 @@ function ExercisePreview({
 }) {
   return (
     <div className="rounded-[var(--radius-md)] border border-border bg-surface-muted/40 p-4 sm:p-5">
-      <div className="mb-4 flex flex-wrap items-center gap-2">
-        <Badge tone="accent">Preview</Badge>
-        <Badge tone="neutral">{informatiqueYearLabel(exercise.year)}</Badge>
-        <Badge tone="neutral">{informatiqueAppLabel(exercise.app)}</Badge>
-      </div>
+      <p className="mb-2 text-xs text-ink-subtle">
+        {informatiqueYearLabel(exercise.year)} · {informatiqueAppLabel(exercise.app)}
+      </p>
       <h2 className="mb-3 font-display text-2xl text-ink sm:text-3xl">
         {exercise.title || "Sans titre"}
       </h2>
@@ -594,9 +593,6 @@ function StudentExerciseDetail({
   return (
     <div className="space-y-4">
       <Panel>
-        <div className="mb-4 flex flex-wrap items-center gap-2">
-          <Badge tone="neutral">{informatiqueAppLabel(exercise.app)}</Badge>
-        </div>
         <h2 className="font-display text-2xl text-ink sm:text-3xl">
           {exercise.title || "Sans titre"}
         </h2>
@@ -761,17 +757,17 @@ export function InformatiqueExercicesWorkspace({
       />
 
       {isEdit ? (
-        <nav className="mb-4 flex flex-wrap gap-2">
-          <Link href="/formateur/exercices/situation">
-            <Badge tone="neutral">Mise en situation</Badge>
+        <nav className="mb-4 flex flex-wrap gap-3 text-sm">
+          <Link href="/formateur/exercices/situation" className="text-ink-muted hover:text-ink">
+            Mise en situation
           </Link>
-          <Link href="/formateur/exercices/maths">
-            <Badge tone="neutral">Mathématiques</Badge>
+          <Link href="/formateur/exercices/maths" className="text-ink-muted hover:text-ink">
+            Mathématiques
           </Link>
-          <Link href="/formateur/exercices/verification">
-            <Badge tone="neutral">Vérification des acquis</Badge>
+          <Link href="/formateur/exercices/verification" className="text-ink-muted hover:text-ink">
+            Vérification des acquis
           </Link>
-          <Badge tone="primary">Informatique</Badge>
+          <span className="font-medium text-primary-strong">Informatique</span>
         </nav>
       ) : null}
 
@@ -914,7 +910,9 @@ export function InformatiqueExercicesWorkspace({
                         ) : null}
                       </span>
                       {isEdit && !ex.published ? (
-                        <Badge tone="warning">Brouillon</Badge>
+                        <span className="shrink-0 text-xs text-ink-muted">
+                          Brouillon
+                        </span>
                       ) : null}
                     </button>
                   </li>

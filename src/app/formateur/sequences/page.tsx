@@ -3,7 +3,6 @@
 import { useMemo, useState } from "react";
 import {
   Alert,
-  Badge,
   Button,
   EmptyState,
   PageHeader,
@@ -20,6 +19,7 @@ import {
   moduleVisibleForLevel,
   unassignedModuleIds,
 } from "@/lib/levels";
+import { cn } from "@/lib/cn";
 import { useAppStore } from "@/lib/store";
 import { isStaffRole } from "@/lib/roles";
 import type { DiplomaLevel, Module, StudyYear } from "@/lib/types";
@@ -204,11 +204,14 @@ export default function SequencesPage() {
               key={year}
               type="button"
               onClick={() => setStudyYear(year)}
-              className="rounded-[var(--radius-md)] border border-border px-2 py-1.5 text-left text-xs transition hover:border-primary"
+              className={cn(
+                "rounded-[var(--radius-md)] border border-border px-2 py-1.5 text-left text-xs transition hover:border-primary",
+                year === effectiveYear && "border-primary text-primary-strong",
+              )}
             >
-              <Badge tone={year === effectiveYear ? "primary" : "neutral"}>
+              <span className="font-medium">
                 {STUDY_YEAR_LABELS[year]} · {count}
-              </Badge>
+              </span>
               {(blocks["500"] > 0 || blocks["600"] > 0 || blocks["700"] > 0) && (
                 <span className="mt-1 block text-[10px] text-ink-subtle">
                   {blocks["500"] > 0 ? `500×${blocks["500"]} ` : ""}
@@ -270,7 +273,9 @@ export default function SequencesPage() {
             <h2 className="font-display text-xl text-ink">
               Ordre — {DIPLOMA_LABELS[level]} · {STUDY_YEAR_LABELS[effectiveYear]}
             </h2>
-            <Badge tone="accent">{orderedModules.length} modules</Badge>
+            <span className="text-sm text-ink-muted">
+              {orderedModules.length} modules
+            </span>
           </div>
           <p className="mb-3 text-sm text-ink-muted">
             Cet ordre est celui vu par les apprentis de cette année / ce
@@ -336,7 +341,9 @@ export default function SequencesPage() {
         <Panel>
           <div className="mb-3 flex flex-wrap items-center gap-2">
             <h2 className="font-display text-xl text-ink">Disponibles</h2>
-            <Badge tone="neutral">{availableModules.length}</Badge>
+            <span className="text-sm text-ink-muted">
+              {availableModules.length}
+            </span>
           </div>
           <p className="mb-3 text-sm text-ink-muted">
             Modules {level} non encore placés. Règle : un module = une seule
@@ -360,7 +367,7 @@ export default function SequencesPage() {
                     </p>
                     <p className="truncate text-sm text-ink">{mod.title}</p>
                   </div>
-                  <Badge tone="success">Libre</Badge>
+                  <span className="shrink-0 text-xs text-ink-muted">Libre</span>
                   <Button
                     size="sm"
                     variant="secondary"
@@ -378,12 +385,14 @@ export default function SequencesPage() {
             <h3 className="font-display text-lg text-ink">
               Déjà dans une autre année
             </h3>
-            <Badge tone="accent">{placedElsewhere.length}</Badge>
+            <span className="text-sm text-ink-muted">
+              {placedElsewhere.length}
+            </span>
           </div>
           <p className="mb-3 text-sm text-ink-muted">
             Ces modules sont déjà affectés à une autre année {level} — ils ne
             peuvent pas être ajoutés ici sans les retirer d&apos;abord (ou
-            changez d&apos;année via la pastille).
+            changez d&apos;année via le sélecteur).
           </p>
           {placedElsewhere.length === 0 ? (
             <p className="text-sm text-ink-subtle">
@@ -406,9 +415,9 @@ export default function SequencesPage() {
                     type="button"
                     onClick={() => setStudyYear(year)}
                     title={`Voir la séquence ${STUDY_YEAR_LABELS[year]}`}
-                    className="shrink-0"
+                    className="shrink-0 text-xs font-medium text-primary-strong underline-offset-2 hover:underline"
                   >
-                    <Badge tone="warning">{shortYearLabel(year)}</Badge>
+                    {shortYearLabel(year)}
                   </button>
                 </li>
               ))}

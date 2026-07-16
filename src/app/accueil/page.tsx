@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import {
-  Badge,
   PageHeader,
   Panel,
   ProgressBar,
@@ -113,11 +112,7 @@ export default function AccueilPage() {
       ) : (
         <div className="space-y-4">
           <Panel className="animate-fade-up">
-            <div className="flex flex-wrap items-center gap-2">
-              <Badge tone="primary">{userLevel}</Badge>
-              <Badge tone="accent">{STUDY_YEAR_LABELS[userStudyYear]}</Badge>
-            </div>
-            <h2 className="mt-3 font-display text-2xl">
+            <h2 className="font-display text-2xl">
               {firstModule
                 ? `Module ${firstModule.code} — ${firstModule.title}`
                 : "Aucun module dans votre séquence"}
@@ -153,16 +148,11 @@ export default function AccueilPage() {
               <p className="mt-2 text-sm font-medium text-ink">
                 {classroom?.name ?? "Non assignée"}
               </p>
-              <p className="mt-1 flex flex-wrap items-center gap-2 text-xs text-ink-subtle">
-                <span>{classroom?.year}</span>
-                {classroom ? (
-                  <>
-                    <Badge tone="primary">{classroom.level}</Badge>
-                    <Badge tone="accent">
-                      {STUDY_YEAR_LABELS[classroom.studyYear]}
-                    </Badge>
-                  </>
-                ) : null}
+              <p className="mt-1 text-xs text-ink-subtle">
+                {classroom?.year}
+                {classroom
+                  ? ` · ${classroom.level} · ${STUDY_YEAR_LABELS[classroom.studyYear]}`
+                  : null}
               </p>
             </Panel>
           </div>

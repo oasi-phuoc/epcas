@@ -3,7 +3,6 @@
 import { useState } from "react";
 import {
   Alert,
-  Badge,
   Button,
   PageHeader,
   Panel,
@@ -90,13 +89,10 @@ export default function ParametresPage() {
               {ROLE_LABELS[currentUser.role]}
             </p>
             {classroom ? (
-              <div className="mt-3 flex flex-wrap items-center gap-2">
-                <span className="text-sm text-ink-muted">{classroom.name}</span>
-                <Badge tone="primary">{classroom.level}</Badge>
-                <Badge tone="accent">
-                  {STUDY_YEAR_LABELS[classroom.studyYear]}
-                </Badge>
-              </div>
+              <p className="mt-3 text-sm text-ink-muted">
+                {classroom.name} · {classroom.level} ·{" "}
+                {STUDY_YEAR_LABELS[classroom.studyYear]}
+              </p>
             ) : null}
             <div className="mt-5 flex flex-wrap gap-2">
               <Button variant="secondary" onClick={logout}>

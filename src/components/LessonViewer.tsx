@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import {
   Alert,
-  Badge,
   Button,
   PageHeader,
   Panel,
@@ -164,21 +163,6 @@ export function LessonViewer({ lessonId }: LessonViewerProps) {
       </div>
 
       <Panel className="animate-fade-up">
-        <div className="mb-4 flex flex-wrap gap-2">
-          <Badge tone={summaryMode ? "accent" : "primary"}>
-            {summaryMode ? "Résumé" : "Complet"}
-          </Badge>
-          {mod ? <Badge tone="neutral">{mod.code}</Badge> : null}
-          {progress?.status === "done" ? (
-            <Badge tone="success">Lu</Badge>
-          ) : null}
-          {paginated ? (
-            <Badge tone="neutral">
-              Chapitre {safeIndex + 1}/{chapters!.length}
-            </Badge>
-          ) : null}
-        </div>
-
         {paginated && chapters ? (
           <TheoryChapterNav
             chapters={chapters}
