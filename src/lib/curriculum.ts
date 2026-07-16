@@ -30146,6 +30146,588 @@ const DEMO_704_OBJECTIFS_SUMMARY = `## Objectifs
 - Couverture · service · ABC
 - Erreurs · prévention`;
 
+
+const DEMO_704_GLOSSAIRE_FULL = `## Glossaire — Module 704
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Chiffres clés | | Indicateurs logistiques (KPI) mesurant la performance du stockage : stock moyen, rotation, durée de stockage, couverture, taux de service, intérêts de stockage, etc. Permettent d'évaluer la rentabilité et d'adapter la gestion des stocks. |
+| Durée moyenne de stockage | | Nombre de jours qu'un produit reste en moyenne en stock avant d'être vendu ou consommé. **Formule :** période choisie (souvent 360 jours) / taux de rotation. Une durée courte indique une gestion efficace ; une durée longue peut signaler un surstock ou une faible demande. |
+| Rotation des stocks | | Nombre de fois où le stock moyen est entièrement consommé et renouvelé sur une période. **Formule :** utilisation des marchandises (consommation) / stock moyen. Un taux élevé réduit les coûts de stockage et l'immobilisation du capital. |
+| Couverture des stocks | | Nombre de jours pendant lesquels le stock disponible couvre le besoin journalier moyen ou planifié, en conditions normales. **Formule :** niveau de stock / besoin journalier. Le stock disponible = stock physique − réservations + entrées prévues. |
+| Taux de service | | Part des demandes clients satisfaites immédiatement à partir du stock. **Formule :** demandes satisfaites / demandes totales × 100. Viser 100 % sur tout l'assortiment entraîne souvent des stocks excessifs ; 95–98 % est souvent suffisant. |`;
+
+const DEMO_704_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Chiffres clés** : KPI de stockage (stock moyen, rotation, couverture…)
+- **Durée de stockage** : 360 / rotation (jours en stock)
+- **Rotation** : consommation / stock moyen
+- **Couverture** : stock / besoin journalier (jours)
+- **Taux de service** : demandes satisfaites / total × 100`;
+
+/** Mises en situation Module 704 */
+const DEMO_704_SITUATION_FULL = `## Mises en situation — Module 704
+
+Contexte : tu travailles chez **EnterSite AG**. Les missions portent sur les **indicateurs logistiques de stockage** (stock moyen, rotation, durée, intérêts, couverture, recommandations). Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.
+
+---
+
+## Bloc A — Acer Aspire (assortiment ordinateurs)
+
+### Situation
+
+Il y a un peu plus d'un an, EnterSite AG a intégré des ordinateurs portables et des PC de bureau **Acer** dans son assortiment. La direction doute de la rentabilité de ces appareils : tu dois examiner et évaluer les données.
+
+> 💪 Il s'agit d'une tâche exigeante. En cas de besoin, n'hésite pas à demander l'aide de ton enseignant·e.
+
+---
+
+### Mission 1 — Stock moyen (deux variantes)
+
+Tu reçois de Monsieur **Vuloltevic** les données de stock suivantes de l'année dernière. Calcule le **stock moyen** pour les quatre articles de **deux manières différentes**.
+
+**EnterSite AG « Office Solutions » — Données sur les stocks**
+
+| Date | Acer Aspire 3 | Acer Aspire TC 895 | Acer Aspire XC 830 | Acer Aspire XC 886 |
+| --- | --- | --- | --- | --- |
+| Stock au 01.01. | 31 | 21 | 4 | 18 |
+| Stock au 31.01. | 34 | 22 | 9 | 32 |
+| Stock au 28.02. | 38 | 20 | 7 | 38 |
+| Stock au 31.03. | 28 | 18 | 5 | 21 |
+| Stock au 30.04. | 14 | 13 | 9 | 41 |
+| Stock au 31.05. | 9 | 10 | 7 | 26 |
+| Stock au 30.06. | 7 | 13 | 11 | 13 |
+| Stock au 31.07. | 7 | 9 | 15 | 17 |
+| Stock au 31.08. | 16 | 17 | 9 | 24 |
+| Stock au 30.09. | 20 | 16 | 8 | 11 |
+| Stock au 31.10. | 23 | 19 | 6 | 18 |
+| Stock au 30.11. | 38 | 23 | 10 | 32 |
+| Stock au 31.12. | 20 | 15 | 165 | 9 |
+
+**Variante 1 —** (début d'année + 4 fins de trimestre) / **5**
+
+**Variante 2 —** (début d'année + 12 stocks de fin de mois) / **13**
+
+:::reponse
+**Acer Aspire 3**
+- Variante 1 : (31 + 28 + 7 + 20 + 20) / 5 = **21,2** pces
+- Variante 2 : (31 + 34 + 38 + 28 + 14 + 9 + 7 + 7 + 16 + 20 + 23 + 38 + 20) / 13 = **21,92** pces
+
+**Acer Aspire TC 895**
+- Variante 1 : (21 + 18 + 13 + 16 + 15) / 5 = **16,6** pces
+- Variante 2 : (21 + 22 + 20 + 18 + 13 + 10 + 13 + 9 + 17 + 16 + 19 + 23 + 15) / 13 = **16,6** pces
+
+**Acer Aspire XC 830**
+- Variante 1 : (4 + 5 + 11 + 8 + 165) / 5 = **38,6** pces
+- Variante 2 : (4 + 9 + 7 + 5 + 9 + 7 + 11 + 15 + 9 + 8 + 6 + 10 + 165) / 13 = **20,4** pces
+
+**Acer Aspire XC 886**
+- Variante 1 : (18 + 21 + 13 + 11 + 9) / 5 = **14,4** pces
+- Variante 2 : (18 + 32 + 38 + 21 + 41 + 26 + 13 + 17 + 24 + 11 + 18 + 32 + 9) / 13 = **23** pces
+:::
+
+#### Mission 1.1 — Conclusions
+
+Quelles conclusions tires-tu des différents calculs ? Explique et justifie.
+
+:::reponse
+La formule de la **variante 1** est relativement précise lorsque la période d'observation ne présente que de très faibles variations d'effectif. Si les fluctuations sont plus importantes, il convient d'utiliser la **variante 2**, qui fournit les résultats les plus fiables pour obtenir des résultats précis.
+:::
+
+---
+
+### Mission 2 — Rotation des stocks
+
+À l'aide des données suivantes, calcule le **taux de rotation** des quatre articles.
+
+**Entrées au cours de l'année écoulée :**
+- Aspire 3 : 265 pièces · TC 895 : 263 pièces · XC 830 : 215 pièces · XC 886 : 220 pièces
+
+**Ventes par mois** (21 jours ouvrables en moyenne) :
+- Aspire 3 : 21,95 pces · TC 895 : 21,40 pces · XC 830 : 4,5 pces · XC 886 : 19,70 pces
+
+**Formule :** utilisation des marchandises (consommation) / stock moyen
+
+:::reponse
+**Aspire 3**
+- Ventes annuelles : 21,95 × 12 = **263,4** pces
+- Stock moyen : 265 / 12 = **22,08**
+- Rotation : 263,4 / 22,08 = **11,92**
+
+**Aspire TC 895**
+- Ventes annuelles : 21,40 × 12 = **256,8** pces
+- Stock moyen : 263 / 12 = **21,9**
+- Rotation : 256,8 / 21,9 = **11,72**
+
+**Aspire XC 830**
+- Ventes annuelles : 4,5 × 12 = **54** pces
+- Stock moyen : 215 / 12 = **17,9**
+- Rotation : 54 / 17,9 = **3,0**
+
+**Aspire XC 886**
+- Ventes annuelles : 19,7 × 12 = **236,4** pces
+- Stock moyen : 220 / 12 = **18,3**
+- Rotation : 236,4 / 18,3 = **12,9**
+:::
+
+#### Mission 2.1 — Durée de stockage
+
+**Formule :** 360 jours / rotation du stock
+
+:::reponse
+- Aspire 3 : 360 / 11,92 = **30,20 jours**
+- Aspire TC 895 : 360 / 11,72 = **30,71 jours**
+- Aspire XC 830 : 360 / 3,0 = **120 jours**
+- Aspire XC 886 : 360 / 12,9 = **19,6 jours**
+:::
+
+#### Mission 2.2 — Évaluation (Aspire 3)
+
+:::reponse
+La rotation optimale dépend de la branche et du produit. Une rotation de **11,92** semble en principe bonne : les ordinateurs portables sont renouvelés près de douze fois par an. Une rotation trop élevée peut toutefois indiquer un stock inférieur à l'optimum et conduire à des ruptures.
+:::
+
+#### Mission 2.3 — Relation rotation / durée de stockage
+
+:::reponse
+Si le taux de rotation **augmente** (stock vendu plus souvent), la durée de stockage est **plus courte**. Inversement, si la rotation **diminue**, la durée s'allonge. Une bonne gestion vise une rotation élevée et une durée courte pour réduire le capital immobilisé et les coûts de stockage.
+:::
+
+---
+
+### Mission 3 — Taux et intérêts de stockage
+
+Calcule le **taux d'intérêt de stockage** des quatre articles. Taux d'intérêt du marché : **3 %**.
+
+**Formule :** taux d'intérêt du marché × durée moyenne de stockage / 360 jours
+
+:::reponse
+- Aspire 3 : 3 % × 30,20 / 360 = **0,25 %**
+- Aspire TC 895 : 3 % × 30,71 / 360 = **0,25 %**
+- Aspire XC 830 : 3 % × 120 / 360 = **1,0 %**
+- Aspire XC 886 : 3 % × 19,6 / 360 = **0,16 %**
+:::
+
+#### Mission 3.1 — Intérêts de stockage
+
+**Prix d'achat par pièce :** Aspire 3 : CHF 549 · TC 895 : CHF 697 · XC 830 : CHF 399 · XC 886 : CHF 599
+
+**Formule :** taux d'intérêt de stockage × stock moyen × prix de revient
+
+:::reponse
+- Aspire 3 : 0,25 % × 21,9 × 549 = **3'005,80 CHF**
+- Aspire TC 895 : 0,25 % × 16,6 × 697 = **2'892,55 CHF**
+- Aspire XC 830 : 1,0 % × 20,4 × 399 = **8'139,60 CHF**
+- Aspire XC 886 : 0,16 % × 23 × 599 = **2'204,30 CHF**
+:::
+
+#### Mission 3.2 — Justification (Aspire TC 895)
+
+:::reponse
+Le capital immobilisé en stock coûte de l'argent à EnterSite AG. Le taux d'intérêt du stock détermine comment le capital lié au stock est rémunéré.
+:::
+
+---
+
+### Mission 4 — Couverture des stocks (XC 830)
+
+Calcule la **couverture de stock** de l'article **Aspire XC 830** sur la base du stock final du 31.12.
+
+**Formule :** niveau de stock / besoin journalier
+
+:::reponse
+165 pces / 0,214 pces/jour = **771 jours**
+:::
+
+#### Mission 4.1 — Évaluation
+
+:::reponse
+Une couverture de **771 jours** est beaucoup trop élevée pour ce type de produit. Les derniers appareils ne sortiront de stock que dans environ deux ans. EnterSite AG pourrait économiser beaucoup d'argent avec une meilleure gestion des stocks, ou tenter de mieux vendre l'article en réduisant les prix.
+:::
+
+---
+
+### Mission 5 — Recommandations à la direction
+
+Compare tes résultats aux valeurs moyennes du secteur de l'électronique (durée de stockage **28 jours**, couverture **29 jours**) et formule des recommandations.
+
+| | Durée de stockage | Couverture |
+| --- | --- | --- |
+| **Secteur** | 28 jours | 29 jours |
+| **Aspire 3** | 30 jours | 19 jours |
+| **Aspire TC 895** | 30 jours | 15 jours |
+| **Aspire XC 830** | 120 jours | 771 jours |
+| **Aspire XC 886** | 19 jours | 10 jours |
+
+:::reponse
+**Aspire 3** — Durée légèrement supérieure au secteur, couverture inférieure. Optimiser les quantités commandées, améliorer la prévision de la demande et la collaboration avec les fournisseurs.
+
+**Aspire TC 895** — Même constat : optimiser les commandes et la prévision.
+
+**Aspire XC 830** — Durée et couverture nettement trop élevées. Analyse urgente des causes (mauvaise prévision, gestion inadaptée) et mesures pour réduire durée et coûts.
+
+**Aspire XC 886** — Durée et couverture inférieures au secteur : vente rapide mais risque de stock trop faible. Augmenter légèrement les quantités pour garantir la disponibilité.
+
+Mettre en place un contrôle régulier, collaborer avec les fournisseurs et utiliser des systèmes modernes de gestion des stocks.
+:::
+
+---
+
+### Mission 6 — Discussion STA (bloc A)
+
+Discute de la mise en situation en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::
+
+---
+
+## Bloc B — Indicateurs Excel (MES)
+
+### Mission 1 — Stock moyen (trois variantes)
+
+Ouvre le document Excel **MES_Module 704_Caractéristiques du stock moyen2_solution.xlsx** et calcule le niveau de stock moyen à l'aide des **trois variantes** des connaissances théoriques. Inscris les formules dans les champs prévus.
+
+#### Mission 1.1 — Évaluation des trois résultats
+
+:::reponse
+Les trois résultats sont relativement différents. Si les effectifs ne présentaient pas de grandes variations tout au long de l'année, les résultats seraient plus réguliers. Lorsque les fluctuations sont importantes, plus le nombre d'effectifs pris en compte est élevé, plus le résultat est précis.
+:::
+
+---
+
+### Mission 2 — Couverture des stocks
+
+Ouvre **MES_Module 704_Caractéristiques de la disponibilité des stocks4_solution.xlsx** et calcule la couverture de stock sur la base du stock actuel par article et pour tous les articles ensemble.
+
+---
+
+### Mission 3 — Rotation et durée de stockage
+
+Ouvre **MES_Module 704_Caractéristiques rotation stock_solution.xlsx** et calcule la rotation des stocks et la durée moyenne de stockage par article et pour l'ensemble. Hypothèse : le niveau de stock = stock moyen.
+
+#### Mission 3.1 — Évaluation
+
+:::reponse
+Sur la base des résultats, les données de stock d'EnterSite AG devraient absolument être analysées. Il y a trop d'articles avec une rotation très faible et des durées de stockage très élevées.
+:::
+
+---
+
+### Mission 4 — Disponibilité de livraison
+
+Ouvre **MES_Module 704_Caractéristiques de la disponibilité de livraison_solution.xlsx** et calcule le niveau de stock après la première et la deuxième livraison.
+
+#### Mission 4.1 — Non-livraisons (délai de réapprovisionnement 13 jours)
+
+:::reponse
+**5 articles** ne peuvent plus être livrés.
+:::
+
+#### Mission 4.2 — Taux de disponibilité à la livraison (11e jour)
+
+**Formule :** nombre d'exigences satisfaites / total nombre d'exigences × 100
+
+:::reponse
+2'254 pces / 5'830 pces × 100 = **38,66 %**
+:::
+
+---
+
+### Mission 5 — Discussion STA (bloc B)
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::
+
+---
+
+## Bloc C — Oki Toner Yellow MC 883 dn
+
+### Situation
+
+Suite à un mail du directeur **Reto Gugger**, tu reçois de Monsieur **Vuloltevic** la mission de vérifier l'article **« Oki Toner Yellow pour MC 883 dn »** (n° d'article 45862838).
+
+**Données comparatives**
+
+| Indicateur | Année précédente | Année en cours | Secteur |
+| --- | --- | --- | --- |
+| Valeur moyenne du stock | CHF 11'965,20 | CHF 10'140,00 | — |
+| Taux de rotation | 7,5×/an | 15×/an | — |
+| Durée moyenne de stockage | 48 jours | 24 jours | — |
+| Intérêts de stockage | 13,60 CHF/jour | 9,30 CHF/jour | — |
+
+Fichier de travail : **MES_Module 704_Données d'inventaire.xlsx**
+
+---
+
+### Mission 1 — Valeur moyenne du stock
+
+Quelle est la valeur moyenne du stock cette année ?
+
+:::reponse
+La valeur moyenne du stock est de **19'633,75 CHF** cette année.
+:::
+
+#### Mission 1.1 — Évaluation
+
+:::reponse
+**a.** Par rapport à l'année précédente, la valeur du stock a nettement augmenté (de 11'965,20 à 19'633,75 CHF), ce qui peut indiquer une hausse de la demande ou des coûts.
+
+**b.** Par rapport au secteur (10'140 CHF), la valeur est nettement supérieure — article de grande valeur ou gestion différente.
+
+**Conclusion :** une valeur de stock plus élevée n'est pas toujours positive (coûts de stockage, stocks invendus). Analyse détaillée recommandée.
+:::
+
+---
+
+### Mission 2 — Rotation des stocks
+
+Combien de fois le stock a-t-il été transbordé/vendu au cours de l'année écoulée ?
+
+:::reponse
+Rotation : 1'010 pces / 141,25 = **7,15 fois**
+:::
+
+#### Mission 2.1 — Évaluation
+
+:::reponse
+**a.** Légère baisse par rapport à l'année précédente (7,5 → 7,15), alors que la valeur des stocks a augmenté — stocks légèrement surévalués.
+
+**b.** Nettement inférieur au secteur (15×/an) — gestion des stocks peut-être moins efficace.
+:::
+
+---
+
+### Mission 3 — Durée moyenne de stockage
+
+:::reponse
+365 jours / 7,15 = **51 jours**
+:::
+
+#### Mission 3.1 — Évaluation
+
+:::reponse
+**a.** Légèrement plus élevé que l'année précédente (48 jours) en raison d'une rotation légèrement plus faible.
+
+**b.** Plus de deux fois plus long que dans le secteur (24 jours).
+:::
+
+---
+
+### Mission 4 — Intérêts de stockage
+
+Taux d'intérêt de stockage : **0,3125 %**. Calcule les intérêts par an et par jour.
+
+:::reponse
+- **Par an :** 19'633,75 × 0,3125 % = **6'135,55 CHF**
+- **Par jour :** 6'135,55 / 365 = **16,80 CHF**
+:::
+
+#### Mission 4.1 — Évaluation
+
+:::reponse
+**a.** Légèrement plus élevé que l'année précédente (13,60 CHF/jour), en lien avec la valeur moyenne du stock plus élevée.
+
+**b.** Beaucoup plus élevé que la branche (9,30 CHF/jour), la valeur du stock étant presque deux fois plus élevée.
+:::
+
+---
+
+### Mission 5 — Signification des chiffres clés et propositions
+
+#### Mission 5.1 — Pourquoi la rotation est-elle trop faible par rapport au secteur ?
+
+:::reponse
+EnterSite AG est peut-être moins efficace dans la gestion des stocks, dispose de stocks excessifs ou la demande n'était pas conforme aux prévisions.
+:::
+
+#### Mission 5.2 — Relation taux d'intérêt du stock / rotation
+
+:::reponse
+Lien **indirect** via les coûts de stockage. Rotation élevée → produits moins longtemps en stock → capital immobilisé plus court → intérêts sur le stock réduits. Rotation faible → coûts et intérêts augmentent.
+:::
+
+#### Mission 5.3 — Propositions concrètes
+
+:::reponse
+- Analyser la demande pour adapter les stocks et éviter les surstocks
+- Gérer en juste-à-temps pour minimiser les stocks
+- Optimiser les prix (rabais) pour stimuler la demande
+- Négocier de meilleures conditions d'achat avec les fournisseurs
+- Optimiser les canaux de distribution
+- Optimiser les flux et processus (temps de traitement plus courts)
+- Fidéliser les clients par un excellent service
+- Analyser régulièrement les données pour réagir rapidement
+:::
+
+---
+
+### Mission 6 — Discussion STA (bloc C)
+
+:::reponse
+**Réponse ouverte** — notes de discussion STA (pas de solution unique).
+:::`;
+
+const DEMO_704_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **Bloc A Acer** : stock moyen V1/V2 · rotation · durée · intérêts · XC 830 couverture **771 j** · recommandations direction
+- **Bloc B Excel** : 3 variantes stock moyen · couverture · rotation · **5** non-livraisons · taux dispo. **38,66 %**
+- **Bloc C Oki Toner** : valeur **19'633,75 CHF** · rotation **7,15×** · **51 j** · **16,80 CHF/j**`;
+
+/** Exercices de maths Module 704 */
+const DEMO_704_MATHS_FULL = `## Exercices de mathématiques — Module 704
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Données — article GT5104 (fin d'année EnterSite AG)
+
+| Donnée | Valeur |
+| --- | --- |
+| Stock de début d'année | 930 pces |
+| Stock moyen | 1'400 pces |
+| Entrées de marchandises | 7'800 pces |
+| Prix de revient | 112 CHF |
+| Prix de vente | 140 CHF |
+| Stock de fin d'année | 850 pces |
+| Livraisons à venir | 510 pces |
+| Consommation prévue | 350 pces/jour |
+
+---
+
+### Exercice 1 — Consommation annuelle et valeur au prix de revient
+
+**a.** À combien s'élevait la consommation annuelle ?
+
+**b.** À combien s'élevait la consommation de marchandises (prix de revient) ?
+
+:::solution
+**a. Consommation annuelle : 7'880 pces**
+
+930 + 7'800 − 850 = **7'880 pces**
+
+**b. Valeur au prix de revient : 882'560 CHF**
+
+7'880 × 112 = **882'560 CHF**
+:::
+
+---
+
+### Exercice 2 — Chiffre d'affaires et bénéfice
+
+**a.** À combien s'élevait le chiffre d'affaires ?
+
+**b.** Quel était le bénéfice réalisé par EnterSite AG ?
+
+:::solution
+**a. Chiffre d'affaires : 1'103'200 CHF**
+
+7'880 × 140 = **1'103'200 CHF**
+
+**b. Bénéfice : 220'640 CHF**
+
+1'103'200 − 882'560 = **220'640 CHF**
+:::
+
+---
+
+### Exercice 3 — Taux de rotation
+
+Quel est le taux de rotation des stocks de l'article ?
+
+:::solution
+**Rotation : 5,6**
+
+7'880 / 1'400 = 5,6286 → **5,6**
+:::
+
+---
+
+### Exercice 4 — Durée moyenne de stockage
+
+:::solution
+**Durée moyenne de stockage : 64 jours**
+
+360 / 5,6 = 64,2857 → **64 jours**
+:::
+
+---
+
+### Exercice 5 — Couverture des stocks
+
+Sur la base du stock et des livraisons à venir, sur quelle couverture EnterSite AG peut-elle compter ?
+
+:::solution
+**Couverture : 3 jours**
+
+(850 + 510) / 350 = 3,8857 → **3 jours**
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 64 · 882'560 · 3 · 7'880 · 220'640 · 1'103'200 · 5,6`;
+
+const DEMO_704_MATHS_SUMMARY = `## Maths — Solutions (GT5104)
+1. Conso. **7'880** pces · PR **882'560 CHF**
+2. CA **1'103'200 CHF** · bénéfice **220'640 CHF**
+3. Rotation **5,6** · durée **64 j** · couverture **3 j**`;
+
+/** Vérification des acquis Module 704 */
+const DEMO_704_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Stockage — les indicateurs logistiques**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Pourquoi est-il utile de calculer des ratios de stockage ?
+
+:::reponse
+La détermination des ratios permet d'évaluer si le stockage est rentable. Si ce n'est pas le cas, le stockage doit être adapté en conséquence.
+:::
+
+### Question 2
+
+Il est difficile d'évaluer la gestion des stocks par un ratio sans référence. Quelles pourraient être les références ?
+
+:::reponse
+Par références, on entend des **valeurs de comparaison** :
+- Comparaison avec les **années précédentes**
+- Valeurs comparatives d'**entreprises du même secteur**
+- Comparaison avec des **valeurs théoriques** (comparaison théorique/réelle)
+:::
+
+### Question 3
+
+Explique le lien entre la rotation des stocks et la durée de stockage.
+
+:::reponse
+Le taux de rotation indique à quelle fréquence le stock moyen est utilisé et réapprovisionné sur une période donnée. Cela influence la durée de stockage : plus la rotation est **élevée**, plus la durée de stockage est **courte** (et inversement).
+:::
+
+### Question 4
+
+Qu'entends-tu par couverture des stocks et comment est-elle calculée ?
+
+:::reponse
+La couverture des stocks indique combien de temps le matériel disponible en stock couvre les besoins dans des **conditions normales** (pas de fluctuations des besoins).
+
+**Stock disponible** = stock en magasin − réservations + entrées de marchandises prévues
+
+**Couverture** = niveau de stock / besoin journalier
+:::
+
+### Question 5
+
+Comment évalues-tu l'objectif d'avoir un taux de service de 100 % ?
+
+:::reponse
+Il n'est pas forcément judicieux de viser un taux de service de **100 %**, car cela entraîne souvent des stocks importants et des coûts élevés. Pour les articles qui assurent l'existence, cela peut exceptionnellement être l'objectif. Pour l'ensemble d'un assortiment, un taux de service compris entre **95 et 98 %** est largement suffisant.
+:::`;
+
+const DEMO_704_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Ratios → rentabilité du stockage
+2. Références : N−1 · secteur · théorie
+3. ↑ rotation = ↓ durée de stockage
+4. Couverture = stock / besoin journalier
+5. 100 % coûteux · **95–98 %** souvent suffisant`;
+
 /** Contenu Module 705 — La rentabilité de l'entrepôt */
 const DEMO_705_THEORIE_FULL = `## 5. La rentabilité de l'entrepôt
 
@@ -34212,6 +34794,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_704_THEORIE_FULL,
       summary: DEMO_704_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_704_GLOSSAIRE_FULL,
+      summary: DEMO_704_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_704_SITUATION_FULL,
+      summary: DEMO_704_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_704_MATHS_FULL,
+      summary: DEMO_704_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_704_VERIFICATION_FULL,
+      summary: DEMO_704_VERIFICATION_SUMMARY,
     },
   },
   "705": {
