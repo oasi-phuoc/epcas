@@ -38,18 +38,20 @@ import {
   expandImageBlocksFromEditor,
 } from "@/lib/markdown-assets";
 import type { DiplomaLevel, Lesson, LessonAttachment, LessonPageSlug, Module } from "@/lib/types";
-import { Eye, Pencil, Redo2, Undo2 } from "lucide-react";
+import { Eye, Pencil, Redo2, RotateCcw, Undo2 } from "lucide-react";
 
 function LessonEditor({
   lesson,
   editLevel,
   supportsAttachments,
   onSave,
+  onResetToCurriculum,
 }: {
   lesson: Lesson;
   editLevel: DiplomaLevel;
   supportsAttachments: boolean;
   onSave: (next: Lesson) => void;
+  onResetToCurriculum: () => void;
 }) {
   const initialFull = getLessonBody(lesson, editLevel, "full");
   const initialSummary = getLessonBody(lesson, editLevel, "summary");
@@ -290,6 +292,25 @@ function LessonEditor({
 
       <div className="flex flex-wrap gap-2">
         <Button type="submit">Enregistrer ({editLevel})</Button>
+        {mode === "edit" ? (
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={() => {
+              if (
+                confirm(
+                  "Réinitialiser cette page avec le contenu du dépôt Git (curriculum) ?\n\nVos modifications locales et sur le cloud seront remplacées par la version du code source.",
+                )
+              ) {
+                onResetToCurriculum();
+              }
+            }}
+            title="Revenir au contenu défini dans curriculum.ts (Git)"
+          >
+            <RotateCcw className="h-4 w-4" />
+            Reset
+          </Button>
+        ) : null}
         {editLevel === "AFP" && !identical ? (
           <Button
             type="button"
@@ -354,7 +375,8 @@ export function ContenuPageEditor({
   pageSlug: LessonPageSlug;
   section?: "theorie" | "exercices";
 }) {
-  const { currentUser, state, updateLesson } = useAppStore();
+  const { currentUser, state, updateLesson, resetLessonToCurriculum } =
+    useAppStore();
   const sectionPages =
     section === "exercices" ? FORMATEUR_EXERCISE_PAGES : FORMATEUR_THEORY_PAGES;
   const hubHref =
@@ -387,6 +409,7 @@ export function ContenuPageEditor({
   );
   const [moduleId, setModuleId] = useState(modulesSorted[0]?.id ?? "");
   const [editLevel, setEditLevel] = useState<DiplomaLevel>("CFC");
+  const [editorResetKey, setEditorResetKey] = useState(0);
 
   const effectiveBlockId = useMemo(() => {
     if (blocksWithModules.some((b) => b.block.id === blockId)) return blockId;
@@ -609,11 +632,16 @@ export function ContenuPageEditor({
       ) : (
         <Panel>
           <LessonEditor
-            key={`${lesson.id}-${editLevel}`}
+            key={`${lesson.id}-${editLevel}-${editorResetKey}`}
             lesson={lesson}
             editLevel={editLevel}
             supportsAttachments={supportsAttachments}
             onSave={updateLesson}
+            onResetToCurriculum={() => {
+              if (resetLessonToCurriculum(lesson.id)) {
+                setEditorResetKey((k) => k + 1);
+              }
+            }}
           />
         </Panel>
       )}

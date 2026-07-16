@@ -11,7 +11,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { initialState } from "./demo-data";
+import { initialState, getCurriculumLessonById } from "./demo-data";
 import { isStaffRole } from "./roles";
 import {
   assessmentVisibleForLevel,
@@ -134,6 +134,8 @@ type AppStore = {
   deleteClassTask: (taskId: string) => void;
   setClassTaskStatus: (taskId: string, status: ClassTaskStatus) => void;
   updateLesson: (lesson: Lesson) => void;
+  /** Rétablit une leçon depuis le catalogue Git et synchronise le cloud. */
+  resetLessonToCurriculum: (lessonId: string) => boolean;
   upsertInformatiqueExercise: (
     exercise: Omit<InformatiqueExercise, "id" | "order"> & {
       id?: string;
@@ -881,6 +883,16 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     [commit, setCloudSyncMeta],
   );
 
+  const resetLessonToCurriculum = useCallback(
+    (lessonId: string) => {
+      const base = getCurriculumLessonById(lessonId);
+      if (!base) return false;
+      updateLesson({ ...base });
+      return true;
+    },
+    [updateLesson],
+  );
+
   const upsertInformatiqueExercise = useCallback(
     (
       exercise: Omit<InformatiqueExercise, "id" | "order"> & {
@@ -1273,6 +1285,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     deleteClassTask,
     setClassTaskStatus,
     updateLesson,
+    resetLessonToCurriculum,
     upsertInformatiqueExercise,
     deleteInformatiqueExercise,
     updateModule,

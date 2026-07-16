@@ -226,3 +226,8 @@ export const initialState: AppState = {
   ],
   currentUserId: null,
 };
+
+/** Leçon telle que définie dans le dépôt Git (`curriculum.ts`). */
+export function getCurriculumLessonById(id: string) {
+  return lessons.find((l) => l.id === id);
+}
