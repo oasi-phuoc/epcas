@@ -339,21 +339,14 @@ Depuis l'avènement de l'informatique, la logistique est en train de se réinven
 
 const DEMO_101_THEORIE_SUMMARY = `## À retenir — Module 101
 
-### Processus
-- Autrefois : **Chasser → Transformer → Consommer**
-- Aujourd'hui : **Approvisionnement → Production → Distribution**
-- Idée clé : bon matériau, **bon moment**, **bon endroit**, sans perte de valeur
+### Activités logistiques
+La logistique actuelle reprend des activités anciennes : procurer des matériaux, les mettre à disposition au bon moment et au bon endroit sans perte de valeur, puis les consommer. Autrefois, le processus pouvait se résumer par chasser, transformer et consommer ; aujourd'hui, on parle plutôt d'**approvisionnement**, de **production** et de **distribution**. En effet, la logistique a toujours été essentielle aux civilisations, notamment dans les contextes militaires où le ravitaillement conditionnait le succès des campagnes. Ensuite, des défis logistiques majeurs sont apparus aussi dans la vie civile, par exemple lors de grands chantiers nécessitant le transport de matériaux lourds sur de longues distances.
 
-### Histoire
-- **Guerre / Napoléon** : ravitaillement, munitions, logistique = science militaire
-- **Pyramides** : blocs > 50 t, carrières à ~800 km, transport + rampes
-- **Route de la Soie** : Chine → Asie centrale → Méditerranée (soie, thé, épices…)
-- **Route de l'ambre** : Baltique → Méditerranée (« or de la mer »)
+### Produits commerciaux et circuits commerciaux
+Dès l'Antiquité, des routes commerciales ont relié des régions éloignées. D'abord, la **Route de la Soie** a permis des échanges entre la Chine, l'Asie centrale et la Méditerranée, la soie étant le produit le plus important. Ensuite, la **route de l'ambre** reliait la mer Baltique aux ports méditerranéens et favorisait les échanges entre le nord, le centre et le sud de l'Europe.
 
-### Jalons (extraits)
-- 1896 camion · 1907 colis · 1944 palettes / élévateurs · 1949 code-barre
-- 1953 juste-à-temps · 1956 conteneur (McLean) · 1980 Gothard · NLFA 2020
-- **Informatique** = information + automatisme → transformation continue de la logistique`;
+### Les grandes étapes de la logistique
+La logistique a connu de nombreuses étapes techniques qui ont transformé les transports et le stockage, comme l'apparition du camion, des services de colis, des palettes, du code-barre, du juste à temps ou encore du conteneur. Cependant, l'**informatique**, terme formé par information et automatisme, a particulièrement accéléré l'évolution de la logistique depuis son essor. Ainsi, la logistique continue de se réinventer de manière rapide.`;
 
 const DEMO_101_APERCU_FULL = `## Aperçu du module 101
 
@@ -751,24 +744,16 @@ Le champ d'action s'est encore élargi avec la gestion de la chaîne d'approvisi
 const DEMO_102_THEORIE_SUMMARY = `## À retenir — Module 102
 
 ### Mondialisation
-- Mise en réseau mondiale (infos, produits, entreprises)
-- Ex. Corona 2020, fraises toute l'année, enseignes mondiales
-- Impacts : entreprises (Asie, OMC), emplois (+/−), logistique (rapidité, client, conteneurs ISO), politique, environnement, communication (anglais, numérique)
+La mondialisation désigne une mise en réseau mondiale qui rend les informations et les produits disponibles partout. D'abord, elle modifie les entreprises : les marchandises parcourent de plus grandes distances et le commerce international est encadré par des contrats selon les normes de l'**OMC**. Ensuite, elle influence les emplois, car la production peut être délocalisée, mais de nouveaux marchés peuvent aussi en créer. Pour la logistique, les exigences deviennent plus élevées : rapidité, orientation client et usage de normes comme les **conteneurs ISO**. La mondialisation rapproche aussi les systèmes politiques et favorise le libre-échange, mais crée des dépendances entre nations. En outre, l'impact écologique constitue le principal argument contre la mondialisation, car davantage de ressources doivent être extraites et transportées. La communication évolue également, notamment par l'importance croissante de l'anglais et de la numérisation.
 
-**Avantages** : commerce, emplois, innovations, prix, mobilité…  
-**Inconvénients** : écologie, exploitation, inégalités, dépendance, criminalité, perte culturelle…
+### La notion de logistique
+Le terme logistique a été redéfini de manière plus large au fil des années. Auparavant, on entendait surtout la distribution de biens ; aujourd'hui, il s'agit de planifier, exécuter et contrôler les flux de **matières, d'informations, de valeurs, de personnes et d'énergie**, afin d'acheminer une quantité donnée au bon endroit et au bon moment. En effet, la logistique comprend plusieurs sous-disciplines : stockage, transports, **intralogistique**, emballage, information, succursales et logistique du dernier kilomètre. La technologie **RFID** renforce l'emballage, tandis que la **blockchain** sécurise les échanges d'informations dans la chaîne d'approvisionnement. Le dernier kilomètre, entre le centre de distribution et le client final, reste la partie la plus coûteuse et la plus complexe du transport.
 
-### Définition logistique (actuelle)
-Planifier, exécuter, contrôler flux de **matières, infos, valeurs, personnes, énergie** — bonne quantité, bon lieu, bon moment.
+### Chaîne de processus logistique
+Les entreprises se spécialisent et collaborent avec des partenaires pour couvrir l'ensemble de la chaîne logistique, de l'approvisionnement à l'élimination en passant par la production et la distribution. Chaque entreprise possède des compétences clés pour certaines tâches et s'associe à d'autres acteurs pour proposer des solutions globales. Pour atteindre les objectifs, chaque interface entre partenaires doit fonctionner correctement. Cependant, chaque interface peut aussi devenir une source d'erreurs si la qualité et l'orientation client ne sont pas comprises de la même manière. Ainsi, la chaîne de processus ne peut souvent être exécutée qu'en collaboration avec un partenaire.
 
-### Sous-disciplines
-Stockage · Transports · Intralogistique · Emballage (RFID) · Information (blockchain) · Succursales · Dernier kilomètre
-
-### Chaîne de processus
-Spécialisation + partenaires ; **chaque interface = risque d'erreur**
-
-### SCM
-Plus large que la logistique seule : création de valeur + fournisseurs + **flux de valeurs** + client`;
+### Gestion de la chaîne d'approvisionnement (SCM)
+Le **Supply Chain Management** englobe la planification et la gestion de toutes les tâches liées aux fournisseurs, à l'approvisionnement, à la transformation et à la logistique. D'abord, il commence avant le travail du logisticien, par exemple avec les négociations fournisseurs. Ensuite, il inclut le flux optimal de marchandises et d'informations, mais aussi le **flux de valeurs** et le contact direct avec le client. Enfin, il s'élargit à la gestion des clients et à la gestion financière, donc au-delà de la logistique seule.`;
 
 const DEMO_102_APERCU_FULL = `## Aperçu du module 102
 
@@ -1135,32 +1120,11 @@ L'évolution n'est pas encore terminée. Aujourd'hui, on parle aussi de **7B** (
 
 const DEMO_103_THEORIE_SUMMARY = `## À retenir — Module 103
 
-### Contexte
-- Processus efficaces face à la croissance du marché et aux clients
-- Du fax/téléphone → au clic numérique
-- Stratégie (optimiser) + tactique (réagir au marché)
+### Contexte et rôle de la logistique
+Les processus commerciaux doivent aujourd'hui être organisés de manière efficace pour répondre à la croissance du marché et aux besoins des clients. D'abord, la technologie numérique a transformé les achats et les communications entre entreprises. Ensuite, la stratégie vise à optimiser la production et la distribution, tandis que la tactique permet de réagir aux changements soudains du marché. En effet, une entreprise réalise des bénéfices lorsqu'elle travaille de manière **efficace** et **efficiente** : l'efficacité consiste à atteindre les objectifs dans les délais, et l'efficience à les atteindre sans gaspiller les ressources. Ainsi, la logistique d'entreprise optimise les flux de matières et d'informations, depuis les fournisseurs jusqu'au service après-vente.
 
-### Efficacité vs efficience
-- **Efficacité** : atteindre les objectifs dans les délais
-- **Efficience** : atteindre les objectifs **sans gaspiller** les ressources
-
-### Objectif de la logistique
-**Meilleur flux possible de marchandises et de données**
-
-### Les « B » (Jünemann + extensions)
-1. Bonne marchandise  
-2. Bonne quantité  
-3. Bonne qualité  
-4. Bon moment  
-5. Bon endroit  
-6. Bon prix  
-7. Bonnes informations  
-8. Bons clients  
-
-Évolution : **4B → 6B → 7B / 8B**
-
-### Définition S.O.L.E.
-Art et science d'organiser, planifier et soutenir objectifs / plans / opérations (ressources, exigences, approvisionnement).`;
+### Objectifs de la logistique
+L'objectif de la logistique est d'assurer le **meilleur flux possible de marchandises et de données**. Pour y parvenir, elle doit fournir des prestations de haute qualité en respectant les critères formulés par le professeur **Jünemann** : la **bonne marchandise**, en **bonne quantité**, de **bonne qualité**, au **bon moment**, au **bon endroit** et au **bon prix**. Deux critères supplémentaires gagnent en importance : les **bonnes informations** et les **bons clients**. Enfin, la définition de la **S.O.L.E.** décrit la logistique comme l'art et la science d'organiser, de planifier et de soutenir les objectifs, les plans et les opérations grâce aux ressources nécessaires.`;
 
 const DEMO_103_APERCU_FULL = `## Aperçu du module 103
 
@@ -1531,38 +1495,17 @@ Il existe plusieurs termes techniques pour désigner la division de la logistiqu
 
 const DEMO_104_THEORIE_SUMMARY = `## À retenir — Module 104
 
-### But
-Organiser un **flux de marchandises optimal** (souvent avec partenaires).
+### Chaîne de processus
+Le flux de marchandises suit la chaîne **Approvisionnement**, **Production**, **Distribution** et **Élimination**, avec le soutien des fonctions **TTS** (transport, transbordement et stockage). Pour atteindre un flux optimal, il faut connaître et organiser ce flux, souvent avec l'aide de partenaires.
 
-### Maillons
-**Approvisionnement** → **Production** → **Distribution** → **Élimination**  
-+ soutien **TTS**
+### Approvisionnement, production, distribution et élimination
+D'abord, l'approvisionnement est assuré par des **acheteurs** qui recherchent le meilleur rapport qualité-prix et négocient les contrats avec les fournisseurs. Ensuite, la production exige une utilisation maximale des machines et une planification précise des quantités pour éviter la surproduction ou des lots trop petits. La **distribution** achemine les biens vers le client final ou vers des points de vente. Enfin, l'élimination constitue le dernier maillon : les matières résiduelles sont réutilisées par **recyclage** lorsque c'est possible, avec une attention particulière aux substances nocives.
 
-### Approvisionnement
-Acheteurs : qualité/prix, contrats, fournisseurs parfois mondiaux / autres fuseaux
+### Fonctions TTS
+Les processus **TTS** ont une fonction de soutien entre les domaines. Le **transport** peut se faire par route, rail, eau ou air selon les critères de prix, sécurité, vitesse, efficacité et écologie. Le **transbordement** consiste à décharger, stocker temporairement puis recharger les marchandises. Le **stockage** dépend du type de marchandise et de la durée de conservation.
 
-### Production
-Maximiser l'usage des machines ; éviter surproduction **et** lots trop petits
-
-### Distribution
-Jusqu'au client final (colis) **ou** via points de vente (retail)
-
-### Élimination
-Dernier maillon · recyclage prioritaire · attention substances nocives
-
-### TTS
-- **T**ransport : route / rail / eau / air — critères prix, sécurité, vitesse, efficacité, écologie
-- **T**ransbordement : décharger → stocker temporairement → recharger
-- **S**tockage : type d'entrepôt selon marchandise et durée
-
-### Prestataire vs producteur
-- Prestataire : achète → stocke → revend (sans transformer)
-- Producteur : transforme (MP / semi-fini → produit)
-
-### Tailles
-- **Micro / intralogistique** : dans le site
-- **Méta** : entre entreprises
-- **Macro** : international / intercontinental`;
+### Prestataire, producteur et tailles logistiques
+Un prestataire de services achète, stocke et revend sans transformer le produit, tandis qu'un producteur le modifie au cours du flux. En effet, chaque entreprise possède un flux spécifique. On distingue la **micrologistique** ou **intralogistique** (flux internes), la **métalogistique** (entre entreprises) et la **macrologistique** (mouvements internationaux ou intercontinentaux).`;
 
 const DEMO_104_APERCU_FULL = `## Aperçu du module 104
 
@@ -2036,40 +1979,17 @@ Trois types de marchandises pour la manutention :
 
 const DEMO_105_THEORIE_SUMMARY = `## À retenir — Module 105
 
-### Marchandises
-Objets physiques = articles / biens / produits. Grande diversité = défi n°1.
-
-### Caractéristiques à gérer
-Dimension/volume · densité · état (S/L/G) · périssabilité · fragilité · empilabilité · valeur
+### Caractéristiques et manipulation des marchandises
+Les **marchandises** sont les objets physiques que la logistique organise ; on les appelle aussi articles, biens ou produits. Leur grande diversité constitue le principal défi de la logistique. D'abord, chaque marchandise possède des propriétés spécifiques qu'il faut respecter lors de la manipulation, comme la dimension, le volume, la densité, l'état de la matière, la périssabilité, la fragilité, l'empilabilité et la valeur. Ensuite, les exigences de manipulation varient selon le secteur et le type de produit.
 
 ### Degré de transformation
-- **MP** : non transformées (primaires / secondaires = recyclage)
-- **Semi-finis** : assez transformés pour réemploi (acier, farine, composants…)
-- **Finis** : prêts pour le consommateur  
-→ le classement dépend du **point de vue**
+Au cours de la production, les biens passent par différents stades. Les **matières premières** ne sont pas transformées, qu'elles soient primaires ou issues du recyclage. Les **produits semi-finis** sont assez transformés pour être réutilisés, et les **produits finis** sont prêts pour le consommateur final. Cependant, ce classement dépend du point de vue de l'observateur.
 
-### Critères de stockage
-**Périssabilité · Dangerosité · Manutention**
+### Critères d'aptitude au stockage et périssabilité
+Le choix du lieu de stockage repose sur trois critères : la **périssabilité**, la **dangerosité** et la **manutention**. Les influences spontanées comprennent les chocs et la pression, la chaleur, le froid, l'humidité et les décharges **ESD**, qui peuvent endommager les composants électroniques. Ces dommages surviennent surtout lors de la réception, du transport ou de l'entreposage, et une méthode de travail minutieuse permet de les éviter. Les dommages de longue durée proviennent notamment de la pression à l'empilage, d'une température incorrecte, d'une hygrométrie inadaptée, de la lumière, du vieillissement, des nuisibles ou de l'influence réciproque entre produits stockés, par exemple lorsque certains fruits accélèrent la maturation d'autres aliments.
 
-### Dommages spontanés
-Mécanique · chaleur · froid · humidité · **ESD** (ne sortir l'électronique de son emballage que si nécessaire)
-
-### Dommages longs
-Pression empilage · T° · hygrométrie · lumière · vieillissement · nuisibles · influence réciproque (ex. gaz des pommes)
-
-### Températures repères
-Viande 0–2 · Laitiers 2–4 · Fruits/légumes 4–6 · Surgelés **< -18**  
-Réfrigération 0–5 / Congélation -18 · **ne pas recongeler**
-
-### Conservation
-Tradition : séchage, salage, fumage, pasteurisation (~70 °C), stérilisation (~120 °C)  
-Moderne : froid, sous-vide, atmosphère protectrice, **CA**, **ULO**
-
-### Dangereux
-Symboles CLP ; achat / usage / stockage sécurisés (module 405)
-
-### Manutention
-Facile (palette EUR, ≤ 1,20 m) · Encombrant (solution ad hoc) · Haute valeur (zones sécurisées)`;
+### Conservation, dangerosité et manutention
+Diverses **méthodes de conservation** prolongent la durée de vie des produits, comme le séchage, le salage, le fumage, la pasteurisation, la stérilisation, la réfrigération, la congélation, la mise sous vide, l'atmosphère protectrice ou l'atmosphère contrôlée. Les produits frais exigent des températures adaptées, et les aliments surgelés ne doivent pas être recongelés après décongélation. Les marchandises dangereuses exigent un stockage adapté à leur nature, avec des symboles de danger indiquant par exemple l'inflammabilité, la toxicité ou le danger pour l'environnement. L'achat, l'utilisation et le stockage doivent respecter des règles strictes, notamment l'usage d'équipements de protection et le respect des consignes d'élimination. Enfin, la manutention distingue les marchandises faciles à manipuler selon des dimensions standards, les formes encombrantes nécessitant des solutions individuelles avec la sécurité comme priorité, et les marchandises de grande valeur nécessitant des zones sécurisées.`;
 
 const DEMO_105_APERCU_FULL = `## Aperçu du module 105
 
@@ -2501,34 +2421,17 @@ Le **littering** = jeter / abandonner de petites quantités de déchets urbains 
 
 const DEMO_106_THEORIE_SUMMARY = `## À retenir — Module 106
 
-### Définition (LPE Art. 7 al. 6)
-Chose meuble dont on se défait **ou** dont l'élimination est commandée par l'intérêt public.  
-Déchets = produits par l'homme (la nature = cycles).
+### Qu'est-ce qu'un déchet ?
+Selon la **LPE**, un déchet est une chose meuble dont le détenteur se défait ou dont l'élimination est commandée par l'intérêt public. En effet, les déchets sont produits par l'homme, car la nature fonctionne par des cycles sans déchets. Avec l'urbanisation et l'industrialisation, la production de déchets a augmenté et leur composition est devenue plus complexe. On parle aussi de **résidus** ou de **matières revalorisables** lorsque ces matières peuvent être réutilisées.
 
-### Enjeux pour l'entreprise
-Conscience écolo · coûts · loi → attitude, solutions économiques, reporting  
-Prestations : stockage, transport, recyclage + collecte/tri/conditionnement + infos
+### Importance et rôle des déchets
+L'élimination des déchets a pris de l'importance en raison de la conscience écologique, des coûts croissants et du renforcement de la réglementation. Pour l'entreprise, cela implique une attitude positive, des solutions économiques et un suivi des résultats. La logistique d'élimination organise le flux interne et externe des déchets avec des prestations de stockage, transport, recyclage, collecte, tri et traitement des commandes.
 
-### Suisse — ordres de grandeur
-- **80–90 Mt/an** (surtout excavation / déblais / déconstruction)
-- **~716 kg/habitant** déchets urbains · **~53 %** recyclés
+### Flux de matières et modes d'élimination en Suisse
+La Suisse produit chaque année d'importants volumes de déchets, notamment des déchets urbains et des matériaux d'excavation. Le système suisse repose sur trois voies : les **décharges** de types **A à E** selon le danger, l'**incinération** dans des **UIOM** et le **recyclage**, qui vise à obtenir des matières premières secondaires. Le recyclage doit aussi rester économiquement viable à long terme.
 
-### 3 voies
-1. **Décharges A→E** (danger croissant) — LPE 30c al.1
-2. **UIOM** (~30) — volume −90 %, poids −75 %, énergie/chaleur — LPE 30c al.2
-3. **Recyclage** = collecte + tri + traitement + valorisation (MP secondaires)
-
-### Financement
-CAR/CAE · TEA/TAR (ex. piles INOBAT)
-
-### Objectif 2030
-**75 % secondaires / 25 % primaires** · Pyramide : **éviter > réduire > valoriser**
-
-### Logistique d'entreprise
-Emballages, retours filiales, compactage, check-lists (groupes A–E, ADR/SDR)
-
-### Littering
-Déchets sauvages · ~200 MCHF/an · causes sociales · mesures : sensibiliser, éduquer, sanctionner`;
+### Objectif 2030 et élimination en entreprise
+D'ici 2030, l'objectif national vise un cycle basé majoritairement sur des matières premières secondaires, selon la pyramide **éviter, réduire, valoriser**. Les entreprises de logistique produisent surtout des matériaux d'emballage et gèrent souvent aussi les déchets des points de vente. Enfin, le **littering**, c'est-à-dire l'abandon de déchets en dehors des infrastructures prévues, pose des problèmes esthétiques, écologiques et économiques que l'on combat par la sensibilisation, l'éducation et les sanctions.`;
 
 const DEMO_106_APERCU_FULL = `## Aperçu du module 106
 
@@ -3076,26 +2979,17 @@ Responsabilité de spécialistes. Particuliers → point de vente. Entreprises �
 
 const DEMO_107_THEORIE_SUMMARY = `## À retenir — Module 107
 
-### Volumes (hors excavation/déblais)
-**~24 Mt/an** · ~2,5 t/habitant  
-Chantier ~65 % · Urbains ~5,7 Mt · Spéciaux ~2,4 Mt · Boues ~0,2 Mt
+### Les quatre catégories de déchets
+L'**OFEV** classe les déchets suisses en quatre catégories principales. D'abord, les **déchets de chantier** représentent la plus grande part hors matériaux d'excavation. Ensuite, les **déchets urbains** proviennent des ménages et d'entreprises comparables, avec une gestion assurée en grande partie par les services publics. Les **déchets spéciaux** exigent des traitements particuliers et sont contrôlés notamment par l'**OMoD**. Enfin, les **boues d'épuration** proviennent de l'assainissement des eaux usées et contiennent surtout de l'eau.
 
-### 4 catégories OFEV
-1. **Chantier** (gravats, industriels/artisanaux…)
-2. **Urbains** (ménages + comparables, services publics)
-3. **Spéciaux** (OMoD, traitements spécifiques)
-4. **Boues d'épuration** (90–99 % eau ; plus d'épandage depuis 2003)
+### Inventaire des déchets
+Chaque type de déchet suit une filière adaptée. Par exemple, le bois traité va en **UIOM**, les pneus usagés ne peuvent plus être mis en décharge, l'aluminium se recycle avec un fort gain énergétique, les piles et appareils électriques sont repris selon des obligations spécifiques comme l'**OREA**, et le verre, le papier, le PET ou les métaux passent par des systèmes de collecte et de tri.
 
-### Inventaire (clés)
-Bois traité → UIOM · Pneus : pas décharge (2000) · Alu : −95 % énergie · Piles : TEA + reprise · Électro : OREA · Verre / PET / fer blanc / textiles / papier…
-
-### Droit
-**Cst. 74** → **LPE (1983)** → **OTD · OMoD · OREA**
+### Dispositions légales
+La protection de l'environnement est ancrée dans la Constitution, notamment l'article 74. La **LPE** régit la limitation et l'élimination des déchets, leur planification, leur financement et l'assainissement des sites pollués. L'**OTD** traite le traitement des déchets, les décharges, les UIOM et le compostage, tandis que l'**OMoD** encadre les mouvements de déchets, en particulier les déchets spéciaux.
 
 ### Déchets spéciaux
-Nocifs → traitement particulier · ~10 % · autorisation cantonale · labo  
-Paracelse = dose · 7 précautions (manutention + stockage)  
-Remise uniquement à repreneur **autorisé** (vérifier)`;
+Les déchets spéciaux sont nocifs pour l'environnement ou l'homme et ne peuvent pas suivre la filière normale. Leur traitement exige des professionnels autorisés par le canton. En effet, une mauvaise manutention peut contaminer l'eau, le sol ou l'air. Sept précautions élémentaires encadrent la manutention et le stockage, et le remettant ne doit remettre les déchets qu'à un **repreneur autorisé** dont il vérifie l'autorisation.`;
 
 const DEMO_107_APERCU_FULL = `## Aperçu du module 107
 
@@ -3517,29 +3411,14 @@ La coopération entre États est décisive : ce n'est qu'ensemble que de tels ob
 
 const DEMO_108_THEORIE_SUMMARY = `## À retenir — Module 108
 
-### SME
-Management d'entreprise orienté environnement · clé du développement durable (OFEV)
+### Systèmes de management environnemental (SME)
+Un **système de management environnemental** fait partie du management global de l'entreprise et intègre les objectifs environnementaux dans les processus et les structures. D'abord, l'entreprise doit identifier ses impacts, respecter les directives, définir des objectifs et procéder à des audits réguliers. Ensuite, elle publie un rapport sur sa performance environnementale. Les avantages internes incluent la réduction des coûts et la motivation des collaborateurs, tandis que les avantages externes renforcent l'image et la compétitivité. La norme **ISO 14001** permet de certifier un SME, et la norme **ISO 20121** s'applique au développement durable des grandes manifestations.
 
-**Exigences :** impacts · conformité · objectifs/programmes · organisation · audits · rapport
+### Problèmes environnementaux mondiaux
+Huit problèmes majeurs menacent l'environnement mondial. Le **changement climatique** s'accompagne de phénomènes extrêmes liés notamment aux émissions de gaz à effet de serre. Ensuite, la **pénurie d'eau**, la **pollution de l'air**, l'**érosion des sols**, la **surpopulation**, la **déforestation**, l'**extinction des espèces** et les **déchets plastiques** dans les océans aggravent la pression sur les ressources naturelles. Ainsi, même de bons efforts locaux ne suffisent pas sans coopération internationale.
 
-**Avantages :** coûts/légal/innovation/motivation (interne) · compétitivité/image/autorités/transparence (externe)
-
-**ISO 14001** (depuis 1996) — certification SME mondiale  
-**ISO 20121** — événements durables (ex. JO Londres 2012, tenues PET recyclé)
-
-### 8 problèmes mondiaux
-1. Climat (CO₂, méthane, mobilité…)
-2. Eau (~1 % douce utilisable)
-3. Air (~8 M décès OMS 2012)
-4. Érosion des sols (~1 %/an)
-5. Surpopulation → pression ressources
-6. Déforestation (~30 M ha/an)
-7. Extinction d'espèces (~25 800 menacées / 90 000)
-8. Plastique océanique (~8 Mt/an ; vortex ; ~500 ans/bouteille)
-
-### Agenda 2030 (ONU, 2015)
-**17 ODD** · 169 cibles · coopération internationale indispensable  
-Liens logistique : production/consommation durables, climat, océans, villes…`;
+### Agenda 2030
+En 2015, l'ONU a adopté l'**Agenda 2030** avec **17 objectifs de développement durable** et de nombreux sous-objectifs. Ces objectifs couvrent la pauvreté, la santé, l'éducation, l'énergie, les villes durables, la consommation responsable, le climat, les océans et la biodiversité. Enfin, seule une coopération entre États permet d'atteindre ces objectifs à l'échelle mondiale.`;
 
 const DEMO_108_APERCU_FULL = `## Aperçu du module 108
 
@@ -3870,25 +3749,17 @@ Utile à l'entreprise **et** au collaborateur : empêche qu'un tiers se connecte
 
 const DEMO_109_THEORIE_SUMMARY = `## À retenir — Module 109
 
-### Accès physique
-Clés/badges selon fonction · ne jamais prêter sans contrôle · pas sur la porte / paillasson · pas de nom d'entreprise · **signaler toute perte immédiatement**
+### Autorisation d'accès
+Comme pour un appartement, l'accès aux locaux d'entreprise est réglementé selon la fonction de chaque collaborateur par des clés ou des badges. D'abord, il ne faut jamais confier une clé ou un badge à une autre personne sans contrôle, ni la laisser sur une porte ou dans un lieu non sécurisé. Ensuite, la perte doit être signalée immédiatement à l'employeur, car elle peut entraîner des coûts importants de remplacement ou de désactivation.
 
-### Secret épistolaire (CP 179)
-Délit **sur plainte** · amende  
-Ne pas ouvrir le courrier d'autrui · « personnel / confidentiel » = **jamais**  
-Adresse entreprise seule → OK · nom perso → prudence / mandat
+### Secret épistolaire
+Le **Code pénal suisse** protège la sphère privée par le secret épistolaire. Quiconque ouvre sans droit un pli ou un colis fermé, ou divulgue son contenu, commet un délit sur plainte puni d'une amende. En effet, les employés ne doivent ouvrir que le courrier qui leur est destiné, et les mentions **personnel** ou **confidentiel** interdisent toute ouverture.
 
-### Secret postal (CP 321ter)
-Protège contenu **+** expéditeur/destinataire · peine jusqu'à **3 ans**  
-Ne pas divulguer qui reçoit quoi / quand (ex. AVS, actes)
+### Secret postal et secret des affaires
+Le **secret postal** protège non seulement le contenu des envois, mais aussi l'identité de l'expéditeur et du destinataire. Sa violation peut être punie d'une peine privative de liberté. Selon le **Code des obligations**, tout employé doit également garder les secrets de fabrication et d'affaires de son employeur, et ce devoir peut subsister après la fin du contrat.
 
-### Secret des affaires (CO 321a al. 4)
-Ne pas révéler secrets de fabrication/affaires · peut durer **après** le contrat
-
-### Données / mots de passe
-Login tracé · droits selon fonction  
-≥ 8 car. mixtes · unique · secret · changé régulièrement  
-Attention virus / phishing (→ module 805)`;
+### Sécurité des données
+À l'ère numérique, l'accès aux systèmes informatiques se fait par nom d'utilisateur et mot de passe, avec des droits adaptés à la fonction. Un bon mot de passe doit être secret, unique, difficile à deviner, comporter au moins huit caractères variés et être changé régulièrement. Enfin, il faut se méfier des virus, vers et chevaux de Troie qui exploitent souvent l'imprudence des utilisateurs.`;
 
 const DEMO_109_APERCU_FULL = `## Aperçu du module 109
 
@@ -4387,29 +4258,17 @@ Autres ratios de stockage : voir le recueil de formules logistique.`;
 
 const DEMO_110_THEORIE_SUMMARY = `## À retenir — Module 110
 
-### Gestion des marchandises
-Flux **internes** marchandises + données : Appro · Intralog · Prod/Élim · Distrib  
-Intégration : intégrée → avancée → totalement intégrée  
-**6B** (Jünemann) au cœur
+### Que comprend la gestion des marchandises ?
+La gestion des marchandises regroupe tous les flux internes de **marchandises et de données** : approvisionnement et stockage, logistique interne, production et élimination, puis distribution. Elle peut atteindre trois niveaux d'intégration, de la gestion intégrée des matières jusqu'à la gestion totalement intégrée incluant la livraison au marché. En effet, le défi consiste à concilier les objectifs des différents services, et la règle des **6B** de Jünemann reste centrale : le bon article, au bon moment, au bon endroit, en bonne quantité, avec la bonne qualité et au bon prix.
 
-### Objectifs
-Fondamental : besoins **à temps** + **économiques** · marges  
-Formels (coûts achat/stock/rupture) · Spécifiques (6B) · Sociaux (écolo)  
-→ souvent **conflits d'objectifs**
+### Objectifs et tâches
+L'objectif fondamental est de couvrir les besoins de la production ou des prestations de service à temps et de manière économique, afin d'optimiser les marges. D'abord, les objectifs formels visent à réduire les coûts d'achat, les frais de stockage et les coûts de rupture. Ensuite, les objectifs spécifiques reprennent les 6B, et les objectifs sociaux portent sur l'emballage, le recyclage et la protection de l'environnement. Cependant, ces objectifs peuvent entrer en conflit.
 
-### Données ERP
-**Base** (Master) = statiques · **Mouvement** (Transaction) = dynamiques
+### Données statiques et dynamiques
+Les **données de base** sont stables et comprennent par exemple le numéro d'article, la désignation, l'unité, l'emplacement et le fournisseur. Les **données de mouvement** évoluent en permanence, comme le stock, la consommation ou les commandes. Ainsi, la fiabilité des deux types de données est essentielle à une bonne gestion des articles.
 
-### Besoins
-Déterministe · Stochastique · Heuristique  
-Besoin net = total − stock − commandes en cours
-
-### Stockage / picking / transport
-Quoi/où/combien · ABC · picking 1/2 étapes, série/parallèle, dynamique/statique  
-Transport interne : distances, priorités, sécurité
-
-### KPI
-Rotation · durée (360/rot.) · taux de service · intensité matières · **ROI**`;
+### Domaines et indicateurs
+L'approvisionnement détermine les besoins par des méthodes **déterministe**, **stochastique** ou **heuristique**, et le besoin net se calcule en soustrayant le stock et les commandes en cours du besoin total. L'**intralogistique** organise la préparation des commandes et les transports internes, tandis que la distribution livre les produits au marché. Enfin, des **indicateurs** comme la rotation des stocks, la durée de stockage, le taux de service, l'intensité matières et le **ROI** permettent de piloter et d'optimiser la gestion des marchandises.`;
 
 const DEMO_110_APERCU_FULL = `## Aperçu du module 110
 
@@ -5072,25 +4931,14 @@ Le marketing est traité en profondeur dans le module **205**.`;
 
 const DEMO_201_THEORIE_SUMMARY = `## À retenir — Module 201
 
-### Client
-Personne ou entreprise qui achète biens/services · aussi « acheteur » / « débiteur » (compta)
+### Le client
+Le **client** est une personne ou une entreprise qui achète des marchandises ou utilise des services. On l'appelle aussi acheteur ou **débiteur** dans le contexte de la facturation. Les particuliers commandent souvent de petites quantités, tandis que les grands commerçants passent des commandes régulières.
 
-### Types (ex. EnterSite)
-Particuliers (petites qty) · grands commerçants (commandes régulières, colis)
+### L'importance du client
+Chaque commande doit être exécutée avec soin, car un client satisfait reviendra pour de futures commandes. En effet, la facture payée génère le **chiffre d'affaires**, qui permet de verser les **salaires**. Ainsi, le logisticien se comporte de manière respectueuse et valorisante envers chaque client.
 
-### Importance
-Commande bien exécutée → satisfaction → fidélité → **CA** → **salaires**  
-Logisticien·ne : respect et valorisation de chaque client
-
-### « Client est roi »
-Pas au pied de la lettre → relation d'égal à égal  
-Valeurs : respect, estime, confiance, durabilité · communication **honnête**
-
-### Client fidèle
-Achats réguliers · dialogue pour améliorer l'offre
-
-### Connaître le client
-Rôle du **marketing** (module 205) : analyser besoins → mieux vendre / innover / conquérir`;
+### Relation commerciale et marketing
+L'expression « le client est roi » ne doit pas être prise au pied de la lettre : il s'agit d'une relation fondée sur le respect, l'estime et la confiance. Un **client fidèle** achète régulièrement et fournit des informations utiles. Le **marketing** analyse la clientèle pour mieux répondre à ses attentes.`;
 
 const DEMO_201_APERCU_FULL = `## Aperçu du module 201
 
@@ -5482,26 +5330,14 @@ Déclaration écrite des **principes et valeurs** internes et externes. Guide l'
 
 const DEMO_202_THEORIE_SUMMARY = `## À retenir — Module 202
 
-### Attitude
-Apparence consciente adaptée à la situation
+### Ma position et ma communication
+La manière dont on se présente influence fortement l'effet produit sur les autres. D'abord, chacun transmet ses valeurs personnelles comme l'honnêteté, la fidélité ou la ponctualité, mais ces valeurs ne sont pas forcément partagées par tous. Ensuite, face au client, il faut adapter le langage à la situation et communiquer honnêtement, tant par les mots que par l'attitude corporelle.
 
-### Position / valeurs
-Honnêteté, fidélité, ordre, ponctualité… · personnelles ≠ universelles
+### Mes vêtements et mon hygiène
+Les vêtements doivent être adaptés à la situation selon le **dress code**, sans être trop ou pas assez habillé. Au travail, on représente l'entreprise et une tenue professionnelle est attendue, surtout au contact de la clientèle. L'**hygiène** vise à prévenir les maladies et à maintenir le bien-être physique, mental et social. Une bonne hygiène personnelle améliore aussi l'impression laissée au client. En effet, des gestes simples comme se laver les mains, respecter une distance suffisante et utiliser des mouchoirs à usage unique limitent la transmission des maladies.
 
-### Communication
-Registre client ≠ privé · verbal + non verbal · honnêteté (→ module 206)
-
-### Vêtements
-Dress code · under/overdressed · au travail = représenter l'entreprise · tenues pro
-
-### Hygiène
-OMS = bien-être global · histoire des épidémies (peste → Covid)  
-Soins personnels + vêtements propres · mains / distance / toux  
-Trop de parfum = négatif aussi
-
-### Charte
-Vision / Mission / valeurs · identité interne + image externe  
-EnterSite : client au centre, qualité, MbO, écologie`;
+### La charte d'entreprise
+La charte est une déclaration écrite des principes et valeurs de l'entreprise, qui guide l'action interne et affiche l'image externe. D'abord, elle répond aux questions de vision, de mission et de valeurs. Ensuite, elle oriente les clients et les parties prenantes. Pour EnterSite, le service client est au centre, la qualité et l'innovation sont prioritaires, le management par objectifs structure le travail, et l'écologie est intégrée dans les activités de l'entreprise.`;
 
 const DEMO_202_APERCU_FULL = `## Aperçu du module 202
 
@@ -5922,28 +5758,17 @@ Comportements dangereux : non-respect des règles, négligence, non-application 
 
 const DEMO_203_THEORIE_SUMMARY = `## À retenir — Module 203
 
-### Autogestion
-Motivation, objectifs, temps, organisation, feedback
+### Se connaître
+L'**autogestion** est la capacité à se gérer soi-même grâce à des techniques de motivation, de planification, d'organisation et de feedback. La **fenêtre de Johari** distingue quatre zones : la personne publique, le secret, la zone aveugle et l'inconnu. En effet, mieux se connaître permet d'améliorer la communication et le travail en équipe. Les **cinq piliers de l'identité** comprennent la corporalité, les relations sociales, le travail et les prestations, la sécurité matérielle, ainsi que les valeurs et idéaux.
 
-### Johari
-Public · Secret · Aveugle · Inconnu
+### Styles de direction
+Selon **Kurt Lewin**, le style de leadership peut être autoritaire, laissez-faire, coopératif ou caritatif. D'abord, le style autoritaire permet des décisions rapides mais crée peu de consensus. Ensuite, le laissez-faire favorise l'innovation mais peut laisser les responsabilités floues. Le style coopératif renforce la satisfaction des collaborateurs, tandis que le style caritatif privilégie le climat humain au détriment parfois de la motivation.
 
-### 5 piliers identité
-Corps · Social · Travail · Sécurité matérielle · Valeurs
+### Conflits et stress
+Les conflits apparaissent dès que plusieurs personnes travaillent ensemble. La gestion en six étapes permet d'identifier les objectifs, les points communs et un accord concret limité dans le temps. Le **stress** peut être positif (**eustress**) ou négatif (**distress**). En effet, un stress permanent fatigue le corps et réduit la concentration, mais le sport, les contacts sociaux ou la communication peuvent compenser ces effets.
 
-### Leadership (Lewin)
-Autoritaire · Laissez-faire · Coopératif · Caritatif  
-(+/− selon situation)
-
-### Conflits
-Kilmann (besoins) · 6 étapes → accord concret daté
-
-### Stress
-**Eustress** + · **Distress** − · combat/fuite · compensation (sport, social, yoga)
-
-### Sécurité physique
-80 % comportement · EPI pieds/dos/mains/tête/yeux  
-Dos droit + aides · ergonomie`;
+### Sécurité au travail
+En logistique, la majorité des accidents provient d'un comportement dangereux plutôt que de conditions dangereuses. D'abord, il faut protéger les **pieds**, le **dos**, les **mains**, la **tête** et les **yeux** avec les équipements adaptés. Ensuite, une bonne posture et des moyens auxiliaires comme le diable limitent les risques. Enfin, l'**ergonomie** consiste à aménager les postes de travail pour réduire la fatigue et prévenir les troubles chroniques.`;
 
 const DEMO_203_APERCU_FULL = `## Aperçu du module 203
 
@@ -6334,24 +6159,14 @@ Influence le marketing. Mesurée notamment par l'étendue géographique ou le no
 
 const DEMO_204_THEORIE_SUMMARY = `## À retenir — Module 204
 
-### Marché
-Lieu / mécanisme d'échange (biens ↔ biens ou ↔ argent)  
-Naît d'un **besoin** → satisfaction du manque
+### Le marché
+Un **marché** est un lieu ou un mécanisme d'échange entre vendeurs et acheteurs. Il naît d'un **besoin**, c'est-à-dire d'un manque que l'on cherche à combler par l'achat de biens ou de services.
 
-### Étude de marché
-Nécessaire (concurrence, saturation, mondialisation…)  
-But : infos → décisions, opportunités/menaces  
-Étude simple (observation/entretiens) ≠ analyse systématique scientifique  
-Prévisions → politique commerciale
+### L'étude de marché
+Lorsque la concurrence augmente, l'**étude de marché** permet de recueillir des informations pour réduire les incertitudes et prendre de meilleures décisions. D'abord, elle identifie les opportunités et les menaces. Ensuite, elle distingue une collecte simple par observation ou entretiens d'une analyse systématique plus scientifique, sur laquelle s'appuient les **prévisions de marché**.
 
-### Types
-Par objet · Approvisionnement/Vente · Ouvert / Fermé / Limité
-
-### Formes
-**Monopole** (1 offreur) · **Oligopole** (peu) · **Polypole** (beaucoup) · **Monopsone** (1 demandeur)
-
-### Taille géo
-Local → Régional → National → International → Global`;
+### Types, formes et taille
+Les marchés se classent selon l'objet échangé, leur fonction d'approvisionnement ou de vente, et leur accès **ouvert**, **fermé** ou **limité**. Selon le nombre d'offreurs et de demandeurs, on distingue le **monopole**, l'**oligopole**, le **polypole** et le **monopsone**. Enfin, la taille se mesure par l'étendue géographique, du marché local au marché global.`;
 
 const DEMO_204_APERCU_FULL = `## Aperçu du module 204
 
@@ -6817,36 +6632,25 @@ Fenêtre qui s'affiche automatiquement lors de la navigation.
 
 const DEMO_205_THEORIE_SUMMARY = `## À retenir — Module 205
 
-### Objectifs marketing
-Promouvoir ventes → CA → bénéfice  
-Part de marché · notoriété · image positive
+### Objectifs du marketing
 
-### Qui ?
-Professionnels + presque toute l'entreprise  
-Direction · commercial · production · admin/services
+Le marketing d'EnterSite AG vise à promouvoir la vente de ses produits et services afin d'augmenter le chiffre d'affaires et le bénéfice. Pour cela, il poursuit la préservation ou l'augmentation de la part de marché, l'amélioration de la notoriété et l'ancrage d'une image positive.
 
-### Offre / demande
-Équilibre offre–demande → prix de marché  
-Offre ↑ → prix ↓ · Offre ↓ → prix ↑  
-Demande ↑ → prix ↑ · Demande ↓ → prix ↓  
-Ex. : salades (surproduction) · maïs / biodiesel (demande ↑)
+### Personnes impliquées dans le marketing
 
-### 4P (Marketing-Mix)
-**Product** — utilité, qualité, gamme, design, assortiment  
-**Price** — acceptable client + rentable ; pression concurrence/rabais  
-**Place** — acheteurs, canaux direct/indirect, placement  
-**Promotion** — communication / pub selon budget
+Le marketing est pratiqué par des professionnels, mais presque tous les collaborateurs y participent à tous les niveaux : direction, service commercial, production, administration et services.
 
-### Publicité
-Éléments : logo, nom, image, headline, infos, slogan  
-**AIDA** : Attention → Intérêt → Désir → Action  
-Informative (faits) vs suggestive (émotions)  
-Coûts proportionnés au CA  
-Bonne pub : mémorable, ciblée, réaliste
+### La loi de l'offre et de la demande
 
-### Online
-Taux de clics / CPC · Google/Facebook/Instagram/Amazon Ads  
-E-mail · bannières (*banner blindness*) · Content Ad · pop-up / pop-under / Hover Ads`;
+L'équilibre entre l'offre et la demande détermine le prix de marché. D'abord, une offre excédentaire fait baisser les prix, tandis qu'une offre limitée les fait monter, cependant la mondialisation permet d'importer des produits moins chers. Ensuite, si la demande augmente sans que la production suive, les prix montent, et si la demande diminue, les prix baissent.
+
+### Les instruments du marketing
+
+EnterSite AG définit sa stratégie via le Marketing-Mix et les quatre P. Le produit doit être utile et de qualité. Le prix doit être acceptable pour le client et rentable. Le lieu détermine les canaux de vente. La promotion regroupe les actions de communication selon le budget disponible.
+
+### La publicité
+
+Une annonce comprend le logo, le nom, l'image, le titre, les informations et le slogan. Le concept AIDA guide les annonceurs : attention, intérêt, désir et action. La publicité informative met en avant les caractéristiques, tandis que la suggestive agit sur les émotions. Les coûts doivent rester proportionnés au chiffre d'affaires. Sur Internet, le taux de clics mesure l'efficacité des campagnes par e-mail, bannières ou fenêtres pop-up.`;
 
 const DEMO_205_APERCU_FULL = `## Aperçu du module 205
 
@@ -7368,32 +7172,25 @@ Client bavard / charge de travail : formules pour clore sans le prendre personne
 
 const DEMO_206_THEORIE_SUMMARY = `## À retenir — Module 206
 
-### Bases
-Émetteur ↔ récepteur · verbal + non-verbal  
-Contact **indirect** (sans feedback) vs **direct** (avec feedback)
+### Moyens de communication
 
-### Modèle
-Coder → canal → décoder · interférences · feedback  
-≥ 9 possibilités de malentendu
+La communication transmet un message d'un émetteur à un récepteur, avec ou sans but précis. Chaque partenaire agit à la fois comme émetteur et comme récepteur, car même si une seule personne parle, l'autre répond au moins par le langage corporel non verbal.
 
-### Feedback & écoute active
-Feedback utile : honnête, sur le contenu, rapide (verbal + non-verbal)  
-Écoute active : reformuler, questionner, confiance  
-3 phases : encourager → clarifier → approfondir
+### Fonctionnement de la communication
 
-### Types
-**Verbale** (mots) + **non-verbale** (corps, voix) → **congruence**  
-4 niveaux d'un message : factuel, soi, relation, appel  
-~2/3 sans mots · tableau des signaux corporels
+Pour qu'une communication humaine réussisse, il faut au minimum un émetteur, un message, un récepteur et un canal de transmission. D'abord, dans un contact indirect comme la radio ou la télévision, l'émetteur envoie un message sans retour direct. Ensuite, dans un contact direct, le récepteur renvoie un feedback verbal ou non verbal que l'émetteur interprète. Selon le modèle émetteur-récepteur, l'émetteur code le message, celui-ci passe par un canal, puis le récepteur le décode, tandis que des interférences peuvent survenir à chaque étape. Le feedback indique si le message a été compris, mais il peut lui aussi être perturbé. Le feedback utile exprime honnêtement sa compréhension, se rapporte au contenu et non à la personne, et est donné rapidement. L'écoute active utilise reformulations et interrogations pour créer la confiance, en trois phases : encourager, clarifier et approfondir.
 
-### Questions
-**Fermée** → oui/non, précise (souvent verbe)  
-**Ouverte** → développer (QQOQCP) ; variantes « Pouvez-vous… »
+### Types de communication
+
+La communication verbale transmet des messages par les mots, tandis que la communication non verbale comprend les signaux corporels et la façon de parler. En effet, une grande partie de la communication se fait sans mots. Lorsque le verbal et le non verbal concordent, on parle de congruence, ce qui rend la communication plus efficace. Un message verbal peut porter plusieurs niveaux : le contenu factuel, la révélation de soi, la relation et l'appel. Le choix des mots influence fortement la perception et la réaction de l'interlocuteur.
+
+### Questions dans la communication
+
+Poser les bonnes questions au bon moment est essentiel, en complément de l'écoute active et de la reformulation. D'abord, la question fermée vise une réponse courte et précise, souvent oui ou non, et commence généralement par un verbe. Ensuite, la question ouverte invite à développer et permet de cerner les besoins et les attentes, notamment avec la méthode QQOQCP : qui, quoi, où, quand, comment et pourquoi.
 
 ### Conduire une conversation
-**Moteurs** : « Ça a l'air intéressant ! », etc.  
-**Obstacles** : avis, interrogatoire, parler de soi, mépris, lieu inadapté  
-**Clore** : merci, résumé, suite, congé nommé · formules polies si charge de travail`;
+
+Les moteurs de communication sont des prises de position qui encouragent l'interlocuteur à poursuivre et montrent compréhension et intérêt. Cependant, les obstacles comme donner son avis trop tôt, interroger, ramener la conversation sur soi ou minimiser les propos de l'autre rendent l'échange difficile. En service clientèle, il vaut mieux dire ouvertement qu'on ne peut plus poursuivre la conversation. Enfin, pour clore une conversation, on remercie le client, on résume les points en suspens et on prend congé, idéalement par un commentaire positif.`;
 
 const DEMO_206_APERCU_FULL = `## Aperçu du module 206
 
@@ -7838,20 +7635,21 @@ Variantes possibles. Modèle éprouvé : la **grille de scoring** (notation) —
 
 const DEMO_207_THEORIE_SUMMARY = `## À retenir — Module 207
 
-### Besoin
-Sensation d'un manque + souhait de le combler  
-Pyramide (Maslow) : physiologique → sécurité → social → estime → réalisation  
-Base d'abord ; exceptions : maladie, examens
+### Les besoins
+
+Pour vendre, il faut connaître les besoins des clients, définis comme la sensation d'un manque liée au souhait de le combler. La pyramide de Maslow classe les besoins de physiologiques à réalisation de soi, mais en cas de maladie ou d'examens, d'autres besoins peuvent devenir prioritaires.
 
 ### Vente
-Acheteur + vendeur · CA minimum pour rentabilité / existence
+
+Une vente requiert un acheteur et un vendeur. En entreprise, elle doit générer un chiffre d'affaires minimum pour assurer la rentabilité.
 
 ### Motifs d'achat
-Élémentaires (revenu faible) · curiosité · estime/statut · passion · envie d'acheter
 
-### Évaluation fournisseurs
-Grille de **scoring** + pondération  
-Critères : qualité, livraison, prix, risque, confiance/fiabilité, dépendance`;
+Avec un revenu faible, on achète pour les besoins élémentaires. Avec un revenu plus élevé, d'autres motifs apparaissent : curiosité, estime de soi, passion ou envie d'acheter.
+
+### Les évaluations des fournisseurs
+
+On évalue les fournisseurs par une grille de scoring avec pondération, selon la qualité, la livraison, le prix, le risque, la confiance et la dépendance.`;
 
 const DEMO_207_APERCU_FULL = `## Aperçu du module 207
 
@@ -8323,30 +8121,37 @@ Surnommées « **petits caractères** » : volumineux / difficiles à lire → a
 
 const DEMO_208_THEORIE_SUMMARY = `## À retenir — Module 208
 
-### Comportement d'achat
-Final ≠ entreprise · psychologie de vente  
-Hauteur des yeux · caisse · odeurs · placement calculé  
-Fidélité : manuelle vs numérique (« clients transparents » + LPD)  
-IRM / centres = shopping-loisir
+### Le comportement d'achat
 
-### Situations & entretien
-Courant : rapidité, simplicité, qualité/prix  
-Complexe/cher : conseil spécialisé  
-Bon vendeur : motif, « vous », utilité, bon produit  
-Objections / provocation : calme, écoute, pas de mensonge
+Le comportement d'achat diffère entre consommateur final et acheteur d'entreprise. La psychologie de vente étudie comment inciter à acheter, par le placement des produits, les odeurs ou les cartes de fidélité. La collecte numérique fait perdre l'anonymat, mais une loi sur la protection des données encadre l'utilisation des informations.
 
-### Face à face & téléphone
-Prospection · communication · service  
-Inbound (client appelle) / Outbound (vendeur appelle)
+### Les situations de vente
 
-### Promotion
-Actions prix · dégustations/démos · **cross-selling** (lié, non forcé)
+Dans la vente courante, le client veut être servi rapidement à bon prix. Pour un produit complexe ou cher, il attend des conseils de spécialiste.
 
-### Contrat & CGV
-CO 184 : livraison/propriété ↔ prix  
-Conclusion : oral/écrit/tacite · offre → commande  
-Résiliation : cas légaux (demeure, paiement, conversion…)  
-CGV = contrats de masse · LCD art. 8 (conditions abusives)`;
+### L'entretien de vente
+
+Un bon vendeur évalue le motif d'achat, s'adresse au client, indique l'utilité du produit et reste honnête face aux objections. Face à un client provocateur, il reste calme et écoute sans convaincre à tout prix.
+
+### Entretiens de vente en face à face
+
+La vente en personne vise la conclusion d'un contrat par prospection, communication et service. La vente personnelle est essentielle pour les produits nécessitant des explications.
+
+### Entretiens par téléphone
+
+La télévente peut être entrante ou sortante. Il faut se présenter clairement, structurer l'entretien et noter les accords, car le langage corporel n'est pas visible.
+
+### La promotion des ventes
+
+Les actions promotionnelles augmentent les ventes par des baisses de prix ou des démonstrations. Le cross-selling propose un produit lié à l'achat principal sans être envahissant.
+
+### Le contrat de vente
+
+Selon le CO art. 184, le vendeur livre et cède la propriété, l'acheteur paie le prix. Le contrat peut être verbal, écrit ou tacite. La résiliation n'est possible que dans les cas prévus par la loi.
+
+### Conditions générales de vente
+
+Les CGV facilitent les contrats de masse. Selon la LCD art. 8, des conditions déloyales au détriment du consommateur sont interdites.`;
 
 const DEMO_208_APERCU_FULL = `## Aperçu du module 208
 
@@ -8702,28 +8507,25 @@ Le **fabricant** (pas le vendeur) offre une garantie sans défaut. **Non réglem
 
 const DEMO_209_THEORIE_SUMMARY = `## À retenir — Module 209
 
-### SAV
-Après la vente : fidéliser, confirmer l'achat, racheter, satisfaction  
-Personnalisé · affaires supplémentaires · lien durable  
-Ex. : formation, maintenance, réparation, gestion
+### Le service après-vente
 
-### Réclamation vs plainte
-**Réclamation** = défaut matériel déjà présent → garantie (réparation/échange)  
-Délai **2 ans** (pas de raccourcissement ; ≠ garantie de durabilité)  
-**Plainte** = expression du mécontentement
+Le SAV regroupe les mesures prises après une vente pour fidéliser les clients, confirmer leur achat et encourager d'autres achats. Il doit être adapté individuellement et peut inclure formation, maintenance ou réparation.
 
-### Service clientèle
-Jeux-concours : pub / données ; attention arnaques (faux gains)  
-Enquêtes : Satisfied → Loyal → Advocate  
-Formes : online, téléphone, personnel
+### Réclamations
+
+Une réclamation concerne un défaut matériel déjà présent avant la remise. Le client peut demander réparation ou échange. Le délai légal est de deux ans. La plainte exprime le mécontentement sans forcément invoquer la garantie.
+
+### Le service à la clientèle
+
+Les jeux-concours servent à la publicité et à la collecte de données, mais il faut se méfier des arnaques. Les enquêtes de satisfaction permettent de connaître les attentes des clients et de les fidéliser, en ligne, par téléphone ou en personne.
 
 ### Bonne volonté
-Geste **volontaire** (pas une obligation légale) ≠ garantie  
-Après exécution complète de la commande
+
+Le geste commercial est une concession volontaire par laquelle l'entreprise renonce à certains droits sans y être tenue légalement. Il se distingue de la garantie et n'est accordé qu'après exécution complète de la commande.
 
 ### Garantie
-Vendeur : 2 ans (Suisse), obligatoire sauf exclusion totale  
-Fabricant : libre (durée/étendue) · peut coexister · parfois enregistrement`;
+
+Le vendeur offre deux ans de garantie légale en Suisse, sauf exclusion totale. La garantie fabricant est libre en durée et en étendue. Les deux peuvent coexister.`;
 
 const DEMO_209_APERCU_FULL = `## Aperçu du module 209
 
@@ -9084,29 +8886,29 @@ Principe : acheter quand les besoins se font sentir. Exceptions :
 
 const DEMO_301_THEORIE_SUMMARY = `## À retenir — Module 301
 
-### Approvisionnement
-Acheteurs : meilleur rapport qualité/prix + conditions  
-**6B** : bonne marchandise, qualité, prix, moment, endroit, quantité  
-Défis : choix, politique, nature, finance, environnement
+### La procédure d'approvisionnement
 
-### Stratégique vs opérationnel
-**Stratégique** (cadres) : négociation, développement, know-how, processus, sources long terme  
-**Opérationnel** : commande, délais, livraison
+Des acheteurs recherchent le meilleur rapport qualité-prix selon la règle des six B. Les missions stratégiques couvrent la négociation et la planification, tandis que les missions opérationnelles couvrent la commande et le contrôle des livraisons.
 
-### Quoi acheter ?
-Biens, infos, services, capitaux, main-d'œuvre, licences…  
-Catégories : durables · MP/auxiliaires/consommables · équipements · services
+### But de l'approvisionnement
+
+L'entreprise se procure biens, informations, services, capitaux, main-d'œuvre ou licences, notamment consommables durables, matériaux de production, équipements et prestations de services.
 
 ### Make or Buy
-Prix · qualité · temps  
-« Ne faire que ce qu'on fait mieux que les autres » · compétences clés
+
+L'entreprise choisit de fabriquer ou d'acheter selon le prix, la qualité et le temps, en ne faisant que ce qu'elle sait faire mieux que les autres.
 
 ### Externalisation
-Transfert contractuel vers partenaire externe (nettoyage, IT, distribution, compta…)
 
-### Combien / quand ?
-Prévision + planification des besoins  
-Saisonnier · spéculatif (pétrole, devises…)`;
+L'externalisation transfère une activité vers un partenaire externe par contrat.
+
+### Quelles quantités acheter
+
+La quantité repose sur la prévision et la planification des besoins, discutée avec le fournisseur.
+
+### À quel moment acheter
+
+On achète quand les besoins se font sentir, sauf pour les produits saisonniers ou les achats spéculatifs.`;
 
 const DEMO_301_APERCU_FULL = `## Aperçu du module 301
 
@@ -9717,20 +9519,17 @@ Clôture du processus : marchandise livrée selon confirmation, propriété tran
 
 const DEMO_302_THEORIE_SUMMARY = `## À retenir — Module 302
 
-### Où acheter ?
-Budget · disponibilité · relation fournisseur · e-commerce  
-Même logique particulier / entreprise (besoin → budget → exigences → fournisseurs → offre/évaluation → achat → bilan)
+### Où acheter
 
-### Offre / demande
-**Demande** ↑ quand prix ↓ (Cournot, élasticité)  
-**Offre** ↑ quand prix ↑ (Marshall)  
-Équilibre : prix ↑ → offre ↑ / demande ↓ · prix ↓ → inverse  
-Ex. cartes graphiques 2020
+Le choix du fournisseur dépend du budget, de la disponibilité et de la relation avec le fournisseur, notamment via l'e-commerce. La démarche est similaire pour un particulier et une entreprise : identifier le besoin, définir le budget et les exigences, rechercher des fournisseurs, évaluer l'offre puis effectuer l'achat.
 
-### Processus de commande
-Demande d'offre (article, qté, délai, adresse) · validité  
-**Commande** obligatoire · droits/obligations acheteur-vendeur (CO/CGV)  
-**Confirmation** · **Facture** (TVA, désignation, prix, signature…)`;
+### La loi de l'offre et de la demande
+
+La demande est la quantité commandée à un prix donné, et plus le prix est élevé, moins il y a de demande. L'offre est la quantité proposée par le vendeur, et plus le prix monte, plus l'offre augmente. Sur un marché en équilibre, une hausse des prix entraîne une offre plus importante et une demande plus faible.
+
+### Le processus de commande
+
+L'offre indique l'article, la quantité, la date et l'adresse de livraison, avec une date de validité. La commande engage les deux parties : l'acheteur paie le prix et le vendeur livre et cède la propriété. La confirmation atteste la réception, et la facture clôture le processus avec coordonnées, désignation, prix, TVA et signature.`;
 
 const DEMO_302_APERCU_FULL = `## Aperçu du module 302
 
@@ -10180,18 +9979,17 @@ En entrepôt : à **éviter**. Une commande devrait entraîner une info disponib
 
 const DEMO_303_THEORIE_SUMMARY = `## À retenir — Module 303
 
-### Bases juridiques (CO)
-Acheteur (vente mobilière 184–215) · Transporteur (440–457) · Dépôt (472–491)  
-Vente : remise ↔ paiement · « donnant donnant » sauf accord contraire
+### Réception des marchandises
 
-### Comptant vs facture
-Comptant : paye avant de partir  
-Facture : livraison → acceptation (garde) → facture → paiement → propriété  
-Liste de contrôle + signaler les écarts
+La réception des marchandises suit l'approvisionnement et constitue une activité centrale de la logistique. Trois situations sont réglementées dans le Code des obligations : l'acceptation en tant qu'acheteur, en tant que transporteur ou pour conservation.
 
-### Planifiée vs non planifiée
-**Planifiée** : quai, espace, docs, moyens, personnel, emplacement · respecter créneau · ERP  
-**Non planifiée** : date/qté inconnues · à éviter en entrepôt (souvent mauvais flux info achats ↔ logistique)`;
+### Acceptation en tant qu'acheteur
+
+Par le contrat de vente, le vendeur remet l'objet et l'acheteur paie le prix, en principe en même temps selon le donnant donnant. Lors d'un achat au comptant, le client paie avant de quitter le magasin. Lors d'un achat sur facture, la marchandise passe sous la garde de l'acheteur après confirmation, puis devient sa propriété après paiement. Il faut établir une liste de contrôle et signaler tout écart.
+
+### Réception planifiée et non planifiée
+
+Dans une réception planifiée, la date et la quantité sont connues à l'avance, ce qui permet de réserver un quai et de préparer documents et personnel. Le transporteur doit respecter le créneau convenu. En revanche, une réception non planifiée survient sans information préalable et doit être évitée en entrepôt, car elle indique souvent un manque de communication entre achats et logistique.`;
 
 const DEMO_303_APERCU_FULL = `## Aperçu du module 303
 
@@ -10602,24 +10400,25 @@ Objectif : règles **uniformes** pour les contrats de vente internationaux, éga
 
 const DEMO_304_THEORIE_SUMMARY = `## À retenir — Module 304
 
-### Identification
-**Globale** : destinée à nous ? (adresse / documents) avant déchargement  
-**Détaillée** : bonne marchandise ? (fournisseur, docs, douane, articles, quantités)  
-Ouverture : sécurité · non accompagné = inspection extérieure  
-**Plombs douaniers** : ne pas ouvrir sans autorisation  
-Première vision : état visible + attention climat / international
+### Identification globale
 
-### Documents
-Bon de transport · **CMR** (3 originaux, effet probatoire, responsabilité) · lettre de voiture rail · **bulletin de livraison** (contrôle + conservation 10 ans)  
-Corrections : visibles, signées, pas d'effacement ; oral ≠ preuve
+L'identification consiste à vérifier si la marchandise est destinée à l'entreprise en consultant les documents et l'adresse de livraison, avant tout déchargement. Ensuite, le transporteur ouvre le véhicule en respectant les consignes de sécurité. Pour les livraisons de l'étranger, les plombs douaniers ne doivent pas être ouverts sans autorisation. Un premier coup d'œil permet de repérer d'éventuels dommages visibles.
 
-### Sous réserve
-Motif + date + signature · pas un cachet vide  
-Sinon réclamation / remplacement / résiliation possibles
+### Identification détaillée
 
-### International
-Maastricht → réseaux transfrontaliers  
-CVIM (Vienne) → règles uniformes vente internationale`;
+Une fois la livraison confirmée, on contrôle si la bonne marchandise a été livrée en vérifiant le fournisseur, les documents, les articles et les quantités.
+
+### Documents d'accompagnement
+
+Le bon de transport indique expéditeur et destinataire. La lettre de voiture CMR s'applique aux transports routiers internationaux et comporte trois exemplaires originaux signés. Le bulletin de livraison sert au contrôle de conformité. Les corrections doivent être visibles et signées par les deux parties.
+
+### La réception sous réserve
+
+Si une réception approfondie est impossible, on note une réception sous réserve avec un motif précis, la date et la signature.
+
+### Réglementations et contrats transfrontaliers
+
+Le traité de Maastricht a favorisé les réseaux de transport transfrontaliers. La Convention de Vienne établit des règles uniformes pour les contrats de vente internationale.`;
 
 const DEMO_304_APERCU_FULL = `## Aperçu du module 304
 
@@ -11172,28 +10971,21 @@ Lignes HT dangereuses. Ligne de contact ferroviaire **15 000 V** : s'approcher =
 
 const DEMO_305_THEORIE_SUMMARY = `## À retenir — Module 305
 
-### Infrastructure
-Stockage ≠ circulation · secondaires ≥80 cm · principales ≥120 cm  
-Quai : risque chute · Ast+10 % · pas de stockage · bords marqués  
-Rampes : charge en amont · pas d'accélération · 45° sur rails
+### Dangers liés à l'infrastructure
 
-### Sécuriser le véhicule
-Frein + contact OFF · cales · chaîne/sangle · guides/butoirs  
-Semi : béquille + anti-basculement  
-Rail : frein à main et/ou sabot
+Le déchargement comporte des risques dans les zones dangereuses. D'abord, les zones de stockage doivent être séparées des zones de circulation, et aucune marchandise ne doit dépasser sur les voies. Ensuite, les quais de chargement, rampes et rails exigent des mesures de prudence, notamment contre le risque de chute au quai.
 
-### Engins (CFST)
-S1–S3 : moindre risque · instruction documentée  
-R1–R4 : particulièrement dangereux · formation Suva  
-Jeunes : 18 ans règle / apprentis logistique dès 15 ans (dérogation)  
-Regarder dans le sens de la marche · collisions = cause n°1
+### Sécurisation du véhicule
 
-### Auxiliaires & zones
-Ponts/tôles : charge, antidérapant, anti-déplacement  
-Monte-charge : chariot+charge+conducteur < charge utile · jamais en incendie  
-Automatismes : cadenas sur coupe-circuit · pas d'entrée sans consignes  
-Électricité HT / 15 kV : danger mortel  
-Signaux : avertissement / interdiction / obligation / secours`;
+Avant le déchargement, le véhicule doit être sécurisé par frein de stationnement, cales et chaîne au quai. Pour les semi-remorques, un dispositif anti-basculement est nécessaire. Pour le rail, on utilise le frein à main et le sabot de freinage.
+
+### Choix de l'engin de manutention
+
+Les engins S1 à S3 présentent un risque moindre, tandis que les R1 à R4 sont particulièrement dangereux et exigent une formation reconnue. En règle générale, la conduite est interdite aux moins de dix-huit ans, avec une dérogation pour les apprentis logisticiens dès quinze ans. La règle d'or est de regarder dans le sens de la marche.
+
+### Moyens auxiliaires et autres risques
+
+Les ponts de chargement doivent afficher une capacité suffisante et une surface antidérapante. Pour les monte-charges, la charge totale doit rester inférieure à la charge utile, et on ne les utilise jamais en cas d'incendie. Dans les installations automatisées, il faut sécuriser l'installation par cadenas. Enfin, la signalisation indique les dangers, interdictions, obligations et issues de secours.`;
 
 const DEMO_305_APERCU_FULL = `## Aperçu du module 305
 
@@ -11649,25 +11441,29 @@ Conçus pour plusieurs usages ; pas de déchet direct si le circuit est respect�
 
 const DEMO_306_THEORIE_SUMMARY = `## À retenir — Module 306
 
-### Contenant
-Unité regroupée (palette, fût, caisse…) · coûts réels · pas de pertes à l'échange
+### Qu'est-ce qu'un contenant
 
-### Palettes
-Euro 1 : 1200×800 · charges 1000 / 1500 / 2000 kg  
-Types 2, 3, 6 · USA · Asie  
-**EPP** / **EPAL** · critères d'échange (planches, plots, marques EUR/EPAL)  
-Cadres & couvercles : critères CH
+Un contenant regroupe des marchandises en une nouvelle unité pour simplifier le transport, le stockage et le déstockage, par exemple une palette, un fût ou une caisse. Les coûts des contenants ne sont pas négligeables, il faut donc travailler avec concentration et éviter les pertes lors des échanges.
 
-### Échange
-Pool **ouvert** : pièce/pièce · bon (signé) · compte courant  
-Pool **fermé CHEP** : location, pas d'échange, collecte
+### Le support de charge
 
-### Spéciaux & roulettes
-Acier, plastique, INKA, fûts, Pal-Box, grillagé, box métal/claire-voie, varitainers…  
-Rollcontainers · palettes à roulettes
+La palette s'est imposée mondialement, avec des dimensions variées selon les régions. L'Euro palette type 1 est la plus courante et fait partie du pool européen de palettes, qui permet l'échange de palettes entre pays participants. Une Euro palette type 1 supporte une charge allant jusqu'à deux mille kilogrammes selon la répartition de la charge. Une palette n'est pas échangeable si elle présente des défauts de construction, de marquage ou d'état, comme une planche manquante ou une marque EPAL absente.
 
-### Emballages
-Usage unique vs réutilisable → module 602`;
+### EPAL
+
+L'association européenne des palettes assure la qualité des palettes du pool ouvert EPAL, notamment par des marques, un plan de cloutage standardisé et des contrôles qualité.
+
+### Procédure d'échange de palettes EURO
+
+Dans un pool ouvert, les engins sont échangés entre participants selon des règles communes. L'échange standard consiste à rendre autant de palettes vides que celles reçues, en palettes équivalentes. Si l'on manque de palettes vides, on peut émettre un bon signé reconnaissant la dette. L'échange avec compte courant enregistre les entrées et sorties dans un registre ou un portail.
+
+### Support de charge selon CHEP
+
+CHEP propose des palettes bleues dans un pool fermé : l'entreprise propriétaire les loue, avec collecte et réparation incluses, sans échange pièce à pièce.
+
+### Supports spéciaux et emballages
+
+Il existe de nombreux supports spéciaux comme les palettes en acier, en plastique, les box-palettes ou les conteneurs réservoirs. Les palettes à roulettes et les rollcontainers facilitent la manipulation. Enfin, les emballages à usage unique sont éliminés après un seul usage, tandis que les emballages réutilisables sont conçus pour plusieurs utilisations.`;
 
 const DEMO_306_APERCU_FULL = `## Aperçu du module 306
 
@@ -12115,23 +11911,16 @@ Mise en page libre ; contenu correct + **visa du transporteur** indispensables. 
 const DEMO_307_THEORIE_SUMMARY = `## À retenir — Module 307
 
 ### Erreurs de livraison
-Mauvais destinataire · mauvaises marchandises · mauvaise quantité · qualité · retard  
-Prévention : ID globale/détaillée, double contrôle, scanners  
-Accord qualité → taux d'erreur toléré + pénalités possibles
 
-### Dégâts emballage
-Suremballage ≠ emballage de vente  
-Déchiré / taché / écrasé → vérifier contenu ; vente abîmée → refus
+En logistique, les erreurs et les dommages ne sont pas rares, il faut donc les reconnaître, en analyser les causes et améliorer le taux d'erreur. D'abord, les contrôles d'identification globale et détaillée du module 304 doivent déjà faire ressortir les défauts. Les principaux types d'erreurs sont le mauvais destinataire, les marchandises incorrectes, la mauvaise quantité, la différence qualitative et la livraison tardive. En effet, même avec le bon destinataire, le contenu peut être erroné, d'où l'importance du double contrôle chez l'expéditeur et de l'identification détaillée chez le destinataire. Un accord qualité entre fournisseur et client fixe un taux d'erreur toléré et des conséquences pouvant aller jusqu'à des pénalités.
 
-### Indicateurs
-Basculement · choc · température (+ infrarouge instantané · enregistreurs)  
-5 étapes : poser → confirmer départ → contrôler arrivée → confirmer anomalie → libérer/traiter
+### Dégâts et emballages
 
-### En cas de sinistre
-Supérieur + formulaire + photos  
-Accompagné : signature chauffeur / déclaration coursier  
-Non accompagné : rail (gestionnaire) · conteneur (attendre consignes)  
-Protocole + visa transporteur`;
+Les dommages peuvent être visibles dès l'identification globale, comme un chargement déplacé, ou moins évidents, comme les dommages climatiques en transport international. Il faut distinguer le suremballage de transport et l'emballage de vente, car un emballage de vente abîmé est souvent impropre à la vente. Pour les produits coûteux ou délicats, des indicateurs de basculement, de choc et de température permettent de détecter et de prouver les anomalies, complétés éventuellement par des enregistreurs numériques ou un thermomètre infrarouge pour la température instantanée à l'arrivée.
+
+### En cas de dommage
+
+En cas de dommage, le signalement au supérieur doit être immédiat, avec un formulaire de constatation et des photos sous tous les angles. Ensuite, le comportement dépend du mode de livraison : constat avec le chauffeur pour le transport accompagné, déclaration de dommage pour le courrier, ou signalement au gestionnaire d'événements ferroviaires pour le rail. Un protocole de dégâts correct doit inclure le visa du transporteur, les photos et le bon de transport traité.`;
 
 const DEMO_307_APERCU_FULL = `## Aperçu du module 307
 
@@ -12529,19 +12318,17 @@ Plombs de contrôle : ne pas endommager ; manquants/endommagés → signaler + *
 
 const DEMO_308_THEORIE_SUMMARY = `## À retenir — Module 308
 
-### Unités
-Décimal + baril, gallon, douzaine, inch, pint, TEU…
+### Unités et comptage
 
-### Compter / mesurer
-Quantités partielles (couches × cartons × pièces)  
-Compteur manuel · mètre / laser · DIN 866 · pied à coulisse · micromètre · gabarit  
-Volumes : pompe piston, débitmètre, scanner volumétrique
+Compter, mesurer et peser sont des contrôles centraux dans le transport de marchandises. En Europe, le système décimal est la base, mais d'autres unités subsistent comme le baril, le gallon, la douzaine ou le TEU pour les conteneurs de vingt pieds. Pour le comptage, les quantités partielles permettent d'éviter de tout compter pièce à pièce, par exemple en multipliant les pièces par carton, les cartons par couche et les couches entre elles.
 
-### Peser
-Comparaison de masses vs dynamomètre  
-Table · compteuse · plate-forme · pèse-palettes · embarqué · pont-bascule  
-**Tarer** = soustraire emballage · **Calibrer** = remettre à zéro  
-Vérification fédérale + plombs · tolérances`;
+### Mesure et pesée
+
+Pour les longueurs, le mètre courant suffit souvent, tandis que le pied à coulisse et le micromètre offrent plus de précision. Pour les volumes, on utilise des pompes à piston, des débitmètres ou des scanners volumétriques. Ensuite, la pesée repose sur la comparaison des masses ou sur le dynamomètre, avec des balances professionnelles adaptées à chaque usage, de la balance de table au pont-bascule.
+
+### Tarage, calibrage et vérification
+
+Le tarage consiste à mettre la balance à zéro avec l'emballage vide pour peser le poids net, tandis que le calibrage remet l'appareil à zéro avant utilisation. En Suisse, la loi fédérale sur la métrologie impose des contrôles périodiques par un vérificateur pour certains instruments, avec des plombs de contrôle qu'il ne faut pas endommager.`;
 
 const DEMO_308_APERCU_FULL = `## Aperçu du module 308
 
@@ -13019,24 +12806,17 @@ Entre entreprises certifiées : souvent le fournisseur s'engage par écrit à co
 
 const DEMO_309_THEORIE_SUMMARY = `## À retenir — Module 309
 
-### Qualité
-Performance = attente  
-AQ cruciale (agro, aéro, pharma) · certificats · labo  
-Critères subjectifs vs objectifs
+### Assurance qualité et définition
 
-### Logistique & AQ
-Échantillonnage + étiquetage fiable  
-**Quarantaine / stock AQ** jusqu'à validation  
-Prélever → transmettre → refuser ou stocker
+L'assurance qualité regroupe toutes les mesures pour garantir une qualité constante des produits et services. En effet, la qualité se définit comme la correspondance entre la performance et l'attente du client. Cette assurance est cruciale dans des secteurs comme l'agroalimentaire, l'aéronautique ou la pharmaceutique, où chaque composant peut devoir être accompagné d'un certificat.
 
-### Niveaux
-Sous-qualité · bonne · sur-qualité
+### Critères et quarantaine
 
-### Méthodes
-**Complet** : cher, cas critiques / nouveaux fournisseurs  
-**Échantillonnage** : improvisé ou planifié (simple / multiple)  
-Plans : lot, n, Tol n, niveaux qualité & contrôle  
-Fonctionnement : allumage → banc d'essai · parfois délégué au fournisseur (ISO)`;
+Les critères de qualité peuvent être subjectifs, basés sur les opinions, ou objectifs, donc mesurables en laboratoire ou par contrôles géométriques. Lors d'un contrôle par échantillonnage, les marchandises prélevées sont placées en quarantaine jusqu'à validation, et la logistique assure le prélèvement, l'étiquetage fiable et la transmission au service compétent. On distingue aussi la sous-qualité, la bonne qualité et la sur-qualité selon le rapport entre exigences et prix.
+
+### Méthodes de contrôle
+
+Le contrôle complet vérifie toute la livraison, ce qui est coûteux mais justifié pour un nouveau fournisseur ou des marchandises critiques. Cependant, si le fournisseur est fiable, l'échantillonnage suffit, qu'il soit improvisé ou planifié avec des plans définissant le lot, la quantité prélevée et les défauts autorisés. Enfin, le contrôle du fonctionnement peut aller du simple allumage au banc d'essai complet, et entre entreprises certifiées le fournisseur peut parfois s'en charger par écrit.`;
 
 const DEMO_309_APERCU_FULL = `## Aperçu du module 309
 
@@ -13482,18 +13262,17 @@ Entrées/sorties concrètes → disponible et total fluctuent de la **même** qu
 
 const DEMO_310_THEORIE_SUMMARY = `## À retenir — Module 310
 
-### Préparation stockage
-Après contrôles Q/qté · reconditionnement si besoin  
-Raisons : présentation, emballage, promo, lots/bundles, manutention, type de stockage, automatisation
+### Préparation à la mise en stock
 
-### Enregistrement
-ERP en fin de process · réception planifiée = commande pré-enregistrée
+La préparation à la mise en stock est la dernière étape de la logistique d'approvisionnement, après les contrôles qualité et quantité. Sans exigences particulières, le stockage se fait directement, mais sinon un réemballage, un repacking ou un étiquetage spécial peut être nécessaire pour des raisons de présentation, de promotion, de bundles ou de manutention.
 
-### Fiche de stock
-Article = caractéristiques identiques  
-En-tête : n°, désignation, UL, UV, prix d'achat, fournisseur, max, point de commande, sécurité  
-Mouvements : entrées/sorties · réservé · AQ · bloqué · **disponible** · **total**  
-Total = disponible + réservé + AQ + bloqué`;
+### Enregistrement et fiche de stock
+
+En fin de préparation, la marchandise est enregistrée dans l'ERP, même sans modification d'emballage. Un article regroupe des marchandises dont toutes les parties sont identiques, et la fiche de stock contient des données statiques comme le numéro d'article, l'unité de livraison, le point de commande et le stock de sécurité.
+
+### Mouvements de stock
+
+Les saisies comptables enregistrent les entrées, les sorties, le stock réservé, le stock AQ, le stock bloqué, le stock disponible et le stock total. Le stock disponible correspond aux marchandises livrables immédiatement, tandis que le stock total inclut aussi le réservé, l'AQ et le bloqué. Ainsi, les entrées et sorties physiques font évoluer le disponible et le total de la même quantité, sauf en cas de réservation ou de quarantaine.`;
 
 const DEMO_310_APERCU_FULL = `## Aperçu du module 310
 
@@ -13990,25 +13769,21 @@ Réception = entre livraison et stockage (modules 304, 308, 309) : déchargement
 
 const DEMO_311_THEORIE_SUMMARY = `## À retenir — Module 311
 
-### Approvisionnement
-Achat mondial croissant · délai appro ≤ délai marché accepté sinon stock
+### Approvisionnement et délai
 
-### Formes
-Stock · JIT · sync. fabrication (mix fréquent)
+Le service d'approvisionnement se charge de l'achat du matériel, des services et des marchandises à revendre, et tous les flux de marchandises sont déclenchés par l'approvisionnement puis mis en œuvre par la logistique. Le délai d'approvisionnement, de la commande à la disponibilité en stock, doit être inférieur ou égal au délai de réapprovisionnement accepté par le marché, sinon l'article doit être géré en stock.
 
-### Sourcing
-Global / local · single / double / multiple · modular-system
+### Formes d'approvisionnement
 
-### Commande
-Point commande q fixe/variable · rythme date fixe q fixe/variable  
-**Andler/EOQ** : Qopt = √(2MB / PL) · conditions restrictives
+L'approvisionnement classique avec stock offre une autonomie mais immobilise du capital, tandis que le juste-à-temps achète seulement quand le besoin se fait sentir, avec peu d'immobilisation mais une forte dépendance aux fournisseurs. La synchronisation fabrication est une variante du JIT avec livraison exacte à la date de production, et souvent les trois formes se combinent selon les articles.
 
-### ABC-XYZ
-Pareto 80/20 · A près sortie · XYZ = prévisibilité  
-XA–XC faciles · ZA–ZC difficiles · contrats cadres/appel
+### Sourcing et commande
 
-### Réception
-JIT ↑ fréquences → charge réception · certificat fournisseur ISO possible`;
+Pour le sourcing, on distingue l'achat global, l'achat local, le single, double ou multiple sourcing, ainsi que le modular sourcing. Ensuite, quatre procédures de commande existent selon le déclencheur et la quantité, et la formule d'Andler permet de calculer une quantité de commande optimale en équilibrant les coûts de stockage et de passation de commande.
+
+### Analyses ABC et XYZ
+
+L'analyse ABC applique le principe de Pareto aux stocks, en plaçant les articles A près de la sortie, et l'analyse XYZ classe la prévisibilité de la consommation. Ainsi, les articles XA sont plus faciles à planifier que les articles ZA, et des contrats cadres ou sur appel permettent de réduire les stocks avec des délais courts. Enfin, le passage au JIT augmente la fréquence des livraisons et peut surcharger la réception, sauf si le fournisseur certifié ISO prend en charge certains contrôles.`;
 
 const DEMO_311_APERCU_FULL = `## Aperçu du module 311
 
@@ -14619,24 +14394,17 @@ Ces données donnent du sens opérationnel aux **6B** (Jünemann) : bonne marcha
 
 const DEMO_312_THEORIE_SUMMARY = `## À retenir — Module 312
 
-### Stock
-Aussi peu que possible — autant que nécessaire  
-Surstock = capital · rupture = CA / production
+### Définition et importance du stock
 
-### Classification
-FEFO (DLC) · FIFO (périssable) · LIFO possible (non périssable)
+Le stock est l'ensemble des produits stockés, et sa règle est d'en détenir aussi peu que possible, mais autant que nécessaire. Un stock trop élevé immobilise du capital, tandis qu'un stock trop faible provoque des ruptures et retarde la production.
 
-### Formules
-Stock mini = conso/j × délai  
-Point de commande = stock mini + stock de sécurité
+### Classification et types de stocks
 
-### Types
-Physique · sécurité · max · négatif · saisonnier · dormant · spéculatif · temporaire  
-Disponible = total − réservé − AQ − bloqué
+Selon la périssabilité, on applique le FEFO pour les produits avec date d'expiration, le FIFO pour les périssables et éventuellement le LIFO pour les non périssables. On distingue aussi le stock physique, le stock minimum, le stock de sécurité, le stock maximum, le point de commande, le stock saisonnier, le stock dormant et le stock spéculatif.
 
-### Fiche
-En-tête statique · mouvements dynamiques  
-AQ/bloqué/réservation : effets distincts sur disponible vs total`;
+### Disponible et comptabilisation
+
+Le stock disponible correspond au total moins le réservé, l'AQ et le bloqué. Les entrées et sorties physiques font évoluer le disponible et le total de la même quantité, tandis qu'une entrée en quarantaine AQ augmente le total sans toucher au disponible tant que le contrôle n'est pas validé. Enfin, ces données donnent du sens opérationnel aux six B de Jünemann : bonne marchandise, quantité, qualité, moment, endroit et prix.`;
 
 const DEMO_312_APERCU_FULL = `## Aperçu du module 312
 
@@ -15060,16 +14828,13 @@ Certaines marchandises n'atteignent leur qualité optimale qu'après stockage ad
 
 const DEMO_401_THEORIE_SUMMARY = `## À retenir — Module 401
 
-### Stockage
-Local + biens · réserve nécessaire (pas seulement le besoin immédiat)  
-Chaotique ≈ « cachettes » dispersées → module 406
+### Définition du stockage
 
-### Fonctions
-1. **Sécurité** (tampon / stock de sécurité) — retards, variations, défauts  
-2. **Transformation** — reconditionnement, kits, découpe, mélange, séchage…  
-3. **Contrôle & tri** — ID, qté/état, délais · élimination obsolète/périmé  
-4. **Spéculation** — achat anticipé pour prix  
-5. **Affinage / maturation** — fromage, vin, charcuterie…`;
+Chez EnterSite AG, le stockage désigne à la fois le local où l'on stocke et les biens qui y sont conservés. En effet, on ne peut souvent pas acheter uniquement la quantité immédiatement nécessaire, donc l'entrepôt tient un stock de réserve, comparable aux réserves alimentaires de nos ancêtres ou aux noisettes dispersées de l'écureuil.
+
+### Les cinq fonctions du stockage
+
+La fonction de sécurité, aussi appelée tampon ou stock de sécurité, est la plus importante pour surmonter les retards, les variations de consommation ou les marchandises défectueuses. Ensuite, la transformation permet de reconditionner, découper ou assembler des kits, tandis que le contrôle et le tri assurent l'identification et l'élimination des obsolètes. Enfin, la spéculation consiste à acheter avant une hausse de prix, et l'affinage ou la maturation concerne des produits comme le fromage ou le vin.`;
 
 const DEMO_401_APERCU_FULL = `## Aperçu du module 401
 
@@ -15531,22 +15296,17 @@ Fruits exotiques : transport verts → **mûrisseries** (ex. bananes des grands 
 
 const DEMO_402_THEORIE_SUMMARY = `## À retenir — Module 402
 
-### Critères
-Marchandises · activité · localisation · fonction
+### Critères de planification
 
-### Selon marchandises
-MP (tampon) · self-service · produits finis / vente
+Tous les entrepôts ne sont pas identiques, et leur planification repose sur les marchandises stockées, le domaine d'activité, le lieu et la fonction à remplir. Selon les marchandises, on distingue l'entrepôt de matières premières, le self-service pour petites pièces fréquentes et l'entrepôt de produits finis reliant production et vente.
 
-### Selon secteur
-**Production** : amont · intermédiaire (bulk) · aval  
-**Distribution** : transbordement (sans stock durable) + admin  
-**Commerce** : centre distribution · **consignation** (propriété fournisseur)
+### Selon le secteur
 
-### Site
-Internes vs externes · centralisé (stocks ↓, rabais) vs décentralisé (trajets ↓, JIT)
+Dans une entreprise de fabrication, il existe des entrepôts en amont, intermédiaires et en aval, tandis qu'une entreprise de distribution utilise surtout des entrepôts de transbordement sans stock durable. Les entreprises commerciales disposent d'un centre de distribution et peuvent aussi utiliser la consignation, où les marchandises restent la propriété du fournisseur chez le client.
 
-### Autres
-Temporaire (casiers…) · maturation (fromage, vin, bananes)`;
+### Site et entrepôts particuliers
+
+Le stockage centralisé permet des stocks plus bas et des rabais d'achat, cependant le décentralisé réduit les trajets pour les marchandises lourdes ou en juste-à-temps. Enfin, un entrepôt temporaire accueille les biens brièvement, et un entrepôt de maturation sert aux produits qui doivent mûrir comme le fromage, le vin ou les bananes vertes.`;
 
 const DEMO_402_APERCU_FULL = `## Aperçu du module 402
 
@@ -16110,19 +15870,17 @@ Norvège · petites pièces · bacs empilés (sans rayonnage classique) · robot
 
 const DEMO_403_THEORIE_SUMMARY = `## À retenir — Module 403
 
-### Sol
-Bloc plat / piles · lignes/rangées · bouteilles (chaîne) · longs/panneaux
+### Stockage au sol
 
-### Rayonnages
-**Compartimenté** (petites pièces, étages + ABC)  
-**Palettes** : traverses, antichoc, butées, grilles · 1,6–4,5 t/traverse  
-**Drive-in** (1 côté, pas FIFO) · **double entrée** (FIFO)  
-**Dynamique** (gravité) · **accumulation** (LIFO)  
-**Cantilever** / nid d'abeille · **mobile** (place ↑, accès ↓)  
-**Rotatif** V/H · **suspendu** statique/dynamique
+Le stockage au sol est la forme de base, avec des blocs à plat ou en piles pour les grandes quantités, des lignes ou rangées pour l'accès, et des mesures spéciales pour les bouteilles sous pression ou les produits longs. Cependant, cette forme reste économique surtout quand l'accès à chaque unité n'est pas obligatoire.
 
-### Moderne
-Navettes · cobots/AMR · hauts rayonnages 15–45 m · **Autostore**`;
+### Rayonnages classiques
+
+Le rayonnage compartimenté convient aux petites pièces de détail, et le rayonnage à palettes utilise des traverses pour supporter les palettes avec des accessoires de sécurité comme les goupilles, les butées arrière et les grilles anti-chute. Le drive-in permet de stocker de grandes quantités sans empilement, mais le FIFO n'y est possible qu'avec une double entrée, tandis que le rayonnage dynamique utilise la gravité et l'accumulation favorise le LIFO.
+
+### Rayonnages spéciaux et modernes
+
+Le cantilever et le nid d'abeille servent aux produits longs, le rayonnage mobile économise beaucoup de place mais allonge les temps d'accès, et les rotatifs verticaux ou horizontaux amènent la marchandise à l'homme. Enfin, les installations modernes comme les navettes, les cobots, les hauts rayonnages jusqu'à quarante-cinq mètres et l'Autostore optimisent l'espace pour les petites pièces.`;
 
 const DEMO_403_APERCU_FULL = `## Aperçu du module 403
 
@@ -16563,17 +16321,17 @@ Assez d'espace → manutention optimale · entrées/sorties plus rapides · moin
 
 const DEMO_404_THEORIE_SUMMARY = `## À retenir — Module 404
 
-### Enveloppe
-Ouvert (intempéries OK) · couvert (toit) · fermé (sensible/vol)
+### Types d'enveloppe
 
-### Hauteur
-Faible ~7 m · moyenne ~15 m · grande jusqu'à ~45 m (MGH)
+Les entrepôts ouverts conviennent aux biens insensibles aux intempéries, les entrepôts couverts protègent du soleil et de la pluie tout en restant ouverts sur les côtés, et les entrepôts fermés sont nécessaires pour les marchandises sensibles au vol ou aux intempéries.
 
-### Structure
-Mécanisé (transstockeur conducteur) · automatique (WMS, accès restreint) · système complexe (réseau d'installations)
+### Hauteurs et structures
 
-### 3 principes
-**Propreté** · **spaciosité** · **netteté** (zones, marquage, n°, localisation)`;
+La faible hauteur, jusqu'à environ sept mètres, est courante en PME, la moyenne hauteur va jusqu'à quinze mètres, et la grande hauteur peut atteindre quarante-cinq mètres avec des systèmes complexes. Un entrepôt mécanisé utilise des transstockeurs à conducteur, un entrepôt automatique est piloté par des logiciels avec accès restreint, et un système complexe combine plusieurs installations en réseau.
+
+### Stockage optimal
+
+Un stockage professionnel repose sur trois principes : la propreté des locaux et des marchandises, la spaciosité pour une manutention sûre, et la netteté avec des zones définies, un marquage clair et une localisation précise de chaque article.`;
 
 const DEMO_404_APERCU_FULL = `## Aperçu du module 404
 
@@ -17049,22 +16807,17 @@ Prévention : entrepôt sec, propre, peu poussiéreux · T°/humidité/lumière 
 
 const DEMO_405_THEORIE_SUMMARY = `## À retenir — Module 405
 
-### Accidents
-Piles stables · charge au sol · rayonnages (goupilles, grilles, antichocs)  
-~80 % humain · STOP · EPI · apprentis : 45 h / 9 h · secours (observer-réfléchir-agir)
+### Risque d'accident
 
-### Incendie
-Non-fumeur · détecteurs · sprinklers / CO₂ · classes de feu  
-**Alerter – Sauver – Éteindre**
+Les entrepôts combinent engins et piétons dans un espace restreint, ce qui rend le stockage et le transport interne parmi les activités les plus risquées. Il faut donc empiler correctement en respectant la charge au sol, stabiliser les rayonnages avec des goupilles et des grilles, et dégager les voies d'évacuation.
 
-### Vol
-Contrôles E/S · retours · séparation · techniques
+### Mesures et secours
 
-### MD
-Peu que possible · FDS · SGH · zones signalées · accès fermé
+Environ quatre-vingts pour cent des accidents viennent d'erreurs humaines, d'où le principe STOP qui privilégie la substitution, puis la mesure technique, l'organisation et enfin la protection des personnes. En cas d'urgence, il faut observer, réfléchir puis agir, et les apprentis en logistique en Suisse sont soumis à des limites de temps de travail précises.
 
-### Nuisibles
-Propreté + climat · lutte ciblée`;
+### Incendie, vol et matières dangereuses
+
+Le risque d'incendie exige l'interdiction de fumer et des détecteurs, sprinklers ou extinction au CO₂ selon les cas, avec le comportement alerter, sauver, éteindre. Pour le vol, des contrôles aux entrées et sorties sont nécessaires, et pour les matières dangereuses il faut en détenir aussi peu que possible en consultant la fiche de données de sécurité et en respectant les symboles SGH. Enfin, la prévention des nuisibles passe par un entrepôt sec, propre et peu poussiéreux.`;
 
 const DEMO_405_APERCU_FULL = `## Aperçu du module 405
 
@@ -17481,17 +17234,13 @@ Procédure de **valorisation** des stocks : sortir d'abord les plus **chers** �
 
 const DEMO_406_THEORIE_SUMMARY = `## À retenir — Module 406
 
-### Emplacement
-**Lotissement par case** : fixe · simple · mauvaise occupation si stocks variables  
-**Chaotique** : emplacement libre · espace ↑ · **ordinateur obligatoire**
+### Emplacement fixe et chaotique
 
-### Rotation
-**FIFO** : plus ancien d'abord · périssables · dynamique / drive-in double / pile base  
-**LIFO** : plus récent d'abord · bloc / 1 côté / drive-in simple  
-Palettes/compartiments : stocker le neuf **derrière** l'ancien
+Le lotissement par case attribue à chaque article un emplacement définitif, ce qui est simple mais mal exploite l'espace si les stocks varient fortement. Le stockage chaotique, en revanche, place chaque article sur n'importe quel emplacement libre pour une meilleure occupation, cependant il n'est possible qu'avec une gestion de stock assistée par ordinateur.
 
-### HIFO
-Valorisation : plus cher sorti d'abord · stock à prix bas · règles fiscales variables`;
+### FIFO, LIFO et HIFO
+
+Le FIFO consiste à sortir d'abord la marchandise la plus ancienne, ce qui convient aux périssables et aux rayonnages dynamiques ou aux drive-in à double entrée. Le LIFO sort la plus récente et est inévitable en bloc ou en drive-in à une entrée, tandis que le HIFO est une méthode de valorisation qui fait sortir d'abord les articles les plus chers. Sur les rayonnages palettes ou compartimentés, il faut donc stocker le neuf derrière l'ancien.`;
 
 const DEMO_406_APERCU_FULL = `## Aperçu du module 406
 
@@ -17916,17 +17665,16 @@ Plaque signalétique : charge max **jamais** dépassée. Diagramme : poids autor
 const DEMO_407_THEORIE_SUMMARY = `## À retenir — Module 407
 
 ### Transport interne
-Déplacement dans l'entreprise · fixes vs engins mobiles
 
-### Classification
-Rails/sans · 1D/2D · manuel/méca · opérateur/PC · unitaire/vrac/liquide
+Dans l'entreprise, transporter signifie déplacer des marchandises au sein de l'unité d'exploitation, avec deux familles de moyens : les installations fixes comme les convoyeurs et les engins mobiles comme les chariots élévateurs.
 
-### Moyens
-Manuel (court) · convoyeurs continus · ponts · chariots · élévateur (+ RFID) · transstockeur
+### Choix des moyens
 
-### Levier / capacité
-Contrepoids = 2 bras · M chariot > M charge  
-Diagramme : CdG + hauteur · ne jamais dépasser`;
+Le choix dépend du type de marchandise, du poids, de la quantité et du trajet. Les moyens manuels conviennent aux courtes distances, les convoyeurs continus aux grandes quantités en production de masse, et les chariots élévateurs sont les engins les plus fréquents, complétés par les transstockeurs guidés par rails dans les allées.
+
+### Loi du levier et capacité
+
+Un chariot à contrepoids fonctionne comme un levier à deux bras, et il reste stable tant que le moment du chariot dépasse celui de la charge. Le diagramme de capacité indique le poids autorisé selon la distance du centre de gravité et la hauteur de levage, qu'il ne faut jamais dépasser.`;
 
 const DEMO_407_APERCU_FULL = `## Aperçu du module 407
 
@@ -18439,24 +18187,17 @@ Vue d'occupation (libres / zones). **Analogique** (cartes/sachets) ou **numériq
 
 const DEMO_408_THEORIE_SUMMARY = `## À retenir — Module 408
 
-### Planification
-Flux court · 80–90 % occupation max · agencement + simulation
+### Planification de l'entrepôt
 
-### Fonctions
-Intermédiaire · finis · transbordement · MP · picking · réserve
+L'objectif est un flux de marchandises le plus court et simple possible, avec une occupation optimale des emplacements de quatre-vingts à quatre-vingt-dix pour cent maximum. La planification s'appuie sur les données de rotation, l'analyse ABC et un agencement vérifié après mise en service, éventuellement avec des simulations numériques.
 
-### Sol
-Blocs (occupation ↑, FIFO ↓) · rangées · épis  
-Charge au sol : 1 kg ≈ 10 N · ponctuel vs réparti · Ast
+### Fonctions et formes au sol
 
-### Indicateurs
-Globale → brute → nette · taux surfaces · taux espace (hauteur)
+Selon leur fonction, les entrepôts peuvent être intermédiaires, de produits finis, de transbordement, d'approvisionnement, de préparation de commandes ou de réserve. Au sol, les blocs offrent une bonne occupation mais un FIFO difficile, tandis que les rangées améliorent l'accès au prix d'une occupation plus faible.
 
-### Rayonnages
-Traverse / sol / totale · hauteurs homogènes
+### Charge au sol et indicateurs
 
-### Orga
-N° articles & emplacements · flux E→S · images de stock`;
+La charge au sol combine des forces statiques et dynamiques, avec en pratique un kilogramme équivalant à environ dix newtons. Le taux d'exploitation des surfaces compare la surface nette à la surface brute, et le taux d'utilisation de l'espace intègre aussi la hauteur des palettes. Enfin, chaque article et chaque emplacement doivent être numérotés, et le flux interne va de la réception au chargement en passant par la mise en stock et le picking.`;
 
 const DEMO_408_APERCU_FULL = `## Aperçu du module 408
 
@@ -19213,27 +18954,25 @@ Occupation d'espace **max** · vitesse · **24/7** (pas de congés) · logiciel 
 
 const DEMO_409_THEORIE_SUMMARY = `## À retenir — Module 409
 
-### Définition
-Engin au sol = déplacement horizontal au sol (hauteur secondaire)
+### Définition des engins au sol
 
-### Types
-Timon (S2) · préparateurs · tracteur (S1)  
-Contrepoids (R1) · retract (R2) · latéral (R3) · télesco (R4) · multi  
-Transstockeur · mise en stock tri-directionnel
+Un engin de manutention est un véhicule qui se déplace au sol, classé selon le mouvement horizontal et non la hauteur de levage. On distingue les engins à timon comme le transpalette ou le gerbeur, les préparateurs de commandes, les tracteurs et les chariots élévateurs de plusieurs types, ainsi que les transstockeurs pour les rayonnages moyens et hauts.
 
-### Entraînements
-Diesel (ext.) · gaz · électrique (fréquent) · hybride  
-Toyota · Kion (Linde/Still) · Jungheinrich…
+### Types principaux
 
-### Technique
-Mâts Simplex→Quad · levée libre partielle (~40 cm) / complète  
-Fourches / rallonges / rétractables → **CdG** + diagramme  
-Outils : ripage, pinces, éperon, potence, compresseur…
+Les chariots à contrepoids sont les plus connus, les mât rétractables reculent la charge entre les roues pour une meilleure maniabilité, et les engins de mise en stock travaillent dans des allées très étroites sans retournement. Le chariot télescopique utilise un bras massif comme contrepoids, le préparateur vertical se déplace sur deux axes, et le latéral sert aux marchandises longues.
 
-### Auto
-AGV induction / optique / intelligent  
-Transstockeur WMS · double cycle · contrôle de profil  
-Autostore = grille + robots + caisses`;
+### Entraînements et marché
+
+Pour l'entraînement, le diesel convient à l'extérieur, le gaz à l'intérieur bien ventilé, l'électrique est le plus utilisé en intérieur car il est silencieux et sans échappement, et l'hybride combine les deux mondes. En Suisse, Linde et Still font partie du groupe Kion, et Toyota Industries est le premier fabricant mondial.
+
+### Composants et outils portés
+
+Les mâts vont du simplex au quadruplex, et la levée libre complète permet de soulever sans déployer tout le mât, ce qui est utile dans les locaux bas. Les fourches rétractables ou rallongées modifient le centre de gravité, d'où l'importance du diagramme de charge, et des outils portés comme les pinces, l'éperon ou la potence adaptent l'engin à des charges particulières.
+
+### Automatisation
+
+Les AGV ou FTS assurent le transport sans conducteur sur des itinéraires fixes, guidés par induction, optique ou systèmes intelligents. Les transstockeurs automatiques reçoivent leurs ordres du WMS et peuvent enchaîner entrée et sortie sans retour au point de départ, tandis que l'Autostore utilise une grille de caisses et des robots pour optimiser l'espace vingt-quatre heures sur vingt-quatre.`;
 
 const DEMO_409_APERCU_FULL = `## Aperçu du module 409
 
@@ -19663,19 +19402,17 @@ Billes encastrées (quelques mm) · déplacement **toutes directions** presque s
 
 const DEMO_410_THEORIE_SUMMARY = `## À retenir — Module 410
 
-### Fixe vs mobile
-Convoyage = **fixe** · chariots = mobiles · même but : déplacer
+### Convoyage fixe et vertical
 
-### Vertical
-Table à ciseaux · convoyeur S / Liftveyor · élévateur (1 ou 2 côtés + profil) · monte-charge incliné
+Contrairement aux chariots mobiles, les systèmes de convoyage sont fixes et servent à amener les marchandises au bon endroit selon le type et la quantité. Les convoyeurs verticaux incluent la table élévatrice à ciseaux, le convoyeur en S ou Liftveyor, les élévateurs de marchandises non accompagnés et les monte-charges inclinés pour les charges moyennes.
 
-### Levage
-Pont · suspendu · portique · Container-Carrier  
-Chariot membrure inf./sup. · mouflage 1:2 / 1:4  
-8 règles SUVA · β ≤ 60° · CdG sous crochet
+### Engins de levage
 
-### Continu
-Boucle, un seul sens · rouleaux · chaîne porteuse · transfert (distributeur, pousseur, table rotative) · accumulation · table à billes`;
+Les ponts roulants, les ponts suspendus et les portiques servent au levage aérien, et le Container-Carrier est un portique sur roues pour empiler les conteneurs dans des allées étroites. Huit règles de levage encadrent l'utilisation des grues, notamment l'interdiction de se tenir sous une charge suspendue, l'utilisation de dispositifs contrôlés et la limite d'angle d'inclinaison de soixante degrés maximum.
+
+### Convoyeurs continus
+
+Les convoyeurs continus se déplacent en boucle dans un seul sens, avec des rouleaux pour les caisses et des chaînes porteuses pour les palettes. Des éléments de transfert comme le distributeur à chaîne, le pousseur ou la table rotative changent la direction, et un convoyeur à accumulation permet de stocker sans empilement grâce aux galets palpeurs qui coupent l'entraînement. Enfin, la table à billes facilite le déplacement dans toutes les directions pour le reconditionnement.`;
 
 const DEMO_410_APERCU_FULL = `## Aperçu du module 410
 
@@ -20135,19 +19872,17 @@ Structure aussi **simple** et **neutre client** (standardisée) que possible jus
 
 const DEMO_501_THEORIE_SUMMARY = `## À retenir — Module 501
 
-### Définition
-Production = biens · énergies · services  
-Inputs → transformation → outputs (création de valeur)
+### Définition de la production
+
+La production désigne la fabrication de biens matériels, d'énergies ou de services par transformation d'inputs en outputs. Les facteurs de production sont la prestation de travail, le matériel d'exploitation et les matériaux, combinés pour créer de la valeur.
 
 ### Objectifs
-Coûts ↓ · rendement ↑ · qualité ↑ · délais · charge · temps de passage ↓ · satisfaction
 
-### Développement
-Idée → dessins → modèle fonctionnel → série · Achats + PCP
+L'objectif fondamental est un bon produit qui répond aux attentes clients, avec des objectifs de coûts réduits, de rendement élevé, de haute qualité, de respect des délais, de charge de travail suffisante, de temps de passage court et de satisfaction client.
 
-### Structure produit
-Vues construction / achats / production / montage  
-Standardiser tôt · personnaliser **tard**`;
+### Développement et structure produit
+
+De l'idée au produit, le parcours passe par les dessins techniques, le modèle fonctionnel, le modèle de série, les achats et la planification et contrôle de production avant la commercialisation. La structure produit organise le produit selon les points de vue construction, achats, production et montage, en cherchant à standardiser tôt et à personnaliser le plus tard possible.`;
 
 const DEMO_501_APERCU_FULL = `## Aperçu du module 501
 
@@ -20501,20 +20236,17 @@ Ordre de priorité : **prévention** → **valorisation** → **élimination**.
 
 const DEMO_502_THEORIE_SUMMARY = `## À retenir — Module 502
 
-### Place
-Approvisionnement → **logistique de production** → distribution
+### Place et mission
 
-### Mission
-Fournir facteurs / infos (6B) · évacuer / stocker · ↓ coûts de fabrication
+La logistique de production se situe entre l'approvisionnement et la distribution, et elle planifie le flux de matières depuis les entrepôts jusqu'à l'évacuation des produits finis. Elle doit fournir le bon type, la bonne quantité, la bonne qualité au bon moment, conformément à la règle des six B.
 
-### Objectifs
-Exécution courte · délais · stocks bas · qualité · capacité · voies optimales
+### Objectifs et stocks
 
-### Stocks
-Amont · intermédiaire · aval · proximité (souvent hors ERP détail)
+Ses objectifs sont des délais courts, des stocks aussi bas que possible, une haute qualité et une utilisation optimale des capacités et des voies de transport. On distingue les stocks en amont, intermédiaires, en aval et de proximité, souvent sans comptabilisation détaillée pour les petites pièces en libre-service.
 
-### Déchets
-Prévention > valorisation > élimination · TTS + tri + info (→ 106)`;
+### Élimination des déchets
+
+La logistique opérationnelle d'élimination collecte, trie et évacue les déchets selon l'ordre de priorité prévention, valorisation puis élimination, avec les prestations de transport, transbordement, stockage et d'information.`;
 
 const DEMO_502_APERCU_FULL = `## Aperçu du module 502
 
@@ -20909,17 +20641,17 @@ Objectifs lean : stocks ↓ · petits lots · flexibilité client ↑ · temps d
 
 const DEMO_503_THEORIE_SUMMARY = `## À retenir — Module 503
 
-### Critères
-Quantité · organisation · lieu
+### Critères et types de fabrication
 
-### Fabrication
-Unitaire · multiple · masse · série · variété · lots (+ traçabilité)
+Le type de fabrication dépend de la quantité produite, de l'organisation et du lieu, et le modifier ensuite demande beaucoup d'efforts et de coûts. On distingue la fabrication unitaire pour les pièces uniques, la production multiple et de masse pour les grandes quantités, la production en série pour des séries limitées, la variété pour des différences minimes et la production par lots imposée par l'infrastructure.
 
-### Organisation
-Établi · atelier · chaîne · chantier
+### Organisations de production
 
-### Lean
-Alléger : stocks ↓ · petits lots · flexibilité · passage court`;
+L'organisation à l'établi fait réaliser le produit du début à la fin au même poste, l'atelier regroupe des postes similaires avec grande flexibilité, la chaîne impose un ordre fixe synchronisé, et le chantier amène main-d'œuvre et moyens sur le site du client.
+
+### Lean Production
+
+La Lean Production, ou production allégée, vise un usage économique du temps, des moyens et du personnel en supprimant le superflu, avec des objectifs de stocks bas, petits lots, flexibilité accrue et temps de passage réduit.`;
 
 const DEMO_503_APERCU_FULL = `## Aperçu du module 503
 
@@ -21312,18 +21044,17 @@ Aussi « Lean Automation » : automatiser à partir de l'**existant** (outils, m
 
 const DEMO_504_THEORIE_SUMMARY = `## À retenir — Module 504
 
-### Flux
-Externe (prestataires, peu de réserve lean) · interne (chemin direct)
+### Flux externe et interne
 
-### Tirage
-**Kanban** (flux tiré, Toyota) · Two-Bin · commande optique
+Le flux externe est souvent assuré par des prestataires logistiques, tandis que le flux interne relève de l'entreprise depuis la livraison jusqu'à la mise en œuvre en production. En logique lean, le chemin le plus direct et les processus clairs sont recherchés, avec peu de réserves pour absorber les retards.
 
-### JIT / JIS
-JIT = juste à temps · stocks ↓ · supply chain critique  
-JIS = JIT + ordre / déballé pour le monteur
+### Kanban et autres systèmes de tirage
 
-### Techno
-LCA (lean automation) · **Jidoka** (arrêt autonome si défaut)`;
+Le Kanban est une méthode japonaise de flux tiré développée chez Toyota, où le poste aval prélève ce dont il a besoin et une fiche ou un conteneur déclenche le réapprovisionnement quand le niveau descend sous le minimum. Le système Two-Bin utilise deux conteneurs, et la commande optique déclenche une commande grâce à un repère sur le conteneur.
+
+### JIT, JIS et automatisation
+
+Le juste-à-temps livre les matières au poste au moment voulu pour réduire les stocks, mais il rend la supply chain très dépendante des aléas. Le juste-in-sequence ajoute l'ordre exact et le déballage pour le monteur, tandis que le LCA automatise à partir de l'existant et le Jidoka arrête la machine dès qu'un défaut est détecté.`;
 
 const DEMO_504_APERCU_FULL = `## Aperçu du module 504
 
@@ -21675,18 +21406,17 @@ Utilisées en : planification prod., matériaux, capacités, temps, montage, ach
 
 const DEMO_505_THEORIE_SUMMARY = `## À retenir — Module 505
 
-### PCP
-Programme prod. → quantités → délais/capacités → lancement → suivi
+### Tâches de la PCP
 
-### Push / Pull
-Push : central, stocks ↑ · Pull : besoins client, stocks ↓
+La planification et contrôle de production part du programme de production pour gérer les quantités de matériel, planifier les délais et capacités, lancer les ordres et suivre l'avancement des commandes et des fournisseurs.
 
-### Bulk
-Masse récurrente, quantités non limitées
+### Push et Pull
 
-### Nomenclature (BOM)
-Primaire → secondaires → nets (secondaires − stock)  
-Quantitative · structurelle · modulaire · variantes`;
+En flux poussé, une unité centrale envoie les informations et les marchandises dans le même sens, ce qui augmente les stocks. En flux tiré, les besoins clients pilotent la production à contre-courant du matériel, ce qui réduit les stocks et les délais.
+
+### Nomenclature
+
+Le besoin primaire provient du programme de vente, et la nomenclature liste les besoins secondaires en composants et sous-ensembles. En comparant ces besoins au stock actuel, on obtient les besoins nets, avec des nomenclatures quantitative, structurelle, modulaire ou avec variantes selon l'usage.`;
 
 const DEMO_505_APERCU_FULL = `## Aperçu du module 505
 
@@ -22088,18 +21818,21 @@ Nombreux outils AQ dans le monde (sélection non exhaustive dans la formation) �
 
 const DEMO_506_THEORIE_SUMMARY = `## À retenir — Module 506
 
-### MQ vs AQ
-MQ = structure / manuel · toute l'entreprise  
-AQ = garantir & améliorer process (≠ contrôle produit seul)
+### MQ et AQ
 
-### Méthodes
-Kaizen · **PDCA** · PAC · **7 Muda** · ISO 9001 (+ audits)
+Le management de la qualité définit la structure pour atteindre la qualité dans un manuel appliqué à toute l'entreprise, tandis que l'assurance qualité détecte et élimine les influences négatives sur les activités et processus, et non seulement sur le produit fini.
 
-### Ressources
-Économie circulaire · Urban Mining · efficacité énergie
+### Kaizen, PDCA et PAC
 
-### Traçabilité & IP
-Historique complet · qualité + sécurité · IP pour ISO`;
+Le Kaizen japonais signifie l'amélioration progressive, souvent via le cycle PDCA de planification, mise en œuvre, contrôle et action. Le processus d'amélioration continue ancre de petites mesures rapides dans la culture, avec des démarches d'ordre et de propreté en bureau comme en fabrication.
+
+### Muda et ISO 9001
+
+Les sept mudas désignent les gaspillages comme le surstockage, la surproduction, le transport inutile, l'attente, les erreurs, le surprocessing et la sous-utilisation des compétences. La norme ISO 9001 certifie formellement un système de management de la qualité, avec des audits internes et externes.
+
+### Économie circulaire et traçabilité
+
+L'économie circulaire vise à maximiser l'efficacité des ressources en réduisant les déchets et en recyclant, par exemple via l'urban mining. La traçabilité suit le produit de la matière première jusqu'à l'élimination pour réagir vite en cas de défaut de qualité ou de sécurité, et les instructions de procédure précisent quand, par qui et comment une tâche doit être réalisée pour la certification ISO.`;
 
 const DEMO_506_APERCU_FULL = `## Aperçu du module 506
 
@@ -22489,19 +22222,17 @@ Possible si : produits déjà préemballés · emballages **normalisés** · pas
 
 const DEMO_601_THEORIE_SUMMARY = `## À retenir — Module 601
 
-### Types
-Statique (homme→marchandise) · dynamique (marchandise→homme)
+### La préparation de commandes
 
-### Dimensions & prélèvement
-1D / 2D · manuel (fréquent) / auto (rare)  
-Transfert centralisé ou décentralisé
+La préparation de commandes, aussi appelée picking, consiste à rassembler les articles d'un entrepôt selon les commandes clients. On distingue le picking statique, où le préparateur se déplace vers la marchandise, et le picking dynamique, où la marchandise est amenée vers lui.
 
-### Stratégies
-Batch vs real-time · 1 / multi secteurs  
-Orienté commande vs article · série vs parallèle · ABC allées
+### Stratégies et organisation
 
-### Tech
-Scan · Voice · Light · Vision · Pick-and-Pack`;
+Le déplacement peut être unidimensionnel (horizontal) ou bidimensionnel (horizontal et vertical). Le prélèvement est le plus souvent manuel, tandis que les données peuvent être traitées par lots ou en temps réel via des terminaux MDE. L'organisation peut être orientée commande, orientée article, en série ou en parallèle selon la taille des commandes.
+
+### Techniques sans papier
+
+Les techniques assistées par ordinateur incluent le Pick-by-Scan, le Pick-by-Voice (mains libres), le Pick-by-Light et le Pick-by-Vision. Le Pick-and-Pack combine en une seule opération le prélèvement et le conditionnement, lorsque les produits sont déjà préemballés et que les emballages sont normalisés.`;
 
 const DEMO_601_APERCU_FULL = `## Aperçu du module 601
 
@@ -22911,19 +22642,17 @@ Symboles de sensibilité : **DIN 55402** / **ISO R 780**.`;
 
 const DEMO_602_THEORIE_SUMMARY = `## À retenir — Module 602
 
-### 3 fonctions
-Protection · logistique · information
+### Les fonctions de l'emballage
 
-### Vocabulaire DIN
-Matériel → moyen + accessoires = emballage · paquet · jetable / repris
+L'emballage protège le produit contre les chocs, l'humidité et le vol, mais il sert aussi à la logistique en permettant l'empilage et l'utilisation des convoyeurs, ainsi qu'à l'information via les mentions obligatoires et le marketing.
 
-### Choix
-Fragilité, transport, durée, écolo…  
-Dispobox · IFCO · bacs · rembourrage minimal utile · durabilité
+### Vocabulaire et choix
 
-### Contraintes
-Mécaniques · climatiques · nuisibles (ISPM-15) · vol  
-Empilage imbriqué · symboles DIN/ISO`;
+La norme DIN 55405 définit notamment le matériel d'emballage, le moyen d'emballage, les accessoires et le paquet. Le choix dépend de la fragilité, du transport, de la durée du trajet et de l'environnement. Des solutions réutilisables comme la Dispobox ou les bacs IFCO peuvent remplacer les emballages jetables, et le rembourrage doit rester minimal mais suffisant.
+
+### Contraintes et normes
+
+Il faut tenir compte des risques mécaniques, climatiques, nuisibles (bois traité ISPM-15) et de vol. Pour l'empilage, on préfère le mode imbriqué au mode en colonne, et les symboles DIN 55402 ou ISO R 780 indiquent la sensibilité des marchandises.`;
 
 const DEMO_602_APERCU_FULL = `## Aperçu du module 602
 
@@ -23313,16 +23042,17 @@ Industrie des boissons : caisses souvent sécurisées par **une ficelle** pré-c
 
 const DEMO_603_THEORIE_SUMMARY = `## À retenir — Module 603
 
-### 3 méthodes
-Stretch (étirer, inclure palette sauf profil) · rétraction (chaleur, PVC) · cerclage (V > H)
+### Trois méthodes d'arrimage
 
-### Feuillard
-PP/PET · textile · acier  
-Comparer **force de rupture** (= section × traction)  
-Plastique = rappel ↑ si charge se tasse
+Pour sécuriser une palette, on utilise le filmage étirable (stretch), la rétraction thermique ou le cerclage. Lors du stretch, on étire le film en incluant la palette dans l'enveloppe, sauf avant un contrôle de profil automatique.
 
-### Fermetures
-Boucle · chape · sans chape (vibration) · ficelle boissons`;
+### Choix du feuillard
+
+Les feuillards en plastique PP/PET, textile ou acier se comparent surtout par leur force de rupture, calculée comme la section multipliée par la résistance à la traction. Le plastique offre une meilleure capacité de rappel lorsque la charge se tasse, tandis que l'acier résiste davantage mais coûte plus cher.
+
+### Types de fermeture
+
+Le cerclage peut se fermer par boucle, par chape ou sans chape par soudage ou encliquetage. Dans l'industrie des boissons, une simple ficelle pré-coupée suffit souvent pour sécuriser les caisses.`;
 
 const DEMO_603_APERCU_FULL = `## Aperçu du module 603
 
@@ -23698,19 +23428,17 @@ De EXW (quasi tout à charge acheteur) à **DDP** (vendeur jusqu'au lieu de dest
 
 const DEMO_604_THEORIE_SUMMARY = `## À retenir — Module 604
 
-### Vente
-Directe (B2C) · indirecte (intermédiaires)
+### Canaux de vente et distribution
 
-### Distribution
-1 niveau · multi-niveaux · centralisé / décentralisé  
-**Cross Docking** · plateformes frais · e-commerce
+La vente directe relie le producteur au client final (B2C), tandis que la vente indirecte passe par des intermédiaires comme les grandes surfaces. La distribution peut se faire à un ou plusieurs niveaux, en centralisé ou décentralisé. Le Cross Docking permet de réexpédier rapidement des marchandises pré-commissionnées sans les stocker longtemps.
 
-### Postal
-Service public · réservé ≤50 g · non réservé · concurrentiel  
-Flux : dépôt → tri → distribution
+### Marché postal suisse
 
-### Transport & export
-DEC (Poste, DPD, DHL) · palettes >30 kg · **Incoterms**`;
+Seule La Poste Suisse a l'obligation de service public pour les lettres et colis jusqu'à 20 kg. Les envois réservés (lettres jusqu'à 50 g) financent ce service, tandis que les envois non réservés et les prestations concurrentielles sont libres.
+
+### Transport et export
+
+Les acteurs DEC comme la Poste, DPD et DHL assurent les livraisons express. Pour l'export, les Incoterms 2020 répartissent entre vendeur et acheteur les coûts, les documents, les droits de douane et le transfert des risques, de EXW à DDP.`;
 
 const DEMO_604_APERCU_FULL = `## Aperçu du module 604
 
@@ -24086,16 +23814,16 @@ Automates **24/7** · retrait / dépôt · adresse alternative / 2e livraison. C
 const DEMO_605_THEORIE_SUMMARY = `## À retenir — Module 605
 
 ### Adressage
-Gauche · NPA · code-barres · étiquettes prestations
 
-### Prestations
-A/B · R · RMP · BLN · Lune · SameDay  
-Priority / Economy · SI · AS · FRA · SP
+Un bon adressage est essentiel pour le tri automatique. Les lettres doivent être alignées à gauche avec le NPA et la localité complets, et les colis portent un code-barres d'envoi avec les étiquettes de prestation à droite.
 
-### Flux
-Étranger (Urdorf / ZRH / Mülligen)  
-Tri lettres séquencé · colis RollBox  
-Distribution + AMP · PickPost · My Post 24`;
+### Prestations lettres et colis
+
+Pour les lettres, on trouve notamment le Courrier A (lendemain), le Courrier B (économique), le recommandé, la remise en main propre et Swiss-Express Lune. Pour les colis, PostPac Priority et Economy offrent des délais différents, et des options comme Signature, Assurance ou Fragile complètent l'offre de base.
+
+### Tri et distribution
+
+Les envois à l'étranger transitent par Urdorf, l'aéroport de Zurich ou Mülligen selon le poids. Les lettres sont triées de façon séquencée en trois étapes, et les colis passent par les centres RollBox. La distribution s'appuie sur le système AMP, et PickPost ainsi que My Post 24 offrent des points de retrait flexibles.`;
 
 const DEMO_605_APERCU_FULL = `## Aperçu du module 605
 
@@ -24467,18 +24195,17 @@ Tarif selon **émissions** (véhicules propres = moins taxés). CH : appareil é
 
 const DEMO_606_THEORIE_SUMMARY = `## À retenir — Module 606
 
-### Route
-Flexible · distribution fine · réglementée · embouteillages
+### Le transport routier en Suisse
 
-### Forces
-Accélération · décélération · centrifuge (v²) · vibrations → arrimage
+La route reste flexible pour la distribution fine, mais elle est soumise à une réglementation stricte et aux embouteillages, notamment sur le plateau et via le Gothard. Les forces dynamiques (accélération, décélération, centrifuge et vibrations) imposent un arrimage adapté du chargement.
 
-### Charge
-≥20 % directeur · ≥25 % tracteur · max essieux / poids total  
-Blocage vs force · LIFO · sangles, tapis, barres…
+### Répartition de la charge
 
-### RPLP
->3,5 t · selon émissions · report rail · 1/3 cantons · 2/3 Confédération`;
+La loi exige au moins 20 % du poids sur l'essieu directeur et 25 % sur l'essieu tracteur, sans dépasser les charges maximales. On distingue l'arrimage de blocage et l'arrimage de force, et le chargement suit en principe la logique LIFO selon l'itinéraire.
+
+### La RPLP
+
+Depuis 2001, la redevance sur le trafic des poids lourds s'applique aux véhicules de plus de 3,5 tonnes selon leurs émissions. Elle vise à freiner le trafic routier et à financer le report vers le rail, avec un tarif plus bas pour les véhicules plus propres.`;
 
 const DEMO_606_APERCU_FULL = `## Aperçu du module 606
 
@@ -24864,16 +24591,17 @@ Projets de report route → rail · **Cargo Sous Terrain** (module **610**) · t
 
 const DEMO_607_THEORIE_SUMMARY = `## À retenir — Module 607
 
-### Rail CH
-Éco · contourne interdiction nuit · CFF Cargo ~30 Mt/an  
-NLFA : Lötschberg · Gothard 57 km · Ceneri · >22,6 Md CHF
+### Le rail en Suisse
 
-### Forces
-Triage jusqu'à 4 g · vibrations ~0,3 g
+Le transport ferroviaire est économique et écologique pour de grandes quantités, et il permet de contourner l'interdiction de nuit des camions. CFF Cargo transporte environ 30 millions de tonnes par an. La NLFA, avec les tunnels du Lötschberg, du Saint-Gothard et du Ceneri, renforce l'axe nord-sud européen.
 
-### Chargement
-Responsabilité chargeur · essieux 1:2 · bogies 1:3  
-MD : classe + ONU · avenir CST / Hyperloop`;
+### Forces et chargement
+
+En gare de triage, la décélération peut atteindre 4 g, tandis que les vibrations et la force centrifuge restent autour de 0,3 g. Le chargeur est responsable du chargement : il doit répartir la charge uniformément en respectant les rapports essieux de 1:2 et bogies de 1:3.
+
+### Marchandises dangereuses et avenir
+
+Les wagons de marchandises dangereuses portent une classe de danger et un numéro ONU. À l'avenir, des projets comme Cargo Sous Terrain ou l'Hyperloop pourraient encore renforcer le report de la route vers le rail.`;
 
 const DEMO_607_APERCU_FULL = `## Aperçu du module 607
 
@@ -25214,15 +24942,17 @@ Rôles : confirmation de prise en charge · instructions manipulation/achemineme
 
 const DEMO_608_THEORIE_SUMMARY = `## À retenir — Module 608
 
-### Importance
-Plus rapide · ~50 % valeur export CH · hubs Zurich / GVA / Bâle
+### Importance du fret aérien
 
-### Technique
-ULD / BUP · belly freight · remplacement camion  
-Douane · vétérinaire · phytosanitaire
+Le fret aérien est le mode le plus rapide pour le commerce international. En Suisse, environ la moitié de la valeur des exportations transite par les aéroports, notamment celui de Zurich qui concentre environ 70 % du marché fret.
 
-### Expédition
-IATA · DGR · AWB (non négociable)`;
+### Aéroports et technique
+
+Les trois aéroports nationaux sont Zurich, Genève et Bâle-Mulhouse. Les unités ULD et BUP permettent de regrouper les marchandises comme des conteneurs, et une grande partie du fret voyage en soute (belly freight) dans les avions de passagers.
+
+### Expédition et contrôles
+
+Tout envoi passe par la douane et peut être contrôlé par les services vétérinaires ou phytosanitaires. Le chargement des ULD suit les directives IATA, les marchandises dangereuses sont régies par les DGR, et l'Air Waybill est le contrat non négociable entre expéditeur et transporteur.`;
 
 const DEMO_608_APERCU_FULL = `## Aperçu du module 608
 
@@ -25557,15 +25287,14 @@ Palettes **peu** utilisées (espace > travail) · EUR type 1 **inadaptée** au c
 
 const DEMO_609_THEORIE_SUMMARY = `## À retenir — Module 609
 
-### Navigation
-Lent · cheap · grandes quantités · Rhin vital pour CH
+### Rôle du transport maritime et fluvial
+La navigation reste essentielle à la mondialisation : **lente** mais adaptée aux **grandes quantités** à **faible coût**. En Suisse, seul le **Rhin** permet le transport par bateau et assure environ **10 à 12 %** des importations.
 
-### Voies
-Mannheim · Suez / Panama / Kiel · Nord-Est arctique
+### Voies et ports
+La convention de **Mannheim** (1868) garantit l'accès au Rhin jusqu'à Bâle. Sur les océans, on mesure en **miles nautiques** (1 NM = **1,852 km**). Les canaux **Suez**, **Panama** et **Kiel** sont vitaux. **Shanghai** dépasse **40 millions** de conteneurs ; un conteneur de **20 pieds** compte pour **1 TEU**.
 
-### Ports & technique
-Bâle · Shanghai / TEU · portiques · spreader · LIFO  
-Forces vagues · blocage dans conteneur`;
+### Transbordement et arrimage
+Le transbordement utilise des **portiques** et un **spreader** accroché aux quatre coins du conteneur. À bord, le chargement suit la logique **LIFO**. En mer, les vagues exercent des forces fortes : l'arrimage terrestre ne suffit pas toujours. Dans les conteneurs, on privilégie le **blocage sans espace**.`;
 
 const DEMO_609_APERCU_FULL = `## Aperçu du module 609
 
@@ -25886,14 +25615,14 @@ Tunnels souterrains · désengorger les routes · ~**30 km/h** constant · 1er t
 
 const DEMO_610_THEORIE_SUMMARY = `## À retenir — Module 610
 
-### Combiné
-Interfaces · profiter des atouts de chaque mode
+### Principe du transport combiné
+Le transport combiné fait interagir route, rail, eau et air via des **interfaces** (gares, terminaux, ports, aéroports). Les conteneurs passent d'un mode à l'autre sans déchargement complet, afin de profiter des **atouts** de chaque mode.
 
-### ROLA
-Accompagné (chauffeur couchette) · non accompagné (semi seule)
+### ROLA et conteneurs ISO
+La **chaussée roulante (ROLA)** est un ferroutage **accompagné** (camion sur wagon, chauffeur en couchette) ou **non accompagné** (semi seule, reprise à destination). Les conteneurs **ISO** en **20'** ou **40'** ont des dimensions normalisées en **pieds** et se ferment par des scellés.
 
-### ISO
-20'/40' · scellés · types variés · ACTS · caisses · Domino · CST`;
+### Autres systèmes d'échange
+**ACTS** utilise des conteneurs à roulettes déposés au sol ou sur rail. **Cargo Domino** pousse les caisses perpendiculairement sur le wagon. La combinaison route–rail prévoit le rail la nuit et le camion le jour. Le projet **Cargo Sous Terrain (CST)** vise des tunnels souterrains à **30 km/h**.`;
 
 const DEMO_610_APERCU_FULL = `## Aperçu du module 610
 
@@ -26278,18 +26007,14 @@ Facteurs **statiques** (structure, ABC, stock…) et **dynamiques** (flux/jour, 
 
 const DEMO_611_THEORIE_SUMMARY = `## À retenir — Module 611
 
-### Erreurs
-Qté / article / unité · causes perso + orga · coûts & image
+### Erreurs et leurs conséquences
+Les erreurs fréquentes concernent la **quantité**, la **marchandise** ou l'**unité**. Elles ont des causes personnelles ou organisationnelles et entraînent des retours, des coûts et une perte d'**image**. La prévention passe par la formation, les contrôles et des procédures sans document.
 
-### 3 systèmes
-Info (saisie→quittance) · matériel (statique/dynamique) · orga (zones, série/parallèle, MOP)
+### Trois sous-systèmes
+Le sous-système **informations** va de la saisie à la quittance (en ligne ou hors ligne, Pick-by-Scan, Voice, RFID). Le sous-système **matériel** distingue le picking **statique** du **dynamique**, avec déplacements en 1D ou multi-niveaux. Le sous-système **organisation** définit zones, série ou parallèle, et parcours (**MOP** pour plusieurs petites commandes).
 
-### Trieurs & temps
-Tilt / sabots / pop-up / bandes / trappes  
-5 temps : orga · déplacement · prélèvement · mort · perdu
-
-### Ratios
-3600/t · coût/pos. · taux d'erreur · conception selon flux`;
+### Trieurs, temps et ratios
+Les **trieurs** répartissent les envois (plateau inclinable, sabots, bandes transversales, trappes). On analyse **cinq temps partiels** dont la somme fait **100 %** du temps de picking. La capacité se calcule avec **3600 / temps de prélèvement (s)** et on mesure le coût par position et le **taux d'erreur**.`;
 
 const DEMO_611_APERCU_FULL = `## Aperçu du module 611
 
@@ -26726,18 +26451,14 @@ Unités : cadre + couvercle + cerclage · cylindriques (plat / cales) · panneau
 
 const DEMO_612_THEORIE_SUMMARY = `## À retenir — Module 612
 
-### Tournées
-LIFO · disposition · télématique · LTr/LCR/OTR/RPLP/ADR
+### Planification des tournées
+L'objectif est de livrer de manière **économique**, **rapide** et **sûre**. Le plan de tournée suit la logique **LIFO** et la **disposition** fixe l'ordre de livraison, soutenue par la **télématique**. Le cadre légal comprend la **LTr**, la **LCR**, l'**OTR**, la **RPLP** et l'**ADR**.
 
-### Make or Buy
-Scoring pondéré · coûts, risques, qualité, image…
+### Make or Buy et denrées périssables
+La décision flotte interne ou prestataire repose sur des critères pondérés (**scoring**) : coûts, risques, qualité, image. Pour les denrées périssables, la chaîne du froid exige moins de **+5 °C** ou **−18 °C** sans interruption. Le système **HACCP** repose sur **7 principes**, de l'identification des dangers à la documentation.
 
-### Froid & HACCP
-Annonce · verre-fourchette · chaîne froide · 7 principes
-
-### Charge & CD
-Essieux 20/25 % · chauffeur responsable  
-Regroupage · Cross-Docking 1/2/multi`;
+### Répartition et Cross-Docking
+La charge impose au moins **20 %** sur l'essieu directeur et **25 %** sur le tracteur ; le **chauffeur** reste responsable. Le **regroupage** remplit les unités à moitié vides. Le **Cross-Docking** évite le stockage : en **1 étape** (direct), **2 étapes** (regroupement au hub) ou **multi-niveaux** (avec montage ou étiquetage).`;
 
 const DEMO_612_APERCU_FULL = `## Aperçu du module 612
 
@@ -27137,15 +26858,14 @@ Coûts différents selon dépôt **desservi** (filiale) vs **non desservi** (aut
 
 const DEMO_613_THEORIE_SUMMARY = `## À retenir — Module 613
 
-### Qualité
-Orientation service · image · 6B · ambassadeur  
-Mauvaise qualité = bouche-à-oreille ×10–15
+### Qualité de service et image
+La **qualité de service** mesure si l'entreprise répond aux attentes des clients, aussi bien sur le délai que sur la manière. La règle des **6B** rappelle : bonne marchandise, qualité, moment, endroit, quantité et prix. Une mauvaise qualité fait perdre des clients ; un client insatisfait en informe environ **10 à 15** personnes. En tenue d'entreprise, chaque collaborateur est un **ambassadeur**.
 
-### Postal
-Poste = Confédération · réservé ≤50 g · non réservé · libre
+### Cadre postal
+La Poste est détenue à **100 %** par la Confédération. Le domaine **réservé** concerne les lettres jusqu'à **50 g** (monopole). Le domaine **non réservé** oblige la Poste mais autorise la concurrence. Le **service libre** est facultatif et ouvert aux coursiers.
 
-### Coûts
-Marge faible · **LPMVM** · flux marchandises / info / argent`;
+### Coûts et LPMVM
+Les marges en distribution sont **faibles**. La grille **LPMVM** recense les coûts : **L**oyer, **P**ersonnes, **M**achines, **V**éhicules et **M**atériel. Trois flux circulent ensemble : **marchandises**, **informations** et **argent**.`;
 
 const DEMO_613_APERCU_FULL = `## Aperçu du module 613
 
@@ -27524,13 +27244,14 @@ Deux envois / casier · automate plein. Prévention : bien vérifier fond · vid
 
 const DEMO_614_THEORIE_SUMMARY = `## À retenir — Module 614
 
-### Dépôt
-Prise en charge · points desservis · non desservis (BA, automates, self-service CC)
+### Le dépôt et les canaux
+Le **dépôt** est le point de départ du voyage logistique. Deux options existent : la **prise en charge** chez le client ou le **dépôt par le client** lui-même. Selon le point de vue, on parle de **déposer** (client) ou de **retirer / collecter** (entreprise).
 
-### Processus
-Privé pick@home · commercial régulier/occasionnel  
-BA : 5 étapes · horaires stricts · secret postal  
-My Post 24 : retirer d'abord · par catégories`;
+### Prise en charge et points de dépôt
+En **privé**, pick@home permet au facteur de venir chercher un envoi à domicile. En **commercial**, la collecte est **régulière** ou **occasionnelle**. Les points **desservis** (filiales, partenaires) accueillent les clients ; les points **non desservis** (boîtes aux lettres, automates My Post 24) fonctionnent **24 h sur 24**.
+
+### Levée des boîtes aux lettres et automates
+La levée d'une boîte aux lettres suit **5 étapes** : respecter les horaires, scanner le code-barres, vider entièrement, bien fermer et vérifier l'arrière. Le **secret postal** impose de protéger les envois. Pour les automates, on **retire d'abord** les envois par catégorie, puis on entrepose les nouveaux.`;
 
 const DEMO_614_APERCU_FULL = `## Aperçu du module 614
 
@@ -27946,16 +27667,14 @@ Sites près **autoroute + rail** (interdiction nuit PL 22h–5h → train). Proc
 
 const DEMO_615_THEORIE_SUMMARY = `## À retenir — Module 615
 
-### Spéciaux & MD
-Encombrants · manuel · LQ · interdits (explosifs, Li>100 Wh, animaux CEC…)
+### Envois spéciaux et marchandises dangereuses
+Les **envois spéciaux** nécessitent un traitement particulier (encombrants, liquides, précieux). Les **MD** sont interdites en CEC sauf en **quantités limitées (LQ)**. Sont notamment interdits les explosifs et les batteries lithium de plus de **100 Wh**.
 
-### Préparation
-Lettres : séparation par 7 · colis : presta + type → RX  
-Étiqueter BB/RX correctement
+### Préparation aux points de dépôt
+Pour les **lettres**, on distingue le format **FN** et **GF**, puis on applique la **séparation par 7** sur les **BB**. Pour les **colis**, prestation et type doivent aller dans la bonne **RX**. Une erreur de rollbox retarde l'envoi.
 
-### Supports & réseau
-BB 15 kg · RX · WB · NPA 4 chiffres · hubs / CD  
-Niveaux 1→multi · route + rail`;
+### Supports et réseau
+Les supports ont des limites : **BB** (15 kg), **SB** (460 kg), **RX** (colis), **WB** (aérien). Le **NPA** suisse compte **4 chiffres** ; le premier indique la région de desserte. Un **hub** regroupe et trie les envois. En Suisse, la distribution repose surtout sur la **route** et le **rail**.`;
 
 const DEMO_615_APERCU_FULL = `## Aperçu du module 615
 
@@ -28563,13 +28282,14 @@ Ergo : plates-formes · points de déversement · bandes télescopiques · aides
 
 const DEMO_616_THEORIE_SUMMARY = `## À retenir — Module 616
 
-### Tri
-Dépôt vs distribution · GFS · CCR  
-Lettres : IRV/GFSA · Colis : ACS + trieurs
+### Notions de tri
+Lettres et colis suivent la même logique : un **1er tri** (dépôt, hors région) puis un **2e tri** (distribution). Le **tri séquentiel (GFS)** range les lettres dans l'ordre de la tournée du facteur. Les **CCR** sont des centres colis régionaux de soutien.
 
-### Sécurité & réseau
-Badge · Suva · NPA · IATA · MIL  
-WB · grue 20 t · double pont 36 RX`;
+### Tri des lettres et des colis
+Les lettres passent par la préparation (formats FN/GF, prestations A/B), puis par des machines (**IRV**, **GFSA**) ou un tri manuel. Les colis sont identifiés (**ACS**, **VCS**), triés par destination et expédiés en **RX** vers des **WB**, souvent par **train**.
+
+### Sécurité et logistique inter-centres
+La sécurité impose badge, clôture, sacs transparents et formation (machines, MD, permis Suva). Entre centres, une **grue de terminal** charge des WB sur wagons (max **20 t**). Les **camions double pont** transportent jusqu'à **36 RX**. Les codes **IATA** (aéroports) et le service **MIL** (courrier militaire jusqu'à **5 kg**) complètent le réseau.`;
 
 const DEMO_616_APERCU_FULL = `## Aperçu du module 616
 
@@ -29038,15 +28758,17 @@ Théorique ↔ réelle. Écarts > seuil → **recompter**. Si confirmé → **di
 
 const DEMO_701_THEORIE_SUMMARY = `## À retenir — Module 701
 
-### Obligation
-Bilan · théorique vs réel · 1×/an · docs 10 ans · CO 958c
+### Obligation d'inventaire
+Toute entreprise inscrite au registre du commerce doit établir un bilan annuel. Les stocks doivent alors être comparés entre valeurs comptables théoriques et quantités physiques réelles. Les documents d'inventaire se conservent dix ans, conformément au CO art. 958c al. 2.
 
-### Types
-Date fixe · tournant · sondage
+### Types d'inventaire
+L'inventaire à date fixe consiste à tout compter un jour précis, idéalement sans entrées ni sorties ce jour-là. L'inventaire permanent ou tournant répartit les comptages tout au long de l'année, chaque article devant être contrôlé au moins une fois. L'inventaire par sondage extrapole un échantillon représentatif, souvent pour les articles bon marché, avec accord des autorités fiscales.
 
-### Processus
-Directive · préparer · mesurer/peser/compter  
-Écarts → recompter → différences (souvent charges)`;
+### Déroulement et évaluation
+Une directive fixe le plan d'inventaire, adapté à l'entreprise. Avant le comptage, il faut préparer le lieu, réduire les sources d'erreur et clarifier les unités de comptage. Pendant l'inventaire, on mesure, pèse ou compte selon le type d'article. Ensuite, les écarts supérieurs au seuil sont recomptés et les différences confirmées sont portées au compte de résultat, souvent comme pertes.
+
+### Causes des différences
+Le stock physique peut différer en raison de pertes, casse, vol, erreurs de réception ou de picking. Le stock comptable peut être faux à cause de saisies incorrectes, de mouvements non enregistrés ou de doublons. Analyser ces écarts aide à améliorer les processus internes.`;
 
 const DEMO_701_APERCU_FULL = `## Aperçu du module 701
 
@@ -29718,15 +29440,14 @@ Travaux à risques particuliers : certificat de formation possible (CF).`;
 
 const DEMO_703_THEORIE_SUMMARY = `## À retenir — Module 703
 
-### Coûts
-Directs (brut, sociales…) · indirects (recrutement, poste)  
-Salaire (variable) vs rémunération (fixe)
+### Coûts pour l'entreprise
+Les collaborateurs génèrent des coûts directs, comme le salaire brut, les cotisations sociales et les frais professionnels, ainsi que des coûts indirects, comme le recrutement ou l'équipement du poste. Le salaire varie selon le travail effectué, alors que la rémunération est un montant fixe indépendant du volume. Ces coûts peuvent représenter jusqu'à 80 % des coûts totaux selon le secteur. Les leviers de réduction incluent les réserves, la baisse des heures supplémentaires, la réduction de l'absentéisme et l'externalisation.
 
-### Collaborateur
-3 piliers · brut → net (~7 % déductions 2021) · LPP
+### Point de vue du collaborateur
+Le salaire brut correspond au montant avant déductions légales, le net à ce qui est effectivement versé. Le système suisse repose sur trois piliers : assurances publiques (AVS, AI, chômage), prévoyance professionnelle (LPP) et épargne privée (pilier 3a ou 3b). Les déductions obligatoires de l'employé représentent environ 7 % du brut en 2021, la LPP s'appliquant au-delà d'un certain seuil annuel.
 
-### Cadre
-Droits/obligations CO · LAA prévention`;
+### Cadre légal
+Le code des obligations définit les droits et obligations réciproques de l'employeur et de l'employé. L'employeur doit notamment assurer la prévention des risques, tandis que l'employé doit respecter les consignes de sécurité et porter les équipements de protection. L'emploi fixe offre davantage de sécurité, l'emploi temporaire via agence ou freelance plus de flexibilité.`;
 
 const DEMO_703_APERCU_FULL = `## Aperçu du module 703
 
@@ -30099,20 +29820,16 @@ Calculable par position · par fournisseur/client · globalement sur une périod
 const DEMO_704_THEORIE_SUMMARY = `## À retenir — Module 704
 
 ### Stock moyen
-F1 /2 · F2 /5 · F3 /13 → + de points = + précis
+Le stock moyen sert de base pour calculer la rotation, les frais de stockage et d'autres indicateurs. Trois formules existent : moyenne début et fin d'année (divisée par 2), moyenne trimestrielle (divisée par 5) ou moyenne mensuelle (divisée par 13). Plus le nombre de relevés est élevé, plus le résultat est précis, surtout sur une longue période.
 
-### Rotation & durée
-Conso / stock moy. · 360 / rotation  
-↑ rotation = ↓ coûts, capital, risques
+### Rotation et durée de stockage
+La rotation indique combien de fois le stock moyen a été renouvelé sur la période : consommation divisée par stock moyen. La durée de stockage correspond à 360 jours divisés par la rotation. Une rotation rapide réduit les coûts, l'immobilisation du capital et les risques de stockage. Pour l'améliorer, on peut commander plus souvent en plus petites quantités ou appliquer le juste-à-temps.
 
-### Couverture & service
-Disponible = physique − réserv. + entrées  
-Couverture = stock / besoin/j  
-Service ≈ 98 % réaliste · ABC (**311**)
+### Couverture et taux de service
+La couverture indique combien de jours le stock suffit au rythme de consommation : stock disponible divisé par besoin journalier. Le stock disponible tient compte du stock physique, des réservations et des entrées prévues. Le taux de service mesure la part des demandes satisfaites ; environ 98 % est souvent réaliste, tandis que 100 % sur tout l'assortiment coûte très cher. L'analyse ABC permet de concentrer les stocks sur les articles les plus importants.
 
-### Erreurs
-Taux = défectueuses / total × 100  
-Prévention 304 / 307–308 · tolérances · PV dommages`;
+### Erreurs de livraison
+Une erreur de livraison concerne le mauvais destinataire, l'article, la quantité ou l'état de la marchandise. Le taux d'erreur se calcule en divisant les livraisons défectueuses par le total, multiplié par 100. Le fournisseur doit utiliser des numéros d'articles univoques et des contrôles optiques, le destinataire doit vérifier à la réception. Les écarts de quantité peuvent être tolérés si le contrat le prévoit, et les dommages de transport doivent être constatés rapidement avec un procès-verbal.`;
 
 const DEMO_704_APERCU_FULL = `## Aperçu du module 704
 
@@ -30903,21 +30620,17 @@ Priorité de réduction : d'abord **variables**, puis **fixes** si besoin.
 
 const DEMO_705_THEORIE_SUMMARY = `## À retenir — Module 705
 
-### Structure & couverture
-Totaux = fixes + variables  
-Couverture = totaux / CA × 100 · rentable si **< 100 %**
+### Structure des coûts et rentabilité
+Les coûts totaux d'un entrepôt se composent de coûts fixes et de coûts variables. Le taux de couverture des coûts compare ces coûts au chiffre d'affaires : s'il dépasse 100 %, l'entreprise est en perte ; s'il est inférieur à 100 %, elle est rentable. Comparer les coûts d'une période à l'autre permet de repérer les tendances.
 
 ### Coûts de stockage
-Fixes (amort., personnel, intérêts, loyers…) · variables (marchandises, pertes, énergie…)  
-Amort. linéaire · intérêts sur capital moyen
+Les coûts fixes incluent les amortissements, le personnel, les intérêts, les loyers et les assurances. Les coûts variables dépendent de l'activité : marchandises, pertes, goulets d'étranglement et énergie. L'amortissement linéaire répartit la perte de valeur d'un bien sur sa durée de vie, par exemple cinq ans pour un chariot élévateur. Les intérêts portent sur le capital moyen investi.
 
-### Niveaux
-Min · sécurité · max · point de commande  
-PC = (délai × conso/j) + sécurité · « peu / nécessaire »
+### Niveaux de stocks
+Le stock minimum couvre la demande pendant le délai d'approvisionnement. Le stock de sécurité protège contre les imprévus, mais il coûte cher et doit rester limité aux articles stratégiques. Le stock maximum fixe un plafond, souvent atteint à l'arrivée d'une commande. Le point de commande déclenche une nouvelle commande : délai d'approvisionnement multiplié par consommation journalière, plus le stock de sécurité.
 
-### Minimisation
-Taux intérêt stockage · taux possession (+ marché)  
-Conflit valeur stock vs disponibilité · module **704** / **311**`;
+### Minimisation des coûts
+Réduire les coûts de stockage augmente le bénéfice, mais il faut concilier une valeur de stock basse et une bonne disponibilité. Le taux d'intérêt de stockage dépend du taux du marché, de la rotation et de la durée moyenne de stockage. Le taux des coûts de possession combine les frais de stockage et les intérêts du marché ; il sert notamment au calcul de la quantité optimale de commande. Les indicateurs du module 704 aident à optimiser ces niveaux.`;
 
 const DEMO_705_APERCU_FULL = `## Aperçu du module 705
 
@@ -31592,18 +31305,17 @@ Antivol magasins · accès bâtiments / remontées · EM / transport / stockage 
 
 const DEMO_801_THEORIE_SUMMARY = `## À retenir — Module 801
 
-### Codes 1-D
-GTIN-13 (EU) · GTIN-8 · UPC→+0 · ISBN→978/979  
-SSCC (palettes) · GS1-128 (transport + Track & Trace)  
-Préfixe 76 = CH/LI · dernier chiffre = contrôle
+### Codes-barres 1-D et transport
+Le GTIN identifie chaque article de manière unique dans le monde ; le GTIN-13 est le standard le plus répandu en Europe. À la caisse, le scanner lit le code et récupère le prix depuis la base de données centrale. Le SSCC étiquette les palettes pour le suivi tout au long du transport, tandis que le GS1-128 sert aux unités de commande et de livraison. Le préfixe 76 correspond à la Suisse et au Liechtenstein, et le dernier chiffre est un chiffre de contrôle. L'ISBN des livres a été intégré au GTIN-13 en 2007 via le préfixe 978 ou 979.
 
 ### Codes 2-D
-QR (jusqu'à ~30 % erreur · lots / DLC)  
-Data Matrix (ISO · compact · industrie / Poste)
+Le code QR est une matrice lisible par smartphone, avec correction d'erreurs jusqu'à environ 30 %. Il sert notamment à stocker la DLC et le numéro de lot pour les rappels ciblés. Le Data Matrix est plus compact et résistant, utilisé en industrie, en médecine et par la Poste. Le tracking indique où se trouve la marchandise, le tracing retrace tout son parcours.
 
-### Placement & RFID
-Palettes ≥2 côtés · 45 cm du sol  
-RFID = tag + lecteur · sans contact · antivol, accès, chronométrage…`;
+### Placement des étiquettes
+Sur les palettes, les étiquettes doivent figurer sur au moins deux côtés, le symbole le plus bas à environ 45 cm du sol. Sur les cartons, le marquage se place en bas à droite avec des distances précises au bord. Les articles longs ou cylindriques reçoivent une étiquette autocollante ou volante selon leur taille.
+
+### RFID
+La RFID permet d'identifier et de localiser des objets sans contact visuel obligatoire. Un transpondeur (puce et antenne) est fixé sur l'objet, et un lecteur lit ou modifie les données. Cette technologie réduit les ruptures et les erreurs dans la logistique, et sert aussi à l'antivol, au contrôle d'accès ou au chronométrage sportif.`;
 
 const DEMO_801_APERCU_FULL = `## Aperçu du module 801
 
@@ -31992,17 +31704,14 @@ Regrouper et ordonner les ordres de transport · 1 tournée ≈ 1 personne + vé
 
 const DEMO_802_THEORIE_SUMMARY = `## À retenir — Module 802
 
-### Surveillance
-Indicateurs + enregistreurs (chocs, T°, humidité…)  
-Preuve qualité · ↓ dommages · assurance si preuve
+### Surveillance du transport
+Surveiller les conditions de transport permet de détecter les négligences et de protéger la qualité des marchandises. Pendant le trajet, des chocs, des ruptures de chaîne du froid ou des vols peuvent endommager les produits. Les indicateurs et enregistreurs mesurent en continu les chocs, la température, l'humidité et d'autres paramètres, avec horodatage. Ces données servent de preuve pour l'assurance transport, mais aussi pour réduire les dommages et les réclamations.
 
-### Track & Trace
-Scan code-barres (ou RFID avancé) · statut central  
-Poste : n° envoi · ~180 j · quittance = responsabilité
+### Track and Trace
+Le Track and Trace suit un envoi de l'expéditeur au destinataire grâce à un code-barres scanné à chaque étape clé. La version avancée utilise la RFID pour automatiser la saisie. Avec la Poste Suisse, le numéro d'envoi permet de consulter l'historique pendant environ 180 jours. La quittance de dépôt constitue une preuve de responsabilité en cas de perte ou de dommage.
 
-### Planification
-Tournées · LIFO · facteurs trafic / clients / capacité  
-Optimisation assistée : itinéraire · véhicules · chargement · données`;
+### Planification des tournées
+La planification organise les tournées pour utiliser pleinement les véhicules sur un itinéraire optimal. Le principe LIFO impose de charger en dernier ce qui sera déchargé en premier. Le trafic, la capacité des véhicules, les priorités clients et le temps de travail des chauffeurs influencent l'organisation. L'optimisation assistée par logiciel vise l'itinéraire optimal, l'utilisation économique des véhicules, un chargement conforme et la transmission automatique des données.`;
 
 const DEMO_802_APERCU_FULL = `## Aperçu du module 802
 
@@ -32367,15 +32076,14 @@ Activités opérationnelles et stratégiques d'**acquisition** (matériaux, marc
 
 const DEMO_803_THEORIE_SUMMARY = `## À retenir — Module 803
 
-### Socle
-ERP = modules ressources · CRM = client (logiciel / stratégie / processus)
+### ERP et CRM
+Un ERP regroupe plusieurs modules logiciels qui communiquent pour planifier les ressources de l'entreprise. Le CRM oriente l'entreprise vers ses clients en visant l'acquisition et la fidélisation. Le CRM peut désigner un logiciel, une stratégie ou des processus centrés sur l'expérience client.
 
 ### Domaines métier
-Vente / marketing · RH · PCP (délais, lots, stocks)  
-Projet · qualité · CoFi (créanciers / débiteurs + controlling)
+La vente couvre l'identification des cibles, l'acquisition et le suivi post-vente. Le marketing détermine quels produits le marché souhaite et comment en favoriser l'achat. Les ressources humaines visent l'efficacité, la sécurité et la motivation des collaborateurs. La PCP planifie la production en quantité et en délais, en gérant aussi l'approvisionnement et la distribution. Le management de projet, le management qualité et la comptabilité financière complètent ce socle.
 
-### Matériel
-GM + achat (301) · E-Commerce / WebEDI`;
+### Comptabilité et gestion de matériel
+La comptabilité financière documente le résultat global via le compte de résultat et le bilan. Les créanciers concernent les factures entrantes, les débiteurs les factures sortantes. Le controlling analyse la rentabilité à partir des opérations. La gestion de matériel planifie les mouvements de marchandises, l'achat en est une partie, et l'e-commerce ou WebEDI permet l'échange numérique avec les fournisseurs.`;
 
 const DEMO_803_APERCU_FULL = `## Aperçu du module 803
 
@@ -33029,22 +32737,17 @@ Vol de propriété intellectuelle · punissable. Poursuites difficiles (Internet
 
 const DEMO_804_THEORIE_SUMMARY = `## À retenir — Module 804
 
-### Utilisation ENT / M365
-ENT VS : edu.vs.ch → Connexion → 1ʳᵉ fois changer MDP  
-Teams : Accès → Web · barre latérale · canaux · devoirs  
-Office 365 : Installer Office · OfficeSetup · recherche « 365 »  
-OneDrive : Accès · dossier · charger · corbeille  
-Outlook : Accès · boîte · répondre · envoyer
+### Environnement numérique ENT VS
+La première connexion se fait sur edu.vs.ch avec l'identifiant reçu en classe. Lors de la première connexion, le système impose un nouveau mot de passe respectant des règles de sécurité précises. Teams s'ouvre depuis l'ENT via l'application Web ; la barre latérale donne accès aux conversations, à la classe, aux devoirs et au calendrier. Office 365 s'installe depuis l'ENT avec le fichier OfficeSetup.exe.
 
-### Windows
-Boot → connexion domaine · bureau · corbeille · raccourcis  
-Explorateur · dossiers perso · sessions · veille / arrêt  
-Ctrl+Alt+Suppr si app bloquée · Win+Shift+S capture
+### OneDrive et Outlook
+OneDrive permet de créer des dossiers, de charger des fichiers et de restaurer des éléments supprimés depuis la corbeille. Sur un PC partagé, il vaut mieux ne pas rester connecté. Outlook sert à recevoir des messages, à répondre, à transférer et à rédiger des courriels. Les messages envoyés se vérifient dans la section Éléments envoyés.
 
-### Droit d'auteur
-Licence ≠ propriété · CLUF · freeware / libre / shareware / pirate  
-Copies privées OK · upload d'œuvres protégées non  
-Plagiat = infraction · CH : situation nuancée`;
+### Bases Windows
+Après le démarrage, l'ordinateur charge le système d'exploitation puis affiche l'écran de connexion. Le bureau permet d'accéder aux dossiers, à la corbeille et aux raccourcis. L'explorateur de fichiers organise les dossiers personnels de chaque utilisateur. Plusieurs sessions peuvent coexister sur une même machine, et la veille permet une reprise rapide. En cas d'application bloquée, Ctrl+Alt+Suppr ouvre le Gestionnaire des tâches.
+
+### Droit d'auteur et licences
+On n'achète pas un logiciel mais une licence d'utilisation, souvent définie par un CLUF. Les freewares sont gratuits mais protégés, les logiciels libres permettent de modifier et redistribuer le code. Les copies privées à usage personnel sont autorisées en Suisse, mais l'upload d'œuvres protégées est interdit sans détenir les droits. Le plagiat constitue une infraction à la propriété intellectuelle.`;
 
 const DEMO_804_APERCU_FULL = `## Aperçu du module 804
 
@@ -33715,31 +33418,20 @@ Si tu as mis plusieurs images ou graphiques avec des légendes, tu peux créer u
 
 const DEMO_805_THEORIE_SUMMARY = `## À retenir — Module 805
 
-### Saisie
-Afficher tout · Enter vs Shift+Enter · Ctrl+Enter page  
-Date/heure · Symboles · Annuler/Rétablir
+### Saisie de texte
+Word affiche l'interface avec le ruban, la zone de texte et la barre d'état. La commande Afficher tout révèle les caractères non imprimables. Enter crée un nouveau paragraphe, Shift+Enter un simple saut de ligne, et Ctrl+Enter un saut de page. On peut insérer la date, l'heure et des symboles via l'onglet Insertion, et annuler ou rétablir les actions.
 
-### Mise en forme
-Paragraphe · tabulateurs · bordures/trames · puces / listes  
-Styles Titre → table des matières (Références)
+### Mise en forme et listes
+Le groupe Paragraphe permet de régler l'alignement, l'interligne et les retraits. Les tabulateurs alignent précisément le texte sur la règle. Les bordures et trames encadrent ou colorent les paragraphes. Les puces, la numérotation et les listes à plusieurs niveaux structurent le contenu.
 
-### Styles
-Définition · types (caractère / paragraphe / lié / liste / tableau)  
-Appliquer · créer · modifier (MAJ sélection ou Modifier…)
+### Styles et table des matières
+Un style regroupe des mises en forme réutilisables pour les caractères, les paragraphes, les listes ou les tableaux. Les styles Titre 1, Titre 2 et suivants sont indispensables pour générer une table des matières via l'onglet Références. Celle-ci se met à jour automatiquement après modification du document.
 
-### Table des matières
-Styles Titre · galerie / personnalisée · mise à jour · supprimer
+### Tableaux et pages
+Un tableau organise les informations en lignes et colonnes. L'onglet Insertion permet de le créer, puis les onglets Création et Disposition servent à modifier la taille, fusionner des cellules et ajouter des bordures. Les en-têtes et pieds de page s'insèrent via Insertion, avec possibilité d'une première page différente. La numérotation et l'aperçu avant impression se trouvent dans Fichier.
 
 ### Référencements
-Notes de bas / de fin · sources · citations · bibliographie  
-Légendes · table des illustrations
-
-### Tableaux
-Insertion → Tableau · Création / Disposition  
-Taille · lignes/colonnes · alignements (9) · fusionner/fractionner · bordures
-
-### Pages
-En-tête / pied · 1re page différente · n° de page · Imprimer`;
+Les notes de bas de page expliquent un terme en bas de page, les notes de fin regroupent les explications à la fin du document. Les sources s'enregistrent dans le gestionnaire, puis les citations et la bibliographie s'insèrent depuis Références. Les légendes décrivent les images, et la table des illustrations en recense toutes avec leur numéro de page.`;
 
 const DEMO_805_APERCU_FULL = `## Aperçu du module 805
 
@@ -34135,16 +33827,14 @@ Envoi en nombre = **2 fichiers** :
 
 const DEMO_806_THEORIE_SUMMARY = `## À retenir — Module 806
 
-### Bases
-Classeur · saisie · format nombres · Ctrl sélection multiple
+### L'écran et la saisie
+Un fichier Excel est un **classeur** composé de feuilles avec lignes, colonnes et cellules. On y saisit du texte, des chiffres, des dates ou des formules. Excel aligne le texte à gauche et les nombres à droite ; en Suisse, le point sert souvent de séparateur décimal. Pour sélectionner plusieurs zones éloignées, on maintient **Ctrl**.
 
-### Formules
-Commencent par = · opérateurs · F4 absolu · Somme/Moyenne/Max…  
-Fonctions utiles : SI, RECHERCHV, ARRONDI, NB.SI…
+### Formules et calculs
+Toute formule commence par **=** et peut utiliser des opérateurs ou des fonctions comme **Somme** ou **MOYENNE**. La touche **F4** fixe une cellule en référence absolue (**$A$1**) lors de la recopie, et des **parenthèses** corrigent les priorités de calcul. Le raccourci **Ctrl + accent grave** affiche les formules à la place des résultats.
 
-### Graphiques & mailing
-Types adaptés · Insertion · nouvelle feuille  
-Excel = source · Word = publipostage`;
+### Graphiques et publipostage
+Un graphique se crée à partir de données sélectionnées via **Insertion**, en choisissant un type adapté (histogramme, secteurs ou barres). Le publipostage lie un document Word (texte fixe et champs) à un fichier Excel (données variables) pour envoyer des courriers en série via **Sélection des destinataires**, un **Aperçu** puis **Terminer**.`;
 
 const DEMO_806_APERCU_FULL = `## Aperçu du module 806
 
@@ -34540,16 +34230,14 @@ Fichier → Imprimer (Ctrl+P) : copies · imprimante · toutes / sélection / ac
 
 const DEMO_807_THEORIE_SUMMARY = `## À retenir — Module 807
 
-### Socle
-Ruban · Accès rapide · Masque (= trame globale)  
-Dispositions · tableaux · graphiques Excel · images / SmartArt
+### Création et masque
+PowerPoint crée des présentations pour un cours, un exposé ou une réunion ; c'est un **support visuel**, pas un substitut aux techniques orales. On part d'un modèle ou d'une copie, puis on personnalise le **masque des diapositives**, qui définit la trame commune (polices, puces, logo) pour toutes les pages.
 
-### Média & effets
-Vidéo (fichier / en ligne) · audio · transitions · animations (4 types)
+### Contenu et médias
+Les dispositions comme **Titre et contenu** structurent chaque diapositive. On y ajoute des tableaux, des graphiques Excel, des images ou du **SmartArt**. On peut aussi intégrer une **vidéo** (fichier ou en ligne) et de l'**audio**, y compris un enregistrement au micro.
 
-### Diffusion
-Diaporama présentateur / borne / personnalisé  
-Enregistrer pptx ou vidéo · imprimer notes`;
+### Transitions et diffusion
+Les **transitions** relient les diapositives et les **animations** font bouger des objets précis (entrée, sortie, etc.). Pour présenter, le mode **Présentateur** convient à un exposé live et le mode **Borne** à un affichage en boucle. On enregistre en **.pptx** ou en **vidéo**, puis on imprime si besoin.`;
 
 const DEMO_807_APERCU_FULL = `## Aperçu du module 807
 
@@ -34910,14 +34598,14 @@ Outil polyvalent · explorer les fonctions pour l'adapter à son style de travai
 
 const DEMO_808_THEORIE_SUMMARY = `## À retenir — Module 808
 
-### Socle
-3 versions · structure bloc-notes / sections / pages  
-OneDrive (cloud) · 2016 = local possible
+### Versions et structure
+OneNote regroupe notes, documents et ressources dans un même espace. Selon la version (**2016**, **pour Windows** ou **365**), l'interface et le stockage varient, mais l'organisation reste la même : **bloc-notes → sections → pages**.
 
-### Usage
-Notes texte + dessin · partage / coédition  
-Balises · couleurs · modèles · audio · recherche intelligente  
-Lasso → manuscrit en texte`;
+### Notes et partage
+On saisit du texte librement et on dessine via l'onglet **Dessin**. Le **partage** permet la coédition en temps réel et l'historique des versions, y compris entre ses propres appareils.
+
+### Organisation avancée
+Les **balises**, les couleurs et les **modèles de page** facilitent le classement. La **recherche intelligente** complète des termes sélectionnés, et le lasso convertit une note manuscrite en texte.`;
 
 const DEMO_808_APERCU_FULL = `## Aperçu du module 808
 
@@ -35235,12 +34923,13 @@ Instrument de **contrôle opérationnel** en intralogistique : soutient planific
 const DEMO_809_THEORIE_SUMMARY = `## À retenir — Module 809
 
 ### Intralogistique
-Flux matériel **interne** · EM/SM, stock, transport, picking, capteurs…
+L'**intralogistique** est la logistique **interne** d'une entreprise : elle organise le flux de matériel entre réception, stockage, transport interne, picking et expédition.
 
 ### Poste de contrôle
-Centralise KPI + visualisation processus  
-Évalue / recommande · humains décident  
-Profil : logistique + Excel + analyse + équipe`;
+Le **poste de contrôle** (panneau de commande) centralise les **indicateurs clés** d'un entrepôt dans un **WMS** : volumes de picking, transports actifs, capacité du personnel ou livraisons ouvertes. Il visualise aussi les processus pour réagir vite aux perturbations.
+
+### Rôle humain
+Ce poste **évalue et recommande** plutôt qu'il ne décide seul : les collaborateurs croisent les données avec leur expérience. Il demande une solide formation logistique, des compétences en **IT et Excel**, et un esprit analytique.`;
 
 const DEMO_809_APERCU_FULL = `## Aperçu du module 809
 
@@ -35618,17 +35307,14 @@ Dès la fin : objectifs / résultats atteints ? Comparer données théoriques (f
 
 const DEMO_901_THEORIE_SUMMARY = `## À retenir — Module 901
 
-### Cycle projet
-Faisabilité → Planif. → Exécution → Éval. (PDCA / 506)
+### Cycle du projet
+Un projet logistique passe par quatre phases liées au **PDCA** (module 506) : **étude de faisabilité**, **planification**, **exécution** et **évaluation**. L'étude de faisabilité clarifie d'abord si le projet vaut la peine, car tous les projets ne réussissent pas.
 
-### Faisabilité
-Technique · éco · politique · juridique · orga · ressources  
-Objectifs : investissements, qualité, risques, solution opt.
+### Étude de faisabilité
+Elle analyse les solutions, estime les risques et vérifie six dimensions : technique, économique, politique, juridique, organisationnelle et ressources. Elle recommande ensuite la meilleure option avant de lancer la planification.
 
-### Suite
-Plan : qui / quoi / quand + réserve  
-Exécution : communiquer · documenter  
-Éval. : théorie ↔ réalité · avec FICO`;
+### Suite du projet
+La **planification** démarre après un mandat écrit et fixe qui fait quoi, quand et avec quoi, avec une marge de sécurité. Pendant l'**exécution**, la **communication** et la **documentation** sont essentielles. L'**évaluation** compare prévisions et réalité, souvent via un rapport **FICO**, pour améliorer les futurs mandats.`;
 
 const DEMO_901_APERCU_FULL = `## Aperçu du module 901
 
