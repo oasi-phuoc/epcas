@@ -14672,6 +14672,341 @@ const DEMO_312_OBJECTIFS_SUMMARY = `## Objectifs
 - Types & formules
 - Fiche / comptabilisations`;
 
+/** Glossaire Module 312 */
+const DEMO_312_GLOSSAIRE_FULL = `## Glossaire — Module 312
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Capital immobilisé | | Capital **lié** dans les stocks (et autres actifs). Des stocks élevés augmentent les frais de stockage et réduisent souvent la **rentabilité** — argent indisponible pour d'autres investissements. |
+| Matières premières | | Marchandises **non transformées** ou peu transformées, utilisées en production. **Primaires** : issues de la nature (minerai, bois, pétrole…). **Secondaires** : issues du recyclage. |
+| Produits semi-finis | | Matières premières **suffisamment transformées** pour être réutilisées dans une étape ultérieure (ex. acier, planches, farine, composants électroniques). |
+| Produits finis | | Produits **achevés**, prêts à la vente ou à la livraison au client — dernière étape du processus de production. |
+| Prévisions | | Estimations des besoins ou consommations **futurs** (ventes, production) servant de base à la planification des stocks et des commandes. |
+| ERP | *Enterprise Resource Planning* | Système intégré de gestion d'entreprise : données **statiques** (fiches articles, fournisseurs…) et **dynamiques** (mouvements de stock, commandes, factures…) partagées entre les services. |
+| Délai de réapprovisionnement | | Période entre la **commande** et la **disponibilité** en stock. Sert au calcul du **stock mini** : consommation journalière × délai de réapprovisionnement. |
+| Temps de passage | | Durée pendant laquelle une marchandise reste dans un **compte de stock intermédiaire** (ex. contrôle qualité à l'entrée, conditionnement à la sortie) avant d'être disponible ou expédiée. |
+| Opérationnel | | Niveau d'**exécution quotidienne** de la gestion des stocks : saisie des mouvements, lecture des fiches, contrôle des niveaux disponibles — par opposition à la planification stratégique. |
+| Prévisions de vente | | Estimations **transparentes** des ventes futures ; condition clé pour approcher un **niveau de stock optimal** sans surstocks ni ruptures. |
+| Risque | | Probabilité d'événements défavorables (rupture, surstock, obsolescence, retards) liés au niveau de stock et à la fiabilité des prévisions / fournisseurs. |
+| Classification | | Répartition des articles en **groupes** selon des critères communs — ex. date d'expiration, périssabilité (FEFO / FIFO / LIFO) ou types de stock (physique, sécurité, dormant…). `;
+
+const DEMO_312_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Capital immobilisé** : argent lié dans le stock
+- **MP · semi-finis · finis** : degrés de transformation
+- **ERP** : données statiques + mouvements dynamiques
+- **Délai réappro** → stock mini · **temps de passage** → comptes intermédiaires (AQ…)
+- **Prévisions de vente** + supply chain fiables → stock optimal
+- **Classification** : FEFO / FIFO / LIFO · types de stock`;
+
+/** Mises en situation Module 312 */
+const DEMO_312_SITUATION_FULL = `## Mises en situation — Module 312
+
+Contexte : tu travailles sur les **données de stockage** chez **EnterSite AG** — niveau de stock optimal, types de stocks, fiche article et comptabilisations (disponible, total, AQ, bloqué, réservé). Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions.
+
+> **Fichiers Excel** : \`EnterSite_Mise en situation_312_Mission 2.xlsx\` · \`EnterSite_Mise en situation_312_Mission 2_Réponse.xlsx\`
+
+### Vue d'ensemble des missions
+1. Un stock optimal (types de stocks)
+2. Stock disponible et stock total
+3. Réservation, niveau de stock et disponibilité maximale
+4. Contrôle du stock AQ
+5. Discussion de la mise en situation
+
+---
+
+## Mission 1 — Un stock optimal
+
+**a.** Comment une entreprise peut-elle se rapprocher d'un **niveau de stock optimal** ?  
+**b.** Quelles **conditions** sont nécessaires et que faut-il prévoir ?
+
+:::reponse
+**a.** L'entreprise doit disposer de **réseaux de fournisseurs** et de **chaînes d'approvisionnement** (*supply chain*) fonctionnant parfaitement et travailler en permanence à leur **amélioration**.
+
+**b.** Il faut des **prévisions de vente fiables** et transparentes sur les ventes futures prévues. Cela réduit le risque d'investir inutilement dans le stock, de provoquer des **pertes de production** et de ne pas pouvoir répondre aux **besoins des clients**.
+:::
+
+### Mission 1.1 — Principaux types de stocks
+
+:::reponse
+- Stock avec **date d'expiration**
+- Stock de produits **périssables**
+- Stock de produits **non périssables**
+:::
+
+### Mission 1.2 — LIFO
+
+Quel type de stock peut être géré sans problème avec le **LIFO** (*Last In, First Out*) ?
+
+:::reponse
+Le stock de produits **non périssables** (qualité stable dans le temps — ex. vis, tubes, machines).
+:::
+
+### Mission 1.3 — Article ACER Aspire XC-886 (262093)
+
+L'article a été acheté en trop ; les ventes se sont effondrées (produit de remplacement).
+
+**a.** Dans quel type de stock l'enregistrer pour qu'il reste **visible** ?  
+**b.** Marche à suivre possible ?
+
+:::reponse
+**a.** Dans le stock **dormant** (obsolète techniquement ou invendu — à retirer ou traiter).
+
+**b.** Un scénario possible : utiliser le stock comme stock **spéculatif** (écoulement anticipé, revente, action commerciale…) ou procéder à sa **élimination** selon les directives internes.
+:::
+
+### Mission 1.4 — En-tête vs mouvements
+
+Quelle est la différence entre les **données d'en-tête** de la fiche de stock et les **saisies comptables** ?
+
+:::reponse
+**Données d'en-tête (statiques)** — toutes les informations de base sur l'article : n° d'article, désignation, poids, unité de livraison / vente, stock maximum, point de commande, stock de sécurité, fournisseur, prix d'achat…
+
+**Données de mouvement (dynamiques)** — entrées et sorties de marchandises, **réservations**, stocks **AQ**, stocks **disponibles** et stocks **totaux** au fil du temps.
+:::
+
+---
+
+## Mission 2 — Stock disponible et stock total
+
+Complète le **stock disponible** et le **stock total** dans le tableau (\`EnterSite_Mise en situation_312_Mission 2.xlsx\`). Les deux résultats finaux du **15.10.20xx** sont déjà inscrits pour vérification.
+
+:::reponse
+Voir le corrigé : \`EnterSite_Mise en situation_312_Mission 2_Réponse.xlsx\`.
+
+**Formule de contrôle :**
+\`\`\`
+Stock total = stock disponible + stock réservé + stock AQ + stock bloqué
+Stock disponible = stock total − stock réservé − stock AQ − stock bloqué
+\`\`\`
+:::
+
+### Mission 2.1 — Date d'écart maximal
+
+À quelle date l'écart entre stock disponible et stock total est-il le **plus important** ?
+
+:::reponse
+**10.10.20xx** — Disponible **3'500 pces** / Total **12'500 pces** (écart = **9'000 pces**).
+:::
+
+### Mission 2.2 — Explication
+
+Pourquoi l'écart est-il maximal à cette date ?
+
+:::reponse
+L'entrée de **6'000 pièces** a été enregistrée dans le stock **AQ**. Le stock AQ est **débité du stock disponible**, mais **pas du stock total** — les marchandises sont physiquement présentes mais pas encore utilisables.
+:::
+
+---
+
+## Mission 3 — Écriture du 05.10.20xx
+
+Décris l'écriture du **05.10.20xx** avec tes propres mots.
+
+:::reponse
+Le **05.10.20xx** :
+- **1'200 pièces** enregistrées en **sortie** de marchandises
+- Du stock **AQ** : **6'000 pièces** sorties
+- **3'000 pièces** mises en **stock** (disponible)
+- **3'000 pièces** mises en **stock bloqué**
+:::
+
+### Mission 3.1 — Effets sur le stock
+
+:::reponse
+Les marchandises enregistrées en **stock bloqué** sont visibles dans le **stock total**, mais **pas** dans le **stock disponible** — il n'est pas clair, jusqu'à la clôture du dossier, si elles pourront être utilisées ou livrées.
+:::
+
+### Mission 3.2 — Disponibilité maximale (Madame Koch, Saran SA)
+
+L'après-midi du 05.10.20xx, quelle quantité maximale peut encore être **livrée aujourd'hui** ?
+
+:::reponse
+Actuellement, **6'900 pièces** peuvent être livrées (stock **disponible** après toutes les écritures du jour).
+:::
+
+---
+
+## Mission 4 — Contrôle qualité (stock AQ)
+
+Pourquoi certains articles passent-ils par le **contrôle qualité** après réception et d'autres non ?
+
+:::reponse
+Les marchandises nécessitant un **contrôle précis** après l'entrée sont enregistrées en **contrôle qualité (AQ)**.
+
+Les contrôles peuvent porter sur : respect des **dimensions**, **composition**, aspect général, **filetages**, **perçages**, conformité aux spécifications…
+
+Les articles à **faible risque** ou avec **certificat fournisseur** (ex. ISO 9001) peuvent parfois être libérés directement selon les directives internes.
+:::
+
+---
+
+## Mission 5 — Discussion
+
+Discute de la mise en situation en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.
+
+:::reponse
+**Réponse ouverte** — notes de discussion (pas de solution unique).
+:::`;
+
+const DEMO_312_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : stock optimal = supply chain + prévisions · types FEFO/FIFO/LIFO · dormant / spéculatif
+- **M1.4** : en-tête (statique) vs mouvements (dynamique)
+- **M2** : total = dispo + réservé + AQ + bloqué · écart max **10.10.** (6'000 en AQ)
+- **M3** : 05.10. — AQ→stock/bloqué · livraison max **6'900 pces**
+- **M4** : AQ si contrôle dimensionnel / qualité requis
+- **M5** : discussion plénière`;
+
+/** Exercices de maths Module 312 */
+const DEMO_312_MATHS_FULL = `## Exercices de mathématiques — Module 312
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Point de commande (Toner Ricoh)
+
+Article **841853** « Toner Ricoh MP C6003 C5503 BLACK » — recalcul du point de commande :
+
+| Paramètre | Valeur |
+| --- | --- |
+| Durée d'approvisionnement | 12 jours |
+| Stock de sécurité | 3 pièces |
+| Consommation journalière | 3 pièces |
+
+:::solution
+**39 pièces**
+
+Formule :
+\`\`\`
+Point de commande = délai d'approvisionnement × consommation journalière + stock de sécurité
+                  = 12 × 3 + 3
+                  = **39 pièces**
+\`\`\`
+:::
+
+### Exercice 2 — Écritures de stock
+
+Reporte le **stock disponible** et le **stock total** selon les écritures indiquées (\`Gestion des stocks_Module 312_Math_2.xlsx\`).
+
+Quel est le **stock total** au **25.09.20xx** ?
+
+:::solution
+**5'000 pièces** (stock total au 25.09.20xx)
+
+*(Tableau complet : \`Gestion des stocks_Module 312_Math_2_Réponse.xlsx\`.)*
+:::
+
+### Exercice 3 — Point de commande
+
+| Paramètre | Valeur |
+| --- | --- |
+| Stock de sécurité | 750 pièces |
+| Délai d'approvisionnement | 9 jours |
+| Consommation journalière moyenne | 880 pièces |
+
+Quel est le **point de commande** ?
+
+:::solution
+**8'670 pièces**
+
+Calcul :
+\`\`\`
+Point de commande = 880 × 9 + 750 = 7'920 + 750 = **8'670 pièces**
+\`\`\`
+:::
+
+### Exercice 4 — Stock disponible et total
+
+Quel est le **stock disponible** et le **stock total** selon les écritures (\`Gestion des stocks_Module 312_Math_4.xlsx\`) ?
+
+Quel est le **stock disponible** au **14.09.20xx** ?
+
+:::solution
+**7'000 pièces** (stock disponible au 14.09.20xx)
+
+*(Tableau complet : fichier *réponse* correspondant.)*
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 8'670 · 5'000 · 39 · 7'000`;
+
+const DEMO_312_MATHS_SUMMARY = `## Maths — Solutions
+1. **39 pièces** (12 × 3 + 3 — point de commande Ricoh)
+2. **5'000 pièces** — stock total au 25.09.20xx
+3. **8'670 pièces** (880 × 9 + 750)
+4. **7'000 pièces** — stock disponible au 14.09.20xx`;
+
+/** Vérification des acquis Module 312 */
+const DEMO_312_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 312 — Données de stockage**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Explique la différence entre le **stock total** et le **stock disponible**.
+
+:::reponse
+Le **stock total** comprend **tous** les stocks comptabilisés, quel que soit le compte de stock :
+
+\`\`\`
+Stock total = stock réservé + stock AQ + stock bloqué + stock disponible
+\`\`\`
+
+Le **stock disponible** est la quantité dont je dispose **actuellement** et que je peux utiliser ou **livrer** :
+
+\`\`\`
+Stock disponible = stock total − stock réservé − stock AQ − stock bloqué
+\`\`\`
+:::
+
+### Question 2
+
+EnterSite AG a des articles avec une **date d'expiration**. Qu'est-ce que cela signifie ? À quoi faire attention ?
+
+:::reponse
+Les articles doivent être **consommés avant** la date d'expiration.
+
+La date doit être **contrôlée** (ex. lors de la préparation des commandes). Le principe **FEFO** (*First Expired, First Out*) — ou **FIFO** selon le cas — est adapté à ce groupe d'articles.
+:::
+
+### Question 3
+
+À quoi sert le **stock minimum / de sécurité** ?
+
+:::reponse
+À **maintenir la disponibilité de livraison** en cas d'aléas : besoins supplémentaires non prévus, retards de réapprovisionnement, variations de consommation.
+:::
+
+### Question 4
+
+Pour un article, la **consommation quotidienne** augmente de manière significative. Quelles sont les conséquences sur le **point de commande** ?
+
+- Il n'y en a pas du tout — le point de commande ne change pas
+- Le point de commande **diminue** (commande passée plus tard)
+- Le point de commande **augmente** (commande passée plus tôt)
+
+:::reponse
+Le point de commande **augmente**.
+
+Formule : point de commande = consommation journalière × délai + stock de sécurité.
+
+Si la consommation journalière ↑, le seuil de commande ↑ → la commande est déclenchée **plus tôt** pour éviter la rupture pendant le délai d'approvisionnement.
+:::
+
+### Question 5
+
+Pour quelles raisons peut-on déterminer un **stock maximum** pour un article ?
+
+:::reponse
+- Pour des raisons d'**espace** (capacité d'entrepôt)
+- Pour des raisons de **coûts** (capital immobilisé, frais de stockage)
+- Comme prévention contre l'**obsolescence** (risque technique ou commerciale — ex. multimédia)
+:::`;
+
+const DEMO_312_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Total = tout comptabilisé · Disponible = utilisable / livrable
+2. Date d'expiration → consommer avant · contrôle · FEFO/FIFO
+3. Stock de sécurité → **disponibilité de livraison**
+4. Conso ↑ → point de commande **augmente** (commande plus tôt)
+5. Stock max : espace · coûts · obsolescence`;
+
 /** Contenu Module 401 — Le rôle du stockage */
 const DEMO_401_THEORIE_FULL = `## 1. Le rôle du stockage
 
@@ -22123,6 +22458,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_312_THEORIE_FULL,
       summary: DEMO_312_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_312_GLOSSAIRE_FULL,
+      summary: DEMO_312_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_312_SITUATION_FULL,
+      summary: DEMO_312_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_312_MATHS_FULL,
+      summary: DEMO_312_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_312_VERIFICATION_FULL,
+      summary: DEMO_312_VERIFICATION_SUMMARY,
     },
   },
   "401": {
