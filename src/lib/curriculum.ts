@@ -17960,6 +17960,360 @@ const DEMO_407_OBJECTIFS_SUMMARY = `## Objectifs
 - Élévateur / transstockeur
 - Levier · diagrammes`;
 
+/** Glossaire Module 407 */
+const DEMO_407_GLOSSAIRE_FULL = `## Glossaire — Module 407
+
+| Terme technique | Lien | Définition |
+| --- | --- | --- |
+| Convoyeur discontinu | Transport discontinu | Engin qui **prend** la charge, la **transporte** vers la destination et la **dépose** — puis peut revenir (ex. chariot élévateur, grue, **transstockeur**, FTS/AGV). Trajet **non fixe** · plus ou moins libre. |
+| Convoyeurs continus | | Installations **fixes** transportant en permanence dans **une direction** (bande, rouleaux, chaîne). Chargement/déchargement souvent manuel selon le degré d'automatisation. |
+| Transstockeur | | Engin **guidé par rails** dans l'allée pour stocker/déstocker en **hauteur** · souvent 1 appareil/allée · manuel, semi-auto ou **automatique** (commande WMS). |
+| Diagramme de la capacité de charge | | Plaque/graphique sur le chariot : charge **maximale autorisée** selon la **distance du centre de gravité** de la charge et la **hauteur de levage** — à ne **jamais** dépasser. |
+| Chariots de manutention | Engins de manutention | Ensemble des **engins mobiles au sol** pour déplacer, soulever ou empiler des charges (transpalette, gerbeur, chariot élévateur, préparateur…). |
+| Convoyeurs suspendus | Ponts roulants | Systèmes de transport **suspendus** (ne roulent pas sur le sol) — ex. ponts/portiques roulants pour charges lourdes/encombrantes en 3D. |
+| Déplacement au sol | | Mode de déplacement des engins de manutention qui **roulent sur le sol** (par opposition aux convoyeurs suspendus ou aériens). |
+| Double jeu | | Chez le transstockeur : à l'**aller** une entrée en stock, au **retour** une sortie — deux opérations par cycle · optimise le trajet. |
+| Fourche télescopique | | Dispositif permettant de **régler la longueur** des fourches (ex. sur transstockeur automatique ou chariots à bras télescopique). |
+| Accessoire | | Équipement **monté sur fourches** du chariot élévateur pour transporter des marchandises **sans palette** : rouleaux, balles, fûts, pinces, bennes… |`;
+
+const DEMO_407_GLOSSAIRE_SUMMARY = `## Glossaire — À retenir
+- **Continu** = fixe · 1 direction · **Discontinu** = prend · transporte · dépose
+- **Transstockeur** = rails · hauteur · double jeu possible
+- **Diagramme charge** = f(CdG, hauteur) · ne pas dépasser
+- **Au sol** vs **suspendu** · **accessoires** = hors palette`;
+
+/** Mises en situation Module 407 */
+const DEMO_407_SITUATION_FULL = `## Mises en situation — Module 407
+
+Contexte : un **fournisseur** d'EnterSite AG construit un nouvel entrepôt et te consulte pour le **transport interne**. Tu aides Reto Stierndli à recommander des **moyens de manutention** et à vérifier les **diagrammes de charge**.
+
+### Vue d'ensemble des missions
+1. Moyens de transport connus et critères de choix
+2. Termes techniques de manutention
+3. Recommandations parcours 1–3 et hauts rayonnages
+4. Centre de gravité · loi du levier · diagramme (760 kg × 2)
+5. Exposé 5 min (entreprise formatrice)
+6. EnterSite salle 3 V1
+7. Discussion STA
+
+---
+
+## Mission 1 — Moyens de transport
+
+Quels moyens de transport connais-tu ?
+
+:::reponse
+Exemples : transpalettes manuels/électriques · préparateurs petite/grande levée · gerbeurs à timon · chariot élévateur **contrepoids** · chariot à bras · chariot **tri-directionnel** · mât **rétractable** · chariot **grande hauteur** · convoyeurs rouleaux/bande/chaîne · **FTS/AGV**…
+:::
+
+### Mission 1.1 — Différences
+
+:::reponse
+| Critère | Exemples |
+| --- | --- |
+| **Guidage** | Sur rails (transstockeur) · sans rail (FTS) |
+| **Mobilité** | Discontinu (chariot, grue) · continu (convoyeur) |
+| **Entraînement** | Manuel (transpalette) · mécanique (timon) |
+| **Automatisation** | Opérateur · ordinateur (transstockeur auto) |
+| **Marchandises** | Palettes · vrac · liquides |
+:::
+
+### Mission 1.2 — Facteurs de choix
+
+:::reponse
+- Type, **poids**, **dimensions**, **quantité** de marchandises
+- **Direction** et **longueur** du trajet
+- **Effet de rationalisation** souhaité
+
+**Exemples synthétiques :**
+| Moyen | Usage | + | − |
+| --- | --- | --- | --- |
+| Contrepoids | Palettes lourdes | Polyvalent · charge ↑ | Allées étroites |
+| Transpalette manuel | Courtes distances | Simple · économique | Charge/distance limitées |
+| Convoyeur continu | Long trajet fixe | Automatique | Coût · surveillance |
+| Mise en stock | Allées étroites | Hauteur · espace | Coût · opérateur |
+| Transstockeur | MGH automatisé | Vitesse · espace | Investissement |
+:::
+
+---
+
+## Mission 2 — Termes techniques
+
+| Terme | Explication |
+| --- | --- |
+| **Chariot de manutention** | Tous les appareils qui se déplacent **au sol** |
+| **Convoyeurs suspendus** | Ne roulent pas au sol — **suspendus** (ponts roulants) |
+| **Convoyeurs continus** | Déplacement **permanent**, même direction |
+| **Convoyeur discontinu** | Prend · déplace · dépose · peut revenir |
+| **Double jeu** | Stockage à l'aller + déstockage au retour |
+| **Fourche télescopique** | Longueur de fourches **réglable** |
+| **Accessoires** | Pour transporter sans palette (fûts, rouleaux…) |
+
+:::reponse
+Voir tableau — reformuler avec tes propres mots à partir de la théorie §7.
+:::
+
+---
+
+## Mission 3 — Parcours de manutention
+
+**Données** : 75 % palettes EUR (h max 1,2 m) · 70 % fournisseurs fiables → stockage direct MGH · 25 % non palettisé (caisses, cartons, fûts).
+
+### Parcours 1 — Réception mixte
+
+:::reponse
+**Engins** — chariots élévateur contrepoids · transpalettes · gerbeurs · chariots à bras…
+
+**Justification** — conditionnements **variés** (palettes, fûts, cartons).
+:::
+
+### Parcours 2 — Vers MGH (palettes EUR)
+
+:::reponse
+**Engins** — **convoyeurs continus** (rouleaux, chaîne)
+
+**Justification** — trajet **long** · uniquement **palettes EUR** vers rayonnage hauteur · pas de convoyeur à bande nécessaire ici.
+:::
+
+### Mission 3.1 — Parcours 3 + picking
+
+:::reponse
+**Parcours 3** — contrepoids · gerbeur (palettes aux niveaux 2–3)
+
+**Picking** — transpalettes manuels · chariots à roulettes · chariots de transport (niveau sol, cartons complets)
+
+**Petites pièces** — rayonnages **dynamiques** · prélèvement en **bacs** pièce par pièce.
+:::
+
+### Mission 3.2 — Accès hauts rayonnages
+
+:::reponse
+**Option 1 — Transstockeur**
+
+*Pour* : utilisation verticale optimale · auto · WMS · précision  
+*Contre* : coût · complexité · flexibilité ↓ · maintenance
+
+**Option 2 — Chariot grande hauteur**
+
+*Pour* : polyvalent · moins d'infrastructure · accès rapide  
+*Contre* : moins de densité verticale · précision moindre
+
+**Décision** — analyse coûts/bénéfices : **transstockeur** si budget et automatisation ; **chariot GH** si flexibilité prioritaire.
+:::
+
+---
+
+## Mission 4 — Diagramme de capacité
+
+### Distance du centre de gravité
+
+:::reponse
+Distance entre le **centre de gravité** de la charge et le **mât/fourches** du chariot — détermine la **capacité admissible** sur le diagramme.
+:::
+
+### Mission 4.1 — Loi du levier
+
+:::reponse
+**Moment gauche = moment droit** (force × bras).
+
+Ex. **transpalette** : point d'appui au timon · timon plus long → force de pompage ↓ · charge plus près du timon → effort ↓.
+:::
+
+### Mission 4.2 — 2 palettes × 760 kg · h = 7,15 m · CdG = 1,15 m
+
+:::reponse
+**Non** — levage **interdit**.
+
+Au diagramme (fourches rallongées) : à **7,15 m** et CdG **1,15 m** → max **~620 kg** par palette (< 760 kg).  
+À 7,15 m et CdG **1 m** seulement → max **750 kg** — toujours insuffisant pour 760 kg.
+:::
+
+---
+
+## Mission 5 — Exposé (entreprise formatrice)
+
+Exposé **5 minutes** (PowerPoint) : moyens utilisés · zones · marchandises · rationalisation · **termes techniques** du module.
+
+:::reponse
+**Réponse individuelle** — dépôt de la présentation selon consignes.
+:::
+
+---
+
+## Mission 6 — EnterSite salle 3 V1
+
+> Visite virtuelle **Logistique salle 3 V1** — image à droite, problème de fin de travail. [Vers EnterSite](#entersite-placeholder)
+
+:::reponse
+**Réponse individuelle** — selon exercice EnterSite (salle 3 V1).
+:::
+
+---
+
+## Mission 7 — Discussion
+
+:::reponse
+**Réponse ouverte** — notes de discussion.
+:::`;
+
+const DEMO_407_SITUATION_SUMMARY = `## Mises en situation — À retenir
+- **M1** : classification guidage · continu/discontinu · auto · critères choix
+- **M2** : chariot au sol · suspendu · double jeu · fourche télescopique · accessoires
+- **M3** : P1 chariots mixte · P2 convoyeur EUR · P3 picking · transstockeur vs GH
+- **M4** : CdG · levier · **760 kg refusés** à 7,15 m
+- **M5–M7** : exposé · EnterSite 3 V1 · discussion`;
+
+/** Exercices de maths Module 407 */
+const DEMO_407_MATHS_FULL = `## Exercices de mathématiques — Module 407
+
+Calcule chaque résultat, puis vérifie avec le bouton solution.
+
+### Exercice 1 — Transstockeur (double jeu)
+
+Durée moyenne d'un **double jeu** : **180 s** (entrée à l'aller · sortie au retour).  
+Journée : **8,5 h**.
+
+Nombre **maximal** de palettes stockées **et** déstockées ?
+
+:::solution
+**340 palettes**
+
+Calcul :
+\`\`\`
+8,5 h = 510 min = 30'600 s
+Cycles : 30'600 / 180 = 170 cycles
+2 palettes/cycle (double jeu) : 170 × 2 = **340 palettes**
+\`\`\`
+
+*(Variante : (8,5 × 60) / (180/60) × 2 = 340.)*
+:::
+
+### Exercice 2 — Préparateur horizontal
+
+Vitesse avec charge : **12,5 km/h**. Distance : **300 m**.
+
+Temps en **minutes et secondes** ?
+
+:::solution
+**1 min 26,4 s**
+
+Calcul :
+\`\`\`
+12,5 km/h = 12'500 m/h = 208,33 m/min
+Temps : 300 / 208,33 = 1,44 min
+= **1 min** + 0,44 × 60 = **26,4 s**
+\`\`\`
+:::
+
+### Exercice 3 — Amortissement
+
+Préparateur GH : **12'630 CHF** · durée **8 ans** · amortissement linéaire.
+
+**Pourcentage** par an ?
+
+:::solution
+**12,5 %/an**
+
+Calcul : 100 / 8 = **12,5 %**
+:::
+
+### Exercice 4 — Loi du levier (équilibre)
+
+Chariot en équilibre :
+- F1 = **10'916 N** · bras a1 = **?**
+- F2 = **7'500 N** · a2 = **0,70 m**
+- F3 = **12'000 N** · a3 = **1,10 m**
+
+Calculer **a1**.
+
+:::solution
+**a1 = 1,69 m** (1,6902 m)
+
+Calcul :
+\`\`\`
+F1 × a1 = F2 × a2 + F3 × a3
+a1 = (7'500 × 0,70 + 12'000 × 1,10) / 10'916
+   = (5'250 + 13'200) / 10'916
+   = 18'450 / 10'916 = **1,6902 m**
+\`\`\`
+:::
+
+> **Contrôle rapide (ordre du corrigé)** : 12,5 · 1,69 · 340 · 1 min 26,4 s`;
+
+const DEMO_407_MATHS_SUMMARY = `## Maths — Solutions
+1. **340 palettes** (170 cycles × 2 · 180 s/cycle · 8,5 h)
+2. **1 min 26,4 s** (300 m à 12,5 km/h)
+3. **12,5 %/an** (100 / 8 ans)
+4. **a1 = 1,69 m** (équilibre des moments)`;
+
+/** Vérification des acquis Module 407 */
+const DEMO_407_VERIFICATION_FULL = `## Vérification des acquis — Questions de contrôle
+
+Thème : **Module 407 — Les moyens de transport**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.
+
+### Question 1
+
+Cite **quatre critères** pour le choix d'un moyen de transport.
+
+:::reponse
+1. **Type** de marchandises
+2. **Poids** et **dimensions**
+3. **Quantité** à transporter
+4. **Direction** et **longueur** du trajet
+5. **Effet de rationalisation** souhaité
+
+*(Quatre suffisent.)*
+:::
+
+### Question 2
+
+Deux termes selon le **type de mouvement** ?
+
+:::reponse
+**Convoyeurs discontinus** — prennent la charge, la transportent vers la destination et la déposent ; trajet plus ou moins libre (chariot, transstockeur…).
+
+**Convoyeurs continus** — installation **fixe**, transport permanent de A vers B (rouleaux, bande…) ; chargement/déchargement selon automatisation.
+:::
+
+### Question 3
+
+Termes de la **loi des leviers** :
+
+:::reponse
+- **Bras de force** — distance entre le **point d'appui** et le centre de gravité de la charge
+- **Force appliquée** — force agissant à l'extrémité du bras
+- **Point d'appui** — axe de bascule (souvent **roue avant** sur chariot)
+- **Moment** — force × bras ; équilibre si moments gauche = droite
+:::
+
+### Question 4
+
+Appareil sur l'image : désignation, type de mouvement, position, direction.
+
+:::reponse
+- **Désignation** : **Transstockeur**
+- **Type de mouvement** : **Convoyeur discontinu**
+- **Position** : **Au sol** (guidé par rails)
+- **Direction** : **Horizontale et verticale**
+:::
+
+### Question 5
+
+Qu'est-ce qu'un chariot élévateur en **porte-à-faux** ?
+
+:::reponse
+Dès que le **centre de gravité** de la charge se trouve **en dehors** de la surface d'appui des roues, l'appareil fonctionne en **porte-à-faux**.
+
+**Exemple** : **chariot élévateur à contrepoids** — la charge devant les roues avant est contrebalancée par le **contrepoids** arrière.
+:::`;
+
+const DEMO_407_VERIFICATION_SUMMARY = `## Questions de contrôle — Solutions
+1. Type · poids/dimensions · quantité · trajet · rationalisation
+2. Discontinu (prend-dépose) vs continu (fixe A→B)
+3. Bras · force · point d'appui · moment
+4. Transstockeur · discontinu · au sol · H+V
+5. Porte-à-faux = CdG hors surface d'appui · ex. contrepoids`;
+
 /** Contenu Module 408 — Organisation de l'entrepôt */
 const DEMO_408_THEORIE_FULL = `## 8. Organisation de l'entrepôt
 
@@ -24744,6 +25098,22 @@ const filledByModule: Record<string, FilledPages> = {
     theorie: {
       full: DEMO_407_THEORIE_FULL,
       summary: DEMO_407_THEORIE_SUMMARY,
+    },
+    glossaire: {
+      full: DEMO_407_GLOSSAIRE_FULL,
+      summary: DEMO_407_GLOSSAIRE_SUMMARY,
+    },
+    situation: {
+      full: DEMO_407_SITUATION_FULL,
+      summary: DEMO_407_SITUATION_SUMMARY,
+    },
+    maths: {
+      full: DEMO_407_MATHS_FULL,
+      summary: DEMO_407_MATHS_SUMMARY,
+    },
+    verification: {
+      full: DEMO_407_VERIFICATION_FULL,
+      summary: DEMO_407_VERIFICATION_SUMMARY,
     },
   },
   "408": {
